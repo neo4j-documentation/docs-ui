@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+{{> head defaultPageTitle='Untitled'}}
+  </head>
+  <body class="article{{#with (or asciidoc.attributes.role page.role)}} {{{this}}}{{/with}}{{#with (or page.attributes.theme "developer")}} {{{this}}}{{/with}}">
+{{> header}}
+{{> body}}
+{{> footer}}
+  </body>
+</html>

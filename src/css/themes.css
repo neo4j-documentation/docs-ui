@@ -1,0 +1,41 @@
+/* .docs a {
+    color: var(--colour-docs);
+} */
+
+body.docs .navbar {
+    --navbar-background: var(--colour-white);
+    --navbar-top-border: var(--colour-docs);
+
+    --navbar-font-color: var(--colour-grey-600);
+    --navbar_hover-background: transparent;
+
+    --nav-bullet-color: var(--colour-blue-300);
+}
+
+body.labs {
+    --navbar-background: var(--colour-white);
+    --navbar-top-border: var(--colour-labs);
+
+    --navbar-font-color: var(--colour-grey-600);
+    --navbar_hover-background: transparent;
+
+    --nav-bullet-color: var(--colour-purple-300);
+}
+
+body.developer {
+    --nav-bullet-color: var(--colour-grey-500);
+}
+
+.developer .navbar-brand #neo4j {
+    fill: var(--colour-white);
+}
+
+
+
+.developer .navbar-brand #neo4j {
+    fill: var(--colour-white);
+}
+
+.developer .navbar-brand #developer {
+    fill: var(--colour-grey-400);
+}
