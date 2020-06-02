@@ -170,14 +170,14 @@ spacing: {
   /* navbar */
   --navbar-background: var(--colour-grey-800);
   --navbar-font-color: var(--colour-grey-100);
-  --navbar_hover-background: var(--colour-grey-800);
+  --navbar_hover-background: transparent; /* var(--colour-grey-800);*/
   --navbar-button-background: var(--colour-orange-600);
   --navbar-button-border-color: var(--colour-blue-800);
   --navbar-button-font-color: var(--colour-blue-100);
   --navbar-menu-border-color: var(--panel-border-color);
   --navbar-menu-background: var(--colour-white);
   --navbar-menu-font-color: var(--body-font-color);
-  --navbar-menu_hover-background: var(--color-smoke-50);
+  --navbar-menu_hover-background: transparent; /* var(--colour-grey-800);*/
 
   --navbar-top-border: var(--colour-grey-200);
   --navbar-bottom-border: var(--colour-grey-300);

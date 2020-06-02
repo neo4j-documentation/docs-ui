@@ -28,7 +28,6 @@ document.addEventListener('DOMContentLoaded', function () {
     document.body.removeChild(textarea)
   }
 
-
   var addCodeHeader = function (pre) {
     var block = pre.querySelector('code')
     var div = pre.parentNode

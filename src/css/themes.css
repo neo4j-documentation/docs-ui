@@ -2,7 +2,8 @@
     color: var(--colour-docs);
 } */
 
-body.docs .navbar {
+/*
+body.docs {
     --navbar-background: var(--colour-white);
     --navbar-top-border: var(--colour-docs);
 
@@ -11,26 +12,119 @@ body.docs .navbar {
 
     --nav-bullet-color: var(--colour-blue-300);
 }
+*/
+body.docs .navbar {
+    background: var(--colour-white);
+    border-top-color: var(--colour-docs);
+}
+body.docs .navbar,
+body.docs .navbar-brand .navbar-item:first-child,
+body.docs .navbar-brand .navbar-item:first-child a {
+    color: var(--colour-grey-600);
+}
 
+@media screen and (min-width: 1024px) {
+    body.docs .navbar-end > .navbar-item,
+    body.docs .navbar-end .navbar-link {
+      color: var(--colour-grey-600);
+    }
+
+    body.docs .navbar-end > a.navbar-item:hover,
+    body.docs .navbar-end .navbar-link:hover {
+        color: var(--colour-grey-600);
+    }
+
+    body.docs .navbar-end .navbar-link::after {
+        border-color: var(--colour-grey-600);
+    }
+
+    body.docs .navbar-item.has-dropdown:hover .navbar-link {
+        color: var(--colour-grey-600);
+    }
+}
+
+body.docs .navbar-burger {
+    color: var(--colour-grey-600);
+}
+body.docs .navbar-burger span {
+    background: var(--colour-grey-600);
+}
+
+body.docs .nav-item .nav-item:before,
+body.docs .toc-menu li a:before
+{
+  background-color: var(--colour-blue-300);
+}
+
+
+/*
 body.labs {
     --navbar-background: var(--colour-white);
-    --navbar-top-border: var(--colour-labs);
+    --navbar-top-border: var(--navbar-font-color);
 
     --navbar-font-color: var(--colour-grey-600);
     --navbar_hover-background: transparent;
 
     --nav-bullet-color: var(--colour-purple-300);
 }
+*/
+body.labs .navbar {
+    background: var(--colour-white);
+    border-top-color: var(--colour-labs);
+}
+body.labs .navbar,
+body.labs .navbar-brand .navbar-item:first-child,
+body.labs .navbar-brand .navbar-item:first-child a {
+    color: var(--colour-grey-600);
+}
 
-body.developer {
+@media screen and (min-width: 1024px) {
+    body.labs .navbar-end > .navbar-item,
+    body.labs .navbar-end .navbar-link {
+      color: var(--colour-grey-600);
+    }
+
+    body.labs .navbar-end > a.navbar-item:hover,
+    body.labs .navbar-end .navbar-link:hover {
+        color: var(--colour-grey-600);
+    }
+
+    body.labs .navbar-end .navbar-link::after {
+        border-color: var(--colour-grey-600);
+    }
+
+    body.labs .navbar-item.has-dropdown:hover .navbar-link {
+        color: var(--colour-grey-600);
+    }
+}
+
+body.labs .navbar-burger {
+    color: var(--colour-grey-600);
+}
+body.labs .navbar-burger span {
+    background: var(--colour-grey-600);
+}
+
+body.labs .nav-item .nav-item:before,
+body.labs .toc-menu li a:before
+{
+  background-color: var(--colour-blue-300);
+}
+
+
+/* body.developer {
     --nav-bullet-color: var(--colour-grey-500);
+} */
+
+body.developer .nav-item .nav-item:before,
+body.developer .toc-menu li a:before
+{
+  background-color: var(--colour-grey-500);
 }
 
 .developer .navbar-brand #neo4j {
     fill: var(--colour-white);
 }
-
-
 
 .developer .navbar-brand #neo4j {
     fill: var(--colour-white);

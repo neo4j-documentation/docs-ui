@@ -142,6 +142,10 @@
   margin: 0;
 }
 
+.doc code:before {
+  background: red !important;
+}
+
 .doc blockquote {
   margin: 0;
 }
