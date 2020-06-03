@@ -126,6 +126,9 @@ page:
       - content: Some Code
         url: '/xyz/5.2/index.html#some-code'
         urlType: internal
+    - content: Tiled Template
+      url: tiles.html
+      urlType: internal
 
 asciidoc:
   attributes:

@@ -1,4 +1,4 @@
-;(function () {
+; (function () {
   'use strict'
 
   var SECT_CLASS_RX = /^sect(\d)$/
@@ -6,46 +6,55 @@
   var navContainer = document.querySelector('.nav-container')
   var navToggle = document.querySelector('.nav-toggle')
 
-  navToggle.addEventListener('click', showNav)
-  // NOTE don't let click events propagate outside of nav container
-  navContainer.addEventListener('click', concealEvent)
+  if (navContainer && navToggle) {
+    navToggle && navToggle.addEventListener('click', showNav)
+    // NOTE don't let click events propagate outside of nav container
+    navContainer && navContainer.addEventListener('click', concealEvent)
 
-  var menuPanel = navContainer.querySelector('[data-panel=menu]')
-  if (!menuPanel) return
-  var nav = navContainer.querySelector('.nav')
+    var menuPanel = navContainer.querySelector('[data-panel=menu]')
+    if (!menuPanel) return
+    var nav = navContainer.querySelector('.nav')
 
-  var currentPageItem = menuPanel.querySelector('.is-current-page')
-  var originalPageItem = currentPageItem
-  if (currentPageItem) {
-    activateCurrentPath(currentPageItem)
-    scrollItemToMidpoint(menuPanel, currentPageItem.querySelector('.nav-link'))
-  } else {
-    menuPanel.scrollTop = 0
+    var currentPageItem = menuPanel.querySelector('.is-current-page')
+    var originalPageItem = currentPageItem
+    if (currentPageItem) {
+      activateCurrentPath(currentPageItem)
+      scrollItemToMidpoint(menuPanel, currentPageItem.querySelector('.nav-link'))
+    } else {
+      menuPanel.scrollTop = 0
+    }
+
+
+    find(menuPanel, '.nav-item-toggle').forEach(function (btn) {
+      var li = btn.parentElement
+      btn.addEventListener('click', toggleActive.bind(li))
+      var navItemSpan = findNextElement(btn, '.nav-text')
+      if (navItemSpan) {
+        navItemSpan.style.cursor = 'pointer'
+        navItemSpan.addEventListener('click', toggleActive.bind(li))
+      }
+    })
+
+    nav.querySelector('.context') && nav.querySelector('.context').addEventListener('click', function () {
+      var currentPanel = nav.querySelector('.is-active[data-panel]')
+      var activatePanel = currentPanel.dataset.panel === 'menu' ? 'explore' : 'menu'
+      currentPanel.classList.toggle('is-active')
+      nav.querySelector('[data-panel=' + activatePanel + ']').classList.toggle('is-active')
+    })
+
+    // NOTE prevent text from being selected by double click
+    menuPanel.addEventListener('mousedown', function (e) {
+      if (e.detail > 1) e.preventDefault()
+    })
+
+
+    if (menuPanel && menuPanel.querySelector('.nav-link[href^="#"]')) {
+      if (window.location.hash) onHashChange()
+      window.addEventListener('hashchange', onHashChange)
+    }
   }
 
-  find(menuPanel, '.nav-item-toggle').forEach(function (btn) {
-    var li = btn.parentElement
-    btn.addEventListener('click', toggleActive.bind(li))
-    var navItemSpan = findNextElement(btn, '.nav-text')
-    if (navItemSpan) {
-      navItemSpan.style.cursor = 'pointer'
-      navItemSpan.addEventListener('click', toggleActive.bind(li))
-    }
-  })
-
-  nav.querySelector('.context') && nav.querySelector('.context').addEventListener('click', function () {
-    var currentPanel = nav.querySelector('.is-active[data-panel]')
-    var activatePanel = currentPanel.dataset.panel === 'menu' ? 'explore' : 'menu'
-    currentPanel.classList.toggle('is-active')
-    nav.querySelector('[data-panel=' + activatePanel + ']').classList.toggle('is-active')
-  })
-
-  // NOTE prevent text from being selected by double click
-  menuPanel.addEventListener('mousedown', function (e) {
-    if (e.detail > 1) e.preventDefault()
-  })
-
-  function onHashChange () {
+  function onHashChange() {
     var navLink
     var hash = window.location.hash
     if (hash) {
@@ -83,12 +92,7 @@
     scrollItemToMidpoint(menuPanel, navLink)
   }
 
-  if (menuPanel.querySelector('.nav-link[href^="#"]')) {
-    if (window.location.hash) onHashChange()
-    window.addEventListener('hashchange', onHashChange)
-  }
-
-  function activateCurrentPath (navItem) {
+  function activateCurrentPath(navItem) {
     var ancestorClasses
     var ancestor = navItem.parentNode
     while (!(ancestorClasses = ancestor.classList).contains('nav-menu')) {
@@ -100,11 +104,11 @@
     navItem.classList.add('is-active')
   }
 
-  function toggleActive () {
+  function toggleActive() {
     this.classList.toggle('is-active')
   }
 
-  function showNav (e) {
+  function showNav(e) {
     if (navToggle.classList.contains('is-active')) return hideNav(e)
     var html = document.documentElement
     html.classList.add('is-clipped--nav')
@@ -114,7 +118,7 @@
     concealEvent(e)
   }
 
-  function hideNav (e) {
+  function hideNav(e) {
     var html = document.documentElement
     html.classList.remove('is-clipped--nav')
     navToggle.classList.remove('is-active')
@@ -124,11 +128,11 @@
   }
 
   // NOTE don't let event get picked up by window click listener
-  function concealEvent (e) {
+  function concealEvent(e) {
     e.stopPropagation()
   }
 
-  function scrollItemToMidpoint (panel, el) {
+  function scrollItemToMidpoint(panel, el) {
     var rect = panel.getBoundingClientRect()
     var effectiveHeight = rect.height
     var navStyle = window.getComputedStyle(nav)
@@ -136,11 +140,11 @@
     panel.scrollTop = Math.max(0, (el.getBoundingClientRect().height - effectiveHeight) * 0.5 + el.offsetTop)
   }
 
-  function find (from, selector) {
+  function find(from, selector) {
     return [].slice.call(from.querySelectorAll(selector))
   }
 
-  function findNextElement (from, selector) {
+  function findNextElement(from, selector) {
     var el = from.nextElementSibling
     if (!el) return
     return selector ? el[el.matches ? 'matches' : 'msMatchesSelector'](selector) && el : el

@@ -37,7 +37,10 @@ document.addEventListener('DOMContentLoaded', function () {
 
     var languageDiv = document.createElement('div')
     languageDiv.className = 'code-language'
-    languageDiv.innerHTML = language
+
+    if ( language ) {
+      languageDiv.innerHTML = language
+    }
 
     var copyButton = createElement('button', 'btn btn-copy', [document.createTextNode('Copy to Clipboard')])
     copyButton.addEventListener('click', function (e) {

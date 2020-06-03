@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+{{> head defaultPageTitle='Untitled'}}
+  </head>
+  <body class="article tiles{{#with (or asciidoc.attributes.role page.role)}} {{{this}}}{{/with}}{{#with (or page.attributes.theme "developer")}} {{{this}}}{{/with}}">
+{{> header}}
+
+    <main class="article">
+      <div class="content">
+{{> article}}
+{{> toc}}
+      </div>
+    </main>
+
+{{> footer}}
+  </body>
+</html>
