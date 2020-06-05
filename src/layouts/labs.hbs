@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+{{> head defaultPageTitle='Untitled'}}
+  </head>
+  <body class="article landing labs-home{{#with (or asciidoc.attributes.role page.role)}} {{{this}}}{{/with}}{{#with (or page.attributes.theme "developer")}} {{{this}}}{{/with}}">
+{{> header}}
+
+
+
+ <section class="hero">
+
+  <div class="row">
+    <div class="columns medium-12">
+        {{#with page.attributes.herotitle}}
+        <h1>{{{this}}}</h1>
+        {{/with}}
+
+
+        {{#with page.attributes.herosubtitle}}
+        <p>{{ this }}</p>
+        {{/with}}
+    </div>
+  </div>
+</section>
+
+
+    <main class="article">
+      <div class="content">
+{{> article}}
+{{> toc}}
+      </div>
+    </main>
+
+{{> footer}}
+  </body>
+</html>

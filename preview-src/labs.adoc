@@ -1,0 +1,86 @@
+= Neo4j Labs
+:page-layout: labs
+:page-theme: labs
+:page-herotitle: Neo4j Labs
+:page-herosubtitle: Incubating the Next Generation of Graph Developer Tooling
+
+== What is Neo4j Labs?
+Neo4j Labs is a collection of the latest innovations in graph technology
+
+These projects are designed and developed by the Neo4j team as a way to test functionality and extensions of our product offerings.
+A project typically either graduates to being maintained as a formal Neo4j project or is deprecated with source made available publicly.
+
+These Labs are supported via the online community.
+They are actively developed and maintained, but we don't provide any SLAs or guarantees around backwards compatibility and deprecation.
+
+[.secondary]
+
+== Current Projects
+
+// === Graph Algorithms Library
+
+// To enable large scale graph analytics and to support machine learning pipelines, we developed the Neo4j Graph Algorithms library, which covers many widely used algorithms.
+// The library offers highly parallelized implementation that works well with large scale graphs.
+
+[#goals.incremental]
+=== link:https://grandstack.io[GraphQL and GRANDstack]
+GraphQL has become a comprehensive stack for API development and consolidation.
+Our GRANDstack and Neo4j-GraphQL-js offerings combine the most common tools and frameworks: GraphQL, React, Apollo and Neo4j Database.
+
+
+=== xref:apoc:index.adoc[Awesome Procedures on Cypher (APOC)]
+
+As the most comprehensive developer toolkit for Neo4j, the xref:apoc:index.adoc[APOC library] provides a wide range of procedures and functions that make your life as a Neo4j user easier.
+APOC includes data integration, graph refactoring, data conversion, operational functionality and more.
+
+=== xref:neosemantics:index.adoc[Neosemantics]
+
+xref:neosemantics:index.adoc[Neosemantics] integrates RDF and Linked Data with Neo4j.
+It allows to import a wide variety of RDF formats and to expose Neo4j property graphs as Linked Data.
+Ontology and Inference are also partially supported.
+
+
+=== Halin Monitoring App
+
+The Halin Monitoring App allows you to monitor your Neo4j deployment and identify bottlenecks or incorrect configurations, with insights into currently running queries and workloads.
+The app also provides access to metrics and logs.
+
+
+=== Kafka Integration
+
+Streaming event data is an integral part of most modern data architectures.
+With Neo4j Kafka Integration you can integrate Neo4j both as a sink or source into your setup.
+The integration is available as a Kafka Connect plugin and Neo4j Server extension..
+
+
+=== ETL Tool
+
+Having an easy way of loading data from relational databases into Neo4j is one of the first steps many users take.
+The Neo4j-ETL Tool makes this easy by inferring a graph model from the relational meta model that you can then adapt to fit your needs.
+Given that transformation, this tool also handles the actual import for you.
+
+
+=== Other Active Projects
+
+* Neovis.js, a graph visualization toolkit for the web
+* The Neo4j-Spark-Connector, library to exchange graph data between Neo4j and Apache Spark
+
+
+// [WARNING]
+// The only frustrating thing about this approach is that we will have to manually link to each set of docs.
+
+// * xref:apoc:index.adoc[APOC]
+// ** xref:apoc:quick-start.adoc[Quick Start]
+// ** Docs
+// *** link:./apoc/docs/4.0[4.0 Docs]
+// *** link:./apoc/docs/3.5[3.5 Docs]
+// ***  link:./apoc/docs/current[`current` Docs]
+
+// ```
+// * xref:apoc:index.adoc[APOC]
+// ** xref:apoc:quick-start.adoc[Quick Start]
+// ** Docs
+// *** link:./apoc/docs/4.0[4.0 Docs]
+// *** link:./apoc/docs/3.5[3.5 Docs]
+// ***  link:./apoc/docs/current[`current` Docs]
+// ```

@@ -1,58 +1,71 @@
+body.labs-home .hero {
+    background-image: url('https://cdn.neo4jlabs.com/images/lab-pipette-big.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 8rem 0;
+    text-align: center;
+    color: var(--colour-white);
+    margin-bottom: 2rem;
+}
+
+body.labs-home .hero h1 {
+    font-size: 3rem;
+    font-weight: 200;
+    margin-top: 0;
+    margin-bottom: .5rem;
+}
+
+body.labs-home .hero p {
+    font-size: 1.5rem;
+    font-weight: 400;
+    max-width: 420px;
+    margin: auto;
+}
+
+body.labs-home .sect1 {
+    padding: 4em 0;
+}
+
+body.labs-home h2,
+body.labs-home .sectionbody {
+    max-width: 820px;
+    margin: auto;
+}
+body.labs-home .paragraph {
+    font-size:1rem;
+}
+
+body.labs-home h2 {
+    margin-bottom: 2rem;
+}
+
+
+/*
+
 body.tiles {
     background: var(--colour-grey-100);
 }
 
-body.landing .secondary {
-    background: var(--colour-grey-100);
-    padding: 2em 0;
-    position: relative;
-}
-
-body.landing .secondary:before {
-    background: var(--colour-grey-100);
-    position: relative;
-    left: -50%;
-    width: 100%;
-    z-index: -1;
-    content: "";
-}
-
-body.landing .content {
+body.tiles .content {
     align-items: center;
     flex-direction: column;
-}
-
-body.landing .doc {
-    /* max-width: 820px; */
-    width: 100%;
-    max-width: none;
-    padding: 0;
-}
-
-body.landing .doc h1.page {
-    display: none;
-}
-
-body.landing .doc .paragraph {
-    flex: 0 0 100%;
-    margin: 2rem auto;
-    color: var(--colour-grey-600);
-}
-
-body.tiles .doc .paragraph {
-    font-size: 1.2rem;
-}
-
-body.landing .toc {
-    display: none;
 }
 
 body.tiles .doc {
     max-width: 820px;
 }
 
+body.tiles .doc h1.page {
+    display: none;
+}
+
 body.tiles .doc .paragraph {
+    flex: 0 0 100%;
+    margin: 2rem auto;
     text-align: center;
+    color: var(--colour-grey-600);
+    font-size: 1.2rem;
+    max-width: 640px;
 }
 
 body.tiles .doc h2 {
@@ -69,7 +82,7 @@ body.tiles .sectionbody {
 body.tiles .sect2 {
     background: var(--colour-white);
     flex: 1;
-    /* min-width: 320px; */
+
     min-width: 30%;
     padding: 12px;
     margin: 12px;
@@ -119,3 +132,4 @@ body.tiles .sect2 ul li a {
     border-radius: .2rem;
     font-size: .7rem;
 }
+*/

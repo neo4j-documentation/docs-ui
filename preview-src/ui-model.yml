@@ -129,6 +129,9 @@ page:
     - content: Tiled Template
       url: tiles.html
       urlType: internal
+    - content: Labs Template
+      url: labs.html
+      urlType: internal
 
 asciidoc:
   attributes:
