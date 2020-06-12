@@ -26,6 +26,8 @@ Lorem pertinacia `expetenda` et nec, [.underline]#wisi# illud [.line-through]#so
 Eum an doctus <<liber-recusabo,maiestatis efficiantur>>.
 Eu mea inani iriure.
 
+Open the <<NEO4J_HOME>> folder and install <<APOC>>.
+
 [source,json]
 ----
 {
@@ -39,6 +41,8 @@ Eu mea inani iriure.
   }
 }
 ----
+
+Do something else with <<NEO4J_HOME>>.
 
 .Example paragraph syntax
 [source,asciidoc]
@@ -258,3 +262,15 @@ ____
 == Fin
 
 That's all, folks!
+
+
+
+
+[discrete.glossary]
+== Glossary
+
+[glossary]
+[[NEO4J_HOME]]$NEO4J_HOME:: The directory in which you have installed Neo4j.  This will contain a `bin/` folder which holds the `neo4j` executable, plus conf, data and plugins.
++
+For more information, see the link:/ops-manual[Operations Manual^]
+[[APOC]]APOC:: xref:apoc[APOC] is a library of procedures and functions that make your life as a Neo4j user easier.

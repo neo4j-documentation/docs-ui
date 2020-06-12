@@ -7,15 +7,13 @@
 {{> header}}
 
 
-
+{{#if page.attributes.herotitle }}
  <section class="hero">
-
   <div class="row">
     <div class="columns medium-12">
         {{#with page.attributes.herotitle}}
         <h1>{{{this}}}</h1>
         {{/with}}
-
 
         {{#with page.attributes.herosubtitle}}
         <p>{{ this }}</p>
@@ -23,7 +21,7 @@
     </div>
   </div>
 </section>
-
+{{/if}}
 
     <main class="article">
       <div class="content">

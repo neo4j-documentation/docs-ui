@@ -56,6 +56,17 @@ body.docs .toc-menu li a:before
   background-color: var(--colour-blue-300);
 }
 
+body.docs .tooltip {
+    border-bottom-color: var(--colour-docs);
+}
+
+body.docs .tooltip--top:after {
+    border-bottom-color: var(--colour-docs);
+}
+body.docs .tooltip.tooltip--bottom:after {
+    border-top-color: var(--colour-docs);
+}
+
 
 /*
 body.labs {
@@ -111,6 +122,17 @@ body.labs .toc-menu li a:before
   background-color: var(--colour-blue-300);
 }
 
+body.labs .tooltip {
+    border-bottom-color: var(--colour-labs);
+}
+
+body.labs .tooltip--top:after {
+    border-bottom-color: var(--colour-labs);
+}
+body.labs .tooltip.tooltip--bottom:after {
+    border-top-color: var(--colour-labs);
+}
+
 
 /* body.developer {
     --nav-bullet-color: var(--colour-grey-500);
@@ -133,3 +155,4 @@ body.developer .toc-menu li a:before
 .developer .navbar-brand #developer {
     fill: var(--colour-grey-400);
 }
+
