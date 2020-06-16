@@ -740,3 +740,20 @@
   background: var(--mark-background);
   padding: .25rem;
 }
+
+.doc img, .doc object {
+  max-width: 100%;
+}
+
+.doc .button {
+  display: inline-block;
+  background: var(--colour-grey-600);
+  color: var(--colour-white);
+  padding: .5rem 2rem;
+  border-radius: .25rem;
+  margin-bottom: 2rem;
+}
+.doc .button:hover {
+  background: var(--colour-grey-500);
+  color: var(--colour-white);
+}

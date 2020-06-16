@@ -1,12 +1,13 @@
 = Tiles
 :page-layout: tiles
-:page-theme: docs
+:page-theme: developer
 :!toc:
 
 
 Welcome to the Neo4j Docs.
 Voluptate minim eu irure sit ullamco ipsum consequat proident.
 
+link:/developer/get-started/graph-database/[Learn More: What is a Graph Database?^, role="button feature-box_button"]
 
 == Neo4j Database
 

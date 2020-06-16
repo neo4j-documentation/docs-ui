@@ -13,6 +13,8 @@ A project typically either graduates to being maintained as a formal Neo4j proje
 These Labs are supported via the online community.
 They are actively developed and maintained, but we don't provide any SLAs or guarantees around backwards compatibility and deprecation.
 
+link:/developer/get-started/graph-database/[Learn More: What is a Graph Database?^, role="button feature-box_button"]4
+
 [.secondary]
 
 == Current Projects

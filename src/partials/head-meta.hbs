@@ -1,1 +1,16 @@
     {{!-- Add additional meta tags here --}}
+    {{#with page.attributes.posttype}}
+    <meta class="swiftype" name="post-type" data-type="string" content="{{{this}}}">
+    {{/with}}
+    {{#with page.attributes.environment}}
+    <meta class="swiftype" name="environment" data-type="string" content="{{{this}}}">
+    {{/with}}
+    {{#with page.attributes.programminglanguage}}
+    <meta class="swiftype" name="programming-language" data-type="string" content="{{{this}}}">
+    {{/with}}
+    {{#with page.attributes.neo4jversion}}
+    <meta class="swiftype" name="neo4j-version" data-type="string" content="{{{this}}}">
+    {{/with}}
+    {{#with page.attributes.product}}
+    <meta class="swiftype" name="product" data-type="string" content="{{{this}}}">
+    {{/with}}

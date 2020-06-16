@@ -68,7 +68,7 @@ module.exports = (src, dest, preview) => () => {
           if (file.relative.endsWith('.bundle.js')) {
             const mtimePromises = []
             const bundlePath = file.path
-            browserify(file.relative, { basedir: src, detectGlobals: false })
+            browserify(file.relative, { basedir: src, detectGlobals: true })
               .plugin('browser-pack-flat/plugin')
               .on('file', (bundledPath) => {
                 if (bundledPath !== bundlePath) mtimePromises.push(fs.stat(bundledPath).then(({ mtime }) => mtime))

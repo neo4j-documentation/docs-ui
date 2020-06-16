@@ -50,6 +50,15 @@ body.docs .navbar-burger span {
     background: var(--colour-grey-600);
 }
 
+body.docs  .doc .button {
+    background: var(--colour-blue-600);
+    color: var(--colour-white);
+}
+body.docs .doc .button:hover {
+    background: var(--colour-blue-500);
+    color: var(--colour-white);
+}
+
 body.docs .nav-item .nav-item:before,
 body.docs .toc-menu li a:before
 {
@@ -116,6 +125,15 @@ body.labs .navbar-burger span {
     background: var(--colour-grey-600);
 }
 
+body.labs  .doc .button {
+    background: var(--colour-purple-500);
+    color: var(--colour-white);
+}
+body.labs .doc .button:hover {
+    background: var(--colour-purple-400);
+    color: var(--colour-white);
+}
+
 body.labs .nav-item .nav-item:before,
 body.labs .toc-menu li a:before
 {
@@ -137,6 +155,9 @@ body.labs .tooltip.tooltip--bottom:after {
 /* body.developer {
     --nav-bullet-color: var(--colour-grey-500);
 } */
+body.developer .navbar {
+    border-top-color: var(--colour-green-600);
+}
 
 body.developer .nav-item .nav-item:before,
 body.developer .toc-menu li a:before
@@ -156,3 +177,11 @@ body.developer .toc-menu li a:before
     fill: var(--colour-grey-400);
 }
 
+body.developer  .doc .button {
+    background: var(--colour-green-600);
+    color: var(--colour-white);
+}
+body.developer .doc .button:hover {
+    background: var(--colour-green-500);
+    color: var(--colour-white);
+}

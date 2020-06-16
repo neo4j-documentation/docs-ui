@@ -1,0 +1,6 @@
+.gram {
+    width: 100%;
+    height: 600px;
+    background: var(--colour-grey-100);
+    border-radius: .5rem;
+}

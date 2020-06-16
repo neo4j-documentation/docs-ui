@@ -14,11 +14,13 @@
     "last 2 versions"
   ],
   "devDependencies": {
+    "@gram-data/gram-d3": "^0.1.2",
     "asciidoctor.js": "1.5.9",
     "autoprefixer": "~9.7",
     "browser-pack-flat": "~3.4",
     "browserify": "~16.5",
     "cssnano": "~4.1",
+    "d3-force": "^2.0.1",
     "eslint": "~6.8",
     "eslint-config-standard": "~14.1",
     "eslint-plugin-import": "~2.20",

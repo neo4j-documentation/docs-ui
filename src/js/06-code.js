@@ -1,4 +1,5 @@
 document.addEventListener('DOMContentLoaded', function () {
+  var ignore = ['gram']
 
   var cleanCode = function (code) {
     var div = document.createElement('div')
@@ -34,6 +35,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
     var code = block.innerHTML
     var language = block.hasAttribute('class') && block.getAttribute('class').match(/language-([a-z0-9-])+/)[0].replace('language-', '')
+
+    if ( ignore.indexOf(language) > -1 ) return;
 
     var languageDiv = document.createElement('div')
     languageDiv.className = 'code-language'
