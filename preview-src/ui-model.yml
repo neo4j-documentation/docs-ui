@@ -132,6 +132,9 @@ page:
     - content: Labs Template
       url: labs.html
       urlType: internal
+    - content: Developer Template
+      url: developer.html
+      urlType: internal
 
 asciidoc:
   attributes:

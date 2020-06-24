@@ -274,9 +274,9 @@ spacing: {
 
   /* footer */
   --footer-line-height: var(--doc-line-height);
-  --footer-background: var(--color-smoke-90);
-  --footer-font-color: var(--color-gray-70);
-  --footer-link-font-color: var(--color-jet-80);
+  --footer-background: var(--colour-grey-900);
+  --footer-font-color: var(--colour-grey-600);
+  --footer-link-font-color: var(--colour-grey-500);
 
   /* dimensions and positioning */
   --navbar-height: calc(68 / var(--rem-base) * 1rem);

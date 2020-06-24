@@ -2,13 +2,19 @@ body.tiles {
     background: var(--colour-grey-100);
 }
 
-body.landing .secondary {
+body.landing .primary, body.landing .secondary {
     background: var(--colour-grey-100);
     padding: 2em 0;
     position: relative;
 }
 
-body.landing .secondary:before {
+
+
+body.landing .primary, body.landing .primary {
+    background: var(--colour-white);
+}
+
+body.landing .primary:before, body.landing .secondary:before {
     background: var(--colour-grey-100);
     position: relative;
     left: -50%;

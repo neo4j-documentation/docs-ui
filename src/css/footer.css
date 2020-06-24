@@ -3,7 +3,10 @@ footer.footer {
   color: var(--footer-font-color);
   font-size: calc(15 / var(--rem-base) * 1rem);
   line-height: var(--footer-line-height);
-  padding: 1.5rem;
+  padding: 2rem 0;
+
+  display: flex;
+  flex-direction: row;
 }
 
 .footer p {
@@ -12,4 +15,16 @@ footer.footer {
 
 .footer a {
   color: var(--footer-link-font-color);
+}
+
+
+footer .logo-footer {
+  margin-bottom: 25px;
+  height: 40px;
+  background: url(../img/neo4j-logo-white.svg) no-repeat;
+}
+
+.footer .column {
+  width: 33%;
+  padding: 1.5rem;
 }

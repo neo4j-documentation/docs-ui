@@ -18,6 +18,7 @@ body {
   z-index: var(--z-index-navbar);
   border-top: 4px solid var(--navbar-top-border);
   border-bottom: 1px solid var(--navbar-bottom-border);
+  z-index: 5000;
 }
 
 .navbar a {
@@ -159,9 +160,21 @@ body {
 .navbar-item.has-dropdown .navbar-link {
   padding-right: 2.5em;
 }
+@media screen and (min-width: 1024px) {
+  .navbar-dropdown {
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  }
 
-.navbar-dropdown {
-  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  .navbar-mobile {
+    display: none;
+    font-weight: 400;
+  }
+}
+@media screen and (max-width: 1023px) {
+  .navbar-item .navbar-link {
+    font-weight: bold;
+    padding-left: 0;
+  }
 }
 
 .navbar-dropdown .navbar-item {
@@ -204,8 +217,17 @@ body {
   .navbar-menu.is-active {
     display: block;
     box-shadow: 0 8px 16px rgba(10, 10, 10, 0.1);
-    max-height: var(--nav-height);
+
     overflow-y: auto;
+
+    position: fixed;
+    top: 3.5rem;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    max-height: none;
+    z-index: 500;
+    background: var(--colour-grey-100);
   }
 
   .navbar-menu a.navbar-item:hover,

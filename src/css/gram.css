@@ -4,3 +4,8 @@
     background: var(--colour-grey-100);
     border-radius: .5rem;
 }
+
+.gram svg {
+    height: 100%;
+    width: 100%;
+}

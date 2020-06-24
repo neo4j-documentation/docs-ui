@@ -43,6 +43,7 @@
     "highlight.js": "~9.18",
     "js-yaml": "~3.13",
     "merge-stream": "~2.0",
+    "node-fetch": "^2.6.0",
     "postcss-calc": "~7.0",
     "postcss-custom-properties": "~9.1",
     "postcss-import": "~12.0",

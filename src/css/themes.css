@@ -13,7 +13,8 @@ body.docs {
     --nav-bullet-color: var(--colour-blue-300);
 }
 */
-body.docs .navbar {
+body.docs .navbar,
+body.docs .search .search-container .search-form {
     background: var(--colour-white);
     border-top-color: var(--colour-docs);
 }
@@ -88,7 +89,8 @@ body.labs {
     --nav-bullet-color: var(--colour-purple-300);
 }
 */
-body.labs .navbar {
+body.labs .navbar,
+body.labs .search .search-container .search-form {
     background: var(--colour-white);
     border-top-color: var(--colour-labs);
 }
@@ -155,7 +157,8 @@ body.labs .tooltip.tooltip--bottom:after {
 /* body.developer {
     --nav-bullet-color: var(--colour-grey-500);
 } */
-body.developer .navbar {
+body.developer .navbar,
+body.developer .search .search-container .search-form {
     border-top-color: var(--colour-green-600);
 }
 
