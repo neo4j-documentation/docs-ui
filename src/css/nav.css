@@ -34,6 +34,7 @@
   position: relative;
   top: var(--toolbar-height);
   height: var(--nav-height);
+  font-weight: var(--navbar-font-weight);
 }
 
 @media screen and (min-width: 769px) {
@@ -126,6 +127,7 @@ html.is-clipped--nav {
 
 .nav-menu a {
   color: inherit;
+  font-weight: var(--nav-font-weight);
 }
 
 .nav-list {
@@ -190,7 +192,7 @@ html.is-clipped--nav {
 
 .is-current-page > .nav-link,
 .is-current-page > .nav-text {
-  font-weight: var(--body-font-weight-bold);
+  font-weight: var(--nav_active-font-weight);
 }
 
 .nav-item .nav-item:before,

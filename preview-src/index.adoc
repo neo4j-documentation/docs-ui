@@ -11,6 +11,23 @@ Author Name
 :page-programminglanguage: java
 :page-neo4jversion: 3.5
 :page-product: browser
+:level: Beginner
+
+.Goals
+[abstract]
+This guide shows the different ways you can import data from a relational database to Neo4j.
+Completing this guide will give you the tools to choose how to import your relational data and transform it to the graph.
+
+.Prerequisites
+[abstract]
+You should be familiar with link:/developer/get-started/graph-database[graph database] concepts and the link:/developer/get-started/graph-database#property-graph[property graph model].
+It is also helpful to know the differences between link:/developer/graph-db-vs-rdbms/[relational and graph concepts] and their link:/developer/relational-to-graph-modeling/[data models].
+
+[role=expertise {level}]
+{level}
+
+
+
 
 image:multirepo-ssg.svg[Multirepo SSG,200,float=right]
 Platonem complectitur mediocritatem ea eos.
@@ -245,6 +262,8 @@ Eos suscipit scaevola at.
 [NOTE]
 ====
 You've been down _this_ road before.
+
+ $ npm i -g @antora/cli @antora/site-generator-default
 ====
 
 Cum dicat putant ne.
@@ -255,16 +274,22 @@ Eos suscipit scaevola at.
 [WARNING]
 ====
 Watch out!
+
+ $ npm i -g @antora/cli @antora/site-generator-default
 ====
 
 [CAUTION]
 ====
 [#inline]#I wouldn't try that if I were you.#
+
+ $ npm i -g @antora/cli @antora/site-generator-default
 ====
 
 [IMPORTANT]
 ====
 Don't forget this step!
+
+ $ npm i -g @antora/cli @antora/site-generator-default
 ====
 
 .Key Points to Remember
@@ -308,6 +333,38 @@ ____
 == Fin
 
 That's all, folks!
+
+== Second Level
+Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+Mauris eget leo nunc, nec tempus mi? Curabitur id nisl mi, ut vulputate urna.
+Quisque porta facilisis tortor, vitae bibendum velit fringilla vitae! Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+
+=== Third Level
+Mauris eget leo nunc, nec tempus mi? Curabitur id nisl mi, ut vulputate urna.
+Quisque porta facilisis tortor, vitae bibendum velit fringilla vitae!
+
+
+==== Neovis.js
+
+This library was designed to combine JavaScript visualization and Neo4j in a seamless integration.
+Connection to Neo4j is simple and straightforward, and because it is built with Neo4j’s property graph model in mind, the data format Neovis expects aligns with the database.
+Customizing and coloring styles based on labels, properties, nodes, and relationships is defined in a single configuration object.
+Neovis.js can be used without writing Cypher and with minimal JavaScript for integrating into your project.
+
+====
+[TIP]
+icon:flask[size=2x] The Neovis library is one of our Neo4j Labs projects.
+To learn more about Neo4j Labs, visit our https://neo4j.com/labs/[Labs page^].
+====
+
+To maximize functionality and data analysis capabilities through visualization, you can also combine this library with the graph algorithms library in Neo4j to style the visualization to align with results of algorithms such as page rank, centrality, communities, and more.
+Below, we see a graph visualization of Game Of Thrones character interactions rendered by neovis.js, and enhanced using Neo4j graph algorithms by applying link:/docs/graph-algorithms/current/algorithms/page-rank/[pagerank^] and link:/docs/graph-algorithms/current/algorithms/community/[community detection^] algorithms to the styling of the visualization.
+
+An advantage of enhancing graph visualization with these algorithms is that we can visually interpret the results of these algorithms.
+
+===== Neovis.js Resources
+* Blog post: https://medium.com/neo4j/graph-visualization-with-neo4j-using-neovis-js-a2ecaaa7c379[Neovis.js^]
+* Download neovis.js: https://www.npmjs.com/package/neovis.js[npm package^]
 
 
 

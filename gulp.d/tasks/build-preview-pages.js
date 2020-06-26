@@ -65,8 +65,9 @@ module.exports = (src, previewSrc, previewDest, sink = () => map()) => (done) =>
         )
         .pipe(vfs.dest(previewDest))
         .on('error', (e) => done)
-        .pipe(sink())
-    )
+      ).then(() => sink())
+
+
 
 function loadSampleUiModel (src) {
   return fs.readFile(ospath.join(src, 'ui-model.yml'), 'utf8').then((contents) => yaml.safeLoad(contents))

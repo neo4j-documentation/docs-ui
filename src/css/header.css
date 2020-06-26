@@ -23,6 +23,7 @@ body {
 
 .navbar a {
   text-decoration: none;
+  font-weight: var(--navbar-font-weight);
 }
 
 .navbar-brand .navbar-item:first-child,

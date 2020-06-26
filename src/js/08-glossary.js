@@ -64,7 +64,7 @@
 
     Array.from( glossary.querySelectorAll('a[id]') )
         .forEach(function(element) {
-            var mentions = document.querySelectorAll('a[href="#'+ element.getAttribute('id') +'"]')
+            var mentions = document.querySelectorAll('a[href="#'+ element.getAttribute('id') +'"]:first-child')
             var dt = element.parentElement
             var term = dt.innerText
 

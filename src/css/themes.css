@@ -77,6 +77,12 @@ body.docs .tooltip.tooltip--bottom:after {
     border-top-color: var(--colour-docs);
 }
 
+body.docs #preamble .abstract .title,
+body.docs #preamble .abstract blockquote
+{
+    border-left-color: var(--colour-docs);
+    color: var(--colour-blue-800);
+}
 
 /*
 body.labs {
@@ -153,6 +159,13 @@ body.labs .tooltip.tooltip--bottom:after {
     border-top-color: var(--colour-labs);
 }
 
+body.labs #preamble .abstract .title,
+body.labs #preamble .abstract blockquote
+{
+    border-left-color: var(--colour-labs);
+    color: var(--colour-purple-800);
+}
+
 
 /* body.developer {
     --nav-bullet-color: var(--colour-grey-500);
@@ -187,4 +200,10 @@ body.developer  .doc .button {
 body.developer .doc .button:hover {
     background: var(--colour-green-500);
     color: var(--colour-white);
+}
+
+body.developer #preamble .abstract .title,
+body.developer #preamble .abstract blockquote
+{
+    border-left-color: var(--colour-green-600);
 }

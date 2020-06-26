@@ -17,6 +17,9 @@ footer.footer {
   color: var(--footer-link-font-color);
 }
 
+.footer a:hover {
+  color: var(--footer-link_hover-font-color);
+}
 
 footer .logo-footer {
   margin-bottom: 25px;

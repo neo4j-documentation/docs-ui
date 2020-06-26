@@ -6,6 +6,11 @@
   margin: var(--doc-margin);
   max-width: var(--doc-max-width);
   padding: 0 1rem 4rem;
+
+}
+
+body {
+  font-weight: var(--body-font-weight);
 }
 
 @media screen and (min-width: 1024px) {
@@ -19,7 +24,7 @@
 }
 
 .doc a {
-  font-weight: bold;
+  font-weight: 600;
 }
 
 .doc h1,
@@ -32,7 +37,19 @@
   font-weight: var(--heading-font-weight);
   hyphens: none;
   line-height: 1.3;
-  margin: 1rem 0 0;
+  margin: 2rem 0 1rem;
+}
+
+.doc h4 {
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.doc h5 {
+  font-weight: 600;
+  font-size: 1rem;
+  margin-bottom: .5rem;
+  color: var(--colour-grey-600);
 }
 
 .doc > h1.page:first-child {
@@ -178,7 +195,7 @@
 .doc .verseblock,
 .doc .quoteblock,
 .doc .partintro {
-  margin: 2rem 0 0;
+  margin: 0 0 1.5rem;
 }
 
 .doc table.tableblock {
@@ -231,7 +248,7 @@
 }
 
 .doc .admonitionblock {
-  margin: 1.4rem 0 0;
+  margin: 0 0 1.5rem;
   border-left: 4px solid var(--doc-font-color);
   border-radius: .25rem;
 }
@@ -278,10 +295,22 @@
 }
 
 
+
 .doc .admonitionblock.warning {
   background-color: var(--colour-red-200);
   color: var(--colour-red-900);
   border-left-color: var(--colour-red-600);
+}
+
+.doc .admonitionblock.warning pre {
+  background-color: var(--colour-red-100);
+  color: var(--colour-red-700);
+}
+.doc .admonitionblock.warning a {
+  color: var(--colour-red-600);
+}
+.doc .admonitionblock.warning a {
+  color: var(--colour-red-500);
 }
 
 .doc .admonitionblock.caution {
@@ -289,10 +318,35 @@
   color: var(--colour-orange-900);
   border-left-color: var(--colour-orange-600);
 }
+
+.doc .admonitionblock.caution a {
+  color: var(--colour-orange-500);
+}
+.doc .admonitionblock.caution a:hover {
+  color: var(--colour-orange-400);
+}
+
+.doc .admonitionblock.caution pre {
+  background-color: var(--colour-orange-100);
+  color: var(--colour-orange-700);
+}
+
 .doc .admonitionblock.tip {
   background-color: var(--colour-blue-200);
   color: var(--colour-blue-900);
   border-left-color: var(--colour-blue-600);
+}
+
+.doc .admonitionblock.tip a {
+  color: var(--colour-blue-600);
+}
+.doc .admonitionblock.tip a:hover {
+  color: var(--colour-blue-500);
+}
+
+.doc .admonitionblock.tip pre {
+  background-color: var(--colour-blue-100);
+  color: var(--colour-blue-700);
 }
 
 .doc .admonitionblock.note {
@@ -301,10 +355,28 @@
   border-left-color: var(--colour-grey-600);
 }
 
+.doc .admonitionblock.note a {
+  color: var(--colour-grey-600);
+}
+.doc .admonitionblock.note a:hover {
+  color: var(--colour-grey-500);
+}
+
+.doc .admonitionblock.tip pre {
+  background-color: var(--colour-blue-100);
+  color: var(--colour-blue-700);
+}
+
 .doc .admonitionblock.important {
   background-color: var(--colour-purple-200);
   color: var(--colour-purple-900);
   border-left-color: var(--colour-purple-600);
+}
+.doc .admonitionblock.important a {
+  color: var(--colour-purple-600);
+}
+.doc .admonitionblock.important a:hover {
+  color: var(--colour-purple-500);
 }
 
 /* .doc .admonitionblock.caution .icon {
@@ -358,6 +430,11 @@
   max-width: 100%;
 }
 
+#preamble .abstract .title {
+  margin-bottom: 0;
+  font-weight: 600;
+}
+
 #preamble .abstract blockquote {
   background: var(--abstract-background);
   border-left: 5px solid var(--abstract-border-color);
@@ -366,7 +443,15 @@
   padding: 0.75em 1em;
 }
 
-.doc .quoteblock {
+#preamble .abstract .title {
+  background: var(--abstract-background);
+  border-left: 5px solid var(--abstract-border-color);
+  color: var(--abstract-font-color);
+  font-size: calc(16 / var(--rem-base) * 1rem);
+  padding: 0.2em 1em;
+}
+
+.doc .quoteblock blockquote {
   background: var(--quote-background);
   border-left: 5px solid var(--quote-border-color);
   color: var(--quote-font-color);
@@ -379,9 +464,9 @@
   margin-top: 0.75rem;
 }
 
-.doc .quoteblock blockquote {
+/* .doc .quoteblock blockquote {
   margin-top: 1rem;
-}
+} */
 
 .doc .quoteblock .paragraph {
   font-style: italic;
@@ -625,12 +710,12 @@
 }
 
 .doc b.button::before {
-  content: "[";
+  /* content: "["; */
   padding-right: 0.25em;
 }
 
 .doc b.button::after {
-  content: "]";
+  /* content: "]"; */
   padding-left: 0.25em;
 }
 
@@ -756,4 +841,24 @@
 .doc .button:hover {
   background: var(--colour-grey-500);
   color: var(--colour-white);
+}
+
+.doc .paragraph.expertise p {
+  display: inline-block;
+  padding: .2rem .8rem;
+  border-radius: .25rem;
+  background: var(--colour-blue-200);
+  color: var(--colour-blue-700);
+  font-weight: 600;
+  font-size: 0.7rem;
+}
+
+.doc .paragraph.expertise.Intermediate p {
+  background: var(--colour-orange-200);
+  color: var(--colour-orange-700);
+}
+
+.doc .paragraph.expertise.Advanced p {
+  background: var(--colour-green-200);
+  color: var(--colour-green-700);
 }
