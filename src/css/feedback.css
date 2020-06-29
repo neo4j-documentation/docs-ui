@@ -145,7 +145,7 @@
 @media all and (max-width: 1024px) {
     .feedback {
         position: relative;
-        margin: 1em auto;
+        margin: 1em 0;
         border-radius: .25rem;
         max-width: var(--doc-max-width);
         min-width: 0;
@@ -153,5 +153,24 @@
         width: auto;
         box-shadow: none;
         margin-bottom: 2rem;
+    }
+
+    .feedback.absolute {
+        top: auto !important;
+        bottom: auto !important;
+    }
+}
+@media all and (min-width: 712px) {
+    /* .feedback {
+        margin: 1em auto 0;
+    } */
+}
+@media all and (min-width: 1025px) {
+    /* .feedback {
+        margin: 1em auto 0;
+    } */
+    .feedback.absolute {
+        position: absolute;
+        margin: 0;
     }
 }

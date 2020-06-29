@@ -95,5 +95,22 @@
     })
   }
 
+  window.addEventListener('scroll', function(event) {
+    var position = window.scrollY
+    var windowHeight = window.innerHeight
+    var footerOffset = document.getElementsByTagName('footer')[0].offsetTop
+
+    if ( position + windowHeight > footerOffset ) {
+      feedback.classList.add('absolute')
+      feedback.style.top = (footerOffset - feedback.clientHeight) + 'px'
+      feedback.style.bottom = 'auto'
+    }
+    else {
+      feedback.classList.remove('absolute')
+      feedback.style.top = 'auto'
+      feedback.style.bottom = '0px'
+    }
+  })
+
   reset()
 })()

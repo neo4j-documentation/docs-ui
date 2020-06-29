@@ -59,11 +59,7 @@ document.addEventListener('DOMContentLoaded', function () {
       runButton.addEventListener('click', function (e) {
         e.preventDefault()
 
-        runButton.addEventListener("click", function (e) {
-          e.preventDefault()
-
-          window.location.href = 'neo4j-desktop://graphapps/neo4j-browser?cmd=edit&arg=' + encodeURIComponent(cleanCode(code))
-        })
+        window.location.href = 'neo4j-desktop://graphapps/neo4j-browser?cmd=edit&arg=' + encodeURIComponent(cleanCode(code))
       })
 
       children.push(runButton)

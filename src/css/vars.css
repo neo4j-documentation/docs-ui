@@ -215,7 +215,7 @@ spacing: {
   --toc-font-color: var(--colour-grey-600);
   --toc-heading-font-color: var(--colour-grey-700);
   --toc-border-color: var(--colour-grey-300);
-  --toc-line-height: 1.2;
+  --toc-line-height: 1.4;
   --toc-bullet-color: var(--colour-grey-400);
 
   /* admonitions */

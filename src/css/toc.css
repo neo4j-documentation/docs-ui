@@ -13,7 +13,7 @@
   color: var(--toc-heading-font-color);
   font-size: calc(16 / var(--rem-base) * 1rem);
   font-weight: var(--body-font-weight-bold);
-  line-height: 1.3;
+  line-height: 1.5;
   margin: 0 -0.5px;
   padding-bottom: 0.25rem;
 }

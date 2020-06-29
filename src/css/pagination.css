@@ -3,7 +3,7 @@ nav.pagination {
   border-top: 1px solid var(--toolbar-border-color);
   line-height: 1;
   margin: 2rem -1rem -1rem;
-  padding: 0.75rem 1rem 0;
+  padding: 0.75rem 1rem 2rem;
 }
 
 nav.pagination span {
@@ -60,4 +60,10 @@ nav.pagination .prev a::before {
 
 nav.pagination .next a::after {
   content: "\203a";
+}
+
+@media all and (max-width: 1024px) {
+  nav.pagination {
+    margin: 2rem 0 0;
+  }
 }
