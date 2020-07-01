@@ -1,7 +1,6 @@
 ;(function() {
     'use strict'
 
-
     var activeClass = 'search--active'
 
     var searchIcon = document.getElementById('search_open')
@@ -377,12 +376,5 @@
     submitIcon.addEventListener('click', function() {
         submitForm()
     })
-
-    // addSummary(result)
-    // addFilters(result)
-    // addResults(result)
-    // addPagination(result)
-
-    // openSearch()
 
 })()

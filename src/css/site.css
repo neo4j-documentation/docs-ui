@@ -24,3 +24,5 @@
 @import "themes.css";
 @import "developer.css";
 @import "search.css";
+
+@import "../../node_modules/font-awesome/css/font-awesome.css";

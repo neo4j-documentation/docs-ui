@@ -84,6 +84,10 @@ body.docs #preamble .abstract blockquote
     color: var(--colour-blue-800);
 }
 
+body.docs .tableblock .icon i {
+    color: var(--colour-blue-600);
+}
+
 /*
 body.labs {
     --navbar-background: var(--colour-white);
@@ -166,6 +170,10 @@ body.labs #preamble .abstract blockquote
     color: var(--colour-purple-800);
 }
 
+body.labs .tableblock .icon i {
+    color: var(--colour-purple-600);
+}
+
 
 /* body.developer {
     --nav-bullet-color: var(--colour-grey-500);
@@ -206,4 +214,7 @@ body.developer #preamble .abstract .title,
 body.developer #preamble .abstract blockquote
 {
     border-left-color: var(--colour-green-600);
+}
+body.developer .tableblock .icon i {
+    color: var(--colour-green-600);
 }
