@@ -21,6 +21,10 @@
     stroke:  var(--colour-red-800);
 }
 
+.feedback.negative a {
+    color: var(--colour-red-700);
+}
+
 .feedback.positive {
     background: var(--colour-green-100);
     color: var(--colour-green-800);
@@ -173,4 +177,8 @@
         position: absolute;
         margin: 0;
     }
+}
+.feedback a {
+    display: inline-block;
+    margin-left: 4px;
 }
