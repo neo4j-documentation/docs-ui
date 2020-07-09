@@ -139,6 +139,9 @@ body {
 .doc a:hover {
   color: var(--link_hover-font-color);
 }
+.doc a:visited {
+  color: var(--link_visited-font-color);
+}
 
 .doc a.unresolved {
   color: var(--link_unresolved-font-color);

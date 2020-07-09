@@ -251,7 +251,8 @@ body {
     flex-grow: 1;
   }
 
-  .navbar-burger {
+  .navbar-burger,
+  .navbar-search {
     display: none;
   }
 
@@ -418,6 +419,25 @@ body {
 .project-links li {
   list-style-type: none;
   display: inline;
+  /* border-right: 1px solid var(--colour-grey-400); */
+  /* padding: 0 .1rem; */
+}
+.project-links li:after {
+  color: var(--colour-grey-400);
+  content: "|"
+}
+
+.project-links li:last-child:after{
+  content: ""
+}
+
+.project-links li:first-child {
+  padding-left: 0;
+}
+
+.project-links li:last-child {
+  padding-right: 0;
+  border-right: 0px none;
 }
 
 .project-link {

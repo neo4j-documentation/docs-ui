@@ -243,8 +243,9 @@ spacing: {
   --heading-font-weight: normal;
   --alt-heading-font-weight: var(--body-font-weight-bold);
   --section-divider-color: var(--colour-grey-300);
-  --link-font-color: #1565c0;
-  --link_hover-font-color: #104d92;
+  --link-font-color: var(--colour-blue-600);
+  --link_hover-font-color: var(--colour-purple-600);
+  --link_visited-font-color: var(--colour-blue-800);
   --link_unresolved-font-color: var(--important-color);
   --abstract-background:  var(--colour-white); /* var(--panel-background); */
   --abstract-font-color: var(--color-jet-20);
@@ -281,7 +282,7 @@ spacing: {
   --footer-background: var(--colour-grey-800);
   --footer-font-color: var(--colour-grey-500);
   --footer-link-font-color: var(--colour-grey-400);
-  --footer-link_hover-font-color: var(--colour-grey-400);
+  --footer-link_hover-font-color: var(--colour-grey-300);
 
   /* dimensions and positioning */
   --navbar-height: calc(68 / var(--rem-base) * 1rem);
