@@ -35,6 +35,16 @@ body {
 .navbar-brand svg {
   margin-right: 1rem;
 }
+.navbar-brand svg:last-child {
+  margin-right: 0;
+}
+
+@media screen and (max-width: 420px) {
+  .navbar-brand .navbar-item {
+    padding-left: .5rem;
+    padding-right: 0;
+  }
+}
 
 .navbar-logo {
   height: 2.5rem;

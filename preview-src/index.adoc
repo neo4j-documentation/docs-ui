@@ -5,7 +5,7 @@ Author Name
 :!example-caption:
 :!table-caption:
 :page-pagination:
-:page-theme: docs
+:page-theme: developer
 :page-posttype: knowledgebase
 :page-environment: macos
 :page-programminglanguage: java

@@ -120,6 +120,21 @@ body {
   visibility: visible;
 }
 
+@media screen and (max-width: 620px) {
+  .doc > h1.page:first-child {
+    font-size: 1.4rem;
+    font-weight: 600;
+  }
+
+  .doc h2:not(.discrete) {
+    font-size: 1.2rem;
+  }
+
+  .doc h3 {
+    font-size: 1.1rem;
+  }
+}
+
 .doc p {
   margin: 0;
 }
