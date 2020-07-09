@@ -17,6 +17,7 @@ footer.footer {
 .footer .column {
   width: 50%;
   flex-grow: 1;
+  min-width: 180px;
 
   padding: 1.5rem;
 }

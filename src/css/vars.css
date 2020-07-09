@@ -282,7 +282,7 @@ spacing: {
   --footer-background: var(--colour-grey-800);
   --footer-font-color: var(--colour-grey-500);
   --footer-link-font-color: var(--colour-grey-400);
-  --footer-link_hover-font-color: var(--colour-grey-300);
+  --footer-link_hover-font-color: var(--colour-grey-200);
 
   /* dimensions and positioning */
   --navbar-height: calc(68 / var(--rem-base) * 1rem);
