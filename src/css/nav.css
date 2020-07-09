@@ -135,9 +135,9 @@ html.is-clipped--nav {
   padding: 0;
 }
 
-.nav-menu > .nav-list {
+/* .nav-menu > .nav-list {
   margin-bottom: 0.5rem;
-}
+} */
 
 .nav-item {
   list-style: none;
