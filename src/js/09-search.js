@@ -4,6 +4,7 @@
     var activeClass = 'search--active'
 
     var searchIcon = document.getElementById('search_open')
+    var searchIconMobile = document.getElementById('search_open_mobile')
 
 
     var container = document.getElementsByClassName('search')[0]
@@ -51,6 +52,12 @@
     })
 
     searchIcon.addEventListener('click', function(e) {
+        e.preventDefault()
+
+        openSearch()
+    })
+
+    searchIconMobile.addEventListener('click', function(e) {
         e.preventDefault()
 
         openSearch()

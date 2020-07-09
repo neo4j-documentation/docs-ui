@@ -33,6 +33,7 @@ It is also helpful to know the differences between link:/developer/graph-db-vs-r
 </div>
 ++++
 
+video::_D19h5s73Co[youtube]
 
 == Icons - Font Awesome 4.7 icon:frown-o[]
 

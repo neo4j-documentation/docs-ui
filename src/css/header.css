@@ -78,7 +78,7 @@ body {
   height: var(--navbar-height);
 }
 
-.navbar-burger {
+.navbar-burger, .navbar-search {
   color: var(--navbar-font-color);
   background: none;
   border: none;
@@ -88,8 +88,13 @@ body {
   position: relative;
   /* width: var(--navbar-height); */
   width: 2.75rem;
-  margin-left: auto;
   padding: 0;
+}
+.navbar-search {
+  margin-left: auto;
+}
+.navbar-brand .navbar-search svg {
+  margin-right: 0
 }
 
 .navbar-burger span {
