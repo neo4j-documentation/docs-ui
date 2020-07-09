@@ -1,6 +1,5 @@
-{{#if asciidoc.attributes.cdn}}
-    <link rel="stylesheet" href="{{{asciidoc.attributes.cdn}}}/css/site.css">
-
+{{#if page.attributes.cdn}}
+    <link rel="stylesheet" href="{{{page.attributes.cdn}}}/css/site.css">
 {{else}}
     <link rel="stylesheet" href="{{{uiRootPath}}}/css/site.css">
 {{/if}}

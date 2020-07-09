@@ -4,14 +4,18 @@
 <script src="https://d3js.org/d3-timer.v1.min.js"></script>
 <script src="https://d3js.org/d3-force.v2.min.js"></script> --}}
 
-{{#if asciidoc.attributes.cdn}}
-<script src="{{{asciidoc.attributes.cdn}}}/js/site.js"></script>
-{{!-- <script async src="{{{asciidoc.attributes.cdn}}}/js/vendor/gram.js"></script> --}}
-<script async src="{{{asciidoc.attributes.cdn}}}/js/vendor/highlight.js"></script>
-<script async src="{{{asciidoc.attributes.cdn}}}/js/vendor/search.js"></script>
+{{#if page.attributes.cdn}}
+<script src="{{{page.attributes.cdn}}}/js/site.js"></script>
+{{!-- <script async src="{{{page.attributes.cdn}}}/js/vendor/gram.js"></script> --}}
+<script async src="{{{page.attributes.cdn}}}/js/vendor/highlight.js"></script>
+<script async src="{{{page.attributes.cdn}}}/js/vendor/search.js"></script>
 {{else}}
 <script src="{{{uiRootPath}}}/js/site.js"></script>
 {{!-- <script async src="{{{uiRootPath}}}/js/vendor/gram.js"></script> --}}
 <script async src="{{{uiRootPath}}}/js/vendor/highlight.js"></script>
 <script async src="{{{uiRootPath}}}/js/vendor/search.js"></script>
 {{/if}}
+
+gg
+{{json site}}
+gg
