@@ -62,6 +62,7 @@
 }
 
 .toc-menu li a:before {
+  top: .25rem;
   left: 0;
   margin-left: -.4em;
   /* background: var(--link-font-color); */
