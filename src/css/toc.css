@@ -118,3 +118,7 @@
 .toc .toc-menu .is-hidden-toc {
   display: none !important;
 }
+
+.toc-sidebar .toc-menu {
+  margin-bottom: 4rem;
+}
