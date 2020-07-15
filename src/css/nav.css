@@ -128,6 +128,12 @@ html.is-clipped--nav {
 .nav-menu a {
   color: inherit;
   font-weight: var(--nav-font-weight);
+  display: block;
+  padding: .2rem 0;
+}
+
+.nav-menu .nav-item .nav-item a {
+  padding: .1rem 0;
 }
 
 .nav-list {
@@ -141,8 +147,9 @@ html.is-clipped--nav {
 
 .nav-item {
   list-style: none;
-  margin-top: 0.5em;
+  /* margin-top: 0.5em; */
   position: relative;
+
 }
 
 /* adds some breathing room below a nested list */
@@ -201,7 +208,7 @@ html.is-clipped--nav {
   position: absolute;
   left: 0;
   top: 0;
-  margin-top: 0.25rem;
+  margin-top: 0.35rem;
   display: block;
   height: 0.5rem;
   width: 0.5rem;

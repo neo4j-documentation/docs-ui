@@ -1,7 +1,6 @@
 .doc {
   color: var(--doc-font-color);
   font-size: var(--doc-font-size);
-  hyphens: auto;
   line-height: var(--doc-line-height);
   margin: var(--doc-margin);
   max-width: var(--doc-max-width);
@@ -216,7 +215,8 @@ body {
 .doc .sidebarblock,
 .doc .verseblock,
 .doc .quoteblock,
-.doc .partintro {
+.doc .partintro,
+.doc .colist {
   margin: 0 0 1.5rem;
 }
 
@@ -892,10 +892,62 @@ body {
   height: 0;
   margin-bottom: 2rem;
 }
-.responsive-embed iframe, .doc .videoblock iframe {
+.responsive-embed iframe, .doc .videoblock iframe, .doc .videoblock video {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
 }
+
+.doc .more:after {
+  display: inline-block;
+  content: "→";
+  margin-left: 4px;
+  margin-top: -4px;
+  transition: all .3s;
+}
+
+.doc .more:hover:after {
+  margin-left: 12px;
+}
+
+
+.doc table.tableblock {
+  border-radius: 0.25em;
+  overflow: hidden;
+}
+.doc table.tableblock tr:last-child td {
+  border-bottom: 3px solid var(--colour-grey-300);
+}
+
+.doc .tableblock thead {
+  background: var(--colour-grey-100);
+  border-bottom: var(--colour-grey-200);
+}
+
+/* .doc .listingblock.query {
+  margin-bottom: 0;
+}
+.doc .listingblock.query code {
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+.doc .tableblock.result {
+  margin-top: 0;
+  color: var(--code-font-color);
+  background: var(--code-background);
+  border-bottom-left-radius: 0.25em;
+  border-bottom-right-radius: 0.25em;
+  overflow: hidden;
+  padding: .75rem;
+}
+
+.doc .tableblock.result th {
+  background: var(--colour-grey-200);
+}
+
+.doc .tableblock.result {
+
+}
+ */

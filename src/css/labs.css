@@ -23,20 +23,51 @@ body.labs-home .hero p {
 }
 
 body.labs-home .sect1 {
-    padding: 4em 0;
+    padding: 2em 0;
 }
 
-body.labs-home h2,
-body.labs-home .sectionbody {
+body.labs-home .doc h2 {
+    text-align: center;
+    border-bottom: 0px none;
+}
+
+body.labs-home .doc h2,
+body.labs-home .doc .sectionbody {
+    padding-left: 1rem;
+    padding-right: 1rem;
     max-width: 820px;
     margin: auto;
 }
-body.labs-home .paragraph {
+body.labs-home .doc .paragraph {
+    margin-top: 0;
     font-size:1rem;
 }
 
-body.labs-home h2 {
+body.labs-home .doc h2 {
     margin-bottom: 2rem;
+}
+
+body.labs-home .feedback {
+    display: none;
+}
+
+body.labs-home .secondary .sect2 {
+    padding-left: 6rem;
+    background: transparent url(https://cdn.neo4jlabs.com/images/beaker.png) no-repeat top left;
+    background-size: 5rem auto;
+}
+body.labs-home .secondary .sect2:last-child {
+    padding-left: 0;
+    background: transparent;
+}
+
+body.labs-home .secondary .sect2 h3 {
+    font-size: 1rem;
+    margin-bottom: .2rem;
+}
+body.labs-home .secondary .sect2 .paragraph, body.labs-home .secondary .sect2 .ulist {
+    margin-top: 0;
+    font-size: .9rem;
 }
 
 
