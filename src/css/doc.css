@@ -827,6 +827,7 @@ body {
   border-radius: .175rem;
   font-weight: var(--body-font-weight-bold);
   line-height: 1;
+  text-align: center;
 
 }
 .doc .code-header .btn:focus {
@@ -841,6 +842,10 @@ body {
 
 .doc .code-header .btn.btn-primary:active {
   background: var(--code-button-active-background);
+}
+
+.doc .code-header .btn-copy.btn-success {
+  background: var(--colour-green-600);
 }
 
 .doc mark {

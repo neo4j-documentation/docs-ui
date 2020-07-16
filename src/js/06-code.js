@@ -1,5 +1,6 @@
 document.addEventListener('DOMContentLoaded', function () {
   var ignore = ['gram']
+  var copiedText =  'Copied!'
 
   var cleanCode = function (code) {
     var div = document.createElement('div')
@@ -49,6 +50,19 @@ document.addEventListener('DOMContentLoaded', function () {
     copyButton.addEventListener('click', function (e) {
       e.preventDefault()
       copyToClipboard(code)
+
+      var button = e.target
+      var text = button.innerHTML
+      var width = button.clientWidth
+
+      button.style.width = width + 'px'
+      button.classList.add('btn-success')
+      button.innerHTML = copiedText
+
+      setTimeout(function() {
+        button.innerHTML = text
+        button.classList.remove('btn-success')
+      }, 1000)
     })
 
     var children = [languageDiv, copyButton]

@@ -125,7 +125,7 @@ html.is-clipped--nav {
   font-size: 0.75rem;
 }
 
-.nav-menu a {
+.nav-menu a, .nav-text {
   color: inherit;
   font-weight: var(--nav-font-weight);
   display: block;
@@ -193,9 +193,9 @@ html.is-clipped--nav {
   padding-left: .8rem;
 }
 
-.nav-item.is-active > .nav-item-toggle {
+/* .nav-item.is-active > .nav-item-toggle {
   transform: rotate(90deg);
-}
+} */
 
 .is-current-page > .nav-link,
 .is-current-page > .nav-text {

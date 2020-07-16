@@ -87,24 +87,24 @@
         {{/if}}
         {{!-- {{site.title}} --}}
       </a>
-       <button class="navbar-search" data-target="topbar-nav" id="search_open_mobile">
-        <svg width="23px" height="23px" viewBox="0 0 23 23"
-              version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-              class="fill-current float-right" id="search" role="button" title="Search Website">
-              <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round"
-                stroke-linejoin="round">
-                <g transform="translate(-2.000000, -2.000000)" stroke="#a0aec0" stroke-width="1.5">
-                  {{!-- <g id="Group"> --}}
-                  {{!-- <g id="search"> --}}
-                  <circle id="Oval"
-                    transform="translate(11.389364, 11.388564) rotate(-23.025000) translate(-11.389364, -11.388564) "
-                    cx="11.3893642" cy="11.3885639" r="8.056"></circle>
-                  <path d="M17.0853333,17.0844444 L23.3333333,23.3333333" id="Shape"></path>
-                  {{!-- </g> --}}
-                  {{!-- </g> --}}
-                </g>
-              </g>
-            </svg>
+      <button class="navbar-search" data-target="topbar-nav" id="search_open_mobile">
+        <svg width="23px" height="23px" viewBox="0 0 23 23" version="1.1" xmlns="http://www.w3.org/2000/svg"
+          xmlns:xlink="http://www.w3.org/1999/xlink" class="fill-current float-right" id="search" role="button"
+          title="Search Website">
+          <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round"
+            stroke-linejoin="round">
+            <g transform="translate(-2.000000, -2.000000)" stroke="#a0aec0" stroke-width="1.5">
+              {{!-- <g id="Group"> --}}
+              {{!-- <g id="search"> --}}
+              <circle id="Oval"
+                transform="translate(11.389364, 11.388564) rotate(-23.025000) translate(-11.389364, -11.388564) "
+                cx="11.3893642" cy="11.3885639" r="8.056"></circle>
+              <path d="M17.0853333,17.0844444 L23.3333333,23.3333333" id="Shape"></path>
+              {{!-- </g> --}}
+              {{!-- </g> --}}
+            </g>
+          </g>
+        </svg>
       </button>
       <button class="navbar-burger" data-target="topbar-nav">
         <span></span>
@@ -160,7 +160,8 @@
             <div class="navbar-item project">
               <a class="project-name" href="https://neo4j.com/docs/operations-manual/current/">Operations Manual</a>
               <ul class="project-links">
-                <li><a href="https://neo4j.com/docs/migration-guide/current/" class="project-link">Migration Guide</a></li>
+                <li><a href="https://neo4j.com/docs/migration-guide/current/" class="project-link">Migration Guide</a>
+                </li>
                 <li><a href="https://neo4j.com/docs/status-codes/current/" class="project-link">Status Codes</a></li>
               </ul>
             </div>
@@ -168,7 +169,8 @@
             <div class="navbar-item project">
               <a class="project-name" href="https://neo4j.com/docs/cypher-manual/current/">Cypher Manual</a>
               <ul class="project-links">
-                <li><a href="https://neo4j.com/docs/cypher-refcard/current/" class="project-link">Cypher Refcard</a></li>
+                <li><a href="https://neo4j.com/docs/cypher-refcard/current/" class="project-link">Cypher Refcard</a>
+                </li>
               </ul>
             </div>
 
@@ -184,8 +186,10 @@
               <a class="project-name" href="https://neo4j.com/docs/">Docs Library</a>
               <ul class="project-links">
                 <li><a href="https://neo4j.com/docs/bloom-user-guide/current/" class="project-link">Bloom </a></li>
-                <li><a href="https://neo4j.com/docs/graph-data-science/current/" class="project-link">Graph Data Science</a></li>
-                <li><a href="https://neo4j.com/docs/java-reference/current/javadocs/" class="project-link">Java Reference</a></li>
+                <li><a href="https://neo4j.com/docs/graph-data-science/current/" class="project-link">Graph Data
+                    Science</a></li>
+                <li><a href="https://neo4j.com/docs/java-reference/current/javadocs/" class="project-link">Java
+                    Reference</a></li>
               </ul>
             </div>
           </div>
@@ -195,58 +199,68 @@
           <div class="navbar-dropdown">
             <div class="navbar-item project">
               <a class="project-name" href="/labs/apoc">APOC</a>
-              <p class="project-description">A library of procedures and functions for interacting with Neo4j</p>
+              {{!-- <p class="project-description">A library of procedures and functions for interacting with Neo4j</p> --}}
 
               <ul class="project-links">
-                <li><a href="/labs/apoc/4.0" class="project-link">Documentation</a></li>
-                <li><a href="/labs/apoc/" class="project-link">Developer Guide</a></li>
+                <li><a href="https://neo4j.com/docs/labs/apoc/4.1" class="project-link">User Guide</a></li>
+                <li><a href="/developer/neo4j-apoc/" class="project-link">Developer Guide</a></li>
+              </ul>
+            </div>
+
+            <div class="navbar-item project">
+              <a class="project-name" href="/developer/graph-algorithms/">Graph Algorithms Library</a>
+            </div>
+
+            <div class="navbar-item project">
+              <a class="project-name" href="/labs/grandstack-graphql/">GraphQL &amp; GRANDStack</a>
+              {{!-- <p class="project-description">A library of procedures and functions for interacting with Neo4j</p> --}}
+
+              <ul class="project-links">
+                <li><a href="/labs/grandstack-graphql/" class="project-link">Details</a></li>
+                <li><a href="https://www.grandstack.io" class="project-link">Developer Guide</a></li>
               </ul>
             </div>
             <div class="navbar-item project">
-              <a class="project-name" href="/labs/streams">Neo4j Streams</a>
-              <p class="project-description">Integration for Neo4j &amp; Kafka</p>
-
-              <ul class="project-links">
-                <li><a href="/labs/streams/4.0" class="project-link">Documentation</a></li>
-                <li><a href="/labs/streams" class="project-link">Developer Guide</a></li>
-              </ul>
+              <a class="project-name" href="/labs/halin">Halin</a>
             </div>
             <div class="navbar-item project">
-              <a class="project-name" href="/labs/neosemantics">neosemantics</a>
-              <p class="project-description">An RDF Toolkit for Neo4j</p>
-
-              <ul class="project-links">
-                <li><a href="/labs/neosemantics/4.0" class="project-link">Documentation</a></li>
-                <li><a href="/labs/neosemantics" class="project-link">Developer Guide</a></li>
-              </ul>
+              <a class="project-name" href="/labs/kafka">Kafka Integration</a>
+              {{!-- <p class="project-description">A library of procedures and functions for interacting with Neo4j</p> --}}
+            </div>
+            <div class="navbar-item project">
+              <a class="project-name" href="/labs/etl-tool">ETL Tool</a>
+              {{!-- <p class="project-description">A library of procedures and functions for interacting with Neo4j</p> --}}
+            </div>
+            <div class="navbar-item project">
+              <a class="project-name" href="/labs/neosemantics-rdf">Neosemantics</a>
+              {{!-- <p class="project-description">A library of procedures and functions for interacting with Neo4j</p> --}}
             </div>
           </div>
-        </div>
-        <div class="navbar-item">
-          <a class="navbar-link" href="/search" id="search_open"><svg width="23px" height="23px" viewBox="0 0 23 23"
-              version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-              class="fill-current float-right" id="search" role="button" title="Search Website">
-              <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round"
-                stroke-linejoin="round">
-                <g transform="translate(-2.000000, -2.000000)" stroke="#a0aec0" stroke-width="1.5">
-                  {{!-- <g id="Group"> --}}
-                  {{!-- <g id="search"> --}}
-                  <circle id="Oval"
-                    transform="translate(11.389364, 11.388564) rotate(-23.025000) translate(-11.389364, -11.388564) "
-                    cx="11.3893642" cy="11.3885639" r="8.056"></circle>
-                  <path d="M17.0853333,17.0844444 L23.3333333,23.3333333" id="Shape"></path>
-                  {{!-- </g> --}}
-                  {{!-- </g> --}}
+          <div class="navbar-item">
+            <a class="navbar-link" href="/search" id="search_open"><svg width="23px" height="23px" viewBox="0 0 23 23"
+                version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                class="fill-current float-right" id="search" role="button" title="Search Website">
+                <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round"
+                  stroke-linejoin="round">
+                  <g transform="translate(-2.000000, -2.000000)" stroke="#a0aec0" stroke-width="1.5">
+                    {{!-- <g id="Group"> --}}
+                    {{!-- <g id="search"> --}}
+                    <circle id="Oval"
+                      transform="translate(11.389364, 11.388564) rotate(-23.025000) translate(-11.389364, -11.388564) "
+                      cx="11.3893642" cy="11.3885639" r="8.056"></circle>
+                    <path d="M17.0853333,17.0844444 L23.3333333,23.3333333" id="Shape"></path>
+                    {{!-- </g> --}}
+                    {{!-- </g> --}}
+                  </g>
                 </g>
-              </g>
-            </svg><span class="navbar-mobile">Search</span></a>
-        </div>
-        {{!-- <div class="navbar-item">
+              </svg><span class="navbar-mobile">Search</span></a>
+          </div>
+          {{!-- <div class="navbar-item">
           <span class="control">
             <a class="button is-primary" href="#">Download</a>
           </span>
         </div> --}}
+        </div>
       </div>
-    </div>
   </nav>
 </header>

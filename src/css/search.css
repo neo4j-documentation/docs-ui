@@ -127,7 +127,6 @@
 
 .search .search-container .search-filters {
     border-top: 1px solid var(--navbar-bottom-border);
-    padding: 1rem;
 }
 
 .search .search-container .search-filters.hidden {
@@ -142,22 +141,37 @@
 }
 
 .search .search-filters-header {
+    background: var(--colour-blue-100);
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     cursor: pointer;
+    padding: 1rem;
 }
 
+.search .search-filters .search-filters-content {
+    padding: 1rem;
+}
 
-.search .search-filters .search-filters-content,
-.search .search-filters .search-filters-icon {
+.search .search-filters .search-filters-content {
     display: none;
 }
 
-.search .search-filters--active .search-filters-content,
-.search .search-filters--active .search-filters-icon {
+.search .search-filters--active .search-filters-content {
     display: block;
 }
+
+.search .search-filters .search-filters-header .search-filters-icon {
+    display: flex;
+    align-items: center;
+}
+
+.search .search-filters #hide_filters {display: none;}
+.search .search-filters #show_filters {display: block;}
+
+.search .search-filters--active #hide_filters {display: block;}
+.search .search-filters--active #show_filters {display: none;}
+
 
 .search .search-filter-checkbox {
     margin-bottom: .2rem;
@@ -169,7 +183,7 @@
 
 .search .search-filter-checkbox label span {
     float: right;
-    color: var(--colour-grey-400);
+    color: var(--colour-grey-500);
 }
 
 
