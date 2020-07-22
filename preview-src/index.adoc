@@ -12,6 +12,8 @@ Author Name
 :page-neo4jversion: 3.5
 :page-product: browser
 :level: Beginner
+:description: Foo
+:keywords: one, two, three, four
 
 .Goals
 [abstract]
