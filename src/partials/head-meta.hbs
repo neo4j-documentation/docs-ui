@@ -1,4 +1,11 @@
     {{!-- Add additional meta tags here --}}
+    {{#with page.description}}
+    <meta name="description" content="{{this}}">
+    {{/with}}
+    {{#with page.keywords}}
+    <meta name="keywords" content="{{this}}">
+    {{/with}}
+
     <meta class="swiftype" name="post-type" data-type="string" content="{{{ or page.attributes.locale 'en_US' }}}">
     <meta class="swiftype" name="post-type" data-type="string" content="{{{ or page.attributes.postttype 'article' }}}">
     <meta class="swiftype" name="neo4j-site" data-type="enum" content="Developer Site">
@@ -27,12 +34,13 @@
     {{#with (or page.attributes.ogtitle page.title) }}
     <meta property="og:title" content="{{{this}}} - Neo4j Graph Database Platform" />
     {{/with}}
-    {{#with page.description}}
-    <meta property="og:description" content="{{this}}">
-    {{/with}}
+
 
     {{#with (or page.attributes.ogimage 'https://dist.neo4j.com/wp-content/uploads/20190822071359/neo4j-database-meta-image.png' )}}
     <meta property="og:image" content="{{{this}}}" />
+    {{/with}}
+    {{#with page.description}}
+    <meta property="og:description" content="{{this}}">
     {{/with}}
 
     <meta property="og:url" content="https://neo4j.com{{ page.url }}">
