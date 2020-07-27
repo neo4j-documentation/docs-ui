@@ -29,6 +29,55 @@ It is also helpful to know the differences between link:/developer/graph-db-vs-r
 {level}
 
 
+[.tabs]
+.Preview
+[source,cypher]
+CALL n10s.rdf.preview.fetch(
+  'https://raw.githubusercontent.com/neo4j-labs/neosemantics/3.5/docs/rdf/nsmntx.ttl',
+  'Turtle'
+)
+
+.Stream
+[source,cypher]
+CALL n10s.rdf.stream.fetch(
+  'https://raw.githubusercontent.com/neo4j-labs/neosemantics/3.5/docs/rdf/nsmntx.ttl',
+  'Turtle'
+)
+
+Then some content...
+
+These should change with the top ones
+
+
+[.tabs]
+.Preview
+[source,cypher]
+----
+// PREVIEW
+----
+
+.Stream
+[source,cypher]
+----
+// STREAM
+----
+
+But these should be independent:
+
+[.tabs]
+[source,cypher]
+CALL n10s.rdf.preview.fetch(
+  'https://raw.githubusercontent.com/neo4j-labs/neosemantics/3.5/docs/rdf/nsmntx.ttl',
+  'Turtle'
+)
+
+[source,js]
+CALL n10s.rdf.stream.fetch(
+  'https://raw.githubusercontent.com/neo4j-labs/neosemantics/3.5/docs/rdf/nsmntx.ttl',
+  'Turtle'
+)
+
+
 ++++
 <div class="responsive-embed">
 <iframe width="680" height="425" src="https://www.youtube.com/embed/_D19h5s73Co?showinfo=0&controls=2&autohide=1" frameborder="0" allowfullscreen></iframe>

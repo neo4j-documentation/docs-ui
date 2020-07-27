@@ -812,9 +812,17 @@ body {
   display: flex;
 }
 
+.doc .code-header div {
+  padding: .6rem 0;
+  font-weight: var(--body-font-weight-bold);
+}
+
+.doc .code-header .code-title {
+  color: var(--colour-grey-500);
+  padding-right: .5em;
+}
 .doc .code-header .code-language {
   flex-grow: 1;
-  font-weight: var(--body-font-weight-bold);
   padding: .6rem 0;
 }
 
@@ -956,3 +964,92 @@ body {
 
 }
  */
+
+
+.doc .tabbed {
+
+  /* background: var(--colour-grey-100); */
+}
+
+:root {
+  --tabbed-border: 2px;
+}
+
+.doc .tabbed {
+  padding: 0;
+  /* background: var(--colour-grey-100); */
+  margin: 0 -1rem 1.5rem;
+  /* padding: 1rem; */
+  border-top-left-radius: .25rem;
+  border-top-right-radius: .25rem;
+  border: 1px solid var(--colour-grey-200);
+  border-top-width: var(--tabbed-border);
+}
+
+.doc .tabbed-tabs {
+  display: flex;
+  margin: 0;
+  padding: .5rem 1rem;
+  background: var(--colour-grey-200);
+ }
+
+.doc .tabbed-tabs .tabbed-tab {
+  display: flex;
+  flex-grow: 0;
+  list-style-type: none;
+  font-size: .7rem;
+  font-weight: 600;
+  padding: .4rem .6rem;
+  margin-right: .5rem;
+  background: var(--colour-grey-300);
+  border: 1px solid var(--colour-grey-300);
+  border-radius: .5rem;
+  cursor: pointer;
+}
+.doc .tabbed-tabs .tabbed-tab--active {
+  background: var(--colour-white);
+  border-color: var(--colour-grey-300);
+}
+
+.doc .tabbed-container {
+  padding: 1rem;
+}
+
+.doc .tabbed-target {
+  display: none;
+  margin-bottom: 0;
+}
+
+.doc .tabbed-target--active {
+  display: block;
+}
+
+/* .doc .tabbed-tabs li {
+  flex-grow: 0;
+  list-style-type: none;
+  font-size: .7rem;
+  font-weight: 600;
+  padding: .4rem .6rem;
+  margin-right: .5rem;
+  margin-bottom: calc(var(--tabbed-border) * -1);
+  /* background: var(--colour-white);
+  color: var(--colour-grey-600);
+  border: 1px solid var(--colour-grey-200);
+  border-top-left-radius: .25rem;
+  border-top-right-radius: .25rem;
+}
+/* .doc li.tabbed-tabs--active {
+  background: var(--colour-grey-100);
+  border-bottom-color: var(--colour-grey-100);
+
+}
+
+/* .doc .tabbed-container {
+  background: var(--colour-white);
+  /* border-top: var(--tabbed-border) solid var(--colour-grey-200);
+
+} */
+
+
+
+

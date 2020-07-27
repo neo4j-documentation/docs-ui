@@ -1,3 +1,4 @@
+// Code functions
 document.addEventListener('DOMContentLoaded', function () {
   var ignore = ['gram']
   var copiedText =  'Copied!'
@@ -46,6 +47,7 @@ document.addEventListener('DOMContentLoaded', function () {
       languageDiv.innerHTML = language
     }
 
+
     var copyButton = createElement('button', 'btn btn-copy', [document.createTextNode('Copy to Clipboard')])
     copyButton.addEventListener('click', function (e) {
       e.preventDefault()
@@ -67,7 +69,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
     var children = [languageDiv, copyButton]
 
-
     if (language === "cypher") {
       var runButton = createElement('button', 'btn btn-run btn-primary', [document.createTextNode('Run in Browser')])
       runButton.addEventListener('click', function (e) {
@@ -78,6 +79,18 @@ document.addEventListener('DOMContentLoaded', function () {
 
       children.push(runButton)
     }
+
+    var originalTitle = div.parentNode.querySelector('.title')
+    if ( originalTitle ) {
+      var titleDiv = document.createElement('div')
+      titleDiv.className = 'code-title'
+      titleDiv.innerHTML = originalTitle.innerHTML
+
+      originalTitle.style.display = 'none'
+
+      children.unshift(titleDiv)
+    }
+
 
     var header = createElement('div', 'code-header', children)
 
@@ -96,6 +109,100 @@ document.addEventListener('DOMContentLoaded', function () {
     return output
   }
 
-  Array.from(document.querySelectorAll('.highlight'))
-    .map(addCodeHeader)
+  // Apply Code
+  document.querySelectorAll('.highlight')
+    .forEach(addCodeHeader)
+
+
+  var targetActive = 'tabbed-target--active'
+  var tabActive = 'tabbed-tab--active'
+
+  var switchTab = function(e) {
+    var tab = e.target
+    var title = tab.innerHTML
+    // Switch Tabs
+    var targetTabs = document.querySelectorAll('.tabbed-target[data-title="'+ title +'"]')
+    targetTabs.forEach(function(target) {
+      target.parentElement.querySelectorAll('.'+ targetActive)
+        .forEach(function(el) {
+          el.classList.remove(targetActive)
+        })
+
+        target.classList.add(targetActive)
+
+        target.parentElement.parentElement.querySelectorAll('.'+ tabActive)
+          .forEach(function(el) { el.classList.remove(tabActive) })
+
+        target.parentElement.parentElement.querySelectorAll('.tabbed-tab[data-title="'+ title +'"]')
+          .forEach(function(el) { el.classList.add(tabActive) })
+      })
+
+      tab.scrollIntoView()
+  }
+
+  // Tabbed code
+  Array.from(document.querySelectorAll('.tabs'))
+    .forEach(function(tab) {
+      var originalTab = tab
+      var parent = tab.parentElement
+
+      // Build an array of elements
+      var elements = [tab]
+
+      // Loop through the next sibling until it doesn't contain a <code> tag
+      while (tab) {
+        var nextTab = tab.nextElementSibling
+
+        if ( nextTab && nextTab.querySelector('code') ) {
+          elements.push(nextTab)
+
+
+          tab = nextTab
+        }
+        else {
+          tab = false
+        }
+      }
+
+      // Don't do anything if there's only one tab
+      if ( elements.length <= 1 ) {
+        return;
+      }
+
+      var tabbedContainer = createElement('div', 'tabbed-container', [])
+      var tabbedParent = createElement('div', 'tabbed', [tabbedContainer])
+
+      parent.insertBefore(tabbedParent, originalTab)
+
+      // Build up tabs
+      var tabs = elements.map(function(element) {
+        var title = element.querySelector('.title')
+        var text = title ? title.innerHTML : element.querySelector('.code-language').innerHTML
+
+        var tabElement = createElement('li', 'tabbed-tab', [ document.createTextNode(text) ])
+        element.dataset.title = text
+        tabElement.dataset.title = text
+
+        tabElement.addEventListener('click', switchTab)
+
+        return tabElement
+      })
+
+      tabs[0].classList.add('tabbed-tab--active')
+
+      tabbedParent.insertBefore( createElement('ul', 'tabbed-tabs', tabs), tabbedContainer )
+
+      // Remove elements from parent and add to tab container
+      elements.forEach(function(element) {
+        parent.removeChild(element)
+        tabbedContainer.appendChild(element)
+
+        element.classList.add('tabbed-target')
+      })
+
+      elements[0].classList.add('tabbed-target--active')
+    })
+
+
+
 })
