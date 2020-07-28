@@ -5,12 +5,9 @@
     {{#with page.keywords}}
     <meta name="keywords" content="{{this}}">
     {{/with}}
-
-    <meta class="swiftype" name="post-type" data-type="string" content="{{{ or page.attributes.locale 'en_US' }}}">
-    <meta class="swiftype" name="post-type" data-type="string" content="{{{ or page.attributes.postttype 'article' }}}">
+    <meta class="swiftype" name="post-type" data-type="string" content="{{{ or page.attributes.postttype 'Developer Guide' }}}">
     <meta class="swiftype" name="neo4j-site" data-type="enum" content="Developer Site">
     <meta class="swiftype" name="main-search-priority" data-type="integer" content="3">
-
     {{#with page.attributes.environment}}
     <meta class="swiftype" name="environment" data-type="string" content="{{{this}}}">
     {{/with}}
@@ -23,25 +20,21 @@
     {{#with page.attributes.product}}
     <meta class="swiftype" name="product" data-type="string" content="{{{this}}}">
     {{/with}}
-
     <meta property="og:site_name" content="Neo4j Graph Database Platform" />
     <meta property="article:publisher" content="https://www.facebook.com/neo4j.graph.database" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:creator" content="@neo4j" />
     <meta name="twitter:site" content="@neo4j" />
-
     <meta property="og:type" content="{{{ or page.attributes.postttype 'article' }}}" />
     {{#with (or page.attributes.ogtitle page.title) }}
     <meta property="og:title" content="{{{this}}} - Neo4j Graph Database Platform" />
     {{/with}}
-
-
+    <meta property="og:locale" content="{{{ or page.attributes.locale 'en_US' }}}">
     {{#with (or page.attributes.ogimage 'https://dist.neo4j.com/wp-content/uploads/20190822071359/neo4j-database-meta-image.png' )}}
     <meta property="og:image" content="{{{this}}}" />
     {{/with}}
     {{#with page.description}}
     <meta property="og:description" content="{{this}}">
     {{/with}}
-
     <meta property="og:url" content="https://neo4j.com{{ page.url }}">
     <link rel="canonical" href="https://neo4j.com{{ page.url }}">
