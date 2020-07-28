@@ -5,15 +5,23 @@ Author Name
 :!example-caption:
 :!table-caption:
 :page-pagination:
+// tag::theme[]
 :page-theme: developer
+// end::theme[]
+
+// tag::swiftype[]
 :page-posttype: knowledgebase
 :page-environment: macos
 :page-programminglanguage: java
 :page-neo4jversion: 3.5
 :page-product: browser
-:level: Beginner
+// tag::swiftype[]
+
+
+// tag::meta[]
 :description: Foo
 :keywords: one, two, three, four
+// end::meta[]
 
 .Goals
 [abstract]
@@ -25,11 +33,16 @@ Completing this guide will give you the tools to choose how to import your relat
 You should be familiar with link:/developer/get-started/graph-database[graph database] concepts and the link:/developer/get-started/graph-database#property-graph[property graph model].
 It is also helpful to know the differences between link:/developer/graph-db-vs-rdbms/[relational and graph concepts] and their link:/developer/relational-to-graph-modeling/[data models].
 
+// tag::level[]
+:level: Beginner
 [role=expertise {level}]
 {level}
+// end::level[]
 
 
+// tag::tabs[]
 [.tabs]
+
 .Preview
 [source,cypher]
 CALL n10s.rdf.preview.fetch(
@@ -43,6 +56,8 @@ CALL n10s.rdf.stream.fetch(
   'https://raw.githubusercontent.com/neo4j-labs/neosemantics/3.5/docs/rdf/nsmntx.ttl',
   'Turtle'
 )
+
+// end::tabs[]
 
 Then some content...
 
@@ -65,11 +80,15 @@ These should change with the top ones
 But these should be independent:
 
 [.tabs]
+// tag::source[]
 [source,cypher]
+----
 CALL n10s.rdf.preview.fetch(
   'https://raw.githubusercontent.com/neo4j-labs/neosemantics/3.5/docs/rdf/nsmntx.ttl',
   'Turtle'
 )
+----
+// end::source[]
 
 [source,js]
 CALL n10s.rdf.stream.fetch(
@@ -186,7 +205,9 @@ Lorem pertinacia `expetenda` et nec, [.underline]#wisi# illud [.line-through]#so
 Eum an doctus <<liber-recusabo,maiestatis efficiantur>>.
 Eu mea inani iriure.
 
+// tag::glossary_term[]
 Open the <<NEO4J_HOME>> folder and install <<APOC>>.
+// end::glossary_term[]
 
 [source,json]
 ----
@@ -464,8 +485,7 @@ An advantage of enhancing graph visualization with these algorithms is that we c
 * Download neovis.js: https://www.npmjs.com/package/neovis.js[npm package^]
 
 
-
-
+// tag::glossary[]
 [discrete.glossary]
 == Glossary
 
@@ -474,3 +494,5 @@ An advantage of enhancing graph visualization with these algorithms is that we c
 +
 For more information, see the link:/ops-manual[Operations Manual^]
 [[APOC]]APOC:: xref:apoc[APOC] is a library of procedures and functions that make your life as a Neo4j user easier.
+
+// end::glossary[]

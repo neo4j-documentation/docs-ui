@@ -109,7 +109,7 @@ document.addEventListener('DOMContentLoaded', function () {
     return output
   }
 
-  // Apply Code
+  // Apply Code Headers
   document.querySelectorAll('.highlight')
     .forEach(addCodeHeader)
 
@@ -137,7 +137,17 @@ document.addEventListener('DOMContentLoaded', function () {
           .forEach(function(el) { el.classList.add(tabActive) })
       })
 
-      tab.scrollIntoView()
+      var offset = document.querySelector('.navbar').offsetHeight + document.querySelector('.toolbar').offsetHeight + 20
+
+      var bodyRect = document.body.getBoundingClientRect().top;
+      var elementRect = tab.getBoundingClientRect().top;
+      var elementPosition = elementRect - bodyRect;
+      var offsetPosition = elementPosition - offset;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+      });
   }
 
   // Tabbed code

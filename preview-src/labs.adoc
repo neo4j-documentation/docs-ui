@@ -1,7 +1,9 @@
 = Neo4j Labs
 :description: Incubating the next generation of graph developer tooling. GraphQL and GRANDstack, Algorithms, APOC, Kafka, ETL Tool, neovis.js, and more.
+// tag::layout[]
 :page-layout: labs
 :page-theme: labs
+// end::layout[]
 :page-herotitle: Neo4j Labs
 :page-herosubtitle: Incubating the Next Generation of Graph Developer Tooling
 :toc-levels: 1
