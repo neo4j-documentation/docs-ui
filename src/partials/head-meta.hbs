@@ -5,7 +5,7 @@
     {{#with page.keywords}}
     <meta name="keywords" content="{{this}}">
     {{/with}}
-    <meta class="swiftype" name="post-type" data-type="string" content="{{{ or page.attributes.postttype 'Developer Guide' }}}">
+    <meta class="swiftype" name="post-type" data-type="enum" content="{{{ or page.attributes.postttype 'Developer Guide' }}}">
     <meta class="swiftype" name="neo4j-site" data-type="enum" content="Developer Site">
     <meta class="swiftype" name="main-search-priority" data-type="integer" content="3">
     {{#with page.attributes.environment}}
@@ -38,3 +38,5 @@
     {{/with}}
     <meta property="og:url" content="https://neo4j.com{{ page.url }}">
     <link rel="canonical" href="https://neo4j.com{{ page.url }}">
+    <link rel="shortcut icon" href="https://neo4j.com/wp-content/themes/neo4jweb/favicon.ico" />
+

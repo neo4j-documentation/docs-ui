@@ -15,7 +15,7 @@ Author Name
 :page-programminglanguage: java
 :page-neo4jversion: 3.5
 :page-product: browser
-// tag::swiftype[]
+// end::swiftype[]
 
 
 // tag::meta[]
