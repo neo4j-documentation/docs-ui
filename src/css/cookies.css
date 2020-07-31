@@ -1,0 +1,47 @@
+#cookiebanner {
+    background: var(--colour-grey-100);
+    box-shadow: 0 -5px 5px 1px rgba(0,0,0,.08) !important;
+    padding: 1rem;
+    font-size: .8rem;
+    color: var(--colour-grey-700);
+}
+#cookiebanner .row {
+    max-width: 32.5rem;
+    margin: auto;
+}
+
+#cookiebanner .c-header {
+    font-size: .9rem;
+    font-weight: 600;
+    color: var(--colour-grey-800);
+}
+
+/* #cookiebanner .columns {
+    width: 50%;
+    float: left;
+} */
+
+#c-left a {
+    color: var(--colour-blue-600);
+    font-weight: bold;;
+}
+/* #c-right {
+    text-align: center;
+} */
+#c-right a {
+    display: inline-block;
+    padding: .25rem .75rem;
+    font-weight: 600;
+    border: 1px solid var(--colour-blue-700);
+    border-radius: .25rem;
+    margin-right: .5rem;
+}
+
+#NeoCybotCookiebotDialogBodyButtonAccept {
+    background: var(--colour-blue-700);
+    color: var(--colour-blue-100);
+}
+#NeoCybotCookiebotDialogBodyButtonDecline {
+    background: var(--white);
+    color: var(--colour-blue-700);
+}
