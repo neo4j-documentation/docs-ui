@@ -1,4 +1,4 @@
-= Hardware and Software Requirements
+= icon:graduation-cap[] Hardware and Software Requirements
 Author Name
 :idprefix:
 :idseparator: -
