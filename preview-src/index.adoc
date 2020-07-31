@@ -17,16 +17,14 @@ Author Name
 :page-product: browser
 // end::swiftype[]
 
-
 // tag::meta[]
-:description: Foo
+:description: This guide shows the different ways you can import data from a relational database to Neo4j. Completing this guide will give you the tools to choose how to import your relational data and transform it to the graph.
 :keywords: one, two, three, four
 // end::meta[]
 
 .Goals
 [abstract]
-This guide shows the different ways you can import data from a relational database to Neo4j.
-Completing this guide will give you the tools to choose how to import your relational data and transform it to the graph.
+{description}
 
 .Prerequisites
 [abstract]

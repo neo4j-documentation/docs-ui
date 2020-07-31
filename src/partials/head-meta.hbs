@@ -1,10 +1,4 @@
     {{!-- Add additional meta tags here --}}
-    {{#with page.description}}
-    <meta name="description" content="{{this}}">
-    {{/with}}
-    {{#with page.keywords}}
-    <meta name="keywords" content="{{this}}">
-    {{/with}}
     <meta class="swiftype" name="post-type" data-type="enum" content="{{{ or page.attributes.postttype 'Developer Guide' }}}">
     <meta class="swiftype" name="neo4j-site" data-type="enum" content="Developer Site">
     <meta class="swiftype" name="main-search-priority" data-type="integer" content="3">
