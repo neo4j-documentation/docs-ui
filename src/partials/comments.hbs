@@ -1,9 +1,17 @@
 {{#if (eq page.attributes.comments "")}}
-<div id="discourse-comments"></div>
+<div class="comments">
+  <div class="comments-header">
+    <h2>User Contributed Notes</h2>
+  </div>
+  <div id="discourse-comments" class="comments-container">
+  </div>
+</div>
 <script type="text/javascript">
-  DiscourseEmbed = { discourseUrl: 'https://community.neo4j.com/',
-                     discourseEmbedUrl: 'https://neo4j.com{{ page.url }}' };
-
+    {{#if page.attributes.topicid}}
+    DiscourseEmbed = { discourseUrl: 'https://community.neo4j.com/', topicId: {{{ page.attributes.topicid }}} };
+    {{else}}
+    DiscourseEmbed = { discourseUrl: 'https://community.neo4j.com/', discourseEmbedUrl: 'https://neo4j.com{{ page.url }}' };
+    {{/if}}
   (function() {
     var d = document.createElement('script'); d.type = 'text/javascript'; d.async = true;
     d.src = DiscourseEmbed.discourseUrl + 'javascripts/embed.js';

@@ -1,0 +1,110 @@
+
+.comments {
+    margin: 1.5rem -1rem;
+    border: 1px solid var(--colour-grey-200);
+    border-top-width: 2px;
+    /* background: var(--colour-grey-100); */
+    border-radius: .5rem;
+}
+
+.comments-header {
+    background: var(--colour-grey-200);
+    padding: 1rem;
+}
+
+.comments-header h2 {
+    color: var(--colour-grey-600);
+    font-size: .8rem;
+    font-weight: 600;
+    line-height: 1;
+    margin: 0;
+    padding: 0 !important;
+    border-bottom: 0px none !important;
+
+}
+
+.comments-container {
+    padding: 1rem;
+}
+
+@media all and (max-width: 720px) {
+    .comments {
+        display: none;
+    }
+}
+
+
+/** Add this to discourse: https://community.neo4j.com/admin/customize/themes/9/common/embedded_scss/edit
+
+$base-font-family: "Open Sans","Helvetica Neue",Helvetica,Roboto,Arial,sans-serif;
+
+html {
+    font-family: $base-font-family;
+    font-size: 12;
+    font-weight: 200;
+    font-size: 16px;
+    color: #2d3748;
+}
+
+header.discourse {
+    display: none;
+    border-bottom: 0px none;
+}
+header.discourse .replies {
+    font-size: .8rem;
+}
+
+footer .button {
+    font-size: .8rem;
+    padding: .5rem 1rem;
+    border-radius: .25rem;
+    font-weight: 600;
+}
+
+article.post {
+
+}
+article.post a {
+    font-weight: 600;
+    font-size: .9rem;
+}
+
+article.post p {
+    color: #4a5568;
+    font-size: .9rem;
+}
+
+.username {
+    color: #718096;
+    font-size: .9rem;
+}
+.username .title {
+    display: block;
+    font-size: .75rem;
+    color: #cbd5e0;
+}
+article.post {
+    border-bottom: 0px none;
+}
+article.post .post-date {
+    color: #a0aec0;
+}
+.username a.staff {
+    background: transparent;
+}
+
+.username a.staff:after {
+    display: inline-block;
+    margin-left: .5rem;
+    height: .5rem;
+    width: .5rem;
+    border-radius: 50%;
+    content: "";
+    background: #3182ce;
+}
+
+footer {
+    border-top: 1px solid #edf2f7;
+    padding-top: 1rem;
+}
+*/
