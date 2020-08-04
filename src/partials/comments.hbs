@@ -1,6 +1,5 @@
 {{#if (eq page.attributes.comments "")}}
 <div id="discourse-comments"></div>
-
 <script type="text/javascript">
   DiscourseEmbed = { discourseUrl: 'https://community.neo4j.com/',
                      discourseEmbedUrl: 'https://neo4j.com{{ page.url }}' };
@@ -11,5 +10,4 @@
     (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(d);
   })();
 </script>
-
 {{/if}}

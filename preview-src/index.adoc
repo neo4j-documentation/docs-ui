@@ -32,6 +32,33 @@ Author Name
 You should be familiar with link:/developer/get-started/graph-database[graph database] concepts and the link:/developer/get-started/graph-database#property-graph[property graph model].
 It is also helpful to know the differences between link:/developer/graph-db-vs-rdbms/[relational and graph concepts] and their link:/developer/relational-to-graph-modeling/[data models].
 
+
+
+[.procedures,%headers, cols="5,1,1"]
+|===
+| Qualified Name | Type | Release
+
+| **apoc.agg.first**
+
+`apoc.agg.first(value)`
+
+returns first value
+
+| function
+| full
+
+
+| link:#[apoc.import.csv icon:book[]]
+
+`apoc.import.csv(nodes, relationships, config)`
+
+imports nodes and relationships from the provided CSV files with given labels and types
+
+| procedure
+| core
+
+|===
+
 // tag::level[]
 :level: Beginner
 [role=expertise {level}]
