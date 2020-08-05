@@ -47,31 +47,28 @@ html {
 }
 
 header.discourse {
-    display: none;
     border-bottom: 0px none;
 }
 header.discourse .replies {
     font-size: .8rem;
+    padding: 0;
 }
 
-footer .button {
+.button {
     font-size: .8rem;
     padding: .5rem 1rem;
     border-radius: .25rem;
     font-weight: 600;
+    background: #3182ce;
+    color: #fff !important;
+}
+.button:hover {
+    background: #4299e1;
+    color: #fff;
 }
 
 article.post {
 
-}
-article.post a {
-    font-weight: 600;
-    font-size: .9rem;
-}
-
-article.post p {
-    color: #4a5568;
-    font-size: .9rem;
 }
 
 .username {
@@ -101,6 +98,16 @@ article.post .post-date {
     border-radius: 50%;
     content: "";
     background: #3182ce;
+}
+
+article.post a {
+    font-weight: 600;
+    font-size: .9rem;
+}
+
+article.post p {
+    font-size: .9rem;
+    color: #4a5568;
 }
 
 footer {

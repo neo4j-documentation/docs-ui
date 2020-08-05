@@ -1,0 +1,32 @@
+.label {
+    display: inline-block;
+    padding: .2rem .8rem;
+    border-radius: .25rem;
+    background: var(--colour-blue-200);
+    color: var(--colour-blue-700);
+    font-weight: 600;
+    font-size: 0.7rem;
+}
+
+.label--core,
+.label--apoc-core {
+    background: var(--colour-blue-200);
+    color: var(--colour-blue-700);
+}
+
+.label--full,
+.label--apoc-full {
+    background: var(--colour-green-200);
+    color: var(--colour-green-700);
+}
+
+.label--procedure {
+    background: var(--colour-indigo-200);
+    color: var(--colour-indigo-700);
+
+}
+
+.label--function {
+    background: var(--colour-purple-200);
+    color: var(--colour-purple-700);
+}

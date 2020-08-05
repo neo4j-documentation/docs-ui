@@ -24,6 +24,27 @@ Author Name
 :page-topicid: 22863
 // end:discourse[]
 
++++
+<div class="paragraph">
+<p>
+  <span class="label label--apoc-core">APOC Core</span>
+  <span class="label label--procedure">Procedure</span>
+</p>
+<p>
+  <span class="label label--apoc-full">APOC Full</span>
+  <span class="label label--procedure">Procedure</span>
+</p>
+<p>
+  <span class="label label--apoc-core">APOC Core</span>
+  <span class="label label--function">Function</span>
+</p>
+<p>
+  <span class="label label--apoc-full">APOC Full</span>
+  <span class="label label--function">Function</span>
+</p>
+</div>
++++
+
 .Goals
 [abstract]
 {description}
@@ -33,9 +54,7 @@ Author Name
 You should be familiar with link:/developer/get-started/graph-database[graph database] concepts and the link:/developer/get-started/graph-database#property-graph[property graph model].
 It is also helpful to know the differences between link:/developer/graph-db-vs-rdbms/[relational and graph concepts] and their link:/developer/relational-to-graph-modeling/[data models].
 
-
-
-[.procedures,%headers, cols="5,1,1"]
+[.procedures,%headers, cols="5,2,1"]
 |===
 | Qualified Name | Type | Release
 
@@ -45,9 +64,14 @@ It is also helpful to know the differences between link:/developer/graph-db-vs-r
 
 returns first value
 
-| function
-| full
-
+|
++++
+<span class="label label--function">Function</span>
++++
+|
++++
+<span class="label label--full">Full</span>
++++
 
 | link:#[apoc.import.csv icon:book[]]
 
@@ -55,8 +79,14 @@ returns first value
 
 imports nodes and relationships from the provided CSV files with given labels and types
 
-| procedure
-| core
+|
++++
+<span class="label label--procedure">Procedure</span>
++++
+|
++++
+<span class="label label--core">Core</span>
++++
 
 |===
 

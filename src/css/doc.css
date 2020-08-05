@@ -939,6 +939,11 @@ body {
   border-bottom: var(--colour-grey-200);
 }
 
+.doc .emphasis,
+.doc .lead {
+  font-weight: 400;
+}
+
 /* .doc .listingblock.query {
   margin-bottom: 0;
 }
@@ -966,10 +971,9 @@ body {
  */
 
 
-.doc .tabbed {
-
-  /* background: var(--colour-grey-100); */
-}
+/* .doc .tabbed {
+  background: var(--colour-grey-100);
+} */
 
 :root {
   --tabbed-border: 2px;
