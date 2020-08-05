@@ -898,6 +898,46 @@ body {
   color: var(--colour-green-700);
 }
 
+.doc .paragraph.release p {
+  display: inline-block;
+  padding: .2rem .8rem;
+  border-radius: .25rem;
+  background: var(--colour-blue-200);
+  color: var(--colour-blue-700);
+  font-weight: 600;
+  font-size: 0.7rem;
+}
+
+.doc .paragraph.release.core p {
+  background: var(--colour-orange-200);
+  color: var(--colour-orange-700);
+}
+
+.doc .paragraph.release.full p {
+  background: var(--colour-green-200);
+  color: var(--colour-green-700);
+}
+
+.doc .paragraph.type p {
+  display: inline-block;
+  padding: .2rem .8rem;
+  border-radius: .25rem;
+  background: var(--colour-blue-200);
+  color: var(--colour-blue-700);
+  font-weight: 600;
+  font-size: 0.7rem;
+}
+
+.doc .paragraph.type.function p {
+  background: var(--colour-red-200);
+  color: var(--colour-red-700);
+}
+
+.doc .paragraph.type.procedure p {
+  background: var(--colour-blue-200);
+  color: var(--colour-blue-700);
+}
+
 .doc .responsive-embed, .doc .videoblock {
   position: relative;
   padding-bottom: 56.25%; /* 16:9 */
@@ -1049,7 +1089,3 @@ body {
   /* border-top: var(--tabbed-border) solid var(--colour-grey-200);
 
 } */
-
-
-
-
