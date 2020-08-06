@@ -5,7 +5,7 @@ body.labs-home .hero {
     padding: 8rem 0;
     text-align: center;
     color: var(--colour-white);
-    margin-bottom: 2rem;
+    /* margin-bottom: 2rem; */
 }
 
 body.labs-home .hero h1 {
@@ -23,7 +23,7 @@ body.labs-home .hero p {
 }
 
 body.labs-home .sect1 {
-    padding: 2em 0;
+    padding: 4em 0;
 }
 
 body.labs-home .doc h2 {
