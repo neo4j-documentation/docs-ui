@@ -1093,3 +1093,8 @@ body {
   /* border-top: var(--tabbed-border) solid var(--colour-grey-200);
 
 } */
+
+.page.unresolved {
+  background: var(--colour-red-800);
+  color: white !important;
+}

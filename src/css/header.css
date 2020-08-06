@@ -25,6 +25,9 @@ body {
   text-decoration: none;
   font-weight: var(--navbar-font-weight);
 }
+.navbar a.no-left-padding {
+  padding-left: 0;
+}
 
 .navbar-brand .navbar-item:first-child,
 .navbar-brand .navbar-item:first-child a {
@@ -325,7 +328,7 @@ body {
     border-bottom-color: var(--navbar-labs-border);
   }
 
-  .developer
+
 
   .navbar-menu {
     flex-grow: 1;

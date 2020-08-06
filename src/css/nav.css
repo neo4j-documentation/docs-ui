@@ -323,8 +323,20 @@ html.is-clipped--nav {
   font-weight: var(--body-font-weight-bold);
 }
 
-/*
-.nav-panel-explore .component .is-latest a::after {
-  content: " (latest)";
+.nav .label {
+  font-size: .8rem;
 }
-*/
+
+
+.navbar .navbar-item.try .navbar-link {
+  border-radius: .25rem;
+  padding: 0.5em 1.5em;
+  font-weight: 400;
+  text-align: center;
+}
+
+@media screen and (min-width: 1024px) {
+  .navbar .navbar-item.try {
+    padding-right: 0;
+  }
+}

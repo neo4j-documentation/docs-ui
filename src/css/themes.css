@@ -88,6 +88,11 @@ body.docs .tableblock .icon i {
     color: var(--colour-blue-600);
 }
 
+body.docs .navbar .navbar-item.try .navbar-link {
+    background: var(--colour-blue-500);
+    color: var(--colour-white);
+}
+
 /*
 body.labs {
     --navbar-background: var(--colour-white);
@@ -174,6 +179,11 @@ body.labs .tableblock .icon i {
     color: var(--colour-purple-600);
 }
 
+body.labs .navbar .navbar-item.try .navbar-link {
+    background: var(--colour-purple-400);
+    color: var(--colour-white);
+}
+
 
 /* body.developer {
     --nav-bullet-color: var(--colour-grey-500);
@@ -217,4 +227,9 @@ body.developer #preamble .abstract blockquote
 }
 body.developer .tableblock .icon i {
     color: var(--colour-green-600);
+}
+
+body.developer .navbar .navbar-item.try .navbar-link {
+    background: var(--colour-grey-700);
+    color: var(--colour-white);
 }

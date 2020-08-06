@@ -30,3 +30,8 @@
     background: var(--colour-purple-200);
     color: var(--colour-purple-700);
 }
+
+.label--current {
+    background: var(--colour-blue-600);
+    color: var(--colour-white);
+}

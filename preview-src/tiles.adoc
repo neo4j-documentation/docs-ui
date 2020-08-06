@@ -1,6 +1,6 @@
 = Tiles
 :page-layout: tiles
-:page-theme: developer
+:page-theme: docs
 :!toc:
 
 

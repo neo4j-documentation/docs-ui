@@ -103,7 +103,7 @@
   --colour-pink-900: #702459;
 
 
-  --colour-developer: var(--colour-grey-400);
+  --colour-developer: var(--colour-green-600);
   --colour-labs: var(--colour-purple-400);
   --colour-docs: var(--colour-blue-400);
 
@@ -185,6 +185,7 @@ spacing: {
   --navbar-bottom-border: var(--colour-grey-300);
 
   --navbar-dropdown-link: var(--colour-blue-600);
+  --navbar-dropdown_hover-link: var(--colour-blue-800);
 
   --navbar-developer-border: var(--colour-developer);
   --navbar-docs-border: var(--colour-docs);
@@ -299,8 +300,9 @@ spacing: {
   --toc-height: calc(100vh - var(--toc-top) - 2.5rem);
   --toc-width: calc(162 / var(--rem-base) * 1rem);
   --toc-width--widescreen: calc(216 / var(--rem-base) * 1rem);
+  --toolbar-wrapper-width: 69rem;
   --doc-max-width: calc(720 / var(--rem-base) * 1rem);
-  --doc-max-width--desktop: calc(828 / var(--rem-base) * 1rem);
+  --doc-max-width--desktop: calc(980 / var(--rem-base) * 1rem);
 
   /* stacking */
   --z-index-nav: 1;

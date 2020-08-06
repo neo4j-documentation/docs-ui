@@ -12,6 +12,13 @@
   z-index: var(--z-index-toolbar);
 }
 
+.toolbar-wrapper {
+  display: flex;
+  width: 100%;
+  max-width: var(--toolbar-wrapper-width);
+  align-items: center;
+}
+
 .toolbar a {
   color: inherit;
 }
@@ -56,6 +63,11 @@
 .edit-this-page {
   display: none;
   padding-right: 0.5rem;
+}
+@media screen and (min-width: 1350px) {
+  .edit-this-page {
+    padding-right: 0;
+  }
 }
 
 @media screen and (min-width: 1024px) {
