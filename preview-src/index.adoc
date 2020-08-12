@@ -23,6 +23,7 @@ Author Name
 :page-comments:
 :page-topicid: 22863
 // end:discourse[]
+// :page-disabletracking: true
 
 +++
 <div class="paragraph">
