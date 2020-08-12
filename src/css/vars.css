@@ -213,11 +213,12 @@ spacing: {
   --page-version-missing-font-color: var(--color-gray-30);
 
   /* toc */
-  --toc-font-color: var(--colour-grey-600);
+  --toc-font-color: var(--colour-grey-700);
+  --toc_active-font-color: var(--colour-blue-700);
   --toc-heading-font-color: var(--colour-grey-700);
   --toc-border-color: var(--colour-grey-300);
   --toc-line-height: 1.4;
-  --toc-bullet-color: var(--colour-grey-400);
+  --toc-bullet-color: var(--colour-blue-600);
 
   /* admonitions */
   --caution-color: var(--colour-orange-600);

@@ -9,13 +9,13 @@
   top: var(--toc-top);
 }
 
-.toc .toc-menu h3 {
+.toc .toc-menu h2 {
   color: var(--toc-heading-font-color);
   font-size: calc(16 / var(--rem-base) * 1rem);
   font-weight: var(--body-font-weight-bold);
   line-height: 1.5;
-  margin: 0 -0.5px;
-  padding-bottom: 0.25rem;
+  margin: 1.5rem -0.5px 0;
+  padding: 0.5rem 0 0.25rem;
 }
 
 .toc.sidebar .toc-menu h3 {
@@ -95,12 +95,13 @@
 }
 
 .toc .toc-menu a:hover {
-  color: var(--link-font-color);
+  color: var(--toc-font-color);
 }
 
 .toc .toc-menu a.is-active {
   /* border-left-color: var(--link-font-color); */
-  color: var(--doc-font-color);
+  /* color: var(--link-font-color); */
+  color: var(--toc_active-font-color);
 }
 .toc .toc-menu a.is-active:before {
   background: var(--toc-bullet-color);

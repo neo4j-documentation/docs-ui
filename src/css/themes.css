@@ -212,11 +212,11 @@ body.developer .toc-menu li a:before
 }
 
 body.developer  .doc .button {
-    background: var(--colour-green-600);
+    background: var(--colour-green-700);
     color: var(--colour-white);
 }
 body.developer .doc .button:hover {
-    background: var(--colour-green-500);
+    background: var(--colour-green-600);
     color: var(--colour-white);
 }
 
