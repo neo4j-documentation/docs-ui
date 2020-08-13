@@ -279,6 +279,22 @@ body {
     align-items: stretch;
   }
 
+  .navbar-item.docs .navbar-dropdown {
+    width: 320px;
+  }
+
+  .navbar-item.labs .navbar-dropdown {
+    min-width: 280px;
+  }
+
+  .navbar-item.developer .navbar-dropdown {
+    width: 310px;
+  }
+
+  .navbar-item .navbar-dropdown {
+    max-width: 320px;
+  }
+
   .navbar-item.is-hoverable:hover .navbar-dropdown {
     display: block;
   }
@@ -427,6 +443,7 @@ body {
 .project-links {
   margin: 0;
   padding: 0;
+  white-space: normal;
 }
 
 .project-links li {
