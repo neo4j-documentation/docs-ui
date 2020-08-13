@@ -140,3 +140,9 @@ asciidoc:
   attributes:
     theme: labs
     # cdn: https://neo4j-appli-t0bbh89jwvia-895689428.us-east-1.elb.amazonaws.com/static/assets
+    breadcrumbs:
+      - name: Neo4j Labs
+        url: https://neo4j.com/labs/
+      - name: Neosemantics
+        url: https://neo4j.com/labs/neosemantics
+      - name: Documentation

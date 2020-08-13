@@ -1,6 +1,17 @@
 <nav class="breadcrumbs" aria-label="breadcrumbs">
   {{#if page.breadcrumbs}}
   <ul>
+    {{#each (or asciidoc.attributes.breadcrumbs page.attributes.breadcrumbs)}}
+    <li>
+      {{#if this.url}}
+      <a href="{{this.url}}">
+      {{/if}}
+      {{ this.name }}
+      {{#if this.url}}
+      </a>
+      {{/if}}
+    </li>
+    {{/each}}
     {{#with page.componentVersion}}
     {{#if (and ./title (not (or ./root (eq ./title @root.page.breadcrumbs.0.content))))}}
     <li><a href="{{{relativize ./url}}}">{{{./title}}}</a></li>

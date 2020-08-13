@@ -1,4 +1,4 @@
-@import "typeface-roboto.css";
+/* @import "typeface-roboto.css"; */
 @import "typeface-roboto-mono.css";
 @import "vars.css";
 @import "base.css";
@@ -28,4 +28,4 @@
 @import "comments.css";
 @import "cookies.css";
 
-@import "../../node_modules/font-awesome/css/font-awesome.css";
+@import "fonts.css";
