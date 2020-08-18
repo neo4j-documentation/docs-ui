@@ -30,7 +30,12 @@
     {{#with page.description}}
     <meta property="og:description" content="{{this}}">
     {{/with}}
-    <meta property="og:url" content="https://neo4j.com{{ page.url }}">
-    <link rel="canonical" href="https://neo4j.com{{ page.url }}">
+    {{!-- {{#with or page.attributes}} --}}
+    <meta property="og:url" content="https://neo4j.com{{ page.attributes.canonical-root }}{{ page.url }}">
+    <link rel="canonical" href="https://neo4j.com{{ page.attributes.canonical-root }}{{ page.url }}">
+    {{!-- {{/with}} --}}
+
     <link rel="shortcut icon" href="https://neo4j.com/wp-content/themes/neo4jweb/favicon.ico" />
+
+
 
