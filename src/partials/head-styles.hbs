@@ -1,8 +1,8 @@
 {{#if page.attributes.cdn}}
-    <link rel="preload" href="{{{page.attributes.cdn}}}/fonts/fontawesome-webfont.woff2?v=4.7.0">
+    <link rel="preload" href="{{{page.attributes.cdn}}}/fonts/fontawesome-webfont.woff2?v=4.7.0" as="font">
     <link rel="stylesheet" href="{{{page.attributes.cdn}}}/css/site.css">
 {{else}}
-    <link rel="preload" href="{{{uiRootPath}}}/fonts/fontawesome-webfont.woff2?v=4.7.0">
+    <link rel="preload" href="{{{uiRootPath}}}/fonts/fontawesome-webfont.woff2?v=4.7.0" as="font">
     <link rel="stylesheet" href="{{{uiRootPath}}}/css/site.css">
 {{/if}}
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;1,300&display=swap" rel="stylesheet">
