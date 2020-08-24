@@ -45,6 +45,10 @@
     flex: 1;
 }
 
+.feedback svg {
+    cursor: pointer;
+}
+
 .feedback .header svg {
     flex-grow: 0;
     margin-left: .5rem;

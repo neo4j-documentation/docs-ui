@@ -190,6 +190,24 @@ body {
 
 .doc .right {
   float: right;
+  margin-left: 2rem;
+}
+
+.doc .image.rounded {
+  padding: 12px;
+  box-shadow: 0 0 5px 1px var(--colour-blue-200) !important;
+  background: var(--colour-white);
+  border-radius: 50%;
+  line-height: 1;
+  display: inline-block;
+}
+
+.doc .image.right {
+  margin-left: 1rem;
+
+}
+.doc .image.left {
+  margin-right: 1rem;
 }
 
 .doc .left {
@@ -1097,4 +1115,15 @@ body {
 .page.unresolved {
   background: var(--colour-red-800);
   color: white !important;
+}
+
+.doc .graph-app {
+  position: relative;
+}
+.doc .graph-app-logo {
+  /* margin-top: 1rem;
+  marg */
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
 }
