@@ -1,4 +1,13 @@
     {{!-- Add additional meta tags here --}}
+    <meta name="type" content="{{{ or page.attributes.postttype 'Developer Guide' }}}">
+    {{#with page.attributes.product}}
+    <meta name="product" content="{{{this}}}">
+    {{/with}}
+    {{#with page.attributes.neo4jversion}}
+    <meta name="neo4j-version" content="{{{this}}}">
+    {{#with page.attributes.neo4jversion}}
+
+    {{!-- Swiftype - TODO: to remove --}}
     <meta class="swiftype" name="post-type" data-type="enum" content="{{{ or page.attributes.postttype 'Developer Guide' }}}">
     <meta class="swiftype" name="neo4j-site" data-type="enum" content="Developer Site">
     <meta class="swiftype" name="main-search-priority" data-type="integer" content="3">

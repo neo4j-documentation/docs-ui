@@ -8,13 +8,13 @@ Author Name
 // tag::theme[]
 :page-theme: developer
 // end::theme[]
-// tag::swiftype[]
-:page-posttype: knowledgebase
+// tag::search[]
+:page-type: knowledgebase
 :page-environment: macos
 :page-programminglanguage: java
 :page-neo4jversion: 3.5
 :page-product: browser
-// end::swiftype[]
+// end::search[]
 // tag::meta[]
 :description: This guide shows the different ways you can import data from a relational database to Neo4j. Completing this guide will give you the tools to choose how to import your relational data and transform it to the graph.
 :keywords: one, two, three, four
