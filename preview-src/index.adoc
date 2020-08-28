@@ -24,6 +24,7 @@ Author Name
 :page-topicid: 22863
 // end:discourse[]
 // :page-disabletracking: true
+:page-disabletracking:
 
 +++
 <div class="paragraph">
@@ -97,7 +98,7 @@ imports nodes and relationships from the provided CSV files with given labels an
 {level}
 // end::level[]
 
-
+== Tabs
 // tag::tabs[]
 [.tabs]
 
@@ -153,6 +154,76 @@ CALL n10s.rdf.stream.fetch(
   'https://raw.githubusercontent.com/neo4j-labs/neosemantics/3.5/docs/rdf/nsmntx.ttl',
   'Turtle'
 )
+
+
+== Source Blocks with Headers
+
+=== Copy Button
+
+The **Copy To Clipboard** button will appear on all code blocks:
+
+[source,adoc]
+----
+[source,adoc]
+Copy me!
+----
+
+Unless you add `role=nocopy`:
+
+.Source block with role=nocopy
+[source,adoc,role=nocopy]
+----
+[source,adoc,role=nocopy]
+Don't copy me!
+----
+
+=== Play In Browser
+
+Source blocks with a type of cypher will have a deeplink to run the query in Neo4j Browser
+
+[source,cypher]
+----
+MATCH (n) RETURN count(n)
+----
+
+Unless you add `role=noplay`
+
+.Source block with `role=noplay`
+[source,cypher,role=noplay]
+----
+[source,adoc,role=noplay]
+MATCH (n) RETURN count(n)
+----
+
+
+
+=== Combining `nocopy` and `noplay`
+
+You can combine `noplay` and `nocopy`:
+
+[source,cypher]
+----
+[source,adoc,role=nocopy noplay]
+MATCH (n) RETURN count(n)
+----
+
+[source,cypher,role=nocopy noplay]
+----
+MATCH (n) RETURN count(n)
+----
+
+== Suppress Header
+
+You can suppress the header by adding `role=noheader`
+
+[source]
+----
+[source,role=noheader]
+No header!
+----
+
+[source,role=noheader]
+No header!
 
 
 ++++

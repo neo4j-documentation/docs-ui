@@ -1,7 +1,7 @@
 // Code functions
 document.addEventListener('DOMContentLoaded', function () {
   var ignore = ['gram']
-  var copiedText =  'Copied!'
+  var copiedText = 'Copied!'
 
   var cleanCode = function (code) {
     var div = document.createElement('div')
@@ -32,44 +32,55 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   var addCodeHeader = function (pre) {
+    var dotContent = pre.parentElement
+    var listingBlock = dotContent.parentElement
+
+    if (listingBlock.classList.contains('noheader')) return;
+
+    var addCopyButton = !listingBlock.classList.contains('nocopy')
+    var addPlayButton = !listingBlock.classList.contains('noplay')
+
     var block = pre.querySelector('code')
     var div = pre.parentNode
 
     var code = block.innerHTML
     var language = block.hasAttribute('class') && block.getAttribute('class').match(/language-([a-z0-9-])+/i)[0].replace('language-', '')
 
-    if ( language && ignore.indexOf(language.toLowerCase()) > -1 ) return;
+    if (language && ignore.indexOf(language.toLowerCase()) > -1) return;
 
     var languageDiv = document.createElement('div')
     languageDiv.className = 'code-language'
 
-    if ( language ) {
+    if (language) {
       languageDiv.innerHTML = language
+    }
+    var children = [languageDiv, copyButton]
+
+    if (addCopyButton) {
+      var copyButton = createElement('button', 'btn btn-copy', [document.createTextNode('Copy to Clipboard')])
+      copyButton.addEventListener('click', function (e) {
+        e.preventDefault()
+        copyToClipboard(code)
+
+        var button = e.target
+        var text = button.innerHTML
+        var width = button.clientWidth
+
+        button.style.width = width + 'px'
+        button.classList.add('btn-success')
+        button.innerHTML = copiedText
+
+        setTimeout(function () {
+          button.innerHTML = text
+          button.classList.remove('btn-success')
+        }, 1000)
+      })
+
+      children.push(copyButton)
     }
 
 
-    var copyButton = createElement('button', 'btn btn-copy', [document.createTextNode('Copy to Clipboard')])
-    copyButton.addEventListener('click', function (e) {
-      e.preventDefault()
-      copyToClipboard(code)
-
-      var button = e.target
-      var text = button.innerHTML
-      var width = button.clientWidth
-
-      button.style.width = width + 'px'
-      button.classList.add('btn-success')
-      button.innerHTML = copiedText
-
-      setTimeout(function() {
-        button.innerHTML = text
-        button.classList.remove('btn-success')
-      }, 1000)
-    })
-
-    var children = [languageDiv, copyButton]
-
-    if (language === "cypher") {
+    if (language === "cypher" && addPlayButton) {
       var runButton = createElement('button', 'btn btn-run btn-primary', [document.createTextNode('Run in Browser')])
       runButton.addEventListener('click', function (e) {
         e.preventDefault()
@@ -81,7 +92,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     var originalTitle = div.parentNode.querySelector('.title')
-    if ( originalTitle ) {
+    if (originalTitle) {
       var titleDiv = document.createElement('div')
       titleDiv.className = 'code-title'
       titleDiv.innerHTML = originalTitle.innerHTML
@@ -103,7 +114,7 @@ document.addEventListener('DOMContentLoaded', function () {
     output.setAttribute('class', className)
 
     Array.isArray(children) && children.forEach(function (child) {
-      output.appendChild(child)
+      if (child) output.appendChild(child)
     })
 
     return output
@@ -117,42 +128,42 @@ document.addEventListener('DOMContentLoaded', function () {
   var targetActive = 'tabbed-target--active'
   var tabActive = 'tabbed-tab--active'
 
-  var switchTab = function(e) {
+  var switchTab = function (e) {
     var tab = e.target
     var title = tab.innerHTML
     // Switch Tabs
-    var targetTabs = document.querySelectorAll('.tabbed-target[data-title="'+ title +'"]')
-    targetTabs.forEach(function(target) {
-      target.parentElement.querySelectorAll('.'+ targetActive)
-        .forEach(function(el) {
+    var targetTabs = document.querySelectorAll('.tabbed-target[data-title="' + title + '"]')
+    targetTabs.forEach(function (target) {
+      target.parentElement.querySelectorAll('.' + targetActive)
+        .forEach(function (el) {
           el.classList.remove(targetActive)
         })
 
-        target.classList.add(targetActive)
+      target.classList.add(targetActive)
 
-        target.parentElement.parentElement.querySelectorAll('.'+ tabActive)
-          .forEach(function(el) { el.classList.remove(tabActive) })
+      target.parentElement.parentElement.querySelectorAll('.' + tabActive)
+        .forEach(function (el) { el.classList.remove(tabActive) })
 
-        target.parentElement.parentElement.querySelectorAll('.tabbed-tab[data-title="'+ title +'"]')
-          .forEach(function(el) { el.classList.add(tabActive) })
-      })
+      target.parentElement.parentElement.querySelectorAll('.tabbed-tab[data-title="' + title + '"]')
+        .forEach(function (el) { el.classList.add(tabActive) })
+    })
 
-      var offset = document.querySelector('.navbar').offsetHeight + document.querySelector('.toolbar').offsetHeight + 20
+    var offset = document.querySelector('.navbar').offsetHeight + document.querySelector('.toolbar').offsetHeight + 20
 
-      var bodyRect = document.body.getBoundingClientRect().top;
-      var elementRect = tab.getBoundingClientRect().top;
-      var elementPosition = elementRect - bodyRect;
-      var offsetPosition = elementPosition - offset;
+    var bodyRect = document.body.getBoundingClientRect().top;
+    var elementRect = tab.getBoundingClientRect().top;
+    var elementPosition = elementRect - bodyRect;
+    var offsetPosition = elementPosition - offset;
 
-      window.scrollTo({
-        top: offsetPosition,
-        behavior: 'smooth'
-      });
+    window.scrollTo({
+      top: offsetPosition,
+      behavior: 'smooth'
+    });
   }
 
   // Tabbed code
   Array.from(document.querySelectorAll('.tabs'))
-    .forEach(function(tab) {
+    .forEach(function (tab) {
       var originalTab = tab
       var parent = tab.parentElement
 
@@ -163,7 +174,7 @@ document.addEventListener('DOMContentLoaded', function () {
       while (tab) {
         var nextTab = tab.nextElementSibling
 
-        if ( nextTab && nextTab.querySelector('code') ) {
+        if (nextTab && nextTab.querySelector('code')) {
           elements.push(nextTab)
 
 
@@ -175,7 +186,7 @@ document.addEventListener('DOMContentLoaded', function () {
       }
 
       // Don't do anything if there's only one tab
-      if ( elements.length <= 1 ) {
+      if (elements.length <= 1) {
         return;
       }
 
@@ -185,11 +196,11 @@ document.addEventListener('DOMContentLoaded', function () {
       parent.insertBefore(tabbedParent, originalTab)
 
       // Build up tabs
-      var tabs = elements.map(function(element) {
+      var tabs = elements.map(function (element) {
         var title = element.querySelector('.title')
         var text = title ? title.innerHTML : element.querySelector('.code-language').innerHTML
 
-        var tabElement = createElement('li', 'tabbed-tab', [ document.createTextNode(text) ])
+        var tabElement = createElement('li', 'tabbed-tab', [document.createTextNode(text)])
         element.dataset.title = text
         tabElement.dataset.title = text
 
@@ -200,10 +211,10 @@ document.addEventListener('DOMContentLoaded', function () {
 
       tabs[0].classList.add('tabbed-tab--active')
 
-      tabbedParent.insertBefore( createElement('ul', 'tabbed-tabs', tabs), tabbedContainer )
+      tabbedParent.insertBefore(createElement('ul', 'tabbed-tabs', tabs), tabbedContainer)
 
       // Remove elements from parent and add to tab container
-      elements.forEach(function(element) {
+      elements.forEach(function (element) {
         parent.removeChild(element)
         tabbedContainer.appendChild(element)
 
