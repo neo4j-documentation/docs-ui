@@ -20,11 +20,11 @@ Author Name
 :keywords: one, two, three, four
 // end::meta[]
 // tag:discourse[]
-:page-comments:
-:page-topicid: 22863
+// :page-comments:
+// :page-topicid: 22863
 // end:discourse[]
 // :page-disabletracking: true
-:page-disabletracking:
+:page-disabletracking: true
 
 +++
 <div class="paragraph">
