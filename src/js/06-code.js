@@ -174,7 +174,7 @@ document.addEventListener('DOMContentLoaded', function () {
       while (tab) {
         var nextTab = tab.nextElementSibling
 
-        if (nextTab && nextTab.querySelector('code')) {
+        if (nextTab && !nextTab.classList.contains('sect2') && nextTab.querySelector('code')) {
           elements.push(nextTab)
 
 
@@ -198,7 +198,14 @@ document.addEventListener('DOMContentLoaded', function () {
       // Build up tabs
       var tabs = elements.map(function (element) {
         var title = element.querySelector('.title')
-        var text = title ? title.innerHTML : element.querySelector('.code-language').innerHTML
+        var codeLanguage = element.querySelector('.code-language')
+        var text;
+        if ( title ) {
+          text = title.innerHTML
+        }
+        else if ( codeLanguage ) {
+          var text = codeLanguage.innerHTML
+        }
 
         var tabElement = createElement('li', 'tabbed-tab', [document.createTextNode(text)])
         element.dataset.title = text
