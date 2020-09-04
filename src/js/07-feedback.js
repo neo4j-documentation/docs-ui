@@ -15,8 +15,12 @@
   }
 
   var sendFeedback = function(helpful, reason, moreInformation) {
-    // TODO: Better way to decide the project name
-    var body = 'project=' + document.querySelector('body').className.replace('article ', '')
+    // Get Project
+    var productTag = document.querySelector('meta[name=product]')
+    var project =  productTag ? productTag.getAttribute('content').toLowerCase() : document.querySelector('body').className.replace('article ', '').split(' ')[0]
+
+
+    var body = 'project=' + encodeURIComponent(project)
     body += '&url='+ encodeURIComponent(window.location.href)
     body += '&helpful='+ helpful.toString()
 

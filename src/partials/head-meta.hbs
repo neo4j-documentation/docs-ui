@@ -7,6 +7,10 @@
     <meta name="neo4j-version" content="{{{this}}}">
     {{/with}}
 
+    {{#with page.attributes.feedback}}
+    <meta name="feedback" content="{{{this}}}">
+    {{/with}}
+
     {{!-- Swiftype - TODO: to remove --}}
     <meta class="swiftype" name="post-type" data-type="enum" content="{{{ or page.attributes.postttype 'Developer Guide' }}}">
     <meta class="swiftype" name="neo4j-site" data-type="enum" content="Developer Site">

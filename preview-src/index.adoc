@@ -5,6 +5,7 @@ Author Name
 :!example-caption:
 :!table-caption:
 :page-pagination:
+:page-disabletracking:
 // tag::theme[]
 :page-theme: developer
 // end::theme[]
@@ -13,7 +14,7 @@ Author Name
 :page-environment: macos
 :page-programminglanguage: java
 :page-neo4jversion: 3.5
-:page-product: browser
+:page-product: NEOSEMANTICS
 // end::search[]
 // tag::meta[]
 :description: This guide shows the different ways you can import data from a relational database to Neo4j. Completing this guide will give you the tools to choose how to import your relational data and transform it to the graph.
@@ -24,7 +25,7 @@ Author Name
 // :page-topicid: 22863
 // end:discourse[]
 // :page-disabletracking: true
-:page-disabletracking: true
+
 
 +++
 <div class="paragraph">
