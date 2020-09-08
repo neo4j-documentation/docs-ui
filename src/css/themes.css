@@ -233,3 +233,16 @@ body.developer .navbar .navbar-item.try .navbar-link {
     background: var(--colour-grey-700);
     color: var(--colour-white);
 }
+
+body.kb .navbar,
+body.kb .search .search-container .search-form {
+    border-top-color: var(--colour-kb);
+}
+
+.kb .navbar-brand #developer {
+    fill: var(--colour-grey-400);
+}
+
+.kb .navbar-brand #neo4j {
+    fill: var(--colour-white);
+}

@@ -412,7 +412,9 @@ body {
 .navbar-item.labs .navbar-dropdown {
   border-top-color: var(--navbar-labs-border);
 }
-
+.navbar-item.kb .navbar-dropdown {
+  border-top-color: var(--navbar-kb-border);
+}
 @media screen and (min-width: 1024px) {
   .navbar-dropdown {
     border-top: 4px solid;

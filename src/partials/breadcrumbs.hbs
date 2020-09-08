@@ -20,9 +20,19 @@
     {{#each page.breadcrumbs}}
     <li>
     {{~#if (and ./url (eq ./urlType 'internal'))~}}
-    <a href="{{{relativize ./url}}}">{{{./content}}}</a>
+    <a href="{{{relativize ./url}}}">
+      {{#if @root.page.attributes.breadcrumb}}
+        {{@root.page.attributes.breadcrumb}}
+      {{else}}
+        {{{./content}}}
+      {{/if}}
+    </a>
     {{~else~}}
-    {{{./content}}}
+      {{#if @root.page.attributes.breadcrumb}}
+        {{@root.page.attributes.breadcrumb}}
+      {{else}}
+        {{{./content}}}
+      {{/if}}
     {{~/if~}}
     </li>
     {{/each}}
