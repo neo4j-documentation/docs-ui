@@ -42,6 +42,7 @@
     "handlebars": "~4.7",
     "highlight.js": "~9.18",
     "js-yaml": "~3.13",
+    "medium-zoom": "^1.0.6",
     "merge-stream": "~2.0",
     "node-fetch": "^2.6.0",
     "postcss-calc": "~7.0",
