@@ -13,6 +13,39 @@ If you typed the URL of this page manually, please double check that you entered
 <h1 class="page">{{{this}}}</h1>
 {{/with}}
 {{{page.contents}}}
+{{#if (ne page.attributes.certificate undefined)}}
+  <div id="_get_certificate" class="sect1 columns medium-12">
+    <h2 id="_certificate"><a class="anchor" href="#_certificate"></a>Certificate</h2>
+    <div class="download-certificate" data-status="ready">
+      <div class="error">
+        <p>
+          <strong>Certificate not available yet.</strong><br/>
+          Did you complete the quizzes at the end of each section?
+        </p>
+      </div>
+      <div class="success">
+        <p>
+          <strong>Congratulations on completing the course!</strong><br/>
+          Your certificate should automatically download. If it does not, <a href="#" data-action="download-certificate-link">click here</a>.
+        </p>
+      </div>
+      <div class="spinner">
+        <div class="double-bounce1"></div>
+        <div class="double-bounce2"></div>
+      </div>
+      <div class="content">
+        <a href="#" data-action="download-certificate" class="button button-download-certificate">Download certificate</a>
+      </div>
+    </div>
+  </div>
+{{/if}}
+{{#if (ne page.attributes.quiz undefined)}}
+  <div id="_grade_quiz_and_continue" class="sect1 columns medium-12">
+    <div class="paragraph">
+      <a data-action="grade-quiz" data-slug="{{page.attributes.slug}}" class="medium button secondary"><i class="fa fa-check"></i> Check Answers</a>
+    </div>
+  </div>
+{{/if}}
 {{/if}}
 {{> pagination}}
 {{> comments}}

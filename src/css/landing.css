@@ -1,5 +1,5 @@
 body.landing .hero {
-  padding: 8rem 0 0 !important;
+  padding: 8rem 0 0;
   background: var(--colour-grey-800);
   background: rgb(2, 0, 36);
   background: linear-gradient(180deg, var(--colour-grey-800) 0%, var(--colour-grey-700) 45%, var(--colour-grey-700) 100%);

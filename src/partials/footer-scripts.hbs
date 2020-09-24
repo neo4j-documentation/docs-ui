@@ -4,16 +4,13 @@
 <script src="https://d3js.org/d3-timer.v1.min.js"></script>
 <script src="https://d3js.org/d3-force.v2.min.js"></script> --}}
 
-{{#if page.attributes.cdn}}
-<script src="{{{page.attributes.cdn}}}/js/site.js"></script>
-{{!-- <script async src="{{{page.attributes.cdn}}}/js/vendor/gram.js"></script> --}}
-<script async src="{{{page.attributes.cdn}}}/js/vendor/highlight.js"></script>
-<script async src="{{{page.attributes.cdn}}}/js/vendor/search.js"></script>
-<script async src="{{{page.attributes.cdn}}}/js/vendor/image-zoom.js"></script>
-{{else}}
-<script src="{{{uiRootPath}}}/js/site.js"></script>
-{{!-- <script async src="{{{uiRootPath}}}/js/vendor/gram.js"></script> --}}
-<script async src="{{{uiRootPath}}}/js/vendor/highlight.js"></script>
-<script async src="{{{uiRootPath}}}/js/vendor/search.js"></script>
-<script async src="{{{uiRootPath}}}/js/vendor/image-zoom.js"></script>
-{{/if}}
+{{#with (assets-path page)}}
+  {{#if (or (eq @root.page.layout 'training-enrollment') (eq @root.page.layout 'training'))}}
+    <script src="{{{this}}}/js/vendor/auth0.js"></script>
+  {{/if}}
+  <script src="{{{this}}}/js/site.js"></script>
+  {{!-- <script async src="{{{this}}}/js/vendor/gram.js"></script> --}}
+  <script async src="{{{this}}}/js/vendor/highlight.js"></script>
+  <script async src="{{{this}}}/js/vendor/search.js"></script>
+  <script async src="{{{this}}}/js/vendor/image-zoom.js"></script>
+{{/with}}

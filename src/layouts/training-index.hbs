@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  {{> head defaultPageTitle='Untitled'}}
+</head>
+<body class="article landing training-home{{#with (or asciidoc.attributes.role page.role)}} {{{this}}}{{/with}}{{#with
+        (or page.attributes.theme "developer")}} {{{this}}}{{/with}}">
+{{> header}}
+
+<section class="hero">
+  <div class="row">
+    <div class="columns medium-12">
+      {{#with page.title}}
+        <h1>{{{this}}}</h1>
+      {{/with}}
+    </div>
+  </div>
+</section>
+
+<main class="article">
+  <div class="content">
+    <article class="doc">
+      <div class="sect1">
+        <h2>{{page.attributes.introduction}}</h2>
+        <section class="row">
+          <div class="training-courses">
+            <ul>
+              {{#each (training-enrollment-pages)}}
+                <li>
+                  <div class="course-card">
+                    <a href="{{pub.url}}">
+                      <div class="course-illustration" style="background-image: url('{{asciidoc.attributes.page-illustration}}')"></div>
+                    </a>
+                    <div class="course-content">
+                      <h3 class="course-title"><a href="{{pub.url}}">{{title}}{{#with asciidoc.attributes.page-course-label}} <span class="course-label">{{this}}</span>{{/with}}
+                      </a></h3>
+                      <div class="course-duration">{{asciidoc.attributes.page-course-duration}}</div>
+                      <div class="course-actions">
+                        <a href="{{pub.url}}" class="button">More Details</a>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+              {{/each}}
+            </ul>
+          </div>
+        </section>
+        <section class="find-training">
+          <hr/>
+          <h3>Find Neo4j Training in a City Near You</h3>
+          <p>
+            <a href="https://neo4j.com/events/^" class="external">Browse Upcoming Events</a>
+          </p>
+        </section>
+      </div>
+    </article>
+  </div>
+</main>
+
+{{> footer}}
+
+</body>
+</html>
