@@ -1,7 +1,6 @@
 :root {
-  --colour-black: #F7F7F7;
+  --colour-black: #f7f7f7;
   --colour-white: #fff;
-
   --colour-grey-100: #f7fafc;
   --colour-grey-200: #edf2f7;
   --colour-grey-300: #e2e8f0;
@@ -11,7 +10,6 @@
   --colour-grey-700: #4a5568;
   --colour-grey-800: #2d3748;
   --colour-grey-900: #1a202c;
-
   --colour-red-100: #fff5f5;
   --colour-red-200: #fed7d7;
   --colour-red-300: #feb2b2;
@@ -21,7 +19,6 @@
   --colour-red-700: #c53030;
   --colour-red-800: #9b2c2c;
   --colour-red-900: #742a2a;
-
   --colour-orange-100: #fffaf0;
   --colour-orange-200: #feebc8;
   --colour-orange-300: #fbd38d;
@@ -31,7 +28,6 @@
   --colour-orange-700: #c05621;
   --colour-orange-800: #9c4221;
   --colour-orange-900: #7b341e;
-
   --colour-yellow-100: #fffff0;
   --colour-yellow-200: #fefcbf;
   --colour-yellow-300: #faf089;
@@ -41,7 +37,6 @@
   --colour-yellow-700: #b7791f;
   --colour-yellow-800: #975a16;
   --colour-yellow-900: #744210;
-
   --colour-green-100: #f0fff4;
   --colour-green-200: #c6f6d5;
   --colour-green-300: #9ae6b4;
@@ -51,7 +46,6 @@
   --colour-green-700: #2f855a;
   --colour-green-800: #276749;
   --colour-green-900: #22543d;
-
   --colour-teal-100: #e6fffa;
   --colour-teal-200: #b2f5ea;
   --colour-teal-300: #81e6d9;
@@ -61,7 +55,6 @@
   --colour-teal-700: #2c7a7b;
   --colour-teal-800: #285e61;
   --colour-teal-900: #234e52;
-
   --colour-blue-100: #ebf8ff;
   --colour-blue-200: #bee3f8;
   --colour-blue-300: #90cdf4;
@@ -71,7 +64,6 @@
   --colour-blue-700: #2b6cb0;
   --colour-blue-800: #2c5282;
   --colour-blue-900: #2a4365;
-
   --colour-indigo-100: #ebf4ff;
   --colour-indigo-200: #c3dafe;
   --colour-indigo-300: #a3bffa;
@@ -81,7 +73,6 @@
   --colour-indigo-700: #4c51bf;
   --colour-indigo-800: #434190;
   --colour-indigo-900: #3c366b;
-
   --colour-purple-100: #faf5ff;
   --colour-purple-200: #e9d8fd;
   --colour-purple-300: #d6bcfa;
@@ -91,7 +82,6 @@
   --colour-purple-700: #6b46c1;
   --colour-purple-800: #553c9a;
   --colour-purple-900: #44337a;
-
   --colour-pink-100: #fff5f7;
   --colour-pink-200: #fed7e2;
   --colour-pink-300: #fbb6ce;
@@ -101,54 +91,9 @@
   --colour-pink-700: #b83280;
   --colour-pink-800: #97266d;
   --colour-pink-900: #702459;
-
-
   --colour-developer: var(--colour-green-600);
   --colour-labs: var(--colour-purple-400);
   --colour-docs: var(--colour-blue-400);
-
-  /*
-},
-spacing: {
-  px: '1px',
-  '0': '0',
-  '1': '0.25rem',
-  '2': '0.5rem',
-  '3': '0.75rem',
-  '4': '1rem',
-  '5': '1.25rem',
-  '6': '1.5rem',
-  '8': '2rem',
-  '10': '2.5rem',
-  '12': '3rem',
-  '16': '4rem',
-  '20': '5rem',
-  '24': '6rem',
-  '32': '8rem',
-  '40': '10rem',
-  '48': '12rem',
-  '56': '14rem',
-  '64': '16rem',
-}, */
-
-
-  /* colors */
-  /* --color-white: ;
-  --color-smoke-10: #fefefe;
-  --color-smoke-30: #fafafa;
-  --color-smoke-50: #f5f5f5;
-  --color-smoke-70: #f0f0f0;
-  --color-smoke-90: #e1e1e1;
-  --color-gray-10: #c1c1c1;
-  --color-gray-30: #8e8e8e;
-  --color-gray-50: #808080;
-  --color-gray-70: #5d5d5d;
-  --color-jet-20: #4a4a4a;
-  --color-jet-30: #424242;
-  --color-jet-50: #333;
-  --color-jet-70: #222;
-  --color-jet-80: #191919;
-  --color-black: #000; */
 
   /* fonts */
   --rem-base: 18; /* used to compute rem value from desired pixel value (e.g., calc(18 / var(--rem-base) * 1rem) = 18px) */
@@ -172,21 +117,18 @@ spacing: {
   --navbar-background: var(--colour-grey-800);
   --navbar-font-color: var(--colour-grey-100);
   --navbar-font-weight: 400;
-  --navbar_hover-background: transparent; /* var(--colour-grey-800);*/
+  --navbar_hover-background: transparent;
   --navbar-button-background: var(--colour-orange-600);
   --navbar-button-border-color: var(--colour-blue-800);
   --navbar-button-font-color: var(--colour-blue-100);
   --navbar-menu-border-color: var(--panel-border-color);
   --navbar-menu-background: var(--colour-white);
   --navbar-menu-font-color: var(--body-font-color);
-  --navbar-menu_hover-background: transparent; /* var(--colour-grey-800);*/
-
+  --navbar-menu_hover-background: transparent;
   --navbar-top-border: var(--colour-grey-200);
   --navbar-bottom-border: var(--colour-grey-300);
-
   --navbar-dropdown-link: var(--colour-blue-600);
   --navbar-dropdown_hover-link: var(--colour-blue-800);
-
   --navbar-developer-border: var(--colour-developer);
   --navbar-docs-border: var(--colour-docs);
   --navbar-labs-border: var(--colour-labs);
@@ -206,11 +148,11 @@ spacing: {
   /* toolbar */
   --toolbar-background: var(--panel-background);
   --toolbar-border-color: var(--panel-border-color);
-  --toolbar-font-color: var(--color-gray-70);
-  --toolbar-muted-color: var(--color-gray-30);
+  --toolbar-font-color: var(--colour-grey-700);
+  --toolbar-muted-color: var(--colour-grey-300);
   --page-version-menu-background: var(--colour-white);
   --page-version-menu-border: var(--colour-grey-300);
-  --page-version-missing-font-color: var(--color-gray-30);
+  --page-version-missing-font-color: var(--colour-grey-300);
 
   /* toc */
   --toc-font-color: var(--colour-grey-700);
@@ -222,16 +164,15 @@ spacing: {
 
   /* admonitions */
   --caution-color: var(--colour-orange-600);
-  --caution-on-color: var(--color-white);
+  --caution-on-color: var(--colour-white);
   --important-color: var(--colour-purple-600);
   --important-on-color: var(--colour-white);
   --note-color: var(--colour-purple-600);
   --note-on-color: var(--colour-white);
-  --tip-color:  var(--colour-blue-600);
+  --tip-color: var(--colour-blue-600);
   --tip-on-color: var(--colour-white);
   --warning-color: var(--colour-red-600);
   --warning-on-color: var(--colour-white);
-
   --mark-background: var(--colour-yellow-200);
 
   /* doc */
@@ -249,12 +190,12 @@ spacing: {
   --link_hover-font-color: var(--colour-purple-600);
   --link_visited-font-color: var(--colour-blue-800);
   --link_unresolved-font-color: var(--important-color);
-  --abstract-background:  var(--colour-white); /* var(--panel-background); */
-  --abstract-font-color: var(--color-jet-20);
+  --abstract-background: var(--colour-white);
+  --abstract-font-color: var(--colour-grey-700);
   --abstract-border-color: var(--panel-border-color);
   --admonition-background: var(--panel-background);
   --admonition-label-font-weight: var(--body-font-weight-bold);
-  --caption-font-color: var(--color-gray-70);
+  --caption-font-color: var(--colour-grey-700);
   --caption-font-weight: var(--body-font-weight-bold);
   --code-background: var(--panel-background);
   --code-font-color: var(--body-font-color);
@@ -263,20 +204,18 @@ spacing: {
   --code-button-background: var(--colour-grey-700);
   --code-button-active-background: var(--colour-grey-600);
   --code-button-font-color: var(--colour-white);
-
-
-  --example-background: var(--color-white);
-  --example-border-color: var(--color-gray-70);
+  --example-background: var(--colour-white);
+  --example-border-color: var(--colour-grey-700);
   --kbd-background: var(--panel-background);
-  --kbd-border-color: var(--color-gray-10);
+  --kbd-border-color: var(--colour-grey-100);
   --pre-background: var(--panel-background);
   --pre-border-color: var(--panel-border-color);
-  --pre-annotation-font-color: var(--color-gray-10);
+  --pre-annotation-font-color: var(--colour-grey-100);
   --quote-background: var(--panel-background);
-  --quote-border-color: var(--color-gray-70);
-  --quote-font-color: var(--color-gray-70);
-  --quote-attribution-font-color: var(--color-gray-30);
-  --sidebar-background: var(--color-smoke-90);
+  --quote-border-color: var(--colour-grey-700);
+  --quote-font-color: var(--colour-grey-700);
+  --quote-attribution-font-color: var(--colour-grey-300);
+  --sidebar-background: var(--colour-grey-300);
   --table-border-color: var(--panel-border-color);
 
   /* footer */
