@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  {{> head defaultPageTitle='Untitled'}}
+</head>
+<body class="article{{#with (or asciidoc.attributes.role page.role)}} {{{this}}}{{/with}}{{#with (or page.attributes.theme "developer")}} {{{this}}}{{/with}}">
+{{> header}}
+<div class="body">
+  <main class="article kb-article">
+    <div class="content">
+      <article class="doc">
+        {{#if (eq page.layout '404')}}
+          <h1 class="page">{{{or page.title 'Page Not Found'}}}</h1>
+          <div class="paragraph">
+            <p>The page you&#8217;re looking for does not exist. It may have been moved.</p>
+          </div>
+          <div class="paragraph">
+            <p>If you arrived on this page by clicking on a link, please notify the owner of the site that the link is broken.
+              If you typed the URL of this page manually, please double check that you entered the address correctly.</p>
+          </div>
+        {{else}}
+          {{#with site.url}}
+            <a href="{{this}}" class="back-link">Go back</a>
+          {{/with}}
+          {{#with page.title}}
+            <h1 class="page">{{{this}}}</h1>
+          {{/with}}
+          {{{page.contents}}}
+        {{/if}}
+        {{> comments}}
+        {{> feedback}}
+      </article>
+      {{> toc}}
+    </div>
+  </main>
+</div>
+{{> footer}}
+</body>
+</html>

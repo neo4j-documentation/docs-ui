@@ -2,6 +2,9 @@
   aside.toc.sidebar {
     display: none;
   }
+  aside.kb-metadata.sidebar {
+    display: none;
+  }
 }
 
 @media screen and (min-width: 1024px) {
@@ -22,10 +25,17 @@
   aside.toc.sidebar {
     flex: 0 0 var(--toc-width);
   }
+
+  aside.kb-metadata.sidebar {
+    flex: 0 0 var(--kb-metadata-width);
+  }
 }
 
 @media screen and (min-width: 1216px) {
   aside.toc.sidebar {
     flex-basis: var(--toc-width--widescreen);
+  }
+  aside.kb-metadata.sidebar {
+    flex-basis: var(--kb-metadata-width--widescreen);
   }
 }
