@@ -26,7 +26,7 @@
           <h3>Categories</h3>
           <ul>
             {{#each (kb-categories)}}
-              <li><a href="{{@root.site.url}}/categories?category={{name}}">{{name}} ({{count}})</a></li>
+              <li><a href="{{#with (kb-categories-page)}}{{{relativize this.pub.url}}}?category={{../name}}{{/with}}">{{name}} ({{count}})</a></li>
             {{/each}}
           </ul>
         </div>
@@ -43,7 +43,7 @@
         <h3>Tags</h3>
         <ul>
           {{#each (kb-tags)}}
-            <li><a href="{{@root.site.url}}/tags?tag={{name}}">{{name}} ({{count}})</a></li>
+            <li><a href="{{#with (kb-tags-page)}}{{{relativize this.pub.url}}}?tag={{../name}}{{/with}}">{{name}} ({{count}})</a></li>
           {{/each}}
         </ul>
       </section>
