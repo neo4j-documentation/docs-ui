@@ -19,9 +19,11 @@
         {{#with tags}}
         <dt>Keywords</dt>
         <dd>
-          {{#each (tokenize this)}}
-          <a href="{{@root.site.url}}/tags?tag={{this}}" class="keyword">{{this}}</a>
+          {{#with (kb-tags-page)}}
+          {{#each (tokenize ..)}}
+          <a href="{{{relativize ../pub.url}}}?tag={{this}}" class="keyword">{{this}}</a>
           {{/each}}
+          {{/with}}
         </dd>
         {{/with}}
       </dl>

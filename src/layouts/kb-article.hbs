@@ -19,8 +19,8 @@
               If you typed the URL of this page manually, please double check that you entered the address correctly.</p>
           </div>
         {{else}}
-          {{#with site.url}}
-            <a href="{{this}}" class="back-link">Go back</a>
+          {{#with page.componentVersion}}
+            <a href="{{@root.page.attributes.canonical-root}}{{this.url}}" class="back-link">Go back</a>
           {{/with}}
           {{#with page.title}}
             <h1 class="page">{{{this}}}</h1>
