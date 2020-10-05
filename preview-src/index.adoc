@@ -190,7 +190,7 @@ MATCH (n) RETURN count(n)
 Unless you add `role=noplay`
 
 .Source block with `role=noplay`
-[source,cypher,role=noplay]
+[source,adoc,role=noplay]
 ----
 [source,adoc,role=noplay]
 MATCH (n) RETURN count(n)
@@ -202,7 +202,7 @@ MATCH (n) RETURN count(n)
 
 You can combine `noplay` and `nocopy`:
 
-[source,cypher]
+[source,adoc]
 ----
 [source,adoc,role=nocopy noplay]
 MATCH (n) RETURN count(n)
@@ -217,15 +217,14 @@ MATCH (n) RETURN count(n)
 
 You can suppress the header by adding `role=noheader`
 
-[source]
+[source,adoc]
 ----
-[source,role=noheader]
-No header!
+[source,js,role=noheader]
+console.log('hello')
 ----
 
-[source,role=noheader]
-No header!
-
+[source,js,role=noheader]
+console.log('hello')
 
 ++++
 <div class="responsive-embed">
