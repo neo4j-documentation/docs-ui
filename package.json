@@ -63,6 +63,7 @@
   },
   "scripts": {
     "start": "LIVERELOAD=true gulp preview",
+    "lint": "gulp lint",
     "build": "gulp bundle"
   },
   "dependencies": {
