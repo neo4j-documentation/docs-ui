@@ -5,8 +5,6 @@ module.exports = ({ data: { root } }) => {
   return contentCatalog.getPages()
     .filter((page) =>
       page.src.component === 'kb' &&
-      page.asciidoc &&
-      page.asciidoc.attributes &&
-      page.asciidoc.attributes.promoted === 'true'
-    )
+      page.src.basename === 'tags.adoc'
+    )[0]
 }
