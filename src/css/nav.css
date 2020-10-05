@@ -117,7 +117,6 @@ html.is-clipped--nav {
 
 .nav-menu .title {
   color: var(--nav-heading-font-color);
-  font-size: inherit;
   font-weight: var(--body-font-weight-bold);
   margin: 0;
   padding: 0.25em 0 0.125em;
@@ -125,15 +124,16 @@ html.is-clipped--nav {
   font-size: 0.75rem;
 }
 
-.nav-menu a, .nav-text {
+.nav-menu a,
+.nav-text {
   color: inherit;
   font-weight: var(--nav-font-weight);
   display: block;
-  padding: .2rem 0;
+  padding: 0.2rem 0;
 }
 
 .nav-menu .nav-item .nav-item a {
-  padding: .1rem 0;
+  padding: 0.1rem 0;
 }
 
 .nav-list {
@@ -149,7 +149,6 @@ html.is-clipped--nav {
   list-style: none;
   /* margin-top: 0.5em; */
   position: relative;
-
 }
 
 /* adds some breathing room below a nested list */
@@ -189,8 +188,8 @@ html.is-clipped--nav {
 
 .nav-list .nav-list {
   border-left: 1px solid var(--colour-grey-400);
-  margin-left: .5rem;
-  padding-left: .8rem;
+  margin-left: 0.5rem;
+  padding-left: 0.8rem;
 }
 
 /* .nav-item.is-active > .nav-item-toggle {
@@ -202,9 +201,8 @@ html.is-clipped--nav {
   font-weight: var(--nav_active-font-weight);
 }
 
-.nav-item .nav-item:before,
-.toc-menu li a:before
-{
+.nav-item .nav-item::before,
+.toc-menu li a::before {
   position: absolute;
   left: 0;
   top: 0;
@@ -214,19 +212,18 @@ html.is-clipped--nav {
   width: 0.5rem;
   border-radius: 9999px;
   margin-left: -1.1rem;
-  transition: all .2s linear;
+  transition: all 0.2s linear;
   content: "";
   opacity: 0;
   background-color: var(--nav-bullet-color);
   z-index: 1000;
 }
 
-.nav-item.is-current-page:before,
-.nav-item .nav-item:hover:before,
-.toc-menu li a:before {
+.nav-item.is-current-page::before,
+.nav-item .nav-item:hover::before,
+.toc-menu li a::before {
   opacity: 1;
 }
-
 
 .nav-panel-explore {
   background: var(--nav-background);
@@ -324,12 +321,11 @@ html.is-clipped--nav {
 }
 
 .nav .label {
-  font-size: .8rem;
+  font-size: 0.8rem;
 }
 
-
 .navbar .navbar-item.try .navbar-link {
-  border-radius: .25rem;
+  border-radius: 0.25rem;
   padding: 0.5em 1.5em;
   font-weight: 400;
   text-align: center;

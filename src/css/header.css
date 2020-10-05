@@ -15,16 +15,16 @@ body {
   top: 0;
   width: 100%;
   word-wrap: break-word;
-  z-index: var(--z-index-navbar);
   border-top: 4px solid var(--navbar-top-border);
   border-bottom: 1px solid var(--navbar-bottom-border);
-  z-index: 5000;
+  z-index: var(--z-index-navbar);
 }
 
 .navbar a {
   text-decoration: none;
   font-weight: var(--navbar-font-weight);
 }
+
 .navbar a.no-left-padding {
   padding-left: 0;
 }
@@ -38,13 +38,14 @@ body {
 .navbar-brand svg {
   margin-right: 1rem;
 }
+
 .navbar-brand svg:last-child {
   margin-right: 0;
 }
 
 @media screen and (max-width: 420px) {
   .navbar-brand .navbar-item {
-    padding-left: .5rem;
+    padding-left: 0.5rem;
     padding-right: 0;
   }
 }
@@ -91,7 +92,8 @@ body {
   height: var(--navbar-height);
 }
 
-.navbar-burger, .navbar-search {
+.navbar-burger,
+.navbar-search {
   color: var(--navbar-font-color);
   background: none;
   border: none;
@@ -103,11 +105,13 @@ body {
   width: 2.75rem;
   padding: 0;
 }
+
 .navbar-search {
   margin-left: auto;
 }
+
 .navbar-brand .navbar-search svg {
-  margin-right: 0
+  margin-right: 0;
 }
 
 .navbar-burger span {
@@ -167,7 +171,7 @@ body {
 }
 
 .navbar-item.has-dropdown .navbar-link {
-  padding: 0;
+  padding: 0 2.5em 0 0;
 }
 
 .navbar-item .icon {
@@ -176,9 +180,6 @@ body {
   display: block;
 }
 
-.navbar-item.has-dropdown .navbar-link {
-  padding-right: 2.5em;
-}
 @media screen and (min-width: 1024px) {
   .navbar-dropdown {
     box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
@@ -189,6 +190,7 @@ body {
     font-weight: 400;
   }
 }
+
 @media screen and (max-width: 1023px) {
   .navbar-item .navbar-link {
     font-weight: bold;
@@ -236,9 +238,7 @@ body {
   .navbar-menu.is-active {
     display: block;
     box-shadow: 0 8px 16px rgba(10, 10, 10, 0.1);
-
     overflow-y: auto;
-
     position: fixed;
     top: 3.5rem;
     left: 0;
@@ -320,16 +320,14 @@ body {
     display: block;
     top: 100%;
     left: 50%;
-    margin-top: -.6rem;
+    margin-top: -0.6rem;
     margin-left: -1.5rem;
-    z-index:1;
-
+    z-index: 1;
     width: 0;
     height: 0;
-    border-left: .4rem solid transparent;
-    border-right: .4rem solid transparent;
-
-    border-bottom: .4rem solid transparent;
+    border-left: 0.4rem solid transparent;
+    border-right: 0.4rem solid transparent;
+    border-bottom: 0.4rem solid transparent;
   }
 
   .developer.navbar-item.has-dropdown:hover::before {
@@ -343,8 +341,6 @@ body {
   .navbar-item.labs.has-dropdown:hover::before {
     border-bottom-color: var(--navbar-labs-border);
   }
-
-
 
   .navbar-menu {
     flex-grow: 1;
@@ -402,19 +398,22 @@ body {
   white-space: nowrap;
 }
 
-
 .navbar-item.developer .navbar-dropdown {
   border-top-color: var(--navbar-developer-border);
 }
+
 .navbar-item.docs .navbar-dropdown {
   border-top-color: var(--navbar-docs-border);
 }
+
 .navbar-item.labs .navbar-dropdown {
   border-top-color: var(--navbar-labs-border);
 }
+
 .navbar-item.kb .navbar-dropdown {
   border-top-color: var(--navbar-kb-border);
 }
+
 @media screen and (min-width: 1024px) {
   .navbar-dropdown {
     border-top: 4px solid;
@@ -434,12 +433,12 @@ body {
   color: var(--body-font-color);
   font-weight: 600;
 }
+
 .project-description {
-  margin: .2rem 0;
+  margin: 0.2rem 0;
   font-size: 0.8rem;
   color: var(--colour-grey-600);
   white-space: normal;
-
 }
 
 .project-links {
@@ -454,13 +453,14 @@ body {
   /* border-right: 1px solid var(--colour-grey-400); */
   /* padding: 0 .1rem; */
 }
-.project-links li:after {
+
+.project-links li::after {
   color: var(--colour-grey-400);
-  content: "|"
+  content: "|";
 }
 
-.project-links li:last-child:after{
-  content: ""
+.project-links li:last-child::after {
+  content: "";
 }
 
 .project-links li:first-child {
@@ -469,12 +469,12 @@ body {
 
 .project-links li:last-child {
   padding-right: 0;
-  border-right: 0px none;
+  border-right: 0 none;
 }
 
 .project-link {
-  font-size: .8rem;
+  font-size: 0.8rem;
   font-weight: 600;
   display: inline-block;
-  margin-right: .2rem;
+  margin-right: 0.2rem;
 }

@@ -61,10 +61,10 @@
   position: relative;
 }
 
-.toc-menu li a:before {
-  top: .25rem;
+.toc-menu li a::before {
+  top: 0.25rem;
   left: 0;
-  margin-left: -.4em;
+  margin-left: -0.4em;
   /* background: var(--link-font-color); */
   opacity: 0;
 }
@@ -103,12 +103,13 @@
   /* color: var(--link-font-color); */
   color: var(--toc_active-font-color);
 }
-.toc .toc-menu a.is-active:before {
+
+.toc .toc-menu a.is-active::before {
   background: var(--toc-bullet-color);
 }
 
-.toc .toc-menu a.is-active:before,
-.toc .toc-menu a:hover:before {
+.toc .toc-menu a.is-active::before,
+.toc .toc-menu a:hover::before {
   opacity: 1;
 }
 

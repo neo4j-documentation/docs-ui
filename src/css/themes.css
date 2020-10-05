@@ -15,82 +15,84 @@ body.docs {
 */
 body.docs .navbar,
 body.docs .search .search-container .search-form {
-    background: var(--colour-white);
-    border-top-color: var(--colour-docs);
+  background: var(--colour-white);
+  border-top-color: var(--colour-docs);
 }
+
 body.docs .navbar,
 body.docs .navbar-brand .navbar-item:first-child,
 body.docs .navbar-brand .navbar-item:first-child a {
-    color: var(--colour-grey-600);
+  color: var(--colour-grey-600);
 }
 
 @media screen and (min-width: 1024px) {
-    body.docs .navbar-end > .navbar-item,
-    body.docs .navbar-end .navbar-link {
-      color: var(--colour-grey-600);
-    }
+  body.docs .navbar-end > .navbar-item,
+  body.docs .navbar-end .navbar-link {
+    color: var(--colour-grey-600);
+  }
 
-    body.docs .navbar-end > a.navbar-item:hover,
-    body.docs .navbar-end .navbar-link:hover {
-        color: var(--colour-grey-600);
-    }
+  body.docs .navbar-end > a.navbar-item:hover,
+  body.docs .navbar-end .navbar-link:hover {
+    color: var(--colour-grey-600);
+  }
 
-    body.docs .navbar-end .navbar-link::after {
-        border-color: var(--colour-grey-600);
-    }
+  body.docs .navbar-end .navbar-link::after {
+    border-color: var(--colour-grey-600);
+  }
 
-    body.docs .navbar-item.has-dropdown:hover .navbar-link {
-        color: var(--colour-grey-600);
-    }
+  body.docs .navbar-item.has-dropdown:hover .navbar-link {
+    color: var(--colour-grey-600);
+  }
 }
 
 body.docs .navbar-burger {
-    color: var(--colour-grey-600);
+  color: var(--colour-grey-600);
 }
+
 body.docs .navbar-burger span {
-    background: var(--colour-grey-600);
+  background: var(--colour-grey-600);
 }
 
-body.docs  .doc .button {
-    background: var(--colour-blue-600);
-    color: var(--colour-white);
+body.docs .doc .button {
+  background: var(--colour-blue-600);
+  color: var(--colour-white);
 }
+
 body.docs .doc .button:hover {
-    background: var(--colour-blue-500);
-    color: var(--colour-white);
+  background: var(--colour-blue-500);
+  color: var(--colour-white);
 }
 
-body.docs .nav-item .nav-item:before,
-body.docs .toc-menu li a:before
-{
+body.docs .nav-item .nav-item::before,
+body.docs .toc-menu li a::before {
   background-color: var(--colour-blue-300);
 }
 
 body.docs .tooltip {
-    border-bottom-color: var(--colour-docs);
+  border-bottom-color: var(--colour-docs);
 }
 
-body.docs .tooltip--top:after {
-    border-bottom-color: var(--colour-docs);
+body.docs .tooltip--top::after {
+  border-bottom-color: var(--colour-docs);
 }
-body.docs .tooltip.tooltip--bottom:after {
-    border-top-color: var(--colour-docs);
+
+body.docs .tooltip.tooltip--bottom::after {
+  border-top-color: var(--colour-docs);
 }
 
 body.docs #preamble .abstract .title,
-body.docs #preamble .abstract blockquote
-{
-    border-left-color: var(--colour-docs);
-    color: var(--colour-blue-800);
+body.docs #preamble .abstract blockquote {
+  border-left-color: var(--colour-docs);
+  color: var(--colour-blue-800);
 }
 
 body.docs .tableblock .icon i {
-    color: var(--colour-blue-600);
+  color: var(--colour-blue-600);
 }
 
 body.docs .navbar .navbar-item.try .navbar-link {
-    background: var(--colour-blue-500);
-    color: var(--colour-white);
+  background: var(--colour-blue-500);
+  color: var(--colour-white);
 }
 
 /*
@@ -106,143 +108,140 @@ body.labs {
 */
 body.labs .navbar,
 body.labs .search .search-container .search-form {
-    background: var(--colour-white);
-    border-top-color: var(--colour-labs);
+  background: var(--colour-white);
+  border-top-color: var(--colour-labs);
 }
+
 body.labs .navbar,
 body.labs .navbar-brand .navbar-item:first-child,
 body.labs .navbar-brand .navbar-item:first-child a {
-    color: var(--colour-grey-600);
+  color: var(--colour-grey-600);
 }
 
 @media screen and (min-width: 1024px) {
-    body.labs .navbar-end > .navbar-item,
-    body.labs .navbar-end .navbar-link {
-      color: var(--colour-grey-600);
-    }
+  body.labs .navbar-end > .navbar-item,
+  body.labs .navbar-end .navbar-link {
+    color: var(--colour-grey-600);
+  }
 
-    body.labs .navbar-end > a.navbar-item:hover,
-    body.labs .navbar-end .navbar-link:hover {
-        color: var(--colour-grey-600);
-    }
+  body.labs .navbar-end > a.navbar-item:hover,
+  body.labs .navbar-end .navbar-link:hover {
+    color: var(--colour-grey-600);
+  }
 
-    body.labs .navbar-end .navbar-link::after {
-        border-color: var(--colour-grey-600);
-    }
+  body.labs .navbar-end .navbar-link::after {
+    border-color: var(--colour-grey-600);
+  }
 
-    body.labs .navbar-item.has-dropdown:hover .navbar-link {
-        color: var(--colour-grey-600);
-    }
+  body.labs .navbar-item.has-dropdown:hover .navbar-link {
+    color: var(--colour-grey-600);
+  }
 }
 
 body.labs .navbar-burger {
-    color: var(--colour-grey-600);
+  color: var(--colour-grey-600);
 }
+
 body.labs .navbar-burger span {
-    background: var(--colour-grey-600);
+  background: var(--colour-grey-600);
 }
 
-body.labs  .doc .button {
-    background: var(--colour-purple-500);
-    color: var(--colour-white);
+body.labs .doc .button {
+  background: var(--colour-purple-500);
+  color: var(--colour-white);
 }
+
 body.labs .doc .button:hover {
-    background: var(--colour-purple-400);
-    color: var(--colour-white);
+  background: var(--colour-purple-400);
+  color: var(--colour-white);
 }
 
-body.labs .nav-item .nav-item:before,
-body.labs .toc-menu li a:before
-{
+body.labs .nav-item .nav-item::before,
+body.labs .toc-menu li a::before {
   background-color: var(--colour-blue-300);
 }
 
 body.labs .tooltip {
-    border-bottom-color: var(--colour-labs);
+  border-bottom-color: var(--colour-labs);
 }
 
-body.labs .tooltip--top:after {
-    border-bottom-color: var(--colour-labs);
+body.labs .tooltip--top::after {
+  border-bottom-color: var(--colour-labs);
 }
-body.labs .tooltip.tooltip--bottom:after {
-    border-top-color: var(--colour-labs);
+
+body.labs .tooltip.tooltip--bottom::after {
+  border-top-color: var(--colour-labs);
 }
 
 body.labs #preamble .abstract .title,
-body.labs #preamble .abstract blockquote
-{
-    border-left-color: var(--colour-labs);
-    color: var(--colour-purple-800);
+body.labs #preamble .abstract blockquote {
+  border-left-color: var(--colour-labs);
+  color: var(--colour-purple-800);
 }
 
 body.labs .tableblock .icon i {
-    color: var(--colour-purple-600);
+  color: var(--colour-purple-600);
 }
 
 body.labs .navbar .navbar-item.try .navbar-link {
-    background: var(--colour-purple-400);
-    color: var(--colour-white);
+  background: var(--colour-purple-400);
+  color: var(--colour-white);
 }
-
 
 /* body.developer {
     --nav-bullet-color: var(--colour-grey-500);
 } */
 body.developer .navbar,
 body.developer .search .search-container .search-form {
-    border-top-color: var(--colour-green-600);
+  border-top-color: var(--colour-green-600);
 }
 
-body.developer .nav-item .nav-item:before,
-body.developer .toc-menu li a:before
-{
+body.developer .nav-item .nav-item::before,
+body.developer .toc-menu li a::before {
   background-color: var(--colour-grey-500);
 }
 
 .developer .navbar-brand #neo4j {
-    fill: var(--colour-white);
-}
-
-.developer .navbar-brand #neo4j {
-    fill: var(--colour-white);
+  fill: var(--colour-white);
 }
 
 .developer .navbar-brand #developer {
-    fill: var(--colour-grey-400);
+  fill: var(--colour-grey-400);
 }
 
-body.developer  .doc .button {
-    background: var(--colour-green-700);
-    color: var(--colour-white);
+body.developer .doc .button {
+  background: var(--colour-green-700);
+  color: var(--colour-white);
 }
+
 body.developer .doc .button:hover {
-    background: var(--colour-green-600);
-    color: var(--colour-white);
+  background: var(--colour-green-600);
+  color: var(--colour-white);
 }
 
 body.developer #preamble .abstract .title,
-body.developer #preamble .abstract blockquote
-{
-    border-left-color: var(--colour-green-600);
+body.developer #preamble .abstract blockquote {
+  border-left-color: var(--colour-green-600);
 }
+
 body.developer .tableblock .icon i {
-    color: var(--colour-green-600);
+  color: var(--colour-green-600);
 }
 
 body.developer .navbar .navbar-item.try .navbar-link {
-    background: var(--colour-grey-700);
-    color: var(--colour-white);
+  background: var(--colour-grey-700);
+  color: var(--colour-white);
 }
 
 body.kb .navbar,
 body.kb .search .search-container .search-form {
-    border-top-color: var(--colour-kb);
+  border-top-color: var(--colour-kb);
 }
 
 .kb .navbar-brand #developer {
-    fill: var(--colour-grey-400);
+  fill: var(--colour-grey-400);
 }
 
 .kb .navbar-brand #neo4j {
-    fill: var(--colour-white);
+  fill: var(--colour-white);
 }

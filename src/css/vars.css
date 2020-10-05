@@ -133,6 +133,7 @@
   --navbar-developer-border: var(--colour-developer);
   --navbar-docs-border: var(--colour-docs);
   --navbar-labs-border: var(--colour-labs);
+  --navbar-kb-border: var(--colour-kb);
 
   /* nav */
   --nav-background: var(--panel-background);
@@ -255,5 +256,5 @@
   --z-index-nav: 1;
   --z-index-toolbar: 2;
   --z-index-page-version-menu: 3;
-  --z-index-navbar: 4;
+  --z-index-navbar: 5000;
 }
