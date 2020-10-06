@@ -1,48 +1,46 @@
 .developer-hero {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    z-index: 1000;
-    display: flex;
-    flex-direction: column;
-    padding: 2rem;
-    color: var(--colour-white);
-    margin-top: 0 !important;
-    align-items: center;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+  color: var(--colour-white);
+  margin-top: 0 !important;
+  align-items: center;
 }
 
-
 .developer-hero.developer-hero--shadow {
-    background: rgba(0, 0, 0, .2);
+  background: rgba(0, 0, 0, 0.2);
 }
 
 .developer-hero-wrapper {
-    width: 50%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
+  width: 50%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
 
 .developer-hero h2 {
-    font-size: 3rem;
-    font-weight: 100;
+  font-size: 3rem;
+  font-weight: 100;
 }
 
-#full-graph, #full-graph .gram {
-    height: 100%;
-    width: 100%;
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-
-    background: #f2f2f2;
-
-    background: linear-gradient(25deg, var(--colour-grey-700) 0%, var(--colour-grey-800) 100%);
+#full-graph,
+#full-graph .gram {
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #f2f2f2;
+  background: linear-gradient(25deg, var(--colour-grey-700) 0%, var(--colour-grey-800) 100%);
 }
 
 #full-graph .gram {
-    background: transparent;
+  background: transparent;
 }

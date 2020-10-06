@@ -2,6 +2,7 @@
   aside.toc.sidebar {
     display: none;
   }
+
   aside.kb-metadata.sidebar {
     display: none;
   }
@@ -35,6 +36,7 @@
   aside.toc.sidebar {
     flex-basis: var(--toc-width--widescreen);
   }
+
   aside.kb-metadata.sidebar {
     flex-basis: var(--kb-metadata-width--widescreen);
   }

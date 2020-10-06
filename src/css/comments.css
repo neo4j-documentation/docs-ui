@@ -1,38 +1,36 @@
 
 .comments {
-    margin: 1.5rem -1rem;
-    border: 1px solid var(--colour-grey-200);
-    border-top-width: 2px;
-    /* background: var(--colour-grey-100); */
-    border-radius: .5rem;
+  margin: 1.5rem -1rem;
+  border: 1px solid var(--colour-grey-200);
+  border-top-width: 2px;
+  /* background: var(--colour-grey-100); */
+  border-radius: 0.5rem;
 }
 
 .comments-header {
-    background: var(--colour-grey-200);
-    padding: 1rem;
+  background: var(--colour-grey-200);
+  padding: 1rem;
 }
 
 .comments-header h2 {
-    color: var(--colour-grey-600);
-    font-size: .8rem;
-    font-weight: 600;
-    line-height: 1;
-    margin: 0;
-    padding: 0 !important;
-    border-bottom: 0px none !important;
-
+  color: var(--colour-grey-600);
+  font-size: 0.8rem;
+  font-weight: 600;
+  line-height: 1;
+  margin: 0;
+  padding: 0 !important;
+  border-bottom: 0 none !important;
 }
 
 .comments-container {
-    padding: 1rem;
+  padding: 1rem;
 }
 
 @media all and (max-width: 720px) {
-    .comments {
-        display: none;
-    }
+  .comments {
+    display: none;
+  }
 }
-
 
 /** Add this to discourse: https://community.neo4j.com/admin/customize/themes/9/common/embedded_scss/edit
 

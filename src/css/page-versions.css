@@ -25,7 +25,6 @@
 }
 
 .page-versions .version-menu {
-  border: 1px solid transparent;
   background-color: var(--page-version-menu-background);
   border: 1px solid var(--page-version-menu-border);
   border-radius: 3px;

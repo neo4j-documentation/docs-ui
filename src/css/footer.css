@@ -18,10 +18,8 @@ footer.footer {
   width: 50%;
   flex-grow: 1;
   min-width: 180px;
-
   padding: 1.5rem;
 }
-
 
 @media screen and (min-width: 1024px) {
   .footer .wrapper {
@@ -42,6 +40,7 @@ footer.footer {
     padding-top: 0;
     padding-bottom: 0;
   }
+
   .footer .column.links h2 {
     margin-top: 0;
   }
@@ -66,12 +65,11 @@ footer .logo-footer {
   background: url(../img/neo4j-logo-white.svg) no-repeat;
 }
 
-
 .footer h2 {
   font-size: calc(15 / var(--rem-base) * 1rem);
   font-weight: 200;
   color: var(--footer-link-font-color);
-  margin: 65px 0 .5rem;
+  margin: 65px 0 0.5rem;
 }
 
 .footer ul {
@@ -81,18 +79,17 @@ footer .logo-footer {
 
 .footer ul li {
   list-style-type: none;
-  margin: 0 0 .2rem;
+  margin: 0 0 0.2rem;
 }
 
 .footer ul li i {
   color: var(--colour-grey-500);
   font-size: 1rem;
-  width: .8rem;
+  width: 0.8rem;
   text-align: center;
   display: inline-block;
-  margin-right: .5rem;
+  margin-right: 0.5rem;
 }
-
 
 .footer ul li.speaker-program {
   margin-top: 2rem;

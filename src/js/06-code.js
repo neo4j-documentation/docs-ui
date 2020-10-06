@@ -20,9 +20,9 @@ document.addEventListener('DOMContentLoaded', function () {
   var copyToClipboard = function (code) {
     var textarea = document.createElement('textarea')
     textarea.value = cleanCode(code)
-    textarea.setAttribute('readonly', '');
-    textarea.style.position = 'absolute';
-    textarea.style.left = '-9999px';
+    textarea.setAttribute('readonly', '')
+    textarea.style.position = 'absolute'
+    textarea.style.left = '-9999px'
 
     document.body.appendChild(textarea)
     textarea.select()
@@ -35,7 +35,7 @@ document.addEventListener('DOMContentLoaded', function () {
     var dotContent = pre.parentElement
     var listingBlock = dotContent.parentElement
 
-    if (listingBlock.classList.contains('noheader')) return;
+    if (listingBlock.classList.contains('noheader')) return
 
     var addCopyButton = !listingBlock.classList.contains('nocopy')
     var addPlayButton = !listingBlock.classList.contains('noplay')
@@ -44,9 +44,10 @@ document.addEventListener('DOMContentLoaded', function () {
     var div = pre.parentNode
 
     var code = block.innerHTML
-    var language = block.hasAttribute('class') && block.getAttribute('class').match(/language-([a-z0-9-])+/i)[0].replace('language-', '')
+    var language = block.hasAttribute('class') &&
+      block.getAttribute('class').match(/language-([a-z0-9-])+/i)[0].replace('language-', '')
 
-    if (language && ignore.indexOf(language.toLowerCase()) > -1) return;
+    if (language && ignore.indexOf(language.toLowerCase()) > -1) return
 
     var languageDiv = document.createElement('div')
     languageDiv.className = 'code-language'
@@ -54,7 +55,7 @@ document.addEventListener('DOMContentLoaded', function () {
     if (language) {
       languageDiv.innerHTML = language
     }
-    var children = [languageDiv, copyButton]
+    var children = [languageDiv]
 
     if (addCopyButton) {
       var copyButton = createElement('button', 'btn btn-copy', [document.createTextNode('Copy to Clipboard')])
@@ -79,8 +80,7 @@ document.addEventListener('DOMContentLoaded', function () {
       children.push(copyButton)
     }
 
-
-    if (language === "cypher" && addPlayButton) {
+    if (language === 'cypher' && addPlayButton) {
       var runButton = createElement('button', 'btn btn-run btn-primary', [document.createTextNode('Run in Browser')])
       runButton.addEventListener('click', function (e) {
         e.preventDefault()
@@ -101,7 +101,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
       children.unshift(titleDiv)
     }
-
 
     var header = createElement('div', 'code-header', children)
 
@@ -124,7 +123,6 @@ document.addEventListener('DOMContentLoaded', function () {
   document.querySelectorAll('.highlight')
     .forEach(addCodeHeader)
 
-
   var targetActive = 'tabbed-target--active'
   var tabActive = 'tabbed-tab--active'
 
@@ -142,23 +140,27 @@ document.addEventListener('DOMContentLoaded', function () {
       target.classList.add(targetActive)
 
       target.parentElement.parentElement.querySelectorAll('.' + tabActive)
-        .forEach(function (el) { el.classList.remove(tabActive) })
+        .forEach(function (el) {
+          el.classList.remove(tabActive)
+        })
 
       target.parentElement.parentElement.querySelectorAll('.tabbed-tab[data-title="' + title + '"]')
-        .forEach(function (el) { el.classList.add(tabActive) })
+        .forEach(function (el) {
+          el.classList.add(tabActive)
+        })
     })
 
     var offset = document.querySelector('.navbar').offsetHeight + document.querySelector('.toolbar').offsetHeight + 20
 
-    var bodyRect = document.body.getBoundingClientRect().top;
-    var elementRect = tab.getBoundingClientRect().top;
-    var elementPosition = elementRect - bodyRect;
-    var offsetPosition = elementPosition - offset;
+    var bodyRect = document.body.getBoundingClientRect().top
+    var elementRect = tab.getBoundingClientRect().top
+    var elementPosition = elementRect - bodyRect
+    var offsetPosition = elementPosition - offset
 
     window.scrollTo({
       top: offsetPosition,
-      behavior: 'smooth'
-    });
+      behavior: 'smooth',
+    })
   }
 
   // Tabbed code
@@ -177,17 +179,15 @@ document.addEventListener('DOMContentLoaded', function () {
         if (nextTab && !nextTab.classList.contains('sect2') && nextTab.querySelector('code')) {
           elements.push(nextTab)
 
-
           tab = nextTab
-        }
-        else {
+        } else {
           tab = false
         }
       }
 
       // Don't do anything if there's only one tab
       if (elements.length <= 1) {
-        return;
+        return
       }
 
       var tabbedContainer = createElement('div', 'tabbed-container', [])
@@ -199,12 +199,11 @@ document.addEventListener('DOMContentLoaded', function () {
       var tabs = elements.map(function (element) {
         var title = element.querySelector('.title')
         var codeLanguage = element.querySelector('.code-language')
-        var text;
-        if ( title ) {
+        var text
+        if (title) {
           text = title.innerHTML
-        }
-        else if ( codeLanguage ) {
-          var text = codeLanguage.innerHTML
+        } else if (codeLanguage) {
+          text = codeLanguage.innerHTML
         }
 
         var tabElement = createElement('li', 'tabbed-tab', [document.createTextNode(text)])
@@ -230,7 +229,4 @@ document.addEventListener('DOMContentLoaded', function () {
 
       elements[0].classList.add('tabbed-target--active')
     })
-
-
-
 })

@@ -1,189 +1,190 @@
 .feedback {
-    position: fixed;
-    bottom: 0;
-    right: 2rem;
-    border-top-left-radius: .25rem;
-    border-top-right-radius: .25rem;
-
-    background: var(--colour-blue-100);
-    color: var(--colour-blue-800);
-    padding: 0.5rem 1rem;
-    width: 320px;
-    font-size: .8rem;
-    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-    z-index: 1000;
+  position: fixed;
+  bottom: 0;
+  right: 2rem;
+  border-top-left-radius: 0.25rem;
+  border-top-right-radius: 0.25rem;
+  background: var(--colour-blue-100);
+  color: var(--colour-blue-800);
+  padding: 0.5rem 1rem;
+  width: 320px;
+  font-size: 0.8rem;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  z-index: 1000;
 }
 
 .feedback.negative {
-    background: var(--colour-red-100);
-    color: var(--colour-red-800);
+  background: var(--colour-red-100);
+  color: var(--colour-red-800);
 }
+
 .feedback.negative line {
-    stroke:  var(--colour-red-800);
+  stroke: var(--colour-red-800);
 }
 
 .feedback.negative a {
-    color: var(--colour-red-700);
+  color: var(--colour-red-700);
 }
 
 .feedback.positive {
-    background: var(--colour-green-100);
-    color: var(--colour-green-800);
+  background: var(--colour-green-100);
+  color: var(--colour-green-800);
 }
 
 .feedback .header {
-    display: flex;
-    justify-content: space-between;
-    padding: .25rem 0;
-
+  display: flex;
+  justify-content: space-between;
+  padding: 0.25rem 0;
 }
 
 .feedback .header p {
-    display: flex;
-    align-items: center;
-    margin: 0;
-    flex: 1;
+  display: flex;
+  align-items: center;
+  margin: 0;
+  flex: 1;
 }
 
 .feedback svg {
-    cursor: pointer;
+  cursor: pointer;
 }
 
 .feedback .header svg {
-    flex-grow: 0;
-    margin-left: .5rem;
+  flex-grow: 0;
+  margin-left: 0.5rem;
 }
 
 .feedback .form div {
-    font-size: .7rem;
+  font-size: 0.7rem;
 }
 
 .feedback h2,
-.feedback p{
-    font-size: .9rem;
+.feedback p {
+  font-size: 0.9rem;
 }
 
 .feedback input {
-    margin-right: .5rem;
+  margin-right: 0.5rem;
 }
 
 .feedback label {
-    font-size: .8rem;
+  font-size: 0.8rem;
 }
 
 .feedback .more-information {
-    margin: 1rem 0 .5rem;
+  margin: 1rem 0 0.5rem;
 }
+
 .feedback textarea {
-    border-radius: .25rem;
-    border: 1px solid var(--colour-blue-300);
-    background:var(--colour-white);
-    width: 100%;
-    font-family: inherit;
-    font-size: .7rem;
-    color: var(--colour-blue-700);
-    padding: .5rem;
+  border-radius: 0.25rem;
+  border: 1px solid var(--colour-blue-300);
+  background: var(--colour-white);
+  width: 100%;
+  font-family: inherit;
+  font-size: 0.7rem;
+  color: var(--colour-blue-700);
+  padding: 0.5rem;
 }
 
 .feedback path,
 .feedback circle,
 .feedback line {
-    fill: transparent;
-    stroke: var(--colour-blue-700);
-    stroke-width: 1;
+  fill: transparent;
+  stroke: var(--colour-blue-700);
+  stroke-width: 1;
 }
 
 .feedback .primary,
 .feedback .secondary {
-    padding: .25rem 1rem;
-    background: var(--colour-blue-100);
-    border: 1px solid var(--colour-blue-700);
-    color: var(--colour-blue-700);
-    border-radius: .175rem;
-    font-size: .8rem;
-    font-family: inherit;
-    font-weight: 600;
-    margin-right: .5rem;
-    margin-bottom: 1rem;
+  padding: 0.25rem 1rem;
+  background: var(--colour-blue-100);
+  border: 1px solid var(--colour-blue-700);
+  color: var(--colour-blue-700);
+  border-radius: 0.175rem;
+  font-size: 0.8rem;
+  font-family: inherit;
+  font-weight: 600;
+  margin-right: 0.5rem;
+  margin-bottom: 1rem;
 }
+
 .feedback .primary:focus,
 .feedback .primary:active,
 .feedback .secondary:focus,
 .feedback .secondary:active {
-    outline: none;
+  outline: none;
 }
 
 .feedback .primary {
-    background: var(--colour-blue-700);
-    color: var(--colour-white);
+  background: var(--colour-blue-700);
+  color: var(--colour-white);
 }
 
 .feedback.negative textarea {
-    border-color: var(--colour-red-300);
+  color: var(--colour-red-700);
 }
+
 .feedback.negative textarea:active,
 .feedback.negative textarea:focus {
-    outline: none;
+  outline: none;
 }
 
-
 .feedback.negative .primary {
-    background: var(--colour-red-700);
-    border-color: var(--colour-red-700);
-    color: var(--colour-white);
+  background: var(--colour-red-700);
+  border-color: var(--colour-red-700);
+  color: var(--colour-white);
 }
 
 .feedback.negative .secondary {
-    background: var(--colour-red-100);
-    border-color: var(--colour-red-700);
-    color: var(--colour-red-700);
-}
-
-.feedback.negative textarea {
-    color: var(--colour-red-700);
+  background: var(--colour-red-100);
+  border-color: var(--colour-red-700);
+  color: var(--colour-red-700);
 }
 
 .feedback .thank-you-positive,
 .feedback .thank-you-negative {
-    flex-direction: column;
+  flex-direction: column;
 }
+
 .feedback .thank-you-negative p {
-    margin-bottom: .5rem;
+  margin-bottom: 0.5rem;
 }
 
 @media all and (max-width: 1024px) {
-    .feedback {
-        position: relative;
-        margin: 1em 0;
-        border-radius: .25rem;
-        max-width: var(--doc-max-width);
-        min-width: 0;
-        right: auto;
-        width: auto;
-        box-shadow: none;
-        margin-bottom: 2rem;
-    }
+  .feedback {
+    position: relative;
+    margin: 1em 0;
+    border-radius: 0.25rem;
+    max-width: var(--doc-max-width);
+    min-width: 0;
+    right: auto;
+    width: auto;
+    box-shadow: none;
+    margin-bottom: 2rem;
+  }
 
-    .feedback.absolute {
-        top: auto !important;
-        bottom: auto !important;
-    }
+  .feedback.absolute {
+    top: auto !important;
+    bottom: auto !important;
+  }
 }
+
 @media all and (min-width: 712px) {
-    /* .feedback {
+  /* .feedback {
         margin: 1em auto 0;
     } */
 }
+
 @media all and (min-width: 1025px) {
-    /* .feedback {
+  /* .feedback {
         margin: 1em auto 0;
     } */
-    .feedback.absolute {
-        position: absolute;
-        margin: 0;
-    }
+  .feedback.absolute {
+    position: absolute;
+    margin: 0;
+  }
 }
+
 .feedback a {
-    display: inline-block;
-    margin-left: 4px;
+  display: inline-block;
+  margin-left: 4px;
 }

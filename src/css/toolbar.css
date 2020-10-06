@@ -64,6 +64,7 @@
   display: none;
   padding-right: 0.5rem;
 }
+
 @media screen and (min-width: 1350px) {
   .edit-this-page {
     padding-right: 0;

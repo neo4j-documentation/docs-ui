@@ -17,7 +17,7 @@ const requireFromString = require('require-from-string')
 const vfs = require('vinyl-fs')
 const yaml = require('js-yaml')
 
-handlebars.registerHelper('json', context => JSON.stringify(context))
+handlebars.registerHelper('json', (context) => JSON.stringify(context))
 
 const ASCIIDOC_ATTRIBUTES = { experimental: '', icons: 'font', sectanchors: '', 'source-highlighter': 'highlight.js' }
 
@@ -65,9 +65,7 @@ module.exports = (src, previewSrc, previewDest, sink = () => map()) => (done) =>
         )
         .pipe(vfs.dest(previewDest))
         .on('error', (e) => done)
-      ).then(() => sink())
-
-
+    ).then(() => sink())
 
 function loadSampleUiModel (src) {
   return fs.readFile(ospath.join(src, 'ui-model.yml'), 'utf8').then((contents) => yaml.safeLoad(contents))

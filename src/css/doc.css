@@ -22,10 +22,6 @@ body {
   }
 }
 
-.doc a {
-  font-weight: 600;
-}
-
 .doc h1,
 .doc h2,
 .doc h3,
@@ -47,7 +43,7 @@ body {
 .doc h5 {
   font-weight: 600;
   font-size: 1rem;
-  margin-bottom: .5rem;
+  margin-bottom: 0.5rem;
   color: var(--colour-grey-600);
 }
 
@@ -141,18 +137,21 @@ body {
 .doc .tableblock p {
   font-size: inherit;
 }
+
 .doc .tableblock .icon {
   display: inline-block;
-  margin-right: .5rem;
+  margin-right: 0.5rem;
 }
 
 .doc a {
+  font-weight: 600;
   color: var(--link-font-color);
 }
 
 .doc a:hover {
   color: var(--link_hover-font-color);
 }
+
 .doc a:visited {
   color: var(--link_visited-font-color);
 }
@@ -180,7 +179,7 @@ body {
   margin: 0;
 }
 
-.doc code:before {
+.doc code::before {
   opacity: 0;
 }
 
@@ -204,8 +203,8 @@ body {
 
 .doc .image.right {
   margin-left: 1rem;
-
 }
+
 .doc .image.left {
   margin-right: 1rem;
 }
@@ -236,15 +235,6 @@ body {
 .doc .partintro,
 .doc .colist {
   margin: 0 0 1.5rem;
-}
-
-.doc table.tableblock {
-  border-collapse: collapse;
-  font-size: calc(15 / var(--rem-base) * 1rem);
-  margin: 2rem 0;
-  /* enable table-layout: fixed if you want the table width to be enforced strictly */
-  /* alternative is to wrap table in div and set overflow-x: auto on the wrapper */
-  /* table-layout: fixed; */
 }
 
 .doc table.stretch {
@@ -290,7 +280,7 @@ body {
 .doc .admonitionblock {
   margin: 0 0 1.5rem;
   border-left: 4px solid var(--doc-font-color);
-  border-radius: .25rem;
+  border-radius: 0.25rem;
 }
 
 .doc .admonitionblock p,
@@ -334,8 +324,6 @@ body {
   transform: translate(-0.5rem, -50%); */
 }
 
-
-
 .doc .admonitionblock.warning {
   background-color: var(--colour-red-200);
   color: var(--colour-red-900);
@@ -346,9 +334,7 @@ body {
   background-color: var(--colour-red-100);
   color: var(--colour-red-700);
 }
-.doc .admonitionblock.warning a {
-  color: var(--colour-red-600);
-}
+
 .doc .admonitionblock.warning a {
   color: var(--colour-red-500);
 }
@@ -362,6 +348,7 @@ body {
 .doc .admonitionblock.caution a {
   color: var(--colour-orange-500);
 }
+
 .doc .admonitionblock.caution a:hover {
   color: var(--colour-orange-400);
 }
@@ -380,6 +367,7 @@ body {
 .doc .admonitionblock.tip a {
   color: var(--colour-blue-600);
 }
+
 .doc .admonitionblock.tip a:hover {
   color: var(--colour-blue-500);
 }
@@ -398,13 +386,9 @@ body {
 .doc .admonitionblock.note a {
   color: var(--colour-grey-600);
 }
+
 .doc .admonitionblock.note a:hover {
   color: var(--colour-grey-500);
-}
-
-.doc .admonitionblock.tip pre {
-  background-color: var(--colour-blue-100);
-  color: var(--colour-blue-700);
 }
 
 .doc .admonitionblock.important {
@@ -412,9 +396,11 @@ body {
   color: var(--colour-purple-900);
   border-left-color: var(--colour-purple-600);
 }
+
 .doc .admonitionblock.important a {
   color: var(--colour-purple-600);
 }
+
 .doc .admonitionblock.important a:hover {
   color: var(--colour-purple-500);
 }
@@ -470,11 +456,6 @@ body {
   max-width: 100%;
 }
 
-#preamble .abstract .title {
-  margin-bottom: 0;
-  font-weight: 600;
-}
-
 #preamble .abstract blockquote {
   background: var(--abstract-background);
   border-left: 5px solid var(--abstract-border-color);
@@ -484,6 +465,8 @@ body {
 }
 
 #preamble .abstract .title {
+  margin-bottom: 0;
+  font-weight: 600;
   background: var(--abstract-background);
   border-left: 5px solid var(--abstract-border-color);
   color: var(--abstract-font-color);
@@ -665,7 +648,6 @@ body {
   white-space: pre-wrap;
 }
 
-
 .doc pre:not(.highlight),
 .doc pre.highlight code {
   background: var(--pre-background);
@@ -673,7 +655,7 @@ body {
   display: block;
   overflow-x: auto;
   padding: 0.75rem;
-  border-radius: .5rem;
+  border-radius: 0.5rem;
 }
 
 /* NOTE assume pre.highlight contains code[data-lang] */
@@ -817,48 +799,48 @@ body {
   word-break: break-word; /* overflow-wrap for table cells; gives space higher precedence than hyphen opportunity */
 }
 
-
 .doc pre.has-header {
   border-top-left-radius: 0;
   border-top-right-radius: 0;
 }
 
 .doc .code-header {
-  padding: .2rem 0.75rem;
+  padding: 0.2rem 0.75rem;
   border-top-left-radius: 0.25rem;
   border-top-right-radius: 0.25rem;
   background: var(--code-header-background);
   color: var(--code-header-font-color);
-  font-size: .8em;
+  font-size: 0.8em;
   display: flex;
 }
 
 .doc .code-header div {
-  padding: .6rem 0;
+  padding: 0.6rem 0;
   font-weight: var(--body-font-weight-bold);
 }
 
 .doc .code-header .code-title {
   color: var(--colour-grey-500);
-  padding-right: .5em;
+  padding-right: 0.5em;
 }
+
 .doc .code-header .code-language {
   flex-grow: 1;
-  padding: .6rem 0;
+  padding: 0.6rem 0;
 }
 
 .doc .code-header .btn {
-  border: 0px none;
+  border: 0 none;
   background: transparent;
   color: var(--code-button-font-color) !important;
   margin: 0.25rem 0 0.25rem 0.5rem;
-  padding: .6rem 0;
-  border-radius: .175rem;
+  padding: 0.6rem 0;
+  border-radius: 0.175rem;
   font-weight: var(--body-font-weight-bold);
   line-height: 1;
   text-align: center;
-
 }
+
 .doc .code-header .btn:focus {
   outline: none;
 }
@@ -866,7 +848,7 @@ body {
 .doc .code-header .btn.btn-primary {
   background: var(--code-button-background);
   /* margin-right: 0.25rem; */
-  padding: .6rem;
+  padding: 0.6rem;
 }
 
 .doc .code-header .btn.btn-primary:active {
@@ -879,10 +861,11 @@ body {
 
 .doc mark {
   background: var(--mark-background);
-  padding: .25rem;
+  padding: 0.25rem;
 }
 
-.doc img, .doc object {
+.doc img,
+.doc object {
   max-width: 100%;
 }
 
@@ -890,10 +873,11 @@ body {
   display: inline-block;
   background: var(--colour-grey-600);
   color: var(--colour-white);
-  padding: .5rem 2rem;
-  border-radius: .25rem;
+  padding: 0.5rem 2rem;
+  border-radius: 0.25rem;
   margin-bottom: 2rem;
 }
+
 .doc .button:hover {
   background: var(--colour-grey-500);
   color: var(--colour-white);
@@ -901,8 +885,8 @@ body {
 
 .doc .paragraph.expertise p {
   display: inline-block;
-  padding: .2rem .8rem;
-  border-radius: .25rem;
+  padding: 0.2rem 0.8rem;
+  border-radius: 0.25rem;
   background: var(--colour-blue-200);
   color: var(--colour-blue-700);
   font-weight: 600;
@@ -921,8 +905,8 @@ body {
 
 .doc .paragraph.release p {
   display: inline-block;
-  padding: .2rem .8rem;
-  border-radius: .25rem;
+  padding: 0.2rem 0.8rem;
+  border-radius: 0.25rem;
   background: var(--colour-blue-200);
   color: var(--colour-blue-700);
   font-weight: 600;
@@ -941,8 +925,8 @@ body {
 
 .doc .paragraph.type p {
   display: inline-block;
-  padding: .2rem .8rem;
-  border-radius: .25rem;
+  padding: 0.2rem 0.8rem;
+  border-radius: 0.25rem;
   background: var(--colour-blue-200);
   color: var(--colour-blue-700);
   font-weight: 600;
@@ -959,14 +943,18 @@ body {
   color: var(--colour-blue-700);
 }
 
-.doc .responsive-embed, .doc .videoblock {
+.doc .responsive-embed,
+.doc .videoblock {
   position: relative;
   padding-bottom: 56.25%; /* 16:9 */
   /* padding-bottom: 66.6%;  6:4 */
   height: 0;
   margin-bottom: 2rem;
 }
-.responsive-embed iframe, .doc .videoblock iframe, .doc .videoblock video {
+
+.responsive-embed iframe,
+.doc .videoblock iframe,
+.doc .videoblock video {
   position: absolute;
   top: 0;
   left: 0;
@@ -974,23 +962,29 @@ body {
   height: 100%;
 }
 
-.doc .more:after {
+.doc .more::after {
   display: inline-block;
   content: "→";
   margin-left: 4px;
   margin-top: -4px;
-  transition: all .3s;
+  transition: all 0.3s;
 }
 
-.doc .more:hover:after {
+.doc .more:hover::after {
   margin-left: 12px;
 }
 
-
 .doc table.tableblock {
+  border-collapse: collapse;
+  font-size: calc(15 / var(--rem-base) * 1rem);
+  margin: 2rem 0;
   border-radius: 0.25em;
   overflow: hidden;
+  /* enable table-layout: fixed if you want the table width to be enforced strictly */
+  /* alternative is to wrap table in div and set overflow-x: auto on the wrapper */
+  /* table-layout: fixed; */
 }
+
 .doc table.tableblock tr:last-child td {
   border-bottom: 3px solid var(--colour-grey-300);
 }
@@ -1031,7 +1025,6 @@ body {
 }
  */
 
-
 /* .doc .tabbed {
   background: var(--colour-grey-100);
 } */
@@ -1045,8 +1038,8 @@ body {
   /* background: var(--colour-grey-100); */
   margin: 0 -1rem 1.5rem;
   /* padding: 1rem; */
-  border-top-left-radius: .25rem;
-  border-top-right-radius: .25rem;
+  border-top-left-radius: 0.25rem;
+  border-top-right-radius: 0.25rem;
   border: 1px solid var(--colour-grey-200);
   border-top-width: var(--tabbed-border);
 }
@@ -1054,23 +1047,24 @@ body {
 .doc .tabbed-tabs {
   display: flex;
   margin: 0;
-  padding: .5rem 1rem;
+  padding: 0.5rem 1rem;
   background: var(--colour-grey-200);
- }
+}
 
 .doc .tabbed-tabs .tabbed-tab {
   display: flex;
   flex-grow: 0;
   list-style-type: none;
-  font-size: .7rem;
+  font-size: 0.7rem;
   font-weight: 600;
-  padding: .4rem .6rem;
-  margin-right: .5rem;
+  padding: 0.4rem 0.6rem;
+  margin-right: 0.5rem;
   background: var(--colour-grey-300);
   border: 1px solid var(--colour-grey-300);
-  border-radius: .5rem;
+  border-radius: 0.5rem;
   cursor: pointer;
 }
+
 .doc .tabbed-tabs .tabbed-tab--active {
   background: var(--colour-white);
   border-color: var(--colour-grey-300);
@@ -1123,6 +1117,7 @@ body {
 .doc .graph-app {
   position: relative;
 }
+
 .doc .graph-app-logo {
   /* margin-top: 1rem;
   marg */
@@ -1131,12 +1126,12 @@ body {
   right: 1rem;
 }
 
-.doc a.external:after {
+.doc a.external::after {
   display: inline-block;
   /* height: .8rem;
   width: .8rem; */
-  margin: 0 .2rem;
+  margin: 0 0.2rem;
   content: "→";
   color: var(--colour-purple-600);
-  transform: rotate(-45deg)
+  transform: rotate(-45deg);
 }
