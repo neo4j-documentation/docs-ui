@@ -81,7 +81,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     if (language === 'cypher' && addPlayButton) {
-      var runButton = createElement('button', 'btn btn-run btn-primary', [document.createTextNode('Run in Browser')])
+      var runButton = createElement('button', 'btn btn-run btn-primary', [document.createTextNode('Run in Neo4j Browser')])
       runButton.addEventListener('click', function (e) {
         e.preventDefault()
 
