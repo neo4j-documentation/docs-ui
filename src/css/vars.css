@@ -215,7 +215,7 @@
   --kbd-border-color: var(--colour-grey-400);
   --pre-background: var(--panel-background);
   --pre-border-color: var(--panel-border-color);
-  --pre-annotation-font-color: var(--colour-grey-100);
+  --pre-annotation-font-color: var(--colour-grey-600);
   --quote-background: var(--panel-background);
   --quote-border-color: var(--colour-grey-700);
   --quote-font-color: var(--colour-grey-700);
