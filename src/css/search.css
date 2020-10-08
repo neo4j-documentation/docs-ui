@@ -82,6 +82,7 @@ body.search--active {
   display: block;
   flex-direction: column;
   justify-content: center;
+  cursor: pointer;
 }
 
 .search svg line {
