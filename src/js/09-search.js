@@ -40,7 +40,7 @@ window.neo4jSearch = (function () {
   }
 
   var closeSearch = function () {
-    body.classList.add(activeClass)
+    body.classList.remove(activeClass)
     container.classList.remove(activeClass)
     container.classList.remove('search-context--' + searchContext)
   }
