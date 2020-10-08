@@ -384,6 +384,6 @@ window.neo4jSearch = (function () {
 
   return {
     updateContext: updateContext,
-    openSearch: openSearch
+    openSearch: openSearch,
   }
 })()
