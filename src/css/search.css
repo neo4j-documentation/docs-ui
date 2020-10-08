@@ -22,6 +22,10 @@
   opacity: 0;
 }
 
+body.search--active {
+  overflow: hidden;
+}
+
 .search.search--active {
   display: flex;
   opacity: 1;
