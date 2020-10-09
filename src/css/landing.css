@@ -231,3 +231,7 @@ body.landing .buttons li a {
     padding: 12px;
 }
 }
+
+.landing .toc.sidebar {
+    display: none;
+}
