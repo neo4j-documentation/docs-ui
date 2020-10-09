@@ -1,11 +1,13 @@
-body.labs-home .hero {
+
+
+/* body.labs-home .hero {
   background-image: url('https://cdn.neo4jlabs.com/images/lab-pipette-big.jpg');
   background-repeat: no-repeat;
   background-size: cover;
   padding: 8rem 0;
   text-align: center;
   color: var(--colour-white);
-  /* margin-bottom: 2rem; */
+
 }
 
 body.labs-home .hero h1 {

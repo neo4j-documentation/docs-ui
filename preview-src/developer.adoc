@@ -1,43 +1,179 @@
-= Neo4j Labs
-:page-layout: developer
+= Neo4j Developer Guides
+:page-layout: landing
 :page-theme: developer
+// :page-herotitle: Neo4j Developer Guides
+// :page-herosubtitle: Get up and running with Neo4j in less than an hour or something a bit more catchy
+:page-toclevels: -1
+
+[.hero]
+== Neo4j Developer Resources
+
+Get up and running with Neo4j in less than an hour or something a bit more catchy
+
+++++
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="100px" height="100px" viewBox="0 0 100 100" preserveAspectRatio="none" style="enable-background:new 0 0 100 100;" xml:space="preserve" class="top"><polygon class="st0" points="100,100 0,100 100,0 "></polygon><line class="st1" x1="0" y1="100" x2="100" y2="0"></line></svg>
+++++
+
+[.buttons]
+* link:#[Neo4j for Developers]
+* link:#[Neo4j for Data Scientists]
+* link:#[Neo4j for DevOps]
+
+++++
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="100px" height="100px" viewBox="0 0 100 100" preserveAspectRatio="none" style="enable-background:new 0 0 100 100;" xml:space="preserve" class="bottom"><polygon class="st0" points="100,100 0,100 100,0 "></polygon><line class="st1" x1="0" y1="100" x2="100" y2="0"></line></svg>
+++++
+
+[.secondary.leading.flex]
+== Start with a Use Case
+
+// * Fraud Detection & Analytics
+// * Network and Database Infrastructure Management
+// * Recommendation Engines
+// * Master Data Management
+// * Social Media and Social Network Graphs
+// * Identity and Access Management
+
+
+[.column]
+=== Social Example
+
+image:http://localhost:8000/developer/_images/diagram.png[JavaScript & Node.js]
+
+Joe knows Sally, and Sally knows Anna. Bob is excluded from the result because, in addition to being a 2nd-degree friend through Sally, he's also a first-degree friend.
+
+link:#[Create a Free Social Sandbox, role=more information]
+
+
+[.column]
+=== Network Management
+
+image:http://localhost:8000/developer/_images/diagram.png[JavaScript & Node.js]
+
+Only Webserver VM depends on Server 1. Because we're looking at variable length paths of DEPENDS_ON relationships, we're also able to determine that Public Website would be impacted by an outage of Server 1.
+
+link:#[Create a Free Network Management Sandbox, role=more information]
+
+[.column]
+=== Fraud Detection
+
+image:http://localhost:8000/developer/_images/diagram.png[JavaScript & Node.js]
+
+Hank shares an account with Abby. Abby shares a SSN with Sophie and Max. Given that we suspect Hank may be involved in fraudulent activity, we can flag the Cayman account, Sophie, and Abby as possible fraudulent entities.
+
+
+link:#[Create a Free Fraud Detection Sandbox, role=more information]
 
 
 
-[#full-graph]
-[source,gram]
-(n0:Movie{title: 'The Matrix'}) (n1:Person{name: 'Keanu Reeves'}) (n2:Person{name: 'Carrie-Anne Moss'}) (n3:Person{name: 'Laurence Fishburne'}) (n4:Person{name: 'Hugo Weaving'}) (n5:Person{name: 'Lilly Wachowski'}) (n6:Person{name: 'Lana Wachowski'}) (n7:Person{name: 'Joel Silver'}) (n8:Person{name: 'Emil Eifrem'}) (n9:Movie{title: 'The Matrix Reloaded'}) (n10:Movie{title: 'The Matrix Revolutions'}) (n11:Movie{title: 'The Devil\'s Advocate'}) (n12:Person{name: 'Charlize Theron'}) (n13:Person{name: 'Al Pacino'}) (n14:Person{name: 'Taylor Hackford'}) (n15:Movie{title: 'A Few Good Men'}) (n16:Person{name: 'Tom Cruise'}) (n17:Person{name: 'Jack Nicholson'}) (n18:Person{name: 'Demi Moore'}) (n19:Person{name: 'Kevin Bacon'}) (n20:Person{name: 'Kiefer Sutherland'}) (n21:Person{name: 'Noah Wyle'}) (n22:Person{name: 'Cuba Gooding Jr.'}) (n23:Person{name: 'Kevin Pollak'}) (n24:Person{name: 'J.T. Walsh'}) (n25:Person{name: 'James Marshall'}) (n26:Person{name: 'Christopher Guest'}) (n27:Person{name: 'Rob Reiner'}) (n28:Person{name: 'Aaron Sorkin'}) (n29:Movie{title: 'Top Gun'}) (n30:Person{name: 'Kelly McGillis'}) (n31:Person{name: 'Val Kilmer'}) (n32:Person{name: 'Anthony Edwards'}) (n33:Person{name: 'Tom Skerritt'}) (n34:Person{name: 'Meg Ryan'}) (n35:Person{name: 'Tony Scott'}) (n36:Person{name: 'Jim Cash'}) (n37:Movie{title: 'Jerry Maguire'}) (n38:Person{name: 'Renee Zellweger'}) (n39:Person{name: 'Kelly Preston'}) (n40:Person{name: 'Jerry O\'Connell'}) (n41:Person{name: 'Jay Mohr'}) (n42:Person{name: 'Bonnie Hunt'}) (n43:Person{name: 'Regina King'}) (n44:Person{name: 'Jonathan Lipnicki'}) (n45:Person{name: 'Cameron Crowe'}) (n46:Movie{title: 'Stand By Me'}) (n47:Person{name: 'River Phoenix'}) (n48:Person{name: 'Corey Feldman'}) (n49:Person{name: 'Wil Wheaton'}) (n50:Person{name: 'John Cusack'}) (n51:Person{name: 'Marshall Bell'}) (n52:Movie{title: 'As Good as It Gets'}) (n53:Person{name: 'Helen Hunt'}) (n54:Person{name: 'Greg Kinnear'}) (n55:Person{name: 'James L. Brooks'}) (n56:Movie{title: 'What Dreams May Come'}) (n57:Person{name: 'Annabella Sciorra'}) (n58:Person{name: 'Max von Sydow'}) (n59:Person{name: 'Werner Herzog'}) (n60:Person{name: 'Robin Williams'}) (n61:Person{name: 'Vincent Ward'}) (n62:Movie{title: 'Snow Falling on Cedars'}) (n63:Person{name: 'Ethan Hawke'}) (n64:Person{name: 'Rick Yune'}) (n65:Person{name: 'James Cromwell'}) (n66:Person{name: 'Scott Hicks'}) (n67:Movie{title: 'You\'ve Got Mail'}) (n68:Person{name: 'Parker Posey'}) (n69:Person{name: 'Dave Chappelle'}) (n70:Person{name: 'Steve Zahn'}) (n71:Person{name: 'Tom Hanks'}) (n72:Person{name: 'Nora Ephron'}) (n73:Movie{title: 'Sleepless in Seattle'}) (n74:Person{name: 'Rita Wilson'}) (n75:Person{name: 'Bill Pullman'}) (n76:Person{name: 'Victor Garber'}) (n77:Person{name: 'Rosie O\'Donnell'}) (n78:Movie{title: 'Joe Versus the Volcano'}) (n79:Person{name: 'John Patrick Stanley'}) (n80:Person{name: 'Nathan Lane'}) (n81:Movie{title: 'When Harry Met Sally'}) (n82:Person{name: 'Billy Crystal'}) (n83:Person{name: 'Carrie Fisher'}) (n84:Person{name: 'Bruno Kirby'}) (n85:Movie{title: 'That Thing You Do'}) (n86:Person{name: 'Liv Tyler'}) (n87:Movie{title: 'The Replacements'}) (n88:Person{name: 'Brooke Langton'}) (n89:Person{name: 'Gene Hackman'}) (n90:Person{name: 'Orlando Jones'}) (n91:Person{name: 'Howard Deutch'}) (n92:Movie{title: 'RescueDawn'}) (n93:Person{name: 'Christian Bale'}) (n94:Person{name: 'Zach Grenier'}) (n95:Movie{title: 'The Birdcage'}) (n96:Person{name: 'Mike Nichols'}) (n97:Movie{title: 'Unforgiven'}) (n98:Person{name: 'Richard Harris'}) (n99:Person{name: 'Clint Eastwood'}) (n100:Movie{title: 'Johnny Mnemonic'}) (n101:Person{name: 'Takeshi Kitano'}) (n102:Person{name: 'Dina Meyer'}) (n103:Person{name: 'Ice-T'}) (n104:Person{name: 'Robert Longo'}) (n105:Movie{title: 'Cloud Atlas'}) (n106:Person{name: 'Halle Berry'}) (n107:Person{name: 'Jim Broadbent'}) (n108:Person{name: 'Tom Tykwer'}) (n109:Person{name: 'David Mitchell'}) (n110:Person{name: 'Stefan Arndt'}) (n111:Movie{title: 'The Da Vinci Code'}) (n112:Person{name: 'Ian McKellen'}) (n113:Person{name: 'Audrey Tautou'}) (n114:Person{name: 'Paul Bettany'}) (n115:Person{name: 'Ron Howard'}) (n116:Movie{title: 'V for Vendetta'}) (n117:Person{name: 'Natalie Portman'}) (n118:Person{name: 'Stephen Rea'}) (n119:Person{name: 'John Hurt'}) (n120:Person{name: 'Ben Miles'}) (n121:Movie{title: 'Speed Racer'}) (n122:Person{name: 'Emile Hirsch'}) (n123:Person{name: 'John Goodman'}) (n124:Person{name: 'Susan Sarandon'}) (n125:Person{name: 'Matthew Fox'}) (n126:Person{name: 'Christina Ricci'}) (n127:Person{name: 'Rain'}) (n128:Movie{title: 'Ninja Assassin'}) (n129:Person{name: 'Naomie Harris'}) (n130:Movie{title: 'The Green Mile'}) (n131:Person{name: 'Michael Clarke Duncan'}) (n132:Person{name: 'David Morse'}) (n133:Person{name: 'Sam Rockwell'}) (n134:Person{name: 'Gary Sinise'}) (n135:Person{name: 'Patricia Clarkson'}) (n136:Person{name: 'Frank Darabont'}) (n137:Movie{title: 'Frost/Nixon'}) (n138:Person{name: 'Frank Langella'}) (n139:Person{name: 'Michael Sheen'}) (n140:Person{name: 'Oliver Platt'}) (n141:Movie{title: 'Hoffa'}) (n142:Person{name: 'Danny DeVito'}) (n143:Person{name: 'John C. Reilly'}) (n144:Movie{title: 'Apollo 13'}) (n145:Person{name: 'Ed Harris'}) (n146:Person{name: 'Bill Paxton'}) (n147:Movie{title: 'Twister'}) (n148:Person{name: 'Philip Seymour Hoffman'}) (n149:Person{name: 'Jan de Bont'}) (n150:Movie{title: 'Cast Away'}) (n151:Person{name: 'Robert Zemeckis'}) (n152:Movie{title: 'One Flew Over the Cuckoo\'s Nest'}) (n153:Person{name: 'Milos Forman'}) (n154:Movie{title: 'Something\'s Gotta Give'}) (n155:Person{name: 'Diane Keaton'}) (n156:Person{name: 'Nancy Meyers'}) (n157:Movie{title: 'Bicentennial Man'}) (n158:Person{name: 'Chris Columbus'}) (n159:Movie{title: 'Charlie Wilson\'s War'}) (n160:Person{name: 'Julia Roberts'}) (n161:Movie{title: 'The Polar Express'}) (n162:Movie{title: 'A League of Their Own'}) (n163:Person{name: 'Madonna'}) (n164:Person{name: 'Geena Davis'}) (n165:Person{name: 'Lori Petty'}) (n166:Person{name: 'Penny Marshall'}) (n167:Person{name: 'Paul Blythe'}) (n168:Person{name: 'Angela Scope'}) (n169:Person{name: 'Jessica Thompson'}) (n170:Person{name: 'James Thompson'})
-(n1)-[r15:ACTED_IN]->(n10) (n1)-[r8:ACTED_IN]->(n9) (n1)-[r221:ACTED_IN]->(n154) (n1)-[r22:ACTED_IN]->(n11) (n1)-[r114:ACTED_IN]->(n87) (n1)-[r132:ACTED_IN]->(n100) (n1)-[r0:ACTED_IN]->(n0) (n2)-[r16:ACTED_IN]->(n10) (n2)-[r9:ACTED_IN]->(n9) (n2)-[r1:ACTED_IN]->(n0) (n3)-[r2:ACTED_IN]->(n0) (n3)-[r10:ACTED_IN]->(n9) (n3)-[r17:ACTED_IN]->(n10) (n4)-[r138:ACTED_IN]->(n105) (n4)-[r151:ACTED_IN]->(n116) (n4)-[r18:ACTED_IN]->(n10) (n4)-[r11:ACTED_IN]->(n9) (n4)-[r3:ACTED_IN]->(n0) (n5)-[r157:PRODUCED]->(n116) (n5)-[r179:PRODUCED]->(n128) (n5)-[r142:DIRECTED]->(n105) (n5)-[r171:WROTE]->(n121) (n5)-[r19:DIRECTED]->(n10) (n5)-[r4:DIRECTED]->(n0) (n5)-[r12:DIRECTED]->(n9) (n5)-[r160:WROTE]->(n116) (n5)-[r169:DIRECTED]->(n121) (n6)-[r180:PRODUCED]->(n128) (n6)-[r20:DIRECTED]->(n10) (n6)-[r143:DIRECTED]->(n105) (n6)-[r172:WROTE]->(n121) (n6)-[r158:PRODUCED]->(n116) (n6)-[r5:DIRECTED]->(n0) (n6)-[r170:DIRECTED]->(n121) (n6)-[r161:WROTE]->(n116) (n6)-[r13:DIRECTED]->(n9) (n7)-[r6:PRODUCED]->(n0) (n7)-[r159:PRODUCED]->(n116) (n7)-[r181:PRODUCED]->(n128) (n7)-[r21:PRODUCED]->(n10) (n7)-[r173:PRODUCED]->(n121) (n7)-[r14:PRODUCED]->(n9) (n8)-[r7:ACTED_IN]->(n0) (n12)-[r23:ACTED_IN]->(n11) (n12)-[r112:ACTED_IN]->(n85) (n13)-[r24:ACTED_IN]->(n11) (n14)-[r25:DIRECTED]->(n11) (n16)-[r48:ACTED_IN]->(n37) (n16)-[r40:ACTED_IN]->(n29) (n16)-[r26:ACTED_IN]->(n15) (n17)-[r197:ACTED_IN]->(n141) (n17)-[r68:ACTED_IN]->(n52) (n17)-[r219:ACTED_IN]->(n154) (n17)-[r27:ACTED_IN]->(n15) (n17)-[r216:ACTED_IN]->(n152) (n18)-[r28:ACTED_IN]->(n15) (n19)-[r193:ACTED_IN]->(n137) (n19)-[r29:ACTED_IN]->(n15) (n19)-[r203:ACTED_IN]->(n144) (n20)-[r65:ACTED_IN]->(n46) (n20)-[r30:ACTED_IN]->(n15) (n21)-[r31:ACTED_IN]->(n15) (n22)-[r74:ACTED_IN]->(n56) (n22)-[r49:ACTED_IN]->(n37) (n22)-[r32:ACTED_IN]->(n15) (n22)-[r71:ACTED_IN]->(n52) (n23)-[r33:ACTED_IN]->(n15) (n24)-[r199:ACTED_IN]->(n141) (n24)-[r34:ACTED_IN]->(n15) (n25)-[r178:DIRECTED]->(n128) (n25)-[r35:ACTED_IN]->(n15) (n25)-[r156:DIRECTED]->(n116) (n26)-[r36:ACTED_IN]->(n15) (n27)-[r106:DIRECTED]->(n81) (n27)-[r107:PRODUCED]->(n81) (n27)-[r38:DIRECTED]->(n15) (n27)-[r67:DIRECTED]->(n46) (n28)-[r37:ACTED_IN]->(n15) (n28)-[r39:WROTE]->(n15) (n30)-[r41:ACTED_IN]->(n29) (n31)-[r42:ACTED_IN]->(n29) (n32)-[r43:ACTED_IN]->(n29) (n33)-[r44:ACTED_IN]->(n29) (n34)-[r103:ACTED_IN]->(n81) (n34)-[r45:ACTED_IN]->(n29) (n34)-[r85:ACTED_IN]->(n67) (n34)-[r92:ACTED_IN]->(n73) (n34)-[r99:ACTED_IN]->(n78) (n35)-[r46:DIRECTED]->(n29) (n36)-[r47:WROTE]->(n29) (n38)-[r50:ACTED_IN]->(n37) (n39)-[r51:ACTED_IN]->(n37) (n40)-[r52:ACTED_IN]->(n37) (n40)-[r62:ACTED_IN]->(n46) (n41)-[r53:ACTED_IN]->(n37) (n42)-[r54:ACTED_IN]->(n37) (n42)-[r185:ACTED_IN]->(n130) (n43)-[r55:ACTED_IN]->(n37) (n44)-[r56:ACTED_IN]->(n37) (n45)-[r58:PRODUCED]->(n37) (n45)-[r57:DIRECTED]->(n37) (n45)-[r59:WROTE]->(n37) (n47)-[r61:ACTED_IN]->(n46) (n48)-[r63:ACTED_IN]->(n46) (n49)-[r60:ACTED_IN]->(n46) (n50)-[r64:ACTED_IN]->(n46) (n51)-[r119:ACTED_IN]->(n92) (n51)-[r66:ACTED_IN]->(n46) (n53)-[r69:ACTED_IN]->(n52) (n53)-[r214:ACTED_IN]->(n150) (n53)-[r209:ACTED_IN]->(n147) (n54)-[r86:ACTED_IN]->(n67) (n54)-[r70:ACTED_IN]->(n52) (n55)-[r72:DIRECTED]->(n52) (n57)-[r75:ACTED_IN]->(n56) (n58)-[r81:ACTED_IN]->(n62) (n58)-[r76:ACTED_IN]->(n56) (n59)-[r123:DIRECTED]->(n92) (n59)-[r77:ACTED_IN]->(n56) (n60)-[r73:ACTED_IN]->(n56) (n60)-[r124:ACTED_IN]->(n95) (n60)-[r225:ACTED_IN]->(n157) (n61)-[r78:DIRECTED]->(n56) (n63)-[r79:ACTED_IN]->(n62) (n64)-[r80:ACTED_IN]->(n62) (n64)-[r176:ACTED_IN]->(n128) (n65)-[r82:ACTED_IN]->(n62) (n65)-[r186:ACTED_IN]->(n130) (n66)-[r83:DIRECTED]->(n62) (n68)-[r87:ACTED_IN]->(n67) (n69)-[r88:ACTED_IN]->(n67) (n70)-[r122:ACTED_IN]->(n92) (n70)-[r89:ACTED_IN]->(n67) (n71)-[r234:ACTED_IN]->(n162) (n71)-[r137:ACTED_IN]->(n105) (n71)-[r146:ACTED_IN]->(n111) (n71)-[r91:ACTED_IN]->(n73) (n71)-[r232:ACTED_IN]->(n161) (n71)-[r182:ACTED_IN]->(n130) (n71)-[r213:ACTED_IN]->(n150) (n71)-[r228:ACTED_IN]->(n159) (n71)-[r110:ACTED_IN]->(n85) (n71)-[r113:DIRECTED]->(n85) (n71)-[r98:ACTED_IN]->(n78) (n71)-[r202:ACTED_IN]->(n144) (n71)-[r84:ACTED_IN]->(n67) (n72)-[r108:PRODUCED]->(n81) (n72)-[r97:DIRECTED]->(n73) (n72)-[r90:DIRECTED]->(n67) (n72)-[r109:WROTE]->(n81) (n74)-[r93:ACTED_IN]->(n73) (n75)-[r94:ACTED_IN]->(n73) (n76)-[r95:ACTED_IN]->(n73) (n77)-[r237:ACTED_IN]->(n162) (n77)-[r96:ACTED_IN]->(n73) (n79)-[r101:DIRECTED]->(n78) (n80)-[r125:ACTED_IN]->(n95) (n80)-[r100:ACTED_IN]->(n78) (n82)-[r102:ACTED_IN]->(n81) (n83)-[r104:ACTED_IN]->(n81) (n84)-[r105:ACTED_IN]->(n81) (n86)-[r111:ACTED_IN]->(n85) (n88)-[r115:ACTED_IN]->(n87) (n89)-[r126:ACTED_IN]->(n95) (n89)-[r116:ACTED_IN]->(n87) (n89)-[r130:ACTED_IN]->(n97) (n90)-[r117:ACTED_IN]->(n87) (n91)-[r118:DIRECTED]->(n87) (n93)-[r120:ACTED_IN]->(n92) (n94)-[r210:ACTED_IN]->(n147) (n94)-[r121:ACTED_IN]->(n92) (n96)-[r127:DIRECTED]->(n95) (n96)-[r231:DIRECTED]->(n159) (n98)-[r128:ACTED_IN]->(n97) (n99)-[r131:DIRECTED]->(n97) (n99)-[r129:ACTED_IN]->(n97) (n101)-[r133:ACTED_IN]->(n100) (n102)-[r134:ACTED_IN]->(n100) (n103)-[r135:ACTED_IN]->(n100) (n104)-[r136:DIRECTED]->(n100) (n106)-[r139:ACTED_IN]->(n105) (n107)-[r140:ACTED_IN]->(n105) (n108)-[r141:DIRECTED]->(n105) (n109)-[r144:WROTE]->(n105) (n110)-[r145:PRODUCED]->(n105) (n112)-[r147:ACTED_IN]->(n111) (n113)-[r148:ACTED_IN]->(n111) (n114)-[r149:ACTED_IN]->(n111) (n115)-[r150:DIRECTED]->(n111) (n115)-[r196:DIRECTED]->(n137) (n115)-[r207:DIRECTED]->(n144) (n117)-[r152:ACTED_IN]->(n116) (n118)-[r153:ACTED_IN]->(n116) (n119)-[r154:ACTED_IN]->(n116) (n120)-[r177:ACTED_IN]->(n128) (n120)-[r168:ACTED_IN]->(n121) (n120)-[r155:ACTED_IN]->(n116) (n122)-[r162:ACTED_IN]->(n121) (n123)-[r163:ACTED_IN]->(n121) (n124)-[r164:ACTED_IN]->(n121) (n125)-[r165:ACTED_IN]->(n121) (n126)-[r166:ACTED_IN]->(n121) (n127)-[r167:ACTED_IN]->(n121) (n127)-[r174:ACTED_IN]->(n128) (n129)-[r175:ACTED_IN]->(n128) (n131)-[r183:ACTED_IN]->(n130) (n132)-[r184:ACTED_IN]->(n130) (n133)-[r195:ACTED_IN]->(n137) (n133)-[r187:ACTED_IN]->(n130) (n134)-[r206:ACTED_IN]->(n144) (n134)-[r188:ACTED_IN]->(n130) (n135)-[r189:ACTED_IN]->(n130) (n136)-[r190:DIRECTED]->(n130) (n138)-[r191:ACTED_IN]->(n137) (n139)-[r192:ACTED_IN]->(n137) (n140)-[r226:ACTED_IN]->(n157) (n140)-[r194:ACTED_IN]->(n137) (n142)-[r217:ACTED_IN]->(n152) (n142)-[r198:ACTED_IN]->(n141) (n142)-[r201:DIRECTED]->(n141) (n143)-[r200:ACTED_IN]->(n141) (n145)-[r204:ACTED_IN]->(n144) (n146)-[r205:ACTED_IN]->(n144) (n146)-[r239:ACTED_IN]->(n162) (n146)-[r208:ACTED_IN]->(n147) (n148)-[r211:ACTED_IN]->(n147) (n148)-[r230:ACTED_IN]->(n159) (n149)-[r212:DIRECTED]->(n147) (n151)-[r233:DIRECTED]->(n161) (n151)-[r215:DIRECTED]->(n150) (n153)-[r218:DIRECTED]->(n152) (n155)-[r220:ACTED_IN]->(n154) (n156)-[r224:WROTE]->(n154) (n156)-[r223:PRODUCED]->(n154) (n156)-[r222:DIRECTED]->(n154) (n158)-[r227:DIRECTED]->(n157) (n160)-[r229:ACTED_IN]->(n159) (n163)-[r238:ACTED_IN]->(n162) (n164)-[r235:ACTED_IN]->(n162) (n165)-[r236:ACTED_IN]->(n162) (n166)-[r240:DIRECTED]->(n162) (n167)-[r243:FOLLOWS]->(n168) (n168)-[r247:REVIEWED]->(n87) (n168)-[r242:FOLLOWS]->(n169) (n169)-[r244:REVIEWED]->(n105) (n169)-[r248:REVIEWED]->(n97) (n169)-[r245:REVIEWED]->(n87) (n169)-[r249:REVIEWED]->(n95) (n169)-[r250:REVIEWED]->(n111) (n169)-[r252:REVIEWED]->(n37) (n170)-[r246:REVIEWED]->(n87) (n170)-[r251:REVIEWED]->(n111) (n170)-[r241:FOLLOWS]->(n169)
+[.flex.languages]
+== Building Applications
 
-// [.developer-hero.developer-hero--shadow]
-// == The world's leading Graph Database
+[.column]
+=== Java
 
-// With a bit of cypher
+image:http://localhost:8000/developer/_images/java.png[Java]
 
-// [.developer-hero]
+* link:#[Neo4j Java Example]
+* link:#[Spring Data Neo4j]
+* link:#[Procedures and Functions]
 
-// == Powered by Cypher
+[.column]
+=== Node.js
 
-// Clearly better than gremlin.  Come on, you know it's true.
+image:http://localhost:8000/developer/_images/javascript.png[JavaScript & Node.js]
+
+* link:#[Neo4j JavaScript Example]
+* link:#[TypeScript]
+
+[.column]
+=== .NET
+
+image:http://localhost:8000/developer/_images/net.png[.NET]
+
+* link:#[Neo4j .NET Example]
+* link:#[Neo4jClient]
+
+[.column]
+=== Python
+
+image:http://localhost:8000/developer/_images/python.png[Python]
+
+* link:#[Neo4j Python Example]
+* link:#[Py2Neo]
+
+[.column]
+=== Go
+
+image:http://localhost:8000/developer/_images/go.png[Go]
+
+* link:#[Neo4j Go Example]
+
+
+// [.community-language]
+// === Community Drivers
+
+// link:#[Ruby] | link:#[Perl] | link:#[PHP] | link:#[Erlang]
+
+
+[.secondary.flex]
+== Intro to Graph Databases
+
+[.column]
+=== Episode 1: The Evolution of DBs
+
+image::https://i.ytimg.com/vi/5Tl8WcaqZoc/mqdefault.jpg[Episode 1: The Evolution of DBs]
+link:#[Watch Video, role=more information]
+
+[.column]
+=== Episode 2: Properties of Graph DBs
+
+image::https://i.ytimg.com/vi/-dCeFEqDkUI/mqdefault.jpg[Episode 2: Properties of Graph DBs]
+link:#[Watch Video, role=more information]
+
+[.column]
+=== Episode 3: Property Graph Model
+
+image::https://i.ytimg.com/vi/NH6WoJHN4UA/mqdefault.jpg[Episode 3: Property Graph Model]
+link:#[Watch Video, role=more information]
+
+
+// [.no-flex]
+// link:#[More content on the Neo4j Youtube Channel]
+
+
+[.flex]
+== Training and Certification
+
+[.column]
+=== Online Training
+
+Get started with Neo4j by taking free online training classes.
+
+link:#[Enrol for free, role=more information]
+
+[.column]
+=== Classroom Training
+
+Offered locally in over a dozen cities around the globe.
+
+link:#[Arrange Classroom Training, role=more information]
+
+
+[.column]
+=== Certification
+
+Become a Neo4j Certified Professional to validate and promote your skills.
+
+link:#[Neo4j Certification, role=more information]
 
 
 
-// [.secondary]
-// == Header
-// This is a secondary block
+[.secondary]
+== Neo4j Community
 
-// [.primary]
-// == Header
-// This is a primary block
+== Upcoming Events
 
-// something else
+[.secondary]
+== Featured Videos
 
-// [source,cypher]
-// MATCH (n)
-// RETURN apoc.text.join(collect("(n"+ id(n) +":"+ apoc.text.join(labels(n), ":") + "{"+ apoc.text.join([ key in keys(n) WHERE key IN ['title', 'name'] | key + ": '"+ replace(n[key], "'", "\\'") +"'" ], ',') +"})"), "\n") AS text
-
-// UNION
-// MATCH (n)-[r]->(m)
-// RETURN
-//   apoc.text.join(collect("(n"+ id(n) +")-[r"+ id(r) +":"+ type(r) +
-//   "]->(n"+ id(m) +")"), "\n") AS text
+== Online Meetups

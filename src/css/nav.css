@@ -151,6 +151,11 @@ html.is-clipped--nav {
   position: relative;
 }
 
+.nav-list strong {
+  display: block;
+  margin-top: 1em;
+}
+
 /* adds some breathing room below a nested list */
 .nav-item-toggle ~ .nav-list {
   padding-bottom: 0.125rem;

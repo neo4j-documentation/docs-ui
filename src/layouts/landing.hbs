@@ -3,7 +3,7 @@
   <head>
 {{> head defaultPageTitle='Untitled'}}
   </head>
-  <body class="article landing labs-home{{#with (or asciidoc.attributes.role page.role)}} {{{this}}}{{/with}}{{#with (or page.attributes.theme "developer")}} {{{this}}}{{/with}}">
+  <body class="article landing {{#with (or asciidoc.attributes.role page.role)}} {{{this}}}{{/with}}{{#with (or page.attributes.theme "developer")}} {{{this}}}{{/with}}">
 {{> header}}
 
 

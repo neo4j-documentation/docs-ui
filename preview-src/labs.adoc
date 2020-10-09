@@ -1,14 +1,42 @@
 = Neo4j Labs
 :description: Incubating the next generation of graph developer tooling. GraphQL and GRANDstack, Algorithms, APOC, Kafka, ETL Tool, neovis.js, and more.
 // tag::layout[]
-:page-layout: labs
+:page-layout: landing
 :page-theme: labs
 // end::layout[]
-:page-herotitle: Neo4j Labs
-:page-herosubtitle: Incubating the Next Generation of Graph Developer Tooling
-:toc-levels: 1
+// :page-herotitle: Neo4j Labs
+// :page-herosubtitle: Incubating the Next Generation of Graph Developer Tooling
+:page-toclevels: -1
+:page-disabletracking:
 
+[.hero]
+== Neo4j Labs
+
+Incubating the Next Generation of +
+Graph Developer Tooling
+
+++++
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="100px" height="100px" viewBox="0 0 100 100" preserveAspectRatio="none" style="enable-background:new 0 0 100 100;" xml:space="preserve" class="top"><polygon class="st0" points="100,100 0,100 100,0 "></polygon><line class="st1" x1="0" y1="100" x2="100" y2="0"></line></svg>
+++++
+
+[.buttons]
+* <<What is Neo4j Labs?, About>>
+* <<Current Projects>>
+* <<Frequently Asked Questions, FAQs>>
+
+// ++++
+// <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="100px" height="100px" viewBox="0 0 100 100" preserveAspectRatio="none" style="enable-background:new 0 0 100 100;" xml:space="preserve" class="bottom"><polygon class="st0" points="100,100 0,100 100,0 "></polygon><line class="st1" x1="0" y1="100" x2="100" y2="0"></line></svg>
+// ++++
+
+++++
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="100px" height="100px" viewBox="0 0 100 100" preserveAspectRatio="none" style="enable-background:new 0 0 100 100;" xml:space="preserve" class="bottom to-leading"><polygon class="st0" points="100,100 0,100 100,0 "></polygon><line class="st1" x1="0" y1="100" x2="100" y2="0"></line></svg>
+++++
+
+
+
+[.secondary.leading]
 == What is Neo4j Labs?
+
 Neo4j Labs is a collection of the latest innovations in graph technology.
 These projects are designed and developed by the Neo4j team as a way to test functionality and extensions of our product offerings.
 A project typically either graduates to being maintained as a formal Neo4j project or is deprecated with source made available publicly.
@@ -16,7 +44,6 @@ A project typically either graduates to being maintained as a formal Neo4j proje
 These Labs are supported via the online community.
 They are actively developed and maintained, but we don't provide any SLAs or guarantees around backwards compatibility and deprecation.
 
-[.secondary]
 
 == Current Projects
 
@@ -69,7 +96,7 @@ Ontology and Inference are also partially supported.
 * link:https://github.com/neo4j-contrib/neovis.js/[Neovis.js^], a graph visualization toolkit for the web
 * link:https://github.com/neo4j-contrib/neo4j-spark-connector/[The Neo4j-Spark-Connector^], library to exchange graph data between Neo4j and Apache Spark
 
-
+[.secondary]
 == Frequently Asked Questions
 
 === Are these safe to use in production?

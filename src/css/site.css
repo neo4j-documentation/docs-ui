@@ -18,7 +18,8 @@
 @import "gram.css";
 @import "labels.css";
 @import "glossary.css";
-@import "tiles.css";
+@import "landing.css";
+/* @import "tiles.css"; */
 @import "labs.css";
 @import "feedback.css";
 @import "themes.css";

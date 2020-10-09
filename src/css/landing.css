@@ -1,0 +1,233 @@
+body.landing .hero {
+    background: var(--colour-grey-800);
+    padding: 8rem 0 0 !important;
+    background: rgb(2,0,36);
+    background: linear-gradient(180deg, var(--colour-grey-800) 0%, var(--colour-grey-700) 45%,  var(--colour-grey-700) 100%);
+    text-align: left;
+}
+
+/* .landing .hero {
+    background: var(--colour-grey-800);
+    padding: 8rem 0;
+    background: rgb(2,0,36);
+    background: linear-gradient(180deg, var(--colour-grey-800) 0%, var(--colour-grey-700) 35%,  var(--colour-grey-700) 100%);
+    text-align: left;
+} */
+
+body.landing .hero h1,
+body.landing .hero h2,
+body.landing .hero p {
+    padding: 0 1rem;
+    max-width: 680px;
+    margin: auto;
+}
+
+.landing .hero h1, .landing .hero h2 {
+    font-size: 1.2rem;
+    font-weight: 300;
+    display: block;
+    color: var(--colour-grey-400);
+    margin-bottom: 1rem;
+}
+
+.landing .hero h1:after, .landing .hero h2:after {
+    display: block;
+    background-color: var(--colour-green-600);
+    height: 3px;
+    width: 80px;
+    margin-top: 12px;
+    content: "";
+}
+
+.landing .hero p {
+    font-size: 1.8rem;
+    color: var(--colour-grey-300);
+    font-size: 1.8rem;
+    font-weight: 300;
+}
+
+.landing .doc {
+    max-width: initial;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    flex: none !important;
+}
+
+.landing .doc h1 {
+    display: none;
+}
+
+.landing .doc h2,
+.landing .doc .sectionbody {
+  padding-left: 1rem;
+  padding-right: 1rem;
+  max-width: 980px;
+  margin: auto;
+}
+
+.landing .doc .sect1 {
+    padding: 6em 0;
+}
+
+.landing .doc .secondary {
+    background: var(--colour-grey-100);
+}
+
+
+.landing .doc .secondary.leading {
+    margin-top: 0;
+    background: linear-gradient(180deg, var(--landing-leading-background) 0%,var(--colour-grey-100) 35%,  var(--colour-white) 100%);
+}
+
+.landing .doc h2 {
+    border-bottom: 0 none;
+  }
+
+  .landing .doc  h2:after {
+    display: block;
+    background-color: var(--colour-green-600);
+    height: 3px;
+    width: 80px;
+    margin-top: 1rem;
+    content: "";
+    margin-bottom: 2rem;
+}
+
+
+/**
+ * Landing Preamble - button and angled borders
+ */
+body.landing .hero .sectionbody {
+    width: 100%;
+    max-width: none;
+    padding: 0;
+}
+
+body.landing .hero .paragraph {
+    padding-bottom: 4rem;
+}
+
+body.landing .hero svg {
+    width: 100%;
+    height: 40px;
+}
+
+
+body.landing .hero svg.bottom {
+    margin-bottom: -1rem;
+}
+
+body.landing .hero svg.to-white {
+  fill:  var(--colour-white);
+  margin-bottom: -1em;
+}
+
+body.landing .hero svg.to-leading {
+  fill:  var(--landing-leading-background) !important;
+  margin-bottom: -1em;
+}
+
+body.landing .buttons  {
+    line-height: 1;
+    margin: -1rem 0 0;
+    text-align: center;
+}
+
+body.landing .buttons p {
+    font-size: 1rem !important;
+    display: inline;
+    padding: 0;
+    line-height: 1;
+}
+body.landing .buttons {
+    font-size: 1rem;
+    line-height: 1;
+    display: block;
+    padding: 1rem 0;
+}
+body.landing .buttons  ul {
+    padding: 0;
+}
+body.landing .buttons li {
+    list-style-type: none;
+    display: block;
+    margin: 0 0 1rem;
+}
+
+body.landing .buttons li a {
+    display: inline-block;
+    margin: 0 .25rem;
+    background: var(--colour-grey-800);
+    color: white;
+    font-weight: 600;
+    padding: 1rem 2rem;
+    border-radius: .25rem;
+    transition: all .1s linear;
+}
+
+@media all and (min-width: 760px) {
+    body.landing .buttons li {
+        display: inline-block;
+    }
+
+    body.landing .buttons li a {
+        display: inline-block;
+    }
+}
+
+.landing .clearfix {
+    clear: both;
+}
+
+
+.landing .secondary:after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+
+/* Flex Columns */
+@media all and (min-width: 760px) {
+.landing .flex .sectionbody {
+    display: flex;
+}
+
+.landing .flex .column {
+    flex: 1;
+}
+
+.landing .flex .column img {
+    display: block;
+    margin: auto;
+    max-width: 100%;
+}
+
+.landing .flex .column .paragraph {
+    margin-top: 0;
+}
+
+.landing .flex .column h3 {
+    margin-bottom: 2em;
+}
+.landing .flex .column h3:after {
+    display: block;
+    background-color: var(--colour-blue-400);
+    height: 2px;
+    width: 40px;
+    margin-top: 12px;
+    content: "";
+}
+
+.landing .flex .column:first-child {
+    margin-left: -12px;
+}
+.landing .flex .column:last-child {
+    margin-right: -12px;
+}
+
+.landing .flex .column {
+    padding: 12px;
+}
+}

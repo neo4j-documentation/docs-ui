@@ -188,6 +188,56 @@ body.labs .navbar .navbar-item.try .navbar-link {
   color: var(--colour-white);
 }
 
+/* Labs Home Page */
+body.landing.labs .hero {
+  background-color: var(--colour-purple-600);
+  background-image: url('https://cdn.neo4jlabs.com/images/lab-pipette-big.jpg');
+  /* background-image: url('https://cdn.neo4jlabs.com/images/lab-pipette-big-overlay.jpg'); */
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+body.landing.labs .hero h2 {
+  color: var(--colour-white);
+}
+body.landing.labs h2:after {
+  background-color: var(--colour-purple-600) !important;
+}
+
+body.landing.labs .hero p {
+  color: var(--colour-white);
+}
+
+body.landing.labs .hero svg.top {
+  background: transparent;
+  fill:  var(--colour-purple-600);
+}
+
+body.landing.labs .hero svg.bottom {
+  background: var(--colour-purple-600);
+  fill:  var(--colour-white);
+}
+
+body.landing.labs .buttons  {
+  background: var(--colour-purple-600);
+}
+
+body.landing.labs .buttons li a {
+  background: var(--colour-purple-800);
+  color: white;
+}
+
+body.landing.labs .buttons li a:hover {
+  background: var(--colour-purple-700);
+}
+
+body.landing.labs .buttons li a:active {
+  background: var(--colour-blue-600);
+}
+
+
+
+
 /* body.developer {
     --nav-bullet-color: var(--colour-grey-500);
 } */
@@ -233,6 +283,73 @@ body.developer .navbar .navbar-item.try .navbar-link {
   color: var(--colour-white);
 }
 
+/* Developer Home Page */
+body.landing.developer .navbar {
+  border-bottom: 0px none;
+}
+
+body.landing.developer .hero {
+  background: linear-gradient(180deg, var(--colour-grey-800) 0%,var(--colour-grey-700) 45%,  var(--colour-grey-700) 100%);
+}
+
+
+@media all and (min-width: 760px) {
+  .landing.developer .languages {
+    padding: 1em 0 4em;
+  }
+
+  .landing.developer .languages h3 {
+    display: none;
+  }
+
+  .landing.developer .languages .flex {
+    text-align: center;
+  }
+
+}
+
+.landing.developer .languages ul {
+  padding: 0;
+  margin: 0;
+}
+.landing.developer .languages ul li {
+  margin-bottom: 0;
+  list-style: none;
+}
+
+.landing.developer .languages ul li a {
+  font-weight: 400;
+}
+
+body.landing.developer .hero svg.top {
+  background: var(--colour-grey-700);
+  fill:  var(--colour-grey-600);
+}
+
+body.landing.developer .hero svg.bottom {
+  background: var(--colour-grey-600);
+  fill:  var(--colour-grey-300);
+}
+
+body.landing.developer .buttons  {
+  background: var(--colour-grey-600);
+}
+
+body.landing.developer .buttons li a {
+  background: var(--colour-grey-800);
+  color: white;
+}
+
+body.landing.developer .buttons li a:hover {
+  background: var(--colour-grey-700);
+}
+
+body.landing.developer .buttons li a:active {
+  background: var(--colour-green-600);
+}
+
+
+/* KB */
 body.kb .navbar,
 body.kb .search .search-container .search-form {
   border-top-color: var(--colour-kb);
