@@ -151,7 +151,7 @@
   --toolbar-background: var(--panel-background);
   --toolbar-border-color: var(--panel-border-color);
   --toolbar-font-color: var(--colour-grey-700);
-  --toolbar-muted-color: var(--colour-grey-300);
+  --toolbar-muted-color: var(--colour-grey-500);
   --page-version-menu-background: var(--colour-white);
   --page-version-menu-border: var(--colour-grey-300);
   --page-version-missing-font-color: var(--colour-grey-300);

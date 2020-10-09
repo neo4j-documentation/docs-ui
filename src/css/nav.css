@@ -156,6 +156,10 @@ html.is-clipped--nav {
   margin-top: 1em;
 }
 
+.nav-list:first strong {
+  margin-top: 0 !important;
+}
+
 /* adds some breathing room below a nested list */
 .nav-item-toggle ~ .nav-list {
   padding-bottom: 0.125rem;
