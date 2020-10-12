@@ -23,9 +23,9 @@
             .includes(tag.trim().toLowerCase())
       }
       if (visible) {
-        el.classList.add('is-visible')
+        el.classList.remove('is-hidden')
       } else {
-        el.classList.remove('is-visible')
+        el.classList.add('is-hidden')
       }
     })
 })()

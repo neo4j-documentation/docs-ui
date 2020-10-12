@@ -355,6 +355,10 @@ body.landing.developer .buttons li a:active {
 
 
 /* KB */
+body.kb svg.kb {
+  margin-bottom: 10px;
+}
+
 body.kb .navbar,
 body.kb .search .search-container .search-form {
   border-top-color: var(--colour-kb);
@@ -367,3 +371,9 @@ body.kb .search .search-container .search-form {
 .kb .navbar-brand #neo4j {
   fill: var(--colour-white);
 }
+
+body.kb .navbar .navbar-item.try .navbar-link {
+  background: var(--colour-purple-600);
+  color: var(--colour-white);
+}
+

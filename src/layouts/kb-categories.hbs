@@ -5,21 +5,45 @@
 </head>
 <body class="article landing kb-home{{#with (or asciidoc.attributes.role page.role)}} {{{this}}}{{/with}}{{#with (or page.attributes.theme "developer")}} {{{this}}}{{/with}}">
 {{> header}}
+{{> kb-header}}
 
-<section class="hero">
-  <div class="row">
-    <div class="columns medium-12">
-      {{#with page.title}}
-        <h1>{{{this}}}</h1>
-      {{/with}}
-      <h2 id="kb-category-title"></h2>
+  <main class="article">
+    <div class="content">
+      <article class="doc">
+        <div class="sect1 secondary heading">
+          <div class="sectionbody">
+            <h2>Articles tagged as <span id="kb-category-title"></span></h2>
+
+
+            {{#each (kb-articles)}}
+            <div class="article paragraph column kb-article kb-article--{{#with asciidoc.attributes.category}}{{slug this}}{{/with}}"  data-kb-tags="{{#with asciidoc.attributes.tags}}{{this}}{{/with}}" data-kb-category="{{#with asciidoc.attributes.category}}{{slug this}}{{/with}}">
+              <h3><a href="{{@root.page.attributes.canonical-root}}{{pub.url}}">{{{title}}}</a></h3>
+              {{#with (kb-article-excerpt this)}}
+              <div class="excerpt">
+                {{this}}
+              </div>
+              {{/with}}
+
+              <p><a href="{{@root.page.attributes.canonical-root}}{{pub.url}}" class="more information">Read more</a></p>
+
+              <div class="kb-tags">
+                {{#with @root.page.attributes.tags}}
+                {{#each (tokenize this)}}
+                <span class="label label--tag label--{{this}}">{{this}}</span>
+                {{/each}}
+                {{/with}}
+              </div>
+            </div>
+            {{/each}}
+          </div>
+        </div>
+      </article>
     </div>
-  </div>
-</section>
+  </main>
 
-{{{page.contents}}}
+  {{{page.contents}}}
 
-<main class="article">
+  {{!-- <main class="article">
   <div class="content">
     <article class="doc">
       <section>
@@ -45,7 +69,7 @@
       </section>
     </article>
   </div>
-</main>
+</main> --}}
 
 {{> footer}}
 

@@ -8,6 +8,6 @@
     document.getElementById('kb-category-title').innerText = category
   }
   if (tag !== null) {
-    document.getElementById('kb-tag-title').innerText = tag
+    document.getElementById('kb-category-title').innerText = tag
   }
 })()
