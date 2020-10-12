@@ -8,9 +8,25 @@
 
 <section class="hero">
   <div class="row">
-    <div class="columns medium-12">
+    <div class="columns">
       {{#with page.title}}
         <h1>{{{this}}}</h1>
+        <a href="#" id="kb-search-button" title="Search Knowledge Base">
+          <div class="search-text">
+            <svg class="kb-search-icon" viewBox="0 0 23 23" role="button">
+              <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+                <g transform="translate(-2.000000, -2.000000)" stroke="#a0aec0" stroke-width="1.5">
+                  <circle transform="translate(11.389364, 11.388564) rotate(-23.025000) translate(-11.389364, -11.388564) " cx="11.3893642" cy="11.3885639" r="8.056"></circle>
+                  <path d="M17.0853333,17.0844444 L23.3333333,23.3333333"></path>
+                </g>
+              </g>
+            </svg>
+            Search
+          </div>
+          <div>
+            <span class="search-hint">shortcut "/"</span>
+          </div>
+        </a>
       {{/with}}
     </div>
   </div>

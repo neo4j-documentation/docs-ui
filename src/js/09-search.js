@@ -1,4 +1,4 @@
-;(function () {
+window.neo4jSearch = (function () {
   'use strict'
 
   var activeClass = 'search--active'
@@ -6,6 +6,7 @@
   var searchIcon = document.getElementById('search_open')
   var searchIconMobile = document.getElementById('search_open_mobile')
 
+  var body = document.querySelector('body')
   var container = document.getElementsByClassName('search')[0]
   var input = container.getElementsByTagName('input')[0]
   var closeIcon = document.getElementById('close_search')
@@ -22,11 +23,16 @@
     }
   }
 
+  var searchContext = 'global'
+  var postTypes = []
+
   /**
    * Open Search
    */
   var openSearch = function () {
+    body.classList.add(activeClass)
     container.classList.add(activeClass)
+    container.classList.add('search-context--' + searchContext)
     document.getElementsByTagName('html')[0].classList.remove('is-clipped--navbar')
     document.getElementById('topbar-nav').classList.remove('is-active')
     document.getElementsByClassName('navbar-burger')[0].classList.remove('is-active')
@@ -34,7 +40,9 @@
   }
 
   var closeSearch = function () {
+    body.classList.remove(activeClass)
     container.classList.remove(activeClass)
+    container.classList.remove('search-context--' + searchContext)
   }
 
   document.addEventListener('keydown', function (e) {
@@ -97,14 +105,15 @@
   /**
      * Searching
      */
-  var currentQuery; var currentPage; var postTypes = []
+  var currentQuery
+  var currentPage
+
   var submitForm = function () {
     loading()
 
     currentQuery = input.value
     if (!currentQuery) return
 
-    postTypes = []
     currentPage = 1
 
     doSearch()
@@ -367,4 +376,14 @@
   submitIcon.addEventListener('click', function () {
     submitForm()
   })
+
+  function updateContext (ctx) {
+    searchContext = ctx.name
+    postTypes = ctx.postTypes
+  }
+
+  return {
+    updateContext: updateContext,
+    openSearch: openSearch,
+  }
 })()

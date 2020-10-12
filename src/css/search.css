@@ -22,7 +22,11 @@
   opacity: 0;
 }
 
-.search--active {
+body.search--active {
+  overflow: hidden;
+}
+
+.search.search--active {
   display: flex;
   opacity: 1;
 }
@@ -78,6 +82,7 @@
   display: block;
   flex-direction: column;
   justify-content: center;
+  cursor: pointer;
 }
 
 .search svg line {
@@ -187,21 +192,21 @@
   color: var(--colour-grey-500);
 }
 
-.search .search-result-item {
+.search-results .search-result-item {
   margin-bottom: 2rem;
 }
 
-.search .search-result-item h3 {
+.search-results .search-result-item h3 {
   font-size: 0.85rem;
   font-weight: 600;
   margin-bottom: 0;
 }
 
-.search .search-result-item h3 a {
+.search-results .search-result-item h3 a {
   color: var(--colour-blue-600);
 }
 
-.search .search-result-item em {
+.search-results .search-result-item em {
   background: var(--colour-yellow-100);
   color: var(--colour-orange-700);
   font-style: normal;
@@ -210,7 +215,7 @@
   border-radius: 0.25rem;
 }
 
-.search .search-result-item .search-result-url {
+.search-results .search-result-item .search-result-url {
   display: block;
   font-size: 0.7rem;
   font-weight: 400;
@@ -218,13 +223,13 @@
   margin-bottom: 0.5rem;
 }
 
-.search .search-result-item .search-result-body {
+.search-results .search-result-item .search-result-body {
   font-size: 0.8rem;
   margin-bottom: 0.5rem;
   color: var(--colour-grey-600);
 }
 
-.search .search-result-label {
+.search-results .search-result-label {
   line-height: 1;
   font-size: 0.7rem;
   background: var(--colour-grey-200);
@@ -235,22 +240,22 @@
   border-radius: 0.25rem;
 }
 
-.search .label--docs {
+.search-results .label--docs {
   background: var(--colour-blue-600);
   color: var(--colour-blue-100);
 }
 
-.search .label--developer-guide {
+.search-results .label--developer-guide {
   background: var(--colour-grey-800);
   color: var(--colour-grey-200);
 }
 
-.search .label--knowledge-base {
+.search-results .label--knowledge-base {
   background: var(--colour-orange-600);
   color: var(--colour-white);
 }
 
-.search .search-pagination {
+.search-results .search-pagination {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -259,15 +264,15 @@
   padding-top: 0.5rem;
 }
 
-.search .search-pagination-link {
+.search-results .search-pagination-link {
   color: var(--colour-grey-600);
   cursor: pointer;
 }
 
-.search .search-pagination-link:hover {
+.search-results .search-pagination-link:hover {
   color: var(--colour-blue-600);
 }
 
-.search .search-pagination .search-pagination--next {
+.search-results .search-pagination .search-pagination--next {
   margin-left: auto;
 }
