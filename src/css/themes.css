@@ -269,6 +269,11 @@ body.developer .doc .button:hover {
   color: var(--colour-white);
 }
 
+body.developer .doc .button:active {
+  background: var(--colour-grey-600);
+  color: var(--colour-white);
+}
+
 body.developer #preamble .abstract .title,
 body.developer #preamble .abstract blockquote {
   border-left-color: var(--colour-green-600);
@@ -294,9 +299,9 @@ body.landing.developer .hero {
 
 
 @media all and (min-width: 760px) {
-  .landing.developer .languages {
+  /* .landing.developer .languages {
     padding: 1em 0 4em;
-  }
+  } */
 
   .landing.developer .languages h3 {
     display: none;

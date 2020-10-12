@@ -30,12 +30,13 @@ body.landing .hero p {
     margin-bottom: 1rem;
 }
 
-.landing .hero h1:after, .landing .hero h2:after {
+.landing .doc .hero h1:after, .landing .doc .hero h2:after {
     display: block;
     background-color: var(--colour-green-600);
     height: 3px;
     width: 80px;
-    margin-top: 12px;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
     content: "";
 }
 
@@ -67,7 +68,8 @@ body.landing .hero p {
 }
 
 .landing .doc .sect1 {
-    padding: 6em 0;
+    padding: 2em 0;
+    margin-top: 0;
 }
 
 .landing .doc .secondary {
@@ -78,20 +80,21 @@ body.landing .hero p {
 .landing .doc .secondary.leading {
     margin-top: 0;
     background: linear-gradient(180deg, var(--landing-leading-background) 0%,var(--colour-grey-100) 35%,  var(--colour-white) 100%);
+    padding-top: 4rem;
 }
 
 .landing .doc h2 {
     border-bottom: 0 none;
-  }
+}
 
-  .landing .doc  h2:after {
+.landing .doc  h2:after {
     display: block;
     background-color: var(--colour-green-600);
     height: 3px;
     width: 80px;
     margin-top: 1rem;
+    margin-bottom: 0;
     content: "";
-    margin-bottom: 2rem;
 }
 
 
@@ -132,6 +135,10 @@ body.landing .buttons  {
     line-height: 1;
     margin: -1rem 0 0;
     text-align: center;
+    font-size: 1rem;
+    line-height: 1;
+    display: block;
+    padding: 2rem 0 1rem 0;
 }
 
 body.landing .buttons p {
@@ -140,12 +147,7 @@ body.landing .buttons p {
     padding: 0;
     line-height: 1;
 }
-body.landing .buttons {
-    font-size: 1rem;
-    line-height: 1;
-    display: block;
-    padding: 1rem 0;
-}
+
 body.landing .buttons  ul {
     padding: 0;
 }
@@ -233,5 +235,12 @@ body.landing .buttons li a {
 }
 
 .landing .toc.sidebar {
+    display: none;
+}
+
+.landing .sect1.discrete {
+    padding-top: 0;
+}
+.landing .discrete h2 {
     display: none;
 }

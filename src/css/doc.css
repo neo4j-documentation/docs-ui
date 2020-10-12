@@ -880,11 +880,15 @@ body {
   padding: 0.5rem 2rem;
   border-radius: 0.25rem;
   margin-bottom: 2rem;
+  transition: all .2s;
 }
 
 .doc .button:hover {
   background: var(--colour-grey-500);
   color: var(--colour-white);
+}
+.doc .button:after {
+  display: none !important;
 }
 
 .doc .paragraph.expertise p {
@@ -1130,12 +1134,22 @@ body {
   right: 1rem;
 }
 
-.doc a.external::after {
+
+.doc a.external {
+  position: relative;
+}
+.doc a.external:after {
+  position: relative;
   display: inline-block;
-  /* height: .8rem;
-  width: .8rem; */
   margin: 0 0.2rem;
   content: "→";
   color: var(--colour-purple-600);
   transform: rotate(-45deg);
+  transition: all .2s linear;
+  top: 0;
+}
+
+.doc a.external:hover:after {
+  top: -12px;
+  opacity: 0;
 }
