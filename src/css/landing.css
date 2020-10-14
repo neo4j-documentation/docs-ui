@@ -1,9 +1,9 @@
 body.landing .hero {
-    background: var(--colour-grey-800);
-    padding: 8rem 0 0 !important;
-    background: rgb(2,0,36);
-    background: linear-gradient(180deg, var(--colour-grey-800) 0%, var(--colour-grey-700) 45%,  var(--colour-grey-700) 100%);
-    text-align: left;
+  padding: 8rem 0 0 !important;
+  background: var(--colour-grey-800);
+  background: rgb(2, 0, 36);
+  background: linear-gradient(180deg, var(--colour-grey-800) 0%, var(--colour-grey-700) 45%, var(--colour-grey-700) 100%);
+  text-align: left;
 }
 
 /* .landing .hero {
@@ -17,46 +17,47 @@ body.landing .hero {
 body.landing .hero h1,
 body.landing .hero h2,
 body.landing .hero p {
-    padding: 0 1rem;
-    max-width: 680px;
-    margin: auto;
+  padding: 0 1rem;
+  max-width: 680px;
+  margin: auto;
 }
 
-.landing .hero h1, .landing .hero h2 {
-    font-size: 1.2rem;
-    font-weight: 300;
-    display: block;
-    color: var(--colour-grey-400);
-    margin-bottom: 1rem;
+.landing .hero h1,
+.landing .hero h2 {
+  font-size: 1.2rem;
+  font-weight: 300;
+  display: block;
+  color: var(--colour-grey-400);
+  margin-bottom: 1rem;
 }
 
-.landing .hero h1:after, .landing .hero h2:after {
-    display: block;
-    background-color: var(--colour-green-600);
-    height: 3px;
-    width: 80px;
-    margin-top: 1rem;
-    margin-bottom: 2rem;
-    content: "";
+.landing .hero h1::after,
+.landing .hero h2::after {
+  display: block;
+  background-color: var(--colour-green-600);
+  height: 3px;
+  width: 80px;
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+  content: "";
 }
 
 .landing .hero p {
-    font-size: 1.8rem;
-    color: var(--colour-grey-300);
-    font-size: 1.8rem;
-    font-weight: 300;
+  font-size: 1.8rem;
+  color: var(--colour-grey-300);
+  font-weight: 300;
 }
 
 .landing .doc {
-    max-width: initial;
-    padding: 0;
-    margin: 0;
-    width: 100%;
-    flex: none !important;
+  max-width: initial;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  flex: none !important;
 }
 
 .landing .doc h1 {
-    display: none;
+  display: none;
 }
 
 .landing .doc h2,
@@ -68,179 +69,174 @@ body.landing .hero p {
 }
 
 .landing .doc .sect1 {
-    padding: 2em 0;
-    margin-top: 0;
+  padding: 2em 0;
+  margin-top: 0;
 }
 
 .landing .doc .secondary {
-    background: var(--colour-grey-100);
+  background: var(--colour-grey-100);
 }
 
-
 .landing .doc .secondary.leading {
-    margin-top: 0;
-    background: linear-gradient(180deg, var(--landing-leading-background) 0%,var(--colour-grey-100) 35%,  var(--colour-white) 100%);
-    padding-top: 4rem;
+  margin-top: 0;
+  background: linear-gradient(180deg, var(--landing-leading-background) 0%, var(--colour-grey-100) 35%, var(--colour-white) 100%);
+  padding-top: 4rem;
 }
 
 .landing .doc h2 {
-    border-bottom: 0 none;
+  border-bottom: 0 none;
 }
 
-.landing .doc  h2:after {
-    display: block;
-    background-color: var(--colour-green-600);
-    height: 3px;
-    width: 80px;
-    margin-top: 1rem;
-    margin-bottom: 0;
-    content: "";
+.landing .doc h2::after {
+  display: block;
+  background-color: var(--colour-green-600);
+  height: 3px;
+  width: 80px;
+  margin-top: 1rem;
+  margin-bottom: 0;
+  content: "";
 }
-
 
 /**
  * Landing Preamble - button and angled borders
  */
 body.landing .hero .sectionbody {
-    width: 100%;
-    max-width: none;
-    padding: 0;
+  width: 100%;
+  max-width: none;
+  padding: 0;
 }
 
 body.landing .hero .paragraph {
-    padding-bottom: 4rem;
+  padding-bottom: 4rem;
 }
 
 body.landing .hero svg {
-    width: 100%;
-    height: 40px;
+  width: 100%;
+  height: 40px;
 }
 
-
 body.landing .hero svg.bottom {
-    margin-bottom: -1rem;
+  margin-bottom: -1rem;
 }
 
 body.landing .hero svg.to-white {
-  fill:  var(--colour-white);
+  fill: var(--colour-white);
   margin-bottom: -1em;
 }
 
 body.landing .hero svg.to-leading {
-  fill:  var(--landing-leading-background) !important;
+  fill: var(--landing-leading-background) !important;
   margin-bottom: -1em;
 }
 
-body.landing .buttons  {
-    line-height: 1;
-    margin: -1rem 0 0;
-    text-align: center;
-    font-size: 1rem;
-    line-height: 1;
-    display: block;
-    padding: 2rem 0 1rem 0;
+body.landing .buttons {
+  line-height: 1;
+  margin: -1rem 0 0;
+  text-align: center;
+  font-size: 1rem;
+  display: block;
+  padding: 2rem 0 1rem 0;
 }
 
 body.landing .buttons p {
-    font-size: 1rem !important;
-    display: inline;
-    padding: 0;
-    line-height: 1;
+  font-size: 1rem !important;
+  display: inline;
+  padding: 0;
+  line-height: 1;
 }
 
-body.landing .buttons  ul {
-    padding: 0;
+body.landing .buttons ul {
+  padding: 0;
 }
+
 body.landing .buttons li {
-    list-style-type: none;
-    display: block;
-    margin: 0 0 1rem;
+  list-style-type: none;
+  display: block;
+  margin: 0 0 1rem;
 }
 
 body.landing .buttons li a {
-    display: inline-block;
-    margin: 0 .25rem;
-    background: var(--colour-grey-800);
-    color: white;
-    font-weight: 600;
-    padding: 1rem 2rem;
-    border-radius: .25rem;
-    transition: all .1s linear;
+  display: inline-block;
+  margin: 0 0.25rem;
+  background: var(--colour-grey-800);
+  color: white;
+  font-weight: 600;
+  padding: 1rem 2rem;
+  border-radius: 0.25rem;
+  transition: all 0.1s linear;
 }
 
 @media all and (min-width: 760px) {
-    body.landing .buttons li {
-        display: inline-block;
-    }
+  body.landing .buttons li {
+    display: inline-block;
+  }
 
-    body.landing .buttons li a {
-        display: inline-block;
-    }
+  body.landing .buttons li a {
+    display: inline-block;
+  }
 }
 
 .landing .clearfix {
-    clear: both;
+  clear: both;
 }
 
-
-.landing .secondary:after {
-    content: "";
-    display: block;
-    clear: both;
+.landing .secondary::after {
+  content: "";
+  display: block;
+  clear: both;
 }
-
 
 /* Flex Columns */
 @media all and (min-width: 760px) {
-    .landing .flex .sectionbody {
-        display: flex;
-    }
+  .landing .flex .sectionbody {
+    display: flex;
+  }
 
-    .landing .flex .column {
-        flex: 1;
-    }
+  .landing .flex .column {
+    flex: 1;
+    padding: 1rem;
+  }
 
-    .landing .flex .column img {
-        display: block;
-        margin: auto;
-        max-width: 100%;
-    }
+  .landing .flex .column img {
+    display: block;
+    margin: auto;
+    max-width: 100%;
+  }
 
-    .landing .flex .column .paragraph {
-        margin-top: 0;
-    }
+  .landing .flex .column .paragraph {
+    margin-top: 0;
+  }
 
-    .landing .flex .column h3 {
-        margin-bottom: 2em;
-    }
-    .landing .flex .column h3:after {
-        display: block;
-        background-color: var(--colour-blue-400);
-        height: 2px;
-        width: 40px;
-        margin-top: 12px;
-        content: "";
-    }
+  .landing .flex .column h3 {
+    margin-bottom: 2em;
+  }
 
-    .landing .flex .column:first-child {
-        margin-left: -12px;
-    }
-    .landing .flex .column:last-child {
-        margin-right: -12px;
-    }
+  .landing .flex .column h3::after {
+    display: block;
+    background-color: var(--colour-blue-400);
+    height: 2px;
+    width: 40px;
+    margin-top: 12px;
+    content: "";
+  }
 
-    .landing .flex .column {
-        padding: 1rem;
-    }
+  .landing .flex .column:first-child {
+    margin-left: -12px;
+  }
+
+  .landing .flex .column:last-child {
+    margin-right: -12px;
+  }
 }
 
 .landing .toc.sidebar {
-    display: none;
+  display: none;
 }
 
 .landing .sect1.discrete {
-    padding-top: 0;
+  padding-top: 0;
 }
+
 .landing .discrete h2 {
-    display: none;
+  display: none;
 }
