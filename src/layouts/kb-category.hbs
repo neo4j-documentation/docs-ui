@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  {{> head defaultPageTitle='Untitled'}}
+</head>
+<body class="article landing kb-category{{#with (or asciidoc.attributes.role page.role)}} {{{this}}}{{/with}}{{#with (or page.attributes.theme "developer")}} {{{this}}}{{/with}}">
+{{> header}}
+{{> kb-header}}
+
+<main class="article">
+  <div class="content">
+    <article class="doc">
+      <div class="sect1 heading">
+        <div class="sectionbody">
+          {{> breadcrumbs}}
+          <h2>Articles tagged as <span id="kb-category-title">{{page.attributes.category}}</span></h2>
+
+          {{#each (to-array page.attributes.category-pages)}}
+            {{> kb-card }}
+          {{/each}}
+        </div>
+      </div>
+    </article>
+  </div>
+</main>
+
+{{> footer}}
+
+</body>
+</html>
+

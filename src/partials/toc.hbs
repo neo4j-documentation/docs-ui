@@ -21,7 +21,7 @@
         <dd>
           {{#with (kb-tags-page)}}
           {{#each (tokenize ..)}}
-          <a href="{{{relativize ../pub.url}}}?tag={{this}}" class="keyword">{{this}}</a>
+          <a href="{{{relativize ../pub.url}}}{{this}}" class="keyword">{{this}}</a>
           {{/each}}
           {{/with}}
         </dd>

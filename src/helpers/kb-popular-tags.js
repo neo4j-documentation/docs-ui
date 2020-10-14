@@ -1,6 +1,6 @@
 'use strict'
 
-module.exports = ({ data: { root } }) => {
+module.exports = (category, { data: { root } }) => {
   const { contentCatalog } = root
   const values = contentCatalog.getPages()
     .filter((page) =>
@@ -8,6 +8,7 @@ module.exports = ({ data: { root } }) => {
       page.asciidoc &&
       page.asciidoc.attributes &&
       page.asciidoc.attributes.tags &&
+      (typeof category === 'undefined' || page.asciidoc.attributes.category === category) &&
       page.src.basename !== 'index.adoc'
     )
     .map((page) => page.asciidoc.attributes.tags.trim().split(',').map((value) => value.trim().toLowerCase()))
@@ -17,5 +18,9 @@ module.exports = ({ data: { root } }) => {
   values.forEach((value) => {
     counts[value] = counts[value] ? counts[value] + 1 : 1
   })
-  return Object.keys(counts).map((key) => ({ name: key, count: counts[key] }))
+  const sorted = Object.fromEntries(
+    Object.entries(counts).sort(([, a], [, b]) => b - a)
+  )
+  const keys = Object.keys(sorted)
+  return keys.splice(0, Math.min(keys.length, 5)).map((key) => ({ name: key, count: counts[key] }))
 }

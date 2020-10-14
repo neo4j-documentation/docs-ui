@@ -1,0 +1,18 @@
+<div class="article paragraph column kb-article kb-article--{{#with asciidoc.attributes.category}}{{slug this}}{{/with}}" data-kb-tags="{{#with asciidoc.attributes.tags}}{{this}}{{/with}}" data-kb-category="{{#with asciidoc.attributes.category}}{{slug this}}{{/with}}">
+  <h3><a href="{{asciidoc.attributes.page-canonical-root}}{{pub.url}}">{{{title}}}</a></h3>
+  {{#with (kb-article-excerpt this)}}
+    <div class="excerpt">
+      {{this}}
+    </div>
+  {{/with}}
+
+  <p><a href="{{asciidoc.attributes.page-canonical-root}}{{pub.url}}" class="more information">Read more</a></p>
+
+  <div class="kb-tags">
+    {{#with asciidoc.attributes.tags}}
+      {{#each (tokenize this)}}
+        {{#with (kb-tag-page this)}}<a href="{{{relativize pub.url}}}" class="keyword label label--{{../this}}">{{../this}}</a>{{/with}}
+      {{/each}}
+    {{/with}}
+  </div>
+</div>
