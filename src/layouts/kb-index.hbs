@@ -5,14 +5,9 @@
   {{> head defaultPageTitle='Untitled'}}
 </head>
 
-<body
-  class="article landing kb-home{{#with (or asciidoc.attributes.role page.role)}} {{{this}}}{{/with}}{{#with (or page.attributes.theme "developer")}} {{{this}}}{{/with}}">
+<body class="article landing kb-home{{#with (or asciidoc.attributes.role page.role)}} {{{this}}}{{/with}}{{#with (or page.attributes.theme "developer")}} {{{this}}}{{/with}}">
   {{> header}}
-
   {{> kb-header}}
-
-
-
 
   {{{page.contents}}}
 
@@ -27,19 +22,18 @@
             <div class="article paragraph column kb-article--{{#with asciidoc.attributes.category}}{{slug this}}{{/with}}" data-kb-category="{{#with asciidoc.attributes.category}}{{slug this}}{{/with}}">
               <h3><a href="{{@root.page.attributes.canonical-root}}{{pub.url}}">{{{title}}}</a></h3>
               {{#with (kb-article-excerpt this)}}
-              <div class="excerpt">
-                {{this}}
-              </div>
+                <div class="excerpt">
+                  {{this}}
+                </div>
               {{/with}}
 
               <p><a href="{{@root.page.attributes.canonical-root}}{{pub.url}}" class="more information">Read more</a></p>
 
-
               <div class="kb-tags">
                 {{#with @root.page.attributes.tags}}
-                {{#each (tokenize this)}}
-                <span class="label label--tag label--{{this}}">{{this}}</span>
-                {{/each}}
+                  {{#each (tokenize this)}}
+                    <span class="label label--tag label--{{this}}">{{this}}</span>
+                  {{/each}}
                 {{/with}}
               </div>
             </div>
@@ -47,26 +41,20 @@
           </div>
         </div>
 
-
         <div class="sect1 flex">
-            <h2>Browse By Category</h2>
+          <h2>Browse By Category</h2>
           <div class="sectionbody">
-
             {{#each (kb-categories)}}
-            <div class="column category">
-              <h3><a href="{{#with (kb-categories-page)}}{{{relativize this.pub.url}}}?category={{../name}}{{/with}}" class="more information">{{name}}</a></h3>
-
-              <ul>
-                {{!-- {{#each (kb-tags)}}
+              <div class="column category">
+                <h3><a href="{{#with (kb-category-page name)}}{{{relativize this.pub.url}}}{{/with}}" class="more information">{{name}}</a></h3>
+                <ul>
+                  {{!-- {{#each (kb-tags)}}
                   <li><a href="{{#with (kb-tags-page)}}{{{relativize this.pub.url}}}?tag={{../name}}{{/with}}">{{name}} ({{count}})</a></li>
                 {{/each}} --}}
-              </ul>
-            </div>
+                </ul>
+              </div>
             {{/each}}
-
-
           </div>
-
         </div>
       </article>
     </div>
@@ -75,32 +63,3 @@
   {{> footer}}
 </body>
 </html>
-
-
-          {{!-- <section class="row">
-        <div class="kb-categories">
-          <h3>Categories</h3>
-          <ul>
-            {{#each (kb-categories)}}
-              <li><a href="{{#with (kb-categories-page)}}{{{relativize this.pub.url}}}?category={{../name}}{{/with}}">{{name}} ({{count}})</a></li>
-            {{/each}}
-          </ul>
-        </div>
-        <div class="kb-promoted">
-          <h3>Promoted</h3>
-          <ul>
-            {{#each (kb-promoted)}}
-              <li><a class="btn" href="{{@root.page.attributes.canonical-root}}{{pub.url}}">{{{title}}}</a></li>
-            {{/each}}
-          </ul>
-        </div>
-      </section>
-      <section class="kb-tags">
-        <h3>Tags</h3>
-        <ul>
-          {{#each (kb-tags)}}
-            <li><a href="{{#with (kb-tags-page)}}{{{relativize this.pub.url}}}?tag={{../name}}{{/with}}">{{name}} ({{count}})</a></li>
-          {{/each}}
-        </ul>
-      </section>
-    </article> --}}
