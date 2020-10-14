@@ -47,22 +47,20 @@
     {{/with}}
 
     {{#with page.attributes.player}}
-    <meta name="twitter:image" content="https://go.neo4j.com/rs/710-RRC-335/images/neo4j_logo_globe.png" />
-    <meta name="twitter:card" content="player" />
-    <meta name="twitter:title" content="🔴 LIVE! Neo4j_ is live on Twitch!" />
-    <meta name="twitter:description" content="Neo4j is the open source graph database that allows you to manage, query and visualize your connected information effortlessly. Drivers in all languages, transactional and analytics workloads https://neo4j.com/developer" />
     <meta name="twitter:player" content="{{this}}" />
     <meta name="twitter:player:width" content="360" />
     <meta name="twitter:player:height" content="200" />
+    <meta name="twitter:image" content="https://go.neo4j.com/rs/710-RRC-335/images/neo4j_logo_globe.png" />
+    <meta name="twitter:card" content="player" />
+    {{#with or page.attributes.playertitle '🔴 LIVE! Neo4j is live on Twitch!'}}
+    <meta name="twitter:title" content="{{this}}" />
+    {{/with}}
+    {{#with or page.attributes.playerdescription 'Neo4j is the open source graph database that allows you to manage, query and visualize your connected information effortlessly. Drivers in all languages, transactional and analytics workloads https://neo4j.com/developer'}}
+    <meta name="twitter:description" content="{{this}}" />
+    {{/with}}
     {{/with}}
 
-
-
-
-
-    {{!-- {{#with or page.attributes}} --}}
     <meta property="og:url" content="https://neo4j.com{{ page.attributes.canonical-root }}{{ page.url }}">
     <link rel="canonical" href="https://neo4j.com{{ page.attributes.canonical-root }}{{ page.url }}">
-    {{!-- {{/with}} --}}
 
     <link rel="shortcut icon" href="https://neo4j.com/wp-content/themes/neo4jweb/favicon.ico" />
