@@ -29,7 +29,9 @@
     {{/with}}
     <meta property="og:site_name" content="Neo4j Graph Database Platform" />
     <meta property="article:publisher" content="https://www.facebook.com/neo4j.graph.database" />
+    {{#unless page.attributes.player}}
     <meta name="twitter:card" content="summary_large_image" />
+    {{/unless}}
     <meta name="twitter:creator" content="@neo4j" />
     <meta name="twitter:site" content="@neo4j" />
     <meta property="og:type" content="{{{ or page.attributes.postttype 'article' }}}" />
