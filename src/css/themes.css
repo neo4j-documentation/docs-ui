@@ -200,7 +200,8 @@ body.landing.labs .hero {
 body.landing.labs .hero h2 {
   color: var(--colour-white);
 }
-body.landing.labs h2:after {
+
+body.landing.labs h2::after {
   background-color: var(--colour-purple-600) !important;
 }
 
@@ -210,15 +211,15 @@ body.landing.labs .hero p {
 
 body.landing.labs .hero svg.top {
   background: transparent;
-  fill:  var(--colour-purple-600);
+  fill: var(--colour-purple-600);
 }
 
 body.landing.labs .hero svg.bottom {
   background: var(--colour-purple-600);
-  fill:  var(--colour-white);
+  fill: var(--colour-white);
 }
 
-body.landing.labs .buttons  {
+body.landing.labs .buttons {
   background: var(--colour-purple-600);
 }
 
@@ -234,9 +235,6 @@ body.landing.labs .buttons li a:hover {
 body.landing.labs .buttons li a:active {
   background: var(--colour-blue-600);
 }
-
-
-
 
 /* body.developer {
     --nav-bullet-color: var(--colour-grey-500);
@@ -290,13 +288,12 @@ body.developer .navbar .navbar-item.try .navbar-link {
 
 /* Developer Home Page */
 body.landing.developer .navbar {
-  border-bottom: 0px none;
+  border-bottom: 0 none;
 }
 
 body.landing.developer .hero {
-  background: linear-gradient(180deg, var(--colour-grey-800) 0%,var(--colour-grey-700) 45%,  var(--colour-grey-700) 100%);
+  background: linear-gradient(180deg, var(--colour-grey-800) 0%, var(--colour-grey-700) 45%, var(--colour-grey-700) 100%);
 }
-
 
 @media all and (min-width: 760px) {
   /* .landing.developer .languages {
@@ -310,13 +307,13 @@ body.landing.developer .hero {
   .landing.developer .languages .flex {
     text-align: center;
   }
-
 }
 
 .landing.developer .languages ul {
   padding: 0;
   margin: 0;
 }
+
 .landing.developer .languages ul li {
   margin-bottom: 0;
   list-style: none;
@@ -328,15 +325,15 @@ body.landing.developer .hero {
 
 body.landing.developer .hero svg.top {
   background: var(--colour-grey-700);
-  fill:  var(--colour-grey-600);
+  fill: var(--colour-grey-600);
 }
 
 body.landing.developer .hero svg.bottom {
   background: var(--colour-grey-600);
-  fill:  var(--colour-grey-300);
+  fill: var(--colour-grey-300);
 }
 
-body.landing.developer .buttons  {
+body.landing.developer .buttons {
   background: var(--colour-grey-600);
 }
 
@@ -352,7 +349,6 @@ body.landing.developer .buttons li a:hover {
 body.landing.developer .buttons li a:active {
   background: var(--colour-green-600);
 }
-
 
 /* KB */
 body.kb svg.kb {
@@ -376,4 +372,3 @@ body.kb .navbar .navbar-item.try .navbar-link {
   background: var(--colour-purple-600);
   color: var(--colour-white);
 }
-

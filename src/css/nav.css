@@ -156,7 +156,7 @@ html.is-clipped--nav {
   margin-top: 1em;
 }
 
-.nav-list:first strong {
+.nav-list:first-child strong {
   margin-top: 0 !important;
 }
 
