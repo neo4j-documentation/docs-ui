@@ -15,9 +15,8 @@
     <div class="content">
       <article class="doc">
         <div class="sect1 secondary leading">
+          <h2>Promoted Articles</h2>
           <div class="sectionbody">
-            <h2>Promoted Articles</h2>
-
             {{#each (kb-promoted)}}
             <div class="article paragraph column kb-article--{{#with asciidoc.attributes.category}}{{slug this}}{{/with}}" data-kb-category="{{#with asciidoc.attributes.category}}{{slug this}}{{/with}}">
               <h3><a href="{{@root.page.attributes.canonical-root}}{{pub.url}}">{{{title}}}</a></h3>
@@ -47,10 +46,10 @@
             {{#each (kb-categories)}}
               <div class="column category">
                 <h3><a href="{{#with (kb-category-page name)}}{{{relativize this.pub.url}}}{{/with}}" class="more information">{{name}}</a></h3>
-                <ul>
-                  {{!-- {{#each (kb-tags)}}
-                  <li><a href="{{#with (kb-tags-page)}}{{{relativize this.pub.url}}}?tag={{../name}}{{/with}}">{{name}} ({{count}})</a></li>
-                {{/each}} --}}
+                <ul class="category-tags">
+                  {{#each (kb-popular-tags name)}}
+                    {{#with (kb-tag-page name)}}<li><a href="{{{relativize pub.url}}}">{{../name}}<span class="count">{{../count}}</span></a></li>{{/with}}
+                  {{/each}}
                 </ul>
               </div>
             {{/each}}

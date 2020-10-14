@@ -1,269 +1,4 @@
-/*
-body.kb-home .hero {
-  background-image: url('../img/sandbox-v3-hero-bg-dark.jpg');
-  background-repeat: no-repeat;
-  background-size: auto;
-  padding: 3rem 0 4.5rem;
-  text-align: center;
-  color: var(--colour-white);
-}
-
-body.kb-home .hero h1 {
-  font-size: 3rem;
-  font-weight: 400;
-  margin-top: 0;
-  margin-bottom: 0.5rem;
-}
-
-body.kb-home .hero .row {
-  justify-content: center;
-  padding: 0 0.5rem;
-}
-
-body.kb-home .hero .row .columns {
-  display: flex;
-  flex-direction: column;
-  flex-grow: 1;
-}
-
-body.kb-home .row {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  padding-bottom: 2em;
-}
-
-body.kb-home .doc {
-  padding-left: 1rem;
-  padding-right: 1rem;
-  max-width: 75rem;
-  margin: auto;
-}
-
-.kb-metadata-menu {
-  color: var(--kb-metadata-font-color);
-  margin-bottom: 2rem;
-}
-
-.kb-metadata.sidebar .kb-metadata-menu {
-  margin-right: 0.75rem;
-  position: sticky;
-  top: var(--kb-metadata-top);
-}
-
-.kb-metadata-menu dt {
-  padding-top: 0.75rem;
-}
-
-.kb-metadata-menu dd {
-  margin-left: 0;
-}
-
-.kb-metadata-menu dd span.keyword {
-  background: var(--colour-grey-100);
-  margin-right: 0.15rem;
-  padding: 0.15em 0.5em;
-  color: var(--colour-grey-700);
-  font-size: 0.9rem;
-  border-radius: 0.5em;
-  margin-bottom: 0.5rem;
-  display: inline-block;
-}
-
-.kb-metadata-menu dd span.version:last-child::after {
-  content: "";
-}
-
-.kb-metadata-menu dd span.version::after {
-  content: ", ";
-}
-
-.kb-metadata-menu .edit-this-page {
-  display: flex;
-  align-items: center;
-}
-
-.kb-metadata-menu .edit-this-page > a {
-  color: var(--colour-grey-700);
-  text-decoration: underline;
-  font-size: 0.875rem;
-}
-
-.kb-metadata-menu .edit-this-page .octicon-mark-github {
-  height: 1.1rem;
-  padding-right: 0.25rem;
-  fill: var(--colour-grey-700);
-}
-
-.row > .kb-categories {
-  flex: 1;
-  padding-right: 2em;
-}
-
-.kb-promoted {
-  min-width: 20rem;
-}
-
-.kb-categories ul {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, auto));
-}
-
-.kb-categories ul ::after {
-  content: "";
-  flex: auto;
-}
-
-.kb-categories ul > li {
-  display: block;
-}
-
-.kb-categories ul > li > a {
-  display: block;
-  background-color: var(--colour-green-500);
-  color: white;
-  padding: 2em;
-  margin: 0.5em;
-  text-align: center;
-  font-weight: 400;
-  cursor: pointer;
-}
-
-.kb-categories ul > li > a:hover {
-  color: white;
-  font-weight: 800;
-}
-
-.kb-categories ul > li > a:visited {
-  color: var(--colour-grey-700);
-}
-
-body.kb-home section.kb-tags {
-  padding-bottom: 2em;
-}
-
-.kb-tags ul {
-  display: flex;
-  flex-wrap: wrap;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-.kb-tags ul > li > a {
-  background: var(--colour-grey-100);
-  margin-right: 0.15rem;
-  padding: 0.15em 0.5em;
-  color: var(--colour-grey-700);
-  font-size: 0.9rem;
-  border-radius: 0.5em;
-  margin-bottom: 0.5rem;
-  display: inline-block;
-}
-
-.kb-article a.keyword {
-  background: var(--colour-grey-100);
-  margin-right: 0.15rem;
-  padding: 0.15em 0.5em;
-  color: var(--colour-grey-700);
-  font-size: 0.9rem;
-  border-radius: 0.5em;
-  margin-bottom: 0.5rem;
-  display: inline-block;
-}
-
-.kb-article a.keyword:hover {
-  background: var(--colour-grey-300);
-}
-
-.kb-article {
-  display: none;
-}
-
-.kb-article .excerpt {
-  padding-bottom: 0.75em;
-}
-
-.kb-article.is-visible {
-  display: block;
-}
-
-.kb-article + .kb-article {
-  border-bottom: 1px solid var(--colour-grey-200);
-  padding-bottom: 0.5em;
-  margin-bottom: 1em;
-}
-
-#kb-category-title,
-#kb-tag-title {
-  margin-top: 0;
-}
-
-main.article.kb-article > .content {
-  margin: auto;
-  max-width: 75rem;
-}
-
-main.article.kb-article .content h1 {
-  margin: 1.5rem 0 1rem;
-}
-
-main.article.kb-article .content .back-link {
-  margin-top: 2rem;
-  display: block;
-  text-decoration: underline;
-}
-
-#kb-search-button {
-  max-width: 45rem;
-  margin: auto;
-  border-radius: 0.25rem;
-  background: rgba(255, 255, 255, 0.8);
-  padding: 0.85rem 1.25rem;
-  color: var(--colour-grey-800);
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  font-weight: 400;
-}
-
-#kb-search-button .search-text {
-  display: flex;
-}
-
-#kb-search-button .search-hint {
-  background: #d2d5da;
-  padding: 2px 7px;
-  border-radius: 5px;
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.17);
-}
-
-.kb-search-icon {
-  padding-right: 0.35em;
-  height: 1.5em;
-  width: 1.5em;
-}
-
-.kb-search-icon g {
-  stroke: var(--colour-grey-700);
-}
-
-/* centered search box */
-/*
-.search-context--kb .search-container {
-  max-width: 50rem;
-  margin: 1.5rem auto auto;
-  height: calc(100% - 3rem);
-}
-*/
-
-body.landing.kb .article {
-  padding: 0 1rem;
-}
-
 /* Navbar */
-
 body.kb .navbar {
   border-bottom: 0 none;
   border-top-color: var(--colour-kb);
@@ -292,6 +27,7 @@ body.kb .kb-search {
   justify-content: space-between;
   align-items: center;
   font-size: 0.9rem;
+  cursor: pointer;
 }
 
 body.kb .kb-search .search-placeholder {
@@ -340,6 +76,10 @@ body.kb .doc .sectionbody {
 }
 
 /* Landing Page */
+body.landing.kb.kb-home main.article {
+  padding: 0;
+}
+
 body.landing.kb .doc .sectionbody .column {
   flex: 1 1 25%;
 }
@@ -361,11 +101,26 @@ body.landing.kb .doc .sectionbody .column ul {
   margin-right: 0 !important;
 }
 
-/* body.kb .doc .sect1:nth-child(even) {
-  background-color: var(--colour-grey-100);
-} */
+body.landing.kb.kb-home ul.category-tags span.count {
+  float: right;
+  color: var(--colour-grey-800);
+  align-items: center;
+  display: inline-flex;
+  font-size: 0.75em;
+  height: 2em;
+  justify-content: center;
+  line-height: 1.25;
+  padding-left: 0.75em;
+  padding-right: 0.75em;
+  white-space: nowrap;
+  margin-right: 2rem;
+}
 
 /* Article */
+body.kb .article.paragraph {
+  padding: 0 1rem;
+}
+
 body.kb-article .doc h1 { display: block; }
 
 body.kb h2 {
@@ -381,6 +136,8 @@ body.kb-article .heading {
   padding-bottom: 0;
 }
 
+body.kb-category .breadcrumbs,
+body.kb-tag .breadcrumbs,
 body.kb-article .breadcrumbs,
 body.kb-article .paragraph,
 body.kb-article .sect2 {
@@ -391,12 +148,16 @@ body.kb-article .sect2 > .paragraph {
   padding: 0;
 }
 
+body.kb-category .breadcrumbs ul,
+body.kb-tag .breadcrumbs ul,
 body.kb-article .breadcrumbs ul {
   padding: 0 !important;
   margin-bottom: 0.2rem;
   font-size: 0.8rem;
 }
 
+.kb-category .breadcrumbs a,
+.kb-tag .breadcrumbs a,
 .kb-article .breadcrumbs a {
   font-weight: 200;
 }

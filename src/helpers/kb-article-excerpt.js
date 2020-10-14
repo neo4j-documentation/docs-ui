@@ -7,7 +7,7 @@ const generateExcerpt = (page) => {
   $('img').remove()
   $('pre').remove()
   $('iframe').remove()
-  const $article = $('article.doc')
+  const $article = $('article.doc > .sect1:nth-child(2)')
   let text = $article.length === 1 ? $article.text() : $.text()
   text = text.trim()
     .replace(/\n/g, ' ')

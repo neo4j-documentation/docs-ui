@@ -3,15 +3,16 @@
 <head>
   {{> head defaultPageTitle='Untitled'}}
 </head>
-<body class="article landing kb-home{{#with (or asciidoc.attributes.role page.role)}} {{{this}}}{{/with}}{{#with (or page.attributes.theme "developer")}} {{{this}}}{{/with}}">
+<body class="article landing kb-tag{{#with (or asciidoc.attributes.role page.role)}} {{{this}}}{{/with}}{{#with (or page.attributes.theme "developer")}} {{{this}}}{{/with}}">
 {{> header}}
 {{> kb-header}}
 
 <main class="article">
   <div class="content">
     <article class="doc">
-      <div class="sect1 secondary heading">
+      <div class="sect1 heading">
         <div class="sectionbody">
+          {{> breadcrumbs}}
           <h2>Articles tagged as <span id="kb-tag-title">{{page.attributes.tag}}</span></h2>
 
           {{#each (to-array page.attributes.tag-pages)}}
