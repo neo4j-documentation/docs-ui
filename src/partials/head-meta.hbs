@@ -52,10 +52,10 @@
     <meta name="twitter:player:height" content="200" />
     <meta name="twitter:image" content="https://go.neo4j.com/rs/710-RRC-335/images/neo4j_logo_globe.png" />
     <meta name="twitter:card" content="player" />
-    {{#with or page.attributes.playertitle '🔴 LIVE! Neo4j is live on Twitch!'}}
+    {{#with (or page.attributes.playertitle '🔴 LIVE! Neo4j is live on Twitch!')}}
     <meta name="twitter:title" content="{{this}}" />
     {{/with}}
-    {{#with or page.attributes.playerdescription 'Neo4j is the open source graph database that allows you to manage, query and visualize your connected information effortlessly. Drivers in all languages, transactional and analytics workloads https://neo4j.com/developer'}}
+    {{#with (or page.attributes.playerdescription 'Neo4j is the open source graph database that allows you to manage, query and visualize your connected information effortlessly. Drivers in all languages, transactional and analytics workloads https://neo4j.com/developer')}}
     <meta name="twitter:description" content="{{this}}" />
     {{/with}}
     {{/with}}
