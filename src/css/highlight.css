@@ -69,6 +69,25 @@
   /* font-weight: var(--monospace-font-weight-bold); */
 }
 
+.language-shell,
+.language-cypher-shell {
+  color: var(--colour-grey-600);
+}
+
+.language-shell > .bash,
+.language-cypher-shell > .cypher {
+  color: initial;
+}
+
+.language-shell > .hljs-meta,
+.language-cypher-shell > .hljs-meta {
+  color: var(--colour-indigo-800);
+}
+
+.language-shell .bash {
+  color: var(--colour-grey-800);
+}
+
 .hljs-deletion {
   background: var(--colour-grey-200);
 }
