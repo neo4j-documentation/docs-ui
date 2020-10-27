@@ -1,0 +1,490 @@
+/* Home */
+body.training-enrollment .doc,
+body.training-home .doc {
+  padding-left: 1rem;
+  padding-right: 1rem;
+  max-width: 75rem;
+  margin: auto;
+}
+
+body.training-home .doc .find-training {
+  text-align: center;
+  padding-bottom: 2em;
+}
+
+body.training-home .doc .find-training h3 {
+  margin: 0;
+  padding: 0;
+}
+
+body.training-home .doc .find-training hr {
+  background: url('../img/delimiter.svg') no-repeat top center;
+  background-size: contain;
+  display: block;
+  height: 2rem;
+  border: 0;
+  position: relative;
+  margin-bottom: 2rem;
+}
+
+body.training-home .doc .find-training hr::before,
+body.training-home .doc .find-training hr::after {
+  content: '';
+  display: block;
+  position: absolute;
+  background: var(--colour-grey-200);
+  height: 2px;
+  top: 1.25rem;
+}
+
+body.training-home .doc .find-training hr::before {
+  left: 0;
+  right: 50%;
+  margin-right: 7.75rem;
+}
+
+body.training-home .doc .find-training hr::after {
+  right: 0;
+  left: 50%;
+  margin-left: 7.75rem;
+}
+
+body.training-home .doc section.row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding-bottom: 2em;
+}
+
+body.training-enrollment .hero,
+body.training-home .hero {
+  color: white;
+  padding-bottom: 2rem;
+  /*
+  width: 100%;
+  min-height: 100px;
+  background-image: url('../img/marquee-pattern.svg'), linear-gradient(to right, #68bbf4, #6dce9d);
+  background-size: auto;
+  position: relative;
+  background-repeat: no-repeat;
+  background-position: 100% 0;
+  overflow: hidden;
+   */
+}
+
+/* Hero */
+body.training-enrollment .hero h1,
+body.training-home .hero h1 {
+  color: white;
+}
+
+body.training-home .hero {
+  padding-bottom: 2em !important;
+}
+
+/* Landing */
+.landing .doc h2::after {
+  background-color: var(--colour-training);
+}
+
+.landing .hero h1::after,
+.landing .hero h2::after {
+  background-color: var(--colour-training);
+}
+
+.row > .training-courses {
+  flex: 1;
+  padding-right: 2em;
+  padding-top: 2rem;
+}
+
+.training-promoted {
+  min-width: 20rem;
+}
+
+.training-courses ul {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, auto));
+}
+
+.training-courses ul li::after {
+  content: "";
+  flex: auto;
+}
+
+.training-courses ul > li {
+  padding: 1rem;
+  display: flex;
+  flex-grow: 1;
+}
+
+.training-courses ul > li > a {
+  cursor: pointer;
+}
+
+.training-courses ul > li > a:hover {
+  color: white;
+  font-weight: 800;
+}
+
+.training-courses .course-card {
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.17);
+  border-radius: 5px;
+  display: grid;
+  grid-template-rows: 250px 1fr;
+  grid-template-columns: minmax(min-content, 400px);
+}
+
+.training-courses .course-card .course-illustration {
+  height: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+.training-courses .course-card .course-label {
+  background: linear-gradient(45deg, var(--colour-blue-400), var(--colour-purple-400));
+  font-size: 12px;
+  padding: 2px 8px;
+  border-radius: 5px;
+  color: white;
+  font-weight: 700;
+}
+
+.training-courses .course-card > .course-content {
+  padding: 0.5rem 1rem 1rem;
+  display: grid;
+  grid-template-rows: min-content min-content 1fr;
+}
+
+.training-courses .course-card .course-content h3 {
+  margin: 0;
+  padding: 0;
+  font-size: 1rem;
+}
+
+.training-courses .course-content .course-duration {
+  color: var(--colour-grey-600);
+  display: flex;
+  align-items: center;
+  margin-top: 0.1rem;
+  padding: 0;
+}
+
+.training-courses .course-content .course-actions {
+  margin-top: auto;
+}
+
+.training-courses .course-content .course-duration::before {
+  display: inline-block;
+  content: ' ';
+  background-image: url('../img/duration.svg');
+  height: 1rem;
+  width: 1rem;
+  margin-right: 0.25rem;
+}
+
+.course-actions a.button {
+  background-color: var(--colour-pink-600);
+}
+
+.course-actions a.button:hover {
+  color: var(--colour-white);
+  background-color: var(--colour-pink-500);
+}
+
+.course-actions a.button:visited {
+  color: var(--colour-white);
+}
+
+.course-actions a.button.is-hidden {
+  display: none;
+}
+
+.training-courses ul > li .course-card .button {
+  margin-top: 1rem;
+  margin-bottom: 0.75rem;
+}
+
+.training-courses ul > li a {
+  color: inherit;
+}
+
+.training-courses ul > li a:hover {
+  color: var(--colour-pink-600);
+}
+
+/* Enrollment */
+.training-enrollment .course-introduction .course-description {
+  margin: 0;
+  padding: 0.4rem 0 0.5rem;
+}
+
+.training-enrollment .course-introduction .course-actions {
+  position: relative;
+  margin-bottom: 2.5rem;
+  margin-top: 1.25rem;
+}
+
+.training-enrollment .course-introduction .course-actions a.button {
+  margin-bottom: 0;
+}
+
+.training-enrollment .course-introduction .course-actions a.button-logout {
+  background: none;
+  color: var(--colour-grey-600);
+  text-decoration: underline;
+}
+
+/* loading */
+.training-enrollment .course-introduction .course-actions[data-status="loading"] .spinner {
+  visibility: visible;
+}
+
+.training-enrollment .course-introduction .course-actions[data-status="loading"] .content,
+.training-enrollment .course-introduction .course-actions[data-status="loading"] .error {
+  visibility: hidden;
+}
+
+/* loaded */
+.training-enrollment .course-introduction .course-actions[data-status="loaded"] .content {
+  visibility: visible;
+}
+
+.training-enrollment .course-introduction .course-actions[data-status="loaded"] .error,
+.training-enrollment .course-introduction .course-actions[data-status="loaded"] .spinner {
+  visibility: hidden;
+}
+
+/* error */
+.training-enrollment .course-introduction .course-actions[data-status="error"] .error {
+  visibility: visible;
+}
+
+.training-enrollment .course-introduction .course-actions[data-status="error"] .content,
+.training-enrollment .course-introduction .course-actions[data-status="error"] .spinner {
+  visibility: hidden;
+}
+
+.training-enrollment .course-introduction .course-actions .content {
+  margin-top: 1rem;
+  margin-bottom: 3rem;
+  text-align: center;
+}
+
+.training-enrollment .course-introduction .course-actions .error {
+  position: absolute;
+  left: 0;
+  right: 0;
+  background-color: var(--colour-red-200);
+  color: var(--colour-red-900);
+  padding: 1rem;
+  border-left: 4px solid var(--colour-red-600);
+  border-radius: 0.25rem;
+  display: flex;
+  width: fit-content;
+  margin: 0 auto auto;
+}
+
+.training-enrollment .course-introduction .spinner {
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin-top: 0;
+}
+
+.training-enrollment .doc .sect1.heading {
+  padding: 2em 0 0;
+}
+
+.training-enrollment .doc .sect1 h2 {
+  padding-bottom: 1rem;
+}
+
+.training-enrollment .doc .sect1 {
+  padding: 0.25rem 0;
+}
+
+.training-enrollment #preamble .imageblock {
+  max-width: 40rem;
+  margin: auto;
+}
+
+body.training-enrollment .breadcrumbs {
+  padding: 0;
+}
+
+body.training-enrollment .breadcrumbs ul {
+  padding: 0 !important;
+  margin-bottom: 0.2rem;
+  font-size: 0.8rem;
+}
+
+.training-enrollment .breadcrumbs a {
+  font-weight: 200;
+}
+
+.training-enrollment .breadcrumbs a::after {
+  display: none;
+}
+
+/* Course */
+body.training .nav-item .nav-item.is-completed::before {
+  position: absolute;
+  left: 0;
+  top: 0;
+  margin-top: 0.15rem;
+  display: block;
+  height: 1rem;
+  width: 1rem;
+  border-radius: 9999px;
+  margin-left: -1.3rem;
+  content: "✓";
+  opacity: 1;
+  background-color: var(--colour-green-500);
+  z-index: 1000;
+  color: white;
+  text-align: center;
+  font-weight: bold;
+  transition: all 0.2s linear;
+}
+
+body.training .nav-item .nav-item.is-pending::before {
+  position: absolute;
+  left: 0;
+  top: 0;
+  margin-top: 0.15rem;
+  display: block;
+  height: 1rem;
+  width: 1rem;
+  border-radius: 9999px;
+  margin-left: -1.3rem;
+  content: "";
+  opacity: 1;
+  z-index: 1000;
+  color: white;
+  text-align: center;
+  font-weight: bold;
+  border: 1px solid var(--colour-grey-500);
+  background-color: var(--navbar-font-color);
+  transition: all 0.2s linear;
+}
+
+body.training .nav-item .nav-item.is-completed.is-current-page::before,
+body.training .nav-item .nav-item.is-completed:hover::before {
+  background-color: var(--colour-green-700);
+}
+
+body.training .nav-item .nav-item.is-current-page::before,
+body.training .nav-item .nav-item:hover::before {
+  opacity: 1;
+  background-color: var(--colour-grey-500);
+  z-index: 1000;
+}
+
+body.training .button {
+  cursor: pointer;
+}
+
+#quiz-result {
+  padding: 1rem;
+  border-radius: 0.25rem;
+}
+
+#quiz-result.is-success {
+  background-color: var(--colour-green-200);
+  color: var(--colour-green-900);
+  border-left: 4px solid var(--colour-green-600);
+}
+
+#quiz-result.is-error {
+  background-color: var(--colour-red-200);
+  color: var(--colour-red-900);
+  border-left: 4px solid var(--colour-red-600);
+}
+
+#quiz-result > p.paragraph {
+  margin: 0;
+}
+
+/* download certificate */
+.training .download-certificate {
+  position: relative;
+}
+
+.training .download-certificate .spinner {
+  position: absolute;
+  margin-top: 0;
+}
+
+.training .download-certificate .error {
+  position: absolute;
+  background-color: var(--colour-blue-200);
+  color: var(--colour-blue-900);
+  border-left: 4px solid var(--colour-blue-600);
+  padding: 1rem;
+  border-radius: 0.25rem;
+}
+
+.training .download-certificate .success {
+  position: absolute;
+  background-color: var(--colour-green-200);
+  color: var(--colour-green-900);
+  border-left: 4px solid var(--colour-green-600);
+  padding: 1rem;
+  border-radius: 0.25rem;
+}
+
+.training .download-certificate .success a {
+  text-decoration: underline;
+  color: var(--colour-green-600);
+}
+
+.training .download-certificate .success a:hover {
+  color: var(--colour-green-500);
+}
+
+/* ready */
+.training .download-certificate[data-status="ready"] .content {
+  visibility: visible;
+}
+
+.training .download-certificate[data-status="ready"] .spinner,
+.training .download-certificate[data-status="ready"] .success,
+.training .download-certificate[data-status="ready"] .error {
+  visibility: hidden;
+}
+
+/* loading */
+.training .download-certificate[data-status="loading"] .spinner {
+  visibility: visible;
+}
+
+.training .download-certificate[data-status="loading"] .content,
+.training .download-certificate[data-status="loading"] .success,
+.training .download-certificate[data-status="loading"] .error {
+  visibility: hidden;
+}
+
+/* success */
+.training .download-certificate[data-status="success"] .success {
+  visibility: visible;
+}
+
+.training .download-certificate[data-status="success"] .spinner,
+.training .download-certificate[data-status="success"] .content,
+.training .download-certificate[data-status="success"] .error {
+  visibility: hidden;
+}
+
+/* error */
+.training .download-certificate[data-status="error"] .error {
+  visibility: visible;
+}
+
+.training .download-certificate[data-status="error"] .content,
+.training .download-certificate[data-status="error"] .success,
+.training .download-certificate[data-status="error"] .spinner {
+  visibility: hidden;
+}

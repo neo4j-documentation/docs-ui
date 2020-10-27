@@ -95,6 +95,7 @@
   --colour-labs: var(--colour-purple-400);
   --colour-docs: var(--colour-blue-400);
   --colour-kb: var(--colour-purple-600);
+  --colour-training: var(--colour-pink-600);
 
   /* fonts */
   --rem-base: 18; /* used to compute rem value from desired pixel value (e.g., calc(18 / var(--rem-base) * 1rem) = 18px) */
@@ -130,6 +131,7 @@
   --navbar-bottom-border: var(--colour-grey-300);
   --navbar-dropdown-link: var(--colour-blue-600);
   --navbar-dropdown_hover-link: var(--colour-blue-800);
+  --navbar-training-border: var(--colour-developer);
   --navbar-developer-border: var(--colour-developer);
   --navbar-docs-border: var(--colour-docs);
   --navbar-labs-border: var(--colour-labs);

@@ -372,3 +372,17 @@ body.kb .navbar .navbar-item.try .navbar-link {
   background: var(--colour-purple-600);
   color: var(--colour-white);
 }
+
+body.training .navbar,
+body.training .search .search-container .search-form {
+  border-top-color: var(--colour-training);
+  border-bottom: 0;
+}
+
+.training .navbar-brand #developer {
+  fill: var(--colour-grey-400);
+}
+
+.training .navbar-brand #neo4j {
+  fill: var(--colour-white);
+}

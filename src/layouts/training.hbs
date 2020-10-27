@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  {{> head defaultPageTitle='Untitled'}}
+</head>
+<body class="article{{#with (or asciidoc.attributes.role page.role)}} {{{this}}}{{/with}}{{#with (or page.attributes.theme "developer")}} {{{this}}}{{/with}}"{{#if page.attributes.slug}} data-slug="{{page.attributes.slug}}"{{/if}}{{#if page.attributes.course-name}} data-course-name="{{page.attributes.course-name}}"{{/if}}{{#with (training-enrollment-page page.component.name)}} data-enrollment-url="{{this.pub.url}}"{{/with}}>
+{{> header}}
+{{> body}}
+{{> footer}}
+</body>
+</html>

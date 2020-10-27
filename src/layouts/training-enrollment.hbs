@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  {{> head defaultPageTitle='Untitled'}}
+</head>
+<body class="article landing training-enrollment{{#with (or asciidoc.attributes.role page.role)}} {{{this}}}{{/with}}{{#with (or page.attributes.theme "developer")}} {{{this}}}{{/with}}"{{#if page.attributes.slug}} data-slug="{{page.attributes.slug}}"{{/if}}{{#if page.attributes.course-name}} data-course-name="{{page.attributes.course-name}}"{{/if}}>
+{{> header}}
+
+<section class="hero">
+  <div class="row">
+    <div class="columns medium-12">
+      {{#with page.title}}
+        <h1>{{{this}}}</h1>
+      {{/with}}
+    </div>
+  </div>
+</section>
+
+<main class="article">
+  <div class="content">
+    <article class="doc">
+      <div class="sect1 heading">
+        <div class="sectionbody">
+          {{> breadcrumbs}}
+          <div class="course-introduction">
+            <h3 class="course-description">{{page.attributes.description}}</h3>
+            <div class="course-actions" data-status="loading">
+              <div class="error">
+                <p>Error while loading the data, please refresh the page.</p>
+              </div>
+              <div class="spinner">
+                <div class="double-bounce1"></div>
+                <div class="double-bounce2"></div>
+              </div>
+              <div class="content">
+                <a href="#" data-action="course-register" class="button button-course-register">Register</a>
+                <a href="#" data-action="signin" class="button button-signin">Sign in</a>
+                {{#with (training-course-index-page page.component.name)}}
+                  <a href="#" data-course-url="{{pub.url}}" data-action="course-continue" class="button button-course-continue">Continue</a>
+                {{/with}}
+                <a href="#" data-action="logout" class="button button-logout">Logout</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      {{{page.contents}}}
+    </article>
+  </div>
+</main>
+
+{{> footer}}
+
+</body>
+</html>

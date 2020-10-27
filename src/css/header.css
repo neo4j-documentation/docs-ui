@@ -398,6 +398,10 @@ body {
   white-space: nowrap;
 }
 
+.navbar-item.training .navbar-dropdown {
+  border-top-color: var(--navbar-training-border);
+}
+
 .navbar-item.developer .navbar-dropdown {
   border-top-color: var(--navbar-developer-border);
 }
