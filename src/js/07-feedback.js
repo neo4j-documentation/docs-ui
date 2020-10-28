@@ -18,7 +18,9 @@
   var sendFeedback = function (helpful, reason, moreInformation) {
     // Get Project
     var productTag = document.querySelector('meta[name=product]')
-    var project = productTag ? productTag.getAttribute('content').toLowerCase().replace(/[^a-z0-9]+/g, '-') : document.querySelector('body').className.replace('article ', '').split(' ')[0]
+    var project = productTag
+      ? productTag.getAttribute('content').toLowerCase().replace(/[^a-z0-9]+/g, '-')
+      : document.querySelector('body').className.replace('article ', '').split(' ')[0]
 
     var body = 'project=' + encodeURIComponent(project)
     body += '&url=' + encodeURIComponent(window.location.href)
