@@ -83,12 +83,15 @@ body.training-home .hero {
 }
 
 /* Landing */
-.landing .doc h2::after {
+body.landing.training-enrollment .doc h2::after,
+body.landing.training-home .doc h2::after {
   background-color: var(--colour-training);
 }
 
-.landing .hero h1::after,
-.landing .hero h2::after {
+body.landing.training-enrollment .hero h1::after,
+body.landing.training-enrollment .hero h2::after,
+body.landing.training-home .hero h1::after,
+body.landing.training-home .hero h2::after{
   background-color: var(--colour-training);
 }
 

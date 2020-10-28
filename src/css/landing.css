@@ -73,6 +73,10 @@ body.landing .hero p {
   margin-top: 0;
 }
 
+.landing .doc .sect1.hero {
+  padding-bottom: 0;
+}
+
 .landing .doc .secondary {
   background: var(--colour-grey-100);
 }
