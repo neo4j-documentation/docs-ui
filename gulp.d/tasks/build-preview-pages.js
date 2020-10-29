@@ -53,6 +53,11 @@ module.exports = (src, previewSrc, previewDest, sink = () => map()) => (done) =>
               uiModel.page.layout = doc.getAttribute('page-layout', 'default')
               uiModel.page.title = doc.getDocumentTitle()
               uiModel.page.contents = Buffer.from(doc.convert())
+              // REMIND: mock contentCatalog
+              uiModel.contentCatalog = {
+                getPages: () => [],
+                getById: () => null,
+              }
             }
             file.extname = '.html'
             try {
