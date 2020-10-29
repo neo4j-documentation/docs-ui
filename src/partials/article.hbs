@@ -49,5 +49,9 @@ If you typed the URL of this page manually, please double check that you entered
 {{/if}}
 {{> pagination}}
 {{> comments}}
-{{> feedback}}
+{{#if (eq page.layout 'training')}}
+  {{> training-help}}
+{{else}}
+  {{> feedback}}
+{{/if}}
 </article>
