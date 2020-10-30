@@ -135,6 +135,9 @@ page:
     - content: Developer Template
       url: developer.html
       urlType: internal
+    - content: KB Article Template
+      url: kb-article.html
+      urlType: internal
 
 asciidoc:
   attributes:
