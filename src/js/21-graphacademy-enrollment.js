@@ -56,7 +56,7 @@ document.addEventListener('DOMContentLoaded', function () {
   var courseActionsElement = document.querySelector('.course-actions')
   var unauthenticatedStateElement = document.querySelector('.course-actions .course-state[data-state="unauthenticated"]')
   var authenticatedStateElement = document.querySelector('.course-actions .course-state[data-state="authenticated"]')
-  var enrolledStateElement =  document.querySelector('.course-actions .course-state[data-state="enrolled"]')
+  var enrolledStateElement = document.querySelector('.course-actions .course-state[data-state="enrolled"]')
   // Initialize
   if (courseName) {
     GraphAcademy.login(
