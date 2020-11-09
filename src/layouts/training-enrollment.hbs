@@ -3,7 +3,9 @@
 <head>
   {{> head defaultPageTitle='Untitled'}}
 </head>
-<body class="article landing training-enrollment{{#with (or asciidoc.attributes.role page.role)}} {{{this}}}{{/with}}{{#with (or page.attributes.theme "developer")}} {{{this}}}{{/with}}"{{#if page.attributes.slug}} data-slug="{{page.attributes.slug}}"{{/if}}{{#if page.attributes.course-name}} data-course-name="{{page.attributes.course-name}}"{{/if}}>
+<body class="article training-enrollment{{#with (or asciidoc.attributes.role page.role)}} {{{this}}}{{/with}}{{#with
+        (or page.attributes.theme "developer")}} {{{this}}}{{/with}}"{{#if page.attributes.slug}} data-slug="{{page.attributes.slug}}"{{/if}}{{#if page.attributes.course-name}}
+      data-course-name="{{page.attributes.course-name}}"{{/if}}>
 {{> header}}
 
 <section class="hero">
@@ -19,32 +21,74 @@
 <main class="article">
   <div class="content">
     <article class="doc">
-      <div class="sect1 heading">
+      <header>
         <div class="sectionbody">
           {{> breadcrumbs}}
-          <div class="course-introduction">
-            <h3 class="course-description">{{page.attributes.description}}</h3>
-            <div class="course-actions" data-status="loading">
-              <div class="error">
-                <p>Error while loading the data, please refresh the page.</p>
-              </div>
-              <div class="spinner">
-                <div class="double-bounce1"></div>
-                <div class="double-bounce2"></div>
-              </div>
-              <div class="content">
-                <a href="#" data-action="course-register" class="button button-course-register">Register</a>
+          <h3>{{page.attributes.description}}</h3>
+        </div>
+      </header>
+      <section>
+        <div class="course-description column">
+          {{{page.contents}}}
+        </div>
+        <div class="course-actions column" data-status="loading">
+          <div class="error">
+            <p>Error while loading the data, please refresh the page.</p>
+          </div>
+          <div class="spinner">
+            <div class="double-bounce1"></div>
+            <div class="double-bounce2"></div>
+          </div>
+          <div class="content">
+            <div class="course-state" data-state="unauthenticated">
+              <div class="panel">
                 <a href="#" data-action="signin" class="button button-signin">Sign in</a>
+              </div>
+            </div>
+            <div class="course-state" data-state="authenticated">
+              <a href="#" data-action="logout" class="button button-logout">Logout</a>
+              <form class="panel">
+                <div class="field">
+                  <label for="firstname">First Name</label>
+                  <div class="control">
+                    <input id="firstname" name=firstname" class="input" type="text" placeholder="" required>
+                  </div>
+                </div>
+                <div class="field">
+                  <label for="lastname">Last Name</label>
+                  <div class="control">
+                    <input id="lastname" name=lastname" class="input" type="text" placeholder="" required>
+                  </div>
+                </div>
+                <p class="help">Name above used to generate Certificate of Completion</p>
+                <div class="field">
+                  <label for="email">Business Email</label>
+                  <div class="control">
+                    <input id="email" name=email" class="input" type="email" placeholder="" required>
+                  </div>
+                </div>
+                <div class="field">
+                  <label for="companyname">Company Name</label>
+                  <div class="control">
+                    <input id="companyname" name=companyname" class="input" type="text" placeholder="" required>
+                  </div>
+                </div>
+                <div class="field action">
+                  <a href="#" data-action="course-enroll" class="button button-course-enroll">Enroll</a>
+                </div>
+              </form>
+            </div>
+            <div class="course-state" data-state="enrolled">
+              <a href="#" data-action="logout" class="button button-logout">Logout</a>
+              <div class="panel">
                 {{#with (training-course-index-page page.component.name)}}
                   <a href="#" data-course-url="{{pub.url}}" data-action="course-continue" class="button button-course-continue">Continue</a>
                 {{/with}}
-                <a href="#" data-action="logout" class="button button-logout">Logout</a>
               </div>
             </div>
           </div>
         </div>
-      </div>
-      {{{page.contents}}}
+      </section>
     </article>
   </div>
 </main>
