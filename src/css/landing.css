@@ -244,3 +244,10 @@ body.landing .buttons li a {
 .landing .discrete h2 {
   display: none;
 }
+
+.developer.landing .use-cases .sect2 .paragraph img {
+  width: 128px;
+}
+.developer.landing .use-cases .sect2 .paragraph:nth-child(3) {
+  min-height: 82px;
+}

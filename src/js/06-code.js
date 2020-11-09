@@ -155,7 +155,12 @@ document.addEventListener('DOMContentLoaded', function () {
         })
     })
 
-    var offset = document.querySelector('.navbar').offsetHeight + document.querySelector('.toolbar').offsetHeight + 20
+    var toolbarOffset = 0
+    var toolbar = document.querySelector('.toolbar')
+    if ( toolbar.offsetHeight ) {
+      toolbarOffset = toolbar.offsetHeight
+    }
+    var offset = document.querySelector('.navbar').offsetHeight + toolbarOffset + 20
 
     var bodyRect = document.body.getBoundingClientRect().top
     var elementRect = tab.getBoundingClientRect().top
