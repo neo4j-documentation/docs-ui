@@ -209,17 +209,15 @@ body.landing.labs .hero p {
   color: var(--colour-white);
 }
 
-body.landing.labs .hero svg.top {
-  background: transparent;
-  fill: var(--colour-purple-600);
+.landing.labs .hero .buttons::before {
+  background-color: var(--colour-purple-600);
 }
 
-body.landing.labs .hero svg.bottom {
-  background: var(--colour-purple-600);
-  fill: var(--colour-white);
+.landing.labs .hero .buttons::after {
+  background-color: var(--landing-leading-background);
 }
 
-body.landing.labs .buttons {
+body.landing.labs .buttons > * {
   background: var(--colour-purple-600);
 }
 
@@ -323,17 +321,15 @@ body.landing.developer .hero {
   font-weight: 400;
 }
 
-body.landing.developer .hero svg.top {
-  background: var(--colour-grey-700);
-  fill: var(--colour-grey-600);
+body.landing.developer .hero .buttons::before {
+  background-color: var(--colour-grey-600);
 }
 
-body.landing.developer .hero svg.bottom {
-  background: var(--colour-grey-600);
-  fill: var(--colour-grey-300);
+body.landing.developer .hero .buttons::after {
+  background-color: var(--landing-leading-background);
 }
 
-body.landing.developer .buttons {
+body.landing.developer .buttons > * {
   background: var(--colour-grey-600);
 }
 
