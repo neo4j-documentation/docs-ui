@@ -82,7 +82,7 @@
               <a href="#" data-action="logout" class="button button-logout">Logout</a>
               <div class="panel">
                 {{#with (training-course-index-page page.component.name)}}
-                  <a href="#" data-course-url="{{pub.url}}" data-action="course-continue" class="button button-course-continue">Continue</a>
+                  <a href="#" data-course-url="{{@root.page.attributes.canonical-root}}{{pub.url}}" data-action="course-continue" class="button button-course-continue">Continue</a>
                 {{/with}}
               </div>
             </div>
