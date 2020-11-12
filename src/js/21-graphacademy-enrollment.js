@@ -12,7 +12,6 @@ document.addEventListener('DOMContentLoaded', function () {
   document.querySelectorAll('[data-action="logout"]').forEach(function (el) {
     el.onclick = function (event) {
       event.preventDefault()
-      console.log('Click on data-action="logout"', el)
       window.location = 'https://neo4j.com/accounts/logout/?targetUrl=' + encodeURIComponent(siteUrl)
     }
   })
@@ -20,7 +19,6 @@ document.addEventListener('DOMContentLoaded', function () {
   document.querySelectorAll('[data-action="signin"]').forEach(function (el) {
     el.onclick = function (event) {
       event.preventDefault()
-      console.log('Click on data-action="signin"', el)
       window.location = 'https://neo4j.com/accounts/login-b/?targetUrl=' + encodeURIComponent(siteUrl)
     }
   })
@@ -28,52 +26,63 @@ document.addEventListener('DOMContentLoaded', function () {
   document.querySelectorAll('[data-action="course-continue"]').forEach(function (el) {
     el.onclick = function (event) {
       event.preventDefault()
-      console.log('Click on data-action="course-continue"', el)
       if (el.dataset && el.dataset.courseUrl) {
         window.location = el.dataset.courseUrl
       }
     }
   })
 
-  document.querySelectorAll('[data-action="course-register"]').forEach(function (el) {
+  document.querySelectorAll('[data-action="course-enroll"]').forEach(function (el) {
     el.onclick = function (event) {
       event.preventDefault()
-      console.log('Show the enrollment form')
+      var firstName = document.getElementById('lastname').value
+      var lastName = document.getElementById('firstname').value
+      courseActionsElement.dataset.status = 'loading'
+      GraphAcademy.enrollStudentInClass(courseName, firstName, lastName, accessToken,
+        function (response) {
+          console.log('Successfully enrolled the student', response)
+          // redirect the student to the first page of the course
+          var courseContinueElement = document.querySelector('[data-action="course-continue"]')
+          window.location = courseContinueElement.dataset.courseUrl
+        },
+        function (err) {
+          console.log('Unable to enroll the student', err)
+          courseActionsElement.dataset.status = 'error'
+        })
     }
   })
 
+  var accessToken
   var courseActionsElement = document.querySelector('.course-actions')
-  var logoutButtonElement = document.querySelector('.button-logout')
-  var signinButtonElement = document.querySelector('.button-signin')
-  var courseRegisterButtonElement = document.querySelector('.button-course-register')
-  var courseContinueButtonElement = document.querySelector('.button-course-continue')
+  var unauthenticatedStateElement = document.querySelector('.course-actions .course-state[data-state="unauthenticated"]')
+  var authenticatedStateElement = document.querySelector('.course-actions .course-state[data-state="authenticated"]')
+  var enrolledStateElement =  document.querySelector('.course-actions .course-state[data-state="enrolled"]')
   // Initialize
   if (courseName) {
     GraphAcademy.login(
       function (authResult) {
         if (authResult && authResult.accessToken && authResult.idTokenPayload) {
           // we're authenticated!
-          var accessToken = authResult.accessToken
+          accessToken = authResult.accessToken
           // var userInfo = authResult.idTokenPayload
           // var givenName = userInfo.given_name || null
           // QUESTION: should we send tracking data to Intercom and Mixpanel?
           GraphAcademy.getEnrollmentForClass(courseName, accessToken,
             function (response) {
               if (response.enrolled) {
-                console.log('User is enrolled')
-                signinButtonElement.classList.add('is-hidden')
-                courseRegisterButtonElement.classList.add('is-hidden')
-                // TODO: show a welcome message
+                console.log('Student is enrolled, showing a continue button')
+                unauthenticatedStateElement.classList.add('is-hidden')
+                authenticatedStateElement.classList.add('is-hidden')
+                // QUESTION: should we show a welcome message?
               } else {
-                // TODO: show register button to enroll
-                console.log('User is not enrolled, show a button to register/enroll')
-                signinButtonElement.classList.add('is-hidden')
-                courseContinueButtonElement.classList.add('is-hidden')
+                console.log('Student is not enrolled, showing a form to enroll')
+                unauthenticatedStateElement.classList.add('is-hidden')
+                enrolledStateElement.classList.add('is-hidden')
               }
               courseActionsElement.dataset.status = 'loaded'
             },
             function (err) {
-              console.log('Unable to get enrollment for the user', err)
+              console.log('Unable to get enrollment for the student', err)
               courseActionsElement.dataset.status = 'error'
             })
         } else {
@@ -83,9 +92,8 @@ document.addEventListener('DOMContentLoaded', function () {
       },
       function (err) {
         console.info('Unable to authenticate the user or the user is not authenticated', err)
-        logoutButtonElement.classList.add('is-hidden')
-        courseRegisterButtonElement.classList.add('is-hidden')
-        courseContinueButtonElement.classList.add('is-hidden')
+        authenticatedStateElement.classList.add('is-hidden')
+        enrolledStateElement.classList.add('is-hidden')
         courseActionsElement.dataset.status = 'loaded'
       })
   }

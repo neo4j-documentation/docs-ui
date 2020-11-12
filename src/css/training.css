@@ -1,23 +1,28 @@
-/* Home */
-body.training-enrollment .doc,
-body.training-home .doc {
+/* Training */
+.training-enrollment .doc,
+.training-home .doc {
   padding-left: 1rem;
   padding-right: 1rem;
   max-width: 75rem;
   margin: auto;
 }
 
-body.training-home .doc .find-training {
+/* Home */
+.training-home .doc h2::after {
+  background-color: var(--colour-training);
+}
+
+.training-home .doc .find-training {
   text-align: center;
   padding-bottom: 2em;
 }
 
-body.training-home .doc .find-training h3 {
+.training-home .doc .find-training h3 {
   margin: 0;
   padding: 0;
 }
 
-body.training-home .doc .find-training hr {
+.training-home .doc .find-training hr {
   background: url('../img/delimiter.svg') no-repeat top center;
   background-size: contain;
   display: block;
@@ -27,8 +32,8 @@ body.training-home .doc .find-training hr {
   margin-bottom: 2rem;
 }
 
-body.training-home .doc .find-training hr::before,
-body.training-home .doc .find-training hr::after {
+.training-home .doc .find-training hr::before,
+.training-home .doc .find-training hr::after {
   content: '';
   display: block;
   position: absolute;
@@ -37,64 +42,53 @@ body.training-home .doc .find-training hr::after {
   top: 1.25rem;
 }
 
-body.training-home .doc .find-training hr::before {
+.training-home .doc .find-training hr::before {
   left: 0;
   right: 50%;
   margin-right: 7.75rem;
 }
 
-body.training-home .doc .find-training hr::after {
+.training-home .doc .find-training hr::after {
   right: 0;
   left: 50%;
   margin-left: 7.75rem;
 }
 
-body.training-home .doc section.row {
+.training-home .doc section.row {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   padding-bottom: 2em;
 }
 
-body.training-enrollment .hero,
-body.training-home .hero {
-  color: white;
-  padding-bottom: 2rem;
-  /*
-  width: 100%;
-  min-height: 100px;
-  background-image: url('../img/marquee-pattern.svg'), linear-gradient(to right, #68bbf4, #6dce9d);
-  background-size: auto;
-  position: relative;
-  background-repeat: no-repeat;
-  background-position: 100% 0;
-  overflow: hidden;
-   */
-}
-
 /* Hero */
-body.training-enrollment .hero h1,
-body.training-home .hero h1 {
+.training-enrollment .hero,
+.training-home .hero {
+  color: white;
+  padding: 8rem 0 2rem;
+  background: var(--colour-grey-800);
+  background: rgb(2, 0, 36);
+  background: linear-gradient(180deg, var(--colour-grey-800) 0%, var(--colour-grey-700) 45%, var(--colour-grey-700) 100%);
+  text-align: left;
+}
+
+.training-enrollment .hero h1,
+.training-home .hero h1 {
   color: white;
 }
 
-body.training-home .hero {
+.training-enrollment .hero h1::after,
+.training-enrollment .hero h2::after,
+.training-home .hero h1::after,
+.training-home .hero h2::after {
+  background-color: var(--colour-training);
+}
+
+.training-home .hero {
   padding-bottom: 2em !important;
 }
 
-/* Landing */
-body.landing.training-enrollment .doc h2::after,
-body.landing.training-home .doc h2::after {
-  background-color: var(--colour-training);
-}
-
-body.landing.training-enrollment .hero h1::after,
-body.landing.training-enrollment .hero h2::after,
-body.landing.training-home .hero h1::after,
-body.landing.training-home .hero h2::after{
-  background-color: var(--colour-training);
-}
-
+/* Home */
 .row > .training-courses {
   flex: 1;
   padding-right: 2em;
@@ -201,7 +195,7 @@ body.landing.training-home .hero h2::after{
   color: var(--colour-white);
 }
 
-.course-actions a.button.is-hidden {
+.course-actions .course-state.is-hidden {
   display: none;
 }
 
@@ -219,67 +213,197 @@ body.landing.training-home .hero h2::after{
 }
 
 /* Enrollment */
-.training-enrollment .course-introduction .course-description {
+.training-enrollment .doc .sect1 {
+  padding: 2em 0;
+  margin-top: 0;
+}
+
+.training-enrollment .doc h2 {
   margin: 0;
-  padding: 0.4rem 0 0.5rem;
+  border-bottom: 0 none;
 }
 
-.training-enrollment .course-introduction .course-actions {
-  position: relative;
-  margin-bottom: 2.5rem;
-  margin-top: 1.25rem;
-}
-
-.training-enrollment .course-introduction .course-actions a.button {
+.training-enrollment .doc h2::after {
+  display: block;
+  background-color: var(--colour-training);
+  height: 3px;
+  width: 80px;
+  margin-top: 1rem;
   margin-bottom: 0;
+  content: "";
 }
 
-.training-enrollment .course-introduction .course-actions a.button-logout {
+.training-enrollment .doc {
+  padding-top: 2em;
+}
+
+.training-enrollment .doc section {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.training-enrollment .doc header h3 {
+  margin: 0;
+  padding: 0.4rem 0 2rem;
+}
+
+.training-enrollment .course-description {
+  flex: 3;
+  min-width: 450px;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.training-enrollment .course-actions {
+  flex: 2;
+  min-width: 350px;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+/* stack elements to prevent layout shift */
+.training-enrollment .course-actions {
+  display: grid;
+}
+
+.training-enrollment .course-actions > .error,
+.training-enrollment .course-actions > .spinner,
+.training-enrollment .course-actions > .content {
+  grid-column: 1 / 2;
+  grid-row: 1 / 2;
+}
+
+.training-enrollment .course-actions .panel {
+  display: grid;
+  padding: 1rem;
+  background-color: var(--colour-grey-100);
+  border-top: 5px solid var(--colour-training);
+}
+
+.training-enrollment .course-actions a.button-logout {
   background: none;
   color: var(--colour-grey-600);
   text-decoration: underline;
+  text-align: end;
+  display: block;
+  font-size: 0.8rem;
+  padding: 0;
+  margin-bottom: 0.5rem
+}
+
+/* stack elements to prevent layout shift */
+.training-enrollment .course-actions .content {
+  display: grid;
+}
+
+.training-enrollment .course-actions .content > .course-state {
+  grid-column: 1 / 2;
+  grid-row: 1 / 2;
+}
+
+/* Form */
+.training-enrollment .course-actions form label {
+  color: var(--colour-grey-800);
+  display: block;
+  font-size: 1rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.training-enrollment .course-actions form .field:not(:last-child) {
+  margin-bottom: .75rem;
+}
+
+.training-enrollment .course-actions form .field.action {
+  margin-top: 1rem;
+  display: flex;
+}
+
+.training-enrollment .course-actions .button-signin,
+.training-enrollment .course-actions .button-course-enroll,
+.training-enrollment .course-actions .button-course-continue {
+  margin: auto;
+}
+
+.training-enrollment .course-actions form .control {
+  display: flex;
+}
+
+.training-enrollment .course-actions form .help {
+  font-size: .85rem;
+  margin-top: 0;
+  font-style: italic;
+  margin-bottom: 1.25rem;
+}
+
+.training-enrollment .course-actions form .input {
+  box-shadow: inset 0 0.0625em 0.125em rgba(10, 10, 10, .05);
+  max-width: 100%;
+  width: 100%;
+}
+
+.training-enrollment .course-actions form .input {
+  background-color: white;
+  border-color: var(--colour-grey-400);
+  border-radius: 4px;
+  color: var(--colour-grey-800);
+}
+
+.training-enrollment .course-actions form .input:focus {
+  outline: 0;
+  border-color: var(--colour-training);
+  box-shadow: 0 0 0 0.125em rgba(213, 63, 140, .25);
+}
+
+.training-enrollment .course-actions form .input {
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  align-items: center;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  box-shadow: none;
+  display: inline-flex;
+  font-size: 1rem;
+  height: 2.5em;
+  justify-content: flex-start;
+  line-height: 1.5;
+  padding: calc(.5em - 1px) calc(.75em - 1px);
+  position: relative;
+  vertical-align: top;
 }
 
 /* loading */
-.training-enrollment .course-introduction .course-actions[data-status="loading"] .spinner {
+.training-enrollment .course-actions[data-status="loading"] .spinner {
   visibility: visible;
 }
 
-.training-enrollment .course-introduction .course-actions[data-status="loading"] .content,
-.training-enrollment .course-introduction .course-actions[data-status="loading"] .error {
+.training-enrollment .course-actions[data-status="loading"] .content,
+.training-enrollment .course-actions[data-status="loading"] .error {
   visibility: hidden;
 }
 
 /* loaded */
-.training-enrollment .course-introduction .course-actions[data-status="loaded"] .content {
+.training-enrollment .course-actions[data-status="loaded"] .content {
   visibility: visible;
 }
 
-.training-enrollment .course-introduction .course-actions[data-status="loaded"] .error,
-.training-enrollment .course-introduction .course-actions[data-status="loaded"] .spinner {
+.training-enrollment .course-actions[data-status="loaded"] .error,
+.training-enrollment .course-actions[data-status="loaded"] .spinner {
   visibility: hidden;
 }
 
 /* error */
-.training-enrollment .course-introduction .course-actions[data-status="error"] .error {
+.training-enrollment .course-actions[data-status="error"] .error {
   visibility: visible;
 }
 
-.training-enrollment .course-introduction .course-actions[data-status="error"] .content,
-.training-enrollment .course-introduction .course-actions[data-status="error"] .spinner {
+.training-enrollment .course-actions[data-status="error"] .content,
+.training-enrollment .course-actions[data-status="error"] .spinner {
   visibility: hidden;
 }
 
-.training-enrollment .course-introduction .course-actions .content {
-  margin-top: 1rem;
-  margin-bottom: 3rem;
-  text-align: center;
-}
-
-.training-enrollment .course-introduction .course-actions .error {
-  position: absolute;
-  left: 0;
-  right: 0;
+.training-enrollment .course-actions .error {
   background-color: var(--colour-red-200);
   color: var(--colour-red-900);
   padding: 1rem;
@@ -290,11 +414,8 @@ body.landing.training-home .hero h2::after{
   margin: 0 auto auto;
 }
 
-.training-enrollment .course-introduction .spinner {
-  position: absolute;
-  left: 0;
-  right: 0;
-  margin-top: 0;
+.training-enrollment .course-actions .spinner {
+  margin: 0 auto auto;
 }
 
 .training-enrollment .doc .sect1.heading {
@@ -314,11 +435,16 @@ body.landing.training-home .hero h2::after{
   margin: auto;
 }
 
-body.training-enrollment .breadcrumbs {
+/* breadcrumbs */
+.training-enrollment .breadcrumbs {
+  display: block;
+}
+
+.training-enrollment .breadcrumbs {
   padding: 0;
 }
 
-body.training-enrollment .breadcrumbs ul {
+.training-enrollment .breadcrumbs ul {
   padding: 0 !important;
   margin-bottom: 0.2rem;
   font-size: 0.8rem;
