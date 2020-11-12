@@ -65,7 +65,7 @@
 .training-enrollment .hero,
 .training-home .hero {
   color: white;
-  padding: 8rem 0 2rem;
+  padding: 8rem 0 2rem !important;
   background: var(--colour-grey-800);
   background: rgb(2, 0, 36);
   background: linear-gradient(180deg, var(--colour-grey-800) 0%, var(--colour-grey-700) 45%, var(--colour-grey-700) 100%);
@@ -82,10 +82,6 @@
 .training-home .hero h1::after,
 .training-home .hero h2::after {
   background-color: var(--colour-training);
-}
-
-.training-home .hero {
-  padding-bottom: 2em !important;
 }
 
 /* Home */
