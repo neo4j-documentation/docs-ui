@@ -66,6 +66,22 @@ body.kb .hero {
 }
 
 /* Doc */
+body.kb-article .doc {
+  max-width: initial;
+  padding: 2em 0;
+  margin: 0;
+  width: 100%;
+  flex: none !important;
+}
+
+body.kb-article .doc > .sect1 > .sectionbody {
+  padding-left: 1rem;
+  padding-right: 1rem;
+  max-width: 980px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 body.kb .doc .flex {
   padding: 2em 0 1em;
 }
@@ -133,18 +149,15 @@ body.kb h2 span {
 }
 
 body.kb-article .heading {
-  padding-bottom: 0;
+  padding: 2em 0;
 }
 
 body.kb-category .breadcrumbs,
-body.kb-tag .breadcrumbs,
-body.kb-article .breadcrumbs,
-body.kb-article .paragraph,
-body.kb-article .sect2 {
+body.kb-tag .breadcrumbs {
   padding: 0 1rem;
 }
 
-body.kb-article .sect2 > .paragraph {
+body.kb-article .breadcrumbs {
   padding: 0;
 }
 
@@ -167,7 +180,6 @@ body.kb-article .breadcrumbs ul {
 }
 
 .kb-article h1.page {
-  padding: 0 1rem;
   margin: 0.5rem 0;
 }
 
@@ -176,7 +188,6 @@ body.kb-article .breadcrumbs ul {
   flex-direction: column;
   font-size: 0.875rem;
   margin-bottom: 0;
-  padding: 0 1rem;
 }
 
 .kb .kb-metadata-menu {
@@ -212,8 +223,5 @@ body.kb-article .breadcrumbs ul {
 .kb .kb-metadata .edit-this-page a {
   font-weight: normal;
 }
-.kb .kb-metadata .edit-this-page a::after { display: none; }
 
-.kb-article.is-hidden {
-  display: none;
-}
+.kb .kb-metadata .edit-this-page a::after { display: none; }

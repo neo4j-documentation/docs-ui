@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /* Hero */
 section.hero {
   padding: 8rem 0 0;
@@ -49,6 +50,8 @@ section.hero p {
   font-weight: 300;
 }
 
+=======
+>>>>>>> kb-improvements-1
 /* Landing */
 .landing .doc {
   max-width: initial;
@@ -56,10 +59,6 @@ section.hero p {
   margin: 0;
   width: 100%;
   flex: none !important;
-}
-
-.landing .doc h1 {
-  display: none;
 }
 
 .landing .doc h2,
@@ -77,6 +76,10 @@ section.hero p {
 
 .landing .doc .sect1.hero {
   padding-bottom: 0;
+}
+
+.landing .doc h1 {
+  display: none;
 }
 
 .landing .doc .secondary {
@@ -106,35 +109,6 @@ section.hero p {
 /**
  * Landing Preamble - button and angled borders
  */
-body.landing .hero .sectionbody {
-  width: 100%;
-  max-width: none;
-  padding: 0;
-}
-
-body.landing .hero .paragraph {
-  padding-bottom: 4rem;
-}
-
-body.landing .hero svg {
-  width: 100%;
-  height: 40px;
-}
-
-body.landing .hero svg.bottom {
-  margin-bottom: -1rem;
-}
-
-body.landing .hero svg.to-white {
-  fill: var(--colour-white);
-  margin-bottom: -1em;
-}
-
-body.landing .hero svg.to-leading {
-  fill: var(--landing-leading-background) !important;
-  margin-bottom: -1em;
-}
-
 body.landing .buttons {
   line-height: 1;
   margin: -1rem 0 0;
@@ -276,4 +250,82 @@ body.landing .buttons li a {
 
 .developer.landing .use-cases .sect2 .paragraph:nth-child(3) {
   min-height: 82px;
+}
+
+/* Hero */
+.hero {
+  padding: 8rem 0 0 !important;
+  background: var(--colour-grey-800);
+  background: rgb(2, 0, 36);
+  background: linear-gradient(180deg, var(--colour-grey-800) 0%, var(--colour-grey-700) 45%, var(--colour-grey-700) 100%);
+  text-align: left;
+}
+
+.landing .doc .hero h2,
+.landing .doc .hero h1,
+.landing .doc .hero p,
+.hero h1,
+.hero h2,
+.hero p {
+  padding: 0 1rem;
+  max-width: 680px;
+  margin: auto;
+}
+
+.landing .doc .hero h1,
+.landing .doc .hero h2,
+.hero h1,
+.hero h2 {
+  font-size: 1.2rem;
+  font-weight: 300;
+  display: block;
+  color: var(--colour-grey-400);
+  margin-bottom: 1rem;
+}
+
+.hero h1::after,
+.hero h2::after {
+  display: block;
+  background-color: var(--colour-green-600);
+  height: 3px;
+  width: 80px;
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+  content: "";
+}
+
+.hero p {
+  font-size: 1.8rem;
+  color: var(--colour-grey-300);
+  font-weight: 300;
+}
+
+.landing .doc .hero .sectionbody,
+.hero .sectionbody {
+  width: 100%;
+  max-width: none;
+  padding: 0;
+}
+
+.hero .paragraph {
+  padding-bottom: 4rem;
+}
+
+.hero svg {
+  width: 100%;
+  height: 40px;
+}
+
+.hero svg.bottom {
+  margin-bottom: -1rem;
+}
+
+.hero svg.to-white {
+  fill: var(--colour-white);
+  margin-bottom: -1em;
+}
+
+.hero svg.to-leading {
+  fill: var(--landing-leading-background) !important;
+  margin-bottom: -1em;
 }

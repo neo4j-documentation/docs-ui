@@ -9,12 +9,15 @@
     <link rel="next" href="{{{relativize ./url}}}">
     {{/with}}
     {{/unless}}
-    {{#with page.description}}
-    <meta name="description" content="{{this}}">
-    {{/with}}
+    {{#if (eq page.layout 'kb-article')}}
+      {{#with (kb-article-excerpt page)}}
+        <meta property="description" content="{{this}}">
+      {{/with}}
+    {{else}}
+      {{#with page.description}}
+        <meta property="description" content="{{this}}">
+      {{/with}}
+    {{/if}}
     {{#with page.keywords}}
     <meta name="keywords" content="{{this}}">
     {{/with}}
-    {{!-- {{#with (or antoraVersion site.antoraVersion)}}
-    <meta name="generator" content="Antora {{this}}">
-    {{/with}} --}}

@@ -42,9 +42,15 @@
     {{#with (or page.attributes.ogimage 'https://dist.neo4j.com/wp-content/uploads/20190822071359/neo4j-database-meta-image.png' )}}
     <meta property="og:image" content="{{{this}}}" />
     {{/with}}
-    {{#with page.description}}
-    <meta property="og:description" content="{{this}}">
-    {{/with}}
+    {{#if (eq page.layout 'kb-article')}}
+      {{#with (kb-article-excerpt page)}}
+      <meta property="og:description" content="{{this}}">
+      {{/with}}
+    {{else}}
+      {{#with page.description}}
+      <meta property="og:description" content="{{this}}">
+      {{/with}}
+    {{/if}}
 
     {{#with page.attributes.player}}
     <meta name="twitter:player" content="{{this}}" />
