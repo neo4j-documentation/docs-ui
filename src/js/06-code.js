@@ -1,9 +1,43 @@
 // Code functions
+;(function () {
+  var commandContinuationRx = /\\\s*$/
+  var copyableCommand = function (input) {
+    var result = input
+    if (input.startsWith('$ ')) {
+      var lines = result.split('\n')
+      var currentCommand = ''
+      var commands = []
+      var commandContinuationFound = false
+      for (var i = 0; i < lines.length; i++) {
+        var line = lines[i]
+        if (!commandContinuationFound && !line.startsWith('$ ')) {
+          // ignore, command output
+        } else {
+          if (commandContinuationFound) {
+            currentCommand += '\n' + line
+          } else if (line.startsWith('$ ')) {
+            currentCommand = line.substr(2, line.length)
+          }
+          commandContinuationFound = line.match(commandContinuationRx)
+          if (!commandContinuationFound) {
+            commands.push(currentCommand)
+          }
+        }
+      }
+      result = commands.join('; ')
+    }
+    return result
+  }
+  window.neo4jDocs = {
+    copyableCommand: copyableCommand,
+  }
+})()
+
 document.addEventListener('DOMContentLoaded', function () {
   var ignore = ['gram']
   var copiedText = 'Copied!'
 
-  var cleanCode = function (code) {
+  var cleanCode = function (code, language) {
     var div = document.createElement('div')
     div.innerHTML = code
 
@@ -12,14 +46,19 @@ document.addEventListener('DOMContentLoaded', function () {
     })
 
     var cleaner = document.createElement('textarea')
-    cleaner.innerHTML = div.innerHTML
+    var input = div.innerHTML
 
+    if (language === 'bash' || language === 'sh' || language === 'shell' || language === 'console') {
+      input = window.neo4jDocs.copyableCommand(input)
+    }
+
+    cleaner.innerHTML = input
     return cleaner.value
   }
 
-  var copyToClipboard = function (code) {
+  var copyToClipboard = function (code, language) {
     var textarea = document.createElement('textarea')
-    textarea.value = cleanCode(code)
+    textarea.value = cleanCode(code, language)
     textarea.setAttribute('readonly', '')
     textarea.style.position = 'absolute'
     textarea.style.left = '-9999px'
@@ -61,7 +100,7 @@ document.addEventListener('DOMContentLoaded', function () {
       var copyButton = createElement('button', 'btn btn-copy', [document.createTextNode('Copy to Clipboard')])
       copyButton.addEventListener('click', function (e) {
         e.preventDefault()
-        copyToClipboard(code)
+        copyToClipboard(code, language)
 
         var button = e.target
         var text = button.innerHTML

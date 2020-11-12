@@ -82,6 +82,7 @@
 .language-shell > .hljs-meta,
 .language-cypher-shell > .hljs-meta {
   color: var(--colour-indigo-800);
+  user-select: none;
 }
 
 .language-shell .bash {
