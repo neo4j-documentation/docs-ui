@@ -1,54 +1,4 @@
 /* Landing */
-body.landing .hero {
-  padding: 8rem 0 0;
-  background: var(--colour-grey-800);
-  background: rgb(2, 0, 36);
-  background: linear-gradient(180deg, var(--colour-grey-800) 0%, var(--colour-grey-700) 45%, var(--colour-grey-700) 100%);
-  text-align: left;
-}
-
-/* .landing .hero {
-    background: var(--colour-grey-800);
-    padding: 8rem 0;
-    background: rgb(2,0,36);
-    background: linear-gradient(180deg, var(--colour-grey-800) 0%, var(--colour-grey-700) 35%,  var(--colour-grey-700) 100%);
-    text-align: left;
-} */
-
-body.landing .hero h1,
-body.landing .hero h2,
-body.landing .hero p {
-  padding: 0 1rem;
-  max-width: 680px;
-  margin: auto;
-}
-
-.landing .hero h1,
-.landing .hero h2 {
-  font-size: 1.2rem;
-  font-weight: 300;
-  display: block;
-  color: var(--colour-grey-400);
-  margin-bottom: 1rem;
-}
-
-.landing .hero h1::after,
-.landing .hero h2::after {
-  display: block;
-  background-color: var(--colour-green-600);
-  height: 3px;
-  width: 80px;
-  margin-top: 1rem;
-  margin-bottom: 2rem;
-  content: "";
-}
-
-.landing .hero p {
-  font-size: 1.8rem;
-  color: var(--colour-grey-300);
-  font-weight: 300;
-}
-
 .landing .doc {
   max-width: initial;
   padding: 0;
@@ -226,7 +176,7 @@ body.landing .buttons li a {
 }
 
 /* Hero */
-section.hero {
+.hero {
   padding: 8rem 0 0 !important;
   background: var(--colour-grey-800);
   background: rgb(2, 0, 36);
@@ -234,16 +184,21 @@ section.hero {
   text-align: left;
 }
 
-section.hero h1,
-section.hero h2,
-section.hero p {
+.landing .doc .hero h2,
+.landing .doc .hero h1,
+.landing .doc .hero p,
+.hero h1,
+.hero h2,
+.hero p {
   padding: 0 1rem;
   max-width: 680px;
   margin: auto;
 }
 
-section.hero h1,
-section.hero h2 {
+.landing .doc .hero h1,
+.landing .doc .hero h2,
+.hero h1,
+.hero h2 {
   font-size: 1.2rem;
   font-weight: 300;
   display: block;
@@ -251,8 +206,8 @@ section.hero h2 {
   margin-bottom: 1rem;
 }
 
-section.hero h1::after,
-section.hero h2::after {
+.hero h1::after,
+.hero h2::after {
   display: block;
   background-color: var(--colour-green-600);
   height: 3px;
@@ -262,37 +217,38 @@ section.hero h2::after {
   content: "";
 }
 
-section.hero p {
+.hero p {
   font-size: 1.8rem;
   color: var(--colour-grey-300);
   font-weight: 300;
 }
 
-section.hero .sectionbody {
+.landing .doc .hero .sectionbody,
+.hero .sectionbody {
   width: 100%;
   max-width: none;
   padding: 0;
 }
 
-section.hero .paragraph {
+.hero .paragraph {
   padding-bottom: 4rem;
 }
 
-section.hero svg {
+.hero svg {
   width: 100%;
   height: 40px;
 }
 
-section.hero svg.bottom {
+.hero svg.bottom {
   margin-bottom: -1rem;
 }
 
-section.hero svg.to-white {
+.hero svg.to-white {
   fill: var(--colour-white);
   margin-bottom: -1em;
 }
 
-section.hero svg.to-leading {
+.hero svg.to-leading {
   fill: var(--landing-leading-background) !important;
   margin-bottom: -1em;
 }
