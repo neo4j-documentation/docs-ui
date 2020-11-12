@@ -1,11 +1,11 @@
 {
-  "name": "@antora/ui-default",
-  "description": "An archetype project that produces a UI for creating documentation sites with Antora",
-  "homepage": "https://gitlab.com/antora/antora-ui-default",
+  "name": "@neo4j/docs-ui",
+  "description": "Produces the UI bundle for the Neo4j documentation site",
+  "homepage": "https://github.com/neo4j-documentation/docs-ui",
   "license": "MPL-2.0",
   "repository": {
     "type": "git",
-    "url": "https://gitlab.com/antora/antora-ui-default.git"
+    "url": "https://github.com/neo4j-documentation/docs-ui.git"
   },
   "engines": {
     "node": ">= 8.0.0"
