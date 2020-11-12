@@ -304,7 +304,6 @@
   color: var(--colour-grey-800);
   display: block;
   font-size: 1rem;
-  font-weight: 700;
   margin-bottom: 0.5rem;
 }
 
@@ -323,18 +322,46 @@
   margin: auto;
 }
 
-.training-enrollment .course-actions form .control {
-  display: flex;
-}
-
+/* Marketo form */
 .training-enrollment .course-actions form .help {
   font-size: 0.85rem;
   margin-top: 0;
   font-style: italic;
   margin-bottom: 1.25rem;
+  margin-left: 0.8rem;
 }
 
-.training-enrollment .course-actions form .input {
+.training-enrollment .course-actions form input:hover {
+  border-color: var(--colour-grey-500);
+}
+
+.training-enrollment .course-actions form select:hover {
+  border-color: var(--colour-grey-500);
+}
+
+.training-enrollment .course-actions form select {
+  cursor: pointer;
+  display: block;
+  max-width: 100%;
+  outline: 0;
+  background-color: white;
+  border-radius: 4px;
+  color: var(--colour-grey-800);
+  -webkit-appearance: none;
+  align-items: center;
+  border: 1px solid var(--colour-grey-400);
+  box-shadow: none;
+  font-size: 1rem;
+  height: 2.5em;
+  justify-content: flex-start;
+  line-height: 1.5;
+  padding: calc(0.5em - 1px) calc(0.75em - 1px);
+  position: relative;
+  vertical-align: top;
+}
+
+.training-enrollment .course-actions form input[type="text"],
+.training-enrollment .course-actions form input[type="email"] {
   max-width: 100%;
   width: 100%;
   background-color: white;
@@ -343,7 +370,7 @@
   -moz-appearance: none;
   -webkit-appearance: none;
   align-items: center;
-  border: 1px solid transparent;
+  border: 1px solid var(--colour-grey-300);
   box-shadow: none;
   display: inline-flex;
   font-size: 1rem;
@@ -355,10 +382,95 @@
   vertical-align: top;
 }
 
-.training-enrollment .course-actions form .input:focus {
+.training-enrollment .course-actions form select:focus,
+.training-enrollment .course-actions form input:focus {
   outline: 0;
   border-color: var(--colour-training);
   box-shadow: 0 0 0 0.125em rgba(213, 63, 140, 0.25);
+}
+
+.training-enrollment .mktoForm .mktoFormCol {
+  width: 100%;
+}
+
+.training-enrollment .mktoForm .mktoFieldWrap {
+  width: 100%;
+}
+
+.training-enrollment .mktoForm,
+.training-enrollment .mktoField {
+  width: 100% !important;
+}
+
+.training-enrollment input.mktoField[type="checkbox"] {
+  width: auto !important;
+  margin-top: 0.5rem;
+}
+
+.training-enrollment .mktoForm .mktoRequiredField .mktoAsterix {
+  display: block;
+}
+
+.training-enrollment .mktoForm .mktoAsterix {
+  color: var(--colour-red-800);
+  display: none;
+}
+
+.training-enrollment .mktoForm .mktoError .mktoErrorMsg {
+  display: block;
+  margin-top: 7px;
+  border-radius: 6px;
+  border: none;
+  background-image: none;
+  box-shadow: none;
+  text-shadow: none;
+  outline: 0;
+  user-select: none;
+  background-color: var(--colour-red-200);
+  color: var(--colour-red-900);
+  padding: 0.65rem;
+}
+
+.training-enrollment .mktoForm .mktoError .mktoErrorArrow {
+  background-color: var(--colour-red-200);
+  border: none;
+  outline: 0;
+  user-select: none;
+}
+
+.training-enrollment .mktoForm button.mktoButton {
+  color: #fff;
+  cursor: pointer;
+  background-color: var(--colour-pink-600);
+  display: inline-block;
+  border-radius: 0.25rem;
+  margin: auto;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+  font-weight: 600;
+}
+
+.training-enrollment button.mktoButton:hover {
+  background-color: var(--colour-pink-500);
+}
+
+.training-enrollment .mktoForm div,
+.training-enrollment .mktoForm span,
+.training-enrollment .mktoForm label,
+.training-enrollment .mktoForm p,
+.training-enrollment .mktoForm div.mktoButtonRow {
+  display: flex;
+}
+
+.training-enrollment .mktoForm span {
+  width: 100%;
+}
+
+#LblPostalCode {
+  display: flex;
+  flex-direction: row-reverse;
+  white-space: nowrap;
+  align-items: center;
 }
 
 /* loading */

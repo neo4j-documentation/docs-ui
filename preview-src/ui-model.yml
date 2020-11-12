@@ -138,6 +138,10 @@ page:
     - content: KB Article Template
       url: kb-article.html
       urlType: internal
+    - content: Training enrollement
+      url: training-enrollment.html
+      urlType: internal
+
 
 asciidoc:
   attributes:
