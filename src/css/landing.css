@@ -141,7 +141,30 @@ body.landing .buttons {
   text-align: center;
   font-size: 1rem;
   display: block;
-  padding: 2rem 0 1rem 0;
+}
+
+body.landing .buttons > :first-child {
+  padding-top: 2rem;
+}
+
+body.landing .buttons > :last-child {
+  /* 40px is the height of the clip-path */
+  padding-bottom: calc(1rem + 40px);
+}
+
+body.landing .buttons::before {
+  content: " ";
+  display: block;
+  height: 40px;
+  clip-path: polygon(100% 0, 0% calc(100% + 1px), 100% calc(100% + 1px));
+}
+
+body.landing .buttons::after {
+  content: " ";
+  display: block;
+  height: 40px;
+  margin-top: -40px;
+  clip-path: polygon(100% 0, 0 calc(100% + 1px), 100% calc(100% + 1px));
 }
 
 body.landing .buttons p {
@@ -250,6 +273,7 @@ body.landing .buttons li a {
 .developer.landing .use-cases .sect2 .paragraph img {
   width: 128px;
 }
+
 .developer.landing .use-cases .sect2 .paragraph:nth-child(3) {
   min-height: 82px;
 }
