@@ -1155,13 +1155,11 @@ body {
   opacity: 0;
 }
 
-.doc .no-arrows a:after {
+.doc .no-arrows a::after {
   display: none !important;
 }
+
 .doc .no-bullets ul {
   padding-left: 0;
   list-style-type: none;
 }
-/* .doc .no-bullets ul {
-
-} */

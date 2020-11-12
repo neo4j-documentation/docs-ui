@@ -214,7 +214,7 @@
 
 /* Enrollment */
 .training-enrollment .doc .sect1 {
-  padding: 2em 0;
+  padding: 0.25rem 0;
   margin-top: 0;
 }
 
@@ -255,16 +255,13 @@
   padding-right: 1rem;
 }
 
+/* stack elements to prevent layout shift */
 .training-enrollment .course-actions {
+  display: grid;
   flex: 2;
   min-width: 350px;
   padding-left: 1rem;
   padding-right: 1rem;
-}
-
-/* stack elements to prevent layout shift */
-.training-enrollment .course-actions {
-  display: grid;
 }
 
 .training-enrollment .course-actions > .error,
@@ -289,7 +286,7 @@
   display: block;
   font-size: 0.8rem;
   padding: 0;
-  margin-bottom: 0.5rem
+  margin-bottom: 0.5rem;
 }
 
 /* stack elements to prevent layout shift */
@@ -312,7 +309,7 @@
 }
 
 .training-enrollment .course-actions form .field:not(:last-child) {
-  margin-bottom: .75rem;
+  margin-bottom: 0.75rem;
 }
 
 .training-enrollment .course-actions form .field.action {
@@ -331,46 +328,37 @@
 }
 
 .training-enrollment .course-actions form .help {
-  font-size: .85rem;
+  font-size: 0.85rem;
   margin-top: 0;
   font-style: italic;
   margin-bottom: 1.25rem;
 }
 
 .training-enrollment .course-actions form .input {
-  box-shadow: inset 0 0.0625em 0.125em rgba(10, 10, 10, .05);
   max-width: 100%;
   width: 100%;
-}
-
-.training-enrollment .course-actions form .input {
   background-color: white;
-  border-color: var(--colour-grey-400);
   border-radius: 4px;
   color: var(--colour-grey-800);
-}
-
-.training-enrollment .course-actions form .input:focus {
-  outline: 0;
-  border-color: var(--colour-training);
-  box-shadow: 0 0 0 0.125em rgba(213, 63, 140, .25);
-}
-
-.training-enrollment .course-actions form .input {
   -moz-appearance: none;
   -webkit-appearance: none;
   align-items: center;
   border: 1px solid transparent;
-  border-radius: 4px;
   box-shadow: none;
   display: inline-flex;
   font-size: 1rem;
   height: 2.5em;
   justify-content: flex-start;
   line-height: 1.5;
-  padding: calc(.5em - 1px) calc(.75em - 1px);
+  padding: calc(0.5em - 1px) calc(0.75em - 1px);
   position: relative;
   vertical-align: top;
+}
+
+.training-enrollment .course-actions form .input:focus {
+  outline: 0;
+  border-color: var(--colour-training);
+  box-shadow: 0 0 0 0.125em rgba(213, 63, 140, 0.25);
 }
 
 /* loading */
@@ -426,10 +414,6 @@
   padding-bottom: 1rem;
 }
 
-.training-enrollment .doc .sect1 {
-  padding: 0.25rem 0;
-}
-
 .training-enrollment #preamble .imageblock {
   max-width: 40rem;
   margin: auto;
@@ -438,9 +422,6 @@
 /* breadcrumbs */
 .training-enrollment .breadcrumbs {
   display: block;
-}
-
-.training-enrollment .breadcrumbs {
   padding: 0;
 }
 
