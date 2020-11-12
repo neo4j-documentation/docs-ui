@@ -34,6 +34,7 @@
     "gulp-concat": "~2.6",
     "gulp-connect": "~5.7",
     "gulp-eslint": "~6.0",
+    "gulp-if": "^3.0.0",
     "gulp-imagemin": "~6.2",
     "gulp-livereload": "^4.0.2",
     "gulp-postcss": "~8.0",
@@ -42,6 +43,7 @@
     "gulp-vinyl-zip": "~2.2",
     "handlebars": "~4.7",
     "highlight.js": "~9.18",
+    "husky": "^4.3.0",
     "js-yaml": "~3.13",
     "medium-zoom": "^1.0.6",
     "merge-stream": "~2.0",
@@ -72,5 +74,10 @@
     "@antora/site-generator-default": "^2.3.3",
     "cheerio": "^1.0.0-rc.3",
     "font-awesome": "^4.7.0"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run lint -- --fix"
+    }
   }
 }

@@ -114,6 +114,8 @@ const previewTask = createTask({
 module.exports = exportTasks(
   bundleTask,
   cleanTask,
+  lintCssTask,
+  lintJsTask,
   lintTask,
   formatTask,
   buildTask,
