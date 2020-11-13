@@ -1,9 +1,16 @@
 = Neo4j Documentation UI
 // Version
-:version: v0.2.0
-// Settings:
+:latest-version: v0.4.0
+// Settings
 :experimental:
-:hide-uri-scheme:
+// GitHub
+ifdef::env-github[]
+:tip-caption: :bulb:
+:note-caption: :information_source:
+:important-caption: :heavy_exclamation_mark:
+:caution-caption: :fire:
+:warning-caption: :warning:
+endif::[]
 
 == Usage
 
@@ -13,8 +20,10 @@ To use this UI with Antora, add the following configuration to your playbook fil
 ----
 ui:
   bundle:
-    url: https://s3-eu-west-1.amazonaws.com/static-content.neo4j.com/build/ui-bundle-{version}.zip
+    url: https://s3-eu-west-1.amazonaws.com/static-content.neo4j.com/build/ui-bundle-{latest-version}.zip
 ----
+
+NOTE: If you want to use the latest version (unreleased) you can use the following URL: `https://s3-eu-west-1.amazonaws.com/static-content.neo4j.com/build/ui-bundle.zip`
 
 == Installation
 
@@ -37,4 +46,26 @@ You can run a local server to preview the UI by running:
 [source,sh]
 npm start
 
-This will launch a server at http://localhost:5252/
+This will launch a server at http://localhost:5252.
+
+[TIP]
+====
+You can configure the port using the environment variable `PORT`. For instance, if you want to launch a server on port 3000:
+
+[source,sh]
+PORT=3000 npm start
+====
+
+
+== Publish a new version
+
+The release process is automated and relies on GitHub Actions.
+See the `.github/workflows/release.yml` file for details.
+
+The release will be performed when a tag is pushed, the procedure is:
+
+. Tag and push to `master` (don't forget the `v` prefix and replace `x.y.z` with an actual version):
++
+ $ git tag vx.y.z && git push origin master --tags
+
+The UI bundle will be published to S3 and available shortly at: `\https://s3-eu-west-1.amazonaws.com/static-content.neo4j.com/build/ui-bundle-vx.y.z.zip`
