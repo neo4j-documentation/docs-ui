@@ -23,7 +23,7 @@ ui:
     url: https://s3-eu-west-1.amazonaws.com/static-content.neo4j.com/build/ui-bundle-{latest-version}.zip
 ----
 
-NOTE: If you want to use the latest version (unreleased) you can use the following URL: `https://s3-eu-west-1.amazonaws.com/static-content.neo4j.com/build/ui-bundle.zip`
+NOTE: If you want to use the latest version (unreleased) you can use the following URL: https://s3-eu-west-1.amazonaws.com/static-content.neo4j.com/build/ui-bundle.zip.
 
 == Installation
 
@@ -50,7 +50,7 @@ This will launch a server at http://localhost:5252.
 
 [TIP]
 ====
-You can configure the port using the environment variable `PORT`. For instance, if you want to launch a server on port 3000:
+You can configure the port using the environment variable `PORT`. For instance, if you want to launch the server on port 3000:
 
 [source,sh]
 PORT=3000 npm start
