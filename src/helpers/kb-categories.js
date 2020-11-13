@@ -11,7 +11,7 @@ module.exports = ({ data: { root } }) => {
       page.src.basename !== 'index.adoc'
     )
     .map((page) => page.asciidoc.attributes.category.trim().split(',').map((value) => value.trim().toLowerCase()))
-    .flat()
+    .reduce((acc, val) => acc.concat(val), []) // equivalent to ".flat()" which is only available in Node 11+
     .sort()
   const counts = {}
   values.forEach((value) => {

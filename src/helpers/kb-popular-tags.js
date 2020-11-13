@@ -23,7 +23,9 @@ module.exports = (category, { data: { root } }) => {
       tags.push(...page.asciidoc.attributes.tags.trim().split(',').map((value) => value.trim().toLowerCase()))
       return acc
     }, {})
-  const allTags = Object.entries(tagsPerCategory).map(([_, value]) => value).flat().sort()
+  const allTags = Object.entries(tagsPerCategory).map(([_, value]) => value)
+    .reduce((acc, val) => acc.concat(val), []) // equivalent to ".flat()" which is only available in Node 11+
+    .sort()
   const counts = {}
   allTags.forEach((value) => {
     counts[value] = counts[value] ? counts[value] + 1 : 1
