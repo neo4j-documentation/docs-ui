@@ -1,5 +1,5 @@
 /* global fetch */
-;(function (project) {
+;(function () {
   'use strict'
 
   var url = 'https://uglfznxroe.execute-api.us-east-1.amazonaws.com/dev/Feedback'
