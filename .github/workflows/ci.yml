@@ -35,4 +35,5 @@ jobs:
         SOURCE_DIR: 'build'
         DEST_DIR: 'build'
       # if the AWS_S3_BUCKET is undefined, the task will fail
-      if: ${{ env.AWS_S3_BUCKET != '' }}
+      # also make sure that we are on master before publishing the "latest" version
+      if: ${{ env.AWS_S3_BUCKET != '' && github.ref == 'refs/heads/master' }}
