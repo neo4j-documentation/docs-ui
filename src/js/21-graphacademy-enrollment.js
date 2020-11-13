@@ -32,26 +32,6 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   })
 
-  document.querySelectorAll('[data-action="course-enroll"]').forEach(function (el) {
-    el.onclick = function (event) {
-      event.preventDefault()
-      var firstName = document.getElementById('lastname').value
-      var lastName = document.getElementById('firstname').value
-      courseActionsElement.dataset.status = 'loading'
-      GraphAcademy.enrollStudentInClass(courseName, firstName, lastName, accessToken,
-        function (response) {
-          console.log('Successfully enrolled the student', response)
-          // redirect the student to the first page of the course
-          var courseContinueElement = document.querySelector('[data-action="course-continue"]')
-          window.location = courseContinueElement.dataset.courseUrl
-        },
-        function (err) {
-          console.log('Unable to enroll the student', err)
-          courseActionsElement.dataset.status = 'error'
-        })
-    }
-  })
-
   function showErrorMessage (errorMessage) {
     if (!errorMessage) {
       errorMessage = 'Error while loading the data, please refresh the page.'
@@ -67,7 +47,6 @@ document.addEventListener('DOMContentLoaded', function () {
   var authenticatedStateElement = document.querySelector('.course-actions .course-state[data-state="authenticated"]')
   var enrolledStateElement = document.querySelector('.course-actions .course-state[data-state="enrolled"]')
   // Initialize
-  console.log('courseName', courseName)
   if (courseName) {
     GraphAcademy.login(
       function (authResult) {
@@ -113,8 +92,13 @@ document.addEventListener('DOMContentLoaded', function () {
                         function (response) {
                           console.log('Successfully enrolled the student', response)
                           // redirect the student to the first page of the course
-                          var courseContinueElement = document.querySelector('[data-action="course-continue"]')
-                          window.location = courseContinueElement.dataset.courseUrl
+                          var formElement = document.getElementById(form.getId())
+                          if (formElement && formElement.dataset && formElement.dataset.courseUrl) {
+                            window.location = formElement.dataset.courseUrl
+                          } else {
+                            showErrorMessage('<strong>Sorry, something has gone wrong.</strong> ' +
+                            'We were unable to proceed, please refresh the page.')
+                          }
                         },
                         function (err) {
                           console.log('Unable to enroll the student', err)
