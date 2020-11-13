@@ -75,7 +75,9 @@ document.addEventListener('DOMContentLoaded', function () {
                 unauthenticatedStateElement.classList.add('is-hidden')
                 enrolledStateElement.classList.add('is-hidden')
                 if (typeof MktoForms2 !== 'undefined') {
-                  MktoForms2.loadForm('//go.neo4j.com', '710-RRC-335', 1422, function (form) {
+                  var marketoFormId = 1422
+                  var marketoFormElementId = 'mktoForm_' + marketoFormId
+                  MktoForms2.loadForm('//go.neo4j.com', '710-RRC-335', marketoFormId, function (form) {
                     // Add a text after the last name field
                     var lastNameFieldRowElement = document.getElementById('LblLastName').parentElement.parentElement.parentElement
                     var helpParagraphElement = document.createElement('p')
@@ -83,7 +85,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     helpParagraphElement.innerText = 'Name above used to generate Certificate of Completion'
                     lastNameFieldRowElement.insertAdjacentElement('afterend', helpParagraphElement)
                     // Update the text on the submit button to be more explicit
-                    var sumbitButtonElement = document.querySelector('#mktoForm_1422 .mktoButton[type="submit"]')
+                    var sumbitButtonElement = document.querySelector('#' + marketoFormElementId + ' .mktoButton[type="submit"]')
                     sumbitButtonElement.innerHTML = 'Enroll in Course'
                     // Add an onSuccess handler
                     form.onSuccess(function (values, _) {
@@ -92,7 +94,7 @@ document.addEventListener('DOMContentLoaded', function () {
                         function (response) {
                           console.log('Successfully enrolled the student', response)
                           // redirect the student to the first page of the course
-                          var formElement = document.getElementById(form.getId())
+                          var formElement = document.getElementById(marketoFormElementId)
                           if (formElement && formElement.dataset && formElement.dataset.courseUrl) {
                             window.location = formElement.dataset.courseUrl
                           } else {
