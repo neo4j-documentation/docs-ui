@@ -95,6 +95,44 @@ body.docs .navbar .navbar-item.try .navbar-link {
   color: var(--colour-white);
 }
 
+/* Docs Landing Page */
+body.landing.docs .hero {
+  background: linear-gradient(180deg, var(--colour-blue-800) 0%, var(--colour-blue-700) 45%, var(--colour-blue-700) 100%);
+}
+
+body.landing.docs .hero h2 {
+  color: var(--colour-blue-200);
+}
+
+body.landing.docs .hero h2::after {
+  background-color: var(--colour-blue-400);
+}
+
+body.landing.docs .hero::after {
+  content: " ";
+  display: block;
+  height: 40px;
+  margin-top: -40px;
+  clip-path: polygon(100% 0, 0 calc(100% + 1px), 100% calc(100% + 1px));
+  background: var(--colour-blue-200);
+}
+
+.landing .doc .secondary.leading {
+  background: linear-gradient(180deg, var(--colour-blue-200) 0%, var(--colour-white) 35%, var(--colour-white) 100%);
+}
+
+.landing .doc .secondary {
+  background: var(--colour-blue-100);
+}
+
+body.landing.docs h2 {
+  color: var(--colour-blue-800);
+}
+
+body.landing.docs h2::after {
+  background: var(--colour-blue-600);
+}
+
 /*
 body.labs {
     --navbar-background: var(--colour-white);

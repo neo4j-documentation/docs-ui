@@ -1,16 +1,18 @@
-= Tiles
+= Neo4j Documentation
 :page-layout: tiles
 :page-theme: docs
 :!toc:
+:page-toclevels: -1
 
-
-Welcome to the Neo4j Docs.
+[.hero]
+== Neo4j Documentation
 Voluptate minim eu irure sit ullamco ipsum consequat proident.
 
-link:/developer/get-started/graph-database/[Learn More: What is a Graph Database?^, role="button feature-box_button"]
 
+[.secondary.leading.flex]
 == Neo4j Database
 
+[.column.card]
 === Getting Started
 
 Eiusmod culpa dolore minim veniam aute nisi consectetur.
@@ -18,6 +20,7 @@ Eiusmod culpa dolore minim veniam aute nisi consectetur.
 * link:./getting-started/current[HTML]
 * link:[PDF]
 
+[.column.card]
 === Operations Manual
 
 Culpa excepteur magna velit ad sit consectetur aute consectetur excepteur qui laborum labore.
@@ -25,6 +28,7 @@ Culpa excepteur magna velit ad sit consectetur aute consectetur excepteur qui la
 * link:./operations-manual/current[HTML]
 * link:[PDF]
 
+[.column.card]
 === Migration Guide
 
 Nostrud laboris excepteur enim eiusmod fugiat quis fugiat cupidatat fugiat adipisicing consequat ipsum.
@@ -32,9 +36,10 @@ Nostrud laboris excepteur enim eiusmod fugiat quis fugiat cupidatat fugiat adipi
 * link:./migration-guide/current[HTML]
 * link:[PDF]
 
-
+[.flex]
 == Cypher
 
+[.column.card]
 === Cypher Manual 4.0
 
 Veniam amet dolor laboris enim.
@@ -42,6 +47,7 @@ Veniam amet dolor laboris enim.
 * link:./cypher-manual/current[HTML]
 * link:[PDF]
 
+[.column.card]
 === Cypher Refcard
 
 Labore dolore duis deserunt aliqua in pariatur sunt pariatur aliqua nisi pariatur.
@@ -50,8 +56,10 @@ Labore dolore duis deserunt aliqua in pariatur sunt pariatur aliqua nisi pariatu
 * link:[PDF]
 
 
+[.flex.secondary]
 == Drivers & APIs
 
+[.column.card]
 === Neo4j Drivers Manual
 
 Minim irure veniam eiusmod duis est cupidatat mollit ex ipsum quis minim.

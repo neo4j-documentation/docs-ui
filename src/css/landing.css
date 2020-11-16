@@ -326,3 +326,35 @@ body.landing .buttons li a {
   fill: var(--landing-leading-background) !important;
   margin-bottom: -1em;
 }
+
+.landing .toc {
+  display: none !important;
+}
+
+.landing .card {
+  background: var(--colour-white);
+  border: 1px solid var(--colour-grey-200);
+  padding: 1em;
+  border-radius: 1em;
+  margin: 1em;
+  box-shadow: -5px 2px 7px -3px rgba(0, 0, 0, 0.05);
+}
+
+.landing .card ul {
+  margin: 0;
+  padding: 0;
+}
+
+.landing .card ul li {
+  list-style-type: none;
+  display: inline-block;
+  padding-right: 1em;
+}
+
+.landing .card ul li::after {
+  display: block;
+  content: "";
+  width: 1px;
+  background: var(--colour-grey-200);
+  margin-right: 1em;
+}
