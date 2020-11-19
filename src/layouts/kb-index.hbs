@@ -20,7 +20,7 @@
             {{#each (kb-promoted)}}
             <div class="article paragraph column kb-article--{{#with asciidoc.attributes.category}}{{slug this}}{{/with}}" data-kb-category="{{#with asciidoc.attributes.category}}{{slug this}}{{/with}}">
               <h3><a href="{{@root.page.attributes.canonical-root}}{{pub.url}}">{{{title}}}</a></h3>
-              {{#with (kb-article-excerpt this)}}
+              {{#with asciidoc.attributes.description}}
                 <div class="excerpt">
                   {{this}}
                 </div>
