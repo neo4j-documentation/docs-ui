@@ -46,6 +46,10 @@ body {
 @media screen and (max-width: 420px) {
   .navbar-brand .navbar-item {
     padding-left: 0.5rem;
+    padding-right: 0.75rem;
+  }
+
+  .navbar-brand .navbar-item:last-child {
     padding-right: 0;
   }
 }

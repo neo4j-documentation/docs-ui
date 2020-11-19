@@ -92,8 +92,13 @@ body.kb .doc .sectionbody {
 }
 
 /* Landing Page */
-body.landing.kb.kb-home main.article {
+body.landing.kb.kb-home .article.paragraph {
   padding: 0;
+}
+
+body.landing.kb.kb-home .sectionbody {
+  padding-left: 1rem;
+  padding-right: 1rem;
 }
 
 body.landing.kb .doc .sectionbody .column {
