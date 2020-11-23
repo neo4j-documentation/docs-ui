@@ -7,11 +7,11 @@
   margin: auto;
 }
 
-/* Home */
-.training-home .doc h2::after {
+.training .doc h2::after {
   background-color: var(--colour-training);
 }
 
+/* Home */
 .training-home .doc .find-training {
   text-align: center;
   padding-bottom: 2em;
@@ -221,7 +221,6 @@
 
 .training-enrollment .doc h2::after {
   display: block;
-  background-color: var(--colour-training);
   height: 3px;
   width: 80px;
   margin-top: 1rem;
