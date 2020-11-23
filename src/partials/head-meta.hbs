@@ -12,7 +12,7 @@
     {{/with}}
 
     {{!-- Swiftype - TODO: to remove --}}
-    <meta class="swiftype" name="post-type" data-type="enum" content="{{{ or page.attributes.page-type 'Developer Guide' }}}">
+    <meta class="swiftype" name="post-type" data-type="enum" content="{{{ or page.attributes.type 'Developer Guide' }}}">
     <meta class="swiftype" name="neo4j-site" data-type="enum" content="Developer Site">
     <meta class="swiftype" name="main-search-priority" data-type="integer" content="3">
     {{#with page.attributes.environment}}
