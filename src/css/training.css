@@ -12,7 +12,7 @@
 }
 
 /* Landing */
-.training.landing .discrete h3 {
+.training.landing .discrete > h3 {
   display: none;
 }
 
