@@ -6,8 +6,8 @@
     {{/with}}
     {{> breadcrumbs}}
     {{> page-versions}}
-    {{#if (not page.attributes.origin-private)}}
+    {{#unless page.attributes.origin-private}}
       {{> edit-this-page-link}}
-    {{/if}}
+    {{/unless}}
   </div>
 </div>
