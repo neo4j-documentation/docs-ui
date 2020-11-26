@@ -233,10 +233,6 @@ body.landing .buttons li a {
   display: none;
 }
 
-.landing .sect1.discrete {
-  padding-top: 0;
-}
-
 .landing .discrete h2 {
   display: none;
 }

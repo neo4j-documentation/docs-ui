@@ -1,0 +1,5 @@
+= Knowledge Base
+// the content of this page will be automatically generated from the catalog
+:page-layout: kb-index
+:page-theme: kb
+:page-component: kb

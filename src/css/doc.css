@@ -873,6 +873,14 @@ body {
   max-width: 100%;
 }
 
+/**
+ * Always use a white text color on button link.
+ * We don't want to use a different text color when the link is visited/hover (see .doc a:visited).
+*/
+.doc a.button {
+  color: var(--colour-white);
+}
+
 .doc .button {
   display: inline-block;
   background: var(--colour-grey-600);

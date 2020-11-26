@@ -23,7 +23,7 @@ ui:
     url: https://s3-eu-west-1.amazonaws.com/static-content.neo4j.com/build/ui-bundle-{latest-version}.zip
 ----
 
-NOTE: If you want to use the latest version (unreleased) you can use the following URL: https://s3-eu-west-1.amazonaws.com/static-content.neo4j.com/build/ui-bundle.zip.
+NOTE: If you want to use the latest version (unreleased) you can use the following URL: `\https://s3-eu-west-1.amazonaws.com/static-content.neo4j.com/build/ui-bundle.zip`.
 
 == Installation
 

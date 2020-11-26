@@ -1,6 +1,6 @@
 <div class="article paragraph column kb-article kb-article--{{#with asciidoc.attributes.category}}{{slug this}}{{/with}}" data-kb-tags="{{#with asciidoc.attributes.tags}}{{this}}{{/with}}" data-kb-category="{{#with asciidoc.attributes.category}}{{slug this}}{{/with}}">
   <h3><a href="{{asciidoc.attributes.page-canonical-root}}{{pub.url}}">{{{title}}}</a></h3>
-  {{#with (kb-article-excerpt this)}}
+  {{#with asciidoc.attributes.description}}
     <div class="excerpt">
       {{this}}
     </div>

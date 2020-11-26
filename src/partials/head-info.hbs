@@ -9,15 +9,9 @@
     <link rel="next" href="{{{relativize ./url}}}">
     {{/with}}
     {{/unless}}
-    {{#if (eq page.layout 'kb-article')}}
-      {{#with (kb-article-excerpt page)}}
-        <meta property="description" content="{{this}}">
-      {{/with}}
-    {{else}}
-      {{#with page.description}}
-        <meta property="description" content="{{this}}">
-      {{/with}}
-    {{/if}}
+    {{#with page.description}}
+      <meta name="description" content="{{this}}">
+    {{/with}}
     {{#with page.keywords}}
     <meta name="keywords" content="{{this}}">
     {{/with}}

@@ -3,6 +3,7 @@
 
   var article = document.querySelector('article.doc')
   var toolbar = document.querySelector('.toolbar')
+  var headerNavigationBar = document.querySelector('header > .navbar')
 
   function decodeFragment (hash) {
     return hash && (~hash.indexOf('%') ? decodeURIComponent(hash) : hash).slice(1)
@@ -21,7 +22,8 @@
       window.location.hash = '#' + this.id
       e.preventDefault()
     }
-    window.scrollTo(0, computePosition(this, 0) - toolbar.getBoundingClientRect().bottom)
+    var topOffset = toolbar ? toolbar.getBoundingClientRect().bottom : headerNavigationBar.getBoundingClientRect().bottom
+    window.scrollTo(0, computePosition(this, 0) - topOffset)
   }
 
   window.addEventListener('load', function jumpOnLoad (e) {

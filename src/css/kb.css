@@ -92,12 +92,26 @@ body.kb .doc .sectionbody {
 }
 
 /* Landing Page */
-body.landing.kb.kb-home main.article {
+body.landing.kb.kb-home .article.paragraph {
   padding: 0;
 }
 
-body.landing.kb .doc .sectionbody .column {
+body.landing.kb.kb-home .sectionbody {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+body.landing.kb.kb-home .flex .sectionbody .column {
   flex: 1 1 25%;
+  flex-wrap: wrap;
+  min-width: 13rem;
+}
+
+@media (min-width: 760px) {
+  body.landing.kb.kb-home .flex .sectionbody .column {
+    padding-left: 0;
+    padding-right: 2rem;
+  }
 }
 
 body.landing.kb .doc .sectionbody .column ul li a {
