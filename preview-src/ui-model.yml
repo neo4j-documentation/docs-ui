@@ -159,6 +159,9 @@ page:
     - content: Private Page
       url: private-page.html
       urlType: internal
+    - content: Drivers tabs
+      url: drivers-tabs.html
+      urlType: internal
 
 asciidoc:
   attributes:
