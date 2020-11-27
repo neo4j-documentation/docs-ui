@@ -150,6 +150,12 @@ page:
     - content: Tables
       url: tables.html
       urlType: internal
+    - content: Docs roles
+      url: docs-roles.html
+      urlType: internal
+    - content: Deprecated
+      url: deprecated.html
+      urlType: internal
 
 
 asciidoc:

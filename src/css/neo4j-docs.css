@@ -1,0 +1,145 @@
+.doc .paragraph .title {
+  font-weight: var(--body-font-weight-bold);
+}
+
+.doc .listingblock.dot {
+  height: 400px;
+  overflow: scroll;
+  border: 2px solid var(--note-color);
+}
+
+section.deprecated .title::after {
+  bottom: 4px;
+  margin-left: 10px;
+}
+
+body.deprecated article h1::after,
+body.deprecated article h2::after,
+body.deprecated article h3::after,
+body.deprecated article h4::after,
+div.deprecated h2::after,
+div.deprecated h3::after,
+div.deprecated h4::after,
+body.deprecated article dt::after,
+p.deprecated::before,
+section.deprecated .title::after,
+table span.deprecated::after,
+.deprecated > .title::after,
+section.enterprise-edition .title::after,
+body.enterprise-edition article h1::after,
+div.enterprise-edition h2::after,
+div.enterprise-edition h3::after,
+div.enterprise-edition h4::after,
+p.enterprise-edition::before,
+table span.enterprise-edition::after,
+body.fabric article h1::after,
+body.fabric article h2::after,
+body.fabric article h3::after,
+body.fabric article h4::after,
+div.fabric h2::after,
+div.fabric h3::after,
+div.fabric h4::after,
+section.fabric .title::after,
+p.fabric::before,
+table span.fabric::after {
+  text-align: center;
+  font-family: "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  font-weight: normal;
+  font-size: 0.6em;
+  position: relative;
+  box-sizing: border-box;
+  padding: 5px 8px;
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 6px;
+  bottom: 2px;
+  margin-left: 8px;
+}
+
+body.deprecated article h1::after,
+body.deprecated article h2::after,
+body.deprecated article h3::after,
+body.deprecated article h4::after,
+div.deprecated h2::after,
+div.deprecated h3::after,
+div.deprecated h4::after,
+.deprecated dt::after,
+p.deprecated::before,
+section.deprecated .title::after,
+.deprecated > .title::after,
+table span.deprecated::after {
+  content: "deprecated";
+  color: var(--deprecation-color);
+  border-color: var(--deprecation-color);
+}
+
+body.enterprise-edition article h1::after,
+div.enterprise-edition h2::after,
+div.enterprise-edition h3::after,
+div.enterprise-edition h4::after,
+p.enterprise-edition::before,
+section.enterprise-edition .title::after,
+table span.enterprise-edition::after {
+  content: "Enterprise Edition";
+  color: var(--enterprise-edition-color);
+  border-color: var(--enterprise-edition-color);
+}
+
+body.fabric article h1::after,
+div.fabric h2::after,
+div.fabric h3::after,
+div.fabric h4::after,
+p.fabric::before,
+section.fabric .title::after,
+table span.fabric::after {
+  content: "Fabric";
+  color: var(--fabric-color);
+  border-color: var(--fabric-color);
+}
+
+.admonitionblock td.icon .icon-::before {
+  content: "\f088";
+  color: #f58220;
+}
+
+.doc .admonitionblock.deprecated .icon {
+  background-color: var(--deprecation-color);
+  color: var(--deprecation-on-color);
+}
+
+.doc .admonitionblock.deprecated .icon i::after {
+  content: 'DEPRECATED';
+}
+
+.doc .admonitionblock.deprecated {
+  background-color: var(--colour-pink-200);
+  color: var(--colour-pink-900);
+  border-left-color: var(--colour-pink-600);
+}
+
+.doc .admonitionblock.deprecated pre {
+  background-color: var(--colour-red-100);
+  color: var(--colour-red-700);
+}
+
+.doc .admonitionblock.deprecated a {
+  color: var(--colour-red-600);
+}
+
+.doc pre {
+  font-size: calc(14 / var(--rem-base) * 1rem);
+}
+
+.doc .paragraph.statsonlyqueryresult {
+  font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
+  font-size: calc(14 / var(--rem-base) * 1rem);
+  background-color: var(--colour-grey-200);
+  margin: 0;
+  margin-top: -1.5rem;
+  margin-right: 30%;
+  margin-bottom: 1.5rem;
+  margin-left: 2rem;
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
+  padding-left: 1.5rem;
+}
