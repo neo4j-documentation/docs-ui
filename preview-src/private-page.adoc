@@ -1,0 +1,3 @@
+= Private Page
+:page-no-index:
+:page-no-canonical:

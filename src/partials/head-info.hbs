@@ -1,6 +1,10 @@
-    {{#with page.canonicalUrl}}
+    {{#unless (ne page.attributes.no-canonical undefined)}}
+    {{#if page.canonicalUrl}}
     <link rel="canonical" href="{{{this}}}">
-    {{/with}}
+    {{else}}
+    <link rel="canonical" href="https://neo4j.com{{{ page.attributes.canonical-root }}}{{ page.url }}">
+    {{/if}}
+    {{/unless}}
     {{#unless (eq page.attributes.pagination undefined)}}
     {{#with page.previous}}
     <link rel="prev" href="{{{relativize ./url}}}">
