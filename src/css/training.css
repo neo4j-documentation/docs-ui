@@ -780,3 +780,43 @@ body.training .button {
 .training-help p {
   padding: 0.25rem 0;
 }
+
+#yelp-dataset-agreement {
+  padding: 0.75em;
+  border: 1px solid var(--colour-grey-300);
+  margin-bottom: 1em;
+  margin-right: 1em;
+}
+
+#yelp-dataset-agreement .button {
+  margin-bottom: 0.25rem;
+  margin-top: 0.5rem;
+}
+
+#yelp-dataset-agreement p {
+  padding: 0;
+  margin: 0;
+}
+
+#yelp-dataset-agreement .paragraph {
+  padding-bottom: 0;
+  margin-bottom: 0;
+}
+
+#yelp-dataset-agreement button {
+  display: block;
+}
+
+#yelp-dataset-agreement label[for="yelp-dataset-agreement-check"] {
+  font-weight: 600;
+}
+
+#yelp-dataset-agreement.has-focus {
+  background: white;
+  animation: highlight 2.5s ease;
+}
+
+@keyframes highlight {
+  0% { background: aliceblue; }
+  100% { background: white; }
+}
