@@ -224,6 +224,7 @@
   --quote-attribution-font-color: var(--colour-grey-300);
   --sidebar-background: var(--colour-grey-300);
   --table-border-color: var(--panel-border-color);
+  --table-stripe-background: var(--colour-grey-100);
 
   /* footer */
   --footer-line-height: var(--doc-line-height);
