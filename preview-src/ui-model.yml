@@ -156,7 +156,9 @@ page:
     - content: Deprecated
       url: deprecated.html
       urlType: internal
-
+    - content: Private Page
+      url: private-page.html
+      urlType: internal
 
 asciidoc:
   attributes:
