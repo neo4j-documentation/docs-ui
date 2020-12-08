@@ -231,40 +231,55 @@
           <a class="navbar-link" href="/docs">Docs</a>
           <div class="navbar-dropdown">
             <div class="navbar-item project">
-              <a class="project-name" href="https://neo4j.com/docs/operations-manual/current/">Operations Manual</a>
+              <span class="project-name">Neo4j Database</span>
               <ul class="project-links">
-                <li><a href="https://neo4j.com/docs/migration-guide/current/" class="project-link">Migration Guide</a>
-                </li>
-                <li><a href="https://neo4j.com/docs/status-codes/current/" class="project-link">Status Codes</a></li>
+                <li><a href="/docs/getting-started/current/" class="project-link">Getting Started</a></li>
+                <li><a href="/docs/operations-manual/current/" class="project-link">Operations Manual</a></li>
+                <li><a href="/docs/migration-guide/current/" class="project-link">Migration Guide</a></li>
+                <li><a href="/docs/status-codes/current/" class="project-link">Status Codes</a></li>
+              </ul>
+            </div>
+            <div class="navbar-item project">
+              <span class="project-name">Cypher</span>
+              {{!-- <a class="project-name" href="/docs/cypher-manual/current/">Cypher Manual</a> --}}
+              <ul class="project-links">
+                <li><a href="/docs/cypher-manual/current/" class="project-link">Cypher Manual</a></li>
+                <li><a href="/docs/cypher-refcard/current/" class="project-link">Cypher Refcard</a></li>
               </ul>
             </div>
 
+            {{#if (and (eq "docs" page.attributes.theme) (or (eq "3.5" page.version) (eq "4.0" page.version) (eq "4.1" page.version))) }}
             <div class="navbar-item project">
-              <a class="project-name" href="https://neo4j.com/docs/cypher-manual/current/">Cypher Manual</a>
+              <a class="project-name" href="/docs/driver-manual/current/">Driver Manual</a>
+            </div>
+            {{else}}
+            <div class="navbar-item project">
+              <span class="project-name">Drivers</span>
               <ul class="project-links">
-                <li><a href="https://neo4j.com/docs/cypher-refcard/current/" class="project-link">Cypher Refcard</a>
-                </li>
+                <li><a href="/docs/dotnet-manual/current/" class="project-link">.Net Driver</a></li>
+                <li><a href="/docs/java-manual/current/" class="project-link">Java Driver</a></li>
+                <li><a href="/docs/javascript-manual/current/" class="project-link">JavaScript Driver</a></li>
+                <li><a href="/docs/python-manual/current/" class="project-link">Python Driver</a></li>
               </ul>
             </div>
+            {{/if}}
 
             <div class="navbar-item project">
-              <a class="project-name" href="https://neo4j.com/docs/driver-manual/current/">Driver Manual</a>
-              <ul class="project-links">
-                <li><a href="https://neo4j.com/docs/http-api/current/" class="project-link">HTTP API</a></li>
-                <li><a href="https://neo4j.com/docs/ogm-manual/current/" class="project-link">OGM Library</a></li>
-              </ul>
+              <a class="project-name" href="/docs/bloom-user-guide/current/">Bloom</a>
             </div>
-
             <div class="navbar-item project">
-              <a class="project-name" href="https://neo4j.com/docs/">Docs Library</a>
-              <ul class="project-links">
-                <li><a href="https://neo4j.com/docs/bloom-user-guide/current/" class="project-link">Bloom </a></li>
-                <li><a href="https://neo4j.com/docs/graph-data-science/current/" class="project-link">Graph Data
-                    Science</a></li>
-                <li><a href="https://neo4j.com/docs/java-reference/current/javadocs/" class="project-link">Java
-                    Reference</a></li>
-              </ul>
+              <a class="project-name" href="/docs/graph-data-science/current/">Graph Data Science</a>
             </div>
+            <div class="navbar-item project">
+              <a class="project-name" href="/docs/http-api/current/">HTTP API</a>
+            </div>
+            <div class="navbar-item project">
+              <a class="project-name" href="/docs/java-reference/current/">Java Reference</a>
+            </div>
+            <div class="navbar-item project">
+              <a class="project-name" href="/docs/ogm-manual/current/">OGM Library</a>
+            </div>
+                        
           </div>
         </div>
         <div class="navbar-item has-dropdown is-hoverable labs">
