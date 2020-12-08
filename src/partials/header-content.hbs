@@ -216,10 +216,10 @@
             <div class="navbar-item project">
               <span class="project-name">Drivers</span>
               <ul class="project-links">
-                <li><a href="/docs/dotnet-manual/current/" class="project-link">.Net Driver</a></li>
-                <li><a href="/docs/java-manual/current/" class="project-link">Java Driver</a></li>
-                <li><a href="/docs/javascript-manual/current/" class="project-link">JavaScript Driver</a></li>
-                <li><a href="/docs/python-manual/current/" class="project-link">Python Driver</a></li>
+                <li><a href="{{#with (docs-driver-manual-url page 'dotnet-manual')}}{{{this}}}{{/with}}" class="project-link">.Net Driver</a></li>
+                <li><a href="{{#with (docs-driver-manual-url page 'java-manual')}}{{{this}}}{{/with}}" class="project-link">Java Driver</a></li>
+                <li><a href="{{#with (docs-driver-manual-url page 'javascript-manual')}}{{{this}}}{{/with}}" class="project-link">JavaScript Driver</a></li>
+                <li><a href="{{#with (docs-driver-manual-url page 'python-manual')}}{{{this}}}{{/with}}" class="project-link">Python Driver</a></li>
               </ul>
             </div>
 

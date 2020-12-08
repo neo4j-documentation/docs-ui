@@ -9,11 +9,6 @@
       {{~#if this.missing}} is-missing{{/if}}" href="{{{relativize this.url}}}">{{this.displayVersion}}</a>
     {{/unless}}
     {{/each}}
-    {{#if (in page.component.name 'dotnet-manual' 'go-manual' 'java-manual' 'javascript-manual' 'python-manual')}}
-    <a class="version is-missing" href="/docs/driver-manual/4.1">4.1</a>
-    <a class="version is-missing" href="/docs/driver-manual/4.0">4.0</a>
-    <a class="version is-missing" href="/docs/driver-manual/1.7">1.7</a>
-    {{/if}}
   </div>
 </div>
 {{/with}}
