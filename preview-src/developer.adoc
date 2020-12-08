@@ -10,18 +10,10 @@
 
 Get up and running with Neo4j in less than an hour or something a bit more catchy
 
-++++
-<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="100px" height="100px" viewBox="0 0 100 100" preserveAspectRatio="none" style="enable-background:new 0 0 100 100;" xml:space="preserve" class="top"><polygon class="st0" points="100,100 0,100 100,0 "></polygon><line class="st1" x1="0" y1="100" x2="100" y2="0"></line></svg>
-++++
-
 [.buttons]
 * link:#[Neo4j for Developers]
 * link:#[Neo4j for Data Scientists]
 * link:#[Neo4j for DevOps]
-
-++++
-<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="100px" height="100px" viewBox="0 0 100 100" preserveAspectRatio="none" style="enable-background:new 0 0 100 100;" xml:space="preserve" class="bottom"><polygon class="st0" points="100,100 0,100 100,0 "></polygon><line class="st1" x1="0" y1="100" x2="100" y2="0"></line></svg>
-++++
 
 [.secondary.leading.flex]
 == Start with a Use Case

@@ -2,7 +2,7 @@ antoraVersion: '1.0.0'
 site:
   url: http://localhost:5252
   title: Brand Docs
-  homeUrl: &home_url /xyz/5.2/index.html
+  homeUrl: &home_url /xyz/4.1/index.html
   theme: docs
   components:
   - name: abc
@@ -20,22 +20,22 @@ site:
   - &component
     name: xyz
     title: Project XYZ
-    url: /xyz/6.0/index.html
+    url: /xyz/4.2/index.html
     versions:
     - &latest_version_xyz
-      url: /xyz/6.0/index.html
-      version: '6.0'
-      displayVersion: '6.0'
+      url: /xyz/4.2/index.html
+      version: '4.2'
+      displayVersion: '4.2'
     - &component_version
       url: '#'
-      version: '5.2'
-      displayVersion: '5.2'
+      version: '4.1'
+      displayVersion: '4.1'
     - url: '#'
-      version: '5.1'
-      displayVersion: '5.1'
+      version: '4.0'
+      displayVersion: '4.0'
     - url: '#'
-      version: '5.0'
-      displayVersion: '5.0'
+      version: '3.5'
+      displayVersion: '3.5'
     latestVersion: *latest_version_xyz
   - name: 123
     title: Project 123
@@ -58,8 +58,8 @@ page:
   title: Brand&#8217;s Hardware &amp; Software Requirements
   component: *component
   componentVersion: *component_version
-  version: '5.2'
-  displayVersion: '5.2'
+  version: '4.1'
+  displayVersion: '4.1'
   module: ROOT
   editUrl: http://example.com/project-xyz/blob/master/index.adoc
   origin:
@@ -77,20 +77,20 @@ page:
     url: '#'
     urlType: fragment
   - content: Brand&#8217;s Hardware &amp; Software Requirements
-    url: /xyz/5.2/index.html
+    url: /xyz/4.1/index.html
     urlType: internal
   versions:
-  - version: '6.0'
-    displayVersion: '6.0'
+  - version: '4.2'
+    displayVersion: '4.2'
     url: '#'
-  - version: '5.2'
-    displayVersion: '5.2'
+  - version: '4.1'
+    displayVersion: '4.1'
     url: '#'
-  - version: '5.1'
-    displayVersion: '5.1'
+  - version: '4.0'
+    displayVersion: '4.0'
     url: '#'
-  - version: '5.0'
-    displayVersion: '5.0'
+  - version: '3.5'
+    displayVersion: '3.5'
     missing: true
     url: '#'
   navigation:
@@ -104,13 +104,13 @@ page:
       urlType: fragment
       items:
       - content: Brand&#8217;s Hardware &amp; Software Requirements
-        url: /xyz/5.2/index.html
+        url: /xyz/4.1/index.html
         urlType: internal
       - content: Cu Solet
-        url: '/xyz/5.2/index.html#cu-solet'
+        url: '/xyz/4.1/index.html#cu-solet'
         urlType: internal
       - content: English + 中文
-        url: '/xyz/5.2/index.html#english+中文'
+        url: '/xyz/4.1/index.html#english+中文'
         urlType: internal
     - content: Liber Recusabo
       url: '#liber-recusabo'
@@ -124,7 +124,7 @@ page:
         url: '#'
         urlType: fragment
       - content: Some Code
-        url: '/xyz/5.2/index.html#some-code'
+        url: '/xyz/4.1/index.html#some-code'
         urlType: internal
     - content: Tiled Template
       url: tiles.html
@@ -135,7 +135,7 @@ page:
     - content: Developer Template
       url: developer.html
       urlType: internal
-    - content: KB
+    - content: Knowledge Base
       url: kb-index.html
       urlType: internal
     - content: KB Article Template
