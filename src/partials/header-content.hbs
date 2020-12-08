@@ -68,7 +68,6 @@
       <a href="/docs" class="navbar-item no-left-padding" aria-label="Docs">
       <svg width="58px" height="34px" viewBox="0 0 58 34">
         <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-
           <path
             d="M7.204,20.364 C10.088,20.364 12.216,18.768 12.804,17.06 L12.804,20 L14.204,20 L14.204,0.484 L12.804,0.484 L12.804,8.828 C12.216,7.12 10.088,5.524 7.204,5.524 C3.256,5.524 0.092,8.688 0.092,12.944 C0.092,17.2 3.228,20.364 7.204,20.364 Z M7.204,19.048 C3.956,19.048 1.492,16.416 1.492,12.944 C1.492,9.5 3.956,6.84 7.204,6.84 C10.48,6.84 12.972,9.388 12.972,12.944 C12.972,16.5 10.48,19.048 7.204,19.048 Z M23.416,20.364 C27.56,20.364 30.836,17.2 30.836,12.944 C30.836,8.688 27.56,5.524 23.416,5.524 C19.272,5.524 15.996,8.688 15.996,12.944 C15.996,17.2 19.272,20.364 23.416,20.364 Z M23.416,19.048 C19.972,19.048 17.396,16.416 17.396,12.944 C17.396,9.472 19.972,6.84 23.416,6.84 C26.86,6.84 29.436,9.472 29.436,12.944 C29.436,16.416 26.86,19.048 23.416,19.048 Z M40.412,20.364 C42.54,20.364 44.416,19.58 45.76,18.152 L44.92,17.2 C43.8,18.376 42.204,19.048 40.412,19.048 C36.968,19.048 34.392,16.416 34.392,12.944 C34.392,9.472 36.968,6.84 40.412,6.84 C42.204,6.84 43.8,7.512 44.92,8.688 L45.76,7.736 C44.416,6.308 42.54,5.524 40.412,5.524 C36.268,5.524 32.992,8.688 32.992,12.944 C32.992,17.2 36.268,20.364 40.412,20.364 Z M52.424,20.308 C55.588,20.308 57.156,18.46 57.156,16.416 C57.156,14.12 55.7,13.084 53.012,11.992 C51.08,11.208 49.792,10.564 49.792,8.996 C49.792,7.68 50.884,6.84 52.312,6.84 C53.572,6.84 54.384,7.372 54.916,8.324 L56.064,7.736 C55.308,6.28 54.02,5.524 52.284,5.524 C50.044,5.524 48.392,6.952 48.392,8.996 C48.392,11.264 49.96,12.16 52.144,13.084 C54.468,14.064 55.756,14.68 55.756,16.416 C55.756,17.676 54.888,18.992 52.424,18.992 C50.212,18.992 48.896,17.9 48.364,16.444 L47.188,16.892 C47.86,19.076 49.848,20.308 52.424,20.308 Z"
             id="docs" fill="#606060" fill-rule="nonzero" id="docs"></path>
@@ -111,7 +110,6 @@
       </svg>
       </a>
       {{/if}}
-      {{!-- {{site.title}} --}}
 
       <button class="navbar-search" data-target="topbar-nav" id="search_open_mobile" aria-label="Open Search">
         <svg width="23px" height="23px" viewBox="0 0 23 23" version="1.1" class="fill-current float-right" id="search" role="button" title="Search Website">
@@ -138,36 +136,6 @@
     </div>
     <div id="topbar-nav" class="navbar-menu">
       <div class="navbar-end">
-        {{!-- <a class="navbar-item" href="#">Home</a> --}}
-        {{!-- <div class="navbar-item has-dropdown is-hoverable">
-          <a class="navbar-link" href="#">Products</a>
-          <div class="navbar-dropdown">
-            <a class="navbar-item" href="#">Product A</a>
-            <a class="navbar-item" href="#">Product B</a>
-            <a class="navbar-item" href="#">Product C</a>
-          </div>
-        </div>
-        <div class="navbar-item has-dropdown is-hoverable">
-          <a class="navbar-link" href="#">Services</a>
-          <div class="navbar-dropdown">
-            <a class="navbar-item" href="#">Service A</a>
-            <a class="navbar-item" href="#">Service B</a>
-            <a class="navbar-item" href="#">Service C</a>
-          </div>
-        </div>
-        <div class="navbar-item has-dropdown is-hoverable">
-          <a class="navbar-link" href="#">Resources</a>
-          <div class="navbar-dropdown">
-            <a class="navbar-item" href="#">Resource A</a>
-            <a class="navbar-item" href="#">Resource B</a>
-            <a class="navbar-item" href="#">Resource C</a>
-          </div>
-        </div>
-        <div class="navbar-item">
-          <span class="control">
-            <a class="button is-primary" href="#">Download</a>
-          </span>
-        </div> --}}
 
         <div class="navbar-item has-dropdown is-hoverable developer">
           <a class="navbar-link" href="/developer/">Developer Guides</a>
@@ -222,49 +190,55 @@
 
             {{!-- <a class="navbar-item" href="/developer/resources/">Documentation &amp; Resources</a> --}}
             {{!-- <a class="navbar-item" href="/developer/contribute/">Contributing to Neo4j</a> --}}
-            {{!-- <a class="navbar-item" href="#">Resource A</a>
-            <a class="navbar-item" href="#">Resource B</a>
-            <a class="navbar-item" href="#">Resource C</a> --}}
           </div>
         </div>
         <div class="navbar-item has-dropdown is-hoverable docs">
           <a class="navbar-link" href="/docs">Docs</a>
           <div class="navbar-dropdown">
             <div class="navbar-item project">
-              <a class="project-name" href="https://neo4j.com/docs/operations-manual/current/">Operations Manual</a>
+              <span class="project-name">Neo4j Database</span>
               <ul class="project-links">
-                <li><a href="https://neo4j.com/docs/migration-guide/current/" class="project-link">Migration Guide</a>
-                </li>
-                <li><a href="https://neo4j.com/docs/status-codes/current/" class="project-link">Status Codes</a></li>
+                <li><a href="/docs/getting-started/current/" class="project-link">Getting Started</a></li>
+                <li><a href="/docs/operations-manual/current/" class="project-link">Operations Manual</a></li>
+                <li><a href="/docs/migration-guide/current/" class="project-link">Migration Guide</a></li>
+                <li><a href="/docs/status-codes/current/" class="project-link">Status Codes</a></li>
+              </ul>
+            </div>
+            <div class="navbar-item project">
+              <span class="project-name">Cypher</span>
+              {{!-- <a class="project-name" href="/docs/cypher-manual/current/">Cypher Manual</a> --}}
+              <ul class="project-links">
+                <li><a href="/docs/cypher-manual/current/" class="project-link">Cypher Manual</a></li>
+                <li><a href="/docs/cypher-refcard/current/" class="project-link">Cypher Refcard</a></li>
               </ul>
             </div>
 
             <div class="navbar-item project">
-              <a class="project-name" href="https://neo4j.com/docs/cypher-manual/current/">Cypher Manual</a>
+              <span class="project-name">Drivers</span>
               <ul class="project-links">
-                <li><a href="https://neo4j.com/docs/cypher-refcard/current/" class="project-link">Cypher Refcard</a>
-                </li>
+                <li><a href="{{#with (docs-driver-manual-url page 'dotnet-manual')}}{{{this}}}{{/with}}" class="project-link">.Net Driver</a></li>
+                <li><a href="{{#with (docs-driver-manual-url page 'java-manual')}}{{{this}}}{{/with}}" class="project-link">Java Driver</a></li>
+                <li><a href="{{#with (docs-driver-manual-url page 'javascript-manual')}}{{{this}}}{{/with}}" class="project-link">JavaScript Driver</a></li>
+                <li><a href="{{#with (docs-driver-manual-url page 'python-manual')}}{{{this}}}{{/with}}" class="project-link">Python Driver</a></li>
               </ul>
             </div>
 
             <div class="navbar-item project">
-              <a class="project-name" href="https://neo4j.com/docs/driver-manual/current/">Driver Manual</a>
-              <ul class="project-links">
-                <li><a href="https://neo4j.com/docs/http-api/current/" class="project-link">HTTP API</a></li>
-                <li><a href="https://neo4j.com/docs/ogm-manual/current/" class="project-link">OGM Library</a></li>
-              </ul>
+              <a class="project-name" href="/docs/bloom-user-guide/current/">Bloom</a>
+            </div>
+            <div class="navbar-item project">
+              <a class="project-name" href="/docs/graph-data-science/current/">Graph Data Science</a>
+            </div>
+            <div class="navbar-item project">
+              <a class="project-name" href="/docs/http-api/current/">HTTP API</a>
+            </div>
+            <div class="navbar-item project">
+              <a class="project-name" href="/docs/java-reference/current/">Java Reference</a>
+            </div>
+            <div class="navbar-item project">
+              <a class="project-name" href="/docs/ogm-manual/current/">OGM Library</a>
             </div>
 
-            <div class="navbar-item project">
-              <a class="project-name" href="https://neo4j.com/docs/">Docs Library</a>
-              <ul class="project-links">
-                <li><a href="https://neo4j.com/docs/bloom-user-guide/current/" class="project-link">Bloom </a></li>
-                <li><a href="https://neo4j.com/docs/graph-data-science/current/" class="project-link">Graph Data
-                    Science</a></li>
-                <li><a href="https://neo4j.com/docs/java-reference/current/javadocs/" class="project-link">Java
-                    Reference</a></li>
-              </ul>
-            </div>
           </div>
         </div>
         <div class="navbar-item has-dropdown is-hoverable labs">
