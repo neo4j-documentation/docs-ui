@@ -70,6 +70,26 @@ document.addEventListener('DOMContentLoaded', function () {
     document.body.removeChild(textarea)
   }
 
+  function capitalizeFirstLetter (string) {
+    return string.charAt(0).toUpperCase() + string.slice(1)
+  }
+
+  var casedLang = function (lang) {
+    var cased
+    switch (lang) {
+      case 'csharp':
+      case 'dotnet':
+        cased = 'C#'
+        break
+      case 'javascript':
+        cased = 'JavaScript'
+        break
+      default:
+        cased = capitalizeFirstLetter(lang)
+    }
+    return cased
+  }
+
   var addCodeHeader = function (pre) {
     var dotContent = pre.parentElement
     var listingBlock = dotContent.parentElement
@@ -92,7 +112,7 @@ document.addEventListener('DOMContentLoaded', function () {
     languageDiv.className = 'code-language'
 
     if (language) {
-      languageDiv.innerHTML = language
+      languageDiv.innerHTML = casedLang(language)
     }
     var children = [languageDiv]
 
