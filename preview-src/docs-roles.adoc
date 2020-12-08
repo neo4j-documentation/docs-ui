@@ -1,0 +1,36 @@
+= Docs flags
+:page-role: fabric
+
+[abstract]
+--
+Flags sections as Enterprise Edition, Fabric, Deprecated
+--
+
+Blocks with the appropriate roles have text appended.
+
+[role=fabric]
+== Fabric Heading
+
+Lorem ipsum
+
+[role=enterprise-edition]
+== Enterprise Edition content
+
+Lorem ipsum
+
+[role=deprecated]
+== Deprecated content
+
+Other blocks can have deprecated roles added.
+
+.Example block title
+====
+Example 1 content - this example is not deprecated
+====
+
+[role=deprecated]
+.Example 2 title
+====
+Example 2 content - this example is deprecated
+====
+

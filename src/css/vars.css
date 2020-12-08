@@ -225,6 +225,12 @@
   --sidebar-background: var(--colour-grey-300);
   --table-border-color: var(--panel-border-color);
   --table-stripe-background: var(--colour-grey-100);
+  --deprecation-color: var(--colour-pink-600);
+  --deprecation-on-color: var(--colour-white);
+  --enterprise-edition-color: var(--colour-green-600);
+  --enterprise-edition-on-color: var(--colour-white);
+  --fabric-color: var(--colour-blue-500);
+  --fabric-on-color: var(--colour-white);
 
   /* footer */
   --footer-line-height: var(--doc-line-height);
