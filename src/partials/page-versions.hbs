@@ -3,12 +3,17 @@
   <button class="version-menu-toggle" title="Show other versions of page">{{@root.page.componentVersion.displayVersion}}</button>
   <div class="version-menu">
     {{#each this}}
-    {{#unless ./prerelease }}
+    {{#unless this.prerelease}}
     <a class="version
-      {{~#if (eq ./version @root.page.version)}} is-current{{/if~}}
-      {{~#if ./missing}} is-missing{{/if}}" href="{{{relativize ./url}}}">{{./displayVersion}}</a>
+      {{~#if (eq this.version @root.page.version)}} is-current{{/if~}}
+      {{~#if this.missing}} is-missing{{/if}}" href="{{{relativize this.url}}}">{{this.displayVersion}}</a>
     {{/unless}}
     {{/each}}
+    {{#if (in page.component.name 'dotnet-manual' 'go-manual' 'java-manual' 'javascript-manual' 'python-manual')}}
+    <a class="version is-missing" href="/docs/driver-manual/4.1">4.1</a>
+    <a class="version is-missing" href="/docs/driver-manual/4.0">4.0</a>
+    <a class="version is-missing" href="/docs/driver-manual/1.7">1.7</a>
+    {{/if}}
   </div>
 </div>
 {{/with}}
