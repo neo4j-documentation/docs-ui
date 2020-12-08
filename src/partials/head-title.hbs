@@ -1,1 +1,3 @@
-    <title>{{{detag (or page.title defaultPageTitle)}}}{{#with page.component.title}} - {{this}}{{/with}}</title>
+    <title>{{{detag (or page.title defaultPageTitle)}}}
+      {{~#with (page-subtitle page)}}{{this}}{{/with~}}
+    </title>
