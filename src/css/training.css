@@ -67,6 +67,19 @@
   margin-top: 0.65rem;
 }
 
+.training.landing a.button.course-action {
+  background-color: var(--colour-pink-600);
+}
+
+.course-actions a.button.course-action:hover {
+  color: var(--colour-white);
+  background-color: var(--colour-pink-500);
+}
+
+.course-actions a.button.course-action:visited {
+  color: var(--colour-white);
+}
+
 /* Home */
 .training-home .doc .find-training {
   text-align: center;
