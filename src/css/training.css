@@ -71,12 +71,12 @@
   background-color: var(--colour-pink-600);
 }
 
-.course-actions a.button.course-action:hover {
+.training.landing a.button.course-action:hover {
   color: var(--colour-white);
   background-color: var(--colour-pink-500);
 }
 
-.course-actions a.button.course-action:visited {
+.training.landing a.button.course-action:visited {
   color: var(--colour-white);
 }
 
