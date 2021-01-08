@@ -71,12 +71,19 @@ document.addEventListener('DOMContentLoaded', function () {
                 unauthenticatedStateElement.classList.add('is-hidden')
                 authenticatedStateElement.classList.add('is-hidden')
               } else {
-                console.log('Student is not enrolled, showing a form to enroll')
                 unauthenticatedStateElement.classList.add('is-hidden')
                 enrolledStateElement.classList.add('is-hidden')
-                if (typeof MktoForms2 !== 'undefined') {
-                  var marketoFormId = 1422
-                  var marketoFormElementId = 'mktoForm_' + marketoFormId
+                // check if the enrollment is disabled
+                var marketoFormId = 1422
+                var marketoFormElementId = 'mktoForm_' + marketoFormId
+                var marketoFormElement = document.getElementById(marketoFormElementId)
+                if (marketoFormElement && marketoFormElement.dataset && marketoFormElement.dataset.disabled === 'true') {
+                  // enrollment is disabled!
+                  showErrorMessage('You cannot enroll in this course.')
+                  return
+                }
+                if (marketoFormElement && typeof MktoForms2 !== 'undefined') {
+                  console.log('Student is not enrolled, showing a form to enroll')
                   MktoForms2.loadForm('//go.neo4j.com', '710-RRC-335', marketoFormId, function (form) {
                     // Add a text after the last name field
                     var lastNameFieldRowElement = document.getElementById('LblLastName').parentElement.parentElement.parentElement
