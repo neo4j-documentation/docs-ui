@@ -144,6 +144,9 @@ page:
     - content: Training enrollement
       url: training-enrollment.html
       urlType: internal
+    - content: Training enrollement [disabled]
+      url: training-enrollment-disabled.html
+      urlType: internal
     - content: Course Yelp
       url: applied-graph-algo-course-yelp.html
       urlType: internal
