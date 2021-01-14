@@ -4,11 +4,13 @@
     <meta name="google-site-verification" content="ucqagxjVuq0lJZeLKs0F5AppzK111lNt3IoxU6mzlJE" />
     {{#if (ne page.attributes.no-index undefined) }}
     <meta name="robots" content="noindex" />
+    <meta name="googlebot" content="noindex" />
+    <meta name="bingbot" content="noindex" />
     {{else}}
     <meta name="robots" content="index, follow" />
-    {{/if}}
     <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
     <meta name="bingbot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+    {{/if}}
 
     <meta property="og:locale" content="en_US" />
     <meta property="og:type" content="article" />
