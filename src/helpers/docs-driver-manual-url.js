@@ -7,12 +7,12 @@ module.exports = (page, componentName) => {
   }
   if (page.attributes && page.attributes.theme === 'docs') {
     if (['4.1', '4.0', '1.7'].includes(version)) {
-      return `/docs/driver-manual/${version}`
+      return `/docs/driver-manual/${version}/`
     }
     // explicitly check the version to make sure that the driver manual page exists
     if (['4.2'].includes(version)) {
-      return `/docs/${componentName}/${version}`
+      return `/docs/${componentName}/${version}/`
     }
   }
-  return `/docs/${componentName}/current`
+  return `/docs/${componentName}/current/`
 }
