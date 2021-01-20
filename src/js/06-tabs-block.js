@@ -15,6 +15,13 @@ document.addEventListener('DOMContentLoaded', function () {
       case 'javascript':
         cased = 'JavaScript'
         break
+      case 'mutate':
+      case 'stats':
+      case 'stream':
+      case 'train':
+      case 'write':
+        cased = capitalizeFirstLetter(lang) + ' mode'
+        break
       default:
         cased = capitalizeFirstLetter(lang)
     }
@@ -90,7 +97,7 @@ document.addEventListener('DOMContentLoaded', function () {
   //
 
   var defaultLang = 'dotnet'
-  var langList = ['dotnet', 'go', 'java', 'javascript', 'python']
+  var langList = ['dotnet', 'go', 'java', 'javascript', 'python', 'mutate', 'stats', 'stream', 'train', 'write']
 
   var currentLanguage = defaultLang
   if (sessionStorageAvailable) {
@@ -126,7 +133,7 @@ document.addEventListener('DOMContentLoaded', function () {
       })
 
       // Don't do anything if there's only one tab
-      if (elements.length <= 1) {
+      if (elements.length < 1) {
         return
       }
 
