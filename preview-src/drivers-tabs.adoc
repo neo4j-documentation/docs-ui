@@ -395,8 +395,6 @@ YIELD
   configuration: Map
 ----
 
-include::../../common-configuration/common-parameters-named-graph.adoc[]
-
 .General configuration for algorithm execution on a named graph.
 [opts="header",cols="1,1,1m,1,4"]
 |===
@@ -404,8 +402,6 @@ include::../../common-configuration/common-parameters-named-graph.adoc[]
 | nodeLabels        | String[] | ['*']   | yes      | Filter the named graph using the given node labels.
 | concurrency       | Integer  | 4       | yes      | The number of concurrent threads used for running the algorithm.
 |===
-
-include::specific-configuration.adoc[]
 
 .Results
 [opts="header",cols="1m,1,6"]
