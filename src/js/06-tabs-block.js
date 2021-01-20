@@ -139,7 +139,7 @@ document.addEventListener('DOMContentLoaded', function () {
       })
 
       // Don't do anything if there's only one tab
-      if (elements.length < 1 || (elements.length === 1 && driverLangs.includes(langsFound[0]))) {
+      if (elements.length < 1 || (elements.length === 1 && !gdsModes.includes(langsFound[0]))) {
         return
       }
 
