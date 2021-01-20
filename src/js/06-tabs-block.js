@@ -126,7 +126,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
       // Build an array of elements
       var elements = []
-      var langsFound = []
+      var showSingle = false
 
       // add sections for each language from driver manual html output format
       langList.forEach(function (lang) {
@@ -134,12 +134,12 @@ document.addEventListener('DOMContentLoaded', function () {
           block.setAttribute('data-title', lang)
           block.setAttribute('data-lang', lang)
           elements.push(block)
-          langsFound.push(lang)
+          if (gdsModes.includes(lang)) showSingle = true
         })
       })
 
       // Don't do anything if there's only one tab
-      if (elements.length < 1 || (elements.length === 1 && !gdsModes.includes(langsFound[0]))) {
+      if (elements.length <= 1 && !showSingle) {
         return
       }
 

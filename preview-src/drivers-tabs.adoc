@@ -372,7 +372,24 @@ CALL gds.fastRP.write(
 
 ====
 
-== Tab when only one tab is needed
+== No tab in drivers when only one language
+
+.Driver example
+[.tabbed-example]
+====
+
+[.include-with-dotnet]
+======
+.dotnet code
+[source, cypher]
+----
+CODE GOES HERE
+----
+
+======
+====
+
+== Tab when only one GDS tab is needed
 
 .Collapse Path syntax per mode
 [.tabbed-example]
