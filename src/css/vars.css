@@ -231,6 +231,7 @@
   --enterprise-edition-on-color: var(--colour-white);
   --fabric-color: var(--colour-blue-500);
   --fabric-on-color: var(--colour-white);
+  --alpha-beta-color: var(--colour-orange-500);
 
   /* footer */
   --footer-line-height: var(--doc-line-height);

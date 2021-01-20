@@ -34,3 +34,16 @@ Example 1 content - this example is not deprecated
 Example 2 content - this example is deprecated
 ====
 
+== Alpha content
+
+[.alpha-symbol]
+[.tier-note]
+This algorithm is in the alpha tier.
+For more information on algorithm tiers, see <<algorithms>>.
+
+== Beta content
+
+[.beta-symbol]
+[.tier-note]
+This algorithm is in the beta tier.
+For more information on algorithm tiers, see <<algorithms>>.
