@@ -13,6 +13,8 @@ section.deprecated .title::after {
   margin-left: 10px;
 }
 
+body.alpha article h1::after,
+body.beta article h1::after,
 body.deprecated article h1::after,
 body.deprecated article h2::after,
 body.deprecated article h3::after,
@@ -142,4 +144,42 @@ table span.fabric::after {
   padding-top: 0.25rem;
   padding-bottom: 0.25rem;
   padding-left: 1.5rem;
+}
+
+/* GDS */
+
+body.alpha article h1::after,
+body.beta article h1::after {
+  color: var(--alpha-beta-color);
+}
+
+body.alpha article h1::after {
+  content: "alpha";
+}
+
+body.beta article h1::after {
+  content: "beta";
+}
+
+div.tier-note p {
+  padding: 10px;
+  /* text-align: justify; */
+}
+
+div.tier-note p::before {
+  border-right: thin solid var(--colour-grey-400);
+  padding: 0 10px;
+  margin-right: 10px;
+  font-family: fantasy;
+  font-size: 2rem;
+  color: var(--alpha-beta-color);
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+div.alpha-symbol p::before {
+  content: "\03b1";
+}
+
+div.beta-symbol p::before {
+  content: "\03b2";
 }
