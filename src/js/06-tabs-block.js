@@ -15,6 +15,13 @@ document.addEventListener('DOMContentLoaded', function () {
       case 'javascript':
         cased = 'JavaScript'
         break
+      case 'mutate':
+      case 'stats':
+      case 'stream':
+      case 'train':
+      case 'write':
+        cased = capitalizeFirstLetter(lang) + ' mode'
+        break
       default:
         cased = capitalizeFirstLetter(lang)
     }
@@ -90,7 +97,11 @@ document.addEventListener('DOMContentLoaded', function () {
   //
 
   var defaultLang = 'dotnet'
-  var langList = ['dotnet', 'go', 'java', 'javascript', 'python']
+
+  var driverLangs = ['dotnet', 'go', 'java', 'javascript', 'python']
+  var gdsModes = ['mutate', 'stats', 'stream', 'train', 'write']
+
+  var langList = driverLangs.concat(gdsModes)
 
   var currentLanguage = defaultLang
   if (sessionStorageAvailable) {
@@ -115,6 +126,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
       // Build an array of elements
       var elements = []
+      var showSingle = false
 
       // add sections for each language from driver manual html output format
       langList.forEach(function (lang) {
@@ -122,11 +134,12 @@ document.addEventListener('DOMContentLoaded', function () {
           block.setAttribute('data-title', lang)
           block.setAttribute('data-lang', lang)
           elements.push(block)
+          if (gdsModes.includes(lang)) showSingle = true
         })
       })
 
       // Don't do anything if there's only one tab
-      if (elements.length <= 1) {
+      if (elements.length <= 1 && !showSingle) {
         return
       }
 
