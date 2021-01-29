@@ -1,7 +1,9 @@
-= Tabbed sections in Drivers Manual
+= Tabbed sections in Neo4j Manuals
 
 Up to Neo4j 4.1 the Drivers Manual includes tabs to allow users to choose with driver language sections to display.
 From 4.2 on, the Drivers Manual is split into a separate manual per language.
+
+GDS also uses tabs, but they have a different list of tab separators. Rather than tab on languages, they tab on modes (mutate, stats, stream, train, write) and output tab text as _<mode> mode_ eg _Stream mode_.
 
 == Example drivers manual content
 
@@ -245,4 +247,188 @@ The release notes for the Python Driver are available https://github.com/neo4j/n
 
 ======
 
+====
+
+== Example GDS tabs
+
+.FastRP syntax per mode
+[.tabbed-example]
+====
+
+[.include-with-stream]
+======
+
+.Run FastRP in stream mode on a named graph.
+[source, cypher]
+----
+CALL gds.fastRP.stream(
+  graphName: String,
+  configuration: Map
+) YIELD
+  nodeId: Integer,
+  embedding: List<Float>
+----
+
+.Results
+[opts="header"]
+|===
+| Name      | Type         | Description
+| nodeId    | Integer      | Node ID.
+| embedding | List<Float>  | FastRP node embedding.
+|===
+======
+
+[.include-with-stats]
+======
+
+.Run FastRP in stats mode on a named graph.
+[source, cypher]
+----
+CALL gds.fastRP.stats(
+  graphName: String,
+  configuration: Map
+) YIELD
+  nodeCount: Integer,
+  createMillis: Integer,
+  computeMillis: Integer,
+  configuration: Map
+----
+
+.Results
+[opts="header",cols="1,1,6"]
+|===
+| Name          | Type    | Description
+| nodeCount     | Integer | Number of nodes processed.
+| createMillis  | Integer | Milliseconds for creating the graph.
+| computeMillis | Integer | Milliseconds for running the algorithm.
+| configuration | Map     | Configuration used for running the algorithm.
+|===
+
+======
+
+[.include-with-mutate]
+======
+
+.Run FastRP in mutate mode on a named graph.
+[source, cypher]
+----
+CALL gds.fastRP.mutate(
+  graphName: String,
+  configuration: Map
+) YIELD
+  nodeCount: Integer,
+  nodePropertiesWritten: Integer,
+  createMillis: Integer,
+  computeMillis: Integer,
+  mutateMillis: Integer,
+  configuration: Map
+----
+
+.Results
+[opts="header"]
+|===
+| Name                  | Type    | Description
+| nodeCount             | Integer | Number of nodes processed.
+| nodePropertiesWritten | Integer | Number of node properties written.
+| createMillis          | Integer | Milliseconds for creating the graph.
+| computeMillis         | Integer | Milliseconds for running the algorithm.
+| mutateMillis          | Integer | Milliseconds for adding properties to the in-memory graph.
+| configuration         | Map     | Configuration used for running the algorithm.
+|===
+======
+
+[.include-with-write]
+======
+
+.Run FastRP in write mode on a named graph.
+[source, cypher]
+----
+CALL gds.fastRP.write(
+  graphName: String,
+  configuration: Map
+) YIELD
+  nodeCount: Integer,
+  propertiesWritten: Integer,
+  createMillis: Integer,
+  computeMillis: Integer,
+  writeMillis: Integer,
+  configuration: Map
+----
+
+
+.Results
+[opts="header"]
+|===
+| Name                  | Type    | Description
+| nodeCount             | Integer | Number of nodes processed.
+| nodePropertiesWritten | Integer | Number of node properties written.
+| createMillis          | Integer | Milliseconds for creating the graph.
+| computeMillis         | Integer | Milliseconds for running the algorithm.
+| writeMillis           | Integer | Milliseconds for writing result data back to Neo4j.
+| configuration         | Map     | Configuration used for running the algorithm.
+|===
+
+======
+
+====
+
+== No tab in drivers when only one language
+
+.Driver example
+[.tabbed-example]
+====
+
+[.include-with-dotnet]
+======
+.dotnet code
+[source, cypher]
+----
+CODE GOES HERE
+----
+
+======
+====
+
+== Tab when only one GDS tab is needed
+
+.Collapse Path syntax per mode
+[.tabbed-example]
+====
+
+[.include-with-mutate]
+======
+.Run Collapse Path in mutate mode on a named graph.
+[source, cypher]
+----
+CALL gds.alpha.collapsePath.mutate(
+  graphName: String,
+  configuration: Map
+)
+YIELD
+  createMillis: Integer,
+  computeMillis: Integer,
+  mutateMillis: Integer,
+  relationshipsWritten: Integer,
+  configuration: Map
+----
+
+.General configuration for algorithm execution on a named graph.
+[opts="header",cols="1,1,1m,1,4"]
+|===
+| Name              | Type     | Default | Optional | Description
+| nodeLabels        | String[] | ['*']   | yes      | Filter the named graph using the given node labels.
+| concurrency       | Integer  | 4       | yes      | The number of concurrent threads used for running the algorithm.
+|===
+
+.Results
+[opts="header",cols="1m,1,6"]
+|===
+| Name                  | Type      | Description
+| createMillis          | Integer   | Milliseconds for loading data.
+| computeMillis         | Integer   | Milliseconds for running the algorithm.
+| mutateMillis          | Integer   | Milliseconds for adding properties to the in-memory graph.
+| relationshipsWritten  | Integer   | The number of relationships created by the algorithm.
+| configuration         | Map       | The configuration used for running the algorithm.
+|===
+======
 ====
