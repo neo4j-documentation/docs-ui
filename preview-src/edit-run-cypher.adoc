@@ -23,7 +23,7 @@ RETURN n,
 LIMIT 10
 
 .Syntax Error
-[source,cypher,role=runnable editable]
+[source%interactive%runnable,cypher,role=runnable editable]
 MATCH (n) RETURN count
 
 .Write Mode
