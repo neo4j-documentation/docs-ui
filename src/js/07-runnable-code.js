@@ -123,7 +123,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     var close = createElement('button', 'btn btn-close', [document.createTextNode('Close Results')])
 
-    close.addEventListener('click', function() {
+    close.addEventListener('click', function () {
       removeResults(content)
     })
 
