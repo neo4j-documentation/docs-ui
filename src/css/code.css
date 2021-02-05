@@ -124,6 +124,7 @@
   font-weight: 600;
   border: 0 none;
   color: var(--colour-grey-600);
+  background: transparent;
 }
 
 .doc .code-results button:focus {

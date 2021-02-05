@@ -123,7 +123,9 @@ document.addEventListener('DOMContentLoaded', function () {
 
     var close = createElement('button', 'btn btn-close', [document.createTextNode('Close Results')])
 
-    close.addEventListener('click', function() { removeResults(content) })
+    close.addEventListener('click', function() {
+      removeResults(content)
+    })
 
     // TODO: Toggle table and graph
     var header = createElement('div', 'code-result-options', [
@@ -217,35 +219,34 @@ document.addEventListener('DOMContentLoaded', function () {
     var loading = createElement('div', 'loading')
 
     var footer = createElement('div', 'code-footer', [
-        button,
-        createElement('div', 'spacer')
+      button,
+      createElement('div', 'spacer'),
     ])
 
     content.appendChild(footer)
 
-    content.addEventListener('input', function(e) {
-        var reset = footer.querySelector('.btn-reset')
+    content.addEventListener('input', function (e) {
+      var reset = footer.querySelector('.btn-reset')
 
-        if ( cleanCode(content.querySelector('pre').innerText) !== originalText ) {
-            if ( !reset ) {
-                reset = createElement('button', 'btn btn-reset', [
-                    document.createTextNode('Reset')
-                ])
+      if (cleanCode(content.querySelector('pre').innerText) !== originalText) {
+        if (!reset) {
+          reset = createElement('button', 'btn btn-reset', [
+            document.createTextNode('Reset'),
+          ])
 
-                footer.appendChild(reset)
+          footer.appendChild(reset)
 
-                // On click, reset HTML and remove button
-                reset.addEventListener('click', function() {
-                    pre.innerHTML = originalHTML
-                    footer.removeChild(reset)
-                })
-            }
+          // On click, reset HTML and remove button
+          reset.addEventListener('click', function () {
+            pre.innerHTML = originalHTML
+            footer.removeChild(reset)
+          })
         }
-        else {
-            if ( reset ) {
-                footer.removeChild( reset )
-            }
+      } else {
+        if (reset) {
+          footer.removeChild(reset)
         }
+      }
     })
 
     row.classList.forEach(function (el) {
