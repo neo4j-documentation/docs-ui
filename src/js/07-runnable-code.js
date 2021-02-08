@@ -257,7 +257,7 @@ document.addEventListener('DOMContentLoaded', function () {
     var originalText = cleanCode(pre.innerText)
 
     var button = createElement('button', 'btn btn-run btn-primary', [document.createTextNode('Run Example')])
-    var loading = createElement('div', 'loading', [ document.createTextNode('foo') ])
+    var loading = createElement('div', 'loading')
 
     var footer = createElement('div', 'code-footer', [
       button,
