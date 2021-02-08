@@ -171,6 +171,9 @@ page:
     - content: Drivers tabs
       url: drivers-tabs.html
       urlType: internal
+    - content: Edit & Run Cypher
+      url: edit-run-cypher.html
+      urlType: internal
 
 asciidoc:
   attributes:

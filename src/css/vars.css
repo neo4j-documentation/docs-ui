@@ -210,6 +210,7 @@
   --code-header-font-color: var(--colour-grey-100);
   --code-button-background: var(--colour-grey-700);
   --code-button-active-background: var(--colour-grey-600);
+  --code-button-disabled-background: var(--colour-grey-800);
   --code-button-font-color: var(--colour-white);
   --example-background: var(--colour-white);
   --example-border-color: var(--colour-grey-700);

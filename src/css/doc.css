@@ -804,66 +804,6 @@ body {
   word-break: break-word;
 }
 
-.doc pre.has-header {
-  border-top-left-radius: 0;
-  border-top-right-radius: 0;
-}
-
-.doc .code-header {
-  padding: 0.2rem 0.75rem;
-  border-top-left-radius: 0.25rem;
-  border-top-right-radius: 0.25rem;
-  background: var(--code-header-background);
-  color: var(--code-header-font-color);
-  font-size: 0.8em;
-  display: flex;
-}
-
-.doc .code-header div {
-  padding: 0.6rem 0;
-  font-weight: var(--body-font-weight-bold);
-}
-
-.doc .code-header .code-title {
-  color: var(--colour-grey-500);
-  padding-right: 0.5em;
-}
-
-.doc .code-header .code-language {
-  flex-grow: 1;
-  padding: 0.6rem 0;
-}
-
-.doc .code-header .btn {
-  border: 0 none;
-  background: transparent;
-  color: var(--code-button-font-color) !important;
-  margin: 0.25rem 0 0.25rem 0.5rem;
-  padding: 0.6rem 0;
-  border-radius: 0.175rem;
-  font-weight: var(--body-font-weight-bold);
-  line-height: 1;
-  text-align: center;
-}
-
-.doc .code-header .btn:focus {
-  outline: none;
-}
-
-.doc .code-header .btn.btn-primary {
-  background: var(--code-button-background);
-  /* margin-right: 0.25rem; */
-  padding: 0.6rem;
-}
-
-.doc .code-header .btn.btn-primary:active {
-  background: var(--code-button-active-background);
-}
-
-.doc .code-header .btn-copy.btn-success {
-  background: var(--colour-green-600);
-}
-
 .doc mark {
   background: var(--mark-background);
   padding: 0.25rem;

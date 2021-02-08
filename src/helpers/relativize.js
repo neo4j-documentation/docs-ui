@@ -1,4 +1,4 @@
-'use strict'
+// 'use strict'
 
 const { posix: path } = require('path')
 

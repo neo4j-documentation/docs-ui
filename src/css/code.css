@@ -1,0 +1,217 @@
+.doc pre.has-header {
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+.doc .code-header {
+  padding: 0.2rem 0.75rem;
+  border-top-left-radius: 0.25rem;
+  border-top-right-radius: 0.25rem;
+  background: var(--code-header-background);
+  color: var(--code-header-font-color);
+  font-size: 0.8em;
+  display: flex;
+}
+
+.doc .code-header div {
+  padding: 0.6rem 0;
+  font-weight: var(--body-font-weight-bold);
+}
+
+.doc .code-header .code-title {
+  color: var(--colour-grey-500);
+  padding-right: 0.5em;
+}
+
+.doc .code-header .code-language {
+  flex-grow: 1;
+  padding: 0.6rem 0;
+}
+
+.doc .code-header .btn,
+.doc .code-footer .btn {
+  border: 0 none;
+  background: transparent;
+  color: var(--code-button-font-color) !important;
+  margin: 0.25rem 0 0.25rem 0.5rem;
+  padding: 0.6rem 0;
+  border-radius: 0.175rem;
+  font-weight: var(--body-font-weight-bold);
+  line-height: 1;
+  text-align: center;
+}
+
+.doc .code-header .btn:focus,
+.doc .code-footer .btn:focus {
+  outline: none;
+}
+
+.doc .code-header .btn.btn-primary,
+.doc .code-footer .btn.btn-primary {
+  background: var(--code-button-background);
+  /* margin-right: 0.25rem; */
+  padding: 0.6rem;
+}
+
+.doc .code-header .btn.btn-primary:active,
+.doc .code-footer .btn.btn-primary:active {
+  background: var(--code-button-active-background);
+}
+
+.doc .code-header .btn.btn-primary:disabled,
+.doc .code-footer .btn.btn-primary:disabled {
+  background: var(--code-button-disabled-background);
+}
+
+.doc .code-header .btn-copy.btn-success {
+  background: var(--colour-green-600);
+}
+
+.doc .code-footer {
+  background: var(--colour-grey-500);
+  color: var(--colour-white);
+  padding: 0.3rem 12px 0.3rem 0;
+  font-size: 0.8em;
+  display: flex;
+  border-bottom-left-radius: 0.25rem;
+  border-bottom-right-radius: 0.25rem;
+}
+
+.doc .spacer {
+  flex-grow: 1;
+}
+
+.doc .code-footer.has-results {
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.doc .code-footer .loading {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 0.6rem;
+  color: var(--colour-grey-200);
+  font-size: 0.7rem;
+}
+
+.doc .code-results {
+  background: var(--colour-grey-200);
+  color: var(--colour-grey-600);
+  border: 1px solid var(--colour-grey-500);
+  border-bottom-width: 2px;
+  border-bottom-left-radius: 0.25rem;
+  border-bottom-right-radius: 0.25rem;
+  font-size: 0.75rem;
+  overflow: auto;
+}
+
+.doc .code-results .code-result-options {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--colour-grey-400);
+  margin: 0 12px 4px;
+}
+
+.doc .code-results .code-result-options .code-result-header {
+  font-weight: 600;
+  text-transform: uppercase;
+  padding: 0.6rem 0 0.2rem;
+}
+
+.doc .code-results button {
+  padding: 0;
+  font-weight: 600;
+  border: 0 none;
+  color: var(--colour-grey-600);
+  background: transparent;
+}
+
+.doc .code-results button:focus {
+  color: var(--colour-green-600);
+  outline: none;
+}
+
+.doc .code-results .code-result-container {
+  width: 100%;
+  max-height: 600px;
+  overflow: scroll;
+  padding: 12px;
+}
+
+.doc .code-results .code-result-table {
+  min-width: 100%;
+}
+
+.doc .code-results .code-result-table th {
+  font-weight: 600;
+  text-align: left;
+  font-size: 0.7rem;
+  padding: 0 0.25rem 6px;
+  color: #718096;
+  border-bottom: 1px solid #cbd5e0;
+}
+
+.doc .code-results .code-result-table td {
+  vertical-align: top;
+  padding: 0.25rem;
+  color: var(--colour-grey-600);
+}
+
+.doc .code-results .code-result-table tbody td {
+  border-right: 1px solid var(--colour-grey-300);
+  border-bottom: 1px solid var(--colour-grey-300);
+}
+
+.doc .code-results .code-result-table tbody tr td:last-child {
+  border-right-width: 0;
+}
+
+/*
+.doc .code-results .code-result-table tbody tr:nth-child(even) {
+  background: var(--colour-grey-100);
+}
+
+.doc .code-results .code-result-table tbody tr:hover {
+  background: var(--colour-grey-100);
+}
+*/
+
+.doc .code-results .code-result-table tbody tr:hover {
+  background: var(--colour-grey-100);
+}
+
+.doc .code-results pre {
+  padding: 0;
+  font-size: 0.6rem;
+  background: transparent;
+}
+
+.doc .code-results .error {
+  border-left: 4px solid var(--colour-red-600);
+  color: var(--colour-red-600);
+  padding: 8px;
+  border-radius: 0;
+}
+
+.doc .editable code,
+.doc .editable code:focus {
+  outline: none;
+}
+
+.doc .code-result-toggle {
+  padding-right: 1.2rem;
+}
+
+.doc .code-result-toggle button {
+  line-height: var(--body-line-height);
+  padding: 0.5rem 0 0.5rem;
+  margin-left: 0.4rem;
+  border-bottom: 2px solid transparent;
+  color: var(--colour-grey-500);
+}
+
+.doc .code-result-toggle button.code-result-toggle--current {
+  color: var(--colour-grey-600);
+  border-bottom-color: var(--colour-grey-600);
+}

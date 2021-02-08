@@ -15,3 +15,7 @@
   <script async src="{{{this}}}/js/vendor/search.js"></script>
   <script async src="{{{this}}}/js/vendor/image-zoom.js"></script>
 {{/with}}
+
+{{#if page.attributes.includedriver}}
+<script src="https://cdn.jsdelivr.net/npm/neo4j-driver@4.2.2/lib/browser/neo4j-web.min.js"></script>
+{{/if}}
