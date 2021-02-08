@@ -1,4 +1,5 @@
 // Code functions
+import { createElement } from './modules/dom'
 
 document.addEventListener('DOMContentLoaded', function () {
   function capitalizeFirstLetter (string) {
@@ -26,17 +27,6 @@ document.addEventListener('DOMContentLoaded', function () {
         cased = capitalizeFirstLetter(lang)
     }
     return cased
-  }
-
-  var createElement = function (el, className, children) {
-    var output = document.createElement(el)
-    output.setAttribute('class', className)
-
-    Array.isArray(children) && children.forEach(function (child) {
-      if (child) output.appendChild(child)
-    })
-
-    return output
   }
 
   var targetActive = 'tabbed-target--active'

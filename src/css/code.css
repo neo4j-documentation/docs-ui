@@ -134,7 +134,7 @@
 
 .doc .code-results .code-result-container {
   width: 100%;
-  max-height: 300px;
+  max-height: 600px;
   overflow: scroll;
   padding: 12px;
 }
@@ -197,4 +197,21 @@
 .doc .editable code,
 .doc .editable code:focus {
   outline: none;
+}
+
+.doc .code-result-toggle {
+  padding-right: 1.2rem;
+}
+
+.doc .code-result-toggle button {
+  line-height: var(--body-line-height);
+  padding: 0.5rem 0 0.5rem;
+  margin-left: 0.4rem;
+  border-bottom: 2px solid transparent;
+  color: var(--colour-grey-500);
+}
+
+.doc .code-result-toggle button.code-result-toggle--current {
+  color: var(--colour-grey-600);
+  border-bottom-color: var(--colour-grey-600);
 }

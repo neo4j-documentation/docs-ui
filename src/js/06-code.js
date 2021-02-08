@@ -1,4 +1,6 @@
 // Code functions
+import { createElement } from './modules/dom'
+
 ;(function () {
   var commandContinuationRx = /\\\s*$/
   var copyableCommand = function (input) {
@@ -170,17 +172,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
     pre.className += ' has-header'
     div.insertBefore(header, pre)
-  }
-
-  var createElement = function (el, className, children) {
-    var output = document.createElement(el)
-    output.setAttribute('class', className)
-
-    Array.isArray(children) && children.forEach(function (child) {
-      if (child) output.appendChild(child)
-    })
-
-    return output
   }
 
   // Apply Code Headers

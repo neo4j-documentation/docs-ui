@@ -1,9 +1,14 @@
+import { cleanCode, convert } from './modules/code'
+import { createElement } from './modules/dom'
+import { forcedGraph } from './modules/graph'
+
 document.addEventListener('DOMContentLoaded', function () {
   var driver
   var defaultDatabase = 'movies'
   var databasePrefix = 'database:'
   var modePrefix = 'mode:'
   var instantClass = 'instant'
+  var graphClass = 'graph'
 
   var validModes = ['mode:read', 'mode:write']
   var maxRows = 100
@@ -35,59 +40,12 @@ document.addEventListener('DOMContentLoaded', function () {
     return Promise.resolve(driver)
   }
 
-  // TODO: Share this across other functions
-  var createElement = function (el, className, children) {
-    var output = document.createElement(el)
-    output.setAttribute('class', className)
-
-    Array.isArray(children) && children.forEach(function (child) {
-      output.appendChild(child)
-    })
-
-    return output
-  }
-  var cleanCode = function (code, language) {
-    var div = document.createElement('div')
-    div.innerHTML = code
-
-    Array.from(div.querySelectorAll('i.conum, b')).map(function (el) {
-      div.removeChild(el)
-    })
-
-    var cleaner = document.createElement('textarea')
-    var input = div.innerHTML
-
-    if (language === 'bash' || language === 'sh' || language === 'shell' || language === 'console') {
-      input = window.neo4jDocs.copyableCommand(input)
-    }
-
-    cleaner.innerHTML = input
-    return cleaner.value
-  }
-
-  // Convert value from native
-  var convert = function (value) {
-    if (Array.isArray(value)) {
-      return value.map(function (item) { return convert(item) })
-    } else if (window.neo4j.isInt(value)) {
-      return value.toNumber()
-    } else if (typeof value === 'object' && value !== null) {
-      return Object.fromEntries(Object.keys(value).map(function (key) {
-        return [key, convert(value[key])]
-      }))
-    }
-
-    return value
-  }
-
   var removeResults = function (content) {
     Array.from(content.querySelectorAll('.code-results'))
       .forEach(function (el) { content.removeChild(el) })
   }
 
-  var renderResults = function (content, res) {
-    removeResults(content)
-
+  var renderResultsAsTable = function (res) {
     var headers = res.records[0].keys.map(function (key) {
       return createElement('th', '', [document.createTextNode(key)])
     })
@@ -114,12 +72,73 @@ document.addEventListener('DOMContentLoaded', function () {
       })
     )
 
-    var table = createElement('table', 'code-result-table', [
+    return createElement('table', 'code-result-table', [
       thead,
       tbody,
     ])
+  }
 
-    var container = createElement('div', 'code-result-container', [table])
+  var renderResultsAsGraph = function (content, res) {
+    var container = createElement('div', 'gram')
+
+    content.appendChild(container)
+
+    var replaceSvg = document.createElementNS('http://www.w3.org/2000/svg', 'svg')
+
+    replaceSvg.setAttribute('width', container.clientWidth)
+    replaceSvg.setAttribute('height', container.clientHeight)
+
+    // Append to container
+    container.appendChild(replaceSvg)
+
+    const nodes = []
+    const links = []
+
+    // TODO: Paths
+    res.records.map((row) => {
+      row.keys.map((key) => {
+        const value = row.get(key)
+
+        if (value.labels && nodes.findIndex((node) => node.id === value.identity.toNumber()) === -1) {
+          nodes.push({
+            id: value.identity.toNumber(),
+            labels: value.labels,
+            properties: value.properties,
+          })
+        } else if (value.type) {
+          links.push({
+            id: value.identity.toNumber(),
+            source: value.start.toNumber(),
+            target: value.end.toNumber(),
+            type: value.type,
+            properties: value.properties,
+          })
+        }
+      })
+    })
+
+    // Wait 100ms so the svg element is rendered
+    setTimeout(() => forcedGraph(replaceSvg, { nodes, links }), 100)
+    return container
+  }
+
+  var renderResults = function (content, res, renderAsGraph) {
+    // Default view
+    var showGraph = content.parentNode.classList.contains(graphClass)
+
+    if (renderAsGraph === undefined) {
+      renderAsGraph = showGraph
+    }
+
+    removeResults(content)
+
+    var container = createElement('div', 'code-result-container')
+
+    var results = renderAsGraph
+      ? renderResultsAsGraph(container, res)
+      : renderResultsAsTable(res)
+
+    container.appendChild(results)
 
     var close = createElement('button', 'btn btn-close', [document.createTextNode('Close Results')])
 
@@ -127,19 +146,41 @@ document.addEventListener('DOMContentLoaded', function () {
       removeResults(content)
     })
 
-    // TODO: Toggle table and graph
+    // Toggle Graph & Table view
+    var viewToggle = null
+
+    if (showGraph) {
+      var graphButton = createElement('button', renderAsGraph ? 'code-result-toggle--current' : '', document.createTextNode('Graph'))
+
+      graphButton.addEventListener('click', () => {
+        renderResults(content, res, true)
+      })
+
+      var tableButton = createElement('button', renderAsGraph ? '' : 'code-result-toggle--current', document.createTextNode('Table'))
+
+      tableButton.addEventListener('click', () => {
+        renderResults(content, res, false)
+      })
+
+      viewToggle = createElement('div', 'code-result-toggle', [
+        graphButton,
+        tableButton,
+      ])
+    }
+
     var header = createElement('div', 'code-result-options', [
       createElement('div', 'code-result-header', [document.createTextNode('Results')]),
       createElement('div', 'spacer'),
+      viewToggle,
       close,
     ])
 
-    var results = createElement('div', 'code-results', [
+    var output = createElement('div', 'code-results', [
       header,
       container,
     ])
 
-    content.appendChild(results)
+    content.appendChild(output)
   }
 
   var renderError = function (content, err) {
