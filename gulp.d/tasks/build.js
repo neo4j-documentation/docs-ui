@@ -1,13 +1,9 @@
 'use strict'
 
 const autoprefixer = require('autoprefixer')
-const browserify = require('browserify')
-const buffer = require('vinyl-buffer')
-const concat = require('gulp-concat')
 const cssnano = require('cssnano')
 const fs = require('fs-extra')
 const imagemin = require('gulp-imagemin')
-const { obj: map } = require('through2')
 const merge = require('merge-stream')
 const ospath = require('path')
 const path = ospath.posix
@@ -16,8 +12,8 @@ const postcssCalc = require('postcss-calc')
 const postcssImport = require('postcss-import')
 const postcssUrl = require('postcss-url')
 const postcssVar = require('postcss-custom-properties')
-const uglify = require('gulp-uglify')
 const vfs = require('vinyl-fs')
+const rollup = require('./rollup.js')
 
 module.exports = (src, dest, preview) => () => {
   const opts = { base: src, cwd: src }
@@ -56,44 +52,11 @@ module.exports = (src, dest, preview) => () => {
 
   return merge(
     vfs
-      .src('js/+([0-9])-*.js', { ...opts, sourcemaps })
-      .pipe(uglify())
-      // NOTE concat already uses stat from newest combined file
-      .pipe(concat('js/site.js')),
+      .src('js/site.js', { ...opts, read: false, sourcemaps })
+      .pipe(rollup()),
     vfs
       .src('js/vendor/*.js', { ...opts, read: false })
-      .pipe(
-        // see https://gulpjs.org/recipes/browserify-multiple-destination.html
-        map((file, enc, next) => {
-          if (file.relative.endsWith('.bundle.js')) {
-            const mtimePromises = []
-            const bundlePath = file.path
-            browserify(file.relative, { basedir: src, detectGlobals: true })
-              .plugin('browser-pack-flat/plugin')
-              .on('file', (bundledPath) => {
-                if (bundledPath !== bundlePath) mtimePromises.push(fs.stat(bundledPath).then(({ mtime }) => mtime))
-              })
-              .bundle((bundleError, bundleBuffer) =>
-                Promise.all(mtimePromises).then((mtimes) => {
-                  const newestMtime = mtimes.reduce((max, curr) => (!max || curr > max ? curr : max))
-                  if (newestMtime > file.stat.mtime) file.stat.mtimeMs = +(file.stat.mtime = newestMtime)
-                  if (bundleBuffer !== undefined) file.contents = bundleBuffer
-                  file.path = file.path.slice(0, file.path.length - 10) + '.js'
-                  next(bundleError, file)
-                })
-              )
-          } else {
-            fs.readFile(file.path, 'UTF-8').then((contents) => {
-              file.contents = Buffer.from(contents)
-              next(null, file)
-            })
-          }
-        })
-      )
-      .pipe(buffer())
-      .pipe(uglify()),
-    // NOTE use this statement to bundle a JavaScript library that cannot be browserified, like jQuery
-    //vfs.src(require.resolve('<package-name-or-require-path>'), opts).pipe(concat('js/vendor/<library-name>.js')),
+      .pipe(rollup()),
     vfs
       .src('css/site.css', { ...opts, sourcemaps })
       .pipe(postcss((file) => ({ plugins: postcssPlugins, options: { file } }))),
