@@ -34,3 +34,8 @@
   background: var(--colour-blue-600);
   color: var(--colour-white);
 }
+
+.label--deprecated {
+  background: var(--colour-orange-300);
+  color: var(--colour-orange-800);
+}

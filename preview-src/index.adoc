@@ -45,6 +45,11 @@ Author Name
   <span class="label label--apoc-full">APOC Full</span>
   <span class="label label--function">Function</span>
 </p>
+<p>
+  <span class="label label--apoc-full">APOC Full</span>
+  <span class="label label--function">Function</span>
+  <span class="label label--deprecated">Deprecated</span>
+</p>
 </div>
 +++
 
