@@ -486,3 +486,25 @@ body {
   display: inline-block;
   margin-right: 0.2rem;
 }
+
+#search-open {
+  padding-left: 0;
+}
+
+#auth {
+  padding-left: 16px;
+}
+
+#auth .auth-user {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  border-radius: 50%;
+  width: 1.9rem;
+  height: 1.9rem;
+  font-size: 0.7rem;
+  background-size: cover;
+  background-position: center;
+  border: 2px solid var(--colour-green-600);
+}

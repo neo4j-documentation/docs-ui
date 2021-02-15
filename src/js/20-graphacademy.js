@@ -1,6 +1,8 @@
-/* global WebAuth, XMLHttpRequest */
+/* global WebAuth */
+import { getRequest, postRequest } from './modules/http'
+
 if (typeof WebAuth !== 'undefined') {
-  ;(function (WebAuth, XMLHttpRequest) {
+  ;(function (WebAuth) {
     'use strict'
 
     // constants
@@ -44,38 +46,6 @@ if (typeof WebAuth !== 'undefined') {
     }
 
     // GraphAcademy API
-    function jsonRequest (verb, url, data, accessToken, successCallback, errorCallback) {
-      var request = new XMLHttpRequest()
-      request.open(verb, url, true)
-      request.setRequestHeader('Content-Type', 'application/json')
-      request.setRequestHeader('Authorization', accessToken)
-      request.onload = function () {
-        if (this.status >= 200 && this.status < 400) {
-          successCallback(JSON.parse(this.response))
-        } else {
-          // Response error
-          errorCallback(this.response)
-        }
-      }
-      request.onerror = function (e) {
-        // Connection error
-        errorCallback(e)
-      }
-      if (data) {
-        request.send(JSON.stringify(data))
-      } else {
-        request.send()
-      }
-    }
-
-    function getRequest (url, accessToken, successCallback, errorCallback) {
-      jsonRequest('GET', url, '', accessToken, successCallback, errorCallback)
-    }
-
-    function postRequest (url, data, accessToken, successCallback, errorCallback) {
-      jsonRequest('POST', url, data, accessToken, successCallback, errorCallback)
-    }
-
     function setQuizStatus (className, passed, failed, accessToken, successCallback, errorCallback) {
       var data = {
         className: className,
@@ -121,5 +91,5 @@ if (typeof WebAuth !== 'undefined') {
       getEnrollmentForClass: getEnrollmentForClass,
       enrollStudentInClass: enrollStudentInClass,
     }
-  })(WebAuth, XMLHttpRequest)
+  })(WebAuth)
 }
