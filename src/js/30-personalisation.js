@@ -1,15 +1,8 @@
 import { postRequest } from './modules/http'
+import { getCookie } from './modules/cookies'
 
 ;(function () {
   'use strict'
-
-  const getCookie = (name) => {
-    const regex = new RegExp(`${name}=[^;]+;`)
-    const match = document.cookie.match(regex)
-    if (match) {
-      return match[0].split('=')[1].trim().replace(';', '')
-    }
-  }
 
   document.addEventListener('DOMContentLoaded', () => {
     const url = document.location.href.split('?')[0]

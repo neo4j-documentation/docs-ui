@@ -1,3 +1,5 @@
+const { getCookie } = require('./modules/cookies')
+
 /* global fetch */
 ;(function () {
   'use strict'
@@ -16,6 +18,10 @@
   }
 
   var sendFeedback = function (helpful, reason, moreInformation) {
+    const identity = getCookie('neo_identity')
+    const gid = getCookie('_gid')
+    const uetsid = getCookie('_uetsid')
+
     // Get Project
     var productTag = document.querySelector('meta[name=product]')
     var project = productTag
@@ -25,6 +31,16 @@
     var body = 'project=' + encodeURIComponent(project)
     body += '&url=' + encodeURIComponent(window.location.href)
     body += '&helpful=' + helpful.toString()
+
+    if (identity) {
+      body += '&identity=' + identity
+    }
+    if (gid) {
+      body += '&gid=' + gid
+    }
+    if (uetsid) {
+      body += '&uetsid=' + uetsid
+    }
 
     if (!helpful) {
       body += '&reason=' + encodeURIComponent(reason)
