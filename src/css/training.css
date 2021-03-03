@@ -1,4 +1,5 @@
 /* Training */
+.training-certification .doc,
 .training-enrollment .doc,
 .training-home .doc {
   padding-left: 1rem;
@@ -131,6 +132,7 @@
 }
 
 /* Hero */
+.training-certification .hero,
 .training-enrollment .hero,
 .training-home .hero {
   color: white;
@@ -141,11 +143,14 @@
   text-align: left;
 }
 
+.training-certification .hero h1,
 .training-enrollment .hero h1,
 .training-home .hero h1 {
   color: white;
 }
 
+.training-certification .hero h1::after,
+.training-certification .hero h2::after,
 .training-enrollment .hero h1::after,
 .training-enrollment .hero h2::after,
 .training-home .hero h1::after,
@@ -278,16 +283,19 @@
 }
 
 /* Enrollment */
+.training-certification .doc .sect1,
 .training-enrollment .doc .sect1 {
   padding: 0.25rem 0;
   margin-top: 0;
 }
 
+.training-certification .doc h2,
 .training-enrollment .doc h2 {
   margin: 0;
   border-bottom: 0 none;
 }
 
+.training-certification .doc h2::after,
 .training-enrollment .doc h2::after {
   display: block;
   height: 3px;
@@ -297,21 +305,25 @@
   content: "";
 }
 
+.training-certification .doc,
 .training-enrollment .doc {
   padding-top: 2em;
 }
 
+.training-certification .doc section,
 .training-enrollment .doc section {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
 }
 
+.training-certification .doc header h3,
 .training-enrollment .doc header h3 {
   margin: 0;
   padding: 0.4rem 0 2rem;
 }
 
+.training-certification .course-description,
 .training-enrollment .course-description {
   flex: 3;
   min-width: 450px;
@@ -320,6 +332,7 @@
 }
 
 /* stack elements to prevent layout shift */
+.training-certification .course-actions,
 .training-enrollment .course-actions {
   display: grid;
   flex: 2;
@@ -328,6 +341,9 @@
   padding-right: 1rem;
 }
 
+.training-certification .course-actions > .error,
+.training-certification .course-actions > .spinner,
+.training-certification .course-actions > .content,
 .training-enrollment .course-actions > .error,
 .training-enrollment .course-actions > .spinner,
 .training-enrollment .course-actions > .content {
@@ -335,6 +351,7 @@
   grid-row: 1 / 2;
 }
 
+.training-certification .course-actions .panel,
 .training-enrollment .course-actions .panel {
   display: grid;
   padding: 1rem;
@@ -342,6 +359,7 @@
   border-top: 5px solid var(--colour-training);
 }
 
+.training-certification .course-actions a.button-logout,
 .training-enrollment .course-actions a.button-logout {
   background: none;
   color: var(--colour-grey-600);
@@ -354,16 +372,19 @@
 }
 
 /* stack elements to prevent layout shift */
+.training-certification .course-actions .content,
 .training-enrollment .course-actions .content {
   display: grid;
 }
 
+.training-certification .course-actions .content > .course-state,
 .training-enrollment .course-actions .content > .course-state {
   grid-column: 1 / 2;
   grid-row: 1 / 2;
 }
 
 /* Form */
+.training-certification .course-actions form label,
 .training-enrollment .course-actions form label {
   color: var(--colour-grey-800);
   display: block;
@@ -371,15 +392,20 @@
   margin-bottom: 0.5rem;
 }
 
+.training-certification .course-actions form .field:not(:last-child),
 .training-enrollment .course-actions form .field:not(:last-child) {
   margin-bottom: 0.75rem;
 }
 
+.training-certification .course-actions form .field.action,
 .training-enrollment .course-actions form .field.action {
   margin-top: 1rem;
   display: flex;
 }
 
+.training-certification .course-actions .button-signin,
+.training-certification .course-actions .button-course-enroll,
+.training-certification .course-actions .button-course-continue,
 .training-enrollment .course-actions .button-signin,
 .training-enrollment .course-actions .button-course-enroll,
 .training-enrollment .course-actions .button-course-continue {
@@ -387,6 +413,7 @@
 }
 
 /* Marketo form */
+.training-certification .course-actions form .help,
 .training-enrollment .course-actions form .help {
   font-size: 0.85rem;
   margin-top: 0;
@@ -395,14 +422,17 @@
   margin-left: 0.8rem;
 }
 
+.training-certification .course-actions form input:hover,
 .training-enrollment .course-actions form input:hover {
   border-color: var(--colour-grey-500);
 }
 
+.training-certification .course-actions form select:hover,
 .training-enrollment .course-actions form select:hover {
   border-color: var(--colour-grey-500);
 }
 
+.training-certification .course-actions form select,
 .training-enrollment .course-actions form select {
   cursor: pointer;
   display: block;
@@ -424,6 +454,8 @@
   vertical-align: top;
 }
 
+.training-certification .course-actions form input[type="text"],
+.training-certification .course-actions form input[type="email"],
 .training-enrollment .course-actions form input[type="text"],
 .training-enrollment .course-actions form input[type="email"] {
   max-width: 100%;
@@ -446,6 +478,8 @@
   vertical-align: top;
 }
 
+.training-certification .course-actions form select:focus,
+.training-certification .course-actions form input:focus,
 .training-enrollment .course-actions form select:focus,
 .training-enrollment .course-actions form input:focus {
   outline: 0;
@@ -453,33 +487,41 @@
   box-shadow: 0 0 0 0.125em rgba(213, 63, 140, 0.25);
 }
 
+.training-certification .mktoForm .mktoFormCol,
 .training-enrollment .mktoForm .mktoFormCol {
   width: 100%;
 }
 
+.training-certification .mktoForm .mktoFieldWrap,
 .training-enrollment .mktoForm .mktoFieldWrap {
   width: 100%;
 }
 
+.training-certification .mktoForm,
+.training-certification .mktoField,
 .training-enrollment .mktoForm,
 .training-enrollment .mktoField {
   width: 100% !important;
 }
 
+.training-certification input.mktoField[type="checkbox"],
 .training-enrollment input.mktoField[type="checkbox"] {
   width: auto !important;
   margin-top: 0.5rem;
 }
 
+.training-certification .mktoForm .mktoRequiredField .mktoAsterix,
 .training-enrollment .mktoForm .mktoRequiredField .mktoAsterix {
   display: block;
 }
 
+.training-certification .mktoForm .mktoAsterix,
 .training-enrollment .mktoForm .mktoAsterix {
   color: var(--colour-red-800);
   display: none;
 }
 
+.training-certification .mktoForm .mktoError .mktoErrorMsg,
 .training-enrollment .mktoForm .mktoError .mktoErrorMsg {
   display: block;
   margin-top: 7px;
@@ -495,6 +537,7 @@
   padding: 0.65rem;
 }
 
+.training-certification .mktoForm .mktoError .mktoErrorArrow,
 .training-enrollment .mktoForm .mktoError .mktoErrorArrow {
   background-color: var(--colour-red-200);
   border: none;
@@ -502,6 +545,7 @@
   user-select: none;
 }
 
+.training-certification .mktoForm button.mktoButton,
 .training-enrollment .mktoForm button.mktoButton {
   color: #fff;
   cursor: pointer;
@@ -514,10 +558,16 @@
   font-weight: 600;
 }
 
+.training-certification button.mktoButton:hover,
 .training-enrollment button.mktoButton:hover {
   background-color: var(--colour-pink-500);
 }
 
+.training-certification .mktoForm div,
+.training-certification .mktoForm span,
+.training-certification .mktoForm label,
+.training-certification .mktoForm p,
+.training-certification .mktoForm div.mktoButtonRow,
 .training-enrollment .mktoForm div,
 .training-enrollment .mktoForm span,
 .training-enrollment .mktoForm label,
@@ -526,6 +576,7 @@
   display: flex;
 }
 
+.training-certification .mktoForm span,
 .training-enrollment .mktoForm span {
   width: 100%;
 }
@@ -537,36 +588,60 @@
   align-items: center;
 }
 
+/* info */
+.training-certification .course-actions[data-status="info"] .info {
+  visibility: visible;
+}
+
+.training-certification .course-actions[data-status="info"] .spinner,
+.training-certification .course-actions[data-status="info"] .content,
+.training-certification .course-actions[data-status="info"] .error {
+  visibility: hidden;
+}
+
 /* loading */
+.training-certification .course-actions[data-status="loading"] .spinner,
 .training-enrollment .course-actions[data-status="loading"] .spinner {
   visibility: visible;
 }
 
+.training-certification .course-actions[data-status="loading"] .content,
+.training-certification .course-actions[data-status="loading"] .error,
+.training-certification .course-actions[data-status="loading"] .info,
 .training-enrollment .course-actions[data-status="loading"] .content,
 .training-enrollment .course-actions[data-status="loading"] .error {
   visibility: hidden;
 }
 
 /* loaded */
+.training-certification .course-actions[data-status="loaded"] .content,
 .training-enrollment .course-actions[data-status="loaded"] .content {
   visibility: visible;
 }
 
+.training-certification .course-actions[data-status="loaded"] .info,
+.training-certification .course-actions[data-status="loaded"] .error,
+.training-certification .course-actions[data-status="loaded"] .spinner,
 .training-enrollment .course-actions[data-status="loaded"] .error,
 .training-enrollment .course-actions[data-status="loaded"] .spinner {
   visibility: hidden;
 }
 
 /* error */
+.training-certification .course-actions[data-status="error"] .error,
 .training-enrollment .course-actions[data-status="error"] .error {
   visibility: visible;
 }
 
+.training-certification .course-actions[data-status="error"] .info,
+.training-certification .course-actions[data-status="error"] .content,
+.training-certification .course-actions[data-status="error"] .spinner,
 .training-enrollment .course-actions[data-status="error"] .content,
 .training-enrollment .course-actions[data-status="error"] .spinner {
   visibility: hidden;
 }
 
+.training-certification .course-actions .error,
 .training-enrollment .course-actions .error {
   background-color: var(--colour-red-200);
   color: var(--colour-red-900);
@@ -578,39 +653,58 @@
   margin: 0 auto auto;
 }
 
+.training-certification .course-actions .info {
+  background-color: var(--colour-blue-200);
+  color: var(--colour-blue-900);
+  padding: 1rem;
+  border-left: 4px solid var(--colour-blue-600);
+  border-radius: 0.25rem;
+  display: flex;
+  width: fit-content;
+  margin: 0 auto auto;
+}
+
+.training-certification .course-actions .spinner,
 .training-enrollment .course-actions .spinner {
   margin: 0 auto auto;
 }
 
+.training-certification .doc .sect1.heading,
 .training-enrollment .doc .sect1.heading {
   padding: 2em 0 0;
 }
 
+.training-certification .doc .sect1 h2,
 .training-enrollment .doc .sect1 h2 {
   padding-bottom: 1rem;
 }
 
+.training-certification #preamble .imageblock,
 .training-enrollment #preamble .imageblock {
   max-width: 40rem;
   margin: auto;
 }
 
 /* breadcrumbs */
+.training-certification .breadcrumbs,
 .training-enrollment .breadcrumbs {
   display: block;
   padding: 0;
 }
 
+.training-certification .breadcrumbs ul,
 .training-enrollment .breadcrumbs ul {
   padding: 0 !important;
   margin-bottom: 0.2rem;
   font-size: 0.8rem;
 }
 
+.training-certification .breadcrumbs a,
 .training-enrollment .breadcrumbs a {
   font-weight: 200;
 }
 
+.training-certification .breadcrumbs a::after,
 .training-enrollment .breadcrumbs a::after {
   display: none;
 }

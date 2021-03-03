@@ -1,4 +1,4 @@
-/* global WebAuth */
+/* global WebAuth, XMLHttpRequest */
 import { getRequest, postRequest } from './modules/http'
 
 if (typeof WebAuth !== 'undefined') {
@@ -82,6 +82,28 @@ if (typeof WebAuth !== 'undefined') {
       postRequest(url, data, accessToken, successCallback, errorCallback)
     }
 
+    function checkNeo4j3xCertification (accessToken, successCallback, errorCallback) {
+      // text request
+      const request = new XMLHttpRequest()
+      request.open('GET', 'https://casesufbq0.execute-api.us-east-1.amazonaws.com/dev/CheckCertified?auth0_key=auth|' + accessToken, true)
+      if (accessToken) {
+        request.setRequestHeader('Authorization', accessToken)
+      }
+      request.onload = function () {
+        if (this.status >= 200 && this.status < 400) {
+          successCallback(this.response)
+        } else {
+          // Response error
+          errorCallback(this.response)
+        }
+      }
+      request.onerror = function (e) {
+        // Connection error
+        errorCallback(e)
+      }
+      request.send()
+    }
+
     window.GraphAcademy = {
       logout: logout,
       login: login,
@@ -90,6 +112,7 @@ if (typeof WebAuth !== 'undefined') {
       getClassCertificate: getClassCertificate,
       getEnrollmentForClass: getEnrollmentForClass,
       enrollStudentInClass: enrollStudentInClass,
+      checkNeo4j3xCertification: checkNeo4j3xCertification,
     }
   })(WebAuth)
 }
