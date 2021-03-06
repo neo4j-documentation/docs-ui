@@ -89,7 +89,7 @@ document.addEventListener('DOMContentLoaded', function () {
   var defaultLang = 'dotnet'
 
   var driverLangs = ['dotnet', 'go', 'java', 'javascript', 'python']
-  var gdsModes = ['mutate', 'stats', 'stream', 'train', 'write']
+  var gdsModes = ['train', 'stream', 'stats', 'mutate', 'write']
 
   var langList = driverLangs.concat(gdsModes)
 
