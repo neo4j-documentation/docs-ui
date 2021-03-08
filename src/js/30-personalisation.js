@@ -7,8 +7,7 @@ import { createElement } from './modules/dom';
 (function () {
   'use strict'
 
-  // const PERSONALISATION_API = 'https://neo4j-personalisation.netlify.app/view'
-  const PERSONALISATION_API = 'http://localhost:3000'
+  const PERSONALISATION_API = 'https://neo4j-personalisation.netlify.app'
   const OTHER = '_other_'
 
   const addMessage = (message) => {
@@ -44,7 +43,6 @@ import { createElement } from './modules/dom';
     }))
 
     const form = createElement('form', 'form', [
-      // header,
       options,
     ])
 
@@ -98,7 +96,7 @@ import { createElement } from './modules/dom';
       }
 
       if (body.length) {
-        const gid = getCookie('_gid') || 'test'
+        const gid = getCookie('_gid')
         body.push(['gid', gid])
 
         fetch(
@@ -121,10 +119,10 @@ import { createElement } from './modules/dom';
     const urlObject = new URL(window.location.href)
 
     const url = urlObject.origin + urlObject.pathname
-    const identity = getCookie('neo_identity') || 'test'
-    const gid = getCookie('_gid') || 'test'
-    const uetsid = getCookie('_uetsid') || 'test'
-    const role = urlObject.searchParams.get('role') || 'test'
+    const identity = getCookie('neo_identity')
+    const gid = getCookie('_gid')
+    const uetsid = getCookie('_uetsid')
+    const role = urlObject.searchParams.get('role')
 
     postRequest(`${PERSONALISATION_API}/view`, { url, identity, gid, uetsid, role }, undefined, (res) => {
       res.messages.length && res.messages.forEach((message) => addMessage(message))
