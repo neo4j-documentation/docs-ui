@@ -8,10 +8,10 @@ export function jsonRequest (verb, url, data, accessToken, successCallback, erro
   }
   request.onload = function () {
     if (this.status >= 200 && this.status < 400) {
-      successCallback(JSON.parse(this.response))
+      successCallback && successCallback(JSON.parse(this.response))
     } else {
       // Response error
-      errorCallback(this.response)
+      errorCallback && errorCallback(this.response)
     }
   }
   request.onerror = function (e) {
