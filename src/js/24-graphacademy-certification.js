@@ -84,6 +84,13 @@ document.addEventListener('DOMContentLoaded', function () {
             return
           }
           if (marketoFormElement && typeof MktoForms2 !== 'undefined') {
+            // setTimeout is mandatory otherwise the redirect is rejected by classmarker :(
+            const redirectClassMarker = function (certificationId, formValues, userInfo) {
+              setTimeout(function () {
+                // eslint-disable-next-line max-len
+                window.location = 'https://www.classmarker.com/online-test/start/?quiz=' + certificationId + '&cm_user_id=' + userInfo.sub + '&cm_fn=' + formValues.FirstName + '&cm_ln=' + formValues.LastName + '&cm_e' + formValues.Email
+              }, 300)
+            }
             // User must register for the certification
             MktoForms2.loadForm('//go.neo4j.com', '710-RRC-335', marketoFormId, function (form) {
               // Add a text after the last name field
@@ -101,8 +108,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 if (certificationId === 'ndf5f6261a339fc4') {
                   GraphAcademy.checkNeo4j3xCertification(accessToken, function (certificationTaken) {
                     if (certificationTaken) {
-                      // eslint-disable-next-line max-len
-                      window.location = 'https://www.classmarker.com/online-test/start/?quiz=' + certificationId + '&cm_user_id=auth0|' + accessToken + '&cm_fn=' + userInfo.given_name + '&cm_ln=' + userInfo.family_name + '&cm_e' + userInfo.email
+                      redirectClassMarker(certificationId, values, userInfo)
                     } else {
                       showInfoMessage('You can only take the Neo4j 4.x certification if you’ve passed the Neo4j 3.x certification')
                     }
@@ -113,8 +119,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     courseActionsElement.dataset.status = 'loaded'
                   })
                 } else {
-                  // eslint-disable-next-line max-len
-                  window.location = 'https://www.classmarker.com/online-test/start/?quiz=' + certificationId + '&cm_user_id=auth0|' + accessToken + '&cm_fn=' + userInfo.given_name + '&cm_ln=' + userInfo.family_name + '&cm_e' + userInfo.email
+                  redirectClassMarker(certificationId, values, userInfo)
                 }
               })
             })
