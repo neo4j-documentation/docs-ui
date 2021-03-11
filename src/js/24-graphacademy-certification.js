@@ -84,7 +84,7 @@ document.addEventListener('DOMContentLoaded', function () {
             return
           }
           if (marketoFormElement && typeof MktoForms2 !== 'undefined') {
-            console.log('Student is not enrolled, showing a form to enroll')
+            // User must register for the certification
             MktoForms2.loadForm('//go.neo4j.com', '710-RRC-335', marketoFormId, function (form) {
               // Add a text after the last name field
               const lastNameFieldRowElement = document.getElementById('LblLastName').parentElement.parentElement.parentElement
@@ -97,7 +97,6 @@ document.addEventListener('DOMContentLoaded', function () {
               sumbitButtonElement.innerHTML = 'Get Certified'
               // Add an onSuccess handler
               form.onSuccess(function (values, _) {
-                // FIXME: check certification
                 // Check if the student took certification Neo4j 3.x
                 if (certificationId === 'ndf5f6261a339fc4') {
                   GraphAcademy.checkNeo4j3xCertification(accessToken, function (certificationTaken) {
@@ -108,7 +107,7 @@ document.addEventListener('DOMContentLoaded', function () {
                       showInfoMessage('You can only take the Neo4j 4.x certification if you’ve passed the Neo4j 3.x certification')
                     }
                   }, function (err) {
-                    console.info('Unable to check certification', err)
+                    console.log('Unable to check certification', err)
                     authenticatedStateElement.classList.add('is-hidden')
                     enrolledStateElement.classList.add('is-hidden')
                     courseActionsElement.dataset.status = 'loaded'
@@ -127,7 +126,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }
       },
       function (err) {
-        console.info('Unable to authenticate the user or the user is not authenticated', err)
+        console.log('Unable to authenticate the user or the user is not authenticated', err)
         authenticatedStateElement.classList.add('is-hidden')
         enrolledStateElement.classList.add('is-hidden')
         courseActionsElement.dataset.status = 'loaded'
