@@ -42,12 +42,6 @@ document.addEventListener('DOMContentLoaded', function () {
     errorMessageElement.innerHTML = errorMessage
   }
 
-  function showInfoMessage (infoMessage) {
-    courseActionsElement.dataset.status = 'info'
-    const errorMessageElement = courseActionsElement.querySelector('.info > p')
-    errorMessageElement.innerHTML = infoMessage
-  }
-
   let accessToken
   let userInfo
   const courseActionsElement = document.querySelector('.course-actions')
@@ -104,23 +98,7 @@ document.addEventListener('DOMContentLoaded', function () {
               sumbitButtonElement.innerHTML = 'Get Certified'
               // Add an onSuccess handler
               form.onSuccess(function (values, _) {
-                // Check if the student took certification Neo4j 3.x
-                if (certificationId === 'ndf5f6261a339fc4') {
-                  GraphAcademy.checkNeo4j3xCertification(accessToken, function (certificationTaken) {
-                    if (certificationTaken) {
-                      redirectClassMarker(certificationId, values, userInfo)
-                    } else {
-                      showInfoMessage('You can only take the Neo4j 4.x certification if you’ve passed the Neo4j 3.x certification')
-                    }
-                  }, function (err) {
-                    console.log('Unable to check certification', err)
-                    authenticatedStateElement.classList.add('is-hidden')
-                    enrolledStateElement.classList.add('is-hidden')
-                    courseActionsElement.dataset.status = 'loaded'
-                  })
-                } else {
-                  redirectClassMarker(certificationId, values, userInfo)
-                }
+                redirectClassMarker(certificationId, values, userInfo)
               })
             })
           }
