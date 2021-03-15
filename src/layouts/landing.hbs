@@ -8,27 +8,27 @@
 
 
 {{#if page.attributes.herotitle }}
- <section class="hero">
-  <div class="row">
-    <div class="columns medium-12">
+  <section class="hero">
+    <div class="row">
+      <div class="columns medium-12">
         {{#with page.attributes.herotitle}}
-        <h1>{{{this}}}</h1>
+          <h1>{{{this}}}</h1>
         {{/with}}
 
         {{#with page.attributes.herosubtitle}}
-        <p>{{ this }}</p>
+          <p>{{ this }}</p>
         {{/with}}
+      </div>
     </div>
-  </div>
-</section>
+  </section>
 {{/if}}
 
-    <main class="article">
-      <div class="content">
-{{> article}}
-{{> toc}}
-      </div>
-    </main>
+<main class="article">
+  <div class="content">
+    {{> article}}
+    {{> toc}}
+  </div>
+</main>
 
 {{> footer}}
   </body>
