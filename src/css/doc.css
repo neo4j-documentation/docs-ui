@@ -591,7 +591,7 @@ body {
   padding: 0;
 }
 
-.doc .admonitionblock .title,
+/* .doc .admonitionblock .title, */
 .doc .exampleblock .title,
 .doc .imageblock .title,
 .doc .literalblock .title,
@@ -606,6 +606,12 @@ body {
   letter-spacing: 0.01em;
   padding-bottom: 0.075rem;
   text-align: left;
+}
+
+.doc .admonitionblock .title {
+  font-weight: bold;
+  font-style: normal;
+  font-size: .8rem;
 }
 
 .doc .imageblock .title {
