@@ -15,14 +15,14 @@ document.addEventListener('DOMContentLoaded', function () {
       }
     })
 
-    bodyElement.querySelectorAll('body.training-certification > [data-action="signin"]').forEach(function (el) {
+    bodyElement.querySelectorAll('[data-action="signin"]').forEach(function (el) {
       el.onclick = function (event) {
         event.preventDefault()
         window.location = 'https://neo4j.com/accounts/login-b/?targetUrl=' + encodeURIComponent(siteUrl)
       }
     })
 
-    bodyElement.querySelectorAll('body.training-certification > [data-action="course-continue"]').forEach(function (el) {
+    bodyElement.querySelectorAll('[data-action="course-continue"]').forEach(function (el) {
       el.onclick = function (event) {
         event.preventDefault()
         if (certificationId && userInfo) {
