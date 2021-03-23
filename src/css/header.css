@@ -25,6 +25,10 @@ body {
   font-weight: var(--navbar-font-weight);
 }
 
+.navbar a.page-name{
+  color: #fff;
+  }
+
 .navbar a.no-left-padding {
   padding-left: 0;
 }
