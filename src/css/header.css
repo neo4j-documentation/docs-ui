@@ -25,7 +25,7 @@ body {
   font-weight: var(--navbar-font-weight);
 }
 
-.navbar a.page-name {
+.navbar a.page-name-white {
   color: #fff;
 }
 
