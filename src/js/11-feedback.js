@@ -80,6 +80,14 @@ const { getCookie } = require('./modules/cookies')
     feedback.querySelector('.cancel').addEventListener('click', function (e) {
       e.preventDefault()
 
+      if (window.mixpanel) {
+        window.mixpanel.track('DOCS_FEEDBACK_NEGATIVE', {
+          pathname: window.location.origin + window.location.pathname,
+          search: window.location.search,
+          hash: window.location.hash,
+        })
+      }
+
       reset()
     })
 
@@ -94,6 +102,14 @@ const { getCookie } = require('./modules/cookies')
 
       sendFeedback(false, reason, moreInformation)
       feedback.innerHTML = thankyou
+
+      if (window.mixpanel) {
+        window.mixpanel.track('DOCS_FEEDBACK_POSITIVE', {
+          pathname: window.location.origin + window.location.pathname,
+          search: window.location.search,
+          hash: window.location.hash,
+        })
+      }
     })
 
     feedback.querySelector('.secondary').addEventListener('click', function (e) {
@@ -104,6 +120,14 @@ const { getCookie } = require('./modules/cookies')
 
       sendFeedback(false, reason, moreInformation)
       feedback.innerHTML = thankyou
+
+      if (window.mixpanel) {
+        window.mixpanel.track('DOCS_FEEDBACK_SKIP', {
+          pathname: window.location.origin + window.location.pathname,
+          search: window.location.search,
+          hash: window.location.hash,
+        })
+      }
     })
   }
 

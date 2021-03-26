@@ -208,6 +208,18 @@ document.addEventListener('DOMContentLoaded', function () {
     loading.innerHTML = 'Initialising Driver&hellip;'
     button.disabled = true
 
+    if (window.mixpanel) {
+      window.mixpanel.track('DOCS_CODE_RUN_EXAMPLE', {
+        pathname: window.location.origin + window.location.pathname,
+        search: window.location.search,
+        hash: window.location.hash,
+        database,
+        mode,
+        language: 'cypher',
+        code: input,
+      })
+    }
+
     initDriver()
       .then(function (driver) {
         loading.innerHTML = 'Running Query&hellip;'
@@ -241,6 +253,18 @@ document.addEventListener('DOMContentLoaded', function () {
         button.disabled = false
         loading.innerHTML = ''
         footer.classList.add('has-results')
+
+        if (window.mixpanel) {
+          window.mixpanel.track('DOCS_CODE_RUN_ERROR', {
+            pathname: window.location.origin + window.location.pathname,
+            search: window.location.search,
+            hash: window.location.hash,
+            database,
+            mode,
+            code: input,
+            message: err.message,
+          })
+        }
 
         renderError(content, err)
       })

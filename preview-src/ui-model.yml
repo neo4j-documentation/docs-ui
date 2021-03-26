@@ -190,3 +190,5 @@ asciidoc:
       - name: Neosemantics
         url: https://neo4j.com/labs/neosemantics
       - name: Documentation
+    page-mixpanel: ef1696f0a9c88563894dcba2019a9bef
+    mixpanel: ef1696f0a9c88563894dcba2019a9bef

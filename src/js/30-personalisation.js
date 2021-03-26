@@ -10,9 +10,21 @@ import { createElement } from './modules/dom';
   const PERSONALISATION_API = 'https://neo4j-personalisation.netlify.app'
   const OTHER = '_other_'
 
-  const addMessage = (message) => {
-    if (message.type !== 'question') return
+  const handleMessage = (message) => {
+    switch (message.type) {
+      case 'question':
+        addQuestion(message)
+        break
 
+      case 'message':
+        addMessage(message)
+        break
+    }
+  }
+
+  const addMessage = (message) => {}
+
+  const addQuestion = (message) => {
     const doc = document.querySelector('.doc')
 
     const header = createElement('div', 'header question', [
@@ -125,7 +137,7 @@ import { createElement } from './modules/dom';
     const role = urlObject.searchParams.get('role')
 
     postRequest(`${PERSONALISATION_API}/view`, { url, identity, gid, uetsid, role }, undefined, (res) => {
-      res.messages.length && res.messages.forEach((message) => addMessage(message))
+      res.messages.length && res.messages.forEach((message) => handleMessage(message))
     }, () => { })
   })
 })()

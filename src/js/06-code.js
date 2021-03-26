@@ -70,6 +70,16 @@ document.addEventListener('DOMContentLoaded', function () {
 
     document.execCommand('copy')
     document.body.removeChild(textarea)
+
+    if (window.mixpanel) {
+      window.mixpanel.track('DOCS_CODE_COPY', {
+        pathname: window.location.origin + window.location.pathname,
+        search: window.location.search,
+        hash: window.location.hash,
+        language,
+        code: textarea.value,
+      })
+    }
   }
 
   function capitalizeFirstLetter (string) {
@@ -152,6 +162,16 @@ document.addEventListener('DOMContentLoaded', function () {
         e.preventDefault()
 
         window.location.href = 'neo4j-desktop://graphapps/neo4j-browser?cmd=edit&arg=' + encodeURIComponent(cleanCode(code))
+
+        if (window.mixpanel) {
+          window.mixpanel.track('DOCS_CODE_RUN_IN_BROWSER', {
+            pathname: window.location.origin + window.location.pathname,
+            search: window.location.search,
+            hash: window.location.hash,
+            language,
+            code: cleanCode(code),
+          })
+        }
       })
 
       children.push(runButton)

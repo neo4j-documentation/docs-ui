@@ -80,6 +80,16 @@ document.addEventListener('DOMContentLoaded', function () {
     if (sessionStorageAvailable) {
       window.sessionStorage.setItem('code_example_language', lang)
     }
+
+    if (window.mixpanel) {
+      window.mixpanel.track('DOCS_TAB_CHANGE', {
+        pathname: window.location.origin + window.location.pathname,
+        search: window.location.search,
+        hash: window.location.hash,
+        language: lang,
+        title,
+      })
+    }
   }
 
   //
