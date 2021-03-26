@@ -106,7 +106,7 @@ section.hero p {
 /**
  * Landing Preamble - button and angled borders
  */
-body.landing .buttons {
+body.landing .ulist.buttons {
   line-height: 1;
   margin: -1rem 0 0;
   text-align: center;
@@ -114,23 +114,23 @@ body.landing .buttons {
   display: block;
 }
 
-body.landing .buttons > :first-child {
+body.landing .ulist.buttons > :first-child {
   padding-top: 2rem;
 }
 
-body.landing .buttons > :last-child {
+body.landing .ulist.buttons > :last-child {
   /* 40px is the height of the clip-path */
   padding-bottom: calc(1rem + 40px);
 }
 
-body.landing .buttons::before {
+body.landing .ulist.buttons::before {
   content: " ";
   display: block;
   height: 40px;
   clip-path: polygon(100% 0, 0% calc(100% + 1px), 100% calc(100% + 1px));
 }
 
-body.landing .buttons::after {
+body.landing .ulist.buttons::after {
   content: " ";
   display: block;
   height: 40px;
@@ -138,24 +138,24 @@ body.landing .buttons::after {
   clip-path: polygon(100% 0, 0 calc(100% + 1px), 100% calc(100% + 1px));
 }
 
-body.landing .buttons p {
+body.landing .ulist.buttons p {
   font-size: 1rem !important;
   display: inline;
   padding: 0;
   line-height: 1;
 }
 
-body.landing .buttons ul {
+body.landing .ulist.buttons ul {
   padding: 0;
 }
 
-body.landing .buttons li {
+body.landing .ulist.buttons li {
   list-style-type: none;
   display: block;
   margin: 0 0 1rem;
 }
 
-body.landing .buttons li a {
+body.landing .ulist.buttons li a {
   display: inline-block;
   margin: 0 0.25rem;
   background: var(--colour-grey-800);
@@ -167,11 +167,11 @@ body.landing .buttons li a {
 }
 
 @media all and (min-width: 760px) {
-  body.landing .buttons li {
+  body.landing .ulist.buttons li {
     display: inline-block;
   }
 
-  body.landing .buttons li a {
+  body.landing .ulist.buttons li a {
     display: inline-block;
   }
 }
