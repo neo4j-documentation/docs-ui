@@ -119,10 +119,13 @@ var colorFor = function (node) {
 }
 
 var captionFor = function (d) {
+  // if it has an explicit name, use it!
+  if (d.name) {
+    return d.name
+  }
   for (let i = 0; i < d.labels.length; i++) {
     if (customCaptions[d.labels[i]]) return customCaptions[d.labels[i]](d)
   }
-
   return d.id
 }
 

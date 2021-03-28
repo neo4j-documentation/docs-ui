@@ -177,6 +177,12 @@ page:
     - content: Edit & Run Cypher
       url: edit-run-cypher.html
       urlType: internal
+    - content: GraphGists
+      url: graph-gist-index.html
+      urlType: internal
+    - content: Star Wars Social Network
+      url: graph-gist-star-wars-social-network.html
+      urlType: internal
 
 asciidoc:
   attributes:

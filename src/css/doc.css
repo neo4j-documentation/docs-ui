@@ -653,6 +653,10 @@ body {
 }
 
 /* NEEDS REVIEW prevent pre in table from causing article to exceed bounds */
+.doc .listingblock.hidden {
+  display: none;
+}
+
 .doc .tableblock pre,
 .doc .listingblock.wrap pre {
   white-space: pre-wrap;
