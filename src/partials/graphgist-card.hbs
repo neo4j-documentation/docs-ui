@@ -1,0 +1,36 @@
+<div class="graphgist-card">
+  <a href="{{@root.page.attributes.canonical-root}}{{this.pub.url}}">
+    {{#with (or this.asciidoc.attributes.page-illustration "https://dist.neo4j.com/wp-content/uploads/20160303103313/noun_22440-grey-02.png")}}
+      <div class="graphgist-illustration" style="background-image: url('{{{this}}}')"></div>
+    {{/with}}
+  </a>
+  <div class="graphgist-content">
+    <h3><a href="{{@root.page.attributes.canonical-root}}{{this.pub.url}}">{{this.title}}</a></h3>
+    <dl class="graphgist-info">
+      {{#with this.asciidoc.attributes.page-author}}
+        <dt>Author</dt>
+        <dd>{{this}}</dd>
+      {{/with}}
+      {{#if this.asciidoc.attributes.page-industries}}
+        <dt>Industries</dt>
+        <dd>
+          <ul class="graphgist-industries">
+            {{#each this.asciidoc.attributes.page-industries}}
+              <li><a href="{{{relativize pub.url}}}">{{name}}</a></li>
+            {{/each}}
+          </ul>
+        </dd>
+      {{/if}}
+      {{#if this.asciidoc.attributes.page-usecases}}
+        <dt>Use Cases</dt>
+        <dd>
+          <ul class="graphgist-use-cases">
+            {{#each this.asciidoc.attributes.page-usecases}}
+              <li><a href="{{{relativize pub.url}}}">{{name}}</a></li>
+            {{/each}}
+          </ul>
+        </dd>
+      {{/if}}
+    </dl>
+  </div>
+</div>

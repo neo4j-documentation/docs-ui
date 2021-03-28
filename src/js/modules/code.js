@@ -21,7 +21,7 @@ export function cleanCode (code, language) {
 export function convert (value) {
   if (Array.isArray(value)) {
     return value.map(function (item) { return convert(item) })
-  } else if (window.neo4j.isInt(value)) {
+  } else if (window.neo4j && typeof window.neo4j.isInt === 'function' && window.neo4j.isInt(value)) {
     return value.toNumber()
   } else if (typeof value === 'object' && value !== null) {
     return Object.fromEntries(Object.keys(value).map(function (key) {
