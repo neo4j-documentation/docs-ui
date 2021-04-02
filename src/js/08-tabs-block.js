@@ -23,6 +23,9 @@ document.addEventListener('DOMContentLoaded', function () {
       case 'write':
         cased = capitalizeFirstLetter(lang) + ' mode'
         break
+      case 'macos':
+        cased = 'macOS'
+        break
       default:
         cased = capitalizeFirstLetter(lang)
     }
@@ -93,26 +96,31 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   //
-  // Tabbed sections in the drivers manual
+  // Tabbed sections
   //
 
-  var defaultLang = 'dotnet'
-
-  var driverLangs = ['dotnet', 'go', 'java', 'javascript', 'python']
   var gdsModes = ['train', 'stream', 'stats', 'mutate', 'write']
+  var tabsList = []
+  var tabMarker = 'include-with-'
+  document.querySelectorAll('[class*="'+tabMarker+'"]').forEach(function (tab) {
+    tab.classList.forEach(function(tabClass) {
+      var tabbable = tabClass.replace(tabMarker,'')
+      if (tabClass.startsWith(tabMarker) && tabsList.indexOf(tabbable) === -1) tabsList.push(tabbable)
+    })
+  })
 
-  var langList = driverLangs.concat(gdsModes)
+  var defaultLang = 'dotnet'
 
   var currentLanguage = defaultLang
   if (sessionStorageAvailable) {
     var searchParams = new URLSearchParams(window.location.search)
     var languageFromParams = searchParams.get('language')
-    if (languageFromParams && langList.includes(languageFromParams.toLocaleLowerCase())) {
+    if (languageFromParams && tabsList.includes(languageFromParams.toLocaleLowerCase())) {
       currentLanguage = languageFromParams.toLocaleLowerCase()
       window.sessionStorage.setItem('code_example_language', currentLanguage)
     } else {
       var storedLanguage = window.sessionStorage.getItem('code_example_language')
-      if (storedLanguage && langList.includes(storedLanguage)) {
+      if (storedLanguage && tabsList.includes(storedLanguage)) {
         currentLanguage = storedLanguage
       }
     }
@@ -129,7 +137,8 @@ document.addEventListener('DOMContentLoaded', function () {
       var showSingle = false
 
       // add sections for each language from driver manual html output format
-      langList.forEach(function (lang) {
+      tabsList.forEach(function (lang) {
+        console.log('checking '+lang)
         tab.querySelectorAll('.include-with-' + lang).forEach(function (block) {
           block.setAttribute('data-title', lang)
           block.setAttribute('data-lang', lang)
