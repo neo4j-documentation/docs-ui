@@ -102,9 +102,9 @@ document.addEventListener('DOMContentLoaded', function () {
   var gdsModes = ['train', 'stream', 'stats', 'mutate', 'write']
   var tabsList = []
   var tabMarker = 'include-with-'
-  document.querySelectorAll('[class*="'+tabMarker+'"]').forEach(function (tab) {
-    tab.classList.forEach(function(tabClass) {
-      var tabbable = tabClass.replace(tabMarker,'')
+  document.querySelectorAll('[class*="' + tabMarker + '"]').forEach(function (tab) {
+    tab.classList.forEach(function (tabClass) {
+      var tabbable = tabClass.replace(tabMarker, '')
       if (tabClass.startsWith(tabMarker) && tabsList.indexOf(tabbable) === -1) tabsList.push(tabbable)
     })
   })
@@ -138,7 +138,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
       // add sections for each language from driver manual html output format
       tabsList.forEach(function (lang) {
-        console.log('checking '+lang)
+        console.log('checking ' + lang)
         tab.querySelectorAll('.include-with-' + lang).forEach(function (block) {
           block.setAttribute('data-title', lang)
           block.setAttribute('data-lang', lang)
