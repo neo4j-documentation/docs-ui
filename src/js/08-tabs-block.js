@@ -138,7 +138,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
       // add sections for each language from driver manual html output format
       tabsList.forEach(function (lang) {
-        console.log('checking ' + lang)
         tab.querySelectorAll('.include-with-' + lang).forEach(function (block) {
           block.setAttribute('data-title', lang)
           block.setAttribute('data-lang', lang)
