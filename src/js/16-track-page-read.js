@@ -5,6 +5,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
   const handleFooterInViewport = () => {
     const bounding = document.querySelector('footer.footer').getBoundingClientRect()
+    document.querySelector('body').classList.add('read')
 
     if (bounding.top <= (window.innerHeight || document.documentElement.clientHeight)) {
       window.mixpanel.track('DOCS_PAGE_READ', {
@@ -12,7 +13,6 @@ document.addEventListener('DOMContentLoaded', function () {
         search: window.location.search,
         hash: window.location.hash,
         ms: Math.abs(new Date() - loaded),
-
       })
 
       document.removeEventListener('scroll', handleFooterInViewport)
