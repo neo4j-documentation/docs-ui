@@ -247,7 +247,7 @@ body.developer .toc-menu li a::before {
   background-color: var(--colour-grey-500);
 }
 
-.developer .navbar-brand #neo4j {
+.developer .navbar-brand #neo4j-group {
   fill: var(--colour-white);
 }
 
@@ -360,7 +360,7 @@ body.kb .search .search-container .search-form {
   fill: var(--colour-grey-400);
 }
 
-.kb .navbar-brand #neo4j {
+.kb .navbar-brand #neo4j-group {
   fill: var(--colour-white);
 }
 
@@ -379,6 +379,6 @@ body.training .search .search-container .search-form {
   fill: var(--colour-grey-400);
 }
 
-.training .navbar-brand #neo4j {
+.training .navbar-brand #neo4j-group {
   fill: var(--colour-white);
 }

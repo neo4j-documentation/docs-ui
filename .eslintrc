@@ -8,6 +8,7 @@
       "imports": "always-multiline",
       "exports": "always-multiline"
     }],
+    "brace-style": ["warn", "1tbs", { "allowSingleLine": true }],
     "max-len": [1, 160, 2],
     "spaced-comment": "off"
   }
