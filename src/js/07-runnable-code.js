@@ -15,5 +15,5 @@ document.addEventListener('DOMContentLoaded', function () {
 
   if (!runnableElements.length || !window.neo4j) return
 
-  runnableElements.map(runnable)
+  runnableElements.map((el) => runnable(el))
 })
