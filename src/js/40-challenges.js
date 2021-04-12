@@ -55,8 +55,7 @@ document.addEventListener('DOMContentLoaded', function () {
           segment = createElement('span', 'text-node', [
             document.createTextNode(` ${segment.textContent} `),
           ])
-        }
-        else if (segment.classList.contains('hljs-number')) {
+        } else if (segment.classList.contains('hljs-number')) {
           // Add padding to a number
           segment.innerHTML = ' ' + segment.innerHTML + ' '
         }
