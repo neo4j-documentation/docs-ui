@@ -16,6 +16,9 @@
     {{#with page.attributes.product}}
     <meta property="neo:product" content="{{{this}}}">
     {{/with}}
+    {{#with page.attributes.manualtype}}
+    <meta property="neo:manual-type" content="{{{this}}}">
+    {{/with}}
 
     {{!-- OG Tags--}}
     <meta property="og:site_name" content="Neo4j Graph Database Platform" />
