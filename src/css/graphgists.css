@@ -149,17 +149,6 @@ body.graphgist .graphgist-metadata dt {
   padding: 0;
 }
 
-
-/* .graphgist-metadata-menu {
-  margin: 0 -1rem;
-  padding: 1rem;
-  border-left: 4px solid var(--doc-font-color);
-  border-radius: 0.25rem;
-  background-color: var(--colour-blue-200);
-  color: var(--colour-blue-900);
-  border-left-color: var(--colour-blue-600);
-} */
-
 .graphgist-metadata-menu ul {
   padding: 0;
   list-style: none;
@@ -169,24 +158,4 @@ body.graphgist .graphgist-metadata dt {
 
 .graphgist-metadata-menu ul > li:not(:last-child) {
   margin-right: 1rem;
-}
-
-
-body.kb-article .breadcrumbs {
-  padding: 0;
-}
-
-body.graphgist .breadcrumbs {
-  padding: 0;
-}
-body.graphgist .breadcrumbs ul {
-  padding: 0 !important;
-  margin-bottom: 0.2rem;
-  font-size: 0.8rem;
-}
-body.graphgist .breadcrumbs ul li a {
-  font-weight: 200;
-}
-body.graphgist .breadcrumbs ul li a:after {
-  display: none;
 }

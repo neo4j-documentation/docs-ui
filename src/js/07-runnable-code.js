@@ -13,7 +13,14 @@ document.addEventListener('DOMContentLoaded', function () {
   // Runnable Cypher blocks (Experimental)
   var runnableElements = Array.from(document.querySelectorAll('.runnable'))
 
-  if (!runnableElements.length || !window.neo4j) return
+  const blocksUsingNeo4jJavaScriptDriver = runnableElements.filter((block) => !block.className.includes('backend:graphgist'))
+  if (blocksUsingNeo4jJavaScriptDriver.length && (!window.neo4j || !window.neo4j.driver)) {
+    // use :page-includedriver: attribute in your AsciiDoc document to include the Neo4j driver
+    console.warn('Neo4j driver is not loaded, unable to run Cypher queries...')
+    return
+  }
+  // no runnable block, skipping.
+  if (runnable.length === 0) return
 
   runnableElements.map((el) => runnable(el))
 })

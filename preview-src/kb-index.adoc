@@ -3,3 +3,4 @@
 :page-layout: kb-index
 :page-theme: kb
 :page-component: kb
+:page-slug: kb
