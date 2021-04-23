@@ -92,14 +92,14 @@ body.graphgists .graphgist-card .graphgist-content h3 {
 
 body.graphgists .graphgist-card dl.graphgist-info > dd {
   padding: 0;
-  margin: 0 0 .5rem;
+  margin: 0 0 0.5rem;
   color: var(--colour-grey-600);
 }
 
 body.graphgists .graphgist-card dl.graphgist-info > dt {
   color: var(--colour-grey-500);
   text-transform: uppercase;
-  font-size: .8rem;
+  font-size: 0.8rem;
 }
 
 body.graphgists .graphgist-card dl.graphgist-info > dt::after {
@@ -171,7 +171,6 @@ body.graphgist .graphgist-metadata dt {
   margin-right: 1rem;
 }
 
-
 .graphgist-navigation {
   max-width: 680px;
   margin: auto;
@@ -179,6 +178,7 @@ body.graphgist .graphgist-metadata dt {
   flex-direction: row;
   justify-content: center;
 }
+
 .graphgist-navigation .has-dropdown {
   background-color: var(--colour-grey-800);
   display: inline-block;
@@ -187,6 +187,7 @@ body.graphgist .graphgist-metadata dt {
   margin: 0 1rem;
   padding: 1rem 2rem;
 }
+
 .graphgist-navigation .has-dropdown:hover {
   background-color: var(--colour-grey-700);
 }
@@ -194,7 +195,7 @@ body.graphgist .graphgist-metadata dt {
 .graphgist-navigation .has-dropdown h3 {
   color: var(--colour-white);
   font-size: 1rem;
-  margin: 0 .5rem 0 0;
+  margin: 0 0.5rem 0 0;
 }
 
 .graphgist-navigation .has-dropdown .dropdown {
@@ -207,7 +208,7 @@ body.graphgist .graphgist-metadata dt {
   margin-top: 8px;
   margin-left: -140px;
   width: 280px;
-  padding: .5rem  .5rem  .5rem 0 !important;
+  padding: 0.5rem  0.5rem  0.5rem 0 !important;
   text-align: left;
   z-index: 5000;
   box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
@@ -219,7 +220,6 @@ body.graphgist .graphgist-metadata dt {
 .graphgist-navigation .has-dropdown:hover .dropdown {
   display: block;
 }
-
 
 .graphgist-navigation .has-dropdown::after {
   border-width: 0 0 1px 1px;
@@ -244,7 +244,7 @@ body.graphgist .graphgist-metadata dt {
   top: 100%;
   left: 50%;
   /* margin-top: -0.6rem; */
-  margin-left: -0 .5rem;
+  margin-left: -0 0.5rem;
   z-index: 1;
   width: 0;
   height: 0;
@@ -273,16 +273,17 @@ body.landing .graphgist-navigation .has-dropdown .dropdown li {
 }
 
 body.landing .graphgist-navigation .has-dropdown .dropdown li:last-child {
-  border-bottom: 0px none;
+  border-bottom: 0 none;
 }
 
 body.landing .graphgist-navigation .has-dropdown .dropdown a {
   display: block;
-  padding: .75rem .5rem;
+  padding: 0.75rem 0.5rem;
   font-weight: normal;
   background-color: transparent;
   color: var(--colour-grey-800);
 }
+
 body.landing .graphgist-navigation .has-dropdown .dropdown a:hover {
   color: var(--colour-green-800);
   background-color: transparent;
