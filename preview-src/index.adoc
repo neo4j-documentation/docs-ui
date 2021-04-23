@@ -7,7 +7,7 @@ Author Name
 :page-pagination:
 :page-disabletracking:
 // tag::theme[]
-:page-theme: developer
+:page-theme: docs
 // end::theme[]
 // tag::search[]
 :page-type: knowledgebase

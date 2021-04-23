@@ -1,6 +1,7 @@
 #search_open {
   display: flex;
   font-weight: 400;
+  padding-right: 0;
 }
 
 @media all and (max-width: 1024px) {
