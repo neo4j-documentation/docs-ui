@@ -1,7 +1,50 @@
-<section class="hero">
-  <div class="row">
-    <div class="columns medium-12">
-      <h1>GraphGists</h1>
+<div class="sect1 hero">
+  <h2 id="_neo4j_developer_resources"><a class="anchor" href="/graphgists/"></a>GraphGists
+  </h2>
+  <div class="sectionbody">
+    {{#if (eq page.attributes.layout 'graphgist-index')}}
+    <div class="paragraph">
+      <p>Use case and industry specific graph examples designed to inspire you towards your Graph epiphany.</p>
     </div>
+    {{/if}}
+
+    <nav class="ulist buttons">
+      <div class="graphgist-navigation-wrapper">
+        <div class="graphgist-navigation">
+          <div class="has-dropdown">
+            <h3>Explore By Use Case</h3>
+
+            <ul class="dropdown">
+              {{#with page.attributes.use-cases}}
+              {{#each this}}
+              <li>
+                <a href="#">
+                  <img src="{{{this.imageUrl}}}" alt="{{this.name}}">
+                  <span class="graphgist-use-case">{{this.name}}</span>
+                </a>
+              </li>
+              {{/each}}
+              {{/with}}
+            </ul>
+          </div>
+          <div class="has-dropdown">
+            <h3>Explore By Industry</h3>
+
+            <ul class="dropdown">
+              {{#with page.attributes.industries}}
+              {{#each this}}
+              <li>
+                <a href="#">
+                  <img src="{{{this.imageUrl}}}" alt="{{this.name}}">
+                  <span class="graphgist-use-case">{{this.name}}</span>
+                </a>
+              </li>
+              {{/each}}
+              {{/with}}
+            </ul>
+          </div>
+        </div>
+      </div>
+    </nav>
   </div>
-</section>
+</div>

@@ -72,7 +72,7 @@ section.hero p {
 }
 
 .landing .doc .sect1.hero {
-  padding-bottom: 0;
+  padding-bottom: 0 !important;
 }
 
 .landing .doc h1 {
@@ -175,6 +175,7 @@ body.landing .ulist.buttons li a {
     display: inline-block;
   }
 }
+
 
 .landing .clearfix {
   clear: both;

@@ -7,24 +7,21 @@
 
 <body class="article landing graphgists{{#with (or asciidoc.attributes.role page.role)}} {{{this}}}{{/with}}{{#with (or page.attributes.theme "developer")}} {{{this}}}{{/with}}">
 {{> header}}
-{{> graphgists-header}}
+
 
 <main class="article">
   <div class="content">
     <article class="doc">
-      <div class="sect1 leading secondary">
-        <h2 id="_introduction"><a class="anchor" href="#_introduction"></a>Introduction</h2>
+      {{> graphgists-header}}
+
+      <div class="sect1 secondary leading">
+        <h2>Featured GraphGists</h2>
         <div class="sectionbody">
-          <div class="imageblock left">
-            <div class="content">
-              <img src="https://dist.neo4j.com/wp-content/uploads/20160303101829/noun_22440-green-02.png" alt="noun 22440 green 02" class="medium-zoom-image">
-            </div>
-          </div>
-          <div class="paragraph">
-            <p>Building a graph of your data is fairly simple as the graph structure represents the real world much better than columns and rows of data.
-              GraphGists are teaching tools which allow you to explore how data in a particular domain would be modeled as a graph and see some example queries of that graph data.
-              Any developer can create a GraphGist by visiting <a href="https://portal.graphgist.org" class="bare external">https://portal.graphgist.org</a>.</p>
-          </div>
+          <ul class="graphgists">
+            {{#each page.attributes.featured-pages}}
+              <li>{{> graphgist-card }}</li>
+            {{/each}}
+          </ul>
         </div>
       </div>
 
@@ -34,7 +31,7 @@
           <ul class="use-cases">
           {{#each page.attributes.use-cases}}
             <li>
-              <img src="{{{this.imageUrl}}}">
+              <img src="{{{this.imageUrl}}}" alt="{{this.name}}">
               <a href="{{{relativize pub.url}}}"> <span>{{this.name}}</span></a>
             </li>
           {{/each}}
@@ -48,22 +45,28 @@
           <ul class="industries">
           {{#each page.attributes.industries}}
             <li>
-              <img src="{{{this.imageUrl}}}">
+              <img src="{{{this.imageUrl}}}" alt="{{this.name}}">
               <a href="{{{relativize pub.url}}}"> <span>{{this.name}}</span></a>
             </li>
           {{/each}}
           </ul>
         </div>
       </div>
-
       <div class="sect1">
-        <h2>Featured GraphGists</h2>
+        <h2>Create your own GraphGist</h2>
         <div class="sectionbody">
-          <ul class="graphgists">
-            {{#each page.attributes.featured-pages}}
-              <li>{{> graphgist-card }}</li>
-            {{/each}}
-          </ul>
+          <div class="paragraph">
+            <p>
+              Any developer can contribute their own GraphGist.
+              You can create your own now by visiting the
+              <a href="https://portal.graphgist.org" target="_blank">GraphGist Portal</a>.
+            </p>
+          </div>
+          <div class="paragraph">
+            <p>
+              <a href="https://portal.graphgist.org" class="button" target="_blank">Create a GraphGist now</a>.
+            </p>
+          </div>
         </div>
       </div>
     </article>
