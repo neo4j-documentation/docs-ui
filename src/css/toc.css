@@ -3,6 +3,11 @@
   margin-bottom: 2rem;
 }
 
+.toc.sidebar {
+  padding-right: 1rem;
+  position: relative;
+}
+
 .toc.sidebar .toc-menu {
   margin-right: 0.75rem;
   position: sticky;

@@ -5,6 +5,26 @@ From 4.2 on, the Drivers Manual is split into a separate manual per language.
 
 GDS also uses tabs, but they have a different list of tab separators. Rather than tab on languages, they tab on modes (mutate, stats, stream, train, write) and output tab text as _<mode> mode_ eg _Stream mode_.
 
+[.tabbed-example]
+====
+[.include-with-macos]
+======
+Tab for macOS
+======
+[.include-with-linux]
+======
+Tab for Linux
+======
+[.include-with-windows]
+======
+Tab for Linux
+======
+[.include-with-whatever]
+======
+Tab for whatever
+======
+====
+
 == Example drivers manual content
 
 .Acquire the driver

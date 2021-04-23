@@ -61,8 +61,8 @@ footer.footer {
 
 footer .logo-footer {
   margin-bottom: 25px;
-  height: 40px;
-  background: url(../img/neo4j-logo-white.svg) no-repeat;
+  height: 34px;
+  background: url(https://dist.neo4j.com/wp-content/uploads/20210422201812/neo4j-logo-2020-white.svg) no-repeat;
 }
 
 .footer h2 {

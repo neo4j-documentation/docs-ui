@@ -1,32 +1,26 @@
-    {{!-- Add additional meta tags here --}}
-    <meta name="type" content="{{{ or page.attributes.type 'Developer Guide' }}}">
-    {{#with page.attributes.product}}
-    <meta name="product" content="{{{this}}}">
-    {{/with}}
-    {{#with page.attributes.neo4jversion}}
-    <meta name="neo4j-version" content="{{{this}}}">
-    {{/with}}
 
-    {{#with page.attributes.feedback}}
-    <meta name="feedback" content="{{{this}}}">
-    {{/with}}
 
-    {{!-- Swiftype --}}
-    <meta class="swiftype" name="post-type" data-type="enum" content="{{{ or (or page.attributes.search-type page.attributes.type) 'Developer Guide' }}}">
-    <meta class="swiftype" name="neo4j-site" data-type="enum" content="{{{ or page.attributes.search-site 'Developer Site' }}}">
-    <meta class="swiftype" name="main-search-priority" data-type="integer" content="3">
+    {{!-- Search --}}
+    <meta property="neo:type" content="{{{ or (or page.attributes.search-type page.attributes.type) 'Developer Guide' }}}">
+    <meta property="neo:site" content="{{{ or page.attributes.search-site 'Developer Site' }}}">
+
     {{#with page.attributes.environment}}
-    <meta class="swiftype" name="environment" data-type="string" content="{{{this}}}">
+    <meta property="neo:environment" content="{{{this}}}">
     {{/with}}
     {{#with page.attributes.programminglanguage}}
-    <meta class="swiftype" name="programming-language" data-type="string" content="{{{this}}}">
+    <meta property="neo:programming-language" content="{{{this}}}">
     {{/with}}
     {{#with page.attributes.neo4jversion}}
-    <meta class="swiftype" name="neo4j-version" data-type="string" content="{{{this}}}">
+    <meta property="neo:version" content="{{{this}}}">
     {{/with}}
     {{#with page.attributes.product}}
-    <meta class="swiftype" name="product" data-type="string" content="{{{this}}}">
+    <meta property="neo:product" content="{{{this}}}">
     {{/with}}
+    {{#with page.attributes.manualtype}}
+    <meta property="neo:manual-type" content="{{{this}}}">
+    {{/with}}
+
+    {{!-- OG Tags--}}
     <meta property="og:site_name" content="Neo4j Graph Database Platform" />
     <meta property="article:publisher" content="https://www.facebook.com/neo4j.graph.database" />
     {{#unless page.attributes.player}}

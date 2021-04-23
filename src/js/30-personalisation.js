@@ -35,7 +35,10 @@ import { createElement } from './modules/dom';
       ]),
     ])
 
-    header.innerHTML += '<svg width="14px" height="22px" viewBox="0 0 22 22" role="button" class="cancel" aria-label="Cancel Feedback"><line x1="19.5833333" y1="0.416666667" x2="0.416666667" y2="19.5833333" ></line><line x1="19.5833333" y1="19.5833333" x2="0.416666667" y2="0.416666667" ></line></svg>'
+    header.innerHTML += `<svg width="14px" height="22px" viewBox="0 0 22 22" role="button" class="cancel" aria-label="Cancel Feedback">
+      <line x1="19.5833333" y1="0.416666667" x2="0.416666667" y2="19.5833333" ></line>
+      <line x1="19.5833333" y1="19.5833333" x2="0.416666667" y2="0.416666667" ></line>
+    </svg>`
 
     const options = createElement('div', 'options', message.options.map((option) => {
       const radio = document.createElement('input')
@@ -86,7 +89,10 @@ import { createElement } from './modules/dom';
     const close = () => doc.removeChild(container)
     const success = () => {
       container.classList.add('positive')
-      container.innerHTML = '<div class="header thank-you-positive"><p><strong>Thank you for your feedback!</strong></p><p>We will use this information to help personalise your experience.</p>'
+      container.innerHTML = `<div class="header thank-you-positive">
+        <p><strong>Thank you for your feedback!</strong></p>
+        <p>We will use this information to help personalise your experience.</p>
+      </div>`
     }
 
     container.querySelectorAll('.cancel, .skip').forEach((el) => el.addEventListener('click', (e) => {

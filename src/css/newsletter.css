@@ -1,0 +1,63 @@
+.newsletter {
+  background: var(--colour-blue-200);
+  border-radius: 0.5rem;
+  color: var(--colour-blue-700);
+  font-size: calc(14 / var(--rem-base) * 1rem);
+  padding: 1rem;
+}
+
+.newsletter h2 {
+  font-size: calc(16 / var(--rem-base) * 1rem);
+  font-weight: var(--body-font-weight-bold);
+  line-height: 1.5;
+  margin: 0;
+  color: var(--colour-blue-800);
+}
+
+.newsletter p {
+  margin: 0.25rem 0;
+}
+
+.newsletter label {
+  color: var(--colour-blue-700);
+}
+
+.newsletter .mktoOffset,
+.newsletter .mktoGutter,
+.newsletter .mktoForm .mktoRequiredField .mktoAsterix {
+  display: none !important;
+}
+
+.newsletter .mktoForm input {
+  outline: none;
+  margin: 0 !important;
+  border: 1px solid var(--colour-blue-300) !important;
+  border-radius: 0.25rem !important;
+  background: var(--colour-blue-100) !important;
+  color: var(--colour-blue-800) !important;
+}
+
+.newsletter .mktoLogicalField {
+  padding: 0 !important;
+}
+
+.newsletter .mktoLogicalField label {
+  width: 100% !important;
+}
+
+.newsletter .mktoForm div.mktoButtonRow {
+  width: 100%;
+}
+
+.newsletter .mktoForm .mktoButtonWrap.mktoSimple .mktoButton {
+  background: var(--colour-blue-800) !important;
+  color: var(--colour-blue-100) !important;
+  width: 100% !important;
+  border-radius: 0.25rem !important;
+  border: 0 none;
+}
+
+.toc .newsletter {
+  position: absolute;
+  bottom: 6rem;
+}
