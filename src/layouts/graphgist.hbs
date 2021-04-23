@@ -1,74 +1,93 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   {{> head defaultPageTitle='Untitled'}}
 </head>
-<body class="article graphgist{{#with (or asciidoc.attributes.role page.role)}} {{{this}}}{{/with}}{{#with (or page.attributes.theme "developer")}} {{{this}}}{{/with}}">
 
-{{> header}}
-{{> graphgists-header}}
+<body
+  class="article graphgist{{#with (or asciidoc.attributes.role page.role)}} {{{this}}}{{/with}}{{#with (or page.attributes.theme "
+  developer")}} {{{this}}}{{/with}}">
 
-<main class="article">
-  <div class="content">
-    <article class="doc">
-      <div class="sect1">
-        <div class="sectionbody">
-          {{> breadcrumbs}}
-          <h1 class="page">{{#with (or page.title page.attributes.title)}}{{{this}}}{{/with}}</h1>
-          <aside class="graphgist-metadata">
-            <dl>
-              {{#with page.attributes.author}}
+  {{> header}}
+  {{> graphgists-header}}
+
+  <main class="article">
+    <div class="content">
+      <article class="doc">
+        <div class="sect1">
+          <div class="sectionbody">
+            {{> breadcrumbs}}
+            <h1 class="page">{{#with (or page.title page.attributes.title)}}{{{this}}}{{/with}}</h1>
+            <aside class="graphgist-metadata">
+              <dl>
+                {{#with page.attributes.author}}
                 <dt>Author</dt>
                 <dd>{{this}}</dd>
-              {{/with}}
-              {{#with page.attributes.industries}}
+                {{/with}}
+                {{#with page.attributes.industries}}
                 <dt>Industries</dt>
                 <dd>
                   {{#each this}}
-                    <span class="graphgist-industry">{{this.name}}</span>
+                  <span class="graphgist-industry">{{this.name}}</span>
                   {{/each}}
                 </dd>
-              {{/with}}
-              {{#with page.attributes.usecases}}
+                {{/with}}
+                {{#with page.attributes.usecases}}
                 <dt>Use cases</dt>
                 <dd>
                   {{#each this}}
-                    <span class="graphgist-use-case">{{this.name}}</span>
+                  <span class="graphgist-use-case">{{this.name}}</span>
                   {{/each}}
                 </dd>
-              {{/with}}
-            </dl>
-            <div class="graphgist-metadata-menu">
-              <ul>
-                <li><a class="button" download href="{{@root.page.attributes.canonical-root}}{{page.attributes.notebookUrl}}">Jupyter Notebook</a></li>
-                {{#with page.attributes.browserGuideUrl}}
-                  <li><a class="button" target="_blank" href="{{@root.page.attributes.canonical-root}}{{this}}">Play as Browser Guide</a></li>
                 {{/with}}
-                <li><a href="https://portal.graphgist.org/graph_gists/{{page.attributes.slug}}/source">Show source</a></li>
-              </ul>
-            </div>
-          </aside>
+              </dl>
+            </aside>
+          </div>
         </div>
-      </div>
-      <div class="sect1">
-        <div class="sectionbody">
-          {{#if (eq page.layout '404')}}
+        <div class="sect1">
+          <div class="sectionbody">
+            {{#if (eq page.layout '404')}}
             <div class="paragraph">
-              <p>If you arrived on this page by clicking on a link, please notify the owner of the site that the link is broken.
-                If you typed the URL of this page manually, please double check that you entered the address correctly.</p>
+              <p>If you arrived on this page by clicking on a link, please notify the owner of the site that the link is
+                broken.
+                If you typed the URL of this page manually, please double check that you entered the address correctly.
+              </p>
             </div>
-          {{else}}
+            {{else}}
             {{{page.contents}}}
-          {{/if}}
-          {{> comments}}
-          {{> feedback}}
-        </div>
-      </div>
-    </article>
-  </div>
-</main>
+            {{/if}}
+            {{> comments}}
 
-{{> footer}}
+            <div class="graphgist-metadata-menu admonitionblock tip">
+              <div class="content">
+                <div class="title">Like this example?</div>
+
+                <p>
+                  If you like this example, you can
+                  <a download
+                    href="{{@root.page.attributes.canonical-root}}{{page.attributes.notebookUrl}}">download this
+                    GraphGist as a Jupyter Notebook</a>
+                  {{#with page.attributes.browserGuideUrl}}
+                  , <a target="_blank" href="{{@root.page.attributes.canonical-root}}{{this}}">Open this
+                    GraphGist in Neo4j Desktop</a></li>
+                  {{/with}}
+                  or <a href="https://portal.graphgist.org/graph_gists/{{page.attributes.slug}}/source"
+                    class="more information">view the original source</a>.
+                </p>
+              </div>
+            </div>
+
+
+            {{> feedback}}
+          </div>
+        </div>
+      </article>
+    </div>
+  </main>
+
+  {{> footer}}
 
 </body>
+
 </html>
