@@ -59,7 +59,8 @@ body {
 }
 
 .navbar-logo {
-  height: 2.5rem;
+  height: 34px;
+  width: 104px;
 }
 
 .navbar-theme {
@@ -97,7 +98,7 @@ body {
   align-items: stretch;
   display: flex;
   flex-shrink: 0;
-  height: var(--navbar-height);
+  /*height: var(--navbar-height);*/
 }
 
 .navbar-burger,
