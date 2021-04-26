@@ -35,29 +35,29 @@ body.graphgists ul.industries > li img {
   margin-right: 0.5em;
 }
 
-body.graphgists ul.graphgists {
+ul.graphgists {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, auto));
   margin: 0;
   padding: 1em 0 0;
 }
 
-body.graphgists ul.graphgists li::after {
+ul.graphgists li::after {
   content: "";
   flex: auto;
 }
 
-body.graphgists ul.graphgists > li {
+ul.graphgists > li {
   padding: 1em;
   display: flex;
   flex-grow: 1;
 }
 
-body.graphgists ul.graphgists > li > a {
+ul.graphgists > li > a {
   cursor: pointer;
 }
 
-body.graphgists .graphgist-card {
+.graphgist-card {
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.17);
   border-radius: 5px;
   display: grid;
@@ -65,7 +65,7 @@ body.graphgists .graphgist-card {
   grid-template-columns: minmax(min-content, 400px);
 }
 
-body.graphgists .graphgist-card .graphgist-illustration {
+.graphgist-card .graphgist-illustration {
   height: 100%;
   background-repeat: no-repeat;
   background-size: cover;
@@ -74,7 +74,7 @@ body.graphgists .graphgist-card .graphgist-illustration {
   background-position: center;
 }
 
-body.graphgists .graphgist-card > .graphgist-content {
+.graphgist-card > .graphgist-content {
   display: grid;
   grid-template-rows: min-content min-content 1fr;
   border-top: 1px #eaeaea solid;
@@ -82,7 +82,7 @@ body.graphgists .graphgist-card > .graphgist-content {
   padding: 1.5rem 1rem 1rem;
 }
 
-body.graphgists .graphgist-card .graphgist-content h3 {
+.graphgist-card .graphgist-content h3 {
   margin: 0;
   padding: 0;
   font-size: 1rem;
@@ -90,44 +90,44 @@ body.graphgists .graphgist-card .graphgist-content h3 {
   line-height: 1.5rem;
 }
 
-body.graphgists .graphgist-card dl.graphgist-info > dd {
+.graphgist-card dl.graphgist-info > dd {
   padding: 0;
   margin: 0 0 0.5rem;
   color: var(--colour-grey-600);
 }
 
-body.graphgists .graphgist-card dl.graphgist-info > dt {
+.graphgist-card dl.graphgist-info > dt {
   color: var(--colour-grey-500);
   text-transform: uppercase;
   font-size: 0.8rem;
 }
 
-body.graphgists .graphgist-card dl.graphgist-info > dt::after {
+.graphgist-card dl.graphgist-info > dt::after {
   content: ": ";
   margin-right: 0.3em;
 }
 
-body.graphgists .graphgist-card .graphgist-info ul.graphgist-use-cases,
-body.graphgists .graphgist-card .graphgist-info ul.graphgist-industries {
+.graphgist-card .graphgist-info ul.graphgist-use-cases,
+.graphgist-card .graphgist-info ul.graphgist-industries {
   margin: 0;
   padding: 0;
 }
 
-body.graphgists .graphgist-card .graphgist-info ul.graphgist-use-cases > li,
-body.graphgists .graphgist-card .graphgist-info ul.graphgist-industries > li {
+.graphgist-card .graphgist-info ul.graphgist-use-cases > li,
+.graphgist-card .graphgist-info ul.graphgist-industries > li {
   display: inline;
 }
 
-body.graphgists .graphgist-card .graphgist-info ul.graphgist-use-cases > li:not(:last-child)::after,
-body.graphgists .graphgist-card .graphgist-info ul.graphgist-industries > li:not(:last-child)::after {
+.graphgist-card .graphgist-info ul.graphgist-use-cases > li:not(:last-child)::after,
+.graphgist-card .graphgist-info ul.graphgist-industries > li:not(:last-child)::after {
   content: ", ";
 }
 
-body.graphgists ul.graphgists li:first-child {
+ul.graphgists li:first-child {
   padding-left: 0;
 }
 
-body.graphgists ul.graphgists li:last-child {
+ul.graphgists li:last-child {
   padding-right: 0;
 }
 
@@ -186,6 +186,7 @@ body.graphgist .graphgist-metadata dt {
   border-radius: 0.5rem;
   margin: 0 1rem;
   padding: 1rem 2rem;
+  cursor: pointer;
 }
 
 .graphgist-navigation .has-dropdown:hover {
@@ -196,6 +197,7 @@ body.graphgist .graphgist-metadata dt {
   color: var(--colour-white);
   font-size: 1rem;
   margin: 0 0.5rem 0 0;
+  user-select: none;
 }
 
 .graphgist-navigation .has-dropdown .dropdown {
@@ -205,7 +207,7 @@ body.graphgist .graphgist-metadata dt {
   position: absolute;
   top: 100%;
   left: 50%;
-  margin-top: 8px;
+  margin-top: 7px;
   margin-left: -140px;
   width: 280px;
   padding: 0.5rem  0.5rem  0.5rem 0 !important;
@@ -215,6 +217,16 @@ body.graphgist .graphgist-metadata dt {
   display: none;
   cursor: pointer;
   margin-right: 0;
+}
+
+/* avoid the dropdown to hide if the mouse goes between the button and the dropdown list */
+.graphgist-navigation .has-dropdown:hover .dropdown::before {
+  content: " ";
+  display: block;
+  height: 2rem;
+  width: 100%;
+  margin-top: -2rem;
+  position: absolute;
 }
 
 .graphgist-navigation .has-dropdown:hover .dropdown {
@@ -243,8 +255,7 @@ body.graphgist .graphgist-metadata dt {
   display: block;
   top: 100%;
   left: 50%;
-  /* margin-top: -0.6rem; */
-  margin-left: -0 0.5rem;
+  margin: 0;
   z-index: 1;
   width: 0;
   height: 0;
@@ -265,18 +276,18 @@ body.graphgist .graphgist-metadata dt {
   margin-right: 0.5rem;
 }
 
-body.landing .graphgist-navigation .has-dropdown .dropdown li {
+.graphgist-navigation .has-dropdown .dropdown li {
   display: block !important;
   border-bottom: 1px solid var(--colour-grey-300);
   font-size: 0.9rem;
   margin-bottom: 0;
 }
 
-body.landing .graphgist-navigation .has-dropdown .dropdown li:last-child {
+.graphgist-navigation .has-dropdown .dropdown li:last-child {
   border-bottom: 0 none;
 }
 
-body.landing .graphgist-navigation .has-dropdown .dropdown a {
+.graphgist-navigation .has-dropdown .dropdown a {
   display: block;
   padding: 0.75rem 0.5rem;
   font-weight: normal;
@@ -284,7 +295,7 @@ body.landing .graphgist-navigation .has-dropdown .dropdown a {
   color: var(--colour-grey-800);
 }
 
-body.landing .graphgist-navigation .has-dropdown .dropdown a:hover {
+.graphgist-navigation .has-dropdown .dropdown a:hover {
   color: var(--colour-green-800);
   background-color: transparent;
 }
