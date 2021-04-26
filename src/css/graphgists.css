@@ -190,7 +190,7 @@ body.graphgist .graphgist-metadata dt {
 }
 
 .graphgist-navigation .has-dropdown:hover {
-  background-color: var(--colour-grey-700);
+  background-color: var(--colour-graphgists);
 }
 
 .graphgist-navigation .has-dropdown h3 {
@@ -201,7 +201,7 @@ body.graphgist .graphgist-metadata dt {
 }
 
 .graphgist-navigation .has-dropdown .dropdown {
-  border-top: 4px solid var(--colour-green-400);
+  border-top: 4px solid var(--colour-graphgists);
   background-color: var(--colour-white);
   border-radius: 0.5rem;
   position: absolute;
@@ -252,7 +252,7 @@ body.graphgist .graphgist-metadata dt {
 .graphgist-navigation .has-dropdown::before {
   position: absolute;
   content: "";
-  display: block;
+  display: none;
   top: 100%;
   left: 50%;
   margin: 0;
@@ -262,11 +262,11 @@ body.graphgist .graphgist-metadata dt {
   border-left: 0.4rem solid transparent;
   border-right: 0.4rem solid transparent;
   border-bottom: 0.4rem solid transparent;
+  border-bottom-color: var(--colour-graphgists);
 }
 
-/* :hover */
 .graphgist-navigation .has-dropdown:hover::before {
-  border-bottom-color: var(--colour-green-400);
+  display: block;
 }
 
 .graphgist-navigation .has-dropdown .dropdown img {
@@ -300,6 +300,6 @@ body.graphgist .graphgist-navigation .has-dropdown .dropdown a {
 
 body.graphgists .graphgist-navigation .has-dropdown .dropdown a:hover,
 body.graphgist .graphgist-navigation .has-dropdown .dropdown a:hover {
-  color: var(--colour-green-800);
+  color: var(--colour-graphgists);
   background-color: transparent;
 }

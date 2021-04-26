@@ -3,3 +3,4 @@
 :page-layout: graphgist-index
 :page-component: graphgist
 :page-slug: graphgists
+:page-theme: graphgists

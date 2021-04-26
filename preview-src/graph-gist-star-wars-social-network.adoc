@@ -4,6 +4,7 @@
 :twitter: @evelgab
 :page-slug: exploring-the-star-wars-social-network
 :page-neo4j-version: 3.5
+:page-theme: graphgists
 
 I recently looked at the whole Star Wars universe from a computational perspective, where I extracted and analyzed
 social networks from all seven films. The social network structure revealed some interesting differences

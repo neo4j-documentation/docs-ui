@@ -96,6 +96,7 @@
   --colour-docs: var(--colour-blue-400);
   --colour-kb: var(--colour-purple-600);
   --colour-training: var(--colour-pink-600);
+  --colour-graphgists: var(--colour-purple-600);
 
   /* fonts */
   --rem-base: 18; /* used to compute rem value from desired pixel value (e.g., calc(18 / var(--rem-base) * 1rem) = 18px) */

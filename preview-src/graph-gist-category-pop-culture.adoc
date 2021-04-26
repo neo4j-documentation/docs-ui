@@ -1,6 +1,7 @@
 = Category Pop Culture
 // the content of this page will be automatically generated from the GraphQL API
 :page-layout: graphgist-category
+:page-theme: graphgists
 :page-component: graphgist
 :page-slug: pop-culture
 :page-category: Pop Culture
