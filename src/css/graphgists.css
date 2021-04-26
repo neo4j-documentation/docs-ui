@@ -276,18 +276,21 @@ body.graphgist .graphgist-metadata dt {
   margin-right: 0.5rem;
 }
 
-.graphgist-navigation .has-dropdown .dropdown li {
+body.graphgists .graphgist-navigation .has-dropdown .dropdown li,
+body.graphgist .graphgist-navigation .has-dropdown .dropdown li {
   display: block !important;
   border-bottom: 1px solid var(--colour-grey-300);
   font-size: 0.9rem;
   margin-bottom: 0;
 }
 
-.graphgist-navigation .has-dropdown .dropdown li:last-child {
+body.graphgists .graphgist-navigation .has-dropdown .dropdown li:last-child,
+body.graphgist .graphgist-navigation .has-dropdown .dropdown li:last-child {
   border-bottom: 0 none;
 }
 
-.graphgist-navigation .has-dropdown .dropdown a {
+body.graphgists .graphgist-navigation .has-dropdown .dropdown a,
+body.graphgist .graphgist-navigation .has-dropdown .dropdown a {
   display: block;
   padding: 0.75rem 0.5rem;
   font-weight: normal;
@@ -295,7 +298,8 @@ body.graphgist .graphgist-metadata dt {
   color: var(--colour-grey-800);
 }
 
-.graphgist-navigation .has-dropdown .dropdown a:hover {
+body.graphgists .graphgist-navigation .has-dropdown .dropdown a:hover,
+body.graphgist .graphgist-navigation .has-dropdown .dropdown a:hover {
   color: var(--colour-green-800);
   background-color: transparent;
 }
