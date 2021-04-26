@@ -15,32 +15,28 @@
             <h3>Explore By Use Case</h3>
 
             <ul class="dropdown">
-              {{#with page.attributes.use-cases}}
-              {{#each this}}
+              {{#each page.attributes.use-cases}}
               <li>
-                <a href="#">
+                <a href="{{this.pub.url}}">
                   <img src="{{{this.imageUrl}}}" alt="{{this.name}}">
                   <span class="graphgist-use-case">{{this.name}}</span>
                 </a>
               </li>
               {{/each}}
-              {{/with}}
             </ul>
           </div>
           <div class="has-dropdown">
             <h3>Explore By Industry</h3>
 
             <ul class="dropdown">
-              {{#with page.attributes.industries}}
-              {{#each this}}
+              {{#each page.attributes.industries}}
               <li>
-                <a href="#">
+                <a href="{{this.pub.url}}">
                   <img src="{{{this.imageUrl}}}" alt="{{this.name}}">
                   <span class="graphgist-use-case">{{this.name}}</span>
                 </a>
               </li>
               {{/each}}
-              {{/with}}
             </ul>
           </div>
         </div>
