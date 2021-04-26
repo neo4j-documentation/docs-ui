@@ -183,21 +183,65 @@ page:
     - content: Star Wars Social Network
       url: graph-gist-star-wars-social-network.html
       urlType: internal
+    - content: Category Pop Culture
+      url: graph-gist-category-pop-culture.html
+      urlType: internal
   # additional page attributes indexed by page-slug
+    pages-data:
+      industries: &industries
+        - imageUrl: 'https://graphgist-portal-production.s3.amazonaws.com/graph_starter/images/sources/398/dbb/3b-/medium/noun_129319.png'
+          name: 'Sports and Recreation'
+          pub:
+            url: '#'
+        - imageUrl: 'https://graphgist-portal-production.s3.amazonaws.com/graph_starter/images/sources/03e/fe4/b2-/medium/noun_144785.png'
+          name: 'Transportation and Logistics'
+          pub:
+            url: '#'
+      use-cases: &use-cases
+        - imageUrl: 'https://graphgist-portal-production.s3.amazonaws.com/graph_starter/images/sources/c17/a61/68-/medium/noun_301197.png'
+          name: 'Data Analysis'
+          pub:
+            url: '#'
+        - imageUrl: 'https://graphgist-portal-production.s3.amazonaws.com/graph_starter/images/sources/cbf/24f/11-/medium/noun_106914.png'
+          name: 'Graph Gist How-tos'
+          pub:
+            url: '#'
+        - imageUrl: 'https://graphgist-portal-production.s3.amazonaws.com/graph_starter/images/sources/809/ef4/12-/medium/rook.png'
+          name: 'GraphGist Challenge Entries'
+          pub:
+            url: '#'
+        - imageUrl: 'https://graphgist-portal-production.s3.amazonaws.com/graph_starter/images/sources/d23/998/76-/medium/noun_401.png'
+          name: 'General Business'
+          pub:
+            url: '#'
+        - imageUrl: 'https://graphgist-portal-production.s3.amazonaws.com/graph_starter/images/sources/de8/b13/4f-/medium/noun_253701.png?1457514437'
+          name: 'Pop Culture'
+          pub:
+            url: '#'
+      star-wars-social-network-page: &star_wars_social_network_page
+        title: 'Exploring the Star Wars social network'
+        pub:
+          url: '/graph-gist-star-wars-social-network.html'
+        asciidoc:
+          attributes:
+            page-illustration: 'https://graphgist-portal-production.s3.amazonaws.com/graph_starter/images/sources/c31/9cd/38-/medium/c319cd38-52f9-4641-95e4-bd374f99f6e5.png'
+            page-author: Evelina Gabasova
+            page-usecases:
+              - name: 'Pop Culture'
+                pub:
+                  url: '#'
   attributes:
+    exploring-the-star-wars-social-network:
+      use-cases: *use-cases
+      industries: *industries
+    pop-culture:
+      graphgist-pages:
+        - *star_wars_social_network_page
+      use-cases: *use-cases
+      industries: *industries
     graphgists:
       featured-pages:
-        - title: 'Exploring the Star Wars social network'
-          pub:
-            url: '/graph-gist-star-wars-social-network.html'
-          asciidoc:
-            attributes:
-              page-illustration: 'https://graphgist-portal-production.s3.amazonaws.com/graph_starter/images/sources/c31/9cd/38-/medium/c319cd38-52f9-4641-95e4-bd374f99f6e5.png'
-              page-author: Evelina Gabasova
-              page-usecases:
-                - name: 'Pop Culture'
-                  pub:
-                    url: '#'
+        - *star_wars_social_network_page
         - title: 'Project Management'
           asciidoc:
             attributes:
@@ -228,36 +272,9 @@ page:
                 - name: 'General Business'
                   pub:
                     url: '#'
-      industries:
-        - imageUrl: 'https://graphgist-portal-production.s3.amazonaws.com/graph_starter/images/sources/398/dbb/3b-/medium/noun_129319.png'
-          name: 'Sports and Recreation'
-          pub:
-            url: '#'
-        - imageUrl: 'https://graphgist-portal-production.s3.amazonaws.com/graph_starter/images/sources/03e/fe4/b2-/medium/noun_144785.png'
-          name: 'Transportation and Logistics'
-          pub:
-            url: '#'
-      use-cases:
-        - imageUrl: 'https://graphgist-portal-production.s3.amazonaws.com/graph_starter/images/sources/c17/a61/68-/medium/noun_301197.png'
-          name: 'Data Analysis'
-          pub:
-            url: '#'
-        - imageUrl: 'https://graphgist-portal-production.s3.amazonaws.com/graph_starter/images/sources/cbf/24f/11-/medium/noun_106914.png'
-          name: 'Graph Gist How-tos'
-          pub:
-            url: '#'
-        - imageUrl: 'https://graphgist-portal-production.s3.amazonaws.com/graph_starter/images/sources/809/ef4/12-/medium/rook.png'
-          name: 'GraphGist Challenge Entries'
-          pub:
-            url: '#'
-        - imageUrl: 'https://graphgist-portal-production.s3.amazonaws.com/graph_starter/images/sources/d23/998/76-/medium/noun_401.png'
-          name: 'General Business'
-          pub:
-            url: '#'
-        - imageUrl: 'https://graphgist-portal-production.s3.amazonaws.com/graph_starter/images/sources/de8/b13/4f-/medium/noun_253701.png?1457514437'
-          name: 'Pop Culture'
-          pub:
-            url: '#'
+      use-cases: *use-cases
+      industries: *industries
+
 asciidoc:
   attributes:
     theme: labs

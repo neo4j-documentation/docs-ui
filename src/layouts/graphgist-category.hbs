@@ -3,14 +3,14 @@
 <head>
   {{> head defaultPageTitle='Untitled'}}
 </head>
-<body class="article landing graphgists{{#with (or asciidoc.attributes.role page.role)}} {{{this}}}{{/with}}{{#with (or page.attributes.theme "developer")}} {{{this}}}{{/with}}">
+<body class="article graphgist{{#with (or asciidoc.attributes.role page.role)}} {{{this}}}{{/with}}{{#with (or page.attributes.theme "developer")}} {{{this}}}{{/with}}">
 {{> header}}
 {{> graphgists-header}}
 
 <main class="article">
   <div class="content">
     <article class="doc">
-      <div class="sect1 heading">
+      <div class="sect1">
         <div class="sectionbody">
           {{> breadcrumbs}}
           <h2>GraphGists tagged as <span id="kb-category-title">{{page.attributes.category}}</span></h2>
