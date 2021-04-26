@@ -217,7 +217,7 @@ page:
         - imageUrl: 'https://graphgist-portal-production.s3.amazonaws.com/graph_starter/images/sources/de8/b13/4f-/medium/noun_253701.png?1457514437'
           name: 'Pop Culture'
           pub:
-            url: '#'
+            url: '/graph-gist-category-pop-culture.html'
       star-wars-social-network-page: &star_wars_social_network_page
         title: 'Exploring the Star Wars social network'
         pub:
@@ -229,7 +229,7 @@ page:
             page-usecases:
               - name: 'Pop Culture'
                 pub:
-                  url: '#'
+                  url: '/graph-gist-category-pop-culture.html'
   attributes:
     exploring-the-star-wars-social-network:
       use-cases: *use-cases
