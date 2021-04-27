@@ -44,15 +44,11 @@
               </dl>
               <div class="graphgist-metadata-menu">
                 <ul>
-                  {{#with page.attributes.browserGuideUrl}}
-                  <li><a class="button" target="_blank" href="{{@root.page.attributes.canonical-root}}{{this}}">Play as
-                      Browser Guide</a></li>
-                  {{/with}}
                   <li><a class="button secondary" href="https://portal.graphgist.org/graph_gists/{{page.attributes.slug}}/source">Show source</a>
-                  <li><a class="button" download
-                      href="{{@root.page.attributes.canonical-root}}{{page.attributes.notebookUrl}}">Download as Jupyter
-                      Notebook</a></li>
-                  </li>
+                  <li><a class="button secondary" download href="{{@root.page.attributes.canonical-root}}{{page.attributes.notebookUrl}}">Download as Jupyter Notebook</a></li>
+                  {{#with page.attributes.browserGuideUrl}}
+                    <li><a class="button" target="_blank" href="{{this}}">Play as Browser Guide</a></li>
+                  {{/with}}
                 </ul>
               </div>
             </aside>
