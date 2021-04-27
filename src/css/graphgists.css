@@ -196,6 +196,11 @@ body.graphgist .graphgist-metadata dt {
   padding: 0;
 }
 
+/* make sure that <pre> elements won't overlap with the metadata block (float) */
+body.graphgist .listingblock pre {
+  z-index: -1;
+}
+
 .graphgist-metadata-menu {
   padding-top: 1rem;
   border-top: 1px solid var(--colour-grey-300);
