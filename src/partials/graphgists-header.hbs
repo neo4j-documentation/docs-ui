@@ -7,40 +7,5 @@
       <p>Use case and industry specific graph examples designed to inspire you towards your Graph epiphany.</p>
     </div>
     {{/if}}
-
-    <nav class="ulist buttons">
-      <div class="graphgist-navigation-wrapper">
-        <div class="graphgist-navigation">
-          <div class="has-dropdown">
-            <h3>Explore By Use Case</h3>
-
-            <ul class="dropdown">
-              {{#each page.attributes.use-cases}}
-              <li>
-                <a href="{{this.pub.url}}">
-                  <img src="{{{this.imageUrl}}}" alt="{{this.name}}">
-                  <span class="graphgist-use-case">{{this.name}}</span>
-                </a>
-              </li>
-              {{/each}}
-            </ul>
-          </div>
-          <div class="has-dropdown">
-            <h3>Explore By Industry</h3>
-
-            <ul class="dropdown">
-              {{#each page.attributes.industries}}
-              <li>
-                <a href="{{this.pub.url}}">
-                  <img src="{{{this.imageUrl}}}" alt="{{this.name}}">
-                  <span class="graphgist-use-case">{{this.name}}</span>
-                </a>
-              </li>
-              {{/each}}
-            </ul>
-          </div>
-        </div>
-      </div>
-    </nav>
   </div>
 </div>

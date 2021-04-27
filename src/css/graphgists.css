@@ -15,6 +15,7 @@ body.graphgists .breadcrumbs {
   padding: 0;
   font-size: 0.9rem;
 }
+
 body.graphgists .breadcrumbs ul {
   padding: 0;
 }
@@ -168,7 +169,7 @@ body.graphgist .doc > .sect1 > .sectionbody {
   margin-bottom: 1rem;
   box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
   padding: 1rem;
-  border-radius: .5rem;
+  border-radius: 0.5rem;
   width: 320px;
 }
 
@@ -178,7 +179,7 @@ body.graphgist .doc > .sect1 > .sectionbody {
 
 .graphgist-metadata .graphgist-use-case,
 .graphgist-metadata .graphgist-industry {
-display: block;
+  display: block;
 }
 
 .graphgist-metadata dt {
@@ -207,18 +208,19 @@ body.graphgist .graphgist-metadata dt {
 .graphgist-metadata .button {
   display: block;
   width: 100%;
-  margin: 0 0 .5rem;
+  margin: 0 0 0.5rem;
   background: var(--colour-graphgists);
   border: 1px solid var(--colour-white);
-  padding: .5rem 1rem;
+  padding: 0.5rem 1rem;
   color: var(--colour-white) !important;
-  font-size: .9rem;
+  font-size: 0.9rem;
 }
 
 .graphgist-metadata .button:hover {
   background-color: var(--colour-purple-800) !important;
   /* color: var(--colour-purple-800) !important; */
 }
+
 .graphgist-metadata .button.secondary {
   border: 1px solid var(--colour-purple-600) !important;
   background: var(--colour-white) !important;
@@ -227,137 +229,4 @@ body.graphgist .graphgist-metadata dt {
 
 .graphgist-metadata .button.secondary:hover {
   background: var(--colour-purple-100) !important;
-}
-
-.graphgist-navigation {
-  max-width: 680px;
-  margin: auto;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-}
-
-.graphgist-navigation .has-dropdown {
-  background-color: var(--colour-grey-800);
-  display: inline-block;
-  position: relative;
-  border-radius: 0.5rem;
-  margin: 0 1rem;
-  padding: 1rem 2rem;
-  cursor: pointer;
-}
-
-.graphgist-navigation .has-dropdown:hover {
-  background-color: var(--colour-graphgists);
-}
-
-.graphgist-navigation .has-dropdown h3 {
-  color: var(--colour-white);
-  font-size: 1rem;
-  margin: 0 0.5rem 0 0;
-  user-select: none;
-}
-
-.graphgist-navigation .has-dropdown .dropdown {
-  border-top: 4px solid var(--colour-graphgists);
-  background-color: var(--colour-white);
-  border-radius: 0.5rem;
-  position: absolute;
-  top: 100%;
-  left: 50%;
-  margin-top: 7px;
-  margin-left: -140px;
-  width: 280px;
-  padding: 0.5rem  0.5rem  0.5rem 0 !important;
-  text-align: left;
-  z-index: 5000;
-  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-  display: none;
-  cursor: pointer;
-  margin-right: 0;
-}
-
-/* avoid the dropdown to hide if the mouse goes between the button and the dropdown list */
-.graphgist-navigation .has-dropdown:hover .dropdown::before {
-  content: " ";
-  display: block;
-  height: 2rem;
-  width: 100%;
-  margin-top: -2rem;
-  position: absolute;
-}
-
-.graphgist-navigation .has-dropdown:hover .dropdown {
-  display: block;
-}
-
-.graphgist-navigation .has-dropdown::after {
-  border-width: 0 0 1px 1px;
-  border-style: solid;
-  border-color: var(--colour-white);
-  content: " ";
-  display: block;
-  height: 0.5em;
-  pointer-events: none;
-  position: absolute;
-  transform: rotate(-45deg);
-  width: 0.5em;
-  margin-top: -0.375em;
-  right: 1.125em;
-  top: 50%;
-}
-
-.graphgist-navigation .has-dropdown::before {
-  position: absolute;
-  content: "";
-  display: none;
-  top: 100%;
-  left: 50%;
-  margin: 0;
-  z-index: 1;
-  width: 0;
-  height: 0;
-  border-left: 0.4rem solid transparent;
-  border-right: 0.4rem solid transparent;
-  border-bottom: 0.4rem solid transparent;
-  border-bottom-color: var(--colour-graphgists);
-}
-
-.graphgist-navigation .has-dropdown:hover::before {
-  display: block;
-}
-
-.graphgist-navigation .has-dropdown .dropdown img {
-  display: inline-block;
-  width: 16px;
-  height: 16px;
-  margin-right: 0.5rem;
-}
-
-body.graphgists .graphgist-navigation .has-dropdown .dropdown li,
-body.graphgist .graphgist-navigation .has-dropdown .dropdown li {
-  display: block !important;
-  border-bottom: 1px solid var(--colour-grey-300);
-  font-size: 0.9rem;
-  margin-bottom: 0;
-}
-
-body.graphgists .graphgist-navigation .has-dropdown .dropdown li:last-child,
-body.graphgist .graphgist-navigation .has-dropdown .dropdown li:last-child {
-  border-bottom: 0 none;
-}
-
-body.graphgists .graphgist-navigation .has-dropdown .dropdown a,
-body.graphgist .graphgist-navigation .has-dropdown .dropdown a {
-  display: block;
-  padding: 0.75rem 0.5rem;
-  font-weight: normal;
-  background-color: transparent;
-  color: var(--colour-grey-800);
-}
-
-body.graphgists .graphgist-navigation .has-dropdown .dropdown a:hover,
-body.graphgist .graphgist-navigation .has-dropdown .dropdown a:hover {
-  color: var(--colour-graphgists);
-  background-color: transparent;
 }
