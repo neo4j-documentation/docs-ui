@@ -361,6 +361,7 @@ export function runnable (row, runText = 'Run Query', successCallback, errorCall
 
           if (res.error) {
             // query is invalid
+            console.error('Unsuccessful query:', res.error)
             renderError(content, { message: res.error })
           } else {
             renderResults(content, res)
@@ -370,6 +371,7 @@ export function runnable (row, runText = 'Run Query', successCallback, errorCall
           loading.innerHTML = ''
           footer.classList.add('has-results')
 
+          console.error('Error while executing query:', executeQueryError)
           renderError(content, executeQueryError)
         }
       } catch (error) {
@@ -377,6 +379,7 @@ export function runnable (row, runText = 'Run Query', successCallback, errorCall
         loading.innerHTML = ''
         footer.classList.add('has-results')
 
+        console.error('Something bad happened:', error)
         renderError(content, error)
       }
     }
