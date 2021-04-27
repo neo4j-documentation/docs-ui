@@ -29,7 +29,7 @@
                 <dt>Industries</dt>
                 <dd>
                   {{#each this}}
-                  <a href="#" class="graphgist-industry">{{this.name}}</a>
+                  <a href="{{this.pub.url}}" class="graphgist-industry">{{this.name}}</a>
                   {{/each}}
                 </dd>
                 {{/with}}
@@ -37,7 +37,7 @@
                 <dt>Use cases</dt>
                 <dd>
                   {{#each this}}
-                  <a href="#" class="graphgist-use-case">{{this.name}}</a>
+                  <a href="{{this.pub.url}}" class="graphgist-use-case">{{this.name}}</a>
                   {{/each}}
                 </dd>
                 {{/with}}
