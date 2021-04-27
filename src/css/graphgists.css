@@ -72,6 +72,7 @@ ul.graphgists > li > a {
   display: grid;
   grid-template-rows: 250px 1fr;
   grid-template-columns: minmax(min-content, 400px);
+  background-color: var(--colour-white);
 }
 
 .graphgist-card .graphgist-illustration {
