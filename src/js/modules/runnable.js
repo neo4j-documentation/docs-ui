@@ -35,13 +35,10 @@ export function runnable (row, runText = 'Run Query', successCallback, errorCall
   }
 
   const initGraphGistSession = async function () {
-    console.log({ graphGistSessionId })
     if (!graphGistSessionId) {
       const initSessionResponse = await initSession()
-      console.log({ initSessionResponse })
       graphGistSessionId = initSessionResponse.data.getConsoleSessionId
     }
-    console.log({ graphGistSessionId })
     return graphGistSessionId
   }
 
