@@ -20,10 +20,12 @@
 .training.landing .featured-courses {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(250px, auto));
+  margin: 0 -1rem;
 }
 
 .training.landing .featured-courses > .openblock {
   padding: 1rem;
+  margin-bottom: 1rem;
   display: grid;
 }
 
