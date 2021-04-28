@@ -89,8 +89,8 @@ const { getCookie } = require('./modules/cookies')
         <input id="inaccurate" type="radio" data-reason="inaccurate" name="specific" value="inaccurate">
         <label for="inaccurate">It&rsquo;s inaccurate, out of date, or doesn&rsquo;t work</label>
       </div>
-      <div><input id="other" type="radio" data-reason="other" name="specific" value="other"><label for="other">Something else'
-          + edit + '</label></div>
+      <div><input id="other" type="radio" data-reason="other" name="specific" value="other"><label for="other">Something else
+          ${edit}</label></div>
       <div class="more-information"><label for="more-information"><strong>More information</strong></label><textarea
           id="more-information" type="text" rows="3" cols="50" name="more-information" style="resize:none"></textarea>
       </div>

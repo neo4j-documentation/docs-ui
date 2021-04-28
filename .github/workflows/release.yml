@@ -19,7 +19,8 @@ jobs:
       - run: npm install
       - run: npm run lint
       - run: npm run build
-      - run: mv build/ui-bundle.zip build/ui-bundle-${GITHUB_REF##*/}.zip
+      - run: cp build/ui-bundle.zip build/ui-bundle-${GITHUB_REF##*/}.zip
+      - run: cp build/ui-bundle.zip build/ui-bundle-latest.zip
         env:
           GITHUB_REF: ${{ github.ref }}
 
