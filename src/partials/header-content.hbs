@@ -26,12 +26,42 @@
       <a href="/graphacademy/online-training/" class="navbar-item no-left-padding page-name-white" aria-label="GraphAcademy">
         GraphAcademy
       </a>
+      {{else if (eq page.attributes.theme "graphgists")}}
+      <img class="navbar-logo" src="https://dist.neo4j.com/wp-content/uploads/20210422201812/neo4j-logo-2020-white.svg" alt="{{ site.title }}" />
+      <a href="/graphgists/" class="navbar-item no-left-padding page-name-white" aria-label="GraphGists">
+        GraphGists
+      </a>
       {{else}}
       <img class="navbar-logo" src="https://dist.neo4j.com/wp-content/uploads/20210422201812/neo4j-logo-2020-white.svg" alt="{{ site.title }}" />
       <a href="/developer/" class="navbar-item no-left-padding page-name-white" aria-label="Developer Guides">
         Developer
       </a>
       {{/if}}
+
+      {{#if (eq page.attributes.theme "graphgists")}}
+      <div class="navbar-end">
+        <div class="navbar-item has-dropdown is-hoverable graphgists">
+          <a class="navbar-link" href="/graphgists/">Use Cases</a>
+          <div class="navbar-dropdown">
+          {{#each page.attributes.use-cases}}
+            <div class="navbar-item project">
+              <a class="project-name" href="{{{relativize pub.url}}}">{{this.name}}</a>
+            </div>
+          {{/each}}
+          </div>
+        </div>
+        <div class="navbar-item has-dropdown is-hoverable graphgists">
+          <a class="navbar-link" href="/graphgists/">Industries</a>
+          <div class="navbar-dropdown">
+            {{#each page.attributes.industries}}
+            <div class="navbar-item project">
+              <a class="project-name" href="{{{relativize pub.url}}}">{{this.name}}</a>
+            </div>
+          {{/each}}
+          </div>
+        </div>
+        {{/if}}
+      </div>
 
       <button class="navbar-search" data-target="topbar-nav" id="search_open_mobile" aria-label="Open Search">
         <svg width="23px" height="23px" viewBox="0 0 23 23" version="1.1" class="fill-current float-right" id="search" role="button" title="Search Website">
@@ -108,6 +138,9 @@
             </div>
             <div class="navbar-item project">
               <a class="project-name" href="/developer/graphacademy/">GraphAcademy</a>
+            </div>
+            <div class="navbar-item project">
+              <a class="project-name" href="/graphgists/">GraphGists</a>
             </div>
 
             {{!-- <a class="navbar-item" href="/developer/resources/">Documentation &amp; Resources</a> --}}

@@ -1,6 +1,8 @@
 export function createElement (el, className, children) {
-  var output = document.createElement(el)
-  output.setAttribute('class', className)
+  const output = document.createElement(el)
+  if (className) {
+    output.setAttribute('class', className)
+  }
 
   if (children !== undefined) {
     if (!Array.isArray(children)) {

@@ -288,11 +288,11 @@ body {
 }
 
 .doc .admonitionblock p,
-.doc .admonitionblock td.content {
+.doc .admonitionblock .content {
   font-size: calc(16 / var(--rem-base) * 1rem);
 }
 
-.doc .admonitionblock td.content > :first-child {
+.doc .admonitionblock .content > :first-child {
   margin: 0;
 }
 
@@ -307,7 +307,7 @@ body {
   width: 100%;
 }
 
-.doc .admonitionblock td.content {
+.doc .admonitionblock .content {
   padding: 1rem 1rem 0.75rem;
   /* background: var(--admonition-background); */
   width: 100%;
@@ -653,6 +653,10 @@ body {
 }
 
 /* NEEDS REVIEW prevent pre in table from causing article to exceed bounds */
+.doc .listingblock.hidden {
+  display: none;
+}
+
 .doc .tableblock pre,
 .doc .listingblock.wrap pre {
   white-space: pre-wrap;

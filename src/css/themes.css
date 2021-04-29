@@ -382,3 +382,31 @@ body.training .search .search-container .search-form {
 .training .navbar-brand #neo4j-group {
   fill: var(--colour-white);
 }
+
+/* Graphgists */
+body.graphgists .sect1.hero h2::after {
+  background-color: var(--colour-graphgists) !important;
+}
+
+body.graphgists svg.graphgists {
+  margin-bottom: 10px;
+}
+
+body.graphgists .navbar,
+body.graphgists .search .search-container .search-form {
+  border-top-color: var(--colour-graphgists);
+  border-bottom-color: var(--colour-grey-800);
+}
+
+.graphgists .navbar-brand #developer {
+  fill: var(--colour-grey-400);
+}
+
+.graphgists .navbar-brand #neo4j-group {
+  fill: var(--colour-white);
+}
+
+body.graphgists .navbar .navbar-item.try .navbar-link {
+  background: var(--colour-purple-600);
+  color: var(--colour-white);
+}

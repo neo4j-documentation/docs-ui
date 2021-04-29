@@ -14,6 +14,13 @@ const toCamel = (s) => {
   })
 }
 
+const ignoredCircular = [
+  'd3-selection',
+  'd3-interpolate',
+  'd3-transition',
+  'd3-voronoi',
+]
+
 async function bundle (vinylFile) {
   const bundle = await rollup({
     input: vinylFile.path,
@@ -29,6 +36,12 @@ async function bundle (vinylFile) {
       }),
       rollupPluginTerser(),
     ],
+    onwarn: (warning) => {
+      if (warning.code === 'CIRCULAR_DEPENDENCY' && ignoredCircular.some((d) => warning.importer.includes(d))) {
+        return
+      }
+      console.warn(warning.message)
+    },
   })
   return await bundle.generate({
     format: 'iife',
