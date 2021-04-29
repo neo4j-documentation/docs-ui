@@ -18,7 +18,7 @@
         <h2>Featured GraphGists</h2>
         <div class="sectionbody">
           <ul class="graphgists">
-            {{#each page.attributes.featured-pages}}
+            {{#each (take page.attributes.featured-pages 6)}}
               <li>{{> graphgist-card }}</li>
             {{/each}}
           </ul>
