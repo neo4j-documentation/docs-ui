@@ -49,6 +49,7 @@ ul.graphgists {
   grid-template-columns: repeat(auto-fill, minmax(300px, auto));
   margin: 0;
   padding: 1em 0 0;
+  grid-gap: 3em 1.5em;
 }
 
 ul.graphgists li::after {
@@ -57,7 +58,6 @@ ul.graphgists li::after {
 }
 
 ul.graphgists > li {
-  padding: 1em;
   display: flex;
   flex-grow: 1;
 }
