@@ -242,7 +242,29 @@ page:
     graphgists:
       featured-pages:
         - *star_wars_social_network_page
-        - title: 'Project Management'
+        - title: 'Bank Fraud Detection'
+          asciidoc:
+            attributes:
+              page-author: Kenny Bastani
+              page-illustration: 'https://graphgist-portal-production.s3.amazonaws.com/graph_starter/images/sources/477/3fc/f1-/medium/open-uri20151208-3-1s2nvy3?1457514688'
+              page-industries:
+                - name: 'Transportation and Logistics'
+                  pub:
+                    url: '#'
+                - name: 'Finance'
+                  pub:
+                    url: '#'
+                - name: 'Web & Social'
+                  pub:
+                    url: '#'
+                - name: 'Education'
+                  pub:
+                    url: '#'
+              page-usecases:
+                - name: 'Fraud Detection'
+                  pub:
+                    url: '#'
+        - title: 'Cypher Introduction - Social Movie Database'
           asciidoc:
             attributes:
               page-author: Adam Cowley
@@ -250,26 +272,45 @@ page:
                 - name: 'Transportation and Logistics'
                   pub:
                     url: '#'
+                - name: 'Science'
+                  pub:
+                    url: '#'
+                - name: 'Web & Social'
+                  pub:
+                    url: '#'
+                - name: 'Sports and Recreation'
+                  pub:
+                    url: '#'
+                - name: 'Education'
+                  pub:
+                    url: '#'
+                - name: 'Health Care'
+                  pub:
+                    url: '#'
               page-usecases:
-                - name: 'Data Analysis'
+                - name: 'Graph Gist How-tos'
                   pub:
                     url: '#'
-                - name: 'General Business'
-                  pub:
-                    url: '#'
-        - title: 'Something Else'
+        - title: 'First Steps with Cypher'
           asciidoc:
             attributes:
-              page-author: Adam Cowley
+              page-author: Michael Hunger
+              page-illustration: 'https://graphgist-portal-production.s3.amazonaws.com/graph_starter/images/sources/8b4/f25/5a-/medium/8b4f255a-a843-4797-8741-3e435e7f4c0d.png'
               page-industries:
                 - name: 'Transportation and Logistics'
                   pub:
                     url: '#'
-              page-usecases:
-                - name: 'Data Analysis'
+                - name: 'Finance'
                   pub:
                     url: '#'
-                - name: 'General Business'
+                - name: 'Retail'
+                  pub:
+                    url: '#'
+                - name: 'Comp Sci and Programming'
+                  pub:
+                    url: '#'
+              page-usecases:
+                - name: 'Graph Gist How-tos'
                   pub:
                     url: '#'
       use-cases: *use-cases
