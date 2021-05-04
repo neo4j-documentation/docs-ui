@@ -261,16 +261,16 @@ export function runnable (row, runText = 'Run Query', successCallback, errorCall
     content.appendChild(error)
   }
 
-  var run = async function (mode, database, content, footer, button, loading, backend = 'neo4jlabs') {
+  const run = async function (mode, database, content, footer, runButton, loading, backend = 'neo4jlabs') {
     // Get Code
     // TODO: Parameters etc
-    var input = cleanCode(content.querySelector('pre').innerText)
+    const input = cleanCode(content.querySelector('pre').innerText)
 
     if (input.trim() === '') return
 
     if (backend === 'neo4jlabs') {
       loading.innerHTML = 'Initialising Driver&hellip;'
-      button.disabled = true
+      runButton.disabled = true
 
       if (window.mixpanel) {
         window.mixpanel.track('DOCS_CODE_RUN_EXAMPLE', {
@@ -293,7 +293,7 @@ export function runnable (row, runText = 'Run Query', successCallback, errorCall
 
           return tx.run(input)
             .then(function (res) {
-              button.disabled = false
+              runButton.disabled = false
               loading.innerHTML = ''
               footer.classList.add('has-results')
 
@@ -304,7 +304,7 @@ export function runnable (row, runText = 'Run Query', successCallback, errorCall
               renderResults(content, res)
             })
             .catch(function (err) {
-              button.disabled = false
+              runButton.disabled = false
               loading.innerHTML = ''
               footer.classList.add('has-results')
 
@@ -322,7 +322,7 @@ export function runnable (row, runText = 'Run Query', successCallback, errorCall
             })
         })
         .catch(function (err) {
-          button.disabled = false
+          runButton.disabled = false
           loading.innerHTML = ''
           footer.classList.add('has-results')
 
@@ -346,7 +346,7 @@ export function runnable (row, runText = 'Run Query', successCallback, errorCall
         })
     } else {
       loading.innerHTML = 'Initialising Session&hellip;'
-      button.disabled = true
+      runButton.disabled = true
 
       try {
         const sessionId = await initGraphGistSession()
@@ -355,7 +355,7 @@ export function runnable (row, runText = 'Run Query', successCallback, errorCall
           const executeQueryResponse = await executeQuery(input, sessionId)
           const res = JSON.parse(executeQueryResponse.data.queryConsole)
 
-          button.disabled = false
+          runButton.disabled = false
           loading.innerHTML = ''
           footer.classList.add('has-results')
 
@@ -367,7 +367,7 @@ export function runnable (row, runText = 'Run Query', successCallback, errorCall
             renderResults(content, res)
           }
         } catch (executeQueryError) {
-          button.disabled = false
+          runButton.disabled = false
           loading.innerHTML = ''
           footer.classList.add('has-results')
 
@@ -375,7 +375,7 @@ export function runnable (row, runText = 'Run Query', successCallback, errorCall
           renderError(content, executeQueryError)
         }
       } catch (error) {
-        button.disabled = false
+        runButton.disabled = false
         loading.innerHTML = ''
         footer.classList.add('has-results')
 
@@ -395,14 +395,23 @@ export function runnable (row, runText = 'Run Query', successCallback, errorCall
   var originalHTML = pre.innerHTML
   var originalText = cleanCode(pre.innerText)
 
-  var button = createElement('button', 'btn btn-run btn-primary', [document.createTextNode(runText)])
   var loading = createElement('div', 'loading')
 
-  var footer = createElement('div', 'code-footer', [
-    button,
+  const codeFooterElements = [
     loading,
     createElement('div', 'spacer'),
-  ])
+  ]
+
+  const runButton = createElement('button', 'btn btn-run btn-primary', [document.createTextNode(runText)])
+
+  if (!row.classList.contains('single')) {
+    runButton.addEventListener('click', function () {
+      run(mode, database, content, footer, runButton, loading, backend)
+    })
+    codeFooterElements.unshift(runButton)
+  }
+
+  var footer = createElement('div', 'code-footer', codeFooterElements)
 
   content.appendChild(footer)
 
@@ -442,7 +451,7 @@ export function runnable (row, runText = 'Run Query', successCallback, errorCall
 
   let callback = () => {}
   if (row.classList.contains(instantClass)) {
-    callback = async () => run(mode, database, content, footer, button, loading, backend)
+    callback = async () => run(mode, database, content, footer, runButton, loading, backend)
   }
 
   return {
