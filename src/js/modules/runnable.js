@@ -114,11 +114,9 @@ export function runnable (row, runText = 'Run Query', successCallback, errorCall
       })
       : res.nodes
     const nodeIds = nodes.map((node) => node.id)
-    const links = (activeNodes && activeNodes.size > 0
+    const links = activeNodes && activeNodes.size > 0 && res.links.some((link) => link.selected)
       ? res.links.filter((link) => link.selected)
-      : res.links)
-      // otherwise, d3 will throw an exception if it can't find a node (referenced by target or end)
-      .filter((link) => link.end && nodeIds.includes(link.end) && link.target && nodeIds.includes(link.target))
+      : res.links.filter((link) => link.end && nodeIds.includes(link.end) && link.target && nodeIds.includes(link.target))
 
     // Wait 100ms so the svg element is rendered
     setTimeout(() => forcedGraph(replaceSvg, { nodes, links }), 100)
@@ -130,7 +128,18 @@ export function runnable (row, runText = 'Run Query', successCallback, errorCall
     if (res.visualization) {
       data.paths = res.json
       data.nodes = res.visualization.nodes
-      data.links = res.visualization.links
+      const links = res.visualization.links
+      data.links = links.map((link) => {
+        // link.source is an array index (of the nodes array) but we expect a node id
+        if (link.source) {
+          link.source = link.start
+        }
+        // link.target is an array index (of the nodes array) but we expect a node id
+        if (link.target) {
+          link.target = link.end
+        }
+        return link
+      })
     } else {
       const nodes = []
       const links = []
