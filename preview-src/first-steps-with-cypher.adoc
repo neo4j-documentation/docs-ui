@@ -8,7 +8,6 @@
 
 == Create a Record for Yourself
 
-//setup
 [source,cypher,role="runnable instant single backend:graphgist"]
 ----
 CREATE (you:Person {name:"You"})
@@ -17,13 +16,10 @@ RETURN you
 
 `CREATE` creates nodes with labels and properties.
 
-// graph
-
 You like _Neo4j_, right?
 
 Let's find ourselves and add a new relationship to a new node.
 
-//setup
 [source,cypher,role="runnable instant single backend:graphgist"]
 ----
 MATCH  (you:Person {name:"You"})
@@ -33,11 +29,9 @@ RETURN you,like,neo
 
 `CREATE` can create single nodes, or more complex structures.
 
-// graph
 
 == Create Your Friends
 
-//setup
 [source,cypher,role="runnable instant single backend:graphgist"]
 ----
 MATCH (you:Person {name:"You"})
@@ -47,25 +41,21 @@ FOREACH (name in ["Johan","Rajesh","Anna","Julia","Andrew"] |
 
 `FOREACH` allows you to execute update operations for each element of a list.
 
-// graph
-
 == Find Your Friends
 
-[source,cypher,role="runnable backend:graphgist"]
+[source,cypher,role="runnable graph backend:graphgist"]
 ----
-MATCH (you {name:"You"})-[:FRIEND]->(yourFriends)
+MATCH (you {name:"You"})-[friendship:FRIEND]->(yourFriends)
 RETURN you, yourFriends
 ----
 
-// graph_result
-
-// table
+// NOTE: nodes won't be attached/linked, unless we explicitly return the "friendship" relation: "RETURN you, friendship, yourFriends"
+// in runnable.js, if we remove "res.links.filter((link) => link.selected)" (line 118) then nodes will be attached.
 
 Note that we get ourselves repeated for each path found in the graph.
 
 == Create Second Degree Friends and Expertise
 
-//setup
 [source,cypher,role="runnable instant single backend:graphgist"]
 ----
 MATCH (neo:Database {name:"Neo4j"})
@@ -73,20 +63,14 @@ MATCH (anna:Person {name:"Anna"})
 CREATE (anna)-[:FRIEND]->(:Person:Expert {name:"Amanda"})-[:WORKED_WITH]->(neo)
 ----
 
-// graph
-
 `CREATE` can also add more complex patterns.
 
 == Find Someone in your Network Who Can Help You Learn Neo4j
 
-[source,cypher,role="runnable backend:graphgist"]
+[source,cypher,role="runnable graph backend:graphgist"]
 ----
 MATCH (you {name:"You"})
 MATCH (expert)-[:WORKED_WITH]->(db:Database {name:"Neo4j"})
 MATCH path = shortestPath( (you)-[:FRIEND*..5]-(expert) )
 RETURN db,expert,path
 ----
-
-// graph_result
-
-// table

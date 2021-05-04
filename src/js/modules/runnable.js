@@ -113,9 +113,12 @@ export function runnable (row, runText = 'Run Query', successCallback, errorCall
         return activeNodes.has(JSON.stringify({ id: node.id, labels: node.labels }))
       })
       : res.nodes
-    const links = activeNodes && activeNodes.size > 0
+    const nodeIds = nodes.map((node) => node.id)
+    const links = (activeNodes && activeNodes.size > 0
       ? res.links.filter((link) => link.selected)
-      : res.links
+      : res.links)
+      // otherwise, d3 will throw an exception if it can't find a node (referenced by target or end)
+      .filter((link) => link.end && nodeIds.includes(link.end) && link.target && nodeIds.includes(link.target))
 
     // Wait 100ms so the svg element is rendered
     setTimeout(() => forcedGraph(replaceSvg, { nodes, links }), 100)
