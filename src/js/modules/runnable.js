@@ -440,11 +440,13 @@ export function runnable (row, runText = 'Run Query', successCallback, errorCall
     }
   })
 
-  button.addEventListener('click', function () {
-    run(mode, database, content, footer, button, loading, backend)
-  })
-
+  let callback = () => {}
   if (row.classList.contains(instantClass)) {
-    run(mode, database, content, footer, button, loading, backend)
+    callback = async () => run(mode, database, content, footer, button, loading, backend)
+  }
+
+  return {
+    element: row,
+    callback,
   }
 }

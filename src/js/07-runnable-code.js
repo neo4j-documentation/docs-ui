@@ -1,8 +1,8 @@
 
 import { runnable } from './modules/runnable'
 
-document.addEventListener('DOMContentLoaded', function () {
-  // Add contenteditable attribute to editable code blocks (Experimental)
+document.addEventListener('DOMContentLoaded', async function () {
+  // Add contentEditable attribute to editable code blocks (Experimental)
   document.querySelectorAll('.editable')
     .forEach(function (el) {
       el.querySelectorAll('code').forEach(function (el) {
@@ -22,5 +22,11 @@ document.addEventListener('DOMContentLoaded', function () {
   // no runnable block, skipping.
   if (runnable.length === 0) return
 
-  runnableElements.map((el) => runnable(el))
+  for (const runnableElement of runnableElements) {
+    try {
+      await runnable(runnableElement).callback()
+    } catch (e) {
+      console.log('Unable to initialize the runnable element', runnableElement, e)
+    }
+  }
 })
