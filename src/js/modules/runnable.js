@@ -196,7 +196,12 @@ export function runnable (row, runText = 'Run Query', successCallback, errorCall
       results = renderResultsAsGraph(container, data)
     } else {
       const data = prepareTableData(res)
-      results = renderResultsAsTable(data)
+      if (data.columns && data.columns.length && data.data && data.data.length) {
+        results = renderResultsAsTable(data)
+      } else {
+        // empty data, show raw result
+        results = createElement('code', 'code-result-raw', createElement('pre', '', document.createTextNode(res.result)))
+      }
     }
 
     container.appendChild(results)
