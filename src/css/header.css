@@ -18,6 +18,7 @@ body {
   border-top: 4px solid var(--navbar-top-border);
   border-bottom: 1px solid var(--navbar-bottom-border);
   z-index: var(--z-index-navbar);
+  display: flex;
 }
 
 .navbar a {
