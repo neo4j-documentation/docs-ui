@@ -23,7 +23,7 @@ const { getCookie } = require('./modules/cookies')
     const uetsid = getCookie('_uetsid')
 
     // Get Project
-    var productTag = document.querySelector('meta[name=product]')
+    var productTag = document.querySelector('meta[property="neo:product"]')
     var project = productTag
       ? productTag.getAttribute('content').toLowerCase().replace(/[^a-z0-9]+/g, '-')
       : document.querySelector('body').className.replace('article ', '').split(' ')[0]
