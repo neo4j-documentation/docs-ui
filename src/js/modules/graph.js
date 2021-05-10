@@ -131,14 +131,15 @@ var captionFor = function (d) {
 
 export function forcedGraph (svgElement, graph) {
   var shapeSize = 2000
-  var strength = -1000
+  var strength = -200
+  var linkStrength = 0.2
+  var linkDistance = 90
 
   var svg = d3.select(svgElement)
     .attr('preserveAspectRatio', 'xMinYMin meet')
     .attr('viewBox', '0 0 600 400')
 
-  var
-    width = +svg.attr('width') || svgElement.clientWidth
+  var width = +svg.attr('width') || svgElement.clientWidth
   var height = +svg.attr('height') || svgElement.clientHeight
   var center = { x: width / 2, y: height / 2 }
 
@@ -190,6 +191,7 @@ export function forcedGraph (svgElement, graph) {
 
   var zoomHandler = d3.zoom()
     .on('zoom', function () {
+      //console.trace('zoom', d3.event.transform)
       g.attr('transform', d3.event.transform)
     })
 
@@ -197,7 +199,7 @@ export function forcedGraph (svgElement, graph) {
 
   simulation.nodes(graph.nodes)
 
-  simulation.force('link', d3.forceLink(graph.links).id(function (d) {
+  simulation.force('link', d3.forceLink(graph.links).distance(linkDistance).strength(linkStrength).id(function (d) {
     return d.id
   }))
 
@@ -250,39 +252,28 @@ export function forcedGraph (svgElement, graph) {
     drawNodes(node)
   })
 
-  /*
-    function zoomFit(paddingPercent, transitionDuration) {
-        var bounds = g.node().getBBox();
-        var parent = g.node().parentElement;
+  function zoomFit (paddingPercent, transitionDuration) {
+    var bounds = svg.node().getBBox()
+    var parent = svg.node().parentElement
 
-        var fullWidth = parent.clientWidth,
-            fullHeight = parent.clientHeight;
-        var width = bounds.width,
-            height = bounds.height;
-        var midX = bounds.x + width / 2,
-            midY = bounds.y + height / 2;
+    var fullWidth = parent.clientWidth
+    var fullHeight = parent.clientHeight
+    var width = bounds.width
+    var height = bounds.height
+    var midX = bounds.x + width / 2
+    var midY = bounds.y + height / 2
+    if (width === 0 || height === 0) return // nothing to fit
+    var scale = (paddingPercent || 0.75) / Math.max(width / fullWidth, height / fullHeight)
+    var translate = [fullWidth / 2 - scale * midX, fullHeight / 2 - scale * midY]
+    console.trace('zoomFit', translate, scale)
 
-        if (width == 0 || height == 0) return; // nothing to fit
-        var scale = (paddingPercent || 0.75) / Math.max(width / fullWidth, height / fullHeight);
-        var translate = [fullWidth / 2 - scale * midX, fullHeight / 2 - scale * midY];
+    svg
+      .transition()
+      .duration(transitionDuration || 0) // milliseconds
+      .call(zoomHandler.translateTo, translate[0], translate[1])
+  }
 
-        console.trace("zoomFit", translate, scale);
-        // g
-        //     .transition()
-        //     .duration(transitionDuration || 0) // milliseconds
-        //     .call(zoomHandler.translate(translate).scale(scale).event);
-
-        var transform = d3.zoomIdentity
-            .translate(translate[0], translate[1])
-            .scale(scale);
-
-        g
-            .transition()
-            .duration(transitionDuration || 0) // milliseconds
-            .call(zoom.transform, transform);
-    }
-    zoomFit(.7, 1000)
-    */
+  zoomFit(0.7, 1000)
 }
 
 export function replaceWithSvg (code) {
