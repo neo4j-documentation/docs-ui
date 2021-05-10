@@ -183,6 +183,9 @@ page:
     - content: Star Wars Social Network
       url: graph-gist-star-wars-social-network.html
       urlType: internal
+    - content: First Steps with Cypher
+      url: first-steps-with-cypher.html
+      urlType: internal
     - content: Category Pop Culture
       url: graph-gist-category-pop-culture.html
       urlType: internal
@@ -230,6 +233,14 @@ page:
               - name: 'Pop Culture'
                 pub:
                   url: '/graph-gist-category-pop-culture.html'
+      first-steps-with-cypher: &first_steps_with_cypher
+        title: 'First Steps with Cypher'
+        pub:
+          url: '/first-steps-with-cypher.html'
+        asciidoc:
+          attributes:
+            page-illustration: 'https://graphgist-portal-production.s3.amazonaws.com/graph_starter/images/sources/8b4/f25/5a-/medium/8b4f255a-a843-4797-8741-3e435e7f4c0d.png'
+            page-author: Michael Hunger
   attributes:
     exploring-the-star-wars-social-network:
       use-cases: *use-cases
@@ -241,6 +252,7 @@ page:
       industries: *industries
     graphgists:
       featured-pages:
+        - *first_steps_with_cypher
         - *star_wars_social_network_page
         - title: 'Bank Fraud Detection'
           asciidoc:
