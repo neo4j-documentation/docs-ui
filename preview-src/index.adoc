@@ -159,6 +159,14 @@ imports nodes and relationships from the provided CSV files with given labels an
 </div>
 
 <div class="box">
+  <span class="label label--added">Added</span>
+</div>
+
+<div class="box">
+  <span class="label label--updated">Updated</span>
+</div>
+
+<div class="box">
   <span class="label label--removed">Removed</span>
 </div>
 

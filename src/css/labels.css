@@ -50,6 +50,8 @@
   color: var(--color-white);
 }
 
+.label--added,
+.label--updated,
 .label--changed,
 .label--yes,
 .label--renamed,
