@@ -2,43 +2,43 @@
   display: inline-block;
   padding: 0.2rem 0.8rem;
   border-radius: 0.25rem;
-  background: var(--colour-blue-200);
-  color: var(--colour-blue-700);
+  background: var(--color-blue-200);
+  color: var(--color-blue-700);
   font-weight: 600;
   font-size: 0.7rem;
 }
 
 .label--core,
 .label--apoc-core {
-  background: var(--colour-blue-200);
-  color: var(--colour-blue-700);
+  background: var(--color-blue-200);
+  color: var(--color-blue-700);
 }
 
 .label--full,
 .label--apoc-full {
-  background: var(--colour-green-200);
-  color: var(--colour-green-700);
+  background: var(--color-green-200);
+  color: var(--color-green-700);
 }
 
 .label--procedure {
-  background: var(--colour-indigo-200);
-  color: var(--colour-indigo-700);
+  background: var(--color-indigo-200);
+  color: var(--color-indigo-700);
 }
 
 .label--function {
-  background: var(--colour-purple-200);
-  color: var(--colour-purple-700);
+  background: var(--color-purple-200);
+  color: var(--color-purple-700);
 }
 
 .label--current {
-  background: var(--colour-blue-600);
-  color: var(--color-true-white);
+  background: var(--color-blue-600);
+  color: var(--color-white);
 }
 
 .label--free,
 .label--beginner {
   background: var(--neo4j-blueberry-color);
-  color: var(--color-true-white);
+  color: var(--color-white);
 }
 
 .label--aura,
@@ -47,53 +47,53 @@
 .label--enterprise,
 .label--enterprise-edition {
   background: var(--neo4j-primary-color);
-  color: var(--color-true-white);
+  color: var(--color-white);
 }
 
 .label--changed,
 .label--yes,
 .label--renamed,
 .label--new {
-  background: var(--colour-green-300);
-  color: var(--color-true-black);
+  background: var(--color-green-300);
+  color: var(--color-black);
 }
 
 .label--na,
 .label--no,
 .label--removed {
-  background: var(--colour-red-400);
-  color: var(--color-true-black);
+  background: var(--color-red-400);
+  color: var(--color-black);
 }
 
 .label--deprecated,
 .label--discontinued {
-  background: var(--colour-orange-400);
-  color: var(--color-true-black);
+  background: var(--color-orange-400);
+  color: var(--color-black);
 }
 
 .label--danger,
 .label--warning {
   background: var(--neo4j-warning-color);
-  color: var(--color-true-black);
+  color: var(--color-black);
 }
 
 .label--default,
 .label--recommended {
-  background: var(--colour-indigo-300);
-  color: var(--color-true-black);
+  background: var(--color-indigo-300);
+  color: var(--color-black);
 }
 
 .label--unix,
 .label--mac-os,
 .label--linux,
 .label--windows {
-  background: var(--colour-teal-400);
-  color: var(--color-true-black);
+  background: var(--color-teal-400);
+  color: var(--color-black);
 }
 
 .label--syntax,
 .label--functionality,
 .label--cypher {
   background: var(--label-group-syntax);
-  color: var(--color-true-black);
+  color: var(--color-black);
 }

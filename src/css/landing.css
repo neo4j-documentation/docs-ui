@@ -1,9 +1,9 @@
 /* Hero */
 section.hero {
   padding: 8rem 0 0;
-  background: var(--colour-grey-800);
+  background: var(--color-grey-800);
   background: rgb(2, 0, 36);
-  background: linear-gradient(180deg, var(--colour-grey-800) 0%, var(--colour-grey-700) 45%, var(--colour-grey-700) 100%);
+  background: linear-gradient(180deg, var(--color-grey-800) 0%, var(--color-grey-700) 45%, var(--color-grey-700) 100%);
   text-align: left;
 }
 
@@ -25,7 +25,7 @@ section.hero h2 {
   font-size: 1.2rem;
   font-weight: 300;
   display: block;
-  color: var(--colour-grey-400);
+  color: var(--color-grey-400);
   margin-bottom: 1rem;
 }
 
@@ -34,7 +34,7 @@ section.hero h2 {
 section.hero h1::after,
 section.hero h2::after {
   display: block;
-  background-color: var(--colour-green-600);
+  background-color: var(--color-green-600);
   height: 3px;
   width: 80px;
   margin-top: 1rem;
@@ -45,7 +45,7 @@ section.hero h2::after {
 .landing .hero p,
 section.hero p {
   font-size: 1.8rem;
-  color: var(--colour-grey-300);
+  color: var(--color-grey-300);
   font-weight: 300;
 }
 
@@ -80,12 +80,12 @@ section.hero p {
 }
 
 .landing .doc .secondary {
-  background: var(--colour-grey-100);
+  background: var(--color-grey-100);
 }
 
 .landing .doc .secondary.leading {
   margin-top: 0;
-  background: linear-gradient(180deg, var(--landing-leading-background) 0%, var(--colour-grey-100) 35%, var(--colour-white) 100%);
+  background: linear-gradient(180deg, var(--landing-leading-background) 0%, var(--color-grey-100) 35%, var(--color-white) 100%);
   padding-top: 4rem;
 }
 
@@ -95,7 +95,7 @@ section.hero p {
 
 .landing .doc h2::after {
   display: block;
-  background-color: var(--colour-green-600);
+  background-color: var(--color-green-600);
   height: 3px;
   width: 80px;
   margin-top: 1rem;
@@ -158,7 +158,7 @@ body.landing .ulist.buttons li {
 body.landing .ulist.buttons li a {
   display: inline-block;
   margin: 0 0.25rem;
-  background: var(--colour-grey-800);
+  background: var(--color-grey-800);
   color: white;
   font-weight: 600;
   padding: 1rem 2rem;
@@ -213,7 +213,7 @@ body.landing .ulist.buttons li a {
 
   .landing .flex .column h3::after {
     display: block;
-    background-color: var(--colour-blue-400);
+    background-color: var(--color-blue-400);
     height: 2px;
     width: 40px;
     margin-top: 12px;
@@ -248,9 +248,9 @@ body.landing .ulist.buttons li a {
 /* Hero */
 .hero {
   padding: 8rem 0 0 !important;
-  background: var(--colour-grey-800);
+  background: var(--color-grey-800);
   background: rgb(2, 0, 36);
-  background: linear-gradient(180deg, var(--colour-grey-800) 0%, var(--colour-grey-700) 45%, var(--colour-grey-700) 100%);
+  background: linear-gradient(180deg, var(--color-grey-800) 0%, var(--color-grey-700) 45%, var(--color-grey-700) 100%);
   text-align: left;
 }
 
@@ -272,14 +272,14 @@ body.landing .ulist.buttons li a {
   font-size: 1.2rem;
   font-weight: 300;
   display: block;
-  color: var(--colour-grey-400);
+  color: var(--color-grey-400);
   margin-bottom: 1rem;
 }
 
 .hero h1::after,
 .hero h2::after {
   display: block;
-  background-color: var(--colour-green-600);
+  background-color: var(--color-green-600);
   height: 3px;
   width: 80px;
   margin-top: 1rem;
@@ -289,7 +289,7 @@ body.landing .ulist.buttons li a {
 
 .hero p {
   font-size: 1.8rem;
-  color: var(--colour-grey-300);
+  color: var(--color-grey-300);
   font-weight: 300;
 }
 
@@ -315,7 +315,7 @@ body.landing .ulist.buttons li a {
 }
 
 .hero svg.to-white {
-  fill: var(--colour-white);
+  fill: var(--color-white);
   margin-bottom: -1em;
 }
 

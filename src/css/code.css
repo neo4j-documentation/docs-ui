@@ -19,7 +19,7 @@
 }
 
 .doc .code-header .code-title {
-  color: var(--colour-grey-500);
+  color: var(--color-grey-500);
   padding-right: 0.5em;
 }
 
@@ -64,12 +64,12 @@
 }
 
 .doc .code-header .btn-copy.btn-success {
-  background: var(--colour-green-600);
+  background: var(--color-green-600);
 }
 
 .doc .code-footer {
-  background: var(--colour-grey-500);
-  color: var(--colour-white);
+  background: var(--color-grey-500);
+  color: var(--color-white);
   padding: 0.3rem 12px 0.3rem 0;
   font-size: 0.8em;
   display: flex;
@@ -91,14 +91,14 @@
   flex-direction: column;
   justify-content: center;
   padding: 0 0.6rem;
-  color: var(--colour-grey-200);
+  color: var(--color-grey-200);
   font-size: 0.7rem;
 }
 
 .doc .code-results {
-  background: var(--colour-grey-200);
-  color: var(--colour-grey-600);
-  border: 1px solid var(--colour-grey-500);
+  background: var(--color-grey-200);
+  color: var(--color-grey-600);
+  border: 1px solid var(--color-grey-500);
   border-bottom-width: 2px;
   border-bottom-left-radius: 0.25rem;
   border-bottom-right-radius: 0.25rem;
@@ -109,7 +109,7 @@
 .doc .code-results .code-result-options {
   display: flex;
   justify-content: space-between;
-  border-bottom: 1px solid var(--colour-grey-400);
+  border-bottom: 1px solid var(--color-grey-400);
   margin: 0 12px 4px;
 }
 
@@ -123,12 +123,12 @@
   padding: 0;
   font-weight: 600;
   border: 0 none;
-  color: var(--colour-grey-600);
+  color: var(--color-grey-600);
   background: transparent;
 }
 
 .doc .code-results button:focus {
-  color: var(--colour-green-600);
+  color: var(--color-green-600);
   outline: none;
 }
 
@@ -155,12 +155,12 @@
 .doc .code-results .code-result-table td {
   vertical-align: top;
   padding: 0.25rem;
-  color: var(--colour-grey-600);
+  color: var(--color-grey-600);
 }
 
 .doc .code-results .code-result-table tbody td {
-  border-right: 1px solid var(--colour-grey-300);
-  border-bottom: 1px solid var(--colour-grey-300);
+  border-right: 1px solid var(--color-grey-300);
+  border-bottom: 1px solid var(--color-grey-300);
 }
 
 .doc .code-results .code-result-table tbody tr td:last-child {
@@ -169,16 +169,16 @@
 
 /*
 .doc .code-results .code-result-table tbody tr:nth-child(even) {
-  background: var(--colour-grey-100);
+  background: var(--color-grey-100);
 }
 
 .doc .code-results .code-result-table tbody tr:hover {
-  background: var(--colour-grey-100);
+  background: var(--color-grey-100);
 }
 */
 
 .doc .code-results .code-result-table tbody tr:hover {
-  background: var(--colour-grey-100);
+  background: var(--color-grey-100);
 }
 
 .doc .code-results pre {
@@ -188,8 +188,8 @@
 }
 
 .doc .code-results .error {
-  border-left: 4px solid var(--colour-red-600);
-  color: var(--colour-red-600);
+  border-left: 4px solid var(--color-red-600);
+  color: var(--color-red-600);
   padding: 8px;
   border-radius: 0;
 }
@@ -208,10 +208,10 @@
   padding: 0.5rem 0 0.5rem;
   margin-left: 0.4rem;
   border-bottom: 2px solid transparent;
-  color: var(--colour-grey-500);
+  color: var(--color-grey-500);
 }
 
 .doc .code-result-toggle button.code-result-toggle--current {
-  color: var(--colour-grey-600);
-  border-bottom-color: var(--colour-grey-600);
+  color: var(--color-grey-600);
+  border-bottom-color: var(--color-grey-600);
 }

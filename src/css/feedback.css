@@ -4,8 +4,8 @@
   right: 2rem;
   border-top-left-radius: 0.25rem;
   border-top-right-radius: 0.25rem;
-  background: var(--colour-blue-100);
-  color: var(--colour-blue-800);
+  background: var(--color-blue-100);
+  color: var(--color-blue-800);
   padding: 0.5rem 1rem;
   width: 320px;
   font-size: 0.8rem;
@@ -14,21 +14,21 @@
 }
 
 .feedback.negative {
-  background: var(--colour-red-100);
-  color: var(--colour-red-800);
+  background: var(--color-red-100);
+  color: var(--color-red-800);
 }
 
 .feedback.negative line {
-  stroke: var(--colour-red-800);
+  stroke: var(--color-red-800);
 }
 
 .feedback.negative a {
-  color: var(--colour-red-700);
+  color: var(--color-red-700);
 }
 
 .feedback.positive {
-  background: var(--colour-green-100);
-  color: var(--colour-green-800);
+  background: var(--color-green-100);
+  color: var(--color-green-800);
 }
 
 .feedback .header {
@@ -76,12 +76,12 @@
 
 .feedback textarea {
   border-radius: 0.25rem;
-  border: 1px solid var(--colour-blue-300);
-  background: var(--colour-white);
+  border: 1px solid var(--color-blue-300);
+  background: var(--color-white);
   width: 100%;
   font-family: inherit;
   font-size: 0.7rem;
-  color: var(--colour-blue-700);
+  color: var(--color-blue-700);
   padding: 0.5rem;
 }
 
@@ -89,16 +89,16 @@
 .feedback circle,
 .feedback line {
   fill: transparent;
-  stroke: var(--colour-blue-700);
+  stroke: var(--color-blue-700);
   stroke-width: 1;
 }
 
 .feedback .primary,
 .feedback .secondary {
   padding: 0.25rem 1rem;
-  background: var(--colour-blue-100);
-  border: 1px solid var(--colour-blue-700);
-  color: var(--colour-blue-700);
+  background: var(--color-blue-100);
+  border: 1px solid var(--color-blue-700);
+  color: var(--color-blue-700);
   border-radius: 0.175rem;
   font-size: 0.8rem;
   font-family: inherit;
@@ -115,12 +115,12 @@
 }
 
 .feedback .primary {
-  background: var(--colour-blue-700);
-  color: var(--colour-white);
+  background: var(--color-blue-700);
+  color: var(--color-white);
 }
 
 .feedback.negative textarea {
-  color: var(--colour-red-700);
+  color: var(--color-red-700);
 }
 
 .feedback.negative textarea:active,
@@ -129,15 +129,15 @@
 }
 
 .feedback.negative .primary {
-  background: var(--colour-red-700);
-  border-color: var(--colour-red-700);
-  color: var(--colour-white);
+  background: var(--color-red-700);
+  border-color: var(--color-red-700);
+  color: var(--color-white);
 }
 
 .feedback.negative .secondary {
-  background: var(--colour-red-100);
-  border-color: var(--colour-red-700);
-  color: var(--colour-red-700);
+  background: var(--color-red-100);
+  border-color: var(--color-red-700);
+  color: var(--color-red-700);
 }
 
 .feedback .thank-you-positive,

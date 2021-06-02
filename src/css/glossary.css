@@ -4,8 +4,8 @@
 
 .glossary-term {
   display: inline-block;
-  color: var(--colour-docs);
-  border-bottom: 1px dotted var(--colour-docs);
+  color: var(--color-docs);
+  border-bottom: 1px dotted var(--color-docs);
 }
 
 .glossary-term::after {
@@ -23,7 +23,7 @@ code .glossary-term::after {
   font-size: 0.8rem;
   position: absolute;
   z-index: 5000;
-  background: var(--colour-white);
+  background: var(--color-white);
   border-bottom: 3px solid var(--code-header-background);
   border-radius: 0.25rem;
   width: 220px;
@@ -47,7 +47,7 @@ code .glossary-term::after {
   margin-top: -0.5rem;
   border-left: 0.5rem solid transparent;
   border-right: 0.5rem solid transparent;
-  border-bottom: 0.5rem solid var(--colour-grey-600);
+  border-bottom: 0.5rem solid var(--color-grey-600);
 }
 
 .tooltip.tooltip--bottom::after {
@@ -57,14 +57,14 @@ code .glossary-term::after {
   margin-bottom: -0.5rem;
   border-left: 0.5rem solid transparent;
   border-right: 0.5rem solid transparent;
-  border-top: 0.5rem solid var(--colour-grey-600);
+  border-top: 0.5rem solid var(--color-grey-600);
 }
 
 .tooltip .tooltip-header {
   background: var(--code-header-background);
   border-top-left-radius: 0.25rem;
   border-top-right-radius: 0.25rem;
-  color: var(--colour-white);
+  color: var(--color-white);
   padding: 12px;
   padding: 0.5rem 1rem;
   font-weight: 600;
@@ -72,7 +72,7 @@ code .glossary-term::after {
 
 .tooltip .tooltip-body {
   padding: 0.5rem 1rem;
-  color: var(--colour-grey-600);
+  color: var(--color-grey-600);
   font-size: 0.8rem;
 }
 
@@ -85,6 +85,6 @@ code .glossary-term::after {
 }
 
 .tooltip .tooltip-body a {
-  color: var(--colour-blue-600);
+  color: var(--color-blue-600);
   font-weight: 600;
 }

@@ -10,107 +10,107 @@ var customCaptions = {
 }
 
 var color = d3.scaleOrdinal([
-  // --colour-green-100: #f0fff4;
-  // --colour-green-200: #c6f6d5;
-  // --colour-green-300: #9ae6b4;
-  // --colour-green-400: #68d391;
-  // --colour-green-500: #48bb78;
-  // --colour-green-600: '#38a169';
-  // --colour-green-700:
+  // --color-green-100: #f0fff4;
+  // --color-green-200: #c6f6d5;
+  // --color-green-300: #9ae6b4;
+  // --color-green-400: #68d391;
+  // --color-green-500: #48bb78;
+  // --color-green-600: '#38a169';
+  // --color-green-700:
   '#2f855a',
-  // --colour-green-800:  '#276749',
-  // --colour-green-900: #22543d;
+  // --color-green-800:  '#276749',
+  // --color-green-900: #22543d;
 
-  // --colour-teal-100: #e6fffa;
-  // --colour-teal-200: #b2f5ea;
-  // --colour-teal-300: #81e6d9;
-  // --colour-teal-400: #4fd1c5;
-  // --colour-teal-500: #38b2ac;
-  // --colour-teal-600:
+  // --color-teal-100: #e6fffa;
+  // --color-teal-200: #b2f5ea;
+  // --color-teal-300: #81e6d9;
+  // --color-teal-400: #4fd1c5;
+  // --color-teal-500: #38b2ac;
+  // --color-teal-600:
   '#319795',
-  // --colour-teal-700: #2c7a7b;
-  // /* --colour-teal-800: */ '#285e61',
-  // --colour-teal-900: #234e52;
+  // --color-teal-700: #2c7a7b;
+  // /* --color-teal-800: */ '#285e61',
+  // --color-teal-900: #234e52;
 
-  // --colour-blue-100: #ebf8ff;
-  // --colour-blue-200: #bee3f8;
-  // --colour-blue-300: #90cdf4;
-  // --colour-blue-400: #63b3ed;
-  // --colour-blue-500: #4299e1;
-  // --colour-blue-600: #3182ce;
-  // --colour-blue-700: #2b6cb0;
-  /* --colour-blue-800: */ '#2c5282',
-  // --colour-blue-900: #2a4365;
+  // --color-blue-100: #ebf8ff;
+  // --color-blue-200: #bee3f8;
+  // --color-blue-300: #90cdf4;
+  // --color-blue-400: #63b3ed;
+  // --color-blue-500: #4299e1;
+  // --color-blue-600: #3182ce;
+  // --color-blue-700: #2b6cb0;
+  /* --color-blue-800: */ '#2c5282',
+  // --color-blue-900: #2a4365;
 
-  // --colour-indigo-100: #ebf4ff;
-  // --colour-indigo-200: #c3dafe;
-  // --colour-indigo-300: #a3bffa;
-  // --colour-indigo-400: #7f9cf5;
-  // --colour-indigo-500: #667eea;
-  // --colour-indigo-600: #5a67d8;
-  // --colour-indigo-700: #4c51bf;
-  /* --colour-indigo-800: */ '#434190',
-  // --colour-indigo-900: #3c366b;
+  // --color-indigo-100: #ebf4ff;
+  // --color-indigo-200: #c3dafe;
+  // --color-indigo-300: #a3bffa;
+  // --color-indigo-400: #7f9cf5;
+  // --color-indigo-500: #667eea;
+  // --color-indigo-600: #5a67d8;
+  // --color-indigo-700: #4c51bf;
+  /* --color-indigo-800: */ '#434190',
+  // --color-indigo-900: #3c366b;
 
-  // --colour-purple-100: #faf5ff;
-  // --colour-purple-200: #e9d8fd;
-  // --colour-purple-300: #d6bcfa;
-  // --colour-purple-400: #b794f4;
-  // --colour-purple-500: #9f7aea;
-  // --colour-purple-600: #805ad5;
-  // --colour-purple-700: #6b46c1;
-  /* --colour-purple-800: */ '#553c9a',
-  // --colour-purple-900: #44337a;
+  // --color-purple-100: #faf5ff;
+  // --color-purple-200: #e9d8fd;
+  // --color-purple-300: #d6bcfa;
+  // --color-purple-400: #b794f4;
+  // --color-purple-500: #9f7aea;
+  // --color-purple-600: #805ad5;
+  // --color-purple-700: #6b46c1;
+  /* --color-purple-800: */ '#553c9a',
+  // --color-purple-900: #44337a;
 
-  // --colour-red-100: #fff5f5;
-  // --colour-red-200: #fed7d7;
-  // --colour-red-300: #feb2b2;
-  // --colour-red-400: #fc8181;
-  // --colour-red-500: #f56565;
-  // --colour-red-600: #e53e3e;
-  // --colour-red-700: #c53030;
-  /* --colour-red-800: */ '#9b2c2c',
-  // --colour-red-900: #742a2a;
+  // --color-red-100: #fff5f5;
+  // --color-red-200: #fed7d7;
+  // --color-red-300: #feb2b2;
+  // --color-red-400: #fc8181;
+  // --color-red-500: #f56565;
+  // --color-red-600: #e53e3e;
+  // --color-red-700: #c53030;
+  /* --color-red-800: */ '#9b2c2c',
+  // --color-red-900: #742a2a;
 
-  // --colour-orange-100: #fffaf0;
-  // --colour-orange-200: #feebc8;
-  // --colour-orange-300: #fbd38d;
-  // --colour-orange-400: #f6ad55;
-  // --colour-orange-500: #ed8936;
-  // --colour-orange-600: #dd6b20;
-  // --colour-orange-700: #c05621;
-  /* --colour-orange-800: */ '#9c4221',
-  // --colour-orange-900: #7b341e;
+  // --color-orange-100: #fffaf0;
+  // --color-orange-200: #feebc8;
+  // --color-orange-300: #fbd38d;
+  // --color-orange-400: #f6ad55;
+  // --color-orange-500: #ed8936;
+  // --color-orange-600: #dd6b20;
+  // --color-orange-700: #c05621;
+  /* --color-orange-800: */ '#9c4221',
+  // --color-orange-900: #7b341e;
 
-  // --colour-yellow-100: #fffff0;
-  // --colour-yellow-200: #fefcbf;
-  // --colour-yellow-300: #faf089;
-  // --colour-yellow-400: #f6e05e;
-  // --colour-yellow-500: #ecc94b;
-  // --colour-yellow-600: #d69e2e;
-  // --colour-yellow-700: #b7791f;
-  /* --colour-yellow-800: */ '#975a16',
-  // --colour-yellow-900: #744210;
+  // --color-yellow-100: #fffff0;
+  // --color-yellow-200: #fefcbf;
+  // --color-yellow-300: #faf089;
+  // --color-yellow-400: #f6e05e;
+  // --color-yellow-500: #ecc94b;
+  // --color-yellow-600: #d69e2e;
+  // --color-yellow-700: #b7791f;
+  /* --color-yellow-800: */ '#975a16',
+  // --color-yellow-900: #744210;
 
-  // --colour-pink-100: #fff5f7;
-  // --colour-pink-200: #fed7e2;
-  // --colour-pink-300: #fbb6ce;
-  // --colour-pink-400: #f687b3;
-  // --colour-pink-500: #ed64a6;
-  // --colour-pink-600: #d53f8c;
-  // --colour-pink-700: #b83280;
-  /* --colour-pink-800: */ '#97266d',
-  // --colour-pink-900: #702459;
+  // --color-pink-100: #fff5f7;
+  // --color-pink-200: #fed7e2;
+  // --color-pink-300: #fbb6ce;
+  // --color-pink-400: #f687b3;
+  // --color-pink-500: #ed64a6;
+  // --color-pink-600: #d53f8c;
+  // --color-pink-700: #b83280;
+  /* --color-pink-800: */ '#97266d',
+  // --color-pink-900: #702459;
 
-  // --colour-grey-100: #f7fafc;
-  // --colour-grey-200: #edf2f7;
-  // --colour-grey-300: #e2e8f0;
-  // --colour-grey-400: #cbd5e0;
-  // --colour-grey-500: #a0aec0;
-  // --colour-grey-600: #718096;
-  // --colour-grey-700: #4a5568;
-  /* --colour-grey-800: */ '#2d3748',
-  // --colour-grey-900: #1a202c;
+  // --color-grey-100: #f7fafc;
+  // --color-grey-200: #edf2f7;
+  // --color-grey-300: #e2e8f0;
+  // --color-grey-400: #cbd5e0;
+  // --color-grey-500: #a0aec0;
+  // --color-grey-600: #718096;
+  // --color-grey-700: #4a5568;
+  /* --color-grey-800: */ '#2d3748',
+  // --color-grey-900: #1a202c;
 ])
 
 var colorFor = function (node) {

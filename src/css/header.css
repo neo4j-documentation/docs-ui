@@ -264,7 +264,7 @@ body {
     bottom: 0;
     max-height: none;
     z-index: 500;
-    background: var(--colour-grey-100);
+    background: var(--color-grey-100);
   }
 
   .navbar-menu a.navbar-item:hover,
@@ -448,7 +448,7 @@ body {
 .project {
   flex-direction: column;
   align-items: flex-start;
-  border-bottom: 1px solid var(--colour-grey-200);
+  border-bottom: 1px solid var(--color-grey-200);
 }
 
 .project .project-name {
@@ -459,7 +459,7 @@ body {
 .project-description {
   margin: 0.2rem 0;
   font-size: 0.8rem;
-  color: var(--colour-grey-600);
+  color: var(--color-grey-600);
   white-space: normal;
 }
 
@@ -472,12 +472,12 @@ body {
 .project-links li {
   list-style-type: none;
   display: inline;
-  /* border-right: 1px solid var(--colour-grey-400); */
+  /* border-right: 1px solid var(--color-grey-400); */
   /* padding: 0 .1rem; */
 }
 
 .project-links li::after {
-  color: var(--colour-grey-400);
+  color: var(--color-grey-400);
   content: "|";
 }
 
@@ -520,5 +520,5 @@ body {
   font-size: 0.7rem;
   background-size: cover;
   background-position: center;
-  border: 2px solid var(--colour-green-600);
+  border: 2px solid var(--color-green-600);
 }
