@@ -203,7 +203,7 @@ imports nodes and relationships from the provided CSV files with given labels an
 </div>
 
 <div class="box">
-  <span class="label label--mac-os">Unix</span>
+  <span class="label label--unix">Unix</span>
 </div>
 
 <div class="box">

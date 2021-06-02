@@ -1,6 +1,6 @@
 :root {
-  --color-true-black: #000000;
-  --color-true-white: #FFFFFF;
+  --color-true-black: #000;
+  --color-true-white: #fff;
   --colour-black: #f7f7f7;
   --colour-white: #fff;
   --colour-grey-100: #f7fafc;
@@ -279,13 +279,13 @@
   --landing-leading-background: var(--colour-grey-300);
 
   /* Label colors */
-  --label-group-syntax: #E6E6E6;
+  --label-group-syntax: #e6e6e6;
 
   /* Neo4j brand colors */
-  --neo4j-primary-color: #018BFF;
-  --neo4j-secondary-color: #ED1252;
-  --neo4j-blueberry-color: #0B297D;
-  --neo4j-mint-color: #55F9E2;
-  --neo4j-success-color: #00BA88;
-  --neo4j-warning-color: #FFDE63;
+  --neo4j-primary-color: #018bff;
+  --neo4j-secondary-color: #ed1252;
+  --neo4j-blueberry-color: #0b297d;
+  --neo4j-mint-color: #55f9e2;
+  --neo4j-success-color: #00ba88;
+  --neo4j-warning-color: #ffde63;
 }
