@@ -27,33 +27,6 @@ Author Name
 :page-disabletracking: true
 :page-newsletter: true
 
-
-+++
-<div class="paragraph">
-<p>
-  <span class="label label--apoc-core">APOC Core</span>
-  <span class="label label--procedure">Procedure</span>
-</p>
-<p>
-  <span class="label label--apoc-full">APOC Full</span>
-  <span class="label label--procedure">Procedure</span>
-</p>
-<p>
-  <span class="label label--apoc-core">APOC Core</span>
-  <span class="label label--function">Function</span>
-</p>
-<p>
-  <span class="label label--apoc-full">APOC Full</span>
-  <span class="label label--function">Function</span>
-</p>
-<p>
-  <span class="label label--apoc-full">APOC Full</span>
-  <span class="label label--function">Function</span>
-  <span class="label label--deprecated">Deprecated</span>
-</p>
-</div>
-+++
-
 .Goals
 [abstract]
 {description}
@@ -104,6 +77,160 @@ imports nodes and relationships from the provided CSV files with given labels an
 [role=expertise {level}]
 {level}
 // end::level[]
+
+
+== Labels
+
+++++
+<div class="box">
+  <span class="label">Default Label Color</span>
+</div>
+
+<div class="box">
+  <span class="label label--apoc-core">APOC Core</span>
+</div>
+
+<div class="box">
+  <span class="label label--core">Core</span>
+</div>
+
+<div class="box">
+  <span class="label label--apoc-full">APOC Full</span>
+</div>
+
+<div class="box">
+  <span class="label label--full">Full</span>
+</div>
+
+<div class="box">
+  <span class="label label--current">Current</span>
+</div>
+
+<div class="box">
+  <span class="label label--function">Function</span>
+</div>
+
+<div class="box">
+  <span class="label label--procedure">Procedure</span>
+</div>
+
+<div class="box">
+  <span class="label label--beginner">Beginner</span>
+</div>
+
+<div class="box">
+  <span class="label label--free">Free</span>
+</div>
+
+<div class="box">
+  <span class="label label--enterprise-edition">Enterprise Edition</span>
+</div>
+
+<div class="box">
+  <span class="label label--enterprise">Enterprise</span>
+</div>
+
+<div class="box">
+  <span class="label label--professional">Professional</span>
+</div>
+
+<div class="box">
+  <span class="label label--enterprise-only">Enterprise Only</span>
+</div>
+
+<div class="box">
+  <span class="label label--aura">Aura</span>
+</div>
+
+<div class="box">
+  <span class="label label--new">New</span>
+</div>
+
+<div class="box">
+  <span class="label label--yes">Yes</span>
+</div>
+
+<div class="box">
+  <span class="label label--renamed">Renamed</span>
+</div>
+
+<div class="box">
+  <span class="label label--changed">Changed</span>
+</div>
+
+<div class="box">
+  <span class="label label--added">Added</span>
+</div>
+
+<div class="box">
+  <span class="label label--updated">Updated</span>
+</div>
+
+<div class="box">
+  <span class="label label--removed">Removed</span>
+</div>
+
+<div class="box">
+  <span class="label label--no">No</span>
+</div>
+
+<div class="box">
+  <span class="label label--na">N / A</span>
+</div>
+
+<div class="box">
+  <span class="label label--discontinued">Discontinued</span>
+</div>
+
+<div class="box">
+  <span class="label label--deprecated">Deprecated</span>
+</div>
+
+<div class="box">
+  <span class="label label--warning">Warning!</span>
+</div>
+
+<div class="box">
+  <span class="label label--danger">Danger!</span>
+</div>
+
+<div class="box">
+  <span class="label label--recommended">Recommended</span>
+</div>
+
+<div class="box">
+  <span class="label label--default">Default</span>
+</div>
+
+<div class="box">
+  <span class="label label--windows">Windows</span>
+</div>
+
+<div class="box">
+  <span class="label label--linux">Linux</span>
+</div>
+
+<div class="box">
+  <span class="label label--unix">Unix</span>
+</div>
+
+<div class="box">
+  <span class="label label--mac-os">Mac OS</span>
+</div>
+
+<div class="box">
+  <span class="label label--syntax">Syntax</span>
+</div>
+
+<div class="box">
+  <span class="label label--functionality">Functionality</span>
+</div>
+
+<div class="box">
+  <span class="label label--cypher">Cypher</span>
+</div>
+++++
+
 
 == Tabs
 // tag::tabs[]

@@ -118,18 +118,18 @@ span.fabric::after {
 }
 
 .doc .admonitionblock.deprecated {
-  background-color: var(--colour-pink-200);
-  color: var(--colour-pink-900);
-  border-left-color: var(--colour-pink-600);
+  background-color: var(--color-pink-200);
+  color: var(--color-pink-900);
+  border-left-color: var(--color-pink-600);
 }
 
 .doc .admonitionblock.deprecated pre {
-  background-color: var(--colour-red-100);
-  color: var(--colour-red-700);
+  background-color: var(--color-red-100);
+  color: var(--color-red-700);
 }
 
 .doc .admonitionblock.deprecated a {
-  color: var(--colour-red-600);
+  color: var(--color-red-600);
 }
 
 .doc pre {
@@ -139,7 +139,7 @@ span.fabric::after {
 .doc .paragraph.statsonlyqueryresult {
   font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
   font-size: calc(14 / var(--rem-base) * 1rem);
-  background-color: var(--colour-grey-200);
+  background-color: var(--color-grey-200);
   margin: 0;
   margin-top: -1.5rem;
   margin-right: 30%;
@@ -179,7 +179,7 @@ div.tier-note p {
 }
 
 div.tier-note p::before {
-  border-right: thin solid var(--colour-grey-400);
+  border-right: thin solid var(--color-grey-400);
   padding: 0 10px;
   margin-right: 10px;
   font-family: fantasy;

@@ -6,7 +6,7 @@
   display: flex;
   flex-direction: column;
   padding: 2rem;
-  color: var(--colour-white);
+  color: var(--color-white);
   margin-top: 0 !important;
   align-items: center;
 }
@@ -38,7 +38,7 @@
   right: 0;
   bottom: 0;
   background: #f2f2f2;
-  background: linear-gradient(25deg, var(--colour-grey-700) 0%, var(--colour-grey-800) 100%);
+  background: linear-gradient(25deg, var(--color-grey-700) 0%, var(--color-grey-800) 100%);
 }
 
 #full-graph .gram {

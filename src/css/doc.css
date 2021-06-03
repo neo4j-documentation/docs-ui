@@ -44,7 +44,7 @@ body {
   font-weight: 600;
   font-size: 1rem;
   margin-bottom: 0.5rem;
-  color: var(--colour-grey-600);
+  color: var(--color-grey-600);
 }
 
 .doc > h1.page:first-child {
@@ -198,8 +198,8 @@ body {
 
 .doc .image.rounded {
   padding: 12px;
-  box-shadow: 0 0 5px 1px var(--colour-blue-200) !important;
-  background: var(--colour-white);
+  box-shadow: 0 0 5px 1px var(--color-blue-200) !important;
+  background: var(--color-white);
   border-radius: 50%;
   line-height: 1;
   display: inline-block;
@@ -329,84 +329,84 @@ body {
 }
 
 .doc .admonitionblock.warning {
-  background-color: var(--colour-red-200);
-  color: var(--colour-red-900);
-  border-left-color: var(--colour-red-600);
+  background-color: var(--color-red-200);
+  color: var(--color-red-900);
+  border-left-color: var(--color-red-600);
 }
 
 .doc .admonitionblock.warning pre {
-  background-color: var(--colour-red-100);
-  color: var(--colour-red-700);
+  background-color: var(--color-red-100);
+  color: var(--color-red-700);
 }
 
 .doc .admonitionblock.warning a {
-  color: var(--colour-red-500);
+  color: var(--color-red-500);
 }
 
 .doc .admonitionblock.caution {
-  background-color: var(--colour-orange-200);
-  color: var(--colour-orange-900);
-  border-left-color: var(--colour-orange-600);
+  background-color: var(--color-orange-200);
+  color: var(--color-orange-900);
+  border-left-color: var(--color-orange-600);
 }
 
 .doc .admonitionblock.caution a {
-  color: var(--colour-orange-500);
+  color: var(--color-orange-500);
 }
 
 .doc .admonitionblock.caution a:hover {
-  color: var(--colour-orange-400);
+  color: var(--color-orange-400);
 }
 
 .doc .admonitionblock.caution pre {
-  background-color: var(--colour-orange-100);
-  color: var(--colour-orange-700);
+  background-color: var(--color-orange-100);
+  color: var(--color-orange-700);
 }
 
 .doc .admonitionblock.tip {
-  background-color: var(--colour-blue-200);
-  color: var(--colour-blue-900);
-  border-left-color: var(--colour-blue-600);
+  background-color: var(--color-blue-200);
+  color: var(--color-blue-900);
+  border-left-color: var(--color-blue-600);
 }
 
 .doc .admonitionblock.tip a {
-  color: var(--colour-blue-600);
+  color: var(--color-blue-600);
 }
 
 .doc .admonitionblock.tip a:hover {
-  color: var(--colour-blue-500);
+  color: var(--color-blue-500);
 }
 
 .doc .admonitionblock.tip pre {
-  background-color: var(--colour-blue-100);
-  color: var(--colour-blue-700);
+  background-color: var(--color-blue-100);
+  color: var(--color-blue-700);
 }
 
 .doc .admonitionblock.note {
-  background-color: var(--colour-grey-200);
-  color: var(--colour-grey-900);
-  border-left-color: var(--colour-grey-600);
+  background-color: var(--color-grey-200);
+  color: var(--color-grey-900);
+  border-left-color: var(--color-grey-600);
 }
 
 .doc .admonitionblock.note a {
-  color: var(--colour-grey-600);
+  color: var(--color-grey-600);
 }
 
 .doc .admonitionblock.note a:hover {
-  color: var(--colour-grey-500);
+  color: var(--color-grey-500);
 }
 
 .doc .admonitionblock.important {
-  background-color: var(--colour-purple-200);
-  color: var(--colour-purple-900);
-  border-left-color: var(--colour-purple-600);
+  background-color: var(--color-purple-200);
+  color: var(--color-purple-900);
+  border-left-color: var(--color-purple-600);
 }
 
 .doc .admonitionblock.important a {
-  color: var(--colour-purple-600);
+  color: var(--color-purple-600);
 }
 
 .doc .admonitionblock.important a:hover {
-  color: var(--colour-purple-500);
+  color: var(--color-purple-500);
 }
 
 /* .doc .admonitionblock.caution .icon {
@@ -829,13 +829,13 @@ body {
  * We don't want to use a different text color when the link is visited/hover (see .doc a:visited).
 */
 .doc a.button {
-  color: var(--colour-white);
+  color: var(--color-white);
 }
 
 .doc .button {
   display: inline-block;
-  background: var(--colour-grey-600);
-  color: var(--colour-white);
+  background: var(--color-grey-600);
+  color: var(--color-white);
   padding: 0.5rem 2rem;
   border-radius: 0.25rem;
   margin-bottom: 2rem;
@@ -843,8 +843,8 @@ body {
 }
 
 .doc .button:hover {
-  background: var(--colour-grey-500);
-  color: var(--colour-white);
+  background: var(--color-grey-500);
+  color: var(--color-white);
 }
 
 .doc .button::after {
@@ -855,60 +855,60 @@ body {
   display: inline-block;
   padding: 0.2rem 0.8rem;
   border-radius: 0.25rem;
-  background: var(--colour-blue-200);
-  color: var(--colour-blue-700);
+  background: var(--color-blue-200);
+  color: var(--color-blue-700);
   font-weight: 600;
   font-size: 0.7rem;
 }
 
 .doc .paragraph.expertise.Intermediate p {
-  background: var(--colour-orange-200);
-  color: var(--colour-orange-700);
+  background: var(--color-orange-200);
+  color: var(--color-orange-700);
 }
 
 .doc .paragraph.expertise.Advanced p {
-  background: var(--colour-green-200);
-  color: var(--colour-green-700);
+  background: var(--color-green-200);
+  color: var(--color-green-700);
 }
 
 .doc .paragraph.release p {
   display: inline-block;
   padding: 0.2rem 0.8rem;
   border-radius: 0.25rem;
-  background: var(--colour-blue-200);
-  color: var(--colour-blue-700);
+  background: var(--color-blue-200);
+  color: var(--color-blue-700);
   font-weight: 600;
   font-size: 0.7rem;
 }
 
 .doc .paragraph.release.core p {
-  background: var(--colour-orange-200);
-  color: var(--colour-orange-700);
+  background: var(--color-orange-200);
+  color: var(--color-orange-700);
 }
 
 .doc .paragraph.release.full p {
-  background: var(--colour-green-200);
-  color: var(--colour-green-700);
+  background: var(--color-green-200);
+  color: var(--color-green-700);
 }
 
 .doc .paragraph.type p {
   display: inline-block;
   padding: 0.2rem 0.8rem;
   border-radius: 0.25rem;
-  background: var(--colour-blue-200);
-  color: var(--colour-blue-700);
+  background: var(--color-blue-200);
+  color: var(--color-blue-700);
   font-weight: 600;
   font-size: 0.7rem;
 }
 
 .doc .paragraph.type.function p {
-  background: var(--colour-red-200);
-  color: var(--colour-red-700);
+  background: var(--color-red-200);
+  color: var(--color-red-700);
 }
 
 .doc .paragraph.type.procedure p {
-  background: var(--colour-blue-200);
-  color: var(--colour-blue-700);
+  background: var(--color-blue-200);
+  color: var(--color-blue-700);
 }
 
 .doc .responsive-embed,
@@ -955,12 +955,12 @@ body {
 
 .doc table.tableblock.frame-all tr:last-child td,
 .doc table.tableblock.frame-ends tr:last-child td {
-  border-bottom: 3px solid var(--colour-grey-300);
+  border-bottom: 3px solid var(--color-grey-300);
 }
 
 .doc .tableblock thead {
-  background: var(--colour-grey-100);
-  border-bottom: var(--colour-grey-200);
+  background: var(--color-grey-100);
+  border-bottom: var(--color-grey-200);
 }
 
 .doc table.tableblock,
@@ -1035,12 +1035,12 @@ body {
 
 .doc .tabbed {
   padding: 0;
-  /* background: var(--colour-grey-100); */
+  /* background: var(--color-grey-100); */
   margin: 0 -1rem 1.5rem;
   /* padding: 1rem; */
   border-top-left-radius: 0.25rem;
   border-top-right-radius: 0.25rem;
-  border: 1px solid var(--colour-grey-200);
+  border: 1px solid var(--color-grey-200);
   border-top-width: var(--tabbed-border);
 }
 
@@ -1048,7 +1048,7 @@ body {
   display: flex;
   margin: 0;
   padding: 0.5rem 1rem;
-  background: var(--colour-grey-200);
+  background: var(--color-grey-200);
 }
 
 .doc .tabbed-tabs .tabbed-tab {
@@ -1059,15 +1059,15 @@ body {
   font-weight: 600;
   padding: 0.4rem 0.6rem;
   margin-right: 0.5rem;
-  background: var(--colour-grey-300);
-  border: 1px solid var(--colour-grey-300);
+  background: var(--color-grey-300);
+  border: 1px solid var(--color-grey-300);
   border-radius: 0.5rem;
   cursor: pointer;
 }
 
 .doc .tabbed-tabs .tabbed-tab--active {
-  background: var(--colour-white);
-  border-color: var(--colour-grey-300);
+  background: var(--color-white);
+  border-color: var(--color-grey-300);
 }
 
 .doc .tabbed-container {
@@ -1091,26 +1091,26 @@ body {
   padding: .4rem .6rem;
   margin-right: .5rem;
   margin-bottom: calc(var(--tabbed-border) * -1);
-  /* background: var(--colour-white);
-  color: var(--colour-grey-600);
-  border: 1px solid var(--colour-grey-200);
+  /* background: var(--color-white);
+  color: var(--color-grey-600);
+  border: 1px solid var(--color-grey-200);
   border-top-left-radius: .25rem;
   border-top-right-radius: .25rem;
 }
 /* .doc li.tabbed-tabs--active {
-  background: var(--colour-grey-100);
-  border-bottom-color: var(--colour-grey-100);
+  background: var(--color-grey-100);
+  border-bottom-color: var(--color-grey-100);
 
 }
 
 /* .doc .tabbed-container {
-  background: var(--colour-white);
-  /* border-top: var(--tabbed-border) solid var(--colour-grey-200);
+  background: var(--color-white);
+  /* border-top: var(--tabbed-border) solid var(--color-grey-200);
 
 } */
 
 .page.unresolved {
-  background: var(--colour-red-800);
+  background: var(--color-red-800);
   color: white !important;
 }
 
@@ -1135,7 +1135,7 @@ body {
   display: inline-block;
   margin: 0 0.2rem;
   content: "→";
-  color: var(--colour-purple-600);
+  color: var(--color-purple-600);
   transform: rotate(-45deg);
   transition: all 0.2s linear;
   top: 0;
