@@ -99,3 +99,18 @@
   background: var(--label-group-syntax);
   color: var(--color-black);
 }
+
+.label--cluster-member-core {
+  background: var(--color-indigo-300);
+  color: var(--color-white);
+}
+
+.label--cluster-member-read-replica {
+  background: var(--color-green-300);
+  color: var(--color-white);
+  
+}
+.label--cluster-member-single {
+  background: var(--color-yellow-300);
+  color: var(--color-white);
+}
