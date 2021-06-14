@@ -229,6 +229,17 @@ imports nodes and relationships from the provided CSV files with given labels an
 <div class="box">
   <span class="label label--cypher">Cypher</span>
 </div>
+
+<div class="box">
+  <span class="label label--cluster-member-core">CORE</span>
+</div>
+<div class="box">
+  <span class="label label--cluster-member-read-replica">READ_REPLICA</span>
+</div>
+<div class="box">
+  <span class="label label--cluster-member-single">SINGLE</span>
+</div>
+
 ++++
 
 
