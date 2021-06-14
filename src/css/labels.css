@@ -108,8 +108,8 @@
 .label--cluster-member-read-replica {
   background: var(--color-green-300);
   color: var(--color-black);
-
 }
+
 .label--cluster-member-single {
   background: var(--color-yellow-300);
   color: var(--color-black);
