@@ -173,9 +173,10 @@ export function runnable (row, runText = 'Run Query', successCallback, errorCall
     if (res.records) {
       data.columns = res.records[0].keys
       data.data = res.records.slice(0, maxRows).map(function (row) {
-        return row.keys.map(function (key) {
-          return { key: convert(row.get(key)) }
-        })
+        return row.keys.reduce(function (acc, key) {
+          acc[key] = convert(row.get(key))
+          return acc
+        }, {})
       })
     }
     return data
