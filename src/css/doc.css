@@ -148,16 +148,13 @@ body {
   color: var(--link-font-color);
 }
 
-.doc a:hover {
+.doc a:hover,
+.doc a:hover code:hover {
   color: var(--link_hover-font-color);
 }
 
-.doc a:visited {
-  color: var(--link_visited-font-color);
-}
-
-.doc a.unresolved {
-  color: var(--link_unresolved-font-color);
+.doc code a {
+  color: inherit;
 }
 
 .doc i.fa {
