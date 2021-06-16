@@ -106,7 +106,7 @@
   --body-font-size--print: 0.9375em; /* 15px */
   --body-line-height: 1.5;
   --body-font-color: var(--color-grey-700);
-  --body-font-family: "Open Sans", sans-serif;
+  --body-font-family: "Nunito Sans","Helvetica Neue",Helvetica,Roboto,Arial,sans-serif;
   --body-font-weight-bold: 600;
   --monospace-font-family: "Roboto Mono", monospace;
   --monospace-font-weight-bold: 500;
