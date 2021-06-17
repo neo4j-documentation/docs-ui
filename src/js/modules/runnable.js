@@ -213,7 +213,8 @@ export function runnable (row, runText = 'Run Query', successCallback, errorCall
         results = renderResultsAsTable(data)
       } else {
         // empty data, show raw result
-        results = createElement('code', 'code-result-raw', createElement('pre', '', document.createTextNode(res.result)))
+        const text = res.result ? res.result : res.stats ? JSON.stringify(res.stats) : ''
+        results = createElement('code', 'code-result-raw', createElement('pre', '', document.createTextNode(text)))
       }
     }
 
