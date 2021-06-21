@@ -1,3 +1,7 @@
+/**
+ * Deprecated.  See:
+ * https://github.com/neo-technology/neo4j.com/wiki/Using-Algolia-Search-outside-of-Wordpress/
+ */
 ;(function () {
   'use strict'
 
