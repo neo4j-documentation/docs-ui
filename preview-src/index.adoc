@@ -782,3 +782,27 @@ For more information, see the link:/ops-manual[Operations Manual^]
 [[APOC]]APOC:: xref:apoc[APOC] is a library of procedures and functions that make your life as a Neo4j user easier.
 
 // end::glossary[]
+
+[[test-links]]
+== Links
+
+*Normal text*
+
+. Normal text.
+. Text with `Mono space` snippet.
+
+
+*Text that link to www.example.com*
+
+. Text link:#test-links[anchor to test links] text text.
+. Text link:www.example.com[www.example.com] text text.
+. Text link:www.example.com[`mono space`] text text.
+. Text `link:www.example.com[mono space]` text text.
+
+
+*Text that link to page anchor*
+
+. Text <<test-links>> text text.
+. Text <<test-links,testing link text styling>> text text.
+. Text <<test-links,`testing link text styling monospace`>> text text.
+. Text `<<test-links,testing link text styling monospace>>` text text.
