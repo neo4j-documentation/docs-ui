@@ -15,7 +15,7 @@ All you need to be happy and successful with Neo4j
 * link:/developer/in-production/?role=administrator[I'm an Administrator]
 
 
-[.secondary.leading.flex.no-arrows]
+[.secondary.leading.flex-container.no-arrows]
 
 == Getting Started
 
@@ -54,7 +54,7 @@ Use the link:#[Neo4j tools] to access your data or develop an application your f
 
 video::REVkXVxvMQE[youtube]
 
-[.secondary.flex.use-cases.no-arrows]
+[.secondary.flex-container.use-cases.no-arrows]
 == Start with an Example
 
 // * Fraud Detection & Analytics
@@ -113,7 +113,7 @@ link:https://sandbox.neo4j.com/[Explore the other Sandbox Examples^, role=button
 link:/graphgists/[View 100+ Graph examples by Industry and Use Case^, role=button] &nbsp;
 
 
-// [.secondary.flex.languages]
+// [.secondary.flex-container.languages]
 // == Building Applications
 
 // [.column]
@@ -206,7 +206,7 @@ We have an active community of experts who are more than happy to answer your qu
 Why not join our community and link:https://community.neo4j.com/c/general/introduce-yourself/7[introduce yourself]?
 Do you have a side-project or idea and would like to link:https://community.neo4j.com/c/projects-collaboration/9[find collaborators^]?
 
-[.flex.secondary.no-bullets]
+[.flex-container.secondary.no-bullets]
 == Resources for Learning Neo4j
 
 [.column]

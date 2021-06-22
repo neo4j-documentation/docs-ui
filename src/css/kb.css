@@ -82,7 +82,7 @@ body.kb-article .doc > .sect1 > .sectionbody {
   margin-right: auto;
 }
 
-body.kb .doc .flex {
+body.kb .doc .flex-container {
   padding: 2em 0 1em;
 }
 
@@ -101,14 +101,14 @@ body.landing.kb.kb-home .sectionbody {
   padding-right: 1rem;
 }
 
-body.landing.kb.kb-home .flex .sectionbody .column {
+body.landing.kb.kb-home .flex-container .sectionbody .column {
   flex: 1 1 25%;
   flex-wrap: wrap;
   min-width: 13rem;
 }
 
 @media (min-width: 760px) {
-  body.landing.kb.kb-home .flex .sectionbody .column {
+  body.landing.kb.kb-home .flex-container .sectionbody .column {
     padding-left: 0;
     padding-right: 2rem;
   }
@@ -123,11 +123,11 @@ body.landing.kb .doc .sectionbody .column ul {
   padding: 0;
 }
 
-.landing .flex .category.column:first-child {
+.landing .flex-container .category.column:first-child {
   margin-left: 0 !important;
 }
 
-.landing .flex .category.column:last-child {
+.landing .flex-container .category.column:last-child {
   margin-right: 0 !important;
 }
 

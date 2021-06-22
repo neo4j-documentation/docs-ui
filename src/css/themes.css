@@ -302,7 +302,7 @@ body.landing.developer .hero {
     display: none;
   }
 
-  .landing.developer .languages .flex {
+  .landing.developer .languages .flex-container {
     text-align: center;
   }
 }
