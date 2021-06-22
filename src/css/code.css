@@ -1,6 +1,6 @@
 .doc pre.has-header {
-  border-top-left-radius: 0;
-  border-top-right-radius: 0;
+  border-top-left-radius: 0 !important;
+  border-top-right-radius: 0 !important;
 }
 
 .doc .code-header {
