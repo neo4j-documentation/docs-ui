@@ -78,18 +78,18 @@ const { getCookie } = require('./modules/cookies')
         </svg>
       </div>
       <div>
-        <input id="missing" type="radio" data-reason="missing" name="specific" value="missing" checked="true"><label
+        <input id="missing" type="radio" class="feedback-option" data-reason="missing" name="specific" value="missing" checked="true"><label
           for="missing">It has missing information</label>
       </div>
       <div>
-        <input id="hard-to-follow" type="radio" data-reason="hard-to-follow" name="specific" value="hard-to-follow">
+        <input id="hard-to-follow" type="radio" class="feedback-option" data-reason="hard-to-follow" name="specific" value="hard-to-follow">
         <label for="hard-to-follow">It&rsquo;s hard to follow or confusing</label>
       </div>
       <div>
-        <input id="inaccurate" type="radio" data-reason="inaccurate" name="specific" value="inaccurate">
+        <input id="inaccurate" type="radio" class="feedback-option" data-reason="inaccurate" name="specific" value="inaccurate">
         <label for="inaccurate">It&rsquo;s inaccurate, out of date, or doesn&rsquo;t work</label>
       </div>
-      <div><input id="other" type="radio" data-reason="other" name="specific" value="other"><label for="other">Something else
+      <div><input id="other" type="radio" class="feedback-option" data-reason="other" name="specific" value="other"><label for="other">Something else
           ${edit}</label></div>
       <div class="more-information"><label for="more-information"><strong>More information</strong></label><textarea
           id="more-information" type="text" rows="3" cols="50" name="more-information" style="resize:none"></textarea>

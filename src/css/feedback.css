@@ -66,12 +66,12 @@
   margin-right: 0.5rem;
 }
 
-.feedback label {
-  font-size: 0.8rem;
+.feedback .feedback-option {
+  float: left;
 }
 
-.feedback .more-information {
-  margin: 1rem 0 0.5rem;
+.feedback label {
+  font-size: 0.8rem;
 }
 
 .feedback textarea {
@@ -95,7 +95,7 @@
 
 .feedback .primary,
 .feedback .secondary {
-  padding: 0.25rem 1rem;
+  padding: 0.5rem 1rem;
   background: var(--color-blue-100);
   border: 1px solid var(--color-blue-700);
   color: var(--color-blue-700);
@@ -119,10 +119,6 @@
   color: var(--color-white);
 }
 
-.feedback.negative textarea {
-  color: var(--color-red-700);
-}
-
 .feedback.negative textarea:active,
 .feedback.negative textarea:focus {
   outline: none;
@@ -136,6 +132,12 @@
 
 .feedback.negative .secondary {
   background: var(--color-red-100);
+  border-color: var(--color-red-700);
+  color: var(--color-red-700);
+}
+
+.feedback.negative textarea {
+  background: var(--color-white);
   border-color: var(--color-red-700);
   color: var(--color-red-700);
 }
