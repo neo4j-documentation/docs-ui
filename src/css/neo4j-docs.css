@@ -195,3 +195,13 @@ div.alpha-symbol p::before {
 div.beta-symbol p::before {
   content: "\03b2";
 }
+
+.function-reference::after {
+  content: '\2A0D';
+  margin-left: 0.5em;
+  padding: 0 0.5em;
+  background-color: var(--color-purple-200);
+  color: var(--color-purple-700);
+  display: inline-flex;
+  border-radius: 25%;
+}

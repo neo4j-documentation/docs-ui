@@ -47,3 +47,15 @@ For more information on algorithm tiers, see <<algorithms>>.
 [.tier-note]
 This algorithm is in the beta tier.
 For more information on algorithm tiers, see <<algorithms>>.
+
+
+== Function symbol
+
+[opts=header,cols="1, 1"]
+|===
+|Description | Operation
+.2+<.^| Check if a named graph exists
+| `gds.graph.exists`
+a| [.function-reference]`_gds.graph.exists_`
+
+|===
