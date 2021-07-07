@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded', function () {
         cased = 'macOS'
         break
       default:
-        cased = capitalizeFirstLetter(lang)
+        cased = capitalizeFirstLetter(lang.replaceAll('-', ' '))
     }
     return cased
   }
