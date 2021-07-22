@@ -1,4 +1,79 @@
 :root {
+
+  /* start: design system colors  */
+  --primary-color-70: #002b66;
+  --primary-color-60: #0056b3;
+  --primary-color-50: #0070d9;
+  --primary-color-40: #018bff;
+  --primary-color-30: #52bdff;
+  --primary-color-20: #a3e2ff;
+  --primary-color-10: #e6f8ff;
+  --primary-color: var(--primary-color-40);
+  --secondary-color-70: #7a0031;
+  --secondary-color-60: #a1003b;
+  --secondary-color-50: #c70646;
+  --secondary-color-40: #ed1252;
+  --secondary-color-30: #ff668a;
+  --secondary-color-20: #ffb8c4;
+  --secondary-color-10: #fff4f6;
+  --secondary-color: var(--secondary-color-40);
+  --blueberry-color-70: #091944;
+  --blueberry-color-60: #0b297d;
+  --blueberry-color-50: #2b50b6;
+  --blueberry-color-40: #6184e7;
+  --blueberry-color-30: #87a3f2;
+  --blueberry-color-20: #b0c4fd;
+  --blueberry-color-10: #d6e1fe;
+  --blueberry-color: var(--blueberry-color-60);
+  --mint-color-70: #116161;
+  --mint-color-60: #2aada5;
+  --mint-color-50: #3dd4c5;
+  --mint-color-40: #55f9e2;
+  --mint-color-30: #a8ffee;
+  --mint-color-20: #d1fff4;
+  --mint-color-10: #f0fffa;
+  --mint-color: var(--mint-color-40);
+  --success-color-70: #00473b;
+  --success-color-60: #006e58;
+  --success-color-50: #009471;
+  --success-color-40: #00ba88;
+  --success-color-30: #44d4a4;
+  --success-color-20: #98edcb;
+  --success-color-10: #e1faef;
+  --success-color: var(--success-color-40);
+  --warning-color-70: #664b17;
+  --warning-color-60: #8c6a22;
+  --warning-color-50: #d9b54a;
+  --warning-color-40: #ffde63;
+  --warning-color-30: #ffea8c;
+  --warning-color-20: #fff4b5;
+  --warning-color-10: #fffbde;
+  --warning-color: var(--warning-color-40);
+  --alert-color-70: --secondary-color-70;
+  --alert-color-60: --secondary-color-60;
+  --alert-color-50: --secondary-color-50;
+  --alert-color-40: --secondary-color-40;
+  --alert-color-30: --secondary-color-30;
+  --alert-color-20: --secondary-color-20;
+  --alert-color-10: --secondary-color-10;
+  --alert-color: var(--alert-color-40);
+  --neutral-color-10: white;
+  --neutral-color-15: #f9fcff;
+  --neutral-color-20: #edf7ff;
+  --neutral-color-25: #d7e6f1;
+  --neutral-color-30: #c4d3df;
+  --neutral-color-35: #b6c4d0;
+  --neutral-color-40: #91a1ae;
+  --neutral-color-45: #758694;
+  --neutral-color-50: #5f6e7a;
+  --neutral-color-55: #485662;
+  --neutral-color-60: #374754;
+  --neutral-color-65: #192a37;
+  --neutral-color-70: #080f15;
+  --body-font-color: var(--neutral-color-65);
+
+  /* end: design system colors  */
+
   --color-black: #000;
   --color-white: #fff;
   --color-grey-100: #f7fafc;
@@ -139,7 +214,7 @@
   --navbar-kb-border: var(--color-kb);
 
   /* nav */
-  --nav-background: var(--panel-background);
+  --nav-background: var(--neutral-color-15);
   --nav-border-color: var(--color-grey-200);
   --nav-font-weight: 400;
   --nav_active-font-weight: 400;
@@ -255,7 +330,7 @@
     calc(
       var(--nav-height--desktop) - var(--drawer-height)
     );
-  --nav-width: calc(270 / var(--rem-base) * 1rem);
+  --nav-width: 18rem;
   --toc-top: calc(var(--body-top) + var(--toolbar-height));
   --kb-metadata-top: calc(var(--body-top) + var(--toolbar-height));
   --toc-height: calc(100vh - var(--toc-top) - 2.5rem);

@@ -16,7 +16,7 @@
 
 @media screen and (min-width: 1024px) {
   .nav-container {
-    font-size: calc(15.5 / var(--rem-base) * 1rem);
+    font-size: 0.875rem;
     flex: none;
     position: static;
     top: 0;
@@ -117,7 +117,6 @@ html.is-clipped--nav {
   flex-grow: 1;
   min-height: 0;
   width: 100%;
-  padding: 0.5rem 0.75rem;
   line-height: var(--nav-line-height);
   position: relative;
 }
@@ -133,14 +132,10 @@ html.is-clipped--nav {
 
 .nav-menu a,
 .nav-text {
-  color: inherit;
+  color: var(--neutral-color-55);
   font-weight: var(--nav-font-weight);
   display: block;
   padding: 0.2rem 0;
-}
-
-.nav-menu .nav-item .nav-item a {
-  padding: 0.1rem 0;
 }
 
 .nav-list {
@@ -202,12 +197,6 @@ html.is-clipped--nav {
   font-weight: var(--body-font-weight-bold);
 } */
 
-.nav-list .nav-list {
-  border-left: 1px solid var(--color-grey-400);
-  margin-left: 0.5rem;
-  padding-left: 0.8rem;
-}
-
 /* .nav-item.is-active > .nav-item-toggle {
   transform: rotate(90deg);
 } */
@@ -215,24 +204,6 @@ html.is-clipped--nav {
 .is-current-page > .nav-link,
 .is-current-page > .nav-text {
   font-weight: var(--nav_active-font-weight);
-}
-
-.nav-item .nav-item::before,
-.toc-menu li a::before {
-  position: absolute;
-  left: 0;
-  top: 0;
-  margin-top: 0.35rem;
-  display: block;
-  height: 0.5rem;
-  width: 0.5rem;
-  border-radius: 9999px;
-  margin-left: -1.1rem;
-  transition: all 0.2s linear;
-  content: "";
-  opacity: 0;
-  background-color: var(--nav-bullet-color);
-  z-index: 1000;
 }
 
 .nav-item.is-current-page::before,
@@ -351,4 +322,74 @@ html.is-clipped--nav {
   .navbar .navbar-item.getting-started-cta {
     padding-right: 0;
   }
+}
+
+.nav-item .nav-text strong {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+/* ================= */
+
+.nav-item a:hover,
+.nav-item span:hover {
+  background-color: var(--neutral-color-25);
+}
+
+.is-current-page.is-active a {
+  background-color: var(--neutral-color-30);
+  color: var(--primary-color-60);
+}
+
+.is-current-page.is-active a::before {
+  content: "";
+  width: 4px;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  background: var(--primary-color-60);
+  border-radius: 4px;
+}
+
+.nav-menu .nav-item .nav-item a,
+.nav-menu .nav-item .nav-item span {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+
+.nav-item[data-depth="0"] a,
+.nav-item[data-depth="0"] span {
+  padding-left: 1.5rem;
+  padding-right: 1rem;
+}
+
+.nav-item[data-depth="1"] a,
+.nav-item[data-depth="1"] span {
+  padding-left: 3rem;
+  padding-right: 1rem;
+}
+
+.nav-item[data-depth="2"] a,
+.nav-item[data-depth="2"] span {
+  padding-left: 4.5rem;
+  padding-right: 1rem;
+}
+
+.nav-item > .nav-item-toggle::after {
+  content: "\f107";
+  font-family: "FontAwesome", sans-serif;
+  position: absolute;
+  right: 1rem;
+}
+
+.nav-item.is-active > .nav-item-toggle::after {
+  content: "\f106";
+}
+
+.nav-item a[target="_blank"]::after {
+  content: "\f35d";
+  font-family: "FontAwesome", sans-serif;
+  position: absolute;
+  right: 1rem;
 }
