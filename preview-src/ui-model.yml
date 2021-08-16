@@ -156,6 +156,9 @@ page:
     - content: Tables
       url: tables.html
       urlType: internal
+    - content: Examples
+      url: example.html
+      urlType: internal
     - content: Docs roles
       url: docs-roles.html
       urlType: internal
