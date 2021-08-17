@@ -1154,10 +1154,7 @@ body {
 }
 
 .exampleblock > .content {
-  /* background-color: var(--color-grey-200); */
   margin-top: 0.75rem;
   padding: 0.5rem 0.75rem;
   border: 1px solid var(--color-grey-300);
-  /* border-top-left-radius: 0.25rem; */
-  /* border-top-right-radius: 0.25rem; */
 }
