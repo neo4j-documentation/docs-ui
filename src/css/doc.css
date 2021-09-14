@@ -702,7 +702,6 @@ body {
 
 .doc .colist {
   font-size: calc(16 / var(--rem-base) * 1rem);
-  margin: 0.25rem 0 -0.25rem;
 }
 
 .doc .colist > table > tr > :first-child,
