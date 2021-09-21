@@ -214,17 +214,35 @@ div.beta-symbol p::before {
 
 .graph-variants > .content {
   display: flex;
-  padding: 0.5em 0;
+  flex-flow: row wrap;
+}
+
+@media screen and (max-width: 1244px) {
+  .graph-variants > .content > .paragraph {
+    flex: 0 0 30%;
+  }
+}
+
+@media screen and (max-width: 582px) {
+  .graph-variants > .content > .paragraph {
+    flex: 1 1 20%;
+  }
+}
+
+@media screen and (min-width: 1245px) {
+  .graph-variants > .content > .paragraph {
+    flex: 1 1 auto;
+  }
 }
 
 .graph-variants > .content > .paragraph {
   display: flex;
-  flex: 1 1 0;
   flex-direction: row;
   flex-wrap: nowrap;
   justify-content: center;
+  white-space: nowrap;
   padding: 0.2rem 0.3rem;
-  margin: 0 1em 0 0;
+  margin: 0.5em 1em 0 0;
   line-height: 1em;
   border-radius: 0.2rem;
 }
