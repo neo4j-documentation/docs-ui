@@ -205,3 +205,43 @@ div.beta-symbol p::before {
   display: inline-flex;
   border-radius: 25%;
 }
+
+.graph-variants > .title {
+  color: black !important;
+  font-style: normal !important;
+}
+
+.graph-variants > .content {
+  display: flex;
+  padding: 0.5em 0;
+}
+
+.graph-variants > .content > .paragraph {
+  display: flex;
+  flex: 1 1 0;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  padding: 0.2rem 0.3rem;
+  margin: 0 1em 0 0;
+  line-height: 1em;
+  border-radius: 0.2rem;
+  box-shadow: 0.2em 0.2em 0.3em #a3a3a3;
+  background-color: #fff8dc;
+}
+
+.graph-variants > .content > .supported::before {
+  content: '\2714';
+  margin-right: 0.5em;
+  color: #008000;
+}
+
+.graph-variants > .content > .not-supported {
+  color: #a3a3a3;
+}
+
+.graph-variants > .content > .not-supported::before {
+  content: '\2716';
+  margin-right: 0.5em;
+  color: #f00;
+}
