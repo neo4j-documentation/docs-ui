@@ -207,8 +207,9 @@ div.beta-symbol p::before {
 }
 
 .graph-variants > .title {
-  color: black !important;
+  color: #4a5568 !important;
   font-style: normal !important;
+  font-size: calc(20 / var(--rem-base) * 1rem) !important;
 }
 
 .graph-variants > .content {
@@ -226,22 +227,24 @@ div.beta-symbol p::before {
   margin: 0 1em 0 0;
   line-height: 1em;
   border-radius: 0.2rem;
-  box-shadow: 0.2em 0.2em 0.3em #a3a3a3;
-  background-color: #fff8dc;
 }
 
 .graph-variants > .content > .supported::before {
   content: '\2714';
   margin-right: 0.5em;
-  color: #008000;
+  color: #00ba88;
+}
+
+.graph-variants > .content > .supported {
+  background-color: #e1faef;
 }
 
 .graph-variants > .content > .not-supported {
-  color: #a3a3a3;
+  background-color: #ffe6e9;
 }
 
 .graph-variants > .content > .not-supported::before {
   content: '\2716';
   margin-right: 0.5em;
-  color: #f00;
+  color: #ed1252;
 }
