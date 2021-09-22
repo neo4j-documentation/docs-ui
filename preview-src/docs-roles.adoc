@@ -59,3 +59,28 @@ For more information on algorithm tiers, see <<algorithms>>.
 a| [.function-reference]`_gds.graph.exists_`
 
 |===
+
+== GDS Graph Variants Styling
+
+
+.Graph variants support
+[.graph-variants, caption=]
+--
+[.not-supported]
+Directed
+
+[.supported]
+Undirected
+
+[.supported]
+Monopartite
+
+[.not-supported]
+Multi-partite
+
+[.not-supported]
+Weighted
+
+[.supported]
+Unweighted
+--

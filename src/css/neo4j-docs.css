@@ -205,3 +205,64 @@ div.beta-symbol p::before {
   display: inline-flex;
   border-radius: 25%;
 }
+
+.graph-variants > .title {
+  color: #4a5568 !important;
+  font-style: normal !important;
+  font-size: calc(20 / var(--rem-base) * 1rem) !important;
+}
+
+.graph-variants > .content {
+  display: flex;
+  flex-flow: row wrap;
+}
+
+@media screen and (max-width: 1244px) {
+  .graph-variants > .content > .paragraph {
+    flex: 0 0 30%;
+  }
+}
+
+@media screen and (max-width: 582px) {
+  .graph-variants > .content > .paragraph {
+    flex: 1 1 20%;
+  }
+}
+
+@media screen and (min-width: 1245px) {
+  .graph-variants > .content > .paragraph {
+    flex: 1 1 auto;
+  }
+}
+
+.graph-variants > .content > .paragraph {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  white-space: nowrap;
+  padding: 0.2rem 0.3rem;
+  margin: 0.5em 1em 0 0;
+  line-height: 1em;
+  border-radius: 0.2rem;
+}
+
+.graph-variants > .content > .supported::before {
+  content: '\2714';
+  margin-right: 0.5em;
+  color: #00ba88;
+}
+
+.graph-variants > .content > .supported {
+  background-color: #e1faef;
+}
+
+.graph-variants > .content > .not-supported {
+  background-color: #ffe6e9;
+}
+
+.graph-variants > .content > .not-supported::before {
+  content: '\2716';
+  margin-right: 0.5em;
+  color: #ed1252;
+}
