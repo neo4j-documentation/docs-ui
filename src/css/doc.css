@@ -325,6 +325,18 @@ body {
   transform: translate(-0.5rem, -50%); */
 }
 
+.doc .admonitionblock a.btn {
+  display: inline-block;
+  background: black;
+  color: white !important;
+  padding: 0.5rem 2rem;
+  border-radius: 0.5rem;
+}
+
+.doc .admonitionblock a.btn::after {
+  display: none !important;
+}
+
 .doc .admonitionblock.warning {
   background-color: var(--color-red-200);
   color: var(--color-red-900);
@@ -334,6 +346,10 @@ body {
 .doc .admonitionblock.warning pre {
   background-color: var(--color-red-100);
   color: var(--color-red-700);
+}
+
+.doc .admonitionblock.warning a.btn {
+  background-color: var(--color-red-600);
 }
 
 .doc .admonitionblock.warning a {
@@ -352,6 +368,10 @@ body {
 
 .doc .admonitionblock.caution a:hover {
   color: var(--color-orange-400);
+}
+
+.doc .admonitionblock.caution a.btn {
+  background-color: var(--color-orange-600);
 }
 
 .doc .admonitionblock.caution pre {
@@ -373,6 +393,10 @@ body {
   color: var(--color-blue-500);
 }
 
+.doc .admonitionblock.tip a.btn {
+  background-color: var(--color-blue-600);
+}
+
 .doc .admonitionblock.tip pre {
   background-color: var(--color-blue-100);
   color: var(--color-blue-700);
@@ -392,6 +416,10 @@ body {
   color: var(--color-grey-500);
 }
 
+.doc .admonitionblock.note a.btn {
+  background-color: var(--color-grey-600);
+}
+
 .doc .admonitionblock.important {
   background-color: var(--color-purple-200);
   color: var(--color-purple-900);
@@ -404,6 +432,10 @@ body {
 
 .doc .admonitionblock.important a:hover {
   color: var(--color-purple-500);
+}
+
+.doc .admonitionblock.important a.btn {
+  background-color: var(--color-purple-600);
 }
 
 /* .doc .admonitionblock.caution .icon {
