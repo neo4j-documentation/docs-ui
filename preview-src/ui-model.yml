@@ -27,6 +27,7 @@ site:
       version: '4.2'
       displayVersion: '4.2'
     - &component_version
+      title: 'Foo'
       url: '#'
       version: '4.1'
       displayVersion: '4.1'
@@ -335,10 +336,10 @@ asciidoc:
     'page-disabletracking': true
     disabletracking: true
     breadcrumbs:
-      - name: Neo4j Labs
-        url: https://neo4j.com/labs/
-      - name: Neosemantics
-        url: https://neo4j.com/labs/neosemantics
-      - name: Documentation
+      # - name: Neo4j Labs
+      #   url: https://neo4j.com/labs/
+      # - name: Neosemantics
+      #   url: https://neo4j.com/labs/neosemantics
+      # - name: Documentation
     page-mixpanel: ef1696f0a9c88563894dcba2019a9bef
     mixpanel: ef1696f0a9c88563894dcba2019a9bef

@@ -1,0 +1,342 @@
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      {{!-- <a class="navbar-item" href="{{{or site.url (or siteRootUrl siteRootPath)}}}"> --}}
+      <a class="navbar-item" href="/">
+        {{!-- <link rel="icon" href="{{{uiRootPath}}}/img/favicon.ico" type="image/x-icon"> --}}
+        {{!-- <img class="navbar-logo" src="{{{uiRootPath}}}/img/logo.svg" alt="{{ site.title }}" /> --}}
+
+      {{#if (eq page.attributes.theme "docs") }}
+      <img class="navbar-logo" src="https://dist.neo4j.com/wp-content/uploads/20210422142941/neo4j-logo-2020.svg" alt="{{ site.title }}" />
+      <a href="/docs/" class="navbar-item no-left-padding" aria-label="Docs">
+        Docs
+      </a>
+      {{else if (eq page.attributes.theme "labs")}}
+      <img class="navbar-logo" src="https://dist.neo4j.com/wp-content/uploads/20210422142941/neo4j-logo-2020.svg" alt="{{ site.title }}" />
+      <a href="/labs/" class="navbar-item no-left-padding" aria-label="Labs">
+        Labs
+      </a>
+      {{else if (eq page.attributes.theme "kb")}}
+      <img class="navbar-logo" src="https://dist.neo4j.com/wp-content/uploads/20210422201812/neo4j-logo-2020-white.svg" alt="{{ site.title }}" />
+      <a href="/developer/kb/" class="navbar-item no-left-padding page-name-white" aria-label="Knowledge Base">
+        Knowledge Base
+      </a>
+      {{else if (eq page.attributes.theme "training")}}
+      <img class="navbar-logo" src="https://dist.neo4j.com/wp-content/uploads/20210422201812/neo4j-logo-2020-white.svg" alt="{{ site.title }}" />
+      <a href="/graphacademy/online-training/" class="navbar-item no-left-padding page-name-white" aria-label="GraphAcademy">
+        GraphAcademy
+      </a>
+      {{else if (eq page.attributes.theme "graphgists")}}
+      <img class="navbar-logo" src="https://dist.neo4j.com/wp-content/uploads/20210422201812/neo4j-logo-2020-white.svg" alt="{{ site.title }}" />
+      <a href="/graphgists/" class="navbar-item no-left-padding page-name-white" aria-label="GraphGists">
+        GraphGists
+      </a>
+      {{else}}
+      <img class="navbar-logo" src="https://dist.neo4j.com/wp-content/uploads/20210422201812/neo4j-logo-2020-white.svg" alt="{{ site.title }}" />
+      <a href="/developer/" class="navbar-item no-left-padding page-name-white" aria-label="Developer Guides">
+        Developer
+      </a>
+      {{/if}}
+
+      {{#if (eq page.attributes.theme "graphgists")}}
+      <div class="navbar-end">
+        <div class="navbar-item has-dropdown is-hoverable graphgists">
+          <a class="navbar-link" href="/graphgists/">Use Cases</a>
+          <div class="navbar-dropdown">
+          {{#each page.attributes.use-cases}}
+            <div class="navbar-item project">
+              <a class="project-name" href="{{{relativize pub.url}}}">{{this.name}}</a>
+            </div>
+          {{/each}}
+          </div>
+        </div>
+        <div class="navbar-item has-dropdown is-hoverable graphgists">
+          <a class="navbar-link" href="/graphgists/">Industries</a>
+          <div class="navbar-dropdown">
+            {{#each page.attributes.industries}}
+            <div class="navbar-item project">
+              <a class="project-name" href="{{{relativize pub.url}}}">{{this.name}}</a>
+            </div>
+          {{/each}}
+          </div>
+        </div>
+        {{/if}}
+      </div>
+
+      <button class="navbar-search search-button" data-target="topbar-nav" id="search_open_mobile" aria-label="Open Search">
+        <svg width="23px" height="23px" viewBox="0 0 23 23" version="1.1" class="fill-current float-right" id="searchx" role="button" title="Search Website">
+          <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round"
+            stroke-linejoin="round">
+            <g transform="translate(-2.000000, -2.000000)" stroke="#a0aec0" stroke-width="1.5">
+              {{!-- <g id="Group"> --}}
+              {{!-- <g id="search"> --}}
+              <circle
+                transform="translate(11.389364, 11.388564) rotate(-23.025000) translate(-11.389364, -11.388564) "
+                cx="11.3893642" cy="11.3885639" r="8.056"></circle>
+              <path d="M17.0853333,17.0844444 L23.3333333,23.3333333" ></path>
+              {{!-- </g> --}}
+              {{!-- </g> --}}
+            </g>
+          </g>
+        </svg>
+      </button>
+      <button class="navbar-burger" data-target="topbar-nav" aria-label="Mobile Navigation Button">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+
+        <div class="navbar-item has-dropdown is-hoverable developer">
+          <a class="navbar-link" href="/developer/">Developer Guides</a>
+          <div class="navbar-dropdown">
+            <div class="navbar-item project">
+              <a class="project-name" href="/developer/get-started/">Getting Started</a>
+              <ul class="project-links">
+                <li><a class="project-link" href="/developer/get-started/">Getting Started</a></li>
+                <li><a class="project-link" href="/developer/graph-platform/">Neo4j Graph Platform</a></li>
+                <li><a class="project-link" href="/developer/cypher/">Cypher Query Language</a></li>
+                <li><a class="project-link" href="/developer/data-modeling/">Graph Data Modeling</a></li>
+                <li><a class="project-link" href="/developer/data-import/">Data Import</a></li>
+              </ul>
+            </div>
+
+            <div class="navbar-item project">
+              <a class="project-name" href="/developer/graph-data-science/">Graph Data Science</a>
+              <ul class="project-links">
+                <li><a class="project-link" href="/developer/nlp/">NLP</a></li>
+                <li><a class="project-link" href="/developer/neuler-no-code-graph-algorithms/">Neuler</a></li>
+                <li><a class="project-link" href="/developer/graph-embeddings/">Graph Embeddings</a></li>
+              </ul>
+            </div>
+
+            <div class="navbar-item project">
+              <a class="project-name" href="/developer/language-guides/">Developer Resources</a>
+              <ul class="project-links">
+                <li><a class="project-link" href="/developer/graph-visualization/">Graph Visualization</a></li>
+                <li><a class="project-link" href="/developer/language-guides/">Drivers &amp; Language Guides</a></li>
+                <li><a class="project-link" href="/developer/integration/">Neo4j Tools &amp; Integrations</a></li>
+              </ul>
+            </div>
+
+            <div class="navbar-item project">
+              <a class="project-name" href="/developer/language-guides/">Administration and Deployment</a>
+              <ul class="project-links">
+                <li><a class="project-link" href="/developer/aura-cloud-dbaas/">Neo4j Aura DBaaS</a></li>
+                <li><a class="project-link" href="/developer/graph-apps/">Graph Apps</a></li>
+                <li><a class="project-link" href="/developer/in-production/">Neo4j Administration</a></li>
+                <li><a class="project-link" href="/developer/guide-cloud-deployment/">Neo4j in the Cloud</a></li>
+              </ul>
+            </div>
+            <div class="navbar-item project">
+              <div class="project-name">Connectors</div>
+              <ul class="project-links">
+                <li><a class="project-link" href="/developer/spark/">Neo4j Connector for Apache Spark</a></li>
+              </ul>
+            </div>
+            <div class="navbar-item project">
+              <a class="project-name" href="/developer/graphacademy/">GraphAcademy</a>
+            </div>
+            <div class="navbar-item project">
+              <a class="project-name" href="/graphgists/">GraphGists</a>
+            </div>
+
+            {{!-- <a class="navbar-item" href="/developer/resources/">Documentation &amp; Resources</a> --}}
+            {{!-- <a class="navbar-item" href="/developer/contribute/">Contributing to Neo4j</a> --}}
+          </div>
+        </div>
+        <div class="navbar-item has-dropdown is-hoverable docs">
+          <a class="navbar-link" href="/docs/">Docs</a>
+          <div class="navbar-dropdown">
+            <div class="navbar-item project">
+              <span class="project-name">Neo4j Database</span>
+              <ul class="project-links">
+                <li><a href="/docs/getting-started/current/" class="project-link">Getting Started</a></li>
+                <li><a href="/docs/operations-manual/current/" class="project-link">Operations Manual</a></li>
+                <li><a href="/docs/migration-guide/current/" class="project-link">Migration Guide</a></li>
+                <li><a href="/docs/status-codes/current/" class="project-link">Status Codes</a></li>
+              </ul>
+            </div>
+            <div class="navbar-item project">
+              <a class="project-name" href="/docs/aura/current/">Aura</a>
+              <ul class="project-links">
+                <li><a class="project-link" href="/docs/aura/current/">Aura Documentation</a></li>
+              </ul>
+            </div>
+
+
+            <div class="navbar-item project">
+              <span class="project-name">Cypher</span>
+              {{!-- <a class="project-name" href="/docs/cypher-manual/current/">Cypher Manual</a> --}}
+              <ul class="project-links">
+                <li><a href="/docs/cypher-manual/current/" class="project-link">Cypher Manual</a></li>
+                <li><a href="/docs/cypher-refcard/current/" class="project-link">Cypher Refcard</a></li>
+              </ul>
+            </div>
+
+            <div class="navbar-item project">
+              <span class="project-name">Drivers</span>
+              <ul class="project-links">
+                <li><a href="{{#with (docs-driver-manual-url page 'dotnet-manual')}}{{{this}}}{{/with}}" class="project-link">.Net Driver</a></li>
+                <li><a href="{{#with (docs-driver-manual-url page 'go-manual')}}{{{this}}}{{/with}}" class="project-link">Go Driver</a></li>
+                <li><a href="{{#with (docs-driver-manual-url page 'java-manual')}}{{{this}}}{{/with}}" class="project-link">Java Driver</a></li>
+                <li><a href="{{#with (docs-driver-manual-url page 'javascript-manual')}}{{{this}}}{{/with}}" class="project-link">JavaScript Driver</a></li>
+                <li><a href="{{#with (docs-driver-manual-url page 'python-manual')}}{{{this}}}{{/with}}" class="project-link">Python Driver</a></li>
+              </ul>
+            </div>
+
+            <div class="navbar-item project">
+              <span class="project-name">Neo4j UI Tools</span>
+              <ul class="project-links">
+                <li><a href="/docs/bloom-user-guide/current/" class="project-link">Bloom</a></li>
+                <li><a href="/docs/browser-manual/current/" class="project-link">Neo4j Browser</a></li>
+                <li><a href="/docs/desktop-manual/current/" class="project-link">Neo4j Desktop</a></li>
+              </ul>
+            </div>
+            <div class="navbar-item project">
+              <a class="project-name" href="/docs/graph-data-science/current/">Graph Data Science</a>
+            </div>
+            <div class="navbar-item project">
+              <a class="project-name" href="/docs/graphql-manual/current/">Neo4j GraphQL Library</a>
+            </div>
+            <div class="navbar-item project">
+              <a class="project-name" href="/docs/ogm-manual/current/">OGM Library</a>
+            </div>
+            <div class="navbar-item project">
+              <a class="project-name" href="https://docs.spring.io/spring-data/neo4j/docs/current/reference/html/#reference">Spring Data Neo4j</a>
+            </div>
+            <div class="navbar-item project">
+              <a class="project-name" href="/docs/http-api/current/">HTTP API</a>
+            </div>
+            <div class="navbar-item project">
+              <a class="project-name" href="/docs/java-reference/current/">Java Reference</a>
+            </div>
+          </div>
+        </div>
+        <div class="navbar-item has-dropdown is-hoverable labs">
+          <a class="navbar-link" href="/labs/">Labs</a>
+          <div class="navbar-dropdown">
+            <div class="navbar-item project">
+              <a class="project-name" href="/labs/arrows/">arrows.app</a>
+              <ul class="project-links">
+                <li><a href="/labs/arrows/" class="project-link">Details</a></li>
+                <li><a href="https://arrows.app" class="project-link">arrows.app</a></li>
+              </ul>
+            </div>
+            <div class="navbar-item project">
+              <a class="project-name" href="/labs/apoc/">APOC</a>
+              {{!-- <p class="project-description">A library of procedures and functions for interacting with Neo4j</p> --}}
+
+              <ul class="project-links">
+                <li><a href="/labs/apoc/4.1/" class="project-link">Documentation</a></li>
+                <li><a href="/developer/neo4j-apoc/" class="project-link">Developer Guide</a></li>
+              </ul>
+            </div>
+
+            <div class="navbar-item project">
+              <a class="project-name" href="/labs/grandstack-graphql/">GraphQL &amp; GRANDStack</a>
+              {{!-- <p class="project-description">A library of procedures and functions for interacting with Neo4j</p> --}}
+
+              <ul class="project-links">
+                <li><a href="/labs/grandstack-graphql/" class="project-link">Details</a></li>
+                <li><a href="https://grandstack.io/" class="project-link">GRANDstack.io</a></li>
+              </ul>
+            </div>
+            <div class="navbar-item project">
+              <a class="project-name" href="/labs/halin/">Halin</a>
+            </div>
+            <div class="navbar-item project">
+              <a class="project-name" href="/labs/kafka/">Kafka Integration</a>
+              <ul class="project-links">
+                <li><a href="/labs/kafka/" class="project-link">Details</a></li>
+                <li><a href="/labs/kafka/4.0/" class="project-link">Documentation</a></li>
+              </ul>
+            </div>
+            <div class="navbar-item project">
+              <a class="project-name" href="/labs/etl-tool/">ETL Tool</a>
+              {{!-- <p class="project-description">A library of procedures and functions for interacting with Neo4j</p> --}}
+              <ul class="project-links">
+                <li><a href="/labs/etl-tool/" class="project-link">Details</a></li>
+                <li><a href="/labs/etl-tool/1.5.0/" class="project-link">Documentation</a></li>
+              </ul>
+            </div>
+            <div class="navbar-item project">
+              <a class="project-name" href="/labs/liquibase/">Neo4j Plugin For Liquibase</a>
+              <ul class="project-links">
+                <li><a href="/labs/liquibase/" class="project-link">Details</a></li>
+                <li><a href="https://github.com/liquibase/liquibase-neo4j" class="project-link">Documentation</a></li>
+              </ul>
+            </div>
+            <div class="navbar-item project">
+              <a class="project-name" href="/labs/neosemantics/">Neosemantics</a>
+              {{!-- <p class="project-description">A library of procedures and functions for interacting with Neo4j</p> --}}
+              <ul class="project-links">
+                <li><a href="/labs/neosemantics/tutorial/" class="project-link">Getting Started</a></li>
+                <li><a href="/labs/neosemantics/4.0/" class="project-link">Documentation</a></li>
+              </ul>
+            </div>
+            <div class="navbar-item project">
+              <a class="project-name" href="/labs/neo4j-helm/">Neo4j Helm</a>
+              <ul class="project-links">
+                <li><a href="/labs/neo4j-helm/" class="project-link">Details</a></li>
+                <li><a href="/labs/neo4j-helm/1.0.0/" class="project-link">Documentation</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="navbar-item has-dropdown is-hoverable developer">
+          <a class="navbar-link" href="/developer/resources/">Get Help</a>
+          <div class="navbar-dropdown">
+            <div class="navbar-item project">
+              <a class="project-name" href="https://dev.neo4j.com/forum" target="_blank">Community Forum</a>
+            </div>
+            <div class="navbar-item project">
+              <a class="project-name" href="https://dev.neo4j.com/chat" target="_blank">Discord Chat</a>
+            </div>
+            <div class="navbar-item project">
+              <a class="project-name" href="/developer/kb" target="_blank">Knowledge Base</a>
+            </div>
+            <div class="navbar-item project">
+              <a class="project-name" href="https://medium.com/neo4j" target="_blank">Neo4j Developer Blog</a>
+            </div>
+            <div class="navbar-item project">
+              <a class="project-name" href="https://www.youtube.com/neo4j" target="_blank">Neo4j Videos</a>
+            </div>
+          </div>
+        </div>
+        <div class="navbar-item is-hoverable try">
+          <a class="navbar-link" href="/try-neo4j/">Try Neo4j</a>
+        </div>
+        {{!-- <div class="navbar-item" id="auth">
+          <a class="navbar-link" href="javascript:;" id="login">Login</a>
+        </div> --}}
+        <div class="navbar-item">
+          <a class="navbar-link search-button" href="#search" id="search_open"><svg width="23px" height="23px" viewBox="0 0 23 23"
+              version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+              class="fill-current float-right" id="search" role="button" title="Search Website">
+              <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round"
+                stroke-linejoin="round">
+                <g transform="translate(-2.000000, -2.000000)" stroke="#a0aec0" stroke-width="1.5">
+                  {{!-- <g id="Group"> --}}
+                  {{!-- <g id="search"> --}}
+                  <circle
+                    transform="translate(11.389364, 11.388564) rotate(-23.025000) translate(-11.389364, -11.388564) "
+                    cx="11.3893642" cy="11.3885639" r="8.056"></circle>
+                  <path d="M17.0853333,17.0844444 L23.3333333,23.3333333" ></path>
+                  {{!-- </g> --}}
+                  {{!-- </g> --}}
+                </g>
+              </g>
+            </svg><span class="navbar-mobile">Search</span></a>
+        </div>
+        {{!-- <div class="navbar-item">
+        <span class="control">
+          <a class="button is-primary" href="#">Download</a>
+        </span>
+      </div> --}}
+      </div>
+    </div>
+  </nav>
+</header>

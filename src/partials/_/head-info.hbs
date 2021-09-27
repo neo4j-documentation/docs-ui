@@ -1,0 +1,21 @@
+    {{#unless (ne page.attributes.no-canonical undefined)}}
+    {{#if page.canonicalUrl}}
+    <link rel="canonical" href="{{{this}}}">
+    {{else}}
+    <link rel="canonical" href="https://neo4j.com{{{ page.attributes.canonical-root }}}{{ page.url }}">
+    {{/if}}
+    {{/unless}}
+    {{#unless (eq page.attributes.pagination undefined)}}
+    {{#with page.previous}}
+    <link rel="prev" href="{{{relativize ./url}}}">
+    {{/with}}
+    {{#with page.next}}
+    <link rel="next" href="{{{relativize ./url}}}">
+    {{/with}}
+    {{/unless}}
+    {{#with page.description}}
+      <meta name="description" content="{{this}}">
+    {{/with}}
+    {{#with page.keywords}}
+    <meta name="keywords" content="{{this}}">
+    {{/with}}

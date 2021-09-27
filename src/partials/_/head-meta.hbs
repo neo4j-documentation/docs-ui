@@ -1,0 +1,54 @@
+
+
+    {{!-- Search --}}
+    <meta property="neo:type" content="{{{ or (or page.attributes.search-type page.attributes.type) 'Developer Guide' }}}">
+    <meta property="neo:site" content="{{{ or page.attributes.search-site 'Developer Site' }}}">
+
+    {{#with page.attributes.environment}}
+    <meta property="neo:environment" content="{{{this}}}">
+    {{/with}}
+    {{#with page.attributes.programminglanguage}}
+    <meta property="neo:programming-language" content="{{{this}}}">
+    {{/with}}
+    {{#with page.attributes.neo4jversion}}
+    <meta property="neo:version" content="{{{this}}}">
+    {{/with}}
+    {{#with page.attributes.product}}
+    <meta property="neo:product" content="{{{this}}}">
+    {{/with}}
+    {{#with page.attributes.manualtype}}
+    <meta property="neo:manual-type" content="{{{this}}}">
+    {{/with}}
+
+    {{!-- OG Tags--}}
+    <meta property="og:site_name" content="Neo4j Graph Database Platform" />
+    <meta property="article:publisher" content="https://www.facebook.com/neo4j.graph.database" />
+    {{#unless page.attributes.player}}
+    <meta name="twitter:card" content="summary_large_image" />
+    {{/unless}}
+    <meta name="twitter:creator" content="@neo4j" />
+    <meta name="twitter:site" content="@neo4j" />
+    <meta property="og:type" content="{{{ or page.attributes.postttype 'article' }}}" />
+    <meta property="og:title" content="{{#with (or page.attributes.ogtitle page.title) }}{{{detag this}}}{{/with}} - {{#with page.component.title}}{{{detag this}}}{{/with}}" />
+    <meta property="og:locale" content="{{{ or page.attributes.locale 'en_US' }}}">
+    {{#with (or page.attributes.ogimage 'https://dist.neo4j.com/wp-content/uploads/20210423062553/neo4j-social-share-21.png' )}}
+    <meta property="og:image" content="{{{this}}}" />
+    {{/with}}
+    {{#with page.description}}
+    <meta property="og:description" content="{{this}}">
+    {{/with}}
+    <meta property="og:url" content="https://neo4j.com{{ page.attributes.canonical-root }}{{ page.url }}">
+    {{#with page.attributes.player}}
+    <meta name="twitter:player" content="{{this}}" />
+    <meta name="twitter:player:width" content="360" />
+    <meta name="twitter:player:height" content="200" />
+    <meta name="twitter:image" content="https://go.neo4j.com/rs/710-RRC-335/images/neo4j_logo_globe.png" />
+    <meta name="twitter:card" content="player" />
+    {{#with (or page.attributes.playertitle '🔴 LIVE! Neo4j is live on Twitch!')}}
+    <meta name="twitter:title" content="{{this}}" />
+    {{/with}}
+    {{#with (or page.attributes.playerdescription 'Neo4j is the open source graph database that allows you to manage, query and visualize your connected information effortlessly. Drivers in all languages, transactional and analytics workloads https://neo4j.com/developer')}}
+    <meta name="twitter:description" content="{{this}}" />
+    {{/with}}
+    {{/with}}
+    <link rel="shortcut icon" href="https://neo4j.com/wp-content/themes/neo4jweb/favicon.ico" />

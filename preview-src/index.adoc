@@ -25,7 +25,7 @@ Author Name
 // :page-topicid: 22863
 // end:discourse[]
 :page-disabletracking: true
-:page-newsletter: true
+// :page-newsletter: true
 
 .Goals
 [abstract]
@@ -79,397 +79,397 @@ imports nodes and relationships from the provided CSV files with given labels an
 // end::level[]
 
 
-== Labels
-
-++++
-<div class="box">
-  <span class="label">Default Label Color</span>
-</div>
-
-<div class="box">
-  <span class="label label--apoc-core">APOC Core</span>
-</div>
-
-<div class="box">
-  <span class="label label--core">Core</span>
-</div>
-
-<div class="box">
-  <span class="label label--apoc-full">APOC Full</span>
-</div>
-
-<div class="box">
-  <span class="label label--full">Full</span>
-</div>
-
-<div class="box">
-  <span class="label label--current">Current</span>
-</div>
-
-<div class="box">
-  <span class="label label--function">Function</span>
-</div>
-
-<div class="box">
-  <span class="label label--procedure">Procedure</span>
-</div>
-
-<div class="box">
-  <span class="label label--beginner">Beginner</span>
-</div>
-
-<div class="box">
-  <span class="label label--free">Free</span>
-</div>
-
-<div class="box">
-  <span class="label label--enterprise-edition">Enterprise Edition</span>
-</div>
-
-<div class="box">
-  <span class="label label--enterprise">Enterprise</span>
-</div>
-
-<div class="box">
-  <span class="label label--professional">Professional</span>
-</div>
-
-<div class="box">
-  <span class="label label--enterprise-only">Enterprise Only</span>
-</div>
-
-<div class="box">
-  <span class="label label--aura">Aura</span>
-</div>
-
-<div class="box">
-  <span class="label label--new">New</span>
-</div>
-
-<div class="box">
-  <span class="label label--yes">Yes</span>
-</div>
-
-<div class="box">
-  <span class="label label--renamed">Renamed</span>
-</div>
-
-<div class="box">
-  <span class="label label--changed">Changed</span>
-</div>
-
-<div class="box">
-  <span class="label label--added">Added</span>
-</div>
-
-<div class="box">
-  <span class="label label--updated">Updated</span>
-</div>
-
-<div class="box">
-  <span class="label label--removed">Removed</span>
-</div>
+// == Labels
+
+// ++++
+// <div class="box">
+//   <span class="label">Default Label Color</span>
+// </div>
+
+// <div class="box">
+//   <span class="label label--apoc-core">APOC Core</span>
+// </div>
+
+// <div class="box">
+//   <span class="label label--core">Core</span>
+// </div>
+
+// <div class="box">
+//   <span class="label label--apoc-full">APOC Full</span>
+// </div>
+
+// <div class="box">
+//   <span class="label label--full">Full</span>
+// </div>
+
+// <div class="box">
+//   <span class="label label--current">Current</span>
+// </div>
+
+// <div class="box">
+//   <span class="label label--function">Function</span>
+// </div>
+
+// <div class="box">
+//   <span class="label label--procedure">Procedure</span>
+// </div>
+
+// <div class="box">
+//   <span class="label label--beginner">Beginner</span>
+// </div>
+
+// <div class="box">
+//   <span class="label label--free">Free</span>
+// </div>
+
+// <div class="box">
+//   <span class="label label--enterprise-edition">Enterprise Edition</span>
+// </div>
+
+// <div class="box">
+//   <span class="label label--enterprise">Enterprise</span>
+// </div>
+
+// <div class="box">
+//   <span class="label label--professional">Professional</span>
+// </div>
+
+// <div class="box">
+//   <span class="label label--enterprise-only">Enterprise Only</span>
+// </div>
+
+// <div class="box">
+//   <span class="label label--aura">Aura</span>
+// </div>
+
+// <div class="box">
+//   <span class="label label--new">New</span>
+// </div>
+
+// <div class="box">
+//   <span class="label label--yes">Yes</span>
+// </div>
+
+// <div class="box">
+//   <span class="label label--renamed">Renamed</span>
+// </div>
+
+// <div class="box">
+//   <span class="label label--changed">Changed</span>
+// </div>
+
+// <div class="box">
+//   <span class="label label--added">Added</span>
+// </div>
+
+// <div class="box">
+//   <span class="label label--updated">Updated</span>
+// </div>
+
+// <div class="box">
+//   <span class="label label--removed">Removed</span>
+// </div>
 
-<div class="box">
-  <span class="label label--no">No</span>
-</div>
-
-<div class="box">
-  <span class="label label--na">N / A</span>
-</div>
-
-<div class="box">
-  <span class="label label--discontinued">Discontinued</span>
-</div>
-
-<div class="box">
-  <span class="label label--deprecated">Deprecated</span>
-</div>
-
-<div class="box">
-  <span class="label label--warning">Warning!</span>
-</div>
-
-<div class="box">
-  <span class="label label--danger">Danger!</span>
-</div>
-
-<div class="box">
-  <span class="label label--recommended">Recommended</span>
-</div>
-
-<div class="box">
-  <span class="label label--default">Default</span>
-</div>
-
-<div class="box">
-  <span class="label label--windows">Windows</span>
-</div>
-
-<div class="box">
-  <span class="label label--linux">Linux</span>
-</div>
-
-<div class="box">
-  <span class="label label--unix">Unix</span>
-</div>
-
-<div class="box">
-  <span class="label label--mac-os">Mac OS</span>
-</div>
-
-<div class="box">
-  <span class="label label--syntax">Syntax</span>
-</div>
-
-<div class="box">
-  <span class="label label--functionality">Functionality</span>
-</div>
-
-<div class="box">
-  <span class="label label--cypher">Cypher</span>
-</div>
-
-<div class="box">
-  <span class="label label--cluster-member-core">CORE</span>
-</div>
-<div class="box">
-  <span class="label label--cluster-member-read-replica">READ_REPLICA</span>
-</div>
-<div class="box">
-  <span class="label label--cluster-member-single">SINGLE</span>
-</div>
-
-++++
+// <div class="box">
+//   <span class="label label--no">No</span>
+// </div>
+
+// <div class="box">
+//   <span class="label label--na">N / A</span>
+// </div>
+
+// <div class="box">
+//   <span class="label label--discontinued">Discontinued</span>
+// </div>
+
+// <div class="box">
+//   <span class="label label--deprecated">Deprecated</span>
+// </div>
+
+// <div class="box">
+//   <span class="label label--warning">Warning!</span>
+// </div>
+
+// <div class="box">
+//   <span class="label label--danger">Danger!</span>
+// </div>
+
+// <div class="box">
+//   <span class="label label--recommended">Recommended</span>
+// </div>
+
+// <div class="box">
+//   <span class="label label--default">Default</span>
+// </div>
+
+// <div class="box">
+//   <span class="label label--windows">Windows</span>
+// </div>
+
+// <div class="box">
+//   <span class="label label--linux">Linux</span>
+// </div>
+
+// <div class="box">
+//   <span class="label label--unix">Unix</span>
+// </div>
+
+// <div class="box">
+//   <span class="label label--mac-os">Mac OS</span>
+// </div>
+
+// <div class="box">
+//   <span class="label label--syntax">Syntax</span>
+// </div>
+
+// <div class="box">
+//   <span class="label label--functionality">Functionality</span>
+// </div>
+
+// <div class="box">
+//   <span class="label label--cypher">Cypher</span>
+// </div>
+
+// <div class="box">
+//   <span class="label label--cluster-member-core">CORE</span>
+// </div>
+// <div class="box">
+//   <span class="label label--cluster-member-read-replica">READ_REPLICA</span>
+// </div>
+// <div class="box">
+//   <span class="label label--cluster-member-single">SINGLE</span>
+// </div>
+
+// ++++
 
 
-== Tabs
-// tag::tabs[]
-[.tabs]
+// == Tabs
+// // tag::tabs[]
+// [.tabs]
 
-.Preview
-[source,cypher]
-CALL n10s.rdf.preview.fetch(
-  'https://raw.githubusercontent.com/neo4j-labs/neosemantics/3.5/docs/rdf/nsmntx.ttl',
-  'Turtle'
-)
+// .Preview
+// [source,cypher]
+// CALL n10s.rdf.preview.fetch(
+//   'https://raw.githubusercontent.com/neo4j-labs/neosemantics/3.5/docs/rdf/nsmntx.ttl',
+//   'Turtle'
+// )
 
-.Stream
-[source,cypher]
-CALL n10s.rdf.stream.fetch(
-  'https://raw.githubusercontent.com/neo4j-labs/neosemantics/3.5/docs/rdf/nsmntx.ttl',
-  'Turtle'
-)
+// .Stream
+// [source,cypher]
+// CALL n10s.rdf.stream.fetch(
+//   'https://raw.githubusercontent.com/neo4j-labs/neosemantics/3.5/docs/rdf/nsmntx.ttl',
+//   'Turtle'
+// )
 
-// end::tabs[]
+// // end::tabs[]
 
-Then some content...
+// Then some content...
 
-These should change with the top ones
+// These should change with the top ones
 
 
-[.tabs]
-.Preview
-[source,cypher]
-----
-// PREVIEW
-----
+// [.tabs]
+// .Preview
+// [source,cypher]
+// ----
+// // PREVIEW
+// ----
 
-.Stream
-[source,cypher]
-----
-// STREAM
-----
+// .Stream
+// [source,cypher]
+// ----
+// // STREAM
+// ----
 
-But these should be independent:
+// But these should be independent:
 
-[.tabs]
-// tag::source[]
-[source,cypher]
-----
-CALL n10s.rdf.preview.fetch(
-  'https://raw.githubusercontent.com/neo4j-labs/neosemantics/3.5/docs/rdf/nsmntx.ttl',
-  'Turtle'
-)
-----
-// end::source[]
+// [.tabs]
+// // tag::source[]
+// [source,cypher]
+// ----
+// CALL n10s.rdf.preview.fetch(
+//   'https://raw.githubusercontent.com/neo4j-labs/neosemantics/3.5/docs/rdf/nsmntx.ttl',
+//   'Turtle'
+// )
+// ----
+// // end::source[]
 
-[source,js]
-CALL n10s.rdf.stream.fetch(
-  'https://raw.githubusercontent.com/neo4j-labs/neosemantics/3.5/docs/rdf/nsmntx.ttl',
-  'Turtle'
-)
+// [source,js]
+// CALL n10s.rdf.stream.fetch(
+//   'https://raw.githubusercontent.com/neo4j-labs/neosemantics/3.5/docs/rdf/nsmntx.ttl',
+//   'Turtle'
+// )
 
 
-== Source Blocks with Headers
+// == Source Blocks with Headers
 
-=== Copy Button
+// === Copy Button
 
-The **Copy To Clipboard** button will appear on all code blocks:
+// The **Copy To Clipboard** button will appear on all code blocks:
 
-[source,adoc]
-----
-[source,adoc]
-Copy me!
-----
+// [source,adoc]
+// ----
+// [source,adoc]
+// Copy me!
+// ----
 
-Unless you add `role=nocopy`:
+// Unless you add `role=nocopy`:
 
-.Source block with role=nocopy
-[source,adoc,role=nocopy]
-----
-[source,adoc,role=nocopy]
-Don't copy me!
-----
+// .Source block with role=nocopy
+// [source,adoc,role=nocopy]
+// ----
+// [source,adoc,role=nocopy]
+// Don't copy me!
+// ----
 
-=== Play In Browser
+// === Play In Browser
 
-Source blocks with a type of cypher will have a deeplink to run the query in Neo4j Browser
+// Source blocks with a type of cypher will have a deeplink to run the query in Neo4j Browser
 
-[source,cypher]
-----
-MATCH (n) RETURN count(n)
-----
+// [source,cypher]
+// ----
+// MATCH (n) RETURN count(n)
+// ----
 
-Unless you add `role=noplay`
+// Unless you add `role=noplay`
 
-.Source block with `role=noplay`
-[source,adoc,role=noplay]
-----
-[source,adoc,role=noplay]
-MATCH (n) RETURN count(n)
-----
+// .Source block with `role=noplay`
+// [source,adoc,role=noplay]
+// ----
+// [source,adoc,role=noplay]
+// MATCH (n) RETURN count(n)
+// ----
 
 
 
-=== Combining `nocopy` and `noplay`
+// === Combining `nocopy` and `noplay`
 
-You can combine `noplay` and `nocopy`:
+// You can combine `noplay` and `nocopy`:
 
-[source,adoc]
-----
-[source,adoc,role=nocopy noplay]
-MATCH (n) RETURN count(n)
-----
+// [source,adoc]
+// ----
+// [source,adoc,role=nocopy noplay]
+// MATCH (n) RETURN count(n)
+// ----
 
-[source,cypher,role=nocopy noplay]
-----
-MATCH (n) RETURN count(n)
-----
+// [source,cypher,role=nocopy noplay]
+// ----
+// MATCH (n) RETURN count(n)
+// ----
 
-== Suppress Header
+// == Suppress Header
 
-You can suppress the header by adding `role=noheader`
+// You can suppress the header by adding `role=noheader`
 
-[source,adoc]
-----
-[source,js,role=noheader]
-console.log('hello')
-----
-
-[source,js,role=noheader]
-console.log('hello')
-
-++++
-<div class="responsive-embed">
-<iframe width="680" height="425" src="https://www.youtube.com/embed/_D19h5s73Co?showinfo=0&controls=2&autohide=1" frameborder="0" allowfullscreen></iframe>
-</div>
-++++
-
-video::_D19h5s73Co[youtube]
-
-== Icons - Font Awesome 4.7 icon:frown-o[]
-
-icon:code-fork[] Projects
-
-icon:play-circle[] Play Circle
-
-icon:rss[] rss
-
-icon:github[] github
-
-icon:book[] book
-
-icon:user[] user
-
-icon:flask[] flask
-
-
-== Driver Table
-
-[cols="3*"]
-|===
-| Name
-| icon:tag[] Version
-| icon:user[] Authors
-
-| neo4j-driver
-| 4.0.2
-| The Neo4j Team
-
-| https://www.npmjs.com/package/neo4j-driver[icon:gift[] Package]
-|
-| https://community.neo4j.com/c/drivers-stacks/javascript[Neo4j Online Community^]
-
-| link:/[icon:book[] Docs^]
-| link:/docs/api/javascript-driver/current/[icon:code[] API]
-| http://github.com/neo4j/neo4j-javascript-driver[icon:github[] Source]
-|===
-
-
-
-image:multirepo-ssg.svg[Multirepo SSG,200,float=right]
-Platonem complectitur mediocritatem ea eos.
-Ei nonumy deseruisse ius.
-Mel id omnes verear.
-Vis no velit audiam, sonet <<dependencies,praesent>> eum ne.
-*Prompta eripuit* nec ad.
-Integer diam enim, dignissim eget eros et, ultricies mattis odio.
-Vestibulum consectetur nec urna a luctus.
-Quisque pharetra tristique arcu fringilla dapibus.
-Curabitur ut massa aliquam, cursus enim et, accumsan lectus.
-
-link:/developer/get-started/graph-database/[Learn More: What is a Graph Database?^, role="button feature-box_button"]
-
-[source,gram]
-(neo4j:Neo4j {name: "Neo4j"})
-(neo4j)-[:INCLUDES]->(browser:Product {name: "Neo4j Browser"})
-(browser)-[:HAS]->(:Feature {name: "Cypher"})
-(browser)-[:HAS]->(:Feature {name: "Dev Tools"})
-(browser)-[:HAS]->(:Feature {name: "Visualization"})
-(neo4j)-[:CONNECTS_WITH]->(drivers:Drivers {name: "Drivers"})
-(drivers)-[:SUPPORTS]->(:Language {name: "Java"})
-(drivers)-[:SUPPORTS]->(:Language {name: "Javascript"})
-(drivers)-[:SUPPORTS]->(:Language {name: ".NET"})
-(drivers)-[:SUPPORTS]->(:Language {name: "Python"})
-(drivers)-[:SUPPORTS]->(:Language {name: "Go"})
-(drivers)-[:SUPPORTS]->(:Language:Unofficial {name: "PHP"})
-(drivers)-[:SUPPORTS]->(:Language:Unofficial {name: "Ruby"})
-(drivers)-[:SUPPORTS]->(:Language:Unofficial {name: "...and more"})
-(neo4j)-[:PROVIDES]->(:OpenSource {name: "Open Source"})
-(neo4j)-[:INCLUDES]->(integrations:Integrations {name: "Integrations"})
-(integrations)-[:PLUGS_INTO]->(tools:Tools {name: "Tools"})
-(integrations)-[:PLUGS_INTO]->(frameworks:Frameworks {name: "Frameworks"})
-
-[.gram]
-(neo4j:Neo4j {name: "Neo4j"})
-(neo4j)-[:INCLUDES]->(browser:Product {name: "Neo4j Browser"})
-(browser)-[:HAS]->(:Feature {name: "Cypher"})
-(browser)-[:HAS]->(:Feature {name: "Dev Tools"})
-(browser)-[:HAS]->(:Feature {name: "Visualization"})
-(neo4j)-[:CONNECTS_WITH]->(drivers:Drivers {name: "Drivers"})
-(drivers)-[:SUPPORTS]->(:Language {name: "Java"})
-(drivers)-[:SUPPORTS]->(:Language {name: "Javascript"})
-(drivers)-[:SUPPORTS]->(:Language {name: ".NET"})
-(drivers)-[:SUPPORTS]->(:Language {name: "Python"})
-(drivers)-[:SUPPORTS]->(:Language {name: "Go"})
-(drivers)-[:SUPPORTS]->(:Language:Unofficial {name: "PHP"})
-(drivers)-[:SUPPORTS]->(:Language:Unofficial {name: "Ruby"})
-(drivers)-[:SUPPORTS]->(:Language:Unofficial {name: "...and more"})
-(neo4j)-[:PROVIDES]->(:OpenSource {name: "Open Source"})
-(neo4j)-[:INCLUDES]->(integrations:Integrations {name: "Integrations"})
-(integrations)-[:PLUGS_INTO]->(tools:Tools {name: "Tools"})
-(integrations)-[:PLUGS_INTO]->(frameworks:Frameworks {name: "Frameworks"})
+// [source,adoc]
+// ----
+// [source,js,role=noheader]
+// console.log('hello')
+// ----
+
+// [source,js,role=noheader]
+// console.log('hello')
+
+// ++++
+// <div class="responsive-embed">
+// <iframe width="680" height="425" src="https://www.youtube.com/embed/_D19h5s73Co?showinfo=0&controls=2&autohide=1" frameborder="0" allowfullscreen></iframe>
+// </div>
+// ++++
+
+// video::_D19h5s73Co[youtube]
+
+// == Icons - Font Awesome 4.7 icon:frown-o[]
+
+// icon:code-fork[] Projects
+
+// icon:play-circle[] Play Circle
+
+// icon:rss[] rss
+
+// icon:github[] github
+
+// icon:book[] book
+
+// icon:user[] user
+
+// icon:flask[] flask
+
+
+// == Driver Table
+
+// [cols="3*"]
+// |===
+// | Name
+// | icon:tag[] Version
+// | icon:user[] Authors
+
+// | neo4j-driver
+// | 4.0.2
+// | The Neo4j Team
+
+// | https://www.npmjs.com/package/neo4j-driver[icon:gift[] Package]
+// |
+// | https://community.neo4j.com/c/drivers-stacks/javascript[Neo4j Online Community^]
+
+// | link:/[icon:book[] Docs^]
+// | link:/docs/api/javascript-driver/current/[icon:code[] API]
+// | http://github.com/neo4j/neo4j-javascript-driver[icon:github[] Source]
+// |===
+
+
+
+// image:multirepo-ssg.svg[Multirepo SSG,200,float=right]
+// Platonem complectitur mediocritatem ea eos.
+// Ei nonumy deseruisse ius.
+// Mel id omnes verear.
+// Vis no velit audiam, sonet <<dependencies,praesent>> eum ne.
+// *Prompta eripuit* nec ad.
+// Integer diam enim, dignissim eget eros et, ultricies mattis odio.
+// Vestibulum consectetur nec urna a luctus.
+// Quisque pharetra tristique arcu fringilla dapibus.
+// Curabitur ut massa aliquam, cursus enim et, accumsan lectus.
+
+// link:/developer/get-started/graph-database/[Learn More: What is a Graph Database?^, role="button feature-box_button"]
+
+// [source,gram]
+// (neo4j:Neo4j {name: "Neo4j"})
+// (neo4j)-[:INCLUDES]->(browser:Product {name: "Neo4j Browser"})
+// (browser)-[:HAS]->(:Feature {name: "Cypher"})
+// (browser)-[:HAS]->(:Feature {name: "Dev Tools"})
+// (browser)-[:HAS]->(:Feature {name: "Visualization"})
+// (neo4j)-[:CONNECTS_WITH]->(drivers:Drivers {name: "Drivers"})
+// (drivers)-[:SUPPORTS]->(:Language {name: "Java"})
+// (drivers)-[:SUPPORTS]->(:Language {name: "Javascript"})
+// (drivers)-[:SUPPORTS]->(:Language {name: ".NET"})
+// (drivers)-[:SUPPORTS]->(:Language {name: "Python"})
+// (drivers)-[:SUPPORTS]->(:Language {name: "Go"})
+// (drivers)-[:SUPPORTS]->(:Language:Unofficial {name: "PHP"})
+// (drivers)-[:SUPPORTS]->(:Language:Unofficial {name: "Ruby"})
+// (drivers)-[:SUPPORTS]->(:Language:Unofficial {name: "...and more"})
+// (neo4j)-[:PROVIDES]->(:OpenSource {name: "Open Source"})
+// (neo4j)-[:INCLUDES]->(integrations:Integrations {name: "Integrations"})
+// (integrations)-[:PLUGS_INTO]->(tools:Tools {name: "Tools"})
+// (integrations)-[:PLUGS_INTO]->(frameworks:Frameworks {name: "Frameworks"})
+
+// [.gram]
+// (neo4j:Neo4j {name: "Neo4j"})
+// (neo4j)-[:INCLUDES]->(browser:Product {name: "Neo4j Browser"})
+// (browser)-[:HAS]->(:Feature {name: "Cypher"})
+// (browser)-[:HAS]->(:Feature {name: "Dev Tools"})
+// (browser)-[:HAS]->(:Feature {name: "Visualization"})
+// (neo4j)-[:CONNECTS_WITH]->(drivers:Drivers {name: "Drivers"})
+// (drivers)-[:SUPPORTS]->(:Language {name: "Java"})
+// (drivers)-[:SUPPORTS]->(:Language {name: "Javascript"})
+// (drivers)-[:SUPPORTS]->(:Language {name: ".NET"})
+// (drivers)-[:SUPPORTS]->(:Language {name: "Python"})
+// (drivers)-[:SUPPORTS]->(:Language {name: "Go"})
+// (drivers)-[:SUPPORTS]->(:Language:Unofficial {name: "PHP"})
+// (drivers)-[:SUPPORTS]->(:Language:Unofficial {name: "Ruby"})
+// (drivers)-[:SUPPORTS]->(:Language:Unofficial {name: "...and more"})
+// (neo4j)-[:PROVIDES]->(:OpenSource {name: "Open Source"})
+// (neo4j)-[:INCLUDES]->(integrations:Integrations {name: "Integrations"})
+// (integrations)-[:PLUGS_INTO]->(tools:Tools {name: "Tools"})
+// (integrations)-[:PLUGS_INTO]->(frameworks:Frameworks {name: "Frameworks"})
 
 == Cu solet
 
@@ -757,19 +757,19 @@ An advantage of enhancing graph visualization with these algorithms is that we c
 * Blog post: https://medium.com/neo4j/graph-visualization-with-neo4j-using-neovis-js-a2ecaaa7c379[Neovis.js^]
 * Download neovis.js: https://www.npmjs.com/package/neovis.js[npm package^]
 
-== Pad Headers
+// == Pad Headers
 
-=== Pad Subheader
+// === Pad Subheader
 
-=== Pad Subheader
+// === Pad Subheader
 
-== Pad Headers
+// == Pad Headers
 
-== Pad Headers
+// == Pad Headers
 
-== Pad Headers
+// == Pad Headers
 
-== Pad Headers
+// == Pad Headers
 
 // tag::glossary[]
 [discrete.glossary]

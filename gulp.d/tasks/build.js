@@ -3,7 +3,7 @@
 const autoprefixer = require('autoprefixer')
 const cssnano = require('cssnano')
 const fs = require('fs-extra')
-const imagemin = require('gulp-imagemin')
+// const imagemin = require('gulp-imagemin')
 const merge = require('merge-stream')
 const ospath = require('path')
 const path = ospath.posix
@@ -26,7 +26,7 @@ module.exports = (src, dest, preview) => () => {
           .reduce((accum, { file: depPath, type }) => (type === 'dependency' ? accum.concat(depPath) : accum), [])
           .map((importedPath) => fs.stat(importedPath).then(({ mtime }) => mtime))
       ).then((mtimes) => {
-        const newestMtime = mtimes.reduce((max, curr) => (!max || curr > max ? curr : max))
+        const newestMtime = mtimes.reduce((max, curr) => (!max || curr > max ? curr : max), 0)
         if (newestMtime > file.stat.mtime) file.stat.mtimeMs = +(file.stat.mtime = newestMtime)
       }),
     postcssUrl([
@@ -60,20 +60,20 @@ module.exports = (src, dest, preview) => () => {
     vfs
       .src('css/site.css', { ...opts, sourcemaps })
       .pipe(postcss((file) => ({ plugins: postcssPlugins, options: { file } }))),
-    vfs.src('font/*.{ttf,woff*(2)}', opts),
+    // vfs.src('font/*.{ttf,woff*(2)}', opts),
     vfs.src('fonts/*.{ttf,woff*(2)}', opts),
-    vfs
-      .src('img/**/*.{gif,ico,jpg,png,svg}', opts)
-      .pipe(
-        imagemin(
-          [
-            imagemin.gifsicle(),
-            imagemin.jpegtran(),
-            imagemin.optipng(),
-            imagemin.svgo({ plugins: [{ removeViewBox: false }] }),
-          ].reduce((accum, it) => (it ? accum.concat(it) : accum), [])
-        )
-      ),
+    // vfs
+    //   .src('img/**/*.{gif,ico,jpg,png,svg}', opts)
+    //   .pipe(
+    //     imagemin(
+    //       [
+    //         imagemin.gifsicle(),
+    //         imagemin.jpegtran(),
+    //         imagemin.optipng(),
+    //         imagemin.svgo({ plugins: [{ removeViewBox: false }] }),
+    //       ].reduce((accum, it) => (it ? accum.concat(it) : accum), [])
+    //     )
+    //   ),
     vfs.src('helpers/*.js', opts),
     vfs.src('layouts/*.hbs', opts),
     vfs.src('partials/*.hbs', opts)

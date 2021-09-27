@@ -1,0 +1,21 @@
+{{#if page.attributes.newsletter}}
+<div class="newsletter">
+    <h2>{{{or page.attributes.newsletter-title 'This Week in Neo4j'}}}</h2>
+    <p>{{{or page.attributes.newsletter-copy 'Subscribe now to get weekly Neo4j Developer news directly to your
+        inbox'}}}</p>
+
+    <script src="//app-ab10.marketo.com/js/forms2/js/forms2.min.js"></script>
+    <form id="mktoForm_2374"></form>
+    <script type="text/javascript">
+        MktoForms2.loadForm("//app-ab10.marketo.com", "710-RRC-335", 2374, function (form) {
+            // Add an onSuccess handler
+            form.onSuccess(function (values, followUpUrl) {
+                document.getElementById("pp-text").style.display = "none";
+                document.getElementById("thks-subs").innerHTML = "<p class='byline'>Thank you! Email Node added.</p><p class='byline'>Receive more news and events: <a href='https://neo4j.com/manage-subscriptions/'>manage your subscriptions.<a/></p>";
+                form.getFormElem().hide();
+                return false;
+            });
+        });
+    </script>
+</div>
+{{/if}}

@@ -1,23 +1,19 @@
 <article class="doc">
 {{#if (eq page.layout '404')}}
-  <h1 class="page">{{{or page.title 'Page Not Found'}}}</h1>
-  <div class="paragraph">
-    <p>The page you&#8217;re looking for does not exist. It may have been moved.</p>
-  </div>
-  <div class="paragraph">
-    <p>If you arrived on this page by clicking on a link, please notify the owner of the site that the link is broken.
-    If you typed the URL of this page manually, please double check that you entered the address correctly.</p>
-  </div>
+<h1 class="page">{{{or page.title 'Page Not Found'}}}</h1>
+<div class="paragraph">
+<p>The page you&#8217;re looking for does not exist. It may have been moved.</p>
+</div>
+<div class="paragraph">
+<p>If you arrived on this page by clicking on a link, please notify the owner of the site that the link is broken.
+If you typed the URL of this page manually, please double check that you entered the address correctly.</p>
+</div>
 {{else}}
 {{#with page.title}}
-
-  <div class="bg-neutral-20 py-12 text-center my-12">
-    <h1 class="text-lg font-semibold">{{{this}}}</h1>
-  </div>
-
+<h1 class="page">{{{this}}}</h1>
 {{/with}}
 {{{page.contents}}}
-{{!-- {{#if (ne page.attributes.certificate undefined)}}
+{{#if (ne page.attributes.certificate undefined)}}
   <div id="_get_certificate" class="sect1 columns medium-12">
     <h2 id="_certificate"><a class="anchor" href="#_certificate"></a>Certificate</h2>
     <div class="download-certificate" data-status="ready">
@@ -49,7 +45,7 @@
       <a data-action="grade-quiz" data-slug="{{page.attributes.slug}}" class="medium button secondary"><i class="fa fa-check"></i> Check Answers</a>
     </div>
   </div>
-{{/if}} --}}
+{{/if}}
 {{/if}}
 {{> pagination}}
 {{> comments}}
