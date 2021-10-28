@@ -40,22 +40,13 @@ document.addEventListener('DOMContentLoaded', function () {
   var copiedText = 'Copied!'
 
   var cleanCode = function (code, language) {
-    var div = document.createElement('div')
-    div.innerHTML = code
-
-    Array.from(div.querySelectorAll('i.conum, b')).map(function (el) {
-      div.removeChild(el)
-    })
-
-    var cleaner = document.createElement('textarea')
-    var input = div.innerHTML
+    var input = code.replace(/(<([^>]+)>)/gi, '')
 
     if (language === 'bash' || language === 'sh' || language === 'shell' || language === 'console') {
       input = window.neo4jDocs.copyableCommand(input)
     }
 
-    cleaner.innerHTML = input
-    return cleaner.value
+    return input
   }
 
   var copyToClipboard = function (code, language) {
