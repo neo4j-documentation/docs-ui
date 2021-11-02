@@ -203,7 +203,7 @@ page:
           name: 'Transportation and Logistics'
           pub:
             url: '#'
-      use-cases: &use-cases
+      usecases: &usecases
         - imageUrl: 'https://graphgist-portal-production.s3.amazonaws.com/graph_starter/images/sources/c17/a61/68-/medium/noun_301197.png'
           name: 'Data Analysis'
           pub:
@@ -232,6 +232,10 @@ page:
           attributes:
             page-illustration: 'https://graphgist-portal-production.s3.amazonaws.com/graph_starter/images/sources/c31/9cd/38-/medium/c319cd38-52f9-4641-95e4-bd374f99f6e5.png'
             page-author: Evelina Gabasova
+            page-industries:
+              - name: 'Education'
+                pub:
+                  url: '#'
             page-usecases:
               - name: 'Pop Culture'
                 pub:
@@ -246,12 +250,14 @@ page:
             page-author: Michael Hunger
   attributes:
     exploring-the-star-wars-social-network:
-      use-cases: *use-cases
+      usecases: *usecases
       industries: *industries
+      author: Evelina Gabasova
+      browserGuideUrl: 'https://guides.neo4j.com/graph-examples/exploring-the-star-wars-social-network/graph_guide'
     pop-culture:
       graphgist-pages:
         - *star_wars_social_network_page
-      use-cases: *use-cases
+      usecases: *usecases
       industries: *industries
     graphgists:
       featured-pages:
@@ -328,7 +334,7 @@ page:
                 - name: 'Graph Gist How-tos'
                   pub:
                     url: '#'
-      use-cases: *use-cases
+      usecases: *usecases
       industries: *industries
 
 asciidoc:

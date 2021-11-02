@@ -47,7 +47,22 @@
                   <li><a class="button secondary" href="https://portal.graphgist.org/graph_gists/{{page.attributes.slug}}/source">Show source</a>
                   <li><a class="button secondary" download href="{{@root.page.attributes.canonical-root}}{{page.attributes.notebookUrl}}">Download as Jupyter Notebook</a></li>
                   {{#with page.attributes.browserGuideUrl}}
-                    <li><a class="button" target="_blank" href="{{this}}">Play as Browser Guide</a></li>
+                    <li class="open-neo4j-browser">
+                      <fieldset>
+                        <legend>Open in Neo4j Browser</legend>
+                        <label for="neo4j-browser-connection-url">Connection URL</label>
+                        <div class="field has-addons">
+                          <div class="control">
+                            <input id="neo4j-browser-connection-url" class="input" type="text" placeholder="">
+                          </div>
+                          <div class="control">
+                            <a id="neo4j-browser-open-link" class="button" target="_blank" data-browser-guide-url="{{this}}">
+                              Open
+                            </a>
+                          </div>
+                        </div>
+                      </fieldset>
+                    </li>
                   {{/with}}
                 </ul>
               </div>
