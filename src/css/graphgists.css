@@ -239,6 +239,8 @@ body.graphgist .graphgist-metadata .field.has-addons a.button {
   box-shadow: none;
   font-size: 1em;
   line-height: 1.5;
+  /* Otherwise, the input field is misaligned with the button in Safari */
+  height: 2.5em;
 }
 
 body.graphgist .graphgist-metadata .field.has-addons .control:not(:last-child) {
@@ -264,6 +266,8 @@ body.graphgist .graphgist-metadata .input {
   font-size: 1em;
   line-height: 1.5;
   padding: calc(0.5em - 1px) calc(0.75em - 1px);
+  /* Otherwise, the input field is misaligned with the button in Safari */
+  height: 2.5em;
 }
 
 body.graphgist .graphgist-metadata .control {
