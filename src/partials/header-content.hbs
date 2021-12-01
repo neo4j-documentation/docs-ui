@@ -131,12 +131,6 @@
               </ul>
             </div>
             <div class="navbar-item project">
-              <div class="project-name">Connectors</div>
-              <ul class="project-links">
-                <li><a class="project-link" href="/developer/spark/">Neo4j Connector for Apache Spark</a></li>
-              </ul>
-            </div>
-            <div class="navbar-item project">
               <a class="project-name" href="/developer/graphacademy/">GraphAcademy</a>
             </div>
             <div class="navbar-item project">
@@ -151,68 +145,64 @@
           <a class="navbar-link" href="/docs/">Docs</a>
           <div class="navbar-dropdown">
             <div class="navbar-item project">
-              <span class="project-name">Neo4j Database</span>
+              <span class="project-name">Neo4j DBMS</span>
               <ul class="project-links">
                 <li><a href="/docs/getting-started/current/" class="project-link">Getting Started</a></li>
-                <li><a href="/docs/operations-manual/current/" class="project-link">Operations Manual</a></li>
-                <li><a href="/docs/migration-guide/current/" class="project-link">Migration Guide</a></li>
+                <li><a href="/docs/operations-manual/current/" class="project-link">Operations</a></li>
+                <li><a href="/docs/migration-guide/current/" class="project-link">Migration and Upgrade</a></li>
                 <li><a href="/docs/status-codes/current/" class="project-link">Status Codes</a></li>
+                <li><a href="/docs/java-reference/current/" class="project-link">Java Developer Reference</a></li>
               </ul>
             </div>
+
             <div class="navbar-item project">
-              <a class="project-name" href="/docs/aura/current/">Aura</a>
+              <a class="project-name" href="/docs/aura/current/">Neo4j Aura</a>
               <ul class="project-links">
-                <li><a class="project-link" href="/docs/aura/current/">Aura Documentation</a></li>
+                <li><a class="project-link" href="/docs/aura/current/">Neo4j AuraDB</a></li>
               </ul>
             </div>
 
-
             <div class="navbar-item project">
-              <span class="project-name">Cypher</span>
+              <span class="project-name">Cypher Query Language</span>
               {{!-- <a class="project-name" href="/docs/cypher-manual/current/">Cypher Manual</a> --}}
               <ul class="project-links">
-                <li><a href="/docs/cypher-manual/current/" class="project-link">Cypher Manual</a></li>
+                <li><a href="/docs/cypher-manual/current/" class="project-link">Cypher</a></li>
                 <li><a href="/docs/cypher-refcard/current/" class="project-link">Cypher Refcard</a></li>
               </ul>
             </div>
 
             <div class="navbar-item project">
-              <span class="project-name">Drivers</span>
+              <span class="project-name">Neo4j Graph Data Science</span>
               <ul class="project-links">
-                <li><a href="{{#with (docs-driver-manual-url page 'dotnet-manual')}}{{{this}}}{{/with}}" class="project-link">.Net Driver</a></li>
+                <li><a href="/docs/graph-data-science/current/" class="project-link">Neo4j Graph Data Science Library</a></li>
+              </ul>
+            </div>
+
+            <div class="navbar-item project">
+              <span class="project-name" href="/docs/drivers-apis">Neo4j Drivers and APIs</span>
+              <ul class="project-links">
                 <li><a href="{{#with (docs-driver-manual-url page 'go-manual')}}{{{this}}}{{/with}}" class="project-link">Go Driver</a></li>
                 <li><a href="{{#with (docs-driver-manual-url page 'java-manual')}}{{{this}}}{{/with}}" class="project-link">Java Driver</a></li>
                 <li><a href="{{#with (docs-driver-manual-url page 'javascript-manual')}}{{{this}}}{{/with}}" class="project-link">JavaScript Driver</a></li>
+                <li><a href="{{#with (docs-driver-manual-url page 'dotnet-manual')}}{{{this}}}{{/with}}" class="project-link">.Net Driver</a></li>
                 <li><a href="{{#with (docs-driver-manual-url page 'python-manual')}}{{{this}}}{{/with}}" class="project-link">Python Driver</a></li>
+                <li><a href="/docs/graphql-manual/current/" class="project-link">Neo4j GraphQL Library</a></li>
+                <li><a href="/docs/http-api/current/" class="project-link">HTTP API</a></li>
+                <li><a href="/docs/ogm-manual/current/" class="project-link">OGM Library</a></li>
+                <li><a href="https://docs.spring.io/spring-data/neo4j/docs/current/reference/html/#reference" class="project-link">Spring Data Neo4j</a></li>
+                <li><a href="/docs/spark/" class="project-link">Neo4j Connector for Apache Spark</a></li>
               </ul>
             </div>
 
             <div class="navbar-item project">
               <span class="project-name">Neo4j UI Tools</span>
               <ul class="project-links">
-                <li><a href="/docs/bloom-user-guide/current/" class="project-link">Bloom</a></li>
+                <li><a href="/docs/bloom-user-guide/current/" class="project-link">Neo4j Bloom</a></li>
                 <li><a href="/docs/browser-manual/current/" class="project-link">Neo4j Browser</a></li>
                 <li><a href="/docs/desktop-manual/current/" class="project-link">Neo4j Desktop</a></li>
               </ul>
             </div>
-            <div class="navbar-item project">
-              <a class="project-name" href="/docs/graph-data-science/current/">Graph Data Science</a>
-            </div>
-            <div class="navbar-item project">
-              <a class="project-name" href="/docs/graphql-manual/current/">Neo4j GraphQL Library</a>
-            </div>
-            <div class="navbar-item project">
-              <a class="project-name" href="/docs/ogm-manual/current/">OGM Library</a>
-            </div>
-            <div class="navbar-item project">
-              <a class="project-name" href="https://docs.spring.io/spring-data/neo4j/docs/current/reference/html/#reference">Spring Data Neo4j</a>
-            </div>
-            <div class="navbar-item project">
-              <a class="project-name" href="/docs/http-api/current/">HTTP API</a>
-            </div>
-            <div class="navbar-item project">
-              <a class="project-name" href="/docs/java-reference/current/">Java Reference</a>
-            </div>
+
           </div>
         </div>
         <div class="navbar-item has-dropdown is-hoverable labs">
