@@ -9,7 +9,13 @@
 <div class="body">
 {{> nav}}
 <main class="article">
-{{!-- {{> toolbar}} --}}
+  {{!-- toolbar for responsive nav --}}
+  <div class="toolbar" role="navigation">
+    <div class="toolbar-wrapper">
+      {{> nav-toggle}}
+    </div>
+  </div>
+
   <div class="content">
 {{> article}}
   </div>

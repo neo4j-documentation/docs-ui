@@ -54,9 +54,6 @@ link:{docs-home}/upgrade-migration-guide[Upgrade / Migrate]
 
 === Connect your application
 
-[.category]
-Drivers and APIs
-
 [.icon]
 image:icon-connect.svg[]
 
@@ -67,9 +64,6 @@ Discover the drivers, APIs, and connectors that facilitate the use of Neo4j and 
 xref:drivers-apis.adoc[Neo4j Drivers and APIs]
 
 === Cypher syntax basics
-
-[.category]
-Cypher
 
 [.icon]
 image:icon-syntax.svg[]
