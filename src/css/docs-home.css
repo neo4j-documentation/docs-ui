@@ -160,9 +160,8 @@ body.docshome .sect2 .paragraph.link {
 }
 
 body.docshome .sect2 .paragraph.category {
-  display:none;
+  display: none;
 }
-
 
 body.docshome .plain-links a.external::after {
   all: unset;
@@ -205,11 +204,9 @@ body.docshome .sect2 ul li a {
   body.docshome .toolbar {
     display: none;
   }
-
 }
 
 @media screen and (max-width: 1023px) {
-  
   body.docshome .doc {
     padding: 1rem;
   }
@@ -220,9 +217,6 @@ body.docshome .sect2 ul li a {
 
   body.docshome .nav-container {
     z-index: 30;
-    margin-top:var(--toolbar-height);
+    margin-top: var(--toolbar-height);
   }
-
-
 }
-
