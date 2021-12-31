@@ -6,7 +6,7 @@ if (typeof WebAuth !== 'undefined') {
     'use strict'
 
     // constants
-    var backendBaseUrl = 'https://nmae7t4ami.execute-api.us-east-1.amazonaws.com/prod'
+    var backendBaseUrl = 'https://pysadbr27c.execute-api.us-east-1.amazonaws.com'
     var location = window.location
     var locationHref = location.href
 
