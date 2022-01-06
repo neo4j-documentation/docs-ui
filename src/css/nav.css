@@ -333,7 +333,7 @@ html.is-clipped--nav {
   font-size: 0.8rem;
 }
 
-.navbar .navbar-item.try .navbar-link {
+.navbar .navbar-item.getting-started-cta .navbar-link {
   border-radius: 0.25rem;
   padding: 0.5em 1.5em;
   font-weight: 400;
@@ -341,7 +341,7 @@ html.is-clipped--nav {
 }
 
 @media screen and (min-width: 1024px) {
-  .navbar .navbar-item.try {
+  .navbar .navbar-item.getting-started-cta {
     padding-right: 0;
   }
 }

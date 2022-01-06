@@ -522,3 +522,13 @@ body {
   background-position: center;
   border: 2px solid var(--color-green-600);
 }
+
+.getting-started-cta .project:hover {
+  background: var(--colors-neutral-20);
+}
+
+.getting-started-cta .project-subtitle {
+  color: var(--color-grey-600);
+  font-size: 13px;
+  font-weight: 400;
+}
