@@ -532,3 +532,12 @@ body {
   font-size: 13px;
   font-weight: 400;
 }
+
+.getting-started-cta .aura-ticker {
+  font-size: 13px;
+  border: 1px solid var(--colors-primary-50);
+  color: var(--colors-primary-default);
+  border-radius: 9999px;
+  padding: 0 8px;
+  margin-left: 4px;
+}
