@@ -541,3 +541,11 @@ body {
   padding: 0 8px;
   margin-left: 4px;
 }
+
+.navbar-item.has-dropdown.getting-started-cta:hover::before {
+  border-bottom-color: var(--color-grey-600);
+}
+
+.navbar-item.has-dropdown.getting-started-cta::after {
+  content: none;
+}
