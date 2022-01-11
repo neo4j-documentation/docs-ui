@@ -148,4 +148,14 @@
     if (!el) return
     return selector ? el[el.matches ? 'matches' : 'msMatchesSelector'](selector) && el : el
   }
+
+  // Remove clipped nav
+  function removeClippedNav () {
+    var html = document.querySelector('html')
+    if (window.innerWidth >= 1024 && html.classList.has('is-clipped--nav')) {
+      html.classList.remove('is-clipped--nav')
+    }
+  }
+
+  window.addEventListener('resize', removeClippedNav)
 })()
