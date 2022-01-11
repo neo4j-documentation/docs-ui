@@ -90,9 +90,17 @@ body.docs .tableblock .icon i {
   color: var(--color-blue-600);
 }
 
-body.docs .navbar .navbar-item.try .navbar-link {
-  background: var(--color-blue-500);
+body.docs .navbar .navbar-item.getting-started-cta .navbar-link {
+  background: var(--colors-primary-default);
   color: var(--color-white);
+}
+
+body.docs .navbar .navbar-item.getting-started-cta .navbar-link:hover {
+  background: var(--colors-primary-50);
+}
+
+body.docs .navbar .navbar-item.getting-started-cta .navbar-link:active {
+  background: var(--colors-primary-60);
 }
 
 /*
@@ -183,7 +191,7 @@ body.labs .tableblock .icon i {
   color: var(--color-purple-600);
 }
 
-body.labs .navbar .navbar-item.try .navbar-link {
+body.labs .navbar .navbar-item.getting-started-cta .navbar-link {
   background: var(--color-purple-400);
   color: var(--color-white);
 }
@@ -279,7 +287,7 @@ body.developer .tableblock .icon i {
   color: var(--color-green-600);
 }
 
-body.developer .navbar .navbar-item.try .navbar-link {
+body.developer .navbar .navbar-item.getting-started-cta .navbar-link {
   background: var(--color-grey-700);
   color: var(--color-white);
 }
@@ -364,7 +372,7 @@ body.kb .search .search-container .search-form {
   fill: var(--color-white);
 }
 
-body.kb .navbar .navbar-item.try .navbar-link {
+body.kb .navbar .navbar-item.getting-started-cta .navbar-link {
   background: var(--color-purple-600);
   color: var(--color-white);
 }
@@ -406,7 +414,7 @@ body.graphgists .search .search-container .search-form {
   fill: var(--color-white);
 }
 
-body.graphgists .navbar .navbar-item.try .navbar-link {
+body.graphgists .navbar .navbar-item.getting-started-cta .navbar-link {
   background: var(--color-purple-600);
   color: var(--color-white);
 }
