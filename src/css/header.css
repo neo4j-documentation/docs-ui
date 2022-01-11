@@ -338,7 +338,7 @@ body {
     display: block;
     top: 100%;
     left: 50%;
-    margin-top: -0.6rem;
+    margin-top: -0.4rem;
     margin-left: -1.5rem;
     z-index: 1;
     width: 0;
@@ -439,7 +439,7 @@ body {
 @media screen and (min-width: 1024px) {
   .navbar-dropdown {
     border-top: 4px solid;
-    margin-top: -4px;
+    margin-top: 0;
     border-radius: 4px;
     max-width: 480px;
   }
@@ -454,6 +454,7 @@ body {
 .project .project-name {
   color: var(--body-font-color);
   font-weight: 600;
+  font-size: calc(16 / var(--rem-base) * 1rem);
 }
 
 .project-description {
@@ -534,12 +535,16 @@ body {
 }
 
 .getting-started-cta .aura-ticker {
-  font-size: 13px;
+  font-size: 0.8rem;
   border: 1px solid var(--colors-primary-50);
   color: var(--colors-primary-default);
   border-radius: 9999px;
   padding: 0 8px;
   margin-left: 4px;
+}
+
+.getting-started-cta.navbar-item.has-dropdown::before {
+  margin-left: 0;
 }
 
 .navbar-item.has-dropdown.getting-started-cta:hover::before {
