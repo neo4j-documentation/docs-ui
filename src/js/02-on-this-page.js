@@ -26,8 +26,8 @@
     return accum
   }, document.createElement('ul'))
 
-  var menu = sidebar.querySelector('.toc-menu')
-  if (!menu) (menu = document.createElement('div')).className = 'toc-menu'
+  var menu = sidebar.querySelector('.toc-menu-placeholder')
+  if (!menu) (menu = document.createElement('div')).className = 'toc-menu-placeholder'
 
   var title = document.createElement('h2')
   title.textContent = sidebar.dataset.title || 'Contents'

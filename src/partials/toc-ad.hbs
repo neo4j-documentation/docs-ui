@@ -1,0 +1,37 @@
+{{#if page.attributes.ad-link}}
+<div class="toc-ad">
+    {{#with page.attributes.ad-overline}}
+    <div class="toc-ad-overline">
+        {{#if page.attributes.ad-overline-link}}
+        <a href="{{{page.attributes.ad-overline-link}}}" target="_blank">
+        {{/if}}
+
+        {{{this}}}
+
+        {{#if page.attributes.ad-overline-link}}
+        </a>
+        {{/if}}
+    </div>
+    {{/with}}
+
+    <a href="{{{page.attributes.ad-link}}}" target="_blank">
+        {{#with page.attributes.ad-image}}
+        <img class="toc-ad-image" src="{{{this}}}" alt="{{{ page.attributes.ad-title }}}">
+        {{/with}}
+
+        <h2 class="toc-ad-title">
+            {{{page.attributes.ad-title}}}
+        </h2>
+
+        {{#if page.attributes.ad-description}}
+        <p class="toc-ad-description">{{{page.attributes.ad-description}}}</p>
+        {{/if}}
+
+        {{#with page.attributes.ad-underline}}
+        <div class="toc-ad-underline">
+            {{{this}}}
+        </div>
+        {{/with}}
+    </a>
+</div>
+{{/if}}

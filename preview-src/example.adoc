@@ -60,7 +60,7 @@ For the following examples consider a cluster environment formed by 5 members, 3
 neo4j@neo4j> CALL dbms.cluster.overview();
 ----
 
-[queryresult]
+[.queryresult]
 ----
 +------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | id        | addresses                                                                    | databases                   | groups |
@@ -115,7 +115,7 @@ neo4j@system> SHOW DATABASES;
 neo4j@system> CREATE DATABASE data001;
 ----
 
-[queryresult]
+[.queryresult]
 ----
 0 rows available after 378 ms, consumed after another 12 ms
 Added 1 nodes, Set 4 properties, Added 1 labels
