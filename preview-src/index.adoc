@@ -27,14 +27,15 @@ Author Name
 :page-disabletracking: true
 :page-newsletter: true
 // tag::link[]
-:page-ad-overline-link: https://graphacademy.neo4j.com/
-:page-ad-overline: Neo4j GraphAcademy
-:page-ad-title: Building Neo4j Applications with Python
-:page-ad-description: Learn how to interact with Neo4j from Python using the Neo4j Python Driver
+:page-ad-overlinelink: {aura_signup}
+:page-ad-overline: Neo4j Aura
+:page-ad-title: Follow Along and Learn While Doing
+:page-ad-description: Free forever, no credit card required.
+:page-ad-link: {aura_signup}
+:page-ad-underlinerole: button
+:page-ad-underline: Start on AuraDB
 // :page-ad-image: https://s3.amazonaws.com/cdn.graphacademy.neo4j.com/tshirts/python-tshirt.jpg
 // :page-ad-image: https://graphacademy.neo4j.com/courses/app-python/badge/
-:page-ad-link: https://graphacademy.neo4j.com/courses/app-python/
-:page-ad-underline: Learn more
 // end::link[]
 
 .Goals

@@ -55,7 +55,8 @@
   font-size: 0.8rem;
 }
 
-.toc .toc-ad-underline-button {
+.toc .toc-ad-underline-button,
+.toc .toc-ad .button {
   border-radius: 0.25rem;
   background-color: var(--color-blue-600);
   color: var(--color-white);
