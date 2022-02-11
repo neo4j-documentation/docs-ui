@@ -8,6 +8,10 @@
   font-size: 0.7rem;
 }
 
+.tableblock .label {
+  margin-top: 0.2rem;
+}
+
 .label--core,
 .label--apoc-core {
   background: var(--color-blue-200);
@@ -37,7 +41,7 @@
 
 .label--free,
 .label--beginner {
-  background: var(--neo4j-blueberry-color);
+  background: var(--colors-blueberry-70);
   color: var(--color-white);
 }
 
@@ -46,7 +50,7 @@
 .label--professional,
 .label--enterprise,
 .label--enterprise-edition {
-  background: var(--neo4j-primary-color);
+  background: var(--colors-primary-40);
   color: var(--color-white);
 }
 
@@ -75,7 +79,7 @@
 
 .label--danger,
 .label--warning {
-  background: var(--neo4j-warning-color);
+  background: var(--colors-warning-40);
   color: var(--color-black);
 }
 
