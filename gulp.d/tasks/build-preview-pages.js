@@ -19,7 +19,7 @@ const yaml = require('js-yaml')
 
 handlebars.registerHelper('hasString', (hay, needle) => {
   return hay.indexOf(needle) > -1
- })
+})
 
 handlebars.registerHelper('json', (context) => JSON.stringify(context))
 
