@@ -17,6 +17,10 @@ const requireFromString = require('require-from-string')
 const vfs = require('vinyl-fs')
 const yaml = require('js-yaml')
 
+handlebars.registerHelper('hasString', (hay, needle) => {
+  return hay.indexOf(needle) > -1
+ })
+
 handlebars.registerHelper('json', (context) => JSON.stringify(context))
 
 const ASCIIDOC_ATTRIBUTES = { experimental: '', icons: 'font', sectanchors: '', 'source-highlighter': 'highlight.js' }

@@ -123,11 +123,13 @@ html.is-clipped--nav {
 
 .nav-menu .title {
   color: var(--nav-heading-font-color);
-  font-weight: var(--body-font-weight-bold);
-  margin: 0;
-  padding: 0.25em 0 0.125em;
+  font-weight: 300;
+  letter-spacing: 2px;
   text-transform: uppercase;
-  font-size: 0.75rem;
+  font-size: 1rem;
+  border-bottom: 1px solid var(--neutral-color-25);
+  padding: 16px 24px;
+  margin: 0;
 }
 
 .nav-menu a,
@@ -139,7 +141,7 @@ html.is-clipped--nav {
 }
 
 .nav-list {
-  /* margin: 0 0 0 1rem; */
+  margin: 0;
   padding: 0;
 }
 
@@ -331,19 +333,23 @@ html.is-clipped--nav {
 
 /* ================= */
 
+.nav-link {
+  position: relative;
+}
+
 .nav-item a:hover,
 .nav-item span:hover {
   background-color: var(--neutral-color-25);
 }
 
-.is-current-page.is-active a {
+.is-current-page.is-active > a {
   background-color: var(--neutral-color-30);
   color: var(--primary-color-60);
 }
 
-.is-current-page.is-active a::before {
+.is-current-page.is-active > a::before {
   content: "";
-  width: 4px;
+  width: px;
   height: 100%;
   position: absolute;
   left: 0;
@@ -352,28 +358,33 @@ html.is-clipped--nav {
   border-radius: 4px;
 }
 
-.nav-menu .nav-item .nav-item a,
-.nav-menu .nav-item .nav-item span {
+.nav-menu .nav-item .nav-item > a,
+.nav-menu .nav-item .nav-item > span {
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
 }
 
-.nav-item[data-depth="0"] a,
-.nav-item[data-depth="0"] span {
+.nav-item[data-depth="1"] > a,
+.nav-item[data-depth="1"] > span {
   padding-left: 1.5rem;
   padding-right: 1rem;
 }
 
-.nav-item[data-depth="1"] a,
-.nav-item[data-depth="1"] span {
+.nav-item[data-depth="2"] > a,
+.nav-item[data-depth="2"] > span {
   padding-left: 3rem;
   padding-right: 1rem;
 }
 
-.nav-item[data-depth="2"] a,
-.nav-item[data-depth="2"] span {
+.nav-item[data-depth="3"] > a,
+.nav-item[data-depth="3"] > span {
   padding-left: 4.5rem;
   padding-right: 1rem;
+}
+
+.nav-item[data-depth="1"] > span strong {
+  font-size: 1rem;
+  color: var(--neutral-55);
 }
 
 .nav-item > .nav-item-toggle::after {
@@ -387,9 +398,31 @@ html.is-clipped--nav {
   content: "\f106";
 }
 
-.nav-item a[target="_blank"]::after {
-  content: "\f35d";
-  font-family: "FontAwesome", sans-serif;
-  position: absolute;
-  right: 1rem;
+.nav-item a[target="_blank"]:hover::after {
+  position: relative;
+  display: inline-block;
+  margin: 0 0.2rem;
+  content: "→";
+  color: #805ad5;
+  -webkit-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+  -webkit-transition: all 0.2s linear;
+  transition: all 0.2s linear;
+  top: 0;
+}
+
+.nav-item .nav-section-header {
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+  padding-top: 1.5rem !important;
+  border-top: 1px solid var(--neutral-color-25);
+}
+
+.nav-item .nav-section-header:hover {
+  background-color: transparent;
+}
+
+.nav-menu .nav-list:first-child .nav-item:first-child .nav-section-header {
+  border: none;
+  padding-top: 0 !important;
 }
