@@ -127,14 +127,14 @@ html.is-clipped--nav {
   letter-spacing: 2px;
   text-transform: uppercase;
   font-size: 1rem;
-  border-bottom: 1px solid var(--neutral-color-25);
+  border-bottom: 1px solid var(--colors-neutral-25);
   padding: 16px 24px;
   margin: 0;
 }
 
 .nav-menu a,
 .nav-text {
-  color: var(--neutral-color-55);
+  color: var(--colors-neutral-55);
   font-weight: var(--nav-font-weight);
   display: block;
   padding: 0.2rem 0;
@@ -339,12 +339,12 @@ html.is-clipped--nav {
 
 .nav-item a:hover,
 .nav-item span:hover {
-  background-color: var(--neutral-color-25);
+  background-color: var(--colors-neutral-25);
 }
 
 .is-current-page.is-active > a {
-  background-color: var(--neutral-color-30);
-  color: var(--primary-color-60);
+  background-color: var(--colors-neutral-30);
+  color: var(--colors-primary-60);
 }
 
 .is-current-page.is-active > a::before {
@@ -354,7 +354,7 @@ html.is-clipped--nav {
   position: absolute;
   left: 0;
   top: 0;
-  background: var(--primary-color-60);
+  background: var(--colors-primary-60);
   border-radius: 4px;
 }
 
@@ -415,7 +415,7 @@ html.is-clipped--nav {
   margin-top: 1.5rem;
   margin-bottom: 0.5rem;
   padding-top: 1.5rem !important;
-  border-top: 1px solid var(--neutral-color-25);
+  border-top: 1px solid var(--colors-netural-25);
 }
 
 .nav-item .nav-section-header:hover {
