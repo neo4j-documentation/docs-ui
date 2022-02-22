@@ -215,3 +215,48 @@
   color: var(--color-grey-600);
   border-bottom-color: var(--color-grey-600);
 }
+
+@media all and (min-width: 760px) {
+  .driver-landing .doc {
+    max-width: 68rem;
+  }
+
+  .driver-landing .doc .sect1 {
+    clear: both;
+    position: relative;
+    padding-right: 50%;
+  }
+  .driver-landing .doc .sect1::after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    bottom: -2rem;
+    right: 0;
+    width: 48%;
+    background: var(--color-grey-100);
+    z-index: 1;
+  }
+  .driver-landing .doc .sect1:last-child::after {
+    bottom: 0;
+    border-bottom-left-radius: 0.25rem;
+    border-bottom-right-radius: 0.25rem;
+  }
+
+  .driver-landing .doc .listingblock {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 48%;
+    z-index: var(--z-index-code);
+  }
+
+  .driver-landing .doc .listingblock code {
+    box-shadow: none;
+    border: 0px none !important;
+  }
+
+  .driver-landing .toc {
+    display: none;
+  }
+}
