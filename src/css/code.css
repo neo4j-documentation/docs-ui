@@ -216,7 +216,12 @@
   border-bottom-color: var(--color-grey-600);
 }
 
+
 @media all and (min-width: 760px) {
+  .driver-landing .doc #preamble .paragraph {
+    font-size: 1.1rem;
+  }
+
   .driver-landing .doc {
     max-width: 68rem;
   }
@@ -226,6 +231,7 @@
     position: relative;
     padding-right: 50%;
   }
+
   .driver-landing .doc .sect1::after {
     content: "";
     display: block;
@@ -237,7 +243,22 @@
     background: var(--color-grey-100);
     z-index: 1;
   }
-  .driver-landing .doc .sect1:last-child::after {
+
+  .driver-landing .doc .sect1.disconnected::after {
+    display: none;
+  }
+
+  .driver-landing .doc .sect1.first::after {
+    top: 2.7rem;
+  }
+
+  .driver-landing .doc .sect1:first-child::after {
+    top: 2.7rem;
+    border-top-left-radius: 0.25rem;
+    border-top-right-radius: 0.25rem;
+  }
+
+  .driver-landing .doc .sect1.last::after {
     bottom: 0;
     border-bottom-left-radius: 0.25rem;
     border-bottom-right-radius: 0.25rem;
@@ -245,7 +266,7 @@
 
   .driver-landing .doc .listingblock {
     position: absolute;
-    top: 0;
+    top: 2.7rem;
     right: 0;
     width: 48%;
     z-index: var(--z-index-code);
@@ -253,7 +274,7 @@
 
   .driver-landing .doc .listingblock code {
     box-shadow: none;
-    border: 0px none !important;
+    border: 0 none !important;
   }
 
   .driver-landing .toc {

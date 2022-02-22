@@ -8,10 +8,13 @@
 Neo4j provides drivers which allow you to make a connection to the database and develop applications which create, read, update, and delete information from the graph.
 
 
-
+[.disconnected]
 == Installing the Driver
 
-To install the latest stable version of the Python Driver:
+The latest version of the Neo4j Python Driver can be installed using  the `pip` command.
+
+* link:#[View Package on Pypi]
+* link:#[View Code]
 
 .Installing Dependencies
 [source,bash]
@@ -20,6 +23,7 @@ pip install neo4j
 ----
 
 
+[.first]
 == Creating the Driver
 
 .Using the Neo4j Python Driver
@@ -142,6 +146,16 @@ In a <<Cluster>>, your queries will always be routed to the leader of the cluste
 * link:#[More on Write Transactions]
 * link:#[The `MERGE` keyword]
 
+[.last]
+== Close Connections
+
+Once you have finished with your Driver instance, you can call the `.close()` method release any resources still held by the instance.
+
+.Close the Connection
+[source,python]
+driver.close()
+
+* link:#[The Driver Lifecycle]
 
 
 [discrete.glossary]
