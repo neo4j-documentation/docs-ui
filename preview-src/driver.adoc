@@ -33,10 +33,10 @@ pip install neo4j
 from neo4j import GraphDatabase
 
 # Create a new Driver instance
-driver = GraphDatabase.driver("neo4j://localhost:7687",
-    auth=("neo4j", "neo"))
+driver = GraphDatabase.driver("neo4j://localhost:7687", # <1>
+    auth=("neo4j", "neo")) # <2>
 
-# Verify connection details
+# <3> Verify connection details
 driver.verify_connectivity()
 ----
 // [source,python]
@@ -46,9 +46,9 @@ driver.verify_connectivity()
 // ----
 
 You should create one <<Driver>> object per Neo4j instance.
-The driver accepts two arguments, <1> a connection string and <2> an authentication token.
+The driver accepts two arguments, *(1)* a connection string and *(2)* an authentication token.
 
-Once you have created a Driver instance, you can call the <3> `verify_connectivity()` method to verify that your credentials are correct.
+Once you have created a Driver instance, you can call the *(3)* link:#[`verify_connectivity()`] method to verify that your credentials are correct.
 
 * link:#[Building a Connection String]
 * link:#[Advanced Driver Configuration]
@@ -164,7 +164,7 @@ driver.close()
 [glossary]
 [[Driver]]Driver:: Lorem ipsum dolor sit amet, consectetur adipiscing elit.
 [[Session]]Session:: Duis porta erat vestibulum placerat venenatis.
-[[Transaction]]Transaction::Morbi blandit accumsan risus in sodales.
+[[Transaction]]Transaction:: Morbi blandit accumsan risus in sodales.
 [[ACID]]ACID Transactions:: In vel molestie massa. Curabitur sollicitudin quis purus dapibus accumsan.
 +
 Donec in vestibulum velit. Donec in iaculis nulla.

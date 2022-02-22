@@ -67,8 +67,6 @@
       var dt = element.parentElement
       var term = dt.innerText
 
-      window.dt = dt
-
       var description = dt.nextElementSibling.innerHTML
 
       Array.from(mentions)
@@ -83,9 +81,11 @@
             tooltip = createTooltip(term, description)
 
             var verticalSpacing = 10
-            var top = event.target.offsetTop
-            var left = event.target.offsetLeft
-            var width = event.target.offsetWidth
+            var rect = event.target.getBoundingClientRect()
+
+            var top = rect.y + window.scrollY
+            var left = rect.x
+            var width = rect.width
             var tooltipWidth = tooltip.clientWidth
             var tooltipHeight = tooltip.clientHeight
 
