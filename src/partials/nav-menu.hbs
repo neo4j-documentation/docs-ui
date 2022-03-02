@@ -2,7 +2,7 @@
 <div class="nav-panel-menu is-active" data-panel="menu">
   <nav class="nav-menu">
     {{#with @root.page.componentVersion}}
-    <h3 class="title"><a href="{{{relativize ./url}}}">{{./title}}</a></h3>
+    <span class="title component-title"><a href="{{{relativize ./url}}}">{{./title}}</a></span>
     {{/with}}
 {{> nav-tree navigation=this}}
   </nav>

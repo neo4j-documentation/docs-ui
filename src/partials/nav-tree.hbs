@@ -7,11 +7,17 @@
     {{!-- <button class="nav-item-toggle"></button> --}}
     {{/if}}
     {{#if this.url}}
-    <a class="nav-link" href="
+    <a class="nav-link{{#if this.items.length}} nav-item-toggle{{/if}}" href="
       {{~#if (eq this.urlType 'internal')}}{{{relativize this.url}}}
       {{~else}}{{{this.url}}}{{~/if}}">{{{this.content}}}</a>
-    {{else}}
+    {{else if this.items.length }}
     <span class="nav-text nav-item-toggle">{{{this.content}}}</span>
+    {{else if (hasString this.content "href=") }}
+      {{{this.content}}}
+    {{else}}
+    <span class="nav-text nav-section-header">
+      {{{this.content}}}
+      </span>
     {{/if}}
     {{/if}}
 {{> nav-tree navigation=this.items level=(increment ../level)}}

@@ -1,4 +1,73 @@
 :root {
+
+  /* Picked from Neo4j Design System */
+  /* ToDo: use it directly from the Design System when avaiable instead of redefining here */
+  --colors-primary-10: #e6f8ff;
+  --colors-primary-20: #a3e2ff;
+  --colors-primary-30: #7ad1ff;
+  --colors-primary-40: #018bff;
+  --colors-primary-50: #0070d9;
+  --colors-primary-60: #0056b3;
+  --colors-primary-70: #002b66;
+  --colors-primary-default: #018bff;
+  --colors-secondary-10: #ffe6e9;
+  --colors-secondary-20: #ffb8c4;
+  --colors-secondary-30: #ff668a;
+  --colors-secondary-40: #ed1252;
+  --colors-secondary-50: #c70646;
+  --colors-secondary-60: #a1003b;
+  --colors-secondary-70: #7a0031;
+  --colors-secondary-default: #ed1252;
+  --colors-success-10: #e1faef;
+  --colors-success-20: #98edcb;
+  --colors-success-30: #44d4a4;
+  --colors-success-40: #00ba88;
+  --colors-success-50: #009471;
+  --colors-success-60: #006e58;
+  --colors-success-70: #00473b;
+  --colors-success-default: #00ba88;
+  --colors-warning-10: #fffbde;
+  --colors-warning-20: #fff4b5;
+  --colors-warning-30: #ffea8c;
+  --colors-warning-40: #ffde63;
+  --colors-warning-50: #d9b54a;
+  --colors-warning-60: #8c6a22;
+  --colors-warning-70: #664817;
+  --colors-warning-default: #ffde63;
+  --colors-blueberry-10: #e8ebf6;
+  --colors-blueberry-20: #c4cce9;
+  --colors-blueberry-30: #9dabd9;
+  --colors-blueberry-40: #768aca;
+  --colors-blueberry-50: #3557b4;
+  --colors-blueberry-60: #25459e;
+  --colors-blueberry-70: #0b297d;
+  --colors-blueberry-default: #0b297d;
+  --colors-mint-10: #f0fffa;
+  --colors-mint-20: #d1fff4;
+  --colors-mint-30: #a8ffee;
+  --colors-mint-40: #55f9e2;
+  --colors-mint-50: #3dd4c5;
+  --colors-mint-60: #2aada5;
+  --colors-mint-70: #116161;
+  --colors-mint-default: #55f9e2;
+  --colors-neutral-10: #fff;
+  --colors-neutral-15: #f5f7fa;
+  --colors-neutral-20: #eef1f6;
+  --colors-neutral-25: #e6e9ee;
+  --colors-neutral-30: #d5d9de;
+  --colors-neutral-35: #c4c8cd;
+  --colors-neutral-40: #b2b7bd;
+  --colors-neutral-45: #90979f;
+  --colors-neutral-50: #717780;
+  --colors-neutral-55: #535b66;
+  --colors-neutral-60: #404752;
+  --colors-neutral-65: #2c3540;
+  --colors-neutral-70: #212a34;
+  --colors-neutral-75: #151e29;
+  --body-font-color: var(--colors-neutral-65);
+
+  /* end: design system colors  */
+
   --color-black: #000;
   --color-white: #fff;
   --color-grey-100: #f7fafc;
@@ -139,12 +208,12 @@
   --navbar-kb-border: var(--color-kb);
 
   /* nav */
-  --nav-background: var(--panel-background);
+  --nav-background: var(--colors-neutral-15);
   --nav-border-color: var(--color-grey-200);
   --nav-font-weight: 400;
   --nav_active-font-weight: 400;
   --nav-line-height: 1.35;
-  --nav-heading-font-color: var(--color-grey-500);
+  --nav-heading-font-color: var(--colors-neutral-55);
   --nav-muted-color: var(--color-grey-400);
   --nav-panel-divider-color: var(--color-grey-200);
   --nav-secondary-background: var(--color-grey-300);
@@ -255,7 +324,7 @@
     calc(
       var(--nav-height--desktop) - var(--drawer-height)
     );
-  --nav-width: calc(270 / var(--rem-base) * 1rem);
+  --nav-width: 18rem;
   --toc-top: calc(var(--body-top) + var(--toolbar-height));
   --kb-metadata-top: calc(var(--body-top) + var(--toolbar-height));
   --toc-height: calc(100vh - var(--toc-top) - 2.5rem);
@@ -279,69 +348,4 @@
 
   /* Label colors */
   --label-group-syntax: #e6e6e6;
-
-  /* Picked from Neo4j Design System */
-  /* ToDo: use it directly from the Design System when avaiable instead of redefining here */
-  --colors-primary-10: #e6f8ff;
-  --colors-primary-20: #a3e2ff;
-  --colors-primary-30: #7ad1ff;
-  --colors-primary-40: #018bff;
-  --colors-primary-50: #0070d9;
-  --colors-primary-60: #0056b3;
-  --colors-primary-70: #002b66;
-  --colors-primary-default: #018bff;
-  --colors-secondary-10: #ffe6e9;
-  --colors-secondary-20: #ffb8c4;
-  --colors-secondary-30: #ff668a;
-  --colors-secondary-40: #ed1252;
-  --colors-secondary-50: #c70646;
-  --colors-secondary-60: #a1003b;
-  --colors-secondary-70: #7a0031;
-  --colors-secondary-default: #ed1252;
-  --colors-success-10: #e1faef;
-  --colors-success-20: #98edcb;
-  --colors-success-30: #44d4a4;
-  --colors-success-40: #00ba88;
-  --colors-success-50: #009471;
-  --colors-success-60: #006e58;
-  --colors-success-70: #00473b;
-  --colors-success-default: #00ba88;
-  --colors-warning-10: #fffbde;
-  --colors-warning-20: #fff4b5;
-  --colors-warning-30: #ffea8c;
-  --colors-warning-40: #ffde63;
-  --colors-warning-50: #d9b54a;
-  --colors-warning-60: #8c6a22;
-  --colors-warning-70: #664817;
-  --colors-warning-default: #ffde63;
-  --colors-blueberry-10: #e8ebf6;
-  --colors-blueberry-20: #c4cce9;
-  --colors-blueberry-30: #9dabd9;
-  --colors-blueberry-40: #768aca;
-  --colors-blueberry-50: #3557b4;
-  --colors-blueberry-60: #25459e;
-  --colors-blueberry-70: #0b297d;
-  --colors-blueberry-default: #0b297d;
-  --colors-mint-10: #f0fffa;
-  --colors-mint-20: #d1fff4;
-  --colors-mint-30: #a8ffee;
-  --colors-mint-40: #55f9e2;
-  --colors-mint-50: #3dd4c5;
-  --colors-mint-60: #2aada5;
-  --colors-mint-70: #116161;
-  --colors-mint-default: #55f9e2;
-  --colors-neutral-10: #fff;
-  --colors-neutral-15: #f5f7fa;
-  --colors-neutral-20: #eef1f6;
-  --colors-neutral-25: #e6e9ee;
-  --colors-neutral-30: #d5d9de;
-  --colors-neutral-35: #c4c8cd;
-  --colors-neutral-40: #b2b7bd;
-  --colors-neutral-45: #90979f;
-  --colors-neutral-50: #717780;
-  --colors-neutral-55: #535b66;
-  --colors-neutral-60: #404752;
-  --colors-neutral-65: #2c3540;
-  --colors-neutral-70: #212a34;
-  --colors-neutral-75: #151e29;
 }
