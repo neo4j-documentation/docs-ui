@@ -7,7 +7,7 @@
     {{!-- <button class="nav-item-toggle"></button> --}}
     {{/if}}
     {{#if this.url}}
-    <a class="nav-link" href="
+    <a class="nav-link{{#if this.items.length}} nav-item-toggle{{/if}}" href="
       {{~#if (eq this.urlType 'internal')}}{{{relativize this.url}}}
       {{~else}}{{{this.url}}}{{~/if}}">{{{this.content}}}</a>
     {{else if this.items.length }}

@@ -121,15 +121,20 @@ html.is-clipped--nav {
   position: relative;
 }
 
+.nav-menu .component-title {
+  display: block;
+}
+
 .nav-menu .title {
   color: var(--nav-heading-font-color);
   font-weight: 300;
-  letter-spacing: 2px;
+  letter-spacing: 1.5px;
   text-transform: uppercase;
-  font-size: 1rem;
+  font-size: 0.75rem;
   border-bottom: 1px solid var(--colors-neutral-25);
-  padding: 16px 24px;
+  padding: 0.5rem 1rem;
   margin: 0;
+  font-family: Nudista,"Helvetica Neue",helvetica,roboto,arial,sans-serif;
 }
 
 .nav-menu a,
@@ -137,7 +142,7 @@ html.is-clipped--nav {
   color: var(--colors-neutral-55);
   font-weight: var(--nav-font-weight);
   display: block;
-  padding: 0.2rem 0;
+  padding: 0.25rem 0;
 }
 
 .nav-list {
@@ -153,11 +158,6 @@ html.is-clipped--nav {
   list-style: none;
   /* margin-top: 0.5em; */
   position: relative;
-}
-
-.nav-list strong {
-  display: block;
-  margin-top: 1em;
 }
 
 .nav-list:first-child strong {
@@ -209,7 +209,7 @@ html.is-clipped--nav {
 }
 
 .nav-item.is-current-page::before,
-.nav-item .nav-item:hover::before,
+.nav-item:hover::before,
 .toc-menu li a::before {
   opacity: 1;
 }
@@ -358,10 +358,20 @@ html.is-clipped--nav {
   border-radius: 4px;
 }
 
-.nav-menu .nav-item .nav-item > a,
-.nav-menu .nav-item .nav-item > span {
+.nav-menu .nav-item > a,
+.nav-menu .nav-item > span {
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
+}
+
+.nav-item > a,
+.nav-item > span {
+  position: relative;
+}
+
+.nav-item[data-depth="0"] > a,
+.nav-item[data-depth="0"] > span {
+  padding: 0.5rem 1rem;
 }
 
 .nav-item[data-depth="1"] > a,
@@ -388,14 +398,22 @@ html.is-clipped--nav {
 }
 
 .nav-item > .nav-item-toggle::after {
-  content: "\f107";
-  font-family: "FontAwesome", sans-serif;
+  content: "";
   position: absolute;
   right: 1rem;
+  background: url(../img/chevron.svg) no-repeat;
+  background-position: right 0.5rem top 50%;
+  background-size: auto 0.75em;
+  width: 100%;
+  height: 50%;
 }
 
-.nav-item.is-active > .nav-item-toggle::after {
-  content: "\f106";
+.nav-item.is-active > .nav-item-toggle:not(a)::after {
+  -webkit-transform: scaleY(-1);
+}
+
+.nav-item.is-active > a.nav-item-toggle::after {
+  background: none;
 }
 
 .nav-item a[target="_blank"]:hover::after {
