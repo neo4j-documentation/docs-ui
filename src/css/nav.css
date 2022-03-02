@@ -372,7 +372,7 @@ html.is-clipped--nav {
 
 .nav-item[data-depth="0"] > a,
 .nav-item[data-depth="0"] > span {
-  padding: 0.5rem 1rem;
+  padding: 0.5rem 2rem 0.5rem 1rem;
 }
 
 .nav-item[data-depth="1"] > a,
@@ -382,11 +382,16 @@ html.is-clipped--nav {
 
 .nav-item[data-depth="2"] > a,
 .nav-item[data-depth="2"] > span {
-  padding-left: 3rem;
+  padding-left: 2.5rem;
 }
 
 .nav-item[data-depth="3"] > a,
 .nav-item[data-depth="3"] > span {
+  padding-left: 3.5rem;
+}
+
+.nav-item[data-depth="4"] > a,
+.nav-item[data-depth="4"] > span {
   padding-left: 4.5rem;
 }
 
