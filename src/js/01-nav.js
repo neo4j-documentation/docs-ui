@@ -24,7 +24,7 @@
       menuPanel.scrollTop = 0
     }
 
-    find(menuPanel, '.nav-item-toggle').forEach(function (btn) {
+    find(menuPanel, '.nav-item-toggle:not(a)').forEach(function (btn) {
       var li = btn.parentElement
       btn.addEventListener('click', toggleActive.bind(li))
       var navItemSpan = findNextElement(btn, '.nav-text')
