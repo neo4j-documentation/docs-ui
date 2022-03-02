@@ -134,7 +134,7 @@ html.is-clipped--nav {
   border-bottom: 1px solid var(--colors-neutral-25);
   padding: 0.5rem 1rem;
   margin: 0;
-  font-family: Nudista,"Helvetica Neue",helvetica,roboto,arial,sans-serif;
+  font-family: Nudista, "Helvetica Neue", helvetica, roboto, arial, sans-serif;
 }
 
 .nav-menu a,
