@@ -115,7 +115,7 @@ page:
     - content: Liber Recusabo
       url: '#liber-recusabo'
       urlType: fragment
-    - content: Reference
+    - content: Reference - a long title that also has child pages
       items:
       - content: Keyboard Shortcuts
         url: '#'
