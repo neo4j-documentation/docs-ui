@@ -109,13 +109,10 @@ page:
       - content: Cu Solet
         url: '/xyz/4.1/index.html#cu-solet'
         urlType: internal
-      - content: English + 中文
-        url: '/xyz/4.1/index.html#english+中文'
-        urlType: internal
     - content: Liber Recusabo
       url: '#liber-recusabo'
       urlType: fragment
-    - content: Reference
+    - content: Reference - a long title that also has child pages
       items:
       - content: Keyboard Shortcuts
         url: '#'
@@ -126,6 +123,13 @@ page:
       - content: Some Code
         url: '/xyz/4.1/index.html#some-code'
         urlType: internal
+      - content: Level 2 title
+        items:
+        - content: Level 3 title
+          items:
+          - content: English + 中文
+            url: '/xyz/4.1/index.html#english+中文'
+            urlType: internal
     - content: Tiled Template
       url: tiles.html
       urlType: internal
