@@ -1,0 +1,171 @@
+= Neo4j & Python
+:page-theme: docs
+:page-role: code-walkthrough
+:!toc:
+
+
+
+Neo4j provides drivers which allow you to make a connection to the database and develop applications which create, read, update, and delete information from the graph.
+
+
+[.disconnected]
+== Installing the Driver
+
+The latest version of the Neo4j Python Driver can be installed using  the `pip` command.
+
+* link:#[View Package on Pypi]
+* link:#[View Code]
+
+.Installing Dependencies
+[source,bash]
+----
+pip install neo4j
+----
+
+
+[.first]
+== Creating the Driver
+
+.Using the Neo4j Python Driver
+[source,python]
+----
+# Import the neo4j dependency
+from neo4j import GraphDatabase
+
+# Create a new Driver instance
+driver = GraphDatabase.driver("neo4j://localhost:7687", # <1>
+    auth=("neo4j", "neo")) # <2>
+
+# <3> Verify connection details
+driver.verify_connectivity()
+----
+// [source,python]
+// ----
+// include::https://raw.githubusercontent.com/neo4j-graphacademy/app-python/main/example/index.py[tag=import]
+// include::https://raw.githubusercontent.com/neo4j-graphacademy/app-python/main/example/index.py[tag=driver]
+// ----
+
+You should create one <<Driver>> object per Neo4j instance.
+The driver accepts two arguments, *(1)* a connection string and *(2)* an authentication token.
+
+Once you have created a Driver instance, you can call the *(3)* link:#[`verify_connectivity()`] method to verify that your credentials are correct.
+
+* link:#[Building a Connection String]
+* link:#[Advanced Driver Configuration]
+* link:#[Verifying Connectivity]
+
+
+== Open a Session
+
+// [source,python]
+// ----
+// include::https://raw.githubusercontent.com/neo4j-graphacademy/app-python/main/example/index.py[tag=import]
+// ----
+
+.Opening a Session
+[source,python]
+----
+with driver.session() as session:
+    # Run a Cypher Statement within a transaction
+----
+
+When you want to query Neo4j, you will first open a <<Session>>.
+
+Sessions manage connections between the Driver and the Neo4j instance or cluster.
+These are lightweight objects that can be opened and closed with no overhead.
+
+* link:#[Connecting to a Database]
+* link:#[Advanced Session Configuration]
+
+
+== Reading From Neo4j
+
+// [source,python]
+// ----
+// include::https://raw.githubusercontent.com/neo4j-graphacademy/app-python/main/example/index.py[tag=session.readTransaction]
+// ----
+
+.Reading from Neo4j
+[source,python]
+----
+    # Define a Unit of work to run within a Transaction (`tx`)
+    def get_movies(tx, title):
+        return tx.run("""
+            MATCH (p:Person)-[:ACTED_IN]->(m:Movie)
+            WHERE m.title = $title // <1>
+            RETURN p.name AS name
+            LIMIT 10
+        """, title=title)
+
+    # Execute get_movies within a Read Transaction
+    session.read_transaction(get_movies,
+        title="Arthur" # <2>
+    )
+----
+
+To read from a Neo4j Instance you should use the session to create a read transaction.
+The session provides a  `read_transaction()` method, which should be called with a function represent the <1> unit of work.
+
+The unit of work has one positional argument, representing the transaction and can accept one or more optional arguments.
+
+
+* link:#[More on Read Transactions]
+* link:#[Working with Neo4j Values]
+
++
++
++
+
+
+== Write to Neo4j
+
+// [source,python]
+// ----
+// include::https://raw.githubusercontent.com/neo4j-graphacademy/app-python/main/example/index.py[tag=session.writeTransaction]
+// ----
+
+.Writing to Neo4j
+[source,python]
+----
+    # Call tx.run() to execute the query to create a Person node
+    def create_person(tx, name):
+        return tx.run(
+            "CREATE (p:Person {name: $name})",
+            name=name
+        )
+----
+
+Neo4j supports <<ACID>> to ensure that data is data is safely and consistently stored.
+A transaction, by definition, must be atomic, consistent, isolated, and durable.
+
+The `write_transaction()` method provides the user with the ability to execute a unit of work.
+
+In a <<Cluster>>, your queries will always be routed to the leader of the cluster.
+
+
+* link:#[More on Write Transactions]
+* link:#[The `MERGE` keyword]
+
+[.last]
+== Close Connections
+
+Once you have finished with your Driver instance, you can call the `.close()` method release any resources still held by the instance.
+
+.Close the Connection
+[source,python]
+driver.close()
+
+* link:#[The Driver Lifecycle]
+
+
+[discrete.glossary]
+== Glossary
+
+[glossary]
+[[Driver]]Driver:: Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+[[Session]]Session:: Duis porta erat vestibulum placerat venenatis.
+[[Transaction]]Transaction:: Morbi blandit accumsan risus in sodales.
+[[ACID]]ACID Transactions:: In vel molestie massa. Curabitur sollicitudin quis purus dapibus accumsan.
++
+Donec in vestibulum velit. Donec in iaculis nulla.
+[[Cluster]]Neo4j Cluster:: Duis porta erat vestibulum placerat venenatis.

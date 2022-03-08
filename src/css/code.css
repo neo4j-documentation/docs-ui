@@ -215,3 +215,68 @@
   color: var(--color-grey-600);
   border-bottom-color: var(--color-grey-600);
 }
+
+@media all and (min-width: 760px) {
+  .code-walkthrough .doc #preamble .paragraph {
+    font-size: 1.1rem;
+  }
+
+  .code-walkthrough .doc {
+    max-width: 68rem;
+  }
+
+  .code-walkthrough .doc .sect1 {
+    clear: both;
+    position: relative;
+    padding-right: 50%;
+  }
+
+  .code-walkthrough .doc .sect1::after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    bottom: -2rem;
+    right: 0;
+    width: 48%;
+    background: var(--color-grey-100);
+    z-index: 1;
+  }
+
+  .code-walkthrough .doc .sect1.disconnected::after {
+    display: none;
+  }
+
+  .code-walkthrough .doc .sect1.first::after {
+    top: 2.7rem;
+  }
+
+  .code-walkthrough .doc .sect1:first-child::after {
+    top: 2.7rem;
+    border-top-left-radius: 0.25rem;
+    border-top-right-radius: 0.25rem;
+  }
+
+  .code-walkthrough .doc .sect1.last::after {
+    bottom: 0;
+    border-bottom-left-radius: 0.25rem;
+    border-bottom-right-radius: 0.25rem;
+  }
+
+  .code-walkthrough .doc .listingblock {
+    position: absolute;
+    top: 2.7rem;
+    right: 0;
+    width: 48%;
+    z-index: var(--z-index-code);
+  }
+
+  .code-walkthrough .doc .listingblock code {
+    box-shadow: none;
+    border: 0 none !important;
+  }
+
+  .code-walkthrough .toc {
+    display: none;
+  }
+}
