@@ -197,3 +197,73 @@ a|metrics.filter, a ',' separated list with elements of type 'A simple globbing 
 m|*bolt.connections*,*bolt.messages_received*,*bolt.messages_started*,*dbms.pool.bolt.free,*dbms.pool.bolt.total_size,*dbms.pool.bolt.total_used,*dbms.pool.bolt.used_heap,*causal_clustering.core.is_leader,*causal_clustering.core.last_leader_message,*causal_clustering.core.replication_attempt,*causal_clustering.core.replication_fail,*check_point.duration,*check_point.total_time,*cypher.replan_events,*ids_in_use.node,*ids_in_use.property,*ids_in_use.relationship,*pool.transaction.*.total_used,*pool.transaction.*.used_heap,*pool.transaction.*.used_native,*store.size*,*transaction.active_read,*transaction.active_write,*transaction.committed*,*transaction.last_committed_tx_id,*transaction.peak_concurrent,*transaction.rollbacks*,*page_cache.hit*,*page_cache.page_faults,*page_cache.usage_ratio,*vm.file.descriptors.count,*vm.gc.time.*,*vm.heap.used,*vm.memory.buffer.direct.used,*vm.memory.pool.g1_eden_space,*vm.memory.pool.g1_old_gen,*vm.pause_time,*vm.thread*
 
 |===
+
+== Table Text Wrap
+
+Tables showing word-break behavior 
+
+=== Text, links, and inline code
+
+[opts="header",cols="1,1,1m,1,8"]
+|===
+| Name                                                          | Type        | Default                | Optional | Description
+| <<table-link-target,nodeLabels>>               | List of String    | ['*']                  | yes      | Filter the named graph using the given node labels.
+| <<table-link-target,relationshipTypes>> | List of String    | ['*']                  | yes      | Filter the named graph using the given relationship types.
+| <<table-link-target,concurrency>>              | Integer     | 4                      | yes      | The number of concurrent threads used for running the algorithm.
+|===
+
+[opts="header",cols="1,1,1m,1,8"]
+|===
+| Name                                                          | Type        | Default                | Optional | Description
+| `<<common-configuration-node-labels,nodeLabels>>`               | List of String    | ['*']                  | yes      | Filter the named graph using the given node labels.
+| `<<common-configuration-relationship-types,relationshipTypes>>` | List of String    | ['*']                  | yes      | Filter the named graph using the given relationship types.
+| `<<common-configuration-concurrency,concurrency>>`              | Integer     | 4                      | yes      | The number of concurrent threads used for running the algorithm.
+|===
+
+[opts="header",cols="1,1,1m,1,8"]
+|===
+| Name                                                          | Type        | Default                | Optional | Description
+| `nodeLabels`               | List of String    | ['*']                  | yes      | Filter the named graph using the given node labels.
+| `relationshipTypes` | List of String    | ['*']                  | yes      | Filter the named graph using the given relationship types.
+| `concurrency`            | Integer     | 4                      | yes      | The number of concurrent threads used for running the algorithm.
+|===
+
+=== Table with better column widths:
+
+[opts="header",cols="2,1,1m,1,5"]
+|===
+| Name                                                          | Type        | Default                | Optional | Description
+| <<table-link-target,nodeLabels>>               | List of String    | ['*']                  | yes      | Filter the named graph using the given node labels.
+| <<table-link-target,relationshipTypes>> | List of String    | ['*']                  | yes      | Filter the named graph using the given relationship types.
+| <<table-link-target,concurrency>>              | Integer     | 4                      | yes      | The number of concurrent threads used for running the algorithm.
+|===
+
+=== Tables with `role=no-break`:
+
+[role="no-break",opts="header",cols="1,1,1m,1,8"]
+|===
+| Name                                                          | Type        | Default                | Optional | Description
+| <<common-configuration-node-labels,nodeLabels>>               | List of String    | ['*']                  | yes      | Filter the named graph using the given node labels.
+| <<common-configuration-relationship-types,relationshipTypes>> | List of String    | ['*']                  | yes      | Filter the named graph using the given relationship types.
+| <<common-configuration-concurrency,concurrency>>              | Integer     | 4                      | yes      | The number of concurrent threads used for running the algorithm.
+|===
+
+[role="no-break",opts="header",cols="1,1,1m,1,8"]
+|===
+| Name                                                          | Type        | Default                | Optional | Description
+| `<<common-configuration-node-labels,nodeLabels>>`               | List of String    | ['*']                  | yes      | Filter the named graph using the given node labels.
+| `<<common-configuration-relationship-types,relationshipTypes>>` | List of String    | ['*']                  | yes      | Filter the named graph using the given relationship types.
+| `<<common-configuration-concurrency,concurrency>>`              | Integer     | 4                      | yes      | The number of concurrent threads used for running the algorithm.
+|===
+
+[role="no-break",opts="header",cols="1,1,1m,1,8"]
+|===
+| Name                                                          | Type        | Default                | Optional | Description
+| `nodeLabels`               | List of String    | ['*']                  | yes      | Filter the named graph using the given node labels.
+| `relationshipTypes` | List of String    | ['*']                  | yes      | Filter the named graph using the given relationship types.
+| `concurrency`             | Integer     | 4                      | yes      | The number of concurrent threads used for running the algorithm.
+|===
+
+== table link target
+
+A section for table links to point to
