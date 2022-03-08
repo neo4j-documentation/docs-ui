@@ -843,6 +843,12 @@ body {
   word-break: break-word;
 }
 
+.doc table.no-break th.tableblock,
+.doc table.no-break td.tableblock code,
+.doc table.no-break td.tableblock a {
+  word-break: normal;
+}
+
 .doc mark {
   background: var(--mark-background);
   padding: 0.25rem;

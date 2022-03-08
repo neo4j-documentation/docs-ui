@@ -367,29 +367,32 @@ html.is-clipped--nav {
 .nav-item > a,
 .nav-item > span {
   position: relative;
+  padding-right: 2rem;
 }
 
 .nav-item[data-depth="0"] > a,
 .nav-item[data-depth="0"] > span {
-  padding: 0.5rem 1rem;
+  padding: 0.5rem 2rem 0.5rem 1rem;
 }
 
 .nav-item[data-depth="1"] > a,
 .nav-item[data-depth="1"] > span {
   padding-left: 1.5rem;
-  padding-right: 1rem;
 }
 
 .nav-item[data-depth="2"] > a,
 .nav-item[data-depth="2"] > span {
-  padding-left: 3rem;
-  padding-right: 1rem;
+  padding-left: 2.5rem;
 }
 
 .nav-item[data-depth="3"] > a,
 .nav-item[data-depth="3"] > span {
+  padding-left: 3.5rem;
+}
+
+.nav-item[data-depth="4"] > a,
+.nav-item[data-depth="4"] > span {
   padding-left: 4.5rem;
-  padding-right: 1rem;
 }
 
 .nav-item[data-depth="1"] > span strong {
@@ -400,11 +403,12 @@ html.is-clipped--nav {
 .nav-item > .nav-item-toggle::after {
   content: "";
   position: absolute;
-  right: 1rem;
+  right: 0.5rem;
+  top: 0.5rem;
   background: url(../img/chevron.svg) no-repeat;
-  background-position: right 0.5rem top 50%;
+  background-position: center;
   background-size: auto 0.75em;
-  width: 100%;
+  width: 1.5rem;
   height: 50%;
 }
 

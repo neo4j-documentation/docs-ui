@@ -40,7 +40,7 @@ document.addEventListener('DOMContentLoaded', function () {
   var copiedText = 'Copied!'
 
   var cleanCode = function (code, language) {
-    var input = code.replace(/(<([^>]+)>)/gi, '')
+    var input = code
 
     if (language === 'bash' || language === 'sh' || language === 'shell' || language === 'console') {
       input = window.neo4jDocs.copyableCommand(input)
@@ -105,7 +105,8 @@ document.addEventListener('DOMContentLoaded', function () {
     var block = pre.querySelector('code')
     var div = pre.parentNode
 
-    var code = block.innerHTML
+    var code = block.innerText
+
     var language = block.hasAttribute('class') &&
       block.getAttribute('class').match(/language-([a-z0-9-])+/i)[0].replace('language-', '')
 
