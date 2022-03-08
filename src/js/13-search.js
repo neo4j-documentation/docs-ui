@@ -46,7 +46,12 @@ window.neo4jSearch = (function () {
   }
 
   document.addEventListener('keydown', function (e) {
+    const target = e.target
     if (e.key === '/' && !container.classList.contains(activeClass)) {
+      if (target && target.matches('input, [contenteditable]')) {
+        return
+      }
+
       openSearch()
 
       // Stop an extra slash from being added to the input
