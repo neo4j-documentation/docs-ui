@@ -12,7 +12,7 @@
       {{~else}}{{{this.url}}}{{~/if}}">{{{this.content}}}</a>
     {{else if this.items.length }}
     <span class="nav-text nav-item-toggle">{{{this.content}}}</span>
-    {{else if (hasString this.content "href=") }}
+    {{else if (has-string this.content "href=") }}
       {{{this.content}}}
     {{else}}
     <span class="nav-text nav-section-header">
