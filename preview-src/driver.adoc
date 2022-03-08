@@ -1,6 +1,6 @@
 = Neo4j & Python
 :page-theme: docs
-:page-role: driver-landing
+:page-role: code-walkthrough
 :!toc:
 
 

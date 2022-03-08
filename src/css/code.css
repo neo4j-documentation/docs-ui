@@ -217,21 +217,21 @@
 }
 
 @media all and (min-width: 760px) {
-  .driver-landing .doc #preamble .paragraph {
+  .code-walkthrough .doc #preamble .paragraph {
     font-size: 1.1rem;
   }
 
-  .driver-landing .doc {
+  .code-walkthrough .doc {
     max-width: 68rem;
   }
 
-  .driver-landing .doc .sect1 {
+  .code-walkthrough .doc .sect1 {
     clear: both;
     position: relative;
     padding-right: 50%;
   }
 
-  .driver-landing .doc .sect1::after {
+  .code-walkthrough .doc .sect1::after {
     content: "";
     display: block;
     position: absolute;
@@ -243,27 +243,27 @@
     z-index: 1;
   }
 
-  .driver-landing .doc .sect1.disconnected::after {
+  .code-walkthrough .doc .sect1.disconnected::after {
     display: none;
   }
 
-  .driver-landing .doc .sect1.first::after {
+  .code-walkthrough .doc .sect1.first::after {
     top: 2.7rem;
   }
 
-  .driver-landing .doc .sect1:first-child::after {
+  .code-walkthrough .doc .sect1:first-child::after {
     top: 2.7rem;
     border-top-left-radius: 0.25rem;
     border-top-right-radius: 0.25rem;
   }
 
-  .driver-landing .doc .sect1.last::after {
+  .code-walkthrough .doc .sect1.last::after {
     bottom: 0;
     border-bottom-left-radius: 0.25rem;
     border-bottom-right-radius: 0.25rem;
   }
 
-  .driver-landing .doc .listingblock {
+  .code-walkthrough .doc .listingblock {
     position: absolute;
     top: 2.7rem;
     right: 0;
@@ -271,12 +271,12 @@
     z-index: var(--z-index-code);
   }
 
-  .driver-landing .doc .listingblock code {
+  .code-walkthrough .doc .listingblock code {
     box-shadow: none;
     border: 0 none !important;
   }
 
-  .driver-landing .toc {
+  .code-walkthrough .toc {
     display: none;
   }
 }
