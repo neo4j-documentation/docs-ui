@@ -136,6 +136,12 @@ page:
     - content: Labs Template
       url: labs.html
       urlType: internal
+    - content: Docs Index
+      url: docs-index.html
+      urlType: internal
+    - content: Drivers and APIs
+      url: drivers-apis.html
+      urlType: internal
     - content: Developer Template
       url: developer.html
       urlType: internal
