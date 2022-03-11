@@ -1085,7 +1085,7 @@ body {
 .doc .tabbed-tabs {
   display: flex;
   margin: 0 1rem;
-  padding: 0rem;
+  padding: 0;
   /* background: #edf2f7; */
   /* border-bottom: 1px solid #e6f8ff; */
 }
