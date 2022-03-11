@@ -1074,7 +1074,7 @@ body {
 }
 
 .doc .tabbed {
-  padding: 13px 0px 0;
+  padding: 13px 0 0;
   margin: 0 -1rem 1.5rem;
   background: var(--color-grey-100);
   border: 1px solid var(--colors-primary-10);
