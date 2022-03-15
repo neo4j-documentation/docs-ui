@@ -665,6 +665,74 @@ If you installed the CLI and the default site generator globally, you can upgrad
  $ npm i -g @antora/cli @antora/site-generator-default
 ====
 
+== Admonition block margins
+
+[NOTE]
+====
+Admonition block with a single paragraph of text.
+====
+
+[NOTE]
+====
+Admonition block with multiple paragraphs.
+
+This is the second paragraph.
+====
+
+[NOTE]
+====
+Admonition block with multiple different elements.
+
+- List item 1
+- List item 2
+
+Paragraph of text.
+====
+
+[NOTE]
+====
+Admonition block with multiple different elements.
+
+- List item 1
+- List item 2
+
+```
+$ npm i -g @antora/cli @antora/site-generator-default
+```
+====
+
+.Admonition with title text
+[NOTE]
+====
+Admonition block with multiple different elements.
+
+- List item 1
+- List item 2
+
+```
+$ npm i -g @antora/cli @antora/site-generator-default
+```
+====
+
+[WARNING]
+====
+```
+$ npm i -g @antora/cli @antora/site-generator-default
+```
+
+```
+$ npm i -g @antora/cli @antora/site-generator-default
+```
+====
+
+.Admonition with title text
+[WARNING]
+====
+```
+$ npm i -g @antora/cli @antora/site-generator-default
+```
+====
+
 Nominavi luptatum eos, an vim hinc philosophia intellegebat.
 Eu mea inani iriure.
 
