@@ -1,6 +1,7 @@
 = Neo4j documentation
 :page-layout: docs-home
 :page-theme: docs
+:page-hide-nav-title: true
 :!toc:
 :page-toclevels: -1
 
