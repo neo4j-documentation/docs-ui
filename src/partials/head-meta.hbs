@@ -34,7 +34,7 @@
     {{#with (or page.attributes.ogimage 'https://dist.neo4j.com/wp-content/uploads/20210423062553/neo4j-social-share-21.png' )}}
     <meta property="og:image" content="{{{this}}}" />
     {{/with}}
-    {{#with page.description}}
+    {{#with (or page.attributes.ogdescription page.description )}}
     <meta property="og:description" content="{{this}}">
     {{/with}}
     <meta property="og:url" content="https://neo4j.com{{ page.attributes.canonical-root }}{{ page.url }}">
