@@ -25,8 +25,8 @@ body.landing .secondary::before {
 
 /* nav */
 
-body.docshome .nav-menu>.nav-list {
-  margin-top: 0rem;
+body.docshome .nav-menu > .nav-list {
+  margin-top: 0;
 }
 
 body.docshome .nav-menu .component-title {
@@ -40,23 +40,23 @@ body.docshome .nav-item[data-depth="0"] {
 body.docshome .nav-item .nav-section-header {
   margin-top: 0;
   margin-bottom: 0;
-  padding-top: 1.5rem!important;
+  padding-top: 1.5rem !important;
   border-top: 1px solid var(--colors-netural-25);
 }
 
 .nav-menu .nav-list:first-child .nav-item:first-child .nav-section-header {
   border: none;
-  padding-top: 1.5rem!important;
+  padding-top: 1.5rem !important;
 }
 
-body.docshome .nav-menu .nav-item>a {
+body.docshome .nav-menu .nav-item > a {
   padding-top: 0;
   padding-bottom: 0;
   line-height: 1.5;
 }
 
 body.docshome .nav-menu .nav-item > a > strong {
-  margin-top: 1.5rem!important;
+  margin-top: 1.5rem !important;
   margin-bottom: 0.5rem;
   font-size: 1rem;
   display: block;
