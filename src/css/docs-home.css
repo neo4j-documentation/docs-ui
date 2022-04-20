@@ -44,7 +44,7 @@ body.docshome .nav-item .nav-section-header {
   border-top: 1px solid var(--colors-netural-25);
 }
 
-.nav-menu .nav-list:first-child .nav-item:first-child .nav-section-header {
+body.docshome .nav-menu .nav-list:first-child .nav-item:first-child .nav-section-header {
   border: none;
   padding-top: 1.5rem !important;
 }
