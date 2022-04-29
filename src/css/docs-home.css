@@ -2,29 +2,8 @@ body.docshome {
   background: var(--color-grey-100);
 }
 
-body.landing .primary,
-body.landing .secondary {
-  background: var(--color-grey-100);
-  padding: 2em 0;
-  position: relative;
-}
-
-body.landing .primary {
-  background: var(--color-white);
-}
-
-body.landing .primary::before,
-body.landing .secondary::before {
-  background: var(--color-grey-100);
-  position: relative;
-  left: -50%;
-  width: 100%;
-  /* z-index: -1; */
-  content: "";
-}
 
 /* nav */
-
 body.docshome .nav-menu > .nav-list {
   margin-top: 0;
 }
