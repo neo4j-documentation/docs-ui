@@ -6,7 +6,8 @@
     {{#unless this.prerelease}}
     <a class="version
       {{~#if (eq this.version @root.page.version)}} is-current{{/if~}}
-      {{~#if this.missing}} is-missing{{/if}}" href="{{{relativize this.url}}}">{{this.displayVersion}}</a>
+      {{~#if this.missing}} is-missing{{/if}}" href="{{{relativize this.url}}}"
+      onclick="ga('send','event','version-select','From:{{@root.page.version}};To:{{this.displayVersion}}');">{{this.displayVersion}}</a>
     {{/unless}}
     {{/each}}
   </div>
