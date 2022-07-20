@@ -21,7 +21,6 @@ div.page-roles > span.page-role {
 }
 
 @media screen and (max-width: 1023px) {
-  
   div.page-roles {
     display: block;
   }
@@ -35,8 +34,6 @@ div.page-roles > span.page-role {
   div.page-roles > span.page-role {
     margin-bottom: 0;
   }
-
-
 }
 
 .sect1.alpha h2::after,
