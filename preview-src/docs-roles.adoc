@@ -1,5 +1,6 @@
 = Docs flags
-:page-role: fabric
+:page-role: fabric enterprise-edition alpha test
+:page-theme: docs
 
 [abstract]
 --
@@ -34,6 +35,7 @@ Example 1 content - this example is not deprecated
 Example 2 content - this example is deprecated
 ====
 
+[role=alpha]
 == Alpha content
 
 [.alpha-symbol]
