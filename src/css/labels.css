@@ -119,7 +119,7 @@
   color: var(--color-black);
 }
 
-.label--role-admin {
+.label--role-admin-only {
   background: var(--color-green-700);
   color: var(--color-white);
 }
