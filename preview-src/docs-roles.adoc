@@ -101,7 +101,7 @@ Unweighted
 
 | <<procedure_db_clearquerycaches, `db.clearQueryCaches()`>>
 | +++
-<span class="label label--role-admin-only">Admin only</span>
+<span class="label label--admin-only">Admin only</span>
 +++
 
 |===
