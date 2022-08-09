@@ -152,7 +152,7 @@
   // Remove clipped nav
   function removeClippedNav () {
     var html = document.querySelector('html')
-    if (window.innerWidth >= 1024 && html.classList.has('is-clipped--nav')) {
+    if (window.innerWidth >= 1024 && html.classList.contains('is-clipped--nav')) {
       html.classList.remove('is-clipped--nav')
     }
   }
