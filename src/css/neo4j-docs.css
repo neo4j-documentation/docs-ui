@@ -8,6 +8,31 @@
   border: 2px solid var(--note-color);
 }
 
+.docs.image-border article img,
+.docs article .border img {
+  border: 1px solid var(--color-blue-400);
+  border-radius: 4px;
+  padding: 1rem;
+}
+
+.docs.image-shadow article img,
+.docs article .shadow img {
+  box-shadow: 
+    2px 2px 4px 0px var(--color-grey-500), 
+    0px 4px 4px 2px var(--color-grey-300), 
+    0px 4px 6px 4px var(--color-grey-200),
+    4px 4px 4px 4px var(--color-grey-100);
+}
+
+.docs article .no-border img {
+  border: none;
+  padding: 0;
+}
+
+.docs article .no-shadow img {
+  box-shadow: none;
+}
+
 section.deprecated .title::after {
   bottom: 4px;
   margin-left: 10px;

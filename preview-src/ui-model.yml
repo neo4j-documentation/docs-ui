@@ -172,6 +172,9 @@ page:
     - content: Docs roles
       url: docs-roles.html
       urlType: internal
+    - content: Image styles
+      url: image-borders.html
+      urlType: internal
     - content: Deprecated
       url: deprecated.html
       urlType: internal
