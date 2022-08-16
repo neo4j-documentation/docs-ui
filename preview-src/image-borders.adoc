@@ -8,7 +8,7 @@
 Display images with border or box-shadow
 --
 
-- set `:page-styles: image-border` or `:page-styles: image-shadow` in a playbook, _antora.yml_ or on a page to add border or shadow to all pages in the docset, component, or page.
+- set `:page-styles: image-border` or `:page-styles: image-shadow` in a playbook, _antora.yml_ or in a page header to add border or shadow to all pages in the docset, component, or page.
 - set `[.border]` or `[.shadow]` for individual images
 - combine border and shadow settings to apply both styles
 - use `[.no-border]` or `[.no-shadow]` to override a global setting for a specific image
@@ -19,6 +19,11 @@ Display images with border or box-shadow
 Lorem ipsum dolor sit amet, consectetur adipiscing elit.
 Mauris eget leo nunc, nec tempus mi? Curabitur id nisl mi, ut vulputate urna.
 Quisque porta facilisis tortor, vitae bibendum velit fringilla vitae! Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+
+----
+[.border]
+image:overview.png[]
+----
 
 [.border]
 image:overview.png[]
@@ -32,6 +37,11 @@ Quisque porta facilisis tortor, vitae bibendum velit fringilla vitae!
 Mauris eget leo nunc, nec tempus mi? Curabitur id nisl mi, ut vulputate urna.
 Quisque porta facilisis tortor, vitae bibendum velit fringilla vitae!
 
+----
+[.shadow]
+image:overview.png[]
+----
+
 [.shadow]
 image:overview.png[]
 
@@ -42,6 +52,11 @@ Quisque porta facilisis tortor, vitae bibendum velit fringilla vitae!
 
 Mauris eget leo nunc, nec tempus mi? Curabitur id nisl mi, ut vulputate urna.
 Quisque porta facilisis tortor, vitae bibendum velit fringilla vitae!
+
+----
+[.border.shadow]
+image:overview.png[]
+----
 
 [.border.shadow]
 image:overview.png[]
