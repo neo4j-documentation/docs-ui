@@ -17,10 +17,10 @@
 
 .docs.image-shadow article img,
 .docs article .shadow img {
-  box-shadow: 
-    2px 2px 4px 0px var(--color-grey-500), 
-    0px 4px 4px 2px var(--color-grey-300), 
-    0px 4px 6px 4px var(--color-grey-200),
+  box-shadow:
+    2px 2px 4px 0 var(--color-grey-500),
+    0 4px 4px 2px var(--color-grey-300),
+    0 4px 6px 4px var(--color-grey-200),
     4px 4px 4px 4px var(--color-grey-100);
 }
 
