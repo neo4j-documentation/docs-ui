@@ -24,7 +24,10 @@
 <script src="https://neo4j.com/wp-content/themes/neo4jweb/assets/neo4j-react-modules-assets/search-preact/chunkless/polyfill.js"></script>
 <script>window.algoliaSearchOptions = {indexName: "docs",placeholder: "Search Documentation",template: "docs"}</script>
 <script defer>
-  if(!introJs().getDontShowAgain())
-    introJs().start();
-  introJs().setDontShowAgain(true);
+  var introJs = introJs().setOption("dontShowAgainCookie","introjs-dontShowAgain-v5launch");
+  if(!introJs.getDontShowAgain())
+  {
+    introJs.start();
+    introJs.setDontShowAgain(true);
+  }
 </script>
