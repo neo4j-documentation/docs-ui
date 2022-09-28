@@ -178,7 +178,8 @@ span.fabric::after {
   font-size: calc(14 / var(--rem-base) * 1rem);
 }
 
-.doc .paragraph.statsonlyqueryresult {
+.doc .paragraph.statsonlyqueryresult,
+.doc .paragraph.erroronlyqueryresult {
   font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
   font-size: calc(14 / var(--rem-base) * 1rem);
   background-color: var(--color-grey-200);
