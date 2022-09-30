@@ -1,15 +1,15 @@
 {{#with page.versions}}
-<div class="page-versions">
-  <button class="version-menu-toggle" title="Show other versions of page">{{@root.page.componentVersion.displayVersion}}</button>
-  <div class="version-menu">
+</script>
+<div class="dropdown">
+  <span class="dropdown-label">Neo4j Version</span>
+  <select class="dropdown-styles" onchange="window.location.href='{{{relativize this.url}}}';ga('send','event','version-select','From:{{@root.page.version}};To:{{this.displayVersion}}');">
     {{#each this}}
-    {{#unless this.prerelease}}
-    <a class="version
-      {{~#if (eq this.version @root.page.version)}} is-current{{/if~}}
-      {{~#if this.missing}} is-missing{{/if}}" href="{{{relativize this.url}}}"
-      onclick="ga('send','event','version-select','From:{{@root.page.version}};To:{{this.displayVersion}}');">{{this.displayVersion}}</a>
+    {{#unless this.prerelease}}      
+    <option value="{{this.displayVersion}}" {{~#if (eq this.version @root.page.version)}}selected{{/if~}}>
+      {{this.displayVersion}}
+    </option>
     {{/unless}}
     {{/each}}
-  </div>
+  </select>
 </div>
 {{/with}}
