@@ -4,7 +4,7 @@
   <div class="dropdown">
     <span class="dropdown-label">Neo4j Version</span>
 
-    <select data-current="{{@root.page.version}}" class="version-selector dropdown-styles" onchange="e => console.log(e);">
+    <select data-current="{{@root.page.version}}" class="version-selector dropdown-styles">
       {{#with @root.page.componentVersion}}
       <option value="" selected>
         {{{ ./title }}} {{@root.page.componentVersion.displayVersion}}
@@ -22,6 +22,7 @@
         <option
           data-version="{{this.displayVersion}}"
           value="{{{relativize this.url}}}"
+          {{~#if this.missing}} disabled{{/if}}
         >
       {{this.displayVersion}}
         </option>
