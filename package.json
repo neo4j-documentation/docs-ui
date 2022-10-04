@@ -78,6 +78,7 @@
   "dependencies": {
     "@antora/cli": "^2.3.3",
     "@antora/site-generator-default": "^2.3.3",
+    "@neo4j-ndl/base": "^0.8.3",
     "font-awesome": "^4.7.0"
   },
   "husky": {

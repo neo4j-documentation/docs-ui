@@ -1,24 +1,31 @@
-<div class="nav-panel-explore{{#unless page.navigation}} is-active{{/unless}}" data-panel="explore">
-  {{#if page.component}}
-  <div class="context">
-    <span class="title">{{page.component.title}}</span>
-    <span class="version">{{page.componentVersion.displayVersion}}</span>
+<div class="nav-panel-versions{{#unless page.navigation}} is-active{{/unless}}" data-panel="explore">
+
+  <div class="dropdown">
+    <span class="dropdown-label">Neo4j Version</span>
+
+    <select data-current="{{@root.page.version}}" class="version-selector dropdown-styles" onchange="e => console.log(e);">
+      {{#with @root.page.componentVersion}}
+      <option value="" selected>
+        {{{ ./title }}} {{@root.page.componentVersion.displayVersion}}
+      </option>
+      {{/with}}
+      {{!-- {{#each site.components}}
+      <optgroup label="{{{./title}}}">
+          {{#each ./versions}}
+          <option value="{{{relativize ./url}}}">{{./displayVersion}}</option>
+          {{/each}}
+        </optgroup>
+      {{/each}} --}}
+      {{#each page.versions}}
+      {{#unless this.prerelease}}
+        <option
+          data-version="{{this.displayVersion}}"
+          value="{{{relativize this.url}}}"
+        >
+      {{this.displayVersion}}
+        </option>
+      {{/unless}}
+      {{/each}}
+    </select>
   </div>
-  {{/if}}
-  <ul class="components">
-    {{#each site.components}}
-    <li class="component{{#if (eq this @root.page.component)}} is-current{{/if}}">
-      <span class="title">{{{./title}}}</span>
-      <ul class="versions">
-        {{#each ./versions}}
-        <li class="version
-          {{~#if (and (eq .. @root.page.component) (eq this @root.page.componentVersion))}} is-current{{/if~}}
-          {{~#if (eq this ../latestVersion)}} is-latest{{/if}}">
-          <a href="{{{relativize ./url}}}">{{./displayVersion}}</a>
-        </li>
-        {{/each}}
-      </ul>
-    </li>
-    {{/each}}
-  </ul>
 </div>
