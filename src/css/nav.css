@@ -454,7 +454,6 @@ html.is-clipped--nav {
   padding-top: 0 !important;
 }
 
-
 .nav-panel-versions {
   height: var(--toolbar-height);
   padding: 0.25rem 0.5rem;
@@ -485,7 +484,6 @@ html.is-clipped--nav {
 .dropdown-styles::after {
   grid-area: select;
 }
-
 
 .dropdown-styles::-ms-expand {
   display: none;
