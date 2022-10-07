@@ -52,6 +52,24 @@
     }
   }
 
+  var versionSelector = document.querySelector('.version-selector')
+  if (versionSelector) {
+    versionSelector.addEventListener('change', function (e) {
+      const target = e.target
+
+      const current = target.dataset.current
+      const next = target.selectedOptions[0].dataset.version
+
+      const url = target.value
+
+      if (window.ga) {
+        window.ga('send', 'event', 'version-select', 'From: ' + current + ';To:' + next + ';')
+      }
+
+      document.location.replace(url)
+    })
+  }
+
   function onHashChange () {
     var navLink
     var hash = window.location.hash
