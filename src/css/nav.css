@@ -131,7 +131,8 @@ html.is-clipped--nav {
   letter-spacing: 1.5px;
   text-transform: uppercase;
   font-size: 0.75rem;
-  /* border-bottom: 1px solid var(--colors-neutral-25); */
+  line-height: 1.35;
+  border-bottom: 1px solid var(--colors-neutral-25);
   padding: 0.5rem 1.5rem;
   margin: 0;
   font-family: Nudista, "Helvetica Neue", helvetica, roboto, arial, sans-serif;
@@ -451,4 +452,44 @@ html.is-clipped--nav {
 .nav-menu .nav-list:first-child .nav-item:first-child .nav-section-header {
   border: none;
   padding-top: 0 !important;
+}
+
+.nav-panel-versions {
+  height: var(--toolbar-height);
+  padding: 0.25rem 0.5rem;
+}
+
+.nav-panel-versions .dropdown .dropdown-styles {
+  width: 100%;
+}
+
+/* All styles are from design system tokens */
+.dropdown-styles {
+  display: grid;
+  outline: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  padding: 8px 12px;
+  padding-right: 28px;
+  border-radius: var(--border-radius-sm);
+  border: 1px solid rgb(var(--palette-light-neutral-border-strong));
+  background-color: rgb(var(--palette-light-neutral-bg-weak));
+  background-image: url("data:image/svg+xml,<svg width='20' height='20' xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke-width='1.5' stroke='%23535B66'><path stroke-linecap='round' stroke-linejoin='round' d='M19.5 8.25l-7.5 7.5-7.5-7.5' /></svg>");
+  background-position: right 5px top 50%;
+  background-repeat: no-repeat;
+  text-overflow: ellipsis;
+}
+
+.dropdown-styles::after {
+  grid-area: select;
+}
+
+.dropdown-styles::-ms-expand {
+  display: none;
+}
+
+.dropdown .dropdown-label {
+  display: none;
+  color: rgb(var(--palette-light-neutral-text-weak));
 }

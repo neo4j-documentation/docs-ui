@@ -118,3 +118,8 @@
   background: var(--color-yellow-300);
   color: var(--color-black);
 }
+
+.label--admin-only {
+  background: var(--color-green-700);
+  color: var(--color-white);
+}

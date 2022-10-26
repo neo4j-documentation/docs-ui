@@ -2,26 +2,45 @@ body.docshome {
   background: var(--color-grey-100);
 }
 
-body.landing .primary,
-body.landing .secondary {
-  background: var(--color-grey-100);
-  padding: 2em 0;
-  position: relative;
+/* nav */
+body.docshome .nav-menu > .nav-list {
+  margin-top: 0;
 }
 
-body.landing .primary {
-  background: var(--color-white);
+body.docshome .nav-menu .component-title {
+  display: none;
 }
 
-body.landing .primary::before,
-body.landing .secondary::before {
-  background: var(--color-grey-100);
-  position: relative;
-  left: -50%;
-  width: 100%;
-  /* z-index: -1; */
-  content: "";
+body.docshome .nav-item[data-depth="0"] {
+  margin-top: 0.5rem;
 }
+
+body.docshome .nav-item .nav-section-header {
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-top: 1.5rem !important;
+  border-top: 1px solid var(--colors-netural-25);
+}
+
+body.docshome .nav-menu .nav-list:first-child .nav-item:first-child .nav-section-header {
+  border: none;
+  padding-top: 1.5rem !important;
+}
+
+body.docshome .nav-menu .nav-item > a {
+  padding-top: 0;
+  padding-bottom: 0;
+  line-height: 1.5;
+}
+
+body.docshome .nav-menu .nav-item > a > strong {
+  margin-top: 1.5rem !important;
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+  display: block;
+}
+
+/* end of nav */
 
 body.docshome .content {
   /* align-items: center; */

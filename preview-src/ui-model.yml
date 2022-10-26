@@ -27,13 +27,13 @@ site:
       version: '4.2'
       displayVersion: '4.2'
     - &component_version
-      url: '#'
+      url: '/4.1'
       version: '4.1'
       displayVersion: '4.1'
-    - url: '#'
+    - url: '/4.0'
       version: '4.0'
       displayVersion: '4.0'
-    - url: '#'
+    - url: '/3.5'
       version: '3.5'
       displayVersion: '3.5'
     latestVersion: *latest_version_xyz
@@ -82,17 +82,17 @@ page:
   versions:
   - version: '4.2'
     displayVersion: '4.2'
-    url: '#'
+    url: '/4.2'
   - version: '4.1'
     displayVersion: '4.1'
-    url: '#'
+    url: '/4.1'
   - version: '4.0'
     displayVersion: '4.0'
-    url: '#'
+    url: '/4.0'
   - version: '3.5'
     displayVersion: '3.5'
     missing: true
-    url: '#'
+    url: '/3.5'
   navigation:
   - root: true
     content: Project XYZ
@@ -171,6 +171,9 @@ page:
       urlType: internal
     - content: Docs roles
       url: docs-roles.html
+      urlType: internal
+    - content: Image styles
+      url: image-borders.html
       urlType: internal
     - content: Deprecated
       url: deprecated.html

@@ -1,4 +1,5 @@
 /* @import "typeface-roboto.css"; */
+@import "../../node_modules/@neo4j-ndl/base/lib/tokens/css/tokens.css";
 @import "typeface-roboto-mono.css";
 @import "vars.css";
 @import "base.css";

@@ -1,5 +1,6 @@
 = Docs flags
-:page-role: fabric
+:page-role: fabric enterprise-edition alpha test
+:page-theme: docs
 
 [abstract]
 --
@@ -34,6 +35,7 @@ Example 1 content - this example is not deprecated
 Example 2 content - this example is deprecated
 ====
 
+[role=alpha]
 == Alpha content
 
 [.alpha-symbol]
@@ -84,3 +86,22 @@ Weighted
 [.supported]
 Unweighted
 --
+
+== List of procedures
+
+.Neo4j procedures
+[options=header, cols="<70,<30"]
+|===
+| Name |
+
+| <<procedure_db_checkpoint, `db.checkpoint()`>>
+| +++
+<span class="label label--enterprise-edition">Enterprise Edition</span>
++++
+
+| <<procedure_db_clearquerycaches, `db.clearQueryCaches()`>>
+| +++
+<span class="label label--admin-only">Admin only</span>
++++
+
+|===

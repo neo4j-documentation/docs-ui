@@ -8,18 +8,65 @@
   border: 2px solid var(--note-color);
 }
 
+.docs.image-border article img,
+.docs article .border img {
+  border: 1px solid var(--color-blue-400);
+  border-radius: 4px;
+  padding: 1rem;
+}
+
+.docs.image-shadow article img,
+.docs article .shadow img {
+  box-shadow:
+    2px 2px 4px 0 var(--color-grey-500),
+    0 4px 4px 2px var(--color-grey-300),
+    0 4px 6px 4px var(--color-grey-200),
+    4px 4px 4px 4px var(--color-grey-100);
+}
+
+.docs article .no-border img {
+  border: none;
+  padding: 0;
+}
+
+.docs article .no-shadow img {
+  box-shadow: none;
+}
+
 section.deprecated .title::after {
   bottom: 4px;
   margin-left: 10px;
 }
 
-body.alpha article h1::after,
-body.beta article h1::after,
+div.page-roles,
+div.page-roles > span.page-role {
+  display: inline-flex;
+  margin: 0 0 1.5rem;
+  font-size: calc(36 / var(--rem-base) * 1rem);
+}
+
+@media screen and (max-width: 1023px) {
+  div.page-roles {
+    display: block;
+  }
+
+  div.page-roles,
+  div.page-roles > span.page-role::after {
+    margin-left: 0;
+  }
+
+  div.page-roles,
+  div.page-roles > span.page-role {
+    margin-bottom: 0;
+  }
+}
+
 .sect1.alpha h2::after,
 .sect1.beta h2::after,
 .sect2.alpha h3::after,
 .sect2.beta h3::after,
-body.deprecated article h1::after,
+span.alpha::after,
+span.beta::after,
 body.deprecated article h2::after,
 body.deprecated article h3::after,
 body.deprecated article h4::after,
@@ -32,13 +79,11 @@ section.deprecated .title::after,
 span.deprecated::after,
 .deprecated > .title::after,
 section.enterprise-edition .title::after,
-body.enterprise-edition article h1::after,
 div.enterprise-edition h2::after,
 div.enterprise-edition h3::after,
 div.enterprise-edition h4::after,
 p.enterprise-edition::before,
 span.enterprise-edition::after,
-body.fabric article h1::after,
 body.fabric article h2::after,
 body.fabric article h3::after,
 body.fabric article h4::after,
@@ -62,7 +107,6 @@ span.fabric::after {
   margin-left: 8px;
 }
 
-body.deprecated article h1::after,
 body.deprecated article h2::after,
 body.deprecated article h3::after,
 body.deprecated article h4::after,
@@ -79,7 +123,6 @@ span.deprecated::after {
   border-color: var(--deprecation-color);
 }
 
-body.enterprise-edition article h1::after,
 div.enterprise-edition h2::after,
 div.enterprise-edition h3::after,
 div.enterprise-edition h4::after,
@@ -91,7 +134,6 @@ span.enterprise-edition::after {
   border-color: var(--enterprise-edition-color);
 }
 
-body.fabric article h1::after,
 div.fabric h2::after,
 div.fabric h3::after,
 div.fabric h4::after,
@@ -136,7 +178,8 @@ span.fabric::after {
   font-size: calc(14 / var(--rem-base) * 1rem);
 }
 
-.doc .paragraph.statsonlyqueryresult {
+.doc .paragraph.statsonlyqueryresult,
+.doc .paragraph.erroronlyqueryresult {
   font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
   font-size: calc(14 / var(--rem-base) * 1rem);
   background-color: var(--color-grey-200);
@@ -152,24 +195,24 @@ span.fabric::after {
 
 /* GDS */
 
-body.alpha article h1::after,
-body.beta article h1::after,
 .sect1.alpha h2::after,
 .sect1.beta h2::after,
 .sect2.alpha h3::after,
-.sect2.beta h3::after {
+.sect2.beta h3::after,
+span.alpha::after,
+span.beta::after {
   color: var(--alpha-beta-color);
 }
 
-body.alpha article h1::after,
 .sect1.alpha h2::after,
-.sect2.alpha h3::after {
+.sect2.alpha h3::after,
+span.alpha::after {
   content: "alpha";
 }
 
-body.beta article h1::after,
 .sect1.beta h2::after,
-.sect2.beta h3::after {
+.sect2.beta h3::after,
+span.beta::after {
   content: "beta";
 }
 

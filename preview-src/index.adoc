@@ -318,11 +318,56 @@ console.log('hello')
 [source,js,role=noheader]
 console.log('hello')
 
+
+== queryresult
+
+.Query
+[source, cypher]
+----
+SHOW ALIASES FOR DATABASE YIELD * RETURN count(*) as count
+----
+
+.Result
+[role="queryresult",options="header,footer",cols="1*<m"]
+|===
+| +count+
+| +5+
+1+d|Rows: 1
+|===
+
+
+== statsonlyqueryresult
+
+.Query
+[source, cypher]
+----
+ALTER ALIAS `northwind` SET DATABASE TARGET `northwind-graph-2021`
+----
+
+[role="statsonlyqueryresult"]
+0 rows, System updates: 1
+
+
+== erroronlyqueryresult
+
+.Query
+[source, cypher]
+----
+MATCH (n:Patient)
+ WHERE n.ssn = 1234610
+DETACH DELETE n;
+----
+
+[role=erroronlyqueryresult]
+org.neo4j.graphdb.ConstraintViolationException: Cannot delete node<42>, because it still has relationships. To delete this node, you must first delete its relationships.
+
+
 ++++
 <div class="responsive-embed">
 <iframe width="680" height="425" src="https://www.youtube.com/embed/_D19h5s73Co?showinfo=0&controls=2&autohide=1" frameborder="0" allowfullscreen></iframe>
 </div>
 ++++
+
 
 video::_D19h5s73Co[youtube]
 

@@ -89,7 +89,7 @@
     <div id="topbar-nav" class="navbar-menu">
       <div class="navbar-end">
 
-        <div class="navbar-item has-dropdown is-hoverable developer">
+        {{!-- <div class="navbar-item has-dropdown is-hoverable developer">
           <a class="navbar-link" href="/developer/">Developer Guides</a>
           <div class="navbar-dropdown">
             <div class="navbar-item project">
@@ -124,7 +124,6 @@
             <div class="navbar-item project">
               <a class="project-name" href="/developer/language-guides/">Administration and Deployment</a>
               <ul class="project-links">
-                <li><a class="project-link" href="/developer/aura-cloud-dbaas/">Neo4j Aura DBaaS</a></li>
                 <li><a class="project-link" href="/developer/graph-apps/">Graph Apps</a></li>
                 <li><a class="project-link" href="/developer/in-production/">Neo4j Administration</a></li>
                 <li><a class="project-link" href="/developer/guide-cloud-deployment/">Neo4j in the Cloud</a></li>
@@ -140,11 +139,9 @@
             <div class="navbar-item project">
               <a class="project-name" href="/graphgists/">GraphGists</a>
             </div>
-
-            {{!-- <a class="navbar-item" href="/developer/resources/">Documentation &amp; Resources</a> --}}
-            {{!-- <a class="navbar-item" href="/developer/contribute/">Contributing to Neo4j</a> --}}
           </div>
-        </div>
+        </div> --}}
+
         <div class="navbar-item has-dropdown is-hoverable docs">
           <a class="navbar-link" href="/docs/">Docs</a>
           <div class="navbar-dropdown">
@@ -161,9 +158,27 @@
             </div>
 
             <div class="navbar-item project">
-              <a class="project-name" href="/docs/aura/current/">Neo4j Aura</a>
+              <a class="project-name" href="/docs/aura/">Neo4j Aura</a>
               <ul class="project-links">
-                <li><a class="project-link" href="/docs/aura/current/">Neo4j AuraDB</a></li>
+                <li><a class="project-link" href="/docs/aura/auradb/">Neo4j AuraDB</a></li>
+                <li><a class="project-link" href="/docs/aura/aurads/">Neo4j AuraDS</a></li>
+              </ul>
+            </div>
+
+            <div class="navbar-item project">
+              <span class="project-name">Neo4j Tools</span>
+              <ul class="project-links">
+                <li><a href="/docs/bloom-user-guide/current/" class="project-link">Neo4j Bloom</a></li>
+                <li><a href="/docs/browser-manual/current/" class="project-link">Neo4j Browser</a></li>
+                <li><a href="/docs/desktop-manual/current/" class="project-link">Neo4j Desktop</a></li>
+                <li><a href="/docs/ops-manager/current/" class="project-link">Neo4j Ops Manager</a></li>
+              </ul>
+            </div>
+
+            <div class="navbar-item project">
+              <span class="project-name">Neo4j Graph Data Science</span>
+              <ul class="project-links">
+                <li><a href="/docs/graph-data-science/current/" class="project-link">Neo4j Graph Data Science Library</a></li>
               </ul>
             </div>
 
@@ -172,14 +187,8 @@
               {{!-- <a class="project-name" href="/docs/cypher-manual/current/">Cypher Manual</a> --}}
               <ul class="project-links">
                 <li><a href="/docs/cypher-manual/current/" class="project-link">Cypher</a></li>
+                <li><a href="/docs/cypher-cheat-sheet/current/" class="project-link">Cypher Cheat Sheet</a></li>
                 <li><a href="/docs/cypher-refcard/current/" class="project-link">Cypher Refcard</a></li>
-              </ul>
-            </div>
-
-            <div class="navbar-item project">
-              <span class="project-name">Neo4j Graph Data Science</span>
-              <ul class="project-links">
-                <li><a href="/docs/graph-data-science/current/" class="project-link">Neo4j Graph Data Science Library</a></li>
               </ul>
             </div>
 
@@ -197,15 +206,6 @@
                 <li><a href="https://docs.spring.io/spring-data/neo4j/docs/current/reference/html/#reference" class="project-link">Spring Data Neo4j</a></li>
                 <li><a href="/docs/spark/" class="project-link">Neo4j Connector for Apache Spark</a></li>
                 <li><a href="/docs/kafka/" class="project-link">Neo4j Connector for Apache Kafka</a></li>
-              </ul>
-            </div>
-
-            <div class="navbar-item project">
-              <span class="project-name">Neo4j UI Tools</span>
-              <ul class="project-links">
-                <li><a href="/docs/bloom-user-guide/current/" class="project-link">Neo4j Bloom</a></li>
-                <li><a href="/docs/browser-manual/current/" class="project-link">Neo4j Browser</a></li>
-                <li><a href="/docs/desktop-manual/current/" class="project-link">Neo4j Desktop</a></li>
               </ul>
             </div>
 
@@ -280,11 +280,27 @@
                 <li><a href="/labs/neo4j-helm/1.0.0/" class="project-link">Documentation</a></li>
               </ul>
             </div>
+            <div class="navbar-item project">
+              <a class="project-name" href="/labs/neodash/">NeoDash</a>
+              {{!-- <p class="project-description">A library of procedures and functions for interacting with Neo4j</p> --}}
+              <ul class="project-links">
+                <li><a href="/labs/neodash/" class="project-link">Details</a></li>
+                <li><a href="/labs/neodash/2.1/" class="project-link">Documentation</a></li>
+              </ul>
+            </div>
           </div>
         </div>
         <div class="navbar-item has-dropdown is-hoverable developer">
           <a class="navbar-link" href="/developer/resources/">Get Help</a>
           <div class="navbar-dropdown">
+            <div class="navbar-item project">
+              <a class="project-name" href="https://graphacademy.neo4j.com/?ref=docs" target="_blank">GraphAcademy</a>
+              <ul class="project-links">
+                <li><a class="project-link" href="https://graphacademy.neo4j.com/?ref=docs">Free, Self Paced Training</a></li>
+                <li><a class="project-link" href="https://graphacademy.neo4j.com/certification/?ref=docs" target="_blank">Certification</a></li>
+              </ul>
+            </div>
+
             <div class="navbar-item project">
               <a class="project-name" href="https://dev.neo4j.com/forum" target="_blank">Community Forum</a>
             </div>
