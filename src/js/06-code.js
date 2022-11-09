@@ -131,6 +131,8 @@ document.addEventListener('DOMContentLoaded', function () {
       children.push(titleDiv)
     }
 
+    children.push(createElement('div', 'code-spacer'))
+
     if (addCopyButton) {
       var copyButton = createElement('button', 'btn btn-copy', [document.createTextNode('Copy to Clipboard')])
       copyButton.addEventListener('click', function (e) {
