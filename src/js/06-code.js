@@ -120,6 +120,17 @@ document.addEventListener('DOMContentLoaded', function () {
     }
     var children = [languageDiv]
 
+    var originalTitle = div.parentNode.querySelector('.title')
+    if (originalTitle) {
+      var titleDiv = document.createElement('div')
+      titleDiv.className = 'code-title'
+      titleDiv.innerHTML = originalTitle.innerHTML
+
+      originalTitle.style.display = 'none'
+
+      children.push(titleDiv)
+    }
+
     if (addCopyButton) {
       var copyButton = createElement('button', 'btn btn-copy', [document.createTextNode('Copy to Clipboard')])
       copyButton.addEventListener('click', function (e) {
@@ -167,17 +178,6 @@ document.addEventListener('DOMContentLoaded', function () {
       })
 
       children.push(runButton)
-    }
-
-    var originalTitle = div.parentNode.querySelector('.title')
-    if (originalTitle) {
-      var titleDiv = document.createElement('div')
-      titleDiv.className = 'code-title'
-      titleDiv.innerHTML = originalTitle.innerHTML
-
-      originalTitle.style.display = 'none'
-
-      children.unshift(titleDiv)
     }
 
     var header = createElement('div', 'code-header', children)

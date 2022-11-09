@@ -21,11 +21,12 @@
 .doc .code-header .code-title {
   color: var(--color-grey-500);
   padding-right: 0.5em;
+  flex-grow: 1000;
 }
 
 .doc .code-header .code-language {
   flex-grow: 1;
-  padding: 0.6rem 0;
+  padding: 0.6rem 0.6rem 0 0;
 }
 
 .doc .code-header .btn,
