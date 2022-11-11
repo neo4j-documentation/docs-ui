@@ -81,6 +81,15 @@
   flex-grow: 1;
 }
 
+.doc .show-more {
+  position: absolute;
+  bottom: 0;
+  height: 2rem;
+  width: 100%;
+  text-align: center;
+  cursor: pointer;
+}
+
 .doc .code-footer.has-results {
   border-bottom-left-radius: 0;
   border-bottom-right-radius: 0;

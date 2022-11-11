@@ -94,8 +94,8 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   var addCodeHeader = function (pre) {
-    var dotContent = pre.parentElement
-    var listingBlock = dotContent.parentElement
+    var dotContent = pre.parentNode
+    var listingBlock = dotContent.parentNode
 
     if (listingBlock.classList.contains('noheader')) return
 
@@ -190,6 +190,58 @@ document.addEventListener('DOMContentLoaded', function () {
   document.querySelectorAll('.highlight')
     .forEach(addCodeHeader)
 
+  // Collapse/Expand long blocks
+  var codeBlockMaxHeight = 300 // px
+  var styleMaskImage = 'linear-gradient(to bottom, black 0px, transparent ' + (codeBlockMaxHeight + 100) + 'px)'
+
+  var expandCollapseBlock = function (e) {
+    e.preventDefault()
+    var showMore = e.target
+    var pre = showMore.parentNode
+    var codeBlock = pre.querySelector('code')
+
+    if (pre.style.overflow === 'hidden') {
+      pre.style.maxHeight = ''
+      pre.style.overflow = ''
+      codeBlock.style.webkitMaskImage = ''
+      codeBlock.style.maskImage = ''
+      showMore.innerHTML = '&uarr;' // show less
+    } else {
+      pre.style.maxHeight = codeBlockMaxHeight + 'px'
+      pre.style.overflow = 'hidden'
+      codeBlock.style.webkitMaskImage = styleMaskImage
+      codeBlock.style.maskImage = styleMaskImage
+      showMore.innerHTML = '&darr;' // show more
+      //codeBlock.scrollIntoView({behavior: 'smooth'})
+    }
+  }
+
+  // Collapse long blocks on load
+  var collapseCodeBlock = function (pre) {
+    var dotContent = pre.parentNode
+    var listingBlock = dotContent.parentNode
+    var codeBlock = pre.querySelector('code')
+
+    var autoCollapse = !listingBlock.classList.contains('nocollapse')
+
+    if (autoCollapse && pre.offsetHeight > codeBlockMaxHeight) {
+      pre.style.maxHeight = codeBlockMaxHeight + 'px'
+      pre.style.overflow = 'hidden'
+      codeBlock.style.webkitMaskImage = styleMaskImage
+      codeBlock.style.maskImage = styleMaskImage
+
+      var showMore = createElement('a', 'show-more')
+      showMore.innerHTML = '&darr;'
+      showMore.addEventListener('click', expandCollapseBlock)
+      pre.appendChild(showMore)
+    }
+  }
+
+  // Apply collapseCodeBlock
+  document.querySelectorAll('.highlight')
+    .forEach(collapseCodeBlock)
+
+  // Tagged examples
   var targetActive = 'tabbed-target--active'
   var tabActive = 'tabbed-tab--active'
 

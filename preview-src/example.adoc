@@ -131,3 +131,143 @@ neo4j@system> SHOW DATABASES;
 3 rows available after 2 ms, consumed after another 1 ms
 ----
 ====
+
+== Source Blocks with Headers
+
+=== Copy Button
+
+The **Copy To Clipboard** button will appear on all code blocks:
+
+[source,adoc]
+----
+[source,adoc]
+Copy me!
+----
+
+Unless you add `role=nocopy`:
+
+.Source block with role=nocopy
+[source,adoc,role=nocopy]
+----
+[source,adoc,role=nocopy]
+Don't copy me!
+----
+
+=== Play In Browser
+
+Source blocks with a type of cypher will have a deeplink to run the query in Neo4j Browser
+
+[source,cypher]
+----
+MATCH (n) RETURN count(n)
+----
+
+Unless you add `role=noplay`
+
+.Source block with `role=noplay`
+[source,adoc,role=noplay]
+----
+[source,adoc,role=noplay]
+MATCH (n) RETURN count(n)
+----
+
+
+
+=== Combining `nocopy` and `noplay`
+
+You can combine `noplay` and `nocopy`:
+
+[source,adoc]
+----
+[source,adoc,role=nocopy noplay]
+MATCH (n) RETURN count(n)
+----
+
+[source,cypher,role=nocopy noplay]
+----
+MATCH (n) RETURN count(n)
+----
+
+=== Suppress Header
+
+You can suppress the header by adding `role=noheader`
+
+[source,adoc]
+----
+[source,js,role=noheader]
+console.log('hello')
+----
+
+[source,js,role=noheader]
+console.log('hello')
+
+=== Expand code block
+
+Code blocks with a height larger than 300px are collapsed, unless you add `role=nocollapse`
+
+[source,adoc]
+----
+[source,js]
+...
+
+[source,js,role=nocollapse]
+...
+----
+
+[source,js]
+----
+// Collapse/Expand long blocks
+var codeBlockMaxHeight = 300  // px
+var styleMaskImage = 'linear-gradient(to bottom, black 0px, transparent ' + (codeBlockMaxHeight+100) + 'px)'
+
+var expandCollapseBlock = function (e) {
+  e.preventDefault();
+  var showMore = e.target
+  var pre = showMore.parentNode
+  var codeBlock = pre.querySelector('code')
+
+  if (pre.style.overflow === 'hidden') {
+    pre.style.maxHeight = ''
+    pre.style.overflow = ''
+    codeBlock.style.webkitMaskImage = ''
+    codeBlock.style.maskImage = ''
+    showMore.innerHTML = '&uarr;'  // show less
+  } else {
+    pre.style.maxHeight = codeBlockMaxHeight + 'px'
+    pre.style.overflow = 'hidden'
+    codeBlock.style.webkitMaskImage = styleMaskImage
+    codeBlock.style.maskImage = styleMaskImage
+    showMore.innerHTML = '&darr;'  // show more
+    //codeBlock.scrollIntoView({behavior: 'smooth'})
+  }
+}
+----
+
+[source,js,role=nocollapse]
+----
+// Collapse/Expand long blocks
+var codeBlockMaxHeight = 300  // px
+var styleMaskImage = 'linear-gradient(to bottom, black 0px, transparent ' + (codeBlockMaxHeight+100) + 'px)'
+
+var expandCollapseBlock = function (e) {
+  e.preventDefault();
+  var showMore = e.target
+  var pre = showMore.parentNode
+  var codeBlock = pre.querySelector('code')
+
+  if (pre.style.overflow === 'hidden') {
+    pre.style.maxHeight = ''
+    pre.style.overflow = ''
+    codeBlock.style.webkitMaskImage = ''
+    codeBlock.style.maskImage = ''
+    showMore.innerHTML = '&uarr;'  // show less
+  } else {
+    pre.style.maxHeight = codeBlockMaxHeight + 'px'
+    pre.style.overflow = 'hidden'
+    codeBlock.style.webkitMaskImage = styleMaskImage
+    codeBlock.style.maskImage = styleMaskImage
+    showMore.innerHTML = '&darr;'  // show more
+    //codeBlock.scrollIntoView({behavior: 'smooth'})
+  }
+}
+----
