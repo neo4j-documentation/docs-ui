@@ -222,9 +222,8 @@ document.addEventListener('DOMContentLoaded', function () {
     var listingBlock = dotContent.parentNode
     var codeBlock = pre.querySelector('code')
 
-    var autoCollapse = !listingBlock.classList.contains('nocollapse')
-
-    if (autoCollapse && pre.offsetHeight > codeBlockMaxHeight) {
+    if (!listingBlock.classList.contains('nocollapse') &&
+        pre.offsetHeight > codeBlockMaxHeight) {
       pre.style.maxHeight = codeBlockMaxHeight + 'px'
       pre.style.overflow = 'hidden'
       codeBlock.style.webkitMaskImage = styleMaskImage
