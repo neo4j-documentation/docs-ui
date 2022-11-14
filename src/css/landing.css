@@ -104,6 +104,13 @@ section.hero p {
 }
 
 /**
+ * Hide page title since we are already using a hero title
+ */
+body.landing.labs h1.page {
+  display: none;
+}
+
+/**
  * Landing Preamble - button and angled borders
  */
 body.landing .ulist.buttons {
