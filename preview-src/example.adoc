@@ -218,7 +218,59 @@ Code blocks with a height larger than 300px are collapsed, unless you add `role=
 ----
 // Collapse/Expand long blocks
 var codeBlockMaxHeight = 300  // px
-var styleMaskImage = 'linear-gradient(to bottom, black 0px, transparent ' + (codeBlockMaxHeight+100) + 'px)'
+var styleMaskImage = 'linear-gradient(t
+
+var expandCollapseBlock = function (e) {
+  e.preventDefault();
+  var showMore = e.target
+  var pre = showMore.parentNode
+  var codeBlock = pre.querySelector('code')
+
+  if (pre.style.overflow === 'hidden') {
+    pre.style.maxHeight = ''
+    pre.style.overflow = ''
+    codeBlock.style.webkitMaskImage = ''
+    codeBlock.style.maskImage = ''
+    showMore.innerHTML = '&uarr;'  // show less
+  } else {
+    pre.style.maxHeight = codeBlockMaxHeight + 'px'
+    pre.style.overflow = 'hidden'
+    codeBlock.style.webkitMaskImage = styleMaskImage
+    codeBlock.style.maskImage = styleMaskImage
+    showMore.innerHTML = '&darr;'  // show more
+    //codeBlock.scrollIntoView({behavior: 'smooth'})
+  }
+}
+
+// Collapse/Expand long blocks
+var codeBlockMaxHeight = 300  // px
+var styleMaskImage = 'linear-gradient(t
+
+var expandCollapseBlock = function (e) {
+  e.preventDefault();
+  var showMore = e.target
+  var pre = showMore.parentNode
+  var codeBlock = pre.querySelector('code')
+
+  if (pre.style.overflow === 'hidden') {
+    pre.style.maxHeight = ''
+    pre.style.overflow = ''
+    codeBlock.style.webkitMaskImage = ''
+    codeBlock.style.maskImage = ''
+    showMore.innerHTML = '&uarr;'  // show less
+  } else {
+    pre.style.maxHeight = codeBlockMaxHeight + 'px'
+    pre.style.overflow = 'hidden'
+    codeBlock.style.webkitMaskImage = styleMaskImage
+    codeBlock.style.maskImage = styleMaskImage
+    showMore.innerHTML = '&darr;'  // show more
+    //codeBlock.scrollIntoView({behavior: 'smooth'})
+  }
+}
+
+// Collapse/Expand long blocks
+var codeBlockMaxHeight = 300  // px
+var styleMaskImage = 'linear-gradient(t
 
 var expandCollapseBlock = function (e) {
   e.preventDefault();
@@ -242,6 +294,38 @@ var expandCollapseBlock = function (e) {
   }
 }
 ----
+
+
+Let's assume there exists a procedure called `myProc`.
+
+This procedure gives the result `A` and `B` for a user with `EXECUTE PROCEDURE` privilege and `A`, `B` and `C` for a user with `EXECUTE BOOSTED PROCEDURE` privilege.
+
+Now, let's adapt the privileges in examples 1 to 4 to apply to this procedure and show what is returned.
+With the privileges from example 1, granted `EXECUTE PROCEDURE *` and denied `EXECUTE BOOSTED PROCEDURE myProc`, the `myProc` procedure returns the result `A` and `B`.
+
+With the privileges from example 2, granted `EXECUTE BOOSTED PROCEDURE *` and denied `EXECUTE PROCEDURE myProc`, execution of the `myProc` procedure is not allowed.
+
+With the privileges from example 3, granted `EXECUTE BOOSTED PROCEDURE *` and denied `EXECUTE BOOSTED PROCEDURE myProc`, execution of the `myProc` procedure is not allowed.
+
+With the privileges from example 4, granted `EXECUTE PROCEDURE myProc` and `EXECUTE BOOSTED PROCEDURE *` and denied `EXECUTE BOOSTED PROCEDURE myProc`, the `myProc` procedure returns the result `A` and `B`.
+
+For comparison, when only granted `EXECUTE BOOSTED PROCEDURE myProc`, the `myProc` procedure returns the result `A`, `B` and `C`, without needing to be granted the `EXECUTE PROCEDURE myProc` privilege.
+
+
+Let's assume there exists a procedure called `myProc`.
+
+This procedure gives the result `A` and `B` for a user with `EXECUTE PROCEDURE` privilege and `A`, `B` and `C` for a user with `EXECUTE BOOSTED PROCEDURE` privilege.
+
+Now, let's adapt the privileges in examples 1 to 4 to apply to this procedure and show what is returned.
+With the privileges from example 1, granted `EXECUTE PROCEDURE *` and denied `EXECUTE BOOSTED PROCEDURE myProc`, the `myProc` procedure returns the result `A` and `B`.
+
+With the privileges from example 2, granted `EXECUTE BOOSTED PROCEDURE *` and denied `EXECUTE PROCEDURE myProc`, execution of the `myProc` procedure is not allowed.
+
+With the privileges from example 3, granted `EXECUTE BOOSTED PROCEDURE *` and denied `EXECUTE BOOSTED PROCEDURE myProc`, execution of the `myProc` procedure is not allowed.
+
+With the privileges from example 4, granted `EXECUTE PROCEDURE myProc` and `EXECUTE BOOSTED PROCEDURE *` and denied `EXECUTE BOOSTED PROCEDURE myProc`, the `myProc` procedure returns the result `A` and `B`.
+
+For comparison, when only granted `EXECUTE BOOSTED PROCEDURE myProc`, the `myProc` procedure returns the result `A`, `B` and `C`, without needing to be granted the `EXECUTE PROCEDURE myProc` privilege.
 
 [source,js,role=nocollapse]
 ----
@@ -255,19 +339,14 @@ var expandCollapseBlock = function (e) {
   var pre = showMore.parentNode
   var codeBlock = pre.querySelector('code')
 
-  if (pre.style.overflow === 'hidden') {
-    pre.style.maxHeight = ''
-    pre.style.overflow = ''
-    codeBlock.style.webkitMaskImage = ''
-    codeBlock.style.maskImage = ''
-    showMore.innerHTML = '&uarr;'  // show less
-  } else {
-    pre.style.maxHeight = codeBlockMaxHeight + 'px'
-    pre.style.overflow = 'hidden'
-    codeBlock.style.webkitMaskImage = styleMaskImage
+  if (pre.st.style.webkitMaskImage = styleMaskImage
     codeBlock.style.maskImage = styleMaskImage
     showMore.innerHTML = '&darr;'  // show more
     //codeBlock.scrollIntoView({behavior: 'smooth'})
   }
 }
 ----
+
+With the privileges from example 4, granted `EXECUTE PROCEDURE myProc` and `EXECUTE BOOSTED PROCEDURE *` and denied `EXECUTE BOOSTED PROCEDURE myProc`, the `myProc` procedure returns the result `A` and `B`.
+
+For comparison, when only granted `EXECUTE BOOSTED PROCEDURE myProc`, the `myProc` procedure returns the result `A`, `B` and `C`, without needing to be granted the `EXECUTE PROCEDURE myProc` privilege.

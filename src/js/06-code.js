@@ -192,7 +192,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
   // Collapse/Expand long blocks
   var codeBlockMaxHeight = 300 // px
-  var styleMaskImage = 'linear-gradient(to bottom, black 0px, transparent ' + (codeBlockMaxHeight + 100) + 'px)'
+  var styleMaskImage = 'linear-gradient(to bottom, black 0px, transparent ' +
+                       (codeBlockMaxHeight + 100) + 'px)'
 
   var expandCollapseBlock = function (e) {
     e.preventDefault()
@@ -201,18 +202,28 @@ document.addEventListener('DOMContentLoaded', function () {
     var codeBlock = pre.querySelector('code')
 
     if (pre.style.overflow === 'hidden') {
-      pre.style.maxHeight = ''
-      pre.style.overflow = ''
+      window.sessionStorage.setItem('scrollpos', window.scrollY)
+      pre.style.maxHeight = pre.scrollHeight + 'px'
+      pre.style.overflow = 'visible'
       codeBlock.style.webkitMaskImage = ''
       codeBlock.style.maskImage = ''
       showMore.innerHTML = '&uarr;' // show less
     } else {
+      // Scoll back to where you where before expanding
+      var scrollpos = window.sessionStorage.getItem('scrollpos')
+      if (scrollpos) {
+        window.scrollTo({
+          top: scrollpos,
+          behavior: 'auto',
+        })
+      }
+      window.sessionStorage.removeItem('scrollpos')
+
       pre.style.maxHeight = codeBlockMaxHeight + 'px'
       pre.style.overflow = 'hidden'
       codeBlock.style.webkitMaskImage = styleMaskImage
       codeBlock.style.maskImage = styleMaskImage
-      showMore.innerHTML = '&darr;' // show more
-      //codeBlock.scrollIntoView({behavior: 'smooth'})
+      showMore.innerHTML = '&darr; Show more &darr;' // show more
     }
   }
 
@@ -230,7 +241,7 @@ document.addEventListener('DOMContentLoaded', function () {
       codeBlock.style.maskImage = styleMaskImage
 
       var showMore = createElement('a', 'show-more')
-      showMore.innerHTML = '&darr;'
+      showMore.innerHTML = '&darr; Show more &darr;'
       showMore.addEventListener('click', expandCollapseBlock)
       pre.appendChild(showMore)
     }
