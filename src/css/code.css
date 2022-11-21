@@ -90,6 +90,14 @@
   cursor: pointer;
 }
 
+.doc .show-more a {
+  font-weight: 500;
+  color: var(--code-header-font-color);
+  padding: 5px 10px;
+  background: var(--code-header-background);
+  border-radius: 30px;
+}
+
 .doc .code-footer.has-results {
   border-bottom-left-radius: 0;
   border-bottom-right-radius: 0;
