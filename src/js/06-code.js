@@ -191,22 +191,36 @@ document.addEventListener('DOMContentLoaded', function () {
     .forEach(addCodeHeader)
 
   // Collapse/Expand long blocks
-  var codeBlockMaxHeight = 300 // px
-  var styleMaskImage = 'linear-gradient(to bottom, black 0px, transparent ' +
-                       (codeBlockMaxHeight + 100) + 'px)'
+  var codeMaxLines = 15 // lines
+  var codeTolerance = 5 // lines
+  var codeLineHeight = parseFloat(window.getComputedStyle(
+                          document.getElementsByClassName('highlight')[0], null)
+                          .getPropertyValue('line-height'))
+  var codeMaxHeight = codeLineHeight*codeMaxLines
+  var maskImage = 'linear-gradient(to bottom, black 0px, transparent ' +
+                   (codeMaxHeight + 100) + 'px)'
+
+  var codeBlockLinesNum = function (code) {
+      var paddingTop = parseFloat(window.getComputedStyle(code, null).getPropertyValue('padding-top'))
+      var paddingBottom = parseFloat(window.getComputedStyle(code, null).getPropertyValue('padding-bottom'))
+      var height = code.clientHeight-paddingTop-paddingBottom;
+      var lines = Math.ceil(height / codeLineHeight)
+      var hiddenLines = Math.ceil(lines - codeMaxLines)
+      return hiddenLines
+  }
 
   var expandCollapseBlock = function (e) {
     e.preventDefault()
     var showMore = e.target
     var pre = showMore.parentNode
-    var codeBlock = pre.querySelector('code')
+    var code = pre.querySelector('code')
 
     if (pre.style.overflow === 'hidden') {
       window.sessionStorage.setItem('scrollpos', window.scrollY)
       pre.style.maxHeight = pre.scrollHeight + 'px'
       pre.style.overflow = 'visible'
-      codeBlock.style.webkitMaskImage = ''
-      codeBlock.style.maskImage = ''
+      code.style.webkitMaskImage = ''
+      code.style.maskImage = ''
       showMore.innerHTML = '&uarr;' // show less
     } else {
       // Scoll back to where you where before expanding
@@ -219,11 +233,12 @@ document.addEventListener('DOMContentLoaded', function () {
       }
       window.sessionStorage.removeItem('scrollpos')
 
-      pre.style.maxHeight = codeBlockMaxHeight + 'px'
+      var hiddenLines = codeBlockLinesNum(code)
+      pre.style.maxHeight = codeMaxHeight + 'px'
       pre.style.overflow = 'hidden'
-      codeBlock.style.webkitMaskImage = styleMaskImage
-      codeBlock.style.maskImage = styleMaskImage
-      showMore.innerHTML = '&darr; Show more &darr;' // show more
+      code.style.webkitMaskImage = maskImage
+      code.style.maskImage = maskImage
+      showMore.innerHTML = '&darr; View all (' + hiddenLines + ' lines more) &darr;'
     }
   }
 
@@ -231,17 +246,18 @@ document.addEventListener('DOMContentLoaded', function () {
   var collapseCodeBlock = function (pre) {
     var dotContent = pre.parentNode
     var listingBlock = dotContent.parentNode
-    var codeBlock = pre.querySelector('code')
+    var code = pre.querySelector('code')
 
     if (!listingBlock.classList.contains('nocollapse') &&
-        pre.offsetHeight > codeBlockMaxHeight) {
-      pre.style.maxHeight = codeBlockMaxHeight + 'px'
+        pre.offsetHeight > (codeMaxLines+codeTolerance)*codeLineHeight) {
+      pre.style.maxHeight = codeMaxHeight + 'px'
       pre.style.overflow = 'hidden'
-      codeBlock.style.webkitMaskImage = styleMaskImage
-      codeBlock.style.maskImage = styleMaskImage
+      code.style.webkitMaskImage = maskImage
+      code.style.maskImage = maskImage
 
+      var hiddenLines = codeBlockLinesNum(code)
       var showMore = createElement('a', 'show-more')
-      showMore.innerHTML = '&darr; Show more &darr;'
+      showMore.innerHTML = '&darr; View all (' + hiddenLines + ' lines more) &darr;'
       showMore.addEventListener('click', expandCollapseBlock)
       pre.appendChild(showMore)
     }

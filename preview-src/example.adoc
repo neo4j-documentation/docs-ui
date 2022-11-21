@@ -203,7 +203,7 @@ console.log('hello')
 
 === Expand code block
 
-Code blocks with a height larger than 300px are collapsed, unless you add `role=nocollapse`
+Code blocks longer than 15 lines (+5 of tolerance) are collapsed, unless you add `role=nocollapse`
 
 [source,adoc]
 ----
@@ -216,83 +216,83 @@ Code blocks with a height larger than 300px are collapsed, unless you add `role=
 
 [source,js]
 ----
-// Collapse/Expand long blocks
-var codeBlockMaxHeight = 300  // px
-var styleMaskImage = 'linear-gradient(t
+  // Collapse/Expand long blocks
+  var codeMaxLines = 15 // lines
+  var codeTolerance = 5 // lines
+  var codeLineHeight = parseFloat(window.getComputedStyle(
+                          document.getElementsByClassName('highlight')[0], null)
+                          .getPropertyValue('line-height'))
+  var codeMaxHeight = codeLineHeight*codeMaxLines
+  var maskImage = 'linear-gradient(to bottom, black 0px, transparent ' +
+                   (codeMaxHeight + 100) + 'px)'
 
-var expandCollapseBlock = function (e) {
-  e.preventDefault();
-  var showMore = e.target
-  var pre = showMore.parentNode
-  var codeBlock = pre.querySelector('code')
-
-  if (pre.style.overflow === 'hidden') {
-    pre.style.maxHeight = ''
-    pre.style.overflow = ''
-    codeBlock.style.webkitMaskImage = ''
-    codeBlock.style.maskImage = ''
-    showMore.innerHTML = '&uarr;'  // show less
-  } else {
-    pre.style.maxHeight = codeBlockMaxHeight + 'px'
-    pre.style.overflow = 'hidden'
-    codeBlock.style.webkitMaskImage = styleMaskImage
-    codeBlock.style.maskImage = styleMaskImage
-    showMore.innerHTML = '&darr;'  // show more
-    //codeBlock.scrollIntoView({behavior: 'smooth'})
+  var codeBlockLinesNum = function (code) {
+      var paddingTop = parseFloat(window.getComputedStyle(code, null).getPropertyValue('padding-top'))
+      var paddingBottom = parseFloat(window.getComputedStyle(code, null).getPropertyValue('padding-bottom'))
+      var height = code.clientHeight-paddingTop-paddingBottom;
+      var lines = Math.ceil(height / codeLineHeight)
+      var hiddenLines = Math.ceil(lines - codeMaxLines)
+      return hiddenLines
   }
-}
 
-// Collapse/Expand long blocks
-var codeBlockMaxHeight = 300  // px
-var styleMaskImage = 'linear-gradient(t
+  var expandCollapseBlock = function (e) {
+    e.preventDefault()
+    var showMore = e.target
+    var pre = showMore.parentNode
+    var code = pre.querySelector('code')
 
-var expandCollapseBlock = function (e) {
-  e.preventDefault();
-  var showMore = e.target
-  var pre = showMore.parentNode
-  var codeBlock = pre.querySelector('code')
+    if (pre.style.overflow === 'hidden') {
+      window.sessionStorage.setItem('scrollpos', window.scrollY)
+      pre.style.maxHeight = pre.scrollHeight + 'px'
+      pre.style.overflow = 'visible'
+      code.style.webkitMaskImage = ''
+      code.style.maskImage = ''
+      showMore.innerHTML = '&uarr;' // show less
+    } else {
+      // Scoll back to where you where before expanding
+      var scrollpos = window.sessionStorage.getItem('scrollpos')
+      if (scrollpos) {
+        window.scrollTo({
+          top: scrollpos,
+          behavior: 'auto',
+        })
+      }
+      window.sessionStorage.removeItem('scrollpos')
 
-  if (pre.style.overflow === 'hidden') {
-    pre.style.maxHeight = ''
-    pre.style.overflow = ''
-    codeBlock.style.webkitMaskImage = ''
-    codeBlock.style.maskImage = ''
-    showMore.innerHTML = '&uarr;'  // show less
-  } else {
-    pre.style.maxHeight = codeBlockMaxHeight + 'px'
-    pre.style.overflow = 'hidden'
-    codeBlock.style.webkitMaskImage = styleMaskImage
-    codeBlock.style.maskImage = styleMaskImage
-    showMore.innerHTML = '&darr;'  // show more
-    //codeBlock.scrollIntoView({behavior: 'smooth'})
+      var hiddenLines = codeBlockLinesNum(code)
+      pre.style.maxHeight = codeMaxHeight + 'px'
+      pre.style.overflow = 'hidden'
+      code.style.webkitMaskImage = maskImage
+      code.style.maskImage = maskImage
+      showMore.innerHTML = '&darr; View all (' + hiddenLines + ' lines more) &darr;'
+    }
   }
-}
 
-// Collapse/Expand long blocks
-var codeBlockMaxHeight = 300  // px
-var styleMaskImage = 'linear-gradient(t
+  // Collapse long blocks on load
+  var collapseCodeBlock = function (pre) {
+    var dotContent = pre.parentNode
+    var listingBlock = dotContent.parentNode
+    var code = pre.querySelector('code')
 
-var expandCollapseBlock = function (e) {
-  e.preventDefault();
-  var showMore = e.target
-  var pre = showMore.parentNode
-  var codeBlock = pre.querySelector('code')
+    if (!listingBlock.classList.contains('nocollapse') &&
+        pre.offsetHeight > (codeMaxLines+codeTolerance)*codeLineHeight) {
+      pre.style.maxHeight = codeMaxHeight + 'px'
+      pre.style.overflow = 'hidden'
+      code.style.webkitMaskImage = maskImage
+      code.style.maskImage = maskImage
 
-  if (pre.style.overflow === 'hidden') {
-    pre.style.maxHeight = ''
-    pre.style.overflow = ''
-    codeBlock.style.webkitMaskImage = ''
-    codeBlock.style.maskImage = ''
-    showMore.innerHTML = '&uarr;'  // show less
-  } else {
-    pre.style.maxHeight = codeBlockMaxHeight + 'px'
-    pre.style.overflow = 'hidden'
-    codeBlock.style.webkitMaskImage = styleMaskImage
-    codeBlock.style.maskImage = styleMaskImage
-    showMore.innerHTML = '&darr;'  // show more
-    //codeBlock.scrollIntoView({behavior: 'smooth'})
+      var hiddenLines = codeBlockLinesNum(code)
+      var showMore = createElement('a', 'show-more')
+      showMore.innerHTML = '&darr; View all (' + hiddenLines + ' lines more) &darr;'
+      showMore.addEventListener('click', expandCollapseBlock)
+      pre.appendChild(showMore)
+    }
   }
-}
+
+  // Apply collapseCodeBlock
+  document.querySelectorAll('.highlight')
+    .forEach(collapseCodeBlock)
+
 ----
 
 
@@ -339,6 +339,12 @@ var expandCollapseBlock = function (e) {
   var pre = showMore.parentNode
   var codeBlock = pre.querySelector('code')
 
+  if (pre.st.style.webkitMaskImage = styleMaskImage
+    codeBlock.style.maskImage = styleMaskImage
+    showMore.innerHTML = '&darr;'  // show more
+    //codeBlock.scrollIntoView({behavior: 'smooth'})
+  }
+}
   if (pre.st.style.webkitMaskImage = styleMaskImage
     codeBlock.style.maskImage = styleMaskImage
     showMore.innerHTML = '&darr;'  // show more
