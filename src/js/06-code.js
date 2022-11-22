@@ -239,7 +239,7 @@ document.addEventListener('DOMContentLoaded', function () {
       pre.style.overflow = 'hidden'
       code.style.webkitMaskImage = maskImage
       code.style.maskImage = maskImage
-      showMoreLink.innerHTML = '&darr; View all (' + hiddenLines + ' lines more) &darr;'
+      showMoreLink.innerHTML = 'View all (' + hiddenLines + ' lines more)'
     }
   }
 
@@ -260,7 +260,7 @@ document.addEventListener('DOMContentLoaded', function () {
       showMore.addEventListener('click', expandCollapseBlock)
       var showMoreLink = createElement('a')
       var hiddenLines = codeBlockLinesNum(code)
-      showMoreLink.innerHTML = '&darr; View all (' + hiddenLines + ' lines more) &darr;'
+      showMoreLink.innerHTML = 'View all (' + hiddenLines + ' lines more)'
       pre.appendChild(showMore)
       showMore.appendChild(showMoreLink)
     }
