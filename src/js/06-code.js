@@ -94,8 +94,8 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   var addCodeHeader = function (pre) {
-    var dotContent = pre.parentElement
-    var listingBlock = dotContent.parentElement
+    var dotContent = pre.parentNode
+    var listingBlock = dotContent.parentNode
 
     if (listingBlock.classList.contains('noheader')) return
 
@@ -192,6 +192,67 @@ document.addEventListener('DOMContentLoaded', function () {
   document.querySelectorAll('.highlight')
     .forEach(addCodeHeader)
 
+  // Collapse/Expand long blocks
+  var codeMaxLines = 15
+  var codeTolerance = 5 // if block is shorter than codeMaxLines+codeTolerance, it won't be collapsed
+  var codeLineHeight = parseFloat(window.getComputedStyle(
+    document.getElementsByClassName('highlight')[0], null)
+    .getPropertyValue('line-height')) //line-height property value (in px) in code blocks
+  var codeMaxHeight = codeLineHeight * codeMaxLines
+  var maskImage = 'linear-gradient(to bottom, black 0px, transparent ' +
+                   (codeMaxHeight + 100) + 'px)'
+
+  var codeBlockLinesNum = function (code) {
+    var paddingTop = parseFloat(window.getComputedStyle(code, null).getPropertyValue('padding-top'))
+    var paddingBottom = parseFloat(window.getComputedStyle(code, null).getPropertyValue('padding-bottom'))
+    var height = code.clientHeight - paddingTop - paddingBottom
+    var lines = Math.ceil(height / codeLineHeight)
+    var hiddenLines = Math.ceil(lines - codeMaxLines)
+    return { lines: lines, hiddenLines: hiddenLines }
+  }
+
+  var expandCodeBlock = function (e) {
+    e.preventDefault()
+    var showMoreLink = e.target
+    var showMore = showMoreLink.parentNode
+    var pre = showMore.parentNode
+    var code = pre.querySelector('code')
+
+    pre.style.maxHeight = pre.scrollHeight + 'px'
+    pre.style.overflow = 'visible'
+    code.style.webkitMaskImage = ''
+    code.style.maskImage = ''
+    pre.removeChild(showMore)
+  }
+
+  // Collapse long blocks on load
+  var collapseCodeBlock = function (pre) {
+    var dotContent = pre.parentNode
+    var listingBlock = dotContent.parentNode
+    var code = pre.querySelector('code')
+
+    if (!listingBlock.classList.contains('nocollapse') &&
+        pre.offsetHeight > (codeMaxLines + codeTolerance) * codeLineHeight) {
+      pre.style.maxHeight = codeMaxHeight + 'px'
+      pre.style.overflow = 'hidden'
+      code.style.webkitMaskImage = maskImage
+      code.style.maskImage = maskImage
+
+      var showMore = createElement('div', 'show-more')
+      showMore.addEventListener('click', expandCodeBlock)
+      var showMoreLink = createElement('a')
+      var blockLines = codeBlockLinesNum(code)
+      showMoreLink.innerHTML = 'View all (' + blockLines.hiddenLines + ' more lines)'
+      pre.appendChild(showMore)
+      showMore.appendChild(showMoreLink)
+    }
+  }
+
+  // Apply collapseCodeBlock
+  document.querySelectorAll('.highlight')
+    .forEach(collapseCodeBlock)
+
+  // Tagged examples
   var targetActive = 'tabbed-target--active'
   var tabActive = 'tabbed-tab--active'
 

@@ -131,3 +131,228 @@ neo4j@system> SHOW DATABASES;
 3 rows available after 2 ms, consumed after another 1 ms
 ----
 ====
+
+== Source Blocks with Headers
+
+=== Copy Button
+
+The **Copy To Clipboard** button will appear on all code blocks:
+
+[source,adoc]
+----
+[source,adoc]
+Copy me!
+----
+
+Unless you add `role=nocopy`:
+
+.Source block with role=nocopy
+[source,adoc,role=nocopy]
+----
+[source,adoc,role=nocopy]
+Don't copy me!
+----
+
+=== Play In Browser
+
+Source blocks with a type of cypher will have a deeplink to run the query in Neo4j Browser
+
+[source,cypher]
+----
+MATCH (n) RETURN count(n)
+----
+
+Unless you add `role=noplay`
+
+.Source block with `role=noplay`
+[source,adoc,role=noplay]
+----
+[source,adoc,role=noplay]
+MATCH (n) RETURN count(n)
+----
+
+
+
+=== Combining `nocopy` and `noplay`
+
+You can combine `noplay` and `nocopy`:
+
+[source,adoc]
+----
+[source,adoc,role=nocopy noplay]
+MATCH (n) RETURN count(n)
+----
+
+[source,cypher,role=nocopy noplay]
+----
+MATCH (n) RETURN count(n)
+----
+
+=== Suppress Header
+
+You can suppress the header by adding `role=noheader`
+
+[source,adoc]
+----
+[source,js,role=noheader]
+console.log('hello')
+----
+
+[source,js,role=noheader]
+console.log('hello')
+
+=== Expand code block
+
+Code blocks longer than 15 lines (+5 of tolerance) are collapsed, unless you add `role=nocollapse`
+
+[source,adoc]
+----
+[source,js]
+...
+
+[source,js,role=nocollapse]
+...
+----
+
+[source,js]
+----
+  // Collapse/Expand long blocks
+  var codeMaxLines = 15 // lines
+  var codeTolerance = 5 // lines
+  var codeLineHeight = parseFloat(window.getComputedStyle(
+                          document.getElementsByClassName('highlight')[0], null)
+                          .getPropertyValue('line-height'))
+  var codeMaxHeight = codeLineHeight*codeMaxLines
+  var maskImage = 'linear-gradient(to bottom, black 0px, transparent ' +
+                   (codeMaxHeight + 100) + 'px)'
+
+  var codeBlockLinesNum = function (code) {
+      var paddingTop = parseFloat(window.getComputedStyle(code, null).getPropertyValue('padding-top'))
+      var paddingBottom = parseFloat(window.getComputedStyle(code, null).getPropertyValue('padding-bottom'))
+      var height = code.clientHeight-paddingTop-paddingBottom;
+      var lines = Math.ceil(height / codeLineHeight)
+      var hiddenLines = Math.ceil(lines - codeMaxLines)
+      return hiddenLines
+  }
+
+  var expandCollapseBlock = function (e) {
+    e.preventDefault()
+    var showMore = e.target
+    var pre = showMore.parentNode
+    var code = pre.querySelector('code')
+
+    if (pre.style.overflow === 'hidden') {
+      window.sessionStorage.setItem('scrollpos', window.scrollY)
+      pre.style.maxHeight = pre.scrollHeight + 'px'
+      pre.style.overflow = 'visible'
+      code.style.webkitMaskImage = ''
+      code.style.maskImage = ''
+      showMore.innerHTML = '&uarr;' // show less
+    } else {
+      // Scoll back to where you where before expanding
+      var scrollpos = window.sessionStorage.getItem('scrollpos')
+      if (scrollpos) {
+        window.scrollTo({
+          top: scrollpos,
+          behavior: 'auto',
+        })
+      }
+      window.sessionStorage.removeItem('scrollpos')
+
+      var hiddenLines = codeBlockLinesNum(code)
+      pre.style.maxHeight = codeMaxHeight + 'px'
+      pre.style.overflow = 'hidden'
+      code.style.webkitMaskImage = maskImage
+      code.style.maskImage = maskImage
+      showMore.innerHTML = '&darr; View all (' + hiddenLines + ' lines more) &darr;'
+    }
+  }
+
+  // Collapse long blocks on load
+  var collapseCodeBlock = function (pre) {
+    var dotContent = pre.parentNode
+    var listingBlock = dotContent.parentNode
+    var code = pre.querySelector('code')
+
+    if (!listingBlock.classList.contains('nocollapse') &&
+        pre.offsetHeight > (codeMaxLines+codeTolerance)*codeLineHeight) {
+      pre.style.maxHeight = codeMaxHeight + 'px'
+      pre.style.overflow = 'hidden'
+      code.style.webkitMaskImage = maskImage
+      code.style.maskImage = maskImage
+
+      var hiddenLines = codeBlockLinesNum(code)
+      var showMore = createElement('a', 'show-more')
+      showMore.innerHTML = '&darr; View all (' + hiddenLines + ' lines more) &darr;'
+      showMore.addEventListener('click', expandCollapseBlock)
+      pre.appendChild(showMore)
+    }
+  }
+
+  // Apply collapseCodeBlock
+  document.querySelectorAll('.highlight')
+    .forEach(collapseCodeBlock)
+
+----
+
+
+Let's assume there exists a procedure called `myProc`.
+
+This procedure gives the result `A` and `B` for a user with `EXECUTE PROCEDURE` privilege and `A`, `B` and `C` for a user with `EXECUTE BOOSTED PROCEDURE` privilege.
+
+Now, let's adapt the privileges in examples 1 to 4 to apply to this procedure and show what is returned.
+With the privileges from example 1, granted `EXECUTE PROCEDURE *` and denied `EXECUTE BOOSTED PROCEDURE myProc`, the `myProc` procedure returns the result `A` and `B`.
+
+With the privileges from example 2, granted `EXECUTE BOOSTED PROCEDURE *` and denied `EXECUTE PROCEDURE myProc`, execution of the `myProc` procedure is not allowed.
+
+With the privileges from example 3, granted `EXECUTE BOOSTED PROCEDURE *` and denied `EXECUTE BOOSTED PROCEDURE myProc`, execution of the `myProc` procedure is not allowed.
+
+With the privileges from example 4, granted `EXECUTE PROCEDURE myProc` and `EXECUTE BOOSTED PROCEDURE *` and denied `EXECUTE BOOSTED PROCEDURE myProc`, the `myProc` procedure returns the result `A` and `B`.
+
+For comparison, when only granted `EXECUTE BOOSTED PROCEDURE myProc`, the `myProc` procedure returns the result `A`, `B` and `C`, without needing to be granted the `EXECUTE PROCEDURE myProc` privilege.
+
+
+Let's assume there exists a procedure called `myProc`.
+
+This procedure gives the result `A` and `B` for a user with `EXECUTE PROCEDURE` privilege and `A`, `B` and `C` for a user with `EXECUTE BOOSTED PROCEDURE` privilege.
+
+Now, let's adapt the privileges in examples 1 to 4 to apply to this procedure and show what is returned.
+With the privileges from example 1, granted `EXECUTE PROCEDURE *` and denied `EXECUTE BOOSTED PROCEDURE myProc`, the `myProc` procedure returns the result `A` and `B`.
+
+With the privileges from example 2, granted `EXECUTE BOOSTED PROCEDURE *` and denied `EXECUTE PROCEDURE myProc`, execution of the `myProc` procedure is not allowed.
+
+With the privileges from example 3, granted `EXECUTE BOOSTED PROCEDURE *` and denied `EXECUTE BOOSTED PROCEDURE myProc`, execution of the `myProc` procedure is not allowed.
+
+With the privileges from example 4, granted `EXECUTE PROCEDURE myProc` and `EXECUTE BOOSTED PROCEDURE *` and denied `EXECUTE BOOSTED PROCEDURE myProc`, the `myProc` procedure returns the result `A` and `B`.
+
+For comparison, when only granted `EXECUTE BOOSTED PROCEDURE myProc`, the `myProc` procedure returns the result `A`, `B` and `C`, without needing to be granted the `EXECUTE PROCEDURE myProc` privilege.
+
+[source,js,role=nocollapse]
+----
+// Collapse/Expand long blocks
+var codeBlockMaxHeight = 300  // px
+var styleMaskImage = 'linear-gradient(to bottom, black 0px, transparent ' + (codeBlockMaxHeight+100) + 'px)'
+
+var expandCollapseBlock = function (e) {
+  e.preventDefault();
+  var showMore = e.target
+  var pre = showMore.parentNode
+  var codeBlock = pre.querySelector('code')
+
+  if (pre.st.style.webkitMaskImage = styleMaskImage
+    codeBlock.style.maskImage = styleMaskImage
+    showMore.innerHTML = '&darr;'  // show more
+    //codeBlock.scrollIntoView({behavior: 'smooth'})
+  }
+}
+  if (pre.st.style.webkitMaskImage = styleMaskImage
+    codeBlock.style.maskImage = styleMaskImage
+    showMore.innerHTML = '&darr;'  // show more
+    //codeBlock.scrollIntoView({behavior: 'smooth'})
+  }
+}
+----
+
+With the privileges from example 4, granted `EXECUTE PROCEDURE myProc` and `EXECUTE BOOSTED PROCEDURE *` and denied `EXECUTE BOOSTED PROCEDURE myProc`, the `myProc` procedure returns the result `A` and `B`.
+
+For comparison, when only granted `EXECUTE BOOSTED PROCEDURE myProc`, the `myProc` procedure returns the result `A`, `B` and `C`, without needing to be granted the `EXECUTE PROCEDURE myProc` privilege.
