@@ -18,14 +18,19 @@
   font-weight: var(--body-font-weight-bold);
 }
 
+.doc .code-header .code-spacer {
+  flex-grow: 1;
+}
+
 .doc .code-header .code-title {
   color: var(--color-grey-500);
   padding-right: 0.5em;
+  flex-grow: 1;
 }
 
 .doc .code-header .code-language {
-  flex-grow: 1;
-  padding: 0.6rem 0;
+  flex-grow: 0;
+  padding: 0.6rem 0.6rem 0 0;
 }
 
 .doc .code-header .btn,
