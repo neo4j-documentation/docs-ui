@@ -95,6 +95,8 @@
           })
 
           element.addEventListener('mouseout', closeTooltip)
+
+          element.removeAttribute('href') // prevents the fragment-jumper to pick on these links
         })
     })
 })()
