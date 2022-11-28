@@ -69,3 +69,5 @@ The release will be performed when a tag is pushed, the procedure is:
  $ git tag vx.y.z && git push origin master --tags
 
 The UI bundle will be published to S3 and available shortly at: `\https://s3-eu-west-1.amazonaws.com/static-content.neo4j.com/build/ui-bundle-vx.y.z.zip`
+
+Rebuilding a docs project is not enough for the updated UI bundle to make it into the docs, you also need to run the TC build located at `documentation / Antora for Neo4j Docs / Publish / Publish UI`.
