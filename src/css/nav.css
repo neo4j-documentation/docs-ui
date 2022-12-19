@@ -400,6 +400,11 @@ html.is-clipped--nav {
   padding-left: 4.5rem;
 }
 
+.nav-item[data-depth="5"] > a,
+.nav-item[data-depth="5"] > span {
+  padding-left: 5.5rem;
+}
+
 .nav-item[data-depth="1"] > span strong {
   font-size: 1rem;
   color: var(--neutral-55);
