@@ -149,6 +149,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
         setTimeout(function () {
           button.innerHTML = text
+          button.style.width = ''
           button.classList.remove('btn-success')
         }, 1000)
       })
