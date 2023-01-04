@@ -214,8 +214,12 @@ document.addEventListener('DOMContentLoaded', function () {
 
   var expandCodeBlock = function (e) {
     e.preventDefault()
-    var showMoreLink = e.target
-    var showMore = showMoreLink.parentNode
+    if (e.target instanceof window.HTMLAnchorElement) { // clicked on button
+      var showMoreLink = e.target
+      var showMore = showMoreLink.parentNode
+    } else if (e.target instanceof window.HTMLDivElement) { // clicked around button
+      var showMore = e.target
+    }
     var pre = showMore.parentNode
     var code = pre.querySelector('code')
 
