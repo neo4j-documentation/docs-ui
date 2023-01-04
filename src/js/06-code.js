@@ -214,17 +214,14 @@ document.addEventListener('DOMContentLoaded', function () {
 
   var expandCodeBlock = function (e) {
     e.preventDefault()
-    if (e.target instanceof window.HTMLAnchorElement) { // clicked on button
-      var showMoreLink = e.target
-      var showMore = showMoreLink.parentNode
-    } else if (e.target instanceof window.HTMLDivElement) { // clicked around button
-      var showMore = e.target
-    }
-    var pre = showMore.parentNode
+
+    var pre = e.target.closest('pre')
     var code = pre.querySelector('code')
+    var showMore = pre.querySelector('div.show-more')
 
     pre.style.maxHeight = pre.scrollHeight + 'px'
     pre.style.overflow = 'visible'
+    pre.style.cursor = ''
     code.style.webkitMaskImage = ''
     code.style.maskImage = ''
     pre.removeChild(showMore)
@@ -240,11 +237,12 @@ document.addEventListener('DOMContentLoaded', function () {
         pre.offsetHeight > (codeMaxLines + codeTolerance) * codeLineHeight) {
       pre.style.maxHeight = codeMaxHeight + 'px'
       pre.style.overflow = 'hidden'
+      pre.style.cursor = 'grab'
       code.style.webkitMaskImage = maskImage
       code.style.maskImage = maskImage
 
       var showMore = createElement('div', 'show-more')
-      showMore.addEventListener('click', expandCodeBlock)
+      pre.addEventListener('click', expandCodeBlock)
       var showMoreLink = createElement('a')
       var blockLines = codeBlockLinesNum(code)
       showMoreLink.innerHTML = 'View all (' + blockLines.hiddenLines + ' more lines)'
