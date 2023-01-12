@@ -37,6 +37,8 @@ Author Name
 // :page-ad-image: https://s3.amazonaws.com/cdn.graphacademy.neo4j.com/tshirts/python-tshirt.jpg
 // :page-ad-image: https://graphacademy.neo4j.com/courses/app-python/badge/
 // end::link[]
+:page-deprecated-title: Getting Started Manual
+:page-deprecated-redirect: https://neo4j.com/docs/getting-started/current/
 
 .Goals
 [abstract]
