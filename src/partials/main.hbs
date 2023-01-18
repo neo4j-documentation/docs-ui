@@ -1,5 +1,5 @@
 <main class="article">
-{{> toolbar}}
+{{#unless page.attributes.no-toolbar}}{{> toolbar}}{{/unless}}
   <div class="content">
 {{> article}}
 {{> toc}}
