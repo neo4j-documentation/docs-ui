@@ -3,6 +3,10 @@ document.addEventListener('DOMContentLoaded', function () {
   toggle.addEventListener('click', function (e) {
     e.stopPropagation()
     toggleClassHidden('.label--enterprise')
+
+    // fake a scroll event to trigger feedback scroll event
+    window.scrollTo(window.scrollX, window.scrollY + 1)
+    window.scrollTo(window.scrollX, window.scrollY - 1)
   })
 })
 
