@@ -103,7 +103,6 @@
               tooltip.classList.remove('tooltip--top')
               tooltip.classList.add('tooltip--bottom')
             }
-
           })
 
           element.addEventListener('mouseout', closeTooltip)
