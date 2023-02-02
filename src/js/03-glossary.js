@@ -92,6 +92,17 @@
             // TODO: Position above or below?
             tooltip.style.top = (top - tooltipHeight - verticalSpacing) + 'px'
             tooltip.style.left = ((left + width / 2) - (tooltipWidth / 2)) + 'px'
+
+            const toolTop = rect.y - tooltipHeight - verticalSpacing
+
+            if (toolTop < 0) {
+              tooltip.style.top = (top + rect.height + verticalSpacing) + 'px'
+              tooltip.classList.add('tooltip--top')
+              tooltip.classList.remove('tooltip--bottom')
+            } else {
+              tooltip.classList.remove('tooltip--top')
+              tooltip.classList.add('tooltip--bottom')
+            }
           })
 
           element.addEventListener('mouseout', closeTooltip)

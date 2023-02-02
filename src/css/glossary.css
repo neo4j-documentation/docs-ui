@@ -44,7 +44,7 @@ code .glossary-term::after {
   top: 0;
   left: 50%;
   margin-left: -0.25rem;
-  margin-top: -0.5rem;
+  margin-top: -0.25rem;
   border-left: 0.5rem solid transparent;
   border-right: 0.5rem solid transparent;
   border-bottom: 0.5rem solid var(--color-grey-600);
