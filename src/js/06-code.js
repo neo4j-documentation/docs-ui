@@ -100,7 +100,6 @@ document.addEventListener('DOMContentLoaded', function () {
     if (listingBlock.classList.contains('noheader')) return
 
     var addCopyButton = !listingBlock.classList.contains('nocopy')
-    var addPlayButton = !listingBlock.classList.contains('noplay')
 
     var block = pre.querySelector('code')
     var div = pre.parentNode
@@ -155,32 +154,6 @@ document.addEventListener('DOMContentLoaded', function () {
       })
 
       children.push(copyButton)
-    }
-
-    if (language === 'cypher' && addPlayButton) {
-      var runButton = createElement(
-        'button',
-        'btn btn-run btn-primary',
-        [document.createTextNode('Run in Neo4j Browser')]
-      )
-
-      runButton.addEventListener('click', function (e) {
-        e.preventDefault()
-
-        window.location.href = 'neo4j-desktop://graphapps/neo4j-browser?cmd=edit&arg=' + encodeURIComponent(cleanCode(code))
-
-        if (window.mixpanel) {
-          window.mixpanel.track('DOCS_CODE_RUN_IN_BROWSER', {
-            pathname: window.location.origin + window.location.pathname,
-            search: window.location.search,
-            hash: window.location.hash,
-            language,
-            code: cleanCode(code),
-          })
-        }
-      })
-
-      children.push(runButton)
     }
 
     var header = createElement('div', 'code-header', children)
