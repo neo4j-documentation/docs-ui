@@ -23,7 +23,7 @@ If you typed the URL of this page manually, please double check that you entered
 {{!-- <span class="{{#with asciidoc.attributes.role}} {{{this}}}{{/with}}"></span> --}}
 
 
-{{#with page.attributes.deprecated-title}}
+{{#if page.attributes.deprecated-title}}
 <div class="admonitionblock caution">
 <table>
 <tbody><tr>
@@ -37,7 +37,7 @@ If you typed the URL of this page manually, please double check that you entered
     This page is no longer being maintained and its content may be out of date.
     For the latest guidance, please visit
     <a href="{{{ page.attributes.deprecated-redirect }}}" class="noarrow" target="_blank">
-      {{{ this }}}
+      {{{ page.attributes.deprecated-title }}}
     </a>.
   </p>
 </div>
@@ -46,8 +46,7 @@ If you typed the URL of this page manually, please double check that you entered
 </tr>
 </tbody></table>
 </div>
-
-{{/with}}
+{{/if}}
 
 {{{page.contents}}}
 {{#if (ne page.attributes.certificate undefined)}}
