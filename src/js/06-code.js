@@ -94,12 +94,51 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   var addCodeHeader = function (pre) {
+
     var dotContent = pre.parentNode
     var listingBlock = dotContent.parentNode
 
-    if (listingBlock.classList.contains('noheader')) return
-
     var addCopyButton = !listingBlock.classList.contains('nocopy')
+
+    if (addCopyButton) {
+      var copyButton = createElement('span', 'btn btn-copy fa fa-copy')
+
+
+      var successText = createElement('span', 'btn', [document.createTextNode('Copied!')])
+      var copySuccess = createElement('div', 'copy-success hidden', successText)
+
+
+      copyButton.addEventListener('click', function (e) {
+        e.preventDefault()
+        copyToClipboard(code, language)
+
+        var button = e.target
+        var text = button.innerHTML
+        var width = button.clientWidth
+
+        // button.style.width = width + 'px'
+        button.classList.remove('fa-copy')
+        button.classList.add('fa-check')
+        // button.innerHTML = copiedText
+        copySuccess.classList.remove('hidden')
+
+        setTimeout(function () {
+          button.innerHTML = text
+          button.style.width = ''
+          button.classList.remove('fa-check')
+          button.classList.add('fa-copy')
+          copySuccess.classList.add('hidden')
+        }, 1000)
+      })
+
+      var inset = createElement('div', 'code-inset', copyButton)
+
+      pre.appendChild(inset)
+      pre.appendChild(copySuccess)
+
+    }
+
+    if (listingBlock.classList.contains('noheader')) return
 
     var block = pre.querySelector('code')
     var div = pre.parentNode
@@ -117,6 +156,7 @@ document.addEventListener('DOMContentLoaded', function () {
     if (language) {
       languageDiv.innerHTML = casedLang(language)
     }
+
     var children = [languageDiv]
 
     var originalTitle = div.parentNode.querySelector('.title')
@@ -132,34 +172,11 @@ document.addEventListener('DOMContentLoaded', function () {
 
     children.push(createElement('div', 'code-spacer'))
 
-    if (addCopyButton) {
-      var copyButton = createElement('button', 'btn btn-copy', [document.createTextNode('Copy to Clipboard')])
-      copyButton.addEventListener('click', function (e) {
-        e.preventDefault()
-        copyToClipboard(code, language)
-
-        var button = e.target
-        var text = button.innerHTML
-        var width = button.clientWidth
-
-        button.style.width = width + 'px'
-        button.classList.add('btn-success')
-        button.innerHTML = copiedText
-
-        setTimeout(function () {
-          button.innerHTML = text
-          button.style.width = ''
-          button.classList.remove('btn-success')
-        }, 1000)
-      })
-
-      children.push(copyButton)
-    }
-
     var header = createElement('div', 'code-header', children)
 
     pre.className += ' has-header'
     div.insertBefore(header, pre)
+    
   }
 
   // Apply Code Headers

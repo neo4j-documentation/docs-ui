@@ -1,4 +1,4 @@
-.doc pre.has-header {
+.doc pre.has-header code {
   border-top-left-radius: 0 !important;
   border-top-right-radius: 0 !important;
 }
@@ -14,7 +14,7 @@
 }
 
 .doc .code-header div {
-  padding: 0.6rem 0;
+  padding: 0.25rem;
   font-weight: var(--body-font-weight-bold);
 }
 
@@ -30,15 +30,17 @@
 
 .doc .code-header .code-language {
   flex-grow: 0;
-  padding: 0.6rem 0.6rem 0 0;
+  padding: 0.25rem 0;
 }
 
 .doc .code-header .btn,
+.doc pre .code-inset .btn,
+.doc pre .copy-success .btn,
 .doc .code-footer .btn {
   border: 0 none;
   background: transparent;
   color: var(--code-button-font-color) !important;
-  margin: 0.25rem 0 0.25rem 0.5rem;
+  /* margin: 0.25rem 0 0.25rem 0.5rem; */
   padding: 0.6rem 0;
   border-radius: 0.175rem;
   font-weight: var(--body-font-weight-bold);
@@ -47,13 +49,15 @@
 }
 
 .doc .code-header .btn:focus,
+.doc pre .code-inset .btn:focus,
 .doc .code-footer .btn:focus {
   outline: none;
 }
 
 .doc .code-header .btn.btn-primary,
+.doc pre .code-inset .btn.btn-copy,
 .doc .code-footer .btn.btn-primary {
-  background: var(--code-button-background);
+  /* background: var(--code-button-background); */
   /* margin-right: 0.25rem; */
   padding: 0.6rem;
 }
@@ -68,8 +72,37 @@
   background: var(--code-button-disabled-background);
 }
 
-.doc .code-header .btn-copy.btn-success {
+.doc pre .code-inset .btn-copy.fa-check {
   background: var(--color-green-600);
+  margin: 0.2rem;
+  padding: 0.4rem;
+}
+
+.doc pre .code-inset .btn-copy.fa-check::before {
+  display: block;
+  background: transparent;
+  color: var(--color-white) !important;
+}
+
+.doc pre .code-inset {
+  display: flex;
+  position: absolute;
+  top: 0rem;
+  right: 0rem;
+  font-size: calc(12.5 / var(--rem-base) * 1rem);
+}
+
+.doc pre .copy-success.hidden {
+  display: none;
+}
+
+.doc pre .copy-success .btn {
+  position: absolute;
+  top: 2rem;
+  right: 0.25rem;
+  background: var(--color-green-600);
+  color: var(--color-white) !important;
+  padding: 0.4rem;
 }
 
 .doc .code-footer {
