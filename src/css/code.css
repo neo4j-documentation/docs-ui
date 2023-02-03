@@ -87,8 +87,8 @@
 .doc pre .code-inset {
   display: flex;
   position: absolute;
-  top: 0rem;
-  right: 0rem;
+  top: 0;
+  right: 0;
   font-size: calc(12.5 / var(--rem-base) * 1rem);
 }
 

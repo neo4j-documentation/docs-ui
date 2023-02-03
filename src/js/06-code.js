@@ -37,7 +37,6 @@ import { createElement } from './modules/dom'
 
 document.addEventListener('DOMContentLoaded', function () {
   var ignore = ['gram']
-  var copiedText = 'Copied!'
 
   var cleanCode = function (code, language) {
     var input = code
@@ -94,7 +93,6 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   var addCodeHeader = function (pre) {
-
     var dotContent = pre.parentNode
     var listingBlock = dotContent.parentNode
 
@@ -103,10 +101,8 @@ document.addEventListener('DOMContentLoaded', function () {
     if (addCopyButton) {
       var copyButton = createElement('span', 'btn btn-copy fa fa-copy')
 
-
       var successText = createElement('span', 'btn', [document.createTextNode('Copied!')])
       var copySuccess = createElement('div', 'copy-success hidden', successText)
-
 
       copyButton.addEventListener('click', function (e) {
         e.preventDefault()
@@ -114,12 +110,9 @@ document.addEventListener('DOMContentLoaded', function () {
 
         var button = e.target
         var text = button.innerHTML
-        var width = button.clientWidth
 
-        // button.style.width = width + 'px'
         button.classList.remove('fa-copy')
         button.classList.add('fa-check')
-        // button.innerHTML = copiedText
         copySuccess.classList.remove('hidden')
 
         setTimeout(function () {
@@ -135,7 +128,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
       pre.appendChild(inset)
       pre.appendChild(copySuccess)
-
     }
 
     if (listingBlock.classList.contains('noheader')) return
@@ -176,7 +168,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
     pre.className += ' has-header'
     div.insertBefore(header, pre)
-    
   }
 
   // Apply Code Headers
