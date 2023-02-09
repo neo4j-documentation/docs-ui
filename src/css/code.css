@@ -57,8 +57,6 @@
 .doc .code-header .btn.btn-primary,
 .doc pre .code-inset .btn.btn-copy,
 .doc .code-footer .btn.btn-primary {
-  /* background: var(--code-button-background); */
-  /* margin-right: 0.25rem; */
   padding: 0.6rem;
 }
 
@@ -87,8 +85,8 @@
 .doc pre .code-inset {
   display: flex;
   position: absolute;
-  top: 0;
-  right: 0;
+  top: 0.25rem;
+  right: 0.25rem;
   font-size: calc(12.5 / var(--rem-base) * 1rem);
 }
 
@@ -98,11 +96,15 @@
 
 .doc pre .copy-success .btn {
   position: absolute;
-  top: 2rem;
-  right: 0.25rem;
+  top: 0.25rem;
+  right: 0.5rem;
   background: var(--color-green-600);
   color: var(--color-white) !important;
   padding: 0.4rem;
+  margin: 0.2rem;
+  line-height: 1;
+  font-size: calc(12.5 / var(--rem-base) * 1rem);
+  margin-right: 1.75rem;
 }
 
 .doc .code-footer {

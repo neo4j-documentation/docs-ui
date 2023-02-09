@@ -114,6 +114,7 @@ document.addEventListener('DOMContentLoaded', function () {
         button.classList.remove('fa-copy')
         button.classList.add('fa-check')
         copySuccess.classList.remove('hidden')
+        copySuccess.closest('pre').querySelector('code').classList.add('copied')
 
         setTimeout(function () {
           button.innerHTML = text
@@ -121,6 +122,7 @@ document.addEventListener('DOMContentLoaded', function () {
           button.classList.remove('fa-check')
           button.classList.add('fa-copy')
           copySuccess.classList.add('hidden')
+          copySuccess.closest('pre').querySelector('code').classList.remove('copied')
         }, 1000)
       })
 

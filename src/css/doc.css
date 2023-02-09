@@ -723,13 +723,17 @@ body {
   line-height: 1;
   text-transform: uppercase;
   position: absolute;
-  top: 0.625rem;
+  top: 0.875rem;
   right: 0.5rem;
   margin-right: 1.5rem;
 }
 
 .doc .listingblock:hover code[data-lang]::before {
   display: block;
+}
+
+.doc .listingblock.noheader code.copied::before {
+  display: none;
 }
 
 .doc .dlist dt {
