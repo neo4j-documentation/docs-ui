@@ -82,12 +82,14 @@ div.not-on-aura h2::after,
 div.not-on-aura h3::after,
 div.not-on-aura h4::after,
 p.not-on-aura::before,
-span.not-on-aura::after,
+section.not-on-aura .title::after,
+span.not-on-aura::after, 
 div.aura-db-enterprise h2::after,
 div.aura-db-enterprise h3::after,
 div.aura-db-enterprise h4::after,
 p.aura-db-enterprise::before,
 section.aura-db-enterprise.title::after,
+span.aura-db-enterprise::after,
 section.enterprise-edition .title::after,
 div.enterprise-edition h2::after,
 div.enterprise-edition h3::after,
@@ -149,7 +151,7 @@ div.aura-db-enterprise h3::after,
 div.aura-db-enterprise h4::after,
 p.aura-db-enterprise::before,
 section.aura-db-enterprise.title::after,
-span.enterprise-edition::after {
+span.aura-db-enterprise::after {
   content: "Aura DB Enterprise";
   color: var(--aura-db-enterprise-color);
   border-color: var(--aura-db-enterprise-color);
