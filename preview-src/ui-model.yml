@@ -213,6 +213,27 @@ page:
       urlType: internal
   # additional page attributes indexed by page-slug
     pages-data:
+      cheatsheets: &cheatsheets 
+        - name: 'Neo4j Community Edition'
+          label: 'Neo4j CE'
+          class: 'neo4j-ce'
+        - name: 'Neo4j Enterprise Edition'
+          class: 'neo4j-ee'
+          default: true
+        - name: 'AuraDB Free'
+          class: 'aura-dbf'
+        - name: 'AuraDB Professional'
+          class: 'aura-dbp'
+        - name: 'AuraDB Enterprise'
+          class: 'aura-dbe'
+          # default: true
+        - name: 'AuraDS Professional'
+          class: 'aura-dsp'
+        - name: 'AuraDS Enterprise'
+          class: 'aura-dse'
+        - name: 'Deprecated'
+          class: 'deprecated'
+          label-only: true
       industries: &industries
         - imageUrl: 'https://graphgist-portal-production.s3.amazonaws.com/graph_starter/images/sources/398/dbb/3b-/medium/noun_129319.png'
           name: 'Sports and Recreation'
@@ -278,6 +299,10 @@ page:
         - *star_wars_social_network_page
       usecases: *usecases
       industries: *industries
+    cheat-sheet:
+      cheatsheets: *cheatsheets
+      show-labels: true
+
     graphgists:
       featured-pages:
         - *first_steps_with_cypher

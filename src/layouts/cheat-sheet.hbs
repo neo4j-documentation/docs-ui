@@ -3,7 +3,8 @@
   <head>
 {{> head defaultPageTitle='Untitled'}}
   </head>
-  <body class="article{{#with (or page.attributes.role page.role)}} {{{this}}}{{/with}}{{#with asciidoc.attributes.role}} {{{this}}}{{/with}}{{#with (or page.attributes.theme "cheat-sheet")}} {{{this}}}{{/with}}{{#with (or page.attributes.styles page.styles)}} {{{this}}}{{/with}}">
+  <body class="article{{#with (or page.attributes.rolesss page.rolesss)}} {{{this}}}{{/with}}{{#with asciidoc.attributes.role}} {{{this}}}{{/with}}{{#with (or page.attributes.theme "cheat-sheet")}} {{{this}}}{{/with}}{{#with (or page.attributes.styles page.styles)}} {{{this}}}{{/with}}{{#with (or page.attributes.labels page.labels)}} {{{this}}}{{/with}}">
+  
 {{> header}}
 {{> body}}
 {{> footer}}

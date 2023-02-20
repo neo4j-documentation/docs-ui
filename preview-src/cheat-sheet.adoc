@@ -1,13 +1,18 @@
 = Cypher Cheat Sheet
-:page-theme: cheat-sheet
 :neo4j-docs-base-uri: https://neo4j.com/docs
-// :page-toclevels: -1
+:page-theme: cheat-sheet
+:page-slug: cheat-sheet
+// :page-show-labels: true
+:page-no-toolbar: true
 
-== Read query
+
+== Read query 
 
 
 === Read Query Structure
 
+[.neo4j-ee]
+====
 [source, cypher, role=noheader]
 ----
 [USE]
@@ -18,21 +23,29 @@ RETURN [ORDER BY] [SKIP] [LIMIT]
 ----
 
 [.description]
---
-Baseline for pattern search operations. 
+Displayed for neo4j-ee
+====
 
-* https://neo4j.com/docs/cypher-manual/5/clauses/use/[`USE`^] clause.
-* https://neo4j.com/docs/cypher-manual/5/clauses/match/[`MATCH`^] clause.
-* https://neo4j.com/docs/cypher-manual/5/clauses/optional-match/[`OPTIONAL MATCH`^] clause.
-* https://neo4j.com/docs/cypher-manual/5/clauses/with/[`WITH`^] clause.
-* https://neo4j.com/docs/cypher-manual/5/clauses/return/[`RETURN`^] clause.
-* Cypher keywords are not case-sensitive.
-* Cypher is case-sensitive for variables.
---
+[.neo4j-ee.deprecated]
+====
+[source, cypher, role=noheader]
+----
+[USE]
+[MATCH [WHERE]]
+[OPTIONAL MATCH [WHERE]]
+[WITH [ORDER BY] [SKIP] [LIMIT] [WHERE]]
+RETURN [ORDER BY] [SKIP] [LIMIT]
+----
 
+[.description]
+Displayed for neo4j-ee and deprecated
+====
 
 === link:{neo4j-docs-base-uri}/cypher-manual/{page-version}/clauses/match/[MATCH^]
 
+
+[.neo4j-ee.aura-dse]
+====
 [source, cypher, role=noheader]
 ----
 MATCH (n)
@@ -40,8 +53,12 @@ RETURN n AS node
 ----
 
 [.description]
-Find all nodes and return all nodes.
+Displayed for neo4j-ee and aura-dse
+====
 
+
+[.deprecated]
+====
 [source, cypher, role=noheader]
 ----
 MATCH (n:A&B)
@@ -49,14 +66,25 @@ RETURN n.name AS name
 ----
 
 [.description]
-A `MATCH` with an AND expression for the node label returns the nodes that contains both the specified labels.
+Displayed for everything, but deprecated
+====
 
-[.labels]
-+++
-<span class="label label--enterprise">Enterprise</span>
-<span class="label label--auradb">AuraDB</span>
-+++
 
+[.aura-dbe]
+====
+[source, cypher, role=noheader]
+----
+MATCH (n:A&B)
+RETURN n.name AS name
+----
+
+[.description]
+Displayed for aura-dbe
+====
+
+
+[.aura-dbf.aura-dbe]
+====
 [source, cypher, role=noheader]
 ----
 MATCH (n:A|B)
@@ -65,350 +93,45 @@ RETURN n.name AS name
 ----
 
 [.description]
-A `MATCH` with an OR expression for the node label returns the nodes that contains either of the the specified labels.
+Displayed for aura-dbf and aura-dbe
+====
 
+[.aura-dbf.aura-dbe.deprecated]
+====
 [source, cypher, role=noheader]
 ----
-MATCH (n:!A)
+MATCH (n:A|B)
 RETURN n.name AS name
 
 ----
 
 [.description]
-A `MATCH` with a NOT expression for the node label returns the nodes that does not contain the specified label.
+Displayed for aura-dbf and aura-dbe and deprecated
+====
 
-[source, cypher, role=noheader]
-----
-MATCH (n:%)
-RETURN n.name AS name
-----
 
+[.neo4j-ce]
+== Neo4j CE Only
+
+
+=== Uses equivalent of page-labels
+
+
+====
 [.description]
-A `MATCH` with a _WILDCARD_ expression for the node label returns the nodes that contains any label.
+This whole section should only be visible when neo4j-ce is selected.
+====
 
-[source, cypher, role=noheader]
-----
-MATCH (n:(!A&!B)|C)
-RETURN n.name AS name
-----
 
+[.deprecated]
+== Deprecated
+
+
+[.deprecated]
+=== Deprecated examples
+
+
+====
 [.description]
-A `MATCH` with a nesting of label expressions for the node label returns the nodes for which the full expression is true.
-
-[source, cypher, role=noheader]
-----
-MATCH (n:Person)-[:KNOWS]->(m:Person)
-WHERE n.name = 'Alice'
-RETURN m AS person
-----
-
-[.description]
-Node patterns can contain labels and properties.
-
-[source, cypher, role=noheader]
-----
-MATCH (n:Label)-->(m:Label)
-RETURN n, m
-----
-
-[.description]
-Any pattern can be used in `MATCH`.
-
-[source, cypher, role=noheader]
-----
-MATCH (n:Person {name: 'Alice'})-->(m:Person)
-RETURN m AS node
-----
-
-[.description]
-Patterns with node properties can be used in MATCH .
-
-[source, cypher, role=noheader]
-----
-MATCH (n:Label)-[r:R1|R2]->(m:Label)
-RETURN r.name AS name
-    
-----
-
-[.description]
-A MATCH with an OR expression for the relationship type returns the relationships that contains either of the specified types.
-
-[source, cypher, role=noheader]
-----
-MATCH (n:Label)-[r:!R1]->(m:Label)
-RETURN r.name AS name
-    
-----
-
-[.description]
-A MATCH with a NOT expression for the relationship type returns the relationships that does not contain the specified type.
-
-[source, cypher, role=noheader]
-----
-MATCH (n:Label)-[r:(!R1&!R2)|R3]->(m:Label)
-RETURN r.name as name
-    
-----
-
-[.description]
-A MATCH with a nesting of relationship type expressions for the relationship type returns the nodes for which the full expression is true.
-
-[source, cypher, role=noheader]
-----
-MATCH p = (n:Label)-->(m:Label)
-RETURN p AS path
-----
-
-[.description]
-Assign a path to p.
-
-
-[[delete]]
-=== link:{neo4j-docs-base-uri}/cypher-manual/{page-version}/clauses/delete/[DELETE^]
-
-[source, cypher, role=noheader]
-----
-MATCH (n:Label)-[r]->(m:Label)
-WHERE r.id = 123
-DELETE r
-----
-
-[.description]
-Delete a relationship.
-
-// [.labels]
-// label:enterprise[]
-
-[source, cypher, role=noheader]
-----
-MATCH ()-[r]->()
-DELETE r
-----
-
-[.description]
-Delete all relationships.
-
-[source, cypher, role=noheader]
-----
-MATCH (n:Label)
-WHERE n.id = 123
-DETACH DELETE n
-----
-
-[.description]
-Delete a node and all relationships connected to it.
-
-[source, cypher, role=noheader]
-----
-MATCH (n:Label)-[r]-()
-WHERE r.id = 123 AND n.id = 'abc'
-DELETE n, r
-----
-
-[.description]
-Delete a node and a relationship. An error will be thrown if the given node is attached to more than one relationship.
-
-[source, cypher, role=noheader]
-----
-MATCH (n1:Label)-[r {id: 123}]->(n2:Label)
-CALL {
-  WITH n1 MATCH (n1)-[r1]-()
-  RETURN count(r1) AS rels1
-}
-CALL {
-  WITH n2 MATCH (n2)-[r2]-()
-  RETURN count(r2) AS rels2
-}
-DELETE r
-RETURN
-  n1.name AS node1, rels1 - 1 AS relationships1,
-  n2.name AS node2, rels2 - 1 AS relationships2
-----
-
-[.description]
-Delete a relationship and return the number of relationships for each node after the deletion.
-
-[source, cypher, role=noheader]
-----
-MATCH (n)
-DETACH DELETE n
-----
-
-[.description]
-Delete all nodes and relationships from the database.
-
-== Write Query
-
-[[write-only-query-structure]]
-=== Write-Only Query Structure
-
-[.page-labels]
-+++
-<span class="label label--enterprise">Enterprise</span>
-<span class="label label--auradb">AuraDB</span>
-+++
-
-[source, cypher, role="noheader"]
-----
-[USE]
-[CREATE]
-[MERGE [ON CREATE ...] [ON MATCH ...]]
-[WITH [ORDER BY] [SKIP] [LIMIT] [WHERE]]
-[SET]
-[DELETE]
-[REMOVE]
-[RETURN [ORDER BY] [SKIP] [LIMIT]]
-----
-
-[.description]
---
-Baseline for write operations. 
-
-* link:{neo4j-docs-base-uri}/cypher-manual/{page-version}/clauses/create/[CREATE^] clause.
-* link:{neo4j-docs-base-uri}/cypher-manual/{page-version}/clauses/merge/[MERGE^] clause.
-* link:{neo4j-docs-base-uri}/cypher-manual/{page-version}/clauses/with/[WITH^] clause.
-* link:{neo4j-docs-base-uri}/cypher-manual/{page-version}/clauses/set/[SET^] clause.
-* link:{neo4j-docs-base-uri}/cypher-manual/{page-version}/clauses/delete/[DELETE^] clause.
-* link:{neo4j-docs-base-uri}/cypher-manual/{page-version}/clauses/remove/[REMOVE^] clause.
-* link:{neo4j-docs-base-uri}/cypher-manual/{page-version}/clauses/return/[RETURN^] clause.
---
-
-
-=== link:{neo4j-docs-base-uri}/cypher-manual/{page-version}/clauses/create/[CREATE^]
-
-[source, cypher, role=noheader]
-----
-CREATE (n:Label {name: $value})
-----
-
-[.description]
-Create a node with the given label and properties.
-
-[source, cypher, role=noheader]
-----
-CREATE (n:Label $map)
-----
-
-[.description]
-Create a node with the given label and properties.
-
-[source, cypher, role=noheader]
-----
-CREATE (n:Label)-[r:TYPE]->(m:Label)
-----
-
-[.description]
-Create a relationship with the given relationship type and direction; bind a variable r to it.
-
-[source, cypher, role=noheader]
-----
-CREATE (n:Label)-[:TYPE {name: $value}]->(m:Label)
-----
-
-[.description]
-Create a relationship with the given type, direction, and properties.
-
-
-=== link:{neo4j-docs-base-uri}/cypher-manual/{page-version}/clauses/merge/[MERGE^]
-
-[source, cypher, role=noheader]
-----
-MERGE (n:Label {name: $value})
-ON CREATE SET n.created = timestamp()
-ON MATCH SET
-  n.counter = coalesce(n.counter, 0) + 1,
-  n.accessTime = timestamp()
-----
-
-[.description]
-Match a pattern or create it if it does not exist. Use ON CREATE and ON MATCH for conditional updates.
-
-[source, cypher, role=noheader]
-----
-MATCH
-  (a:Person {name: $value1}),
-  (b:Person {name: $value2})
-MERGE (a)-[r:LOVES]->(b)
-----
-
-[.description]
-MERGE finds or creates a relationship between the nodes.
-
-[source, cypher, role=noheader]
-----
-MATCH (a:Person {name: $value1})
-MERGE (a)-[r:KNOWS]->(b:Person {name: $value3})
-----
-
-[.description]
-MERGE finds or creates paths attached to the node.
-
-
-== General
-
-=== https://neo4j.com/docs/cypher-manual/5/syntax/working-with-null/[null^]
-
-[.description]
---
-`null` is used to represent missing/undefined values.
-
-`null` is not equal to `null`. Not knowing two values does not imply that they are the same value. So the expression `null = null` yields `null` and not `true`. To check if an expression is `null`, use `IS NULL`.
-
-Arithmetic expressions, comparisons and function calls (except `coalesce`) will return `null` if any argument is `null`.
-
-An attempt to access a missing element in a list or a property that does not exist yields `null`.
-
-In `OPTIONAL MATCH` clauses, nulls will be used for missing parts of the pattern.
---
-
-
-== Clauses
-
-=== link:{neo4j-docs-base-uri}/cypher-manual/{page-version}/syntax/expressions/[CASE^]
-
-[.page-labels]
-+++
-<span class="label label--enterprise">Enterprise</span>
-<span class="label label--auradb">AuraDB</span>
-+++
-
-[.notes]
-The CASE expression can be used in expression positions, for example as part of the WITH or RETURN clauses.
-
-[source, cypher, role=noheader]
-----
-CASE n.eyes
-  WHEN 'blue' THEN 1
-  WHEN 'brown' THEN 2
-  ELSE 3
-END
-----
-
-[.description]
-Return THEN value from the matching WHEN value. The ELSE value is optional, and substituted for null if missing.
-
-[source, cypher, role=noheader]
-----
-CASE
-  WHEN n.eyes = 'blue' THEN 1
-  WHEN n.age < 40 THEN 2
-  ELSE 3
-END
-----
-
-[.description]
-Return THEN value from the first WHEN predicate evaluating to true. Predicates are evaluated in order.
-
-[source, cypher, role=noheader]
-----
-MATCH (n)-[r]->(m)
-RETURN
-CASE
-  WHEN n:A&B THEN 1
-  WHEN r:!R1&!R2 THEN 2
-  ELSE -1
-END AS result
-----
-
-[.description]
-A relationship type expression and a label expression can be used in a CASE expression.
+This is deprecated but should be visible always
+====
