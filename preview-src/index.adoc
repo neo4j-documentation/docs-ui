@@ -800,6 +800,14 @@ An advantage of enhancing graph visualization with these algorithms is that we c
 </div>
 
 <div class="box">
+  <span class="label label--aura-db-enterprise">AuraDB Enterprise</span>
+</div>
+
+<div class="box">
+  <span class="label label--not-on-aura">Not Available on Aura</span>
+</div>
+
+<div class="box">
   <span class="label label--apoc-core">APOC Core</span>
 </div>
 
