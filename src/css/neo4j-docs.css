@@ -152,7 +152,7 @@ div.aura-db-enterprise h4::after,
 p.aura-db-enterprise::before,
 section.aura-db-enterprise.title::after,
 span.aura-db-enterprise::after {
-  content: "Aura DB Enterprise";
+  content: "AuraDB Enterprise";
   color: var(--aura-db-enterprise-color);
   border-color: var(--aura-db-enterprise-color);
 }
