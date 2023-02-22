@@ -20,6 +20,14 @@ If you typed the URL of this page manually, please double check that you entered
 </div>
 {{/with}}
 
+{{#with (or page.attributes.labels page.labels)}}
+<div class="paragraph labels">
+  {{#each (split-string this ' ')}}
+    <span class="label label--{{{this}}}">{{{this}}}</span>
+  {{/each}}
+</div>
+{{/with}}
+
 {{!-- <span class="{{#with asciidoc.attributes.role}} {{{this}}}{{/with}}"></span> --}}
 {{{page.contents}}}
 {{#if (ne page.attributes.certificate undefined)}}
