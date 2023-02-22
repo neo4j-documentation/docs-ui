@@ -215,7 +215,6 @@ page:
     pages-data:
       cheatsheets: &cheatsheets 
         - name: 'Neo4j Community Edition'
-          label: 'Neo4j CE'
           class: 'neo4j-ce'
         - name: 'Neo4j Enterprise Edition'
           class: 'neo4j-ee'
@@ -233,6 +232,9 @@ page:
           class: 'aura-dse'
         - name: 'Deprecated'
           class: 'deprecated'
+          label-only: true
+        - name: 'Configuration'
+          class: 'configuration'
           label-only: true
       industries: &industries
         - imageUrl: 'https://graphgist-portal-production.s3.amazonaws.com/graph_starter/images/sources/398/dbb/3b-/medium/noun_129319.png'

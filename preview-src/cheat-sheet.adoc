@@ -6,42 +6,123 @@
 :page-no-toolbar: true
 
 
-== Read query 
+[.configuration]
+== How the cheat sheet works
 
 
-=== Read Query Structure
+=== Example structure
+
+=====
+[source, cypher, role=noheader]
+-----
+[.neo4j-ee] <1>
+==== <2>
+[source, cypher, role=noheader] <3>
+---- 
+MATCH (n)
+RETURN n AS node
+----
+
+[.description] <4>
+--  <5>
+Description
+
+More description
+--
+====
+-----
+
+[.description]
+--
+<1> Add a role for each cheat-sheet that the example applies to. Leave blank if it applies in all cases.
+<2> Use an example block to contain the Cypher example and description.
+<3> Add an optional verbatim block, specifying `[source, cypher,`role=noheader`]`
+<4> Add a required description block.
+<5> If the description consists of more than one paragraph of text, use an open block.
+--
+=====
+
+
+=== Playbook configuration
+
+=====
+[source, cypher, role=noheader]
+-----
+asciidoc:
+  attributes:
+    page-cheatsheets: <1>
+      - name: 'Neo4j Enterprise Edition' <2>
+        label: 'Enterprise Edition' <3>
+        class: 'neo4j-ee' <4>
+        default: true <5>
+      - name: 'Neo4j Community Edition'
+        class: 'neo4j-ce'
+      - name: 'Deprecated'
+        class: 'deprecated'
+        label-only: true <6>
+-----
+
+[.description]
+--
+<1> Add a `page-cheatsheets` section to the playbook to define the different views that a user can choose from. In this example we've added two views: Neo4j Enterprise Edition and Neo4j Community Edition.
+<2> Add a name for each view. This text is displayed in the dropdown that you use to select which Cheat Sheet you want to view. 
+<3> [Optional] Add label text. When an example is not applicable in all views, a label is displayed to indicate which views it applies to. If no `label` value is specified, the value of `name` is used. 
+<4> Specify a class for each view. This is used to add a role to the example block. For example, the class `neo4j-ee` is specified by `[.neo4j-ee]`.
+<5> Specify a default view. This is the view that is displayed when the page is loaded.
+<6> If you want to display a label for some entries without that label appearing in the dropdown, you can use the `label-only` attribute. In this example, entries that have the `[.deprecated]` role will have the `Deprecated` label displayed, but 'Deprecated' is not an option you can select from the dropdown. In this preview build, both `Configuration` and `Deprecated` have been added as `label-only` views.
+--
+=====
+
+
+== Section title
+
+
+=== Subsection title
+
+
+====
+[source, cypher, role=noheader]
+----
+<CYPHER EXAMPLE>
+----
+
+[.description]
+Text describing the example. This example has no role, and therefore no labels. It is displayed in all views.
+====
 
 [.neo4j-ee]
 ====
 [source, cypher, role=noheader]
 ----
-[USE]
-[MATCH [WHERE]]
-[OPTIONAL MATCH [WHERE]]
-[WITH [ORDER BY] [SKIP] [LIMIT] [WHERE]]
-RETURN [ORDER BY] [SKIP] [LIMIT]
+<CYPHER EXAMPLE>
 ----
 
 [.description]
-Displayed for neo4j-ee
+This example only applies to Neo4j Enterprise Edition and is marked with the `[.neo4j-ee]` role.
 ====
 
-[.neo4j-ee.deprecated]
-====
-[source, cypher, role=noheader]
-----
-[USE]
-[MATCH [WHERE]]
-[OPTIONAL MATCH [WHERE]]
-[WITH [ORDER BY] [SKIP] [LIMIT] [WHERE]]
-RETURN [ORDER BY] [SKIP] [LIMIT]
-----
+=== link:{neo4j-docs-base-uri}/cypher-manual/{page-version}/clauses/match/[Title with link^]
 
+
+====
 [.description]
-Displayed for neo4j-ee and deprecated
+This entry has no example code.
 ====
 
-=== link:{neo4j-docs-base-uri}/cypher-manual/{page-version}/clauses/match/[MATCH^]
+
+====
+[.description]
+--
+This entry has no example code.
+
+It contains:
+
+- more than one paragraph
+- a list
+
+Therefore it is formatted as an open block
+--
+====
 
 
 [.neo4j-ee.aura-dse]
@@ -53,7 +134,7 @@ RETURN n AS node
 ----
 
 [.description]
-Displayed for neo4j-ee and aura-dse
+Displayed for Neo4j Enterprise Edition and AuraDS Enterprise
 ====
 
 
@@ -66,7 +147,7 @@ RETURN n.name AS name
 ----
 
 [.description]
-Displayed for everything, but deprecated
+This example is displayed in all views, and is deprecated.
 ====
 
 
@@ -79,7 +160,7 @@ RETURN n.name AS name
 ----
 
 [.description]
-Displayed for aura-dbe
+This example is displayed for AuraDB Enterprise (`[.aura-dbe]`)
 ====
 
 
@@ -93,33 +174,61 @@ RETURN n.name AS name
 ----
 
 [.description]
-Displayed for aura-dbf and aura-dbe
+This example is displayed for both AuraDB Free and AuraDB Enterprise.
 ====
 
-[.aura-dbf.aura-dbe.deprecated]
+
+[.neo4j-ce.neo4j-ee]
+== Not on Aura
+
+=== Not on Aura examples
+
+====
+[.description]
+--
+This section applies to Neo4j Community Edition and Neo4j Enterprise Edition. It does not apply to any flavour of Aura.
+So, we've added two roles: `[.neo4j-ce.neo4j-ee]`.
+
+When generating a Neo4j (ie not Aura) cheat sheet, we would only add those two versions to the playbook:
+
+[source, asciidoc, role=noheader]
+----
+- name: 'Neo4j Community Edition'
+  class: 'neo4j-ce'
+- name: 'Neo4j Enterprise Edition'
+  class: 'neo4j-ee'
+  default: true
+----
+
+In this example the labels would _not_ be displayed.
+
+If we add any other versions to the playbook, such as AuraDB Enterprise, the labels will be displayed when viewing the examples for Neo4j Community Edition or Neo4j Enterprise Edition, but the content will be hidden entirely when viewing the AuraDB Enterprise examples.
+--
+====
+
+[.neo4j-ce]
+== Neo4j Community Edition Only
+
+
+=== Labeling example
+
+
+====
+[.description]
+The title of this section has a `[.neo4j-ce]` role. All subsections and examples within this section will be treated as Neo4j Community Edition only.
+Labels are not automatically added to each subsection or example, but they are all hidden when a cheat sheet view other than Neo4j Community Edition is selected.
+====
+
+
 ====
 [source, cypher, role=noheader]
 ----
-MATCH (n:A|B)
-RETURN n.name AS name
-
+<NEO4J COMMUNITY EDITION CYPHER EXAMPLE>
 ----
 
 [.description]
-Displayed for aura-dbf and aura-dbe and deprecated
-====
-
-
-[.neo4j-ce]
-== Neo4j CE Only
-
-
-=== Uses equivalent of page-labels
-
-
-====
-[.description]
-This whole section should only be visible when neo4j-ce is selected.
+This example is not explicitly marked as Neo4j Community Edition, but it is in a section that is marked as Neo4j Community Edition.
+It is displayed or hidden accordingly.
 ====
 
 
@@ -131,7 +240,21 @@ This whole section should only be visible when neo4j-ce is selected.
 === Deprecated examples
 
 
+[.deprecated]
 ====
 [.description]
-This is deprecated but should be visible always
+This section contains deprecated examples. The section has a `[.deprecated]` role, and the subsection and examples also have the role.
+That's a lot of labels. 
+====
+
+
+[.deprecated]
+====
+[source, cypher, role=noheader]
+----
+<DEPRECATED CYPHER EXAMPLE>
+----
+
+[.description]
+Deprecated cypher example.
 ====
