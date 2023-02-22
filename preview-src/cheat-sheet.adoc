@@ -36,7 +36,7 @@ More description
 --
 <1> Add a role for each cheat-sheet that the example applies to. Leave blank if it applies in all cases.
 <2> Use an example block to contain the Cypher example and description.
-<3> Add an optional verbatim block, specifying `[source, cypher,`role=noheader`]`
+<3> Add an optional block for a Cypher example, specifying `[source, cypher,`role=noheader`].
 <4> Add a required description block.
 <5> If the description consists of more than one paragraph of text, use an open block.
 --
