@@ -46,11 +46,13 @@
 }
 
 .label--not-on-aura {
+  content: "Not Available on Aura";
   background: var(--color-red-700);
   color: var(--color-white);
 }
 
 .label--aura-db-enterprise {
+  content: "AuraDB Enterprise";
   background: var(--color-blue-600);
   color: var(--color-white);
 }
