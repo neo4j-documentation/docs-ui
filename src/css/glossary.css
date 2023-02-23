@@ -29,7 +29,7 @@ code .glossary-term::after {
   width: 220px;
   /* overflow: hidden; */
   box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-  display: none;
+  /* display: none; */
 }
 
 .tooltip::after {
@@ -61,7 +61,7 @@ code .glossary-term::after {
 }
 
 .tooltip .tooltip-header {
-  background: var(--code-header-background);
+  background: var(--color-grey-800);
   border-top-left-radius: 0.25rem;
   border-top-right-radius: 0.25rem;
   color: var(--color-white);

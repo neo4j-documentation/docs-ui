@@ -172,6 +172,7 @@ body {
 }
 
 .doc pre {
+  color: var(--code-font-color);
   font-size: calc(16 / var(--rem-base) * 1rem);
   line-height: 1.5;
   margin: 0;
@@ -181,7 +182,7 @@ body {
   opacity: 0;
 }
 
-.doc .listingblock.noheader code[data-lang]::before {
+.doc .listingblock code[data-lang]::before {
   opacity: 0.9;
 }
 
@@ -705,7 +706,7 @@ body {
   display: block;
   overflow-x: auto;
   padding: 0.75rem;
-  border-radius: 0.5rem;
+  border-radius: 0.25rem;
   border: 1px solid var(--pre-border-color) !important;
 }
 

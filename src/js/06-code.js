@@ -111,16 +111,16 @@ document.addEventListener('DOMContentLoaded', function () {
         var button = e.target
         var text = button.innerHTML
 
-        button.classList.remove('fa-copy')
-        button.classList.add('fa-check')
+        // button.classList.remove('fa-copy')
+        // button.classList.add('fa-check')
         copySuccess.classList.remove('hidden')
         copySuccess.closest('pre').querySelector('code').classList.add('copied')
 
         setTimeout(function () {
           button.innerHTML = text
           button.style.width = ''
-          button.classList.remove('fa-check')
-          button.classList.add('fa-copy')
+          // button.classList.remove('fa-check')
+          // button.classList.add('fa-copy')
           copySuccess.classList.add('hidden')
           copySuccess.closest('pre').querySelector('code').classList.remove('copied')
         }, 1000)
@@ -151,7 +151,9 @@ document.addEventListener('DOMContentLoaded', function () {
       languageDiv.innerHTML = casedLang(language)
     }
 
-    var children = [languageDiv]
+    // var children = [languageDiv]
+
+    var children = []
 
     var originalTitle = div.parentNode.querySelector('.title')
     if (originalTitle) {

@@ -1,9 +1,12 @@
 .doc pre.has-header code {
+  border-top: none !important;
   border-top-left-radius: 0 !important;
   border-top-right-radius: 0 !important;
 }
 
 .doc .code-header {
+  border: 1px solid var(--pre-border-color) !important;
+  border-bottom: none !important;
   padding: 0.2rem 0.75rem;
   border-top-left-radius: 0.25rem;
   border-top-right-radius: 0.25rem;
@@ -14,7 +17,7 @@
 }
 
 .doc .code-header div {
-  padding: 0.25rem;
+  padding: 0.25rem 0;
   font-weight: var(--body-font-weight-bold);
 }
 
@@ -23,9 +26,13 @@
 }
 
 .doc .code-header .code-title {
-  color: var(--color-grey-500);
   padding-right: 0.5em;
   flex-grow: 1;
+}
+
+.doc .code-header .code-title,
+.doc .code-header .code-language {
+  color: var(--body-font-color);
 }
 
 .doc .code-header .code-language {
@@ -71,7 +78,7 @@
 }
 
 .doc pre .code-inset .btn-copy.fa-check {
-  background: var(--color-green-600);
+  background: var(--color-grey-600);
   margin: 0.2rem;
   padding: 0.4rem;
 }
@@ -96,15 +103,30 @@
 
 .doc pre .copy-success .btn {
   position: absolute;
-  top: 0.25rem;
-  right: 0.5rem;
-  background: var(--color-green-600);
+  top: -1.5rem;
+  right: -0.75rem;
+  background: var(--color-grey-600);
   color: var(--color-white) !important;
   padding: 0.4rem;
   margin: 0.2rem;
   line-height: 1;
   font-size: calc(12.5 / var(--rem-base) * 1rem);
-  margin-right: 1.75rem;
+  width: 64px;
+}
+
+.doc pre .copy-success .btn::after {
+  width: 0;
+  height: 0;
+  position: absolute;
+  content: "";
+  display: block;
+  bottom: 0;
+  left: 50%;
+  margin-left: -0.25rem;
+  margin-bottom: -0.25rem;
+  border-left: 0.5rem solid transparent;
+  border-right: 0.5rem solid transparent;
+  border-top: 0.5rem solid var(--color-grey-600);
 }
 
 .doc .code-footer {
