@@ -182,10 +182,6 @@ body {
   opacity: 0;
 }
 
-.doc .listingblock code[data-lang]::before {
-  opacity: 0.9;
-}
-
 .doc blockquote {
   margin: 0;
 }
@@ -716,6 +712,7 @@ body {
 }
 
 .doc .listingblock code[data-lang]::before {
+  opacity: 0.9;
   content: attr(data-lang);
   display: none;
   color: var(--pre-annotation-font-color);

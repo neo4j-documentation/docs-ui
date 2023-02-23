@@ -105,7 +105,7 @@
   position: absolute;
   top: -1.5rem;
   right: -0.75rem;
-  background: var(--color-grey-600);
+  background: var(--color-grey-700);
   color: var(--color-white) !important;
   padding: 0.4rem;
   margin: 0.2rem;
@@ -126,7 +126,7 @@
   margin-bottom: -0.25rem;
   border-left: 0.5rem solid transparent;
   border-right: 0.5rem solid transparent;
-  border-top: 0.5rem solid var(--color-grey-600);
+  border-top: 0.5rem solid var(--color-grey-700);
 }
 
 .doc .code-footer {
