@@ -4,16 +4,16 @@
   border-top-right-radius: 0 !important;
 }
 
-.doc .code-header {
-  border: 1px solid var(--pre-border-color) !important;
-  border-bottom: none !important;
-  padding: 0.2rem 0.75rem;
-  border-top-left-radius: 0.25rem;
-  border-top-right-radius: 0.25rem;
-  background: var(--code-header-background);
+.doc .listingblock .code-title,
+.doc .listingblock .code-inset {
+  padding: 0.5rem 0.75rem;
+  /* background: var(--code-header-background); */
   color: var(--code-header-font-color);
-  font-size: 0.8em;
   display: flex;
+}
+
+.doc .listingblock .code-title {
+  flex-grow: 1;
 }
 
 .doc .code-header div {
@@ -21,31 +21,32 @@
   font-weight: var(--body-font-weight-bold);
 }
 
-.doc .code-header .code-spacer {
+.doc .listingblock .code-spacer {
   flex-grow: 1;
 }
 
-.doc .code-header .code-title {
-  padding-right: 0.5em;
-  flex-grow: 1;
+.doc .listingblock .code-title,
+.doc .listingblock .code-language {
+  color: var(--pre-annotation-font-color);
 }
 
-.doc .code-header .code-title,
-.doc .code-header .code-language {
-  color: var(--body-font-color);
-}
-
-.doc .code-header .code-language {
+.doc .listingblock .code-language {
   flex-grow: 0;
   padding: 0.25rem 0;
 }
 
-.doc .code-header .btn,
-.doc pre .code-inset .btn,
-.doc pre .copy-success .btn,
+.doc pre {
+  display: flex;
+}
+
+.doc pre .code-inset {
+  display: flex;
+}
+
+.doc .listingblock .code-inset .btn,
 .doc .code-footer .btn {
   border: 0 none;
-  background: transparent;
+  /* background: transparent; */
   color: var(--code-button-font-color) !important;
   /* margin: 0.25rem 0 0.25rem 0.5rem; */
   padding: 0.6rem 0;
@@ -55,56 +56,45 @@
   text-align: center;
 }
 
-.doc .code-header .btn:focus,
-.doc pre .code-inset .btn:focus,
+.doc .listingblock .code-inset .btn:focus,
 .doc .code-footer .btn:focus {
   outline: none;
 }
 
-.doc .code-header .btn.btn-primary,
-.doc pre .code-inset .btn.btn-copy,
+.doc .listingblock .code-inset .btn.btn-copy,
 .doc .code-footer .btn.btn-primary {
   padding: 0.6rem;
 }
 
-.doc .code-header .btn.btn-primary:active,
-.doc .code-footer .btn.btn-primary:active {
-  background: var(--code-button-active-background);
-}
-
-.doc .code-header .btn.btn-primary:disabled,
-.doc .code-footer .btn.btn-primary:disabled {
-  background: var(--code-button-disabled-background);
-}
-
-.doc pre .code-inset .btn-copy.fa-check {
+.doc .listingblock .code-inset .btn-copy.fa-check {
   background: var(--color-grey-600);
   margin: 0.2rem;
   padding: 0.4rem;
 }
 
-.doc pre .code-inset .btn-copy.fa-check::before {
+.doc .listingblock .code-inset .btn-copy.fa-check::before {
   display: block;
   background: transparent;
   color: var(--color-white) !important;
 }
 
-.doc pre .code-inset {
+.doc .listingblock .code-inset {
   display: flex;
-  position: absolute;
-  top: 0.25rem;
-  right: 0.25rem;
+  margin: 0 0 0 auto;
+  position: relative;
+  /* top: 0.5rem; */
+  /* right: 0.25rem; */
   font-size: calc(12.5 / var(--rem-base) * 1rem);
 }
 
-.doc pre .copy-success.hidden {
+.doc .code-inset .copy-success.hidden {
   display: none;
 }
 
-.doc pre .copy-success .btn {
+.doc .code-inset .copy-success .btn {
   position: absolute;
-  top: -1.5rem;
-  right: -0.75rem;
+  top: -1.25rem;
+  right: -0.25rem;
   background: var(--color-grey-700);
   color: var(--color-white) !important;
   padding: 0.4rem;
@@ -114,7 +104,7 @@
   width: 64px;
 }
 
-.doc pre .copy-success .btn::after {
+.doc .code-inset .copy-success .btn::after {
   width: 0;
   height: 0;
   position: absolute;

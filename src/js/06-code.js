@@ -93,10 +93,36 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   var addCodeHeader = function (pre) {
-    var dotContent = pre.parentNode
-    var listingBlock = dotContent.parentNode
+    var block = pre.querySelector('code')
+    var code = block.innerText
+
+    var div = pre.parentNode
+    var listingBlock = div.parentNode
 
     var addCopyButton = !listingBlock.classList.contains('nocopy')
+
+    // if (listingBlock.classList.contains('noheader')) return
+
+    var language = block.hasAttribute('class') &&
+      block.getAttribute('class').match(/language-([a-z0-9-])+/i)[0].replace('language-', '')
+
+    if (language && ignore.indexOf(language.toLowerCase()) > -1) return
+
+    // var children = []
+
+    var originalTitle = div.parentNode.querySelector('.title')
+
+    // if (!originalTitle)  return
+
+    if (originalTitle) {
+      var titleDiv = document.createElement('div')
+      titleDiv.className = 'code-title'
+      titleDiv.innerHTML = originalTitle.innerHTML
+      originalTitle.style.display = 'none'
+      div.insertBefore(titleDiv, pre)
+    }
+
+    pre.className += ' has-header'
 
     if (addCopyButton) {
       var copyButton = createElement('span', 'btn btn-copy fa fa-copy')
@@ -114,7 +140,7 @@ document.addEventListener('DOMContentLoaded', function () {
         // button.classList.remove('fa-copy')
         // button.classList.add('fa-check')
         copySuccess.classList.remove('hidden')
-        copySuccess.closest('pre').querySelector('code').classList.add('copied')
+        copySuccess.closest('.content').querySelector('code').classList.add('copied')
 
         setTimeout(function () {
           button.innerHTML = text
@@ -122,56 +148,21 @@ document.addEventListener('DOMContentLoaded', function () {
           // button.classList.remove('fa-check')
           // button.classList.add('fa-copy')
           copySuccess.classList.add('hidden')
-          copySuccess.closest('pre').querySelector('code').classList.remove('copied')
+          copySuccess.closest('.content').querySelector('code').classList.remove('copied')
         }, 1000)
       })
 
       var inset = createElement('div', 'code-inset', copyButton)
+      if (language) inset.dataset.lang = casedLang(language)
 
-      pre.appendChild(inset)
-      pre.appendChild(copySuccess)
+      inset.appendChild(copySuccess)
+
+      if (originalTitle) {
+        div.insertBefore(inset, pre)
+      } else {
+        pre.appendChild(inset)
+      }
     }
-
-    if (listingBlock.classList.contains('noheader')) return
-
-    var block = pre.querySelector('code')
-    var div = pre.parentNode
-
-    var code = block.innerText
-
-    var language = block.hasAttribute('class') &&
-      block.getAttribute('class').match(/language-([a-z0-9-])+/i)[0].replace('language-', '')
-
-    if (language && ignore.indexOf(language.toLowerCase()) > -1) return
-
-    var languageDiv = document.createElement('div')
-    languageDiv.className = 'code-language'
-
-    if (language) {
-      languageDiv.innerHTML = casedLang(language)
-    }
-
-    // var children = [languageDiv]
-
-    var children = []
-
-    var originalTitle = div.parentNode.querySelector('.title')
-    if (originalTitle) {
-      var titleDiv = document.createElement('div')
-      titleDiv.className = 'code-title'
-      titleDiv.innerHTML = originalTitle.innerHTML
-
-      originalTitle.style.display = 'none'
-
-      children.push(titleDiv)
-    }
-
-    children.push(createElement('div', 'code-spacer'))
-
-    var header = createElement('div', 'code-header', children)
-
-    pre.className += ' has-header'
-    div.insertBefore(header, pre)
   }
 
   // Apply Code Headers
