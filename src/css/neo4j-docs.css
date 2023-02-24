@@ -119,6 +119,27 @@ span.fabric::after {
   margin-left: 8px;
 }
 
+.sect1.show-roles h2::after,
+.sect2.show-roles h3::after,
+.sect3.show-roles h4::after {
+  display: none;
+}
+
+.sect1.show-roles h2,
+.sect2.show-roles h3,
+.sect3.show-roles h4 {
+  display: inline-block;
+}
+
+.sect2.show-roles div.page-roles,
+.sect2.show-roles div.page-roles > span.page-role {
+  font-size: 1rem;
+}
+
+.sect1.show-roles h2 {
+  border-bottom: none;
+}
+
 body.deprecated article h2::after,
 body.deprecated article h3::after,
 body.deprecated article h4::after,
