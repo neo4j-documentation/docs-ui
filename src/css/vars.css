@@ -298,6 +298,10 @@
   --table-stripe-background: var(--color-grey-100);
   --deprecation-color: var(--color-pink-600);
   --deprecation-on-color: var(--color-white);
+  --not-on-aura-color: var(--color-red-700);
+  --not-on-aura-on-color: var(--color-white);
+  --aura-db-enterprise-color: var(--color-blue-600);
+  --aura-db-enterprise-on-coor: var(--color-white);
   --enterprise-edition-color: var(--color-green-600);
   --enterprise-edition-on-color: var(--color-white);
   --fabric-color: var(--color-blue-500);

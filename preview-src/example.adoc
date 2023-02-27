@@ -201,7 +201,37 @@ console.log('hello')
 [source,js,role=noheader]
 console.log('hello')
 
-=== Expand code block
+
+== Reference lines
+
+You can add number bubbles to reference specific lines by appending `<n>` to a line. It is advised to put them behind a line comment for the language the code is in.
+
+[source,ruby]
+----
+require 'sinatra' <1>
+
+get '/hi' do <2> <3>
+  "Hello World!"
+end
+----
+<1> Library import
+<2> URL mapping
+<3> Response block
+
+[source]
+----
+line of code // <1>
+line of code # <2>
+line of code ;; <3>
+line of code <!--4-->
+----
+<1> A callout behind a line comment for C-style languages.
+<2> A callout behind a line comment for Ruby, Python, Perl, etc.
+<3> A callout behind a line comment for Clojure.
+<4> A callout behind a line comment for XML or SGML languages like HTML.
+
+
+== Expand code block
 
 Code blocks longer than 15 lines (+5 of tolerance) are collapsed, unless you add `role=nocollapse`
 

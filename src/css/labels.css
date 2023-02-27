@@ -45,6 +45,16 @@
   color: var(--color-white);
 }
 
+.label--not-on-aura {
+  background: var(--color-red-700);
+  color: var(--color-white);
+}
+
+.label--aura-db-enterprise {
+  background: var(--color-blue-600);
+  color: var(--color-white);
+}
+
 .label--aura,
 .label--enterprise-only,
 .label--professional,

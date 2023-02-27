@@ -37,6 +37,8 @@ Author Name
 // :page-ad-image: https://s3.amazonaws.com/cdn.graphacademy.neo4j.com/tshirts/python-tshirt.jpg
 // :page-ad-image: https://graphacademy.neo4j.com/courses/app-python/badge/
 // end::link[]
+:page-deprecated-title: the Getting Started Manual
+:page-deprecated-redirect: https://neo4j.com/docs/getting-started/current/
 
 .Goals
 [abstract]
@@ -403,6 +405,9 @@ Eu mea inani iriure.
 // tag::glossary_term[]
 Open the <<NEO4J_HOME>> folder and install <<APOC>>.
 // end::glossary_term[]
+
+Find out about the <<Weighted>> algorithm trait. The glossary text for the `Weighted` is quite long so it can be used to demonstrate the glossary term tooltip switching from being displayed above the term to below the term.
+
 
 [source,xml]
 ----
@@ -795,6 +800,14 @@ An advantage of enhancing graph visualization with these algorithms is that we c
 </div>
 
 <div class="box">
+  <span class="label label--aura-db-enterprise">AuraDB Enterprise</span>
+</div>
+
+<div class="box">
+  <span class="label label--not-on-aura">Not Available on Aura</span>
+</div>
+
+<div class="box">
   <span class="label label--apoc-core">APOC Core</span>
 </div>
 
@@ -958,6 +971,7 @@ An advantage of enhancing graph visualization with these algorithms is that we c
 
 [glossary]
 [[NEO4J_HOME]]$NEO4J_HOME:: The directory in which you have installed Neo4j.  This will contain a `bin/` folder which holds the `neo4j` executable, plus conf, data and plugins.
+[[Weighted]]Weighted:: The algorithm supports configuration to set node and/or relationship properties to use as weights. These values can represent cost, time, capacity or some other domain-specific properties, specified via the nodeWeightProperty, nodeProperties and relationshipWeightProperty configuration parameters. The algorithm will by default consider each node and/or relationship as equally important.
 +
 For more information, see the link:/ops-manual[Operations Manual^]
 [[APOC]]APOC:: xref:apoc[APOC] is a library of procedures and functions that make your life as a Neo4j user easier.

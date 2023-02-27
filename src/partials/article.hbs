@@ -29,6 +29,33 @@ If you typed the URL of this page manually, please double check that you entered
 {{/with}}
 
 {{!-- <span class="{{#with asciidoc.attributes.role}} {{{this}}}{{/with}}"></span> --}}
+
+
+{{#if page.attributes.deprecated-title}}
+<div class="admonitionblock caution">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+<div class="title">Important - page not maintained</div>
+<div class="paragraph">
+  <p>
+    This page is no longer being maintained and its content may be out of date.
+    For the latest guidance, please visit
+    <a href="{{{ page.attributes.deprecated-redirect }}}" class="noarrow" target="_blank">
+      {{{ page.attributes.deprecated-title }}}
+    </a>.
+  </p>
+</div>
+</div>
+</td>
+</tr>
+</tbody></table>
+</div>
+{{/if}}
+
 {{{page.contents}}}
 {{#if (ne page.attributes.certificate undefined)}}
   <div id="_get_certificate" class="sect1 columns medium-12">

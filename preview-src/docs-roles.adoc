@@ -1,14 +1,24 @@
 = Docs flags
-:page-role: fabric enterprise-edition alpha test
+:page-role: fabric enterprise-edition not-on-aura aura-db-enterprise alpha test
 :page-theme: docs
 :page-labels: fabric enterprise-edition alpha test
 
 [abstract]
 --
-Flags sections as Enterprise Edition, Fabric, Deprecated
+Flags sections as Not Available on Aura, Aura DB Enterprise, Enterprise Edition, Fabric, and Deprecated
 --
 
 Blocks with the appropriate roles have text appended.
+
+[role=not-on-aura]
+== Not on Aura
+
+Lorem ipsum dolor sit
+
+[role=aura-db-enterprise]
+== AuraDB Enterprise
+
+Lorem ipsum dolor sit
 
 [role=fabric]
 == Fabric Heading
