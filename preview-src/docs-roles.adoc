@@ -1,6 +1,7 @@
 = Docs flags
 :page-role: fabric enterprise-edition not-on-aura aura-db-enterprise alpha test
 :page-theme: docs
+:page-labels: fabric enterprise-edition alpha test
 
 [abstract]
 --
