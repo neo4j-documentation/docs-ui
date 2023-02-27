@@ -13,9 +13,9 @@ If you typed the URL of this page manually, please double check that you entered
 <h1 class="page">{{{this}}}</h1>
 {{/with}}
 {{#with (or page.attributes.role page.role)}}
-<div class="page-roles is-before-toc">
+<div class="roles is-before-toc">
   {{#each (split-string this ' ')}}
-    <span class="page-role {{{this}}}"></span>
+    <span class="role {{{this}}}"></span>
   {{/each}}
 </div>
 {{/with}}

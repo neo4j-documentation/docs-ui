@@ -8,9 +8,9 @@ document.addEventListener('DOMContentLoaded', function () {
       return (!c.startsWith('sect'))
     })
     if (roles) {
-      var insert = createElement('div', 'page-roles')
+      var insert = createElement('div', 'roles')
       roles.forEach(function (role) {
-        insert.append(createElement('span', 'page-role ' + role))
+        insert.append(createElement('span', 'role ' + role))
       })
       roleDiv.firstElementChild.after(insert)
       roleDiv.classList.add('show-roles')

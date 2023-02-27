@@ -38,25 +38,25 @@ section.deprecated .title::after {
   margin-left: 10px;
 }
 
-div.page-roles,
-div.page-roles > span.page-role {
+div.roles,
+div.roles > span.role {
   display: inline-flex;
   margin: 0 0 1.5rem;
   font-size: calc(36 / var(--rem-base) * 1rem);
 }
 
 @media screen and (max-width: 1023px) {
-  div.page-roles {
+  div.roles {
     display: block;
   }
 
-  div.page-roles,
-  div.page-roles > span.page-role::after {
+  div.roles,
+  div.roles > span.role::after {
     margin-left: 0;
   }
 
-  div.page-roles,
-  div.page-roles > span.page-role {
+  div.roles,
+  div.roles > span.role {
     margin-bottom: 0;
   }
 }
@@ -108,7 +108,8 @@ span.fabric::after {
   text-align: center;
   font-family: "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
   font-weight: normal;
-  font-size: 0.6em;
+  font-style: normal;
+  font-size: 1rem;
   position: relative;
   box-sizing: border-box;
   padding: 5px 8px;
@@ -131,8 +132,8 @@ span.fabric::after {
   display: inline-block;
 }
 
-.sect2.show-roles div.page-roles,
-.sect2.show-roles div.page-roles > span.page-role {
+.sect2.show-roles div.roles,
+.sect2.show-roles div.roles > span.role {
   font-size: 1rem;
 }
 
