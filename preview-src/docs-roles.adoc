@@ -20,18 +20,18 @@ Lorem ipsum dolor sit
 Lorem ipsum dolor sit
 
 
-[role=aura-db-enterprise not-on-aura show-roles]
+[role=aura-db-enterprise not-on-aura]
 == H2 AuraDB Enterprise AND Not on Aura
 
 Lorem ipsum dolor sit
 
 
-[role=aura-db-enterprise not-on-aura show-roles]
+[role=aura-db-enterprise not-on-aura]
 === H3 AuraDB Enterprise AND Not on Aura
 
 Lorem ipsum dolor sit
 
-[role=aura-db-enterprise not-on-aura show-roles]
+[role=aura-db-enterprise not-on-aura]
 === H4 show roles
 
 Lorem ipsum dolor sit
