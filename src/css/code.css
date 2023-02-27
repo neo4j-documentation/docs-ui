@@ -79,11 +79,11 @@
 }
 
 .doc .listingblock .code-inset {
+  opacity: 0.9;
   display: flex;
   margin: 0 0 0 auto;
   position: relative;
-  /* top: 0.5rem; */
-  /* right: 0.25rem; */
+  color: var(--pre-annotation-font-color);
   font-size: calc(12.5 / var(--rem-base) * 1rem);
 }
 
