@@ -1,5 +1,5 @@
 = Docs flags
-:page-role: fabric enterprise-edition not-on-aura aura-db-enterprise alpha test
+:page-role: enterprise-edition not-on-aura aura-db-enterprise test
 :page-theme: docs
 :page-labels: fabric enterprise-edition alpha test
 
@@ -19,6 +19,24 @@ Lorem ipsum dolor sit
 == AuraDB Enterprise
 
 Lorem ipsum dolor sit
+
+
+[role=aura-db-enterprise not-on-aura]
+== H2 AuraDB Enterprise AND Not on Aura
+
+Lorem ipsum dolor sit
+
+
+[role=aura-db-enterprise not-on-aura]
+=== H3 AuraDB Enterprise AND Not on Aura
+
+Lorem ipsum dolor sit
+
+[role=aura-db-enterprise not-on-aura]
+=== H4 show roles
+
+Lorem ipsum dolor sit
+
 
 [role=fabric]
 == Fabric Heading
