@@ -724,7 +724,7 @@ body {
 .doc .listingblock .code-inset[data-lang]::before {
   opacity: 0.9;
   content: attr(data-lang);
-  display: block;
+  display: none;
   color: var(--pre-annotation-font-color);
   font-size: calc(12.5 / var(--rem-base) * 1rem);
   font-family: var(--monospace-font-family);
@@ -735,6 +735,10 @@ body {
   top: 0.625rem;
   right: 0;
   margin-right: 0.25rem;
+}
+
+.doc .listingblock:hover .code-inset[data-lang]::before {
+  display: block;
 }
 
 .doc .listingblock.noheader code.copied::before {
