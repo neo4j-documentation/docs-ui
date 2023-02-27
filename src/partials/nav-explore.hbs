@@ -7,25 +7,18 @@
     <select data-current="{{@root.page.version}}" class="version-selector dropdown-styles">
       {{#with @root.page.componentVersion}}
       <option value="" selected>
-        {{{ ./title }}} {{@root.page.componentVersion.displayVersion}}
+        {{#unless @root.page.attributes.nav-hide-component-title}} {{{ ./title }}} {{/unless}}{{ this.displayVersion }}{{#if (and @root.page.attributes.nav-indicate-latest (eq @root.page.version @root.page.latest.version)) }} (latest){{/if}}
       </option>
       {{/with}}
-      {{!-- {{#each site.components}}
-      <optgroup label="{{{./title}}}">
-          {{#each ./versions}}
-          <option value="{{{relativize ./url}}}">{{./displayVersion}}</option>
-          {{/each}}
-        </optgroup>
-      {{/each}} --}}
       {{#each page.versions}}
       {{#unless this.prerelease}}
-        <option
-          data-version="{{this.displayVersion}}"
-          value="{{{relativize this.url}}}"
-          {{~#if this.missing}} disabled{{/if}}
-        >
-      {{this.displayVersion}}
-        </option>
+      <option
+        data-version="{{this.displayVersion}}"
+        value="{{{relativize this.url}}}"
+        {{~#if this.missing}} disabled{{/if}}
+      >
+        {{ this.displayVersion }}{{#if (and @root.page.attributes.nav-indicate-latest (eq this.version @root.page.latest.version)) }} (latest){{/if}}
+      </option>
       {{/unless}}
       {{/each}}
     </select>

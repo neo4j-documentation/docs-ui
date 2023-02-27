@@ -34,9 +34,11 @@
     {{#with (or page.attributes.ogimage 'https://dist.neo4j.com/wp-content/uploads/20210423062553/neo4j-social-share-21.png' )}}
     <meta property="og:image" content="{{{this}}}" />
     {{/with}}
-    {{#with (or page.attributes.ogdescription page.description )}}
-    <meta property="og:description" content="{{this}}">
-    {{/with}}
+    {{#if (or page.attributes.ogdescription page.description) }}
+    <meta property="og:description" content="{{{this}}}">
+    {{else}}
+    <meta property="og:description" content="{{#with (or page.attributes.ogtitle page.title) }}{{{detag this}}}{{/with}}{{#unless page.attributes.ogtitle}} - {{#with page.component.title}}{{{detag this}}}{{/with}}{{/unless}}">
+    {{/if}}
     <meta property="og:url" content="https://neo4j.com{{ page.attributes.canonical-root }}{{ page.url }}">
     {{#with page.attributes.player}}
     <meta name="twitter:player" content="{{this}}" />

@@ -339,6 +339,7 @@
   --toolbar-wrapper-width: 69rem;
   --doc-max-width: calc(720 / var(--rem-base) * 1rem);
   --doc-max-width--desktop: calc(980 / var(--rem-base) * 1rem);
+  --cheat-sheet-max-width--desktop: calc(1100 / var(--rem-base) * 1rem);
 
   /* stacking */
   --z-index-nav: 1;
