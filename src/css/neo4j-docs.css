@@ -47,7 +47,6 @@ div.roles > span.role {
 }
 
 @media screen and (max-width: 1023px) {
-
   div.roles,
   div.roles > span.role::after {
     margin-left: 0;
@@ -147,7 +146,6 @@ span.fabric::after {
 
 .sect1 > .sect-header {
   border-bottom: 1px solid var(--section-divider-color);
-  
   margin-bottom: 1.5rem;
   padding-bottom: 0.5rem;
 }

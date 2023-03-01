@@ -23,22 +23,16 @@ document.addEventListener('DOMContentLoaded', function () {
         // // let span = createElement('span', `role ${role}`)
         // // console.log(span.outerHTML)
 
-        
-
         // let elem = document.querySelector(`span.${role}`)
 
         // // let elem = getComputedStyle(span, ':after').content;
         // span.textContent = getComputedStyle(elem, ':after').getPropertyValue('content').replace(/"/g, '')
         // console.log(span.textContent)
         // insert.append(span)
-
       })
       newRolesDiv.append(insert)
-      
-      
     }
     sectionDiv.prepend(newRolesDiv)
     sectionDiv.classList.add('show-roles')
-
   })
 })
