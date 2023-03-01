@@ -47,14 +47,15 @@ body {
   color: var(--color-grey-600);
 }
 
-.doc > h1.page:first-child {
+.doc > .sect-header > h1.page:first-child {
   font-size: calc(36 / var(--rem-base) * 1rem);
   margin: 1.5rem 0.5rem 1.5rem 0;
-  display: inline-block;
+  display: flex;
+  flex-grow: 1;
 }
 
 @media screen and (min-width: 769px) {
-  .doc > h1.page:first-child {
+  .doc > .sect-header > h1.page:first-child {
     margin-top: 2.5rem;
   }
 }
@@ -117,7 +118,7 @@ body {
 }
 
 @media screen and (max-width: 620px) {
-  .doc > h1.page:first-child {
+  .doc > .sect-header > h1.page:first-child {
     font-size: 1.4rem;
     font-weight: 600;
   }

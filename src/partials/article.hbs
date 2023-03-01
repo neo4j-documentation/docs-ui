@@ -9,6 +9,7 @@
 If you typed the URL of this page manually, please double check that you entered the address correctly.</p>
 </div>
 {{else}}
+<div class="sect-header">
 {{#with page.title}}
 <h1 class="page">{{{this}}}</h1>
 {{/with}}
@@ -19,6 +20,7 @@ If you typed the URL of this page manually, please double check that you entered
   {{/each}}
 </div>
 {{/with}}
+</div>
 
 {{#with (or page.attributes.labels page.labels)}}
 <div class="paragraph labels">
