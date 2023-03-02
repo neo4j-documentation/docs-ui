@@ -41,15 +41,12 @@ section.deprecated .title::after {
 div.roles,
 div.roles > span.role {
   display: inline-flex;
-  margin: 0 0 1.5rem;
+  gap: 8px;
   font-size: calc(36 / var(--rem-base) * 1rem);
+  line-height: 1.3;
 }
 
 @media screen and (max-width: 1023px) {
-  div.roles {
-    display: block;
-  }
-
   div.roles,
   div.roles > span.role::after {
     margin-left: 0;
@@ -117,7 +114,7 @@ span.fabric::after {
   border-width: 1px;
   border-radius: 6px;
   bottom: 2px;
-  margin-left: 8px;
+  /* margin-left: 8px; */
 }
 
 .sect1.show-roles h2::after,
@@ -128,17 +125,38 @@ span.fabric::after {
 
 .sect1.show-roles h2,
 .sect2.show-roles h3,
-.sect3.show-roles h4 {
-  display: inline-block;
+.sect2.show-roles h4 {
+  display: inline-flex;
+  flex-grow: 1;
+  padding-top: var(--body-font-size);
 }
 
 .sect2.show-roles div.roles,
 .sect2.show-roles div.roles > span.role {
   font-size: 1rem;
+  margin-bottom: 0;
 }
 
-.sect1.show-roles h2 {
+.sect-header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  margin-bottom: 1.5rem;
+}
+
+.sect1 > .sect-header {
+  border-bottom: 1px solid var(--section-divider-color);
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.5rem;
+}
+
+.sect1 div.roles > span.role {
+  margin: 0;
+}
+
+.doc .sect-header h2 {
   border-bottom: none;
+  margin-bottom: 0;
 }
 
 body.deprecated article h2::after,
@@ -155,6 +173,7 @@ span.deprecated::after {
   content: "deprecated";
   color: var(--deprecation-color);
   border-color: var(--deprecation-color);
+  margin-left: 8px;
 }
 
 div.not-on-aura h2::after,
