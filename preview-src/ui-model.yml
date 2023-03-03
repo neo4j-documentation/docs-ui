@@ -190,6 +190,9 @@ page:
     - content: Beta
       url: beta.html
       urlType: internal
+    - content: Algorithms
+      url: algorithms.html
+      urlType: internal
     - content: Private Page
       url: private-page.html
       urlType: internal
