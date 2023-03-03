@@ -7,13 +7,13 @@
 .doc .listingblock .code-title,
 .doc .listingblock .code-inset {
   padding: 0.5rem 0.75rem;
-  /* background: var(--code-header-background); */
   color: var(--code-header-font-color);
   display: flex;
 }
 
 .doc .listingblock .code-title {
   flex-grow: 1;
+  border-top-left-radius: 0.5rem;
 }
 
 .doc .code-header div {
@@ -26,8 +26,16 @@
 }
 
 .doc .listingblock .code-title,
-.doc .listingblock .code-language {
-  color: var(--pre-annotation-font-color);
+.doc .listingblock .code-language,
+.doc .listingblock .content > .code-inset {
+  background: var(--code-header-background);
+  /* color: var(--pre-annotation-font-color); */
+  color: white;
+}
+
+.doc .listingblock .content > .code-inset {
+  border-top-right-radius: 0.5rem;
+
 }
 
 .doc .listingblock .code-language {
@@ -47,7 +55,7 @@
 .doc .code-footer .btn {
   border: 0 none;
   /* background: transparent; */
-  color: var(--code-button-font-color) !important;
+  /* color: var(--code-button-font-color) !important; */
   /* margin: 0.25rem 0 0.25rem 0.5rem; */
   padding: 0.6rem 0;
   border-radius: 0.175rem;
@@ -59,6 +67,10 @@
 .doc .listingblock .code-inset .btn:focus,
 .doc .code-footer .btn:focus {
   outline: none;
+}
+
+.doc .listingblock .code-inset .btn-copy:hover {
+  cursor: pointer;
 }
 
 .doc .listingblock .code-inset .btn.btn-copy,
@@ -79,7 +91,7 @@
 }
 
 .doc .listingblock .code-inset {
-  opacity: 0.9;
+  /* opacity: 0.9; */
   display: flex;
   margin: 0 0 0 auto;
   position: relative;
@@ -93,15 +105,15 @@
 
 .doc .code-inset .copy-success .btn {
   position: absolute;
-  top: -1.25rem;
-  right: -0.25rem;
-  background: var(--color-grey-700);
+  top: 2.5rem;
+  right: 0;
+  background: var(--color-green-500);
   color: var(--color-white) !important;
   padding: 0.4rem;
-  margin: 0.2rem;
+  margin: 0;
   line-height: 1;
   font-size: calc(12.5 / var(--rem-base) * 1rem);
-  width: 64px;
+  width: 4rem;
 }
 
 .doc .code-inset .copy-success .btn::after {
@@ -110,13 +122,13 @@
   position: absolute;
   content: "";
   display: block;
-  bottom: 0;
+  top: 0;
   left: 50%;
   margin-left: -0.25rem;
-  margin-bottom: -0.25rem;
+  margin-top: -0.25rem;
   border-left: 0.5rem solid transparent;
   border-right: 0.5rem solid transparent;
-  border-top: 0.5rem solid var(--color-grey-700);
+  border-bottom: 0.5rem solid var(--color-green-500);
 }
 
 .doc .code-footer {

@@ -276,8 +276,8 @@
   --caption-font-weight: var(--body-font-weight-bold);
   --code-background: var(--panel-background);
   --code-font-color: var(--body-font-color);
-  --code-header-background: var(--panel-background);
-  --code-header-font-color: var(--color-grey-100);
+  --code-header-background: var(--color-grey-700);
+  --code-header-font-color: var(--color-grey-700);
   --code-button-background: var(--color-grey-700);
   --code-button-active-background: var(--color-grey-600);
   --code-button-disabled-background: var(--color-grey-800);
