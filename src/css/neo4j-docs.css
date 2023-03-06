@@ -375,6 +375,16 @@ div.beta-symbol p::before {
   background-color: #e1faef;
 }
 
+.graph-variants > .content > .allowed::before {
+  content: '(\2714)';
+  margin-right: 0.5em;
+  color: #808a87;
+}
+
+.graph-variants > .content > .allowed {
+  background-color: #e4e9e8;
+}
+
 .graph-variants > .content > .not-supported {
   background-color: #ffe6e9;
 }
