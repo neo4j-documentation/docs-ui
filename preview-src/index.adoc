@@ -508,6 +508,23 @@ CREATE (n:Node {id: id, test: true, str: 'ing'})
 RETURN collect(n) AS ns
 ----
 
+.noheader
+[source,cypher,role=noheader]
+----
+UNWIND range(0, 100) AS id
+CREATE (n:Node {id: id, test: true, str: 'ing'})
+RETURN collect(n) AS ns
+----
+
+.nocopy
+[source,cypher,role=nocopy]
+----
+UNWIND range(0, 100) AS id
+CREATE (n:Node {id: id, test: true, str: 'ing'})
+RETURN collect(n) AS ns
+----
+
+
 ....
 pom.xml
 src/

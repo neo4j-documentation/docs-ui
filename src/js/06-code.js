@@ -37,7 +37,6 @@ import { createElement } from './modules/dom'
 
 document.addEventListener('DOMContentLoaded', function () {
   var ignore = ['gram']
-  var copiedText = 'Copied!'
 
   var cleanCode = function (code, language) {
     var input = code
@@ -94,99 +93,78 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   var addCodeHeader = function (pre) {
-    var dotContent = pre.parentNode
-    var listingBlock = dotContent.parentNode
+    var block = pre.querySelector('code')
+    var code = block.innerText
 
-    if (listingBlock.classList.contains('noheader')) return
+    var div = pre.parentNode
+    var listingBlock = div.parentNode
 
     var addCopyButton = !listingBlock.classList.contains('nocopy')
-    var addPlayButton = !listingBlock.classList.contains('noplay')
 
-    var block = pre.querySelector('code')
-    var div = pre.parentNode
-
-    var code = block.innerText
+    // if (listingBlock.classList.contains('noheader')) return
 
     var language = block.hasAttribute('class') &&
       block.getAttribute('class').match(/language-([a-z0-9-])+/i)[0].replace('language-', '')
 
     if (language && ignore.indexOf(language.toLowerCase()) > -1) return
 
-    var languageDiv = document.createElement('div')
-    languageDiv.className = 'code-language'
-
-    if (language) {
-      languageDiv.innerHTML = casedLang(language)
-    }
-    var children = [languageDiv]
+    // var children = []
 
     var originalTitle = div.parentNode.querySelector('.title')
+
+    // if (!originalTitle)  return
+
     if (originalTitle) {
       var titleDiv = document.createElement('div')
       titleDiv.className = 'code-title'
       titleDiv.innerHTML = originalTitle.innerHTML
-
       originalTitle.style.display = 'none'
-
-      children.push(titleDiv)
+      div.insertBefore(titleDiv, pre)
     }
 
-    children.push(createElement('div', 'code-spacer'))
+    pre.className += ' has-header'
 
     if (addCopyButton) {
-      var copyButton = createElement('button', 'btn btn-copy', [document.createTextNode('Copy to Clipboard')])
+      var copyButton = createElement('span', 'btn btn-copy fa fa-copy')
+
+      var successText = createElement('span', 'btn', [document.createTextNode('Copied!')])
+      var copySuccess = createElement('div', 'copy-success hidden', successText)
+
       copyButton.addEventListener('click', function (e) {
         e.preventDefault()
         copyToClipboard(code, language)
 
         var button = e.target
         var text = button.innerHTML
-        var width = button.clientWidth
 
-        button.style.width = width + 'px'
-        button.classList.add('btn-success')
-        button.innerHTML = copiedText
+        // button.classList.remove('fa-copy')
+        // button.classList.add('fa-check')
+        copySuccess.classList.remove('hidden')
+        copySuccess.closest('.content').querySelector('code').classList.add('copied')
 
         setTimeout(function () {
           button.innerHTML = text
           button.style.width = ''
-          button.classList.remove('btn-success')
+          // button.classList.remove('fa-check')
+          // button.classList.add('fa-copy')
+          copySuccess.classList.add('hidden')
+          copySuccess.closest('.content').querySelector('code').classList.remove('copied')
         }, 1000)
       })
 
-      children.push(copyButton)
+      var inset = createElement('div', 'code-inset', copyButton)
+      if (language) inset.dataset.lang = casedLang(language)
+
+      inset.appendChild(copySuccess)
+
+      // if (originalTitle) {
+      //   div.insertBefore(inset, pre)
+      // } else {
+      //   pre.appendChild(inset)
+      // }
+
+      pre.appendChild(inset)
     }
-
-    if (language === 'cypher' && addPlayButton) {
-      var runButton = createElement(
-        'button',
-        'btn btn-run btn-primary',
-        [document.createTextNode('Run in Neo4j Browser')]
-      )
-
-      runButton.addEventListener('click', function (e) {
-        e.preventDefault()
-
-        window.location.href = 'neo4j-desktop://graphapps/neo4j-browser?cmd=edit&arg=' + encodeURIComponent(cleanCode(code))
-
-        if (window.mixpanel) {
-          window.mixpanel.track('DOCS_CODE_RUN_IN_BROWSER', {
-            pathname: window.location.origin + window.location.pathname,
-            search: window.location.search,
-            hash: window.location.hash,
-            language,
-            code: cleanCode(code),
-          })
-        }
-      })
-
-      children.push(runButton)
-    }
-
-    var header = createElement('div', 'code-header', children)
-
-    pre.className += ' has-header'
-    div.insertBefore(header, pre)
   }
 
   // Apply Code Headers
