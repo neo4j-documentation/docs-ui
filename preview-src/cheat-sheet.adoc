@@ -252,7 +252,13 @@ That's a lot of labels.
 ====
 [source, cypher, role=noheader]
 ----
-<DEPRECATED CYPHER EXAMPLE>
+(neo4j:Neo4j {name: "Neo4j"})
+(neo4j)-[:INCLUDES]->(browser:Product {name: "Neo4j Browser"})
+(browser)-[:HAS]->(:Feature {name: "Cypher"})
+(browser)-[:HAS]->(:Feature {name: "Dev Tools"})
+(browser)-[:HAS]->(:Feature {name: "Visualization"})
+(neo4j)-[:CONNECTS_WITH]->(drivers:Drivers {name: "Drivers"})
+(drivers)-[:SUPPORTS]->(:Language {name: "Java"})
 ----
 
 [.description]

@@ -241,7 +241,7 @@ body.cheat-sheet .toc .toc-menu a.is-active {
   /* color: var(--link-font-color); */
   color: var(--toc_active-font-color);
   background-color: #e6f8ff;
-  border-radius: 1rem;
+  border-radius: 0.5rem;
 }
 
 /* headings */
@@ -302,6 +302,7 @@ body.cheat-sheet h3 {
 
 body.cheat-sheet .exampleblock {
   width: 100%;
+  margin-bottom: 0;
 }
 
 body.cheat-sheet .exampleblock > .content {
@@ -320,7 +321,7 @@ body.cheat-sheet .listingblock {
 }
 
 body.cheat-sheet .listingblock .content {
-  border-radius: 16px;
+  border-radius: 0.5rem;
 }
 
 body.cheat-sheet .paragraph {

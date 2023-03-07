@@ -6,7 +6,7 @@
 
 .doc .listingblock .code-title,
 .doc .listingblock .code-inset {
-  padding: 0.5rem 0.75rem;
+  padding: 0.5rem;
   color: var(--code-header-font-color);
   display: flex;
 }
@@ -75,7 +75,7 @@
 
 .doc .listingblock .code-inset .btn.btn-copy,
 .doc .code-footer .btn.btn-primary {
-  padding: 0.6rem;
+  padding: 0.5rem;
 }
 
 .doc .listingblock .code-inset .btn-copy.fa-check {
@@ -105,8 +105,8 @@
 
 .doc .code-inset .copy-success .btn {
   position: absolute;
-  top: 2.5rem;
-  right: 0;
+  top: 2.25rem;
+  right: -0.5rem;
   background: var(--color-green-500);
   color: var(--color-white) !important;
   padding: 0.4rem;

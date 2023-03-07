@@ -712,7 +712,7 @@ body {
   background: var(--pre-background);
   display: block;
   overflow-x: auto;
-  padding: 0.75rem;
+  padding: 0.75rem 0.5rem 0.75rem 0.5rem;
   border-radius: 0.5rem;
   /* border: 1px solid var(--pre-border-color) !important; */
 }
@@ -732,9 +732,9 @@ body {
   letter-spacing: 0.05em;
   line-height: 1;
   text-transform: uppercase;
-  position: relative;
-  top: 0.625rem;
-  right: 0;
+  position: absolute;
+  top: 1rem;
+  right: 2rem;
   margin-right: 0.25rem;
 }
 

@@ -140,7 +140,7 @@ document.addEventListener('DOMContentLoaded', function () {
 })
 
 function clearHidden () {
-  document.querySelectorAll('.toc-menu .hidden, .content .hidden').forEach((el) => {
+  document.querySelectorAll('.toc-menu .hidden, .content .sect1.hidden, .content .sect2.hidden, .content .exampleblock.hidden').forEach((el) => {
     el.classList.remove('hidden')
   })
 }
