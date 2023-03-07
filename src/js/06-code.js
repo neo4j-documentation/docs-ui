@@ -157,11 +157,13 @@ document.addEventListener('DOMContentLoaded', function () {
 
       inset.appendChild(copySuccess)
 
-      if (originalTitle) {
-        div.insertBefore(inset, pre)
-      } else {
-        pre.appendChild(inset)
-      }
+      // if (originalTitle) {
+      //   div.insertBefore(inset, pre)
+      // } else {
+      //   pre.appendChild(inset)
+      // }
+
+      pre.appendChild(inset)
     }
   }
 

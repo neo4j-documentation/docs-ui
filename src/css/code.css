@@ -14,6 +14,7 @@
 .doc .listingblock .code-title {
   flex-grow: 1;
   border-top-left-radius: 0.5rem;
+  border-top-right-radius: 0.5rem;
 }
 
 .doc .code-header div {
