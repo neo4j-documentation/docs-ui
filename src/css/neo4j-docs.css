@@ -128,7 +128,6 @@ span.fabric::after {
 .sect2.show-roles h4 {
   display: inline-flex;
   flex-grow: 1;
-  padding-top: var(--body-font-size);
 }
 
 .sect2.show-roles div.roles,
@@ -141,12 +140,12 @@ span.fabric::after {
   display: flex;
   flex-wrap: wrap;
   align-items: baseline;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
 }
 
 .sect1 > .sect-header {
   border-bottom: 1px solid var(--section-divider-color);
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
   padding-bottom: 0.5rem;
 }
 
