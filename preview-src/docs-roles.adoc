@@ -27,6 +27,11 @@ Lorem ipsum dolor sit
 Lorem ipsum dolor sit
 
 
+== H2 with no roles
+
+Lorem ipsum dolor sit
+
+
 [role=aura-db-enterprise not-on-aura]
 === H3 AuraDB Enterprise AND Not on Aura
 
