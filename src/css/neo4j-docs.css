@@ -126,7 +126,6 @@ span.fabric::after {
 .sect1.show-roles h2,
 .sect2.show-roles h3,
 .sect2.show-roles h4 {
-  display: inline-flex;
   flex-grow: 1;
 }
 
