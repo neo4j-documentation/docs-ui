@@ -115,7 +115,7 @@ document.addEventListener('DOMContentLoaded', function () {
     // if (!originalTitle)  return
 
     listingBlock.classList.add('has-header')
-    
+
     if (originalTitle) {
       listingBlock.classList.add('has-title')
       var titleDiv = document.createElement('div')
