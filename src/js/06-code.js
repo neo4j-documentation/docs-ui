@@ -108,22 +108,22 @@ document.addEventListener('DOMContentLoaded', function () {
 
     if (language && ignore.indexOf(language.toLowerCase()) > -1) return
 
-    // var children = []
+    var headerDivs = []
 
     var originalTitle = div.parentNode.querySelector('.title')
 
     // if (!originalTitle)  return
 
+    listingBlock.classList.add('has-header')
+    
     if (originalTitle) {
-      listingBlock.classList.add('has-header')
+      listingBlock.classList.add('has-title')
       var titleDiv = document.createElement('div')
       titleDiv.className = 'code-title'
       titleDiv.innerHTML = originalTitle.innerHTML
       originalTitle.style.display = 'none'
-      div.insertBefore(titleDiv, pre)
+      headerDivs.push(titleDiv)
     }
-
-    pre.className += ' has-header'
 
     if (addCopyButton) {
       var copyButton = createElement('span', 'btn btn-copy fa fa-copy')
@@ -166,8 +166,11 @@ document.addEventListener('DOMContentLoaded', function () {
 
       // pre.appendChild(inset)
 
-      div.insertBefore(inset, pre)
+      headerDivs.push(inset)
     }
+
+    var header = createElement('div', 'code-header', headerDivs)
+    div.insertBefore(header, pre)
   }
 
   // Apply Code Headers

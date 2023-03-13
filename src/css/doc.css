@@ -177,7 +177,6 @@ body {
   font-size: calc(16 / var(--rem-base) * 1rem);
   line-height: 1.5;
   margin: 0;
-  width: 100%;
 }
 
 .doc code::before {
@@ -632,10 +631,6 @@ body {
 
 .doc .listingblock .content {
   position: relative;
-  background: var(--code-background);
-  border: 1px solid var(--pre-border-color) !important;
-  border-radius: 0.5rem;
-  box-shadow: inset 0 0 1.75px var(--pre-border-color);
 }
 
 /* .doc .admonitionblock .title, */
@@ -717,8 +712,12 @@ body {
   width: 100%;
   height: 100%;
   padding: 1rem 0.5rem;
-  border-radius: 0.5rem;
-  /* border: 1px solid var(--pre-border-color) !important; */
+  border-bottom-left-radius: 0.5rem;
+  border-bottom-right-radius: 0.5rem;
+}
+
+.doc .listingblock:not(.has-title) pre.highlight code {
+  padding-top: 0;
 }
 
 /* NOTE assume pre.highlight contains code[data-lang] */

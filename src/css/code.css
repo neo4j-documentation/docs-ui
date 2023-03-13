@@ -1,5 +1,4 @@
 .doc pre.has-header code {
-  border-top: none !important;
   border-top-left-radius: 0 !important;
   border-top-right-radius: 0 !important;
 }
@@ -7,7 +6,6 @@
 .doc .listingblock .code-title,
 .doc .listingblock .code-inset {
   padding: 0.5rem;
-  color: var(--code-header-font-color);
   display: flex;
 }
 
@@ -15,6 +13,10 @@
   flex-grow: 1;
   border-top-left-radius: 0.5rem;
   border-top-right-radius: 0.5rem;
+}
+
+.doc .code-header {
+  display: flex;
 }
 
 .doc .code-header div {
@@ -27,11 +29,22 @@
 }
 
 .doc .listingblock .code-title,
-.doc .listingblock .code-language,
-.doc .listingblock.has-header .code-inset {
-  background: var(--code-header-background);
+.doc .listingblock .code-language {
+  /* background: var(--code-header-background); */
   color: var(--pre-background);
   /* color: white; */
+}
+
+.doc .listingblock .code-header {
+  background: var(--pre-background);
+  color: var(--color-grey-700);
+  border-top-left-radius: 0.5rem;
+  border-top-right-radius: 0.5rem;
+}
+
+.doc .listingblock.has-title .code-header {
+  background: var(--code-header-background);
+  color: var(--code-header-font-color);
 }
 
 .doc .listingblock .code-language {
@@ -87,17 +100,20 @@
 }
 
 .doc .listingblock .code-inset {
-  z-index: 1;
-  position: absolute;
-  top: 0;
-  right: 0;
-  color: var(--pre-annotation-font-color);
+  display: flex;
+  margin: 0 0 0 auto;
+  padding: 0.5rem;
+  position: relative;
   font-size: calc(12.5 / var(--rem-base) * 1rem);
-  border-top-right-radius: 0.5rem;
 }
 
-.doc .listingblock.has-header .code-inset {
+.doc .listingblock.has-title .code-inset {
   padding: 1rem 0.5rem;
+}
+
+.doc .code-inset .copy-success {
+  display: flex;
+  width: 0;
 }
 
 .doc .code-inset .copy-success.hidden {
@@ -107,7 +123,7 @@
 .doc .code-inset .copy-success .btn {
   position: absolute;
   top: 2rem;
-  right: -0.875rem;
+  right: -1rem;
   background: var(--color-green-500);
   color: var(--color-white) !important;
   padding: 0.4rem;
@@ -115,6 +131,7 @@
   line-height: 1;
   font-size: calc(12.5 / var(--rem-base) * 1rem);
   width: 4rem;
+  z-index: 1;
 }
 
 .doc .code-inset .copy-success .btn::after {
