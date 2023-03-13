@@ -177,7 +177,6 @@ body {
   font-size: calc(16 / var(--rem-base) * 1rem);
   line-height: 1.5;
   margin: 0;
-  display: flex;
   width: 100%;
 }
 
@@ -310,6 +309,10 @@ body {
   padding: 1rem 1rem 0.75rem;
   /* background: var(--admonition-background); */
   width: 100%;
+}
+
+.doc .admonitionblock .listingblock .content {
+  padding: 0;
 }
 
 .doc .admonitionblock .icon {
@@ -628,8 +631,7 @@ body {
 }
 
 .doc .listingblock .content {
-  display: flex;
-  flex-wrap: wrap;
+  position: relative;
   background: var(--code-background);
   border: 1px solid var(--pre-border-color) !important;
   border-radius: 0.5rem;
@@ -712,7 +714,9 @@ body {
   background: var(--pre-background);
   display: block;
   overflow-x: auto;
-  padding: 0.75rem 0.5rem 0.75rem 0.5rem;
+  width: 100%;
+  height: 100%;
+  padding: 1rem 0.5rem;
   border-radius: 0.5rem;
   /* border: 1px solid var(--pre-border-color) !important; */
 }
@@ -720,6 +724,7 @@ body {
 /* NOTE assume pre.highlight contains code[data-lang] */
 .doc pre.highlight {
   position: relative;
+  overflow-x: auto;
 }
 
 .doc .listingblock .code-inset[data-lang]::before {
@@ -733,8 +738,7 @@ body {
   line-height: 1;
   text-transform: uppercase;
   position: absolute;
-  top: 1rem;
-  right: 2rem;
+  right: 1.5rem;
   margin-right: 0.25rem;
 }
 

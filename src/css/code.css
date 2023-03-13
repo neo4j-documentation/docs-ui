@@ -28,14 +28,10 @@
 
 .doc .listingblock .code-title,
 .doc .listingblock .code-language,
-.doc .listingblock .content > .code-inset {
+.doc .listingblock.has-header .code-inset {
   background: var(--code-header-background);
-  /* color: var(--pre-annotation-font-color); */
-  color: white;
-}
-
-.doc .listingblock .content > .code-inset {
-  border-top-right-radius: 0.5rem;
+  color: var(--pre-background);
+  /* color: white; */
 }
 
 .doc .listingblock .code-language {
@@ -75,7 +71,7 @@
 
 .doc .listingblock .code-inset .btn.btn-copy,
 .doc .code-footer .btn.btn-primary {
-  padding: 0.5rem;
+  padding: 0;
 }
 
 .doc .listingblock .code-inset .btn-copy.fa-check {
@@ -91,12 +87,17 @@
 }
 
 .doc .listingblock .code-inset {
-  /* opacity: 0.9; */
-  display: flex;
-  margin: 0 0 0 auto;
-  position: relative;
+  z-index: 1;
+  position: absolute;
+  top: 0;
+  right: 0;
   color: var(--pre-annotation-font-color);
   font-size: calc(12.5 / var(--rem-base) * 1rem);
+  border-top-right-radius: 0.5rem;
+}
+
+.doc .listingblock.has-header .code-inset {
+  padding: 1rem 0.5rem;
 }
 
 .doc .code-inset .copy-success.hidden {
@@ -105,8 +106,8 @@
 
 .doc .code-inset .copy-success .btn {
   position: absolute;
-  top: 2.25rem;
-  right: -0.5rem;
+  top: 2rem;
+  right: -0.875rem;
   background: var(--color-green-500);
   color: var(--color-white) !important;
   padding: 0.4rem;
