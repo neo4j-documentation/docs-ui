@@ -716,8 +716,8 @@ body {
   border-bottom-right-radius: 0.5rem;
 }
 
-.doc .listingblock:not(.has-title) pre.highlight code {
-  padding-top: 0;
+.doc .listingblock:not(.has-title) pre.highlight {
+  border-radius: 0.5rem;
 }
 
 /* NOTE assume pre.highlight contains code[data-lang] */
@@ -737,6 +737,7 @@ body {
   line-height: 1;
   text-transform: uppercase;
   position: absolute;
+  top: 1.25rem;
   right: 1.5rem;
   margin-right: 0.25rem;
 }
