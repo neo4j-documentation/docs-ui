@@ -1,5 +1,4 @@
 .doc pre.has-header code {
-  border-top: none !important;
   border-top-left-radius: 0 !important;
   border-top-right-radius: 0 !important;
 }
@@ -7,14 +6,17 @@
 .doc .listingblock .code-title,
 .doc .listingblock .code-inset {
   padding: 0.5rem;
-  color: var(--code-header-font-color);
-  display: flex;
+  /* display: flex; */
 }
 
 .doc .listingblock .code-title {
-  flex-grow: 1;
+  /* flex-grow: 1; */
   border-top-left-radius: 0.5rem;
   border-top-right-radius: 0.5rem;
+}
+
+.doc .code-header {
+  /* display: flex; */
 }
 
 .doc .code-header div {
@@ -27,14 +29,16 @@
 }
 
 .doc .listingblock .code-title,
-.doc .listingblock .code-language,
-.doc .listingblock .content > .code-inset {
-  background: var(--code-header-background);
-  /* color: var(--pre-annotation-font-color); */
-  color: white;
+.doc .listingblock .code-language {
+  /* background: var(--code-header-background); */
+  color: var(--pre-background);
+  /* color: white; */
 }
 
-.doc .listingblock .content > .code-inset {
+.doc .listingblock .code-header {
+  background: var(--code-header-background);
+  color: var(--code-header-font-color);
+  border-top-left-radius: 0.5rem;
   border-top-right-radius: 0.5rem;
 }
 
@@ -51,13 +55,21 @@
   display: flex;
 }
 
-.doc .listingblock .code-inset .btn,
+.doc .listingblock .code-inset .btn {
+  border: 0 none;
+  padding: 0.6rem 0;
+  border-radius: 0.175rem;
+  font-weight: var(--body-font-weight-bold);
+  line-height: 1;
+  text-align: center;
+}
+
 .doc .code-footer .btn {
   border: 0 none;
-  /* background: transparent; */
-  /* color: var(--code-button-font-color) !important; */
-  /* margin: 0.25rem 0 0.25rem 0.5rem; */
-  padding: 0.6rem 0;
+  background: var(--code-header-background) !important;
+  color: var(--code-header-font-color) !important;
+  margin: 0.25rem 0 0.25rem 0.5rem;
+  padding: 0.6rem;
   border-radius: 0.175rem;
   font-weight: var(--body-font-weight-bold);
   line-height: 1;
@@ -73,9 +85,8 @@
   cursor: pointer;
 }
 
-.doc .listingblock .code-inset .btn.btn-copy,
-.doc .code-footer .btn.btn-primary {
-  padding: 0.5rem;
+.doc .listingblock .code-inset .btn.btn-copy {
+  padding: 0;
 }
 
 .doc .listingblock .code-inset .btn-copy.fa-check {
@@ -91,12 +102,15 @@
 }
 
 .doc .listingblock .code-inset {
-  /* opacity: 0.9; */
-  display: flex;
-  margin: 0 0 0 auto;
-  position: relative;
-  color: var(--pre-annotation-font-color);
+  border-top-right-radius: 0.5rem;
+  background: var(--pre-background);
+  color: var(--color-grey-700);
   font-size: calc(12.5 / var(--rem-base) * 1rem);
+  position: relative;
+  float: right;
+  padding: 1rem 0.5rem;
+  margin-left: -2rem;
+  z-index: 1;
 }
 
 .doc .code-inset .copy-success.hidden {
@@ -105,8 +119,7 @@
 
 .doc .code-inset .copy-success .btn {
   position: absolute;
-  top: 2.25rem;
-  right: -0.5rem;
+  right: -1rem;
   background: var(--color-green-500);
   color: var(--color-white) !important;
   padding: 0.4rem;
@@ -114,6 +127,7 @@
   line-height: 1;
   font-size: calc(12.5 / var(--rem-base) * 1rem);
   width: 4rem;
+  z-index: 1;
 }
 
 .doc .code-inset .copy-success .btn::after {

@@ -4,6 +4,8 @@ document.addEventListener('DOMContentLoaded', function () {
   const csSelector = '#cheat-sheet-selector'
   const cs = document.querySelector(csSelector)
 
+  if (!cs) return
+
   // get all the cheat-sheet selector values from the select
   const optionMap = [...cs.options].map((o) => ({
     value: o.value,

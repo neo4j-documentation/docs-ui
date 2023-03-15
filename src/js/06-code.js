@@ -108,21 +108,22 @@ document.addEventListener('DOMContentLoaded', function () {
 
     if (language && ignore.indexOf(language.toLowerCase()) > -1) return
 
-    // var children = []
+    var headerDivs = []
 
     var originalTitle = div.parentNode.querySelector('.title')
 
     // if (!originalTitle)  return
 
+    listingBlock.classList.add('has-header')
+
     if (originalTitle) {
+      listingBlock.classList.add('has-title')
       var titleDiv = document.createElement('div')
       titleDiv.className = 'code-title'
       titleDiv.innerHTML = originalTitle.innerHTML
       originalTitle.style.display = 'none'
-      div.insertBefore(titleDiv, pre)
+      headerDivs.push(titleDiv)
     }
-
-    pre.className += ' has-header'
 
     if (addCopyButton) {
       var copyButton = createElement('span', 'btn btn-copy fa fa-copy')
@@ -163,8 +164,13 @@ document.addEventListener('DOMContentLoaded', function () {
       //   pre.appendChild(inset)
       // }
 
-      pre.appendChild(inset)
+      // pre.appendChild(inset)
+
+      headerDivs.push(inset)
     }
+
+    var header = createElement('div', 'code-header', headerDivs)
+    div.insertBefore(header, pre)
   }
 
   // Apply Code Headers
@@ -174,8 +180,10 @@ document.addEventListener('DOMContentLoaded', function () {
   // Collapse/Expand long blocks
   var codeMaxLines = 15
   var codeTolerance = 5 // if block is shorter than codeMaxLines+codeTolerance, it won't be collapsed
+  var codeBlocks = document.getElementsByClassName('highlight')
+  if (!codeBlocks[0]) return
   var codeLineHeight = parseFloat(window.getComputedStyle(
-    document.getElementsByClassName('highlight')[0], null)
+    codeBlocks[0], null)
     .getPropertyValue('line-height')) //line-height property value (in px) in code blocks
   var codeMaxHeight = codeLineHeight * codeMaxLines
   var maskImage = 'linear-gradient(to bottom, black 0px, transparent ' +
@@ -187,6 +195,7 @@ document.addEventListener('DOMContentLoaded', function () {
     var height = code.clientHeight - paddingTop - paddingBottom
     var lines = Math.ceil(height / codeLineHeight)
     var hiddenLines = Math.ceil(lines - codeMaxLines)
+    console.log(`lines: ${lines}, hiddenLines: ${hiddenLines}`)
     return { lines: lines, hiddenLines: hiddenLines }
   }
 
