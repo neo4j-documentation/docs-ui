@@ -345,7 +345,7 @@ body.cheat-sheet .description ul {
 }
 
 body.cheat-sheet .page-labels {
-  display: flex;
+  display: none;
   /* flex-grow: 1; */
   flex-direction: row-reverse;
   margin: 0;
@@ -364,6 +364,7 @@ body.cheat-sheet .page-labels p {
 }
 
 body.cheat-sheet .labels {
+  display: none;
   /* flex: 0 0 12%; */
   padding: 1rem 0;
   margin: 0;
