@@ -35,6 +35,16 @@ body {
   margin: 2rem 0 1rem;
 }
 
+.doc h1 code,
+.doc h2 code,
+.doc h3 code,
+.doc h4 code,
+.doc h5 code,
+.doc h6 code {
+  padding: 0.125em 0.25em;
+  background: var(--code-background);
+}
+
 .doc h4 {
   font-weight: 600;
   font-size: 1rem;
@@ -50,7 +60,6 @@ body {
 .doc > .sect-header > h1.page:first-child {
   font-size: calc(36 / var(--rem-base) * 1rem);
   margin: 1.5rem 0.5rem 1.5rem 0;
-  display: flex;
   flex-grow: 1;
 }
 
