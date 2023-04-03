@@ -1,4 +1,4 @@
-= Docs flags
+= Docs `code test` flags
 :page-role: enterprise-edition not-on-aura
 :page-theme: docs
 // :page-labels: fabric enterprise-edition alpha test
@@ -11,9 +11,9 @@ Flags sections as Not Available on Aura, Aura DB Enterprise, Enterprise Edition,
 Blocks with the appropriate roles have text appended.
 
 [role=not-on-aura]
-== Not on Aura
+== Not on `code test` Aura
 
-Lorem ipsum dolor sit
+Lorem ipsum dolor `code test` sit
 
 [role=aura-db-enterprise]
 == AuraDB Enterprise
