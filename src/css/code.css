@@ -47,14 +47,6 @@
   padding: 0.25rem 0;
 }
 
-.doc pre {
-  display: flex;
-}
-
-.doc pre .code-inset {
-  display: flex;
-}
-
 .doc .listingblock .code-inset .btn {
   border: 0 none;
   padding: 0.6rem 0;
@@ -103,14 +95,15 @@
 
 .doc .listingblock .code-inset {
   border-top-right-radius: 0.5rem;
-  background: var(--pre-background);
-  color: var(--color-grey-700);
+  /* background: var(--pre-background); */
+  color: var(--color-grey-600);
   font-size: calc(12.5 / var(--rem-base) * 1rem);
-  position: relative;
-  float: right;
-  padding: 1rem 0.5rem;
-  margin-left: -2rem;
+  position: absolute;
+  /* float: right; */
+  padding: 0.25rem 0.5rem;
+  /* margin-left: -2rem; */
   z-index: 1;
+  right: 0;
 }
 
 .doc .code-inset .copy-success.hidden {
