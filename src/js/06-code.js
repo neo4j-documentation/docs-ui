@@ -154,7 +154,7 @@ document.addEventListener('DOMContentLoaded', function () {
       })
 
       var inset = createElement('div', 'code-inset', copyButton)
-      if (language) inset.dataset.lang = casedLang(language)
+      if (language !== 'none') inset.dataset.lang = casedLang(language)
 
       inset.appendChild(copySuccess)
 
