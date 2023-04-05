@@ -112,6 +112,12 @@ page:
     - content: Liber Recusabo
       url: '#liber-recusabo'
       urlType: fragment
+    - content: Tiled Template
+      url: tiles.html
+      urlType: internal
+    - content: Labs Template
+      url: labs.html
+      urlType: internal
     - content: Reference - a long title that also has child pages
       items:
       - content: Keyboard Shortcuts
@@ -129,13 +135,7 @@ page:
           items:
           - content: English + 中文
             url: '/xyz/4.1/index.html#english+中文'
-            urlType: internal
-    - content: Tiled Template
-      url: tiles.html
-      urlType: internal
-    - content: Labs Template
-      url: labs.html
-      urlType: internal
+            urlType: internal      
     - content: Cypher Cheat Sheet
       url: cheat-sheet.html
       urlType: internal
@@ -205,6 +205,24 @@ page:
     - content: GraphGists
       url: graph-gist-index.html
       urlType: internal
+    - content: Reference - a long title that also has child pages
+      items:
+      - content: Keyboard Shortcuts
+        url: '#'
+        urlType: fragment
+      - content: Importing and Exporting
+        url: '#'
+        urlType: fragment
+      - content: Some Code
+        url: '/xyz/4.1/index.html#some-code'
+        urlType: internal
+      - content: Level 2 title
+        items:
+        - content: Level 3 title
+          items:
+          - content: English + 中文
+            url: '/xyz/4.1/index.html#english+中文'
+            urlType: internal
     - content: Star Wars Social Network
       url: graph-gist-star-wars-social-network.html
       urlType: internal

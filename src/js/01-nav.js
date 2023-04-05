@@ -123,6 +123,10 @@
 
   function toggleActive () {
     this.classList.toggle('is-active')
+    // scroll the menu if the open section is hidden by the footer
+    var thisBottom = this.getBoundingClientRect().bottom
+    var footerTop = document.querySelector('footer').getBoundingClientRect().top
+    if (thisBottom > footerTop) this.scrollIntoView({ behavior: 'smooth', block: 'nearest' })
   }
 
   function showNav (e) {
