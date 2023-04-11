@@ -1,7 +1,6 @@
 import { createElement } from './modules/dom'
 
 document.addEventListener('DOMContentLoaded', function () {
-
   const queryString = window.location.search
   console.log(queryString)
 
@@ -26,7 +25,6 @@ document.addEventListener('DOMContentLoaded', function () {
       // display some html to say that the url params are not right?
     }
   }
-
 
   const csSelector = '#cheat-sheet-selector'
   const cs = document.querySelector(csSelector)
@@ -162,7 +160,7 @@ document.addEventListener('DOMContentLoaded', function () {
       const current = target.dataset.current
       const next = target.selectedOptions[0].dataset.version
 
-      const url = `${target.value}?product=${cs.options[selectedProduct].value}` 
+      const url = `${target.value}?product=${cs.options[selectedProduct].value}`
 
       if (window.ga) {
         window.ga('send', 'event', 'version-select', 'From: ' + current + ';To:' + next + ';')
@@ -171,8 +169,6 @@ document.addEventListener('DOMContentLoaded', function () {
       document.location.replace(url)
     })
   }
-
-
 
   toggleExamples(cs.options[selected].value)
 
