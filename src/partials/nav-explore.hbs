@@ -11,7 +11,7 @@
       </option>
       {{/with}}
       {{#each page.versions}}
-      {{#unless this.prerelease}}
+      {{#unless (or this.prerelease (and (eq this.version @root.page.version) (eq @root.page.attributes.theme 'cheat-sheet') ))}}
       <option
         data-version="{{this.displayVersion}}"
         value="{{{relativize this.url}}}"
