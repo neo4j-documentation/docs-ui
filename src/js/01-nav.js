@@ -52,7 +52,7 @@
     }
   }
 
-  var versionSelector = document.querySelector('.version-selector')
+  var versionSelector = document.querySelector('body:not(.cheat-sheet) .version-selector')
   if (versionSelector) {
     versionSelector.addEventListener('change', function (e) {
       const target = e.target

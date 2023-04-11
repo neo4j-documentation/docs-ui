@@ -1,6 +1,33 @@
 import { createElement } from './modules/dom'
 
 document.addEventListener('DOMContentLoaded', function () {
+
+  const queryString = window.location.search
+  console.log(queryString)
+
+  const urlParams = new URLSearchParams(queryString)
+
+  if (urlParams.has('product')) {
+    const product = urlParams.get('product')
+    // set the default for the product
+    const productSelector = document.getElementById('cheat-sheet-selector')
+    const productSelectorOptions = productSelector.options
+
+    // change selected value in options list
+    let match = false
+    for (const option of productSelectorOptions) {
+      // console.log(`option:${option.label}`)
+      if (option.label === decodeURIComponent(product) || option.value === decodeURIComponent(product)) {
+        productSelector.selectedIndex = option.index
+        match = true
+      }
+    }
+    if (!match) {
+      // display some html to say that the url params are not right?
+    }
+  }
+
+
   const csSelector = '#cheat-sheet-selector'
   const cs = document.querySelector(csSelector)
 
@@ -125,6 +152,28 @@ document.addEventListener('DOMContentLoaded', function () {
 
   // toggle for default cheat sheet selection
   const selected = cs.selectedIndex
+
+  var versionSelector = document.querySelector('body.cheat-sheet .version-selector')
+  if (versionSelector) {
+    versionSelector.addEventListener('change', function (e) {
+      const target = e.target
+
+      const selectedProduct = cs.selectedIndex
+      const current = target.dataset.current
+      const next = target.selectedOptions[0].dataset.version
+
+      const url = `${target.value}?product=${cs.options[selectedProduct].value}` 
+
+      if (window.ga) {
+        window.ga('send', 'event', 'version-select', 'From: ' + current + ';To:' + next + ';')
+      }
+      // console.log(url)
+      document.location.replace(url)
+    })
+  }
+
+
+
   toggleExamples(cs.options[selected].value)
 
   // hide and unhide sections when the selection is changed
