@@ -15,7 +15,6 @@ document.addEventListener('DOMContentLoaded', function () {
     // change selected value in options list
     let match = false
     for (const option of productSelectorOptions) {
-      // console.log(`option:${option.label}`)
       if (option.label === decodeURIComponent(product) || option.value === decodeURIComponent(product)) {
         productSelector.selectedIndex = option.index
         match = true
