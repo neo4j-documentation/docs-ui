@@ -25,6 +25,49 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   }
 
+  const stripTrailingSlash = (str) => {
+    return str.endsWith('/') ? str.slice(0, -1) : str
+  }
+
+  // if we are proxying by using a different url, use it to update the selected option
+  const testURL = new URL('https://development.neo4j.dev/docs/cypher-cheat-sheet/4.1/auradb-free/')
+
+  // let testURL = document.location
+
+  const pathBits = stripTrailingSlash(testURL.pathname).split('/')
+  console.log(pathBits)
+
+  const goodPath = pathBits.slice(pathBits.indexOf('cypher-cheat-sheet'))
+  goodPath.shift()
+
+  console.log(goodPath)
+
+  // the first item in goodPath should be the version
+  const csVersion = document.querySelector('body.cheat-sheet .version-selector').dataset.current
+
+  if (goodPath[0] !== csVersion && goodPath[0] !== 'current') console.log('version mismatch')
+
+  // the second item in goodPath should be the product
+  const pathProduct = goodPath[1]
+
+  // parse this value to match something you could select in the product dropdown
+
+  const prodMatrix = {
+    'auradb-free': 'aura-dbf',
+    'auradb-professional': 'aura-dbp',
+    'auradb-enterprise': 'aura-dbe',
+    'aurads-professional': 'aura-dsp',
+    'aurads-enterprise': 'aura-dse',
+    'neo4j-community': 'neo4j-ce',
+    'neo4j-enterprise': 'neo4j-ee',
+  }
+
+  const selectionFromPath = prodMatrix[pathProduct]
+
+  console.log(selectionFromPath)
+
+  //////
+
   const csSelector = '#cheat-sheet-selector'
   const cs = document.querySelector(csSelector)
 
