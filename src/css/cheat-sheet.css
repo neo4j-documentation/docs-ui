@@ -264,6 +264,7 @@ body.cheat-sheet h3:not(.discrete) {
   flex: 0 0 60%;
   flex-grow: 1;
   padding-right: 0;
+  border: none;
 }
 
 body.cheat-sheet h3:not(.discrete) a {
