@@ -4,6 +4,9 @@
 {{#if page.attributes.cdn}}
     <link rel="preload" href="{{{page.attributes.cdn}}}/fonts/fontawesome-webfont.woff2?v=4.7.0" as="font">
     <link rel="stylesheet" href="{{{page.attributes.cdn}}}/css/site.css">
+{{else if (and (eq page.attributes.theme "cheat-sheet") (not (eq site.url "http://localhost:5252")))}}
+    <link rel="preload" href="{{{@root.site.path}}}{{{@root.site.ui.url}}}/fonts/fontawesome-webfont.woff2?v=4.7.0" as="font">
+    <link rel="stylesheet" href="{{{@root.site.path}}}{{{@root.site.ui.url}}}/css/site.css">
 {{else}}
     <link rel="preload" href="{{{uiRootPath}}}/fonts/fontawesome-webfont.woff2?v=4.7.0" as="font">
     <link rel="stylesheet" href="{{{uiRootPath}}}/css/site.css">

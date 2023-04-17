@@ -1,75 +1,41 @@
 import { createElement } from './modules/dom'
 
+const prodMatrix = {
+  'auradb-free': 'aura-dbf',
+  'auradb-professional': 'aura-dbp',
+  'auradb-enterprise': 'aura-dbe',
+  'aurads-professional': 'aura-dsp',
+  'aurads-enterprise': 'aura-dse',
+  'neo4j-community': 'neo4j-ce',
+  'neo4j-enterprise': 'neo4j-ee',
+}
+
 document.addEventListener('DOMContentLoaded', function () {
+  if (!document.querySelector('body.cheat-sheet')) return
+
+  // const curURL = new URL('https://development.neo4j.dev/docs/cypher-cheat-sheet/4.1/auradb-free/')
+  const curURL = document.location
+  const selectionFromPath = getSelectionFromPath(curURL)
+  // use query parameter to set product selector
   const queryString = window.location.search
-  console.log(queryString)
-
   const urlParams = new URLSearchParams(queryString)
-
   if (urlParams.has('product')) {
     const product = urlParams.get('product')
-    // set the default for the product
-    const productSelector = document.getElementById('cheat-sheet-selector')
-    const productSelectorOptions = productSelector.options
-
-    // change selected value in options list
-    let match = false
-    for (const option of productSelectorOptions) {
-      if (option.label === decodeURIComponent(product) || option.value === decodeURIComponent(product)) {
-        productSelector.selectedIndex = option.index
-        match = true
-      }
-    }
-    if (!match) {
-      // display some html to say that the url params are not right?
+    updateSelectorFromProduct(product)
+  } else {
+    // use URL to set product selector
+    // if we are proxying by using a different url, use it to update the selected option
+    console.log(document.location)
+    console.log(document.location.href)
+    if (selectionFromPath) {
+      updateSelectorFromProduct(selectionFromPath)
+      // if we've got a selector update from the path, we need to update the paths in the version selector
     }
   }
-
-  const stripTrailingSlash = (str) => {
-    return str.endsWith('/') ? str.slice(0, -1) : str
-  }
-
-  // if we are proxying by using a different url, use it to update the selected option
-  const testURL = new URL('https://development.neo4j.dev/docs/cypher-cheat-sheet/4.1/auradb-free/')
-
-  // let testURL = document.location
-
-  const pathBits = stripTrailingSlash(testURL.pathname).split('/')
-  console.log(pathBits)
-
-  const goodPath = pathBits.slice(pathBits.indexOf('cypher-cheat-sheet'))
-  goodPath.shift()
-
-  console.log(goodPath)
-
-  // the first item in goodPath should be the version
-  const csVersion = document.querySelector('body.cheat-sheet .version-selector').dataset.current
-
-  if (goodPath[0] !== csVersion && goodPath[0] !== 'current') console.log('version mismatch')
-
-  // the second item in goodPath should be the product
-  const pathProduct = goodPath[1]
-
-  // parse this value to match something you could select in the product dropdown
-
-  const prodMatrix = {
-    'auradb-free': 'aura-dbf',
-    'auradb-professional': 'aura-dbp',
-    'auradb-enterprise': 'aura-dbe',
-    'aurads-professional': 'aura-dsp',
-    'aurads-enterprise': 'aura-dse',
-    'neo4j-community': 'neo4j-ce',
-    'neo4j-enterprise': 'neo4j-ee',
-  }
-
-  const selectionFromPath = prodMatrix[pathProduct]
-
-  console.log(selectionFromPath)
-
-  //////
 
   const csSelector = '#cheat-sheet-selector'
   const cs = document.querySelector(csSelector)
+  cs.dataset.current = cs.options[cs.selectedIndex].value
 
   if (!cs) return
 
@@ -201,14 +167,21 @@ document.addEventListener('DOMContentLoaded', function () {
       const selectedProduct = cs.selectedIndex
       const current = target.dataset.current
       const next = target.selectedOptions[0].dataset.version
+      let newUrl
+      if (selectionFromPath) {
+        const re = new RegExp(`/${current}/`)
+        newUrl = document.URL.replace(re, `/${next}/`)
+      } else {
+        newUrl = `${target.value}?product=${cs.options[selectedProduct].value}`
+      }
 
-      const url = `${target.value}?product=${cs.options[selectedProduct].value}`
+      // url = `${target.value}?product=${cs.options[selectedProduct].value}`
 
       if (window.ga) {
         window.ga('send', 'event', 'version-select', 'From: ' + current + ';To:' + next + ';')
       }
-      // console.log(url)
-      document.location.replace(url)
+      // console.log(newUrl)
+      document.location.replace(newUrl)
     })
   }
 
@@ -217,14 +190,24 @@ document.addEventListener('DOMContentLoaded', function () {
   // hide and unhide sections when the selection is changed
   cs.addEventListener('change', function (e) {
     e.stopPropagation()
-    // reset everything
-    clearHidden()
-    // fake a scroll event to trigger feedback scroll event
-    window.scrollTo(window.scrollX, window.scrollY + 1)
-    // hide content according to the new selection
-    toggleExamples(e.target.value)
-    // fake a scroll event to trigger feedback scroll event
-    window.scrollTo(window.scrollX, window.scrollY - 1)
+
+    // if we're using a proxied path, just load the new url
+    if (selectionFromPath) {
+      // get the new url
+      const currentProd = Object.keys(prodMatrix).find((key) => prodMatrix[key] === e.target.dataset.current)
+      const newProd = Object.keys(prodMatrix).find((key) => prodMatrix[key] === e.target.value)
+      const newURL = curURL.href.replace(currentProd, newProd)
+      document.location.replace(newURL)
+    } else {
+      // reset everything
+      clearHidden()
+      // fake a scroll event to trigger feedback scroll event
+      window.scrollTo(window.scrollX, window.scrollY + 1)
+      // hide content according to the new selection
+      toggleExamples(e.target.value)
+      // fake a scroll event to trigger feedback scroll event
+      window.scrollTo(window.scrollX, window.scrollY - 1)
+    }
   })
 })
 
@@ -295,4 +278,43 @@ function cleanToc () {
   document.querySelectorAll('.toc-menu a').forEach((li) => {
     if (document.querySelector(li.hash) === null) li.remove()
   })
+}
+
+function updateSelectorFromProduct (product) {
+  // set the default for the product
+  const productSelector = document.getElementById('cheat-sheet-selector')
+  const productSelectorOptions = productSelector.options
+
+  // change selected value in options list
+  let match = false
+  for (const option of productSelectorOptions) {
+    if (option.label === decodeURIComponent(product) || option.value === decodeURIComponent(product)) {
+      productSelector.selectedIndex = option.index
+      match = true
+    }
+  }
+  if (!match) {
+    // display some html to say that the url params are not right?
+  }
+}
+
+const stripTrailingSlash = (str) => {
+  return str.endsWith('/') ? str.slice(0, -1) : str
+}
+
+function getSelectionFromPath (pageURL) {
+  const pathArr = stripTrailingSlash(pageURL.pathname).split('/')
+  if (pathArr[0] === '') pathArr.shift()
+  const values = pathArr.slice(pathArr.indexOf('cypher-cheat-sheet'))
+  values.shift()
+  // the first item in values should be a version number
+  // the second item in values should be the product
+  const pathProduct = values[1]
+  if (!pathProduct) return
+
+  // parse pathProduct to match something you could select in the product dropdown
+  console.log(`testing for ${pathProduct}`)
+  if (Object.keys(prodMatrix).includes(pathProduct)) {
+    return prodMatrix[pathProduct]
+  }
 }
