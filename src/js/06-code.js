@@ -195,7 +195,6 @@ document.addEventListener('DOMContentLoaded', function () {
     var height = code.clientHeight - paddingTop - paddingBottom
     var lines = Math.ceil(height / codeLineHeight)
     var hiddenLines = Math.ceil(lines - codeMaxLines)
-    console.log(`lines: ${lines}, hiddenLines: ${hiddenLines}`)
     return { lines: lines, hiddenLines: hiddenLines }
   }
 
