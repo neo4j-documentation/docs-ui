@@ -16,20 +16,14 @@ document.addEventListener('DOMContentLoaded', function () {
   // const curURL = new URL('https://development.neo4j.dev/docs/cypher-cheat-sheet/4.1/auradb-free/')
   const curURL = document.location
   const selectionFromPath = getSelectionFromPath(curURL)
-  // use query parameter to set product selector
-  const queryString = window.location.search
-  const urlParams = new URLSearchParams(queryString)
-  if (urlParams.has('product')) {
-    const product = urlParams.get('product')
-    updateSelectorFromProduct(product)
+
+  if (selectionFromPath) {
+    updateSelectorFromProduct(selectionFromPath)
   } else {
-    // use URL to set product selector
-    // if we are proxying by using a different url, use it to update the selected option
-    console.log(document.location)
-    console.log(document.location.href)
-    if (selectionFromPath) {
-      updateSelectorFromProduct(selectionFromPath)
-      // if we've got a selector update from the path, we need to update the paths in the version selector
+    const queryString = window.location.search
+    const selectionFromProduct = getSelectionFromProduct(queryString)
+    if (selectionFromProduct) {
+      updateSelectorFromProduct(selectionFromProduct)
     }
   }
 
@@ -127,12 +121,9 @@ document.addEventListener('DOMContentLoaded', function () {
     else div.classList.add('page-labels')
     const p = createElement('p')
     const span = createElement('span', `label label--${match}`)
-
     const text = optionMap.find((label) => label.value === match).text
-    // console.log(text)
     span.textContent = text
     p.appendChild(span)
-
     // if there is a label div, add the new label
     const labelsDiv = el.firstElementChild.querySelector('div.labels')
     if (labelsDiv) {
@@ -142,11 +133,6 @@ document.addEventListener('DOMContentLoaded', function () {
       el.firstElementChild.appendChild(div)
     }
   }
-
-  // auto-add labels according to examples and sections classes
-  // document.querySelectorAll(`div.exampleblock)`).forEach((el) => {
-  // el.classList.toggle('hidden')
-  // })
 
   // hide labels for versions that are not available in the select box
   document.querySelectorAll('span.label').forEach((el) => {
@@ -175,12 +161,10 @@ document.addEventListener('DOMContentLoaded', function () {
         newUrl = `${target.value}?product=${cs.options[selectedProduct].value}`
       }
 
-      // url = `${target.value}?product=${cs.options[selectedProduct].value}`
-
       if (window.ga) {
         window.ga('send', 'event', 'version-select', 'From: ' + current + ';To:' + next + ';')
       }
-      // console.log(newUrl)
+
       document.location.replace(newUrl)
     })
   }
@@ -302,6 +286,16 @@ const stripTrailingSlash = (str) => {
   return str.endsWith('/') ? str.slice(0, -1) : str
 }
 
+function getSelectionFromProduct (queryString) {
+  const urlParams = new URLSearchParams(queryString)
+  if (urlParams.has('product')) {
+    const queryProduct = urlParams.get('product')
+    if (Object.values(prodMatrix).includes(queryProduct)) {
+      return queryProduct
+    }
+  }
+}
+
 function getSelectionFromPath (pageURL) {
   const pathArr = stripTrailingSlash(pageURL.pathname).split('/')
   if (pathArr[0] === '') pathArr.shift()
@@ -311,9 +305,7 @@ function getSelectionFromPath (pageURL) {
   // the second item in values should be the product
   const pathProduct = values[1]
   if (!pathProduct) return
-
   // parse pathProduct to match something you could select in the product dropdown
-  console.log(`testing for ${pathProduct}`)
   if (Object.keys(prodMatrix).includes(pathProduct)) {
     return prodMatrix[pathProduct]
   }
