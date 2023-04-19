@@ -475,7 +475,7 @@ html.is-clipped--nav {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
-  padding: 8px 12px;
+  padding: 0.5rem;
   padding-right: 28px;
   border-radius: var(--border-radius-sm);
   border: 1px solid rgb(var(--palette-light-neutral-border-strong));

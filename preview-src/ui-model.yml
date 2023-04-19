@@ -234,29 +234,47 @@ page:
       urlType: internal
   # additional page attributes indexed by page-slug
     pages-data:
-      cheatsheets: &cheatsheets 
+      cheatsheet-products: &cheatsheet-products 
         - name: 'Neo4j Community Edition'
           class: 'neo4j-ce'
         - name: 'Neo4j Enterprise Edition'
           class: 'neo4j-ee'
-          default: true
+          # default: true
         - name: 'AuraDB Free'
           class: 'aura-dbf'
-        - name: 'AuraDB Professional'
-          class: 'aura-dbp'
-        - name: 'AuraDB Enterprise'
-          class: 'aura-dbe'
+        # - name: 'AuraDB Professional'
+        #   class: 'aura-dbp'
+        # - name: 'AuraDB Enterprise'
+        #   class: 'aura-dbe'
           # default: true
-        - name: 'AuraDS Professional'
-          class: 'aura-dsp'
-        - name: 'AuraDS Enterprise'
-          class: 'aura-dse'
+        # - name: 'AuraDS Professional'
+        #   class: 'aura-dsp'
+        # - name: 'AuraDS Enterprise'
+        #   class: 'aura-dse'
+      cheatsheet-labels: &cheatsheet-labels
         - name: 'Deprecated'
           class: 'deprecated'
           label-only: true
         - name: 'Configuration'
           class: 'configuration'
           label-only: true
+      cheatsheet-categories: &cheatsheet-categories
+        - name: 'Read'
+          class: 'read'
+          # default: true
+        - name: 'Write'
+          class: 'write'
+        - name: 'General'
+          class: 'general'
+        - name: 'Functions'
+          class: 'functions'
+        # - name: 'Configuration'
+        #   class: 'configuration'
+        #   label-only: true
+        # - name: 'Deprecated'
+          # class: 'deprecated'
+          # label-only: true
+      cheatsheet-personas: &cheatsheet-personas
       industries: &industries
         - imageUrl: 'https://graphgist-portal-production.s3.amazonaws.com/graph_starter/images/sources/398/dbb/3b-/medium/noun_129319.png'
           name: 'Sports and Recreation'
@@ -323,7 +341,11 @@ page:
       usecases: *usecases
       industries: *industries
     cheat-sheet:
-      cheatsheets: *cheatsheets
+      cheatsheet-products: *cheatsheet-products
+      # cheatsheet-categories: *cheatsheet-categories
+      # cheatsheet-personas: *cheatsheet-personas
+      # cheatsheet-labels: *cheatsheet-labels
+      cheatsheet-product: 'Neo4j'
       show-labels: true
 
     graphgists:

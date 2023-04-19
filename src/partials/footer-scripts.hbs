@@ -8,8 +8,9 @@
   {{#if (or (eq @root.page.layout 'training-certification') (eq @root.page.layout 'training-enrollment') (eq @root.page.layout 'training'))}}
     <script src="//go.neo4j.com/js/forms2/js/forms2.min.js"></script>
   {{/if}}
-  {{#if (and (eq page.attributes.theme "cheat-sheet") (not (eq site.url "http://localhost:5252")))}}
+  {{#if (and (eq @root.page.attributes.theme "cheat-sheet") (not (eq @root.site.url "http://localhost:5252")))}}
   <script src="{{{@root.site.path}}}{{{@root.site.ui.url}}}/js/vendor/auth0.js"></script>
+  
   <script src="{{{@root.site.path}}}{{{@root.site.ui.url}}}/js/site.js"></script>
   {{!-- <script async src="{{{@root.site.path}}}{{{@root.site.ui.url}}}/js/vendor/gram.js"></script> --}}
   <script async src="{{{@root.site.path}}}{{{@root.site.ui.url}}}/js/vendor/highlight.js"></script>

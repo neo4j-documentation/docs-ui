@@ -1,5 +1,18 @@
 import { createElement } from './modules/dom'
 
+const selectorOptions = document.querySelectorAll('[id^=cheat-sheet-selector-] option')
+
+const optionMap = [...selectorOptions].map((o) => ({
+  value: o.value,
+  text: o.dataset.label,
+  class: o.dataset.class,
+  labelType: o.dataset.labelType,
+  labelOnly: o.hidden,
+  selected: o.selected,
+  inScope: true,
+}))
+
+// TODO construct prodMatrix from optionMap?
 const prodMatrix = {
   'auradb-free': 'aura-dbf',
   'auradb-professional': 'aura-dbp',
@@ -10,10 +23,13 @@ const prodMatrix = {
   'neo4j-enterprise': 'neo4j-ee',
 }
 
+const defaultClasses = ['exampleblock', 'sect2', 'sect1']
+// const selectorTypes = [...new Set(optionMap.map((obj) => obj.labelType))]
+
 document.addEventListener('DOMContentLoaded', function () {
   if (!document.querySelector('body.cheat-sheet')) return
 
-  // const curURL = new URL('https://development.neo4j.dev/docs/cypher-cheat-sheet/4.1/auradb-free/')
+  // const curURL = new URL('https://example.com/docs/cypher-cheat-sheet/4.1/auradb-free/')
   const curURL = document.location
   const selectionFromPath = getSelectionFromPath(curURL)
 
@@ -27,85 +43,85 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   }
 
-  const csSelector = '#cheat-sheet-selector'
-  const cs = document.querySelector(csSelector)
-  cs.dataset.current = cs.options[cs.selectedIndex].value
+  // check for a checkbox to display or hide labels
+  const labelShow = document.querySelector('#products-highlight')
+  if (labelShow) {
+    labelShow.addEventListener('click', function (c) {
+      c.stopPropagation()
+      toggleLabels(c)
+    })
+  }
 
-  if (!cs) return
+  // if (urlParams.has('category')) {
+  //   const category = urlParams.get('category')
+  //   // set the default for the category
+  //   const categorySelector = document.getElementById('cheat-sheet-selector-categories')
+  //   const categorySelectorOptions = categorySelector.options
 
-  // get all the cheat-sheet selector values from the select
-  const optionMap = [...cs.options].map((o) => ({
-    value: o.value,
-    text: o.dataset.label,
-    hidden: o.hidden,
-  }))
+  //   // change selected value in options list
+  //   let match = false
+  //   for (const option of categorySelectorOptions) {
+  //     // console.log(`option:${option.label}`)
+  //     if (option.label === decodeURIComponent(category) || option.value === decodeURIComponent(category)) {
+  //       categorySelector.selectedIndex = option.index
+  //       match = true
+  //     }
+  //   }
+  //   if (!match) {
+  //     // display some html to say that the url params are not right?
+  //   }
+  // }
 
-  const optionNames = [...cs.options].reduce(function (f, o) {
+  const optionNames = [...selectorOptions].reduce(function (f, o) {
     f.push(o.value)
     return f
   }, []).sort()
 
-  const visibleOptionNames = [...cs.options].reduce(function (f, o) {
-    if (!o.hidden) f.push(o.value)
-    return f
-  }, []).sort()
+  // console.log(`optionNames: ${optionNames}`)
 
-  const hiddenOptionNames = [...cs.options].reduce(function (f, o) {
+  // const visibleOptionNames = [...selectorOptions].reduce(function (f, o) {
+  //   if (!o.hidden) f.push(o.value)
+  //   return f
+  // }, []).sort()
+
+  const hiddenOptionNames = [...selectorOptions].reduce(function (f, o) {
     if (o.hidden) f.push(o.value)
     return f
   }, []).sort()
-
-  const defaultClasses = ['exampleblock', 'sect2', 'sect1']
 
   // get list of classes for each example codeblock and section
   document.querySelectorAll(defaultClasses.map((c) => '.' + c)).forEach((el) => {
     if (el.classList.contains('hidden')) return
 
     // get an array of classes on the element
-    const classes = [...el.classList]
+    const elClasses = removeDefaultClasses([...el.classList])
 
-    // remove defaultClasses to get an array of classes that could be labels
-    const labels = classes.filter(function (obj) {
-      return defaultClasses.indexOf(obj) === -1
-    }).sort()
+    // console.log(`classes on the element: ${elClasses}`)
 
     // get an array of classes that match the select options
-    const matches = optionNames.filter(function (obj) {
-      return labels.indexOf(obj) !== -1
+    const labelsToAdd = optionNames.filter(function (obj) {
+      return elClasses.indexOf(obj) !== -1
     }).sort()
 
-    const outofscope = labels.filter(function (obj) {
-      return optionNames.indexOf(obj) === -1
-    }).sort()
-
-    const selectable = visibleOptionNames.filter(function (obj) {
-      return labels.indexOf(obj) !== -1
-    }).sort()
-
-    const notSelectable = hiddenOptionNames.filter(function (obj) {
-      return labels.indexOf(obj) !== -1
-    }).sort()
-
-    // always visible: has no labels from the 'visible' options list or all the labels in the 'visible' options list
-    // never visible: has no labels from the 'visible' list, and one or more labels not in the all options list
-
-    // remove out of scope classes
-    outofscope.forEach((label) => { el.classList.remove(label) })
-
-    // remove the sections that don't apply to this cheat sheet
-    if (selectable.length === 0 && outofscope.length > 0) {
-      el.remove()
-    } else {
-      // make entries always visible if they have nothing selectable and nothing out of scope
-      if (selectable.length === 0 || selectable.toString() === visibleOptionNames.toString()) el.classList.add('cs-all')
+    // add unknown products to hidden classes list
+    if (elClasses.length !== 0 && labelsToAdd.length === 0) {
+      elClasses.forEach((l) => {
+        if (hiddenOptionNames.indexOf(l) === -1 && Object.values(prodMatrix).includes(l)) {
+          hiddenOptionNames.push(l)
+          optionMap.push({
+            value: l,
+            text: l,
+            class: l,
+            labelType: 'products',
+            inScope: false,
+          })
+        }
+      })
+      return
     }
 
-    // add labels where appropriate
-    let labelsToAdd = notSelectable
-    if (selectable.toString() !== visibleOptionNames.toString()) labelsToAdd = labelsToAdd.concat(selectable)
-
-    if (labelsToAdd && matches.length > 0) {
-      labelsToAdd.sort().forEach((label) => {
+    if (labelsToAdd && labelsToAdd.length > 0) {
+      labelsToAdd.forEach((label) => {
         addLabel(el, label)
       })
     }
@@ -116,21 +132,50 @@ document.addEventListener('DOMContentLoaded', function () {
 
   function addLabel (el, match) {
     const div = createElement('div', 'paragraph')
-    // if (el.classList.contains('sect2')) div.classList.add('page-labels')
-    if (el.classList.contains('exampleblock')) div.classList.add('labels')
-    else div.classList.add('page-labels')
+    let labelType = 'labels'
+
+    // need to get what 'group' the label belongs to
+
+    const group = [...new Set(optionMap.filter(function (f) {
+      return f.value === match
+    }).map((obj) => obj.labelType))]
+
+    let addCLassToChildren = true
+    if (el.classList.contains('exampleblock')) {
+      if (el.closest('.sect2').classList.contains(match)) return
+      div.classList.add('labels')
+      addCLassToChildren = false
+    } else {
+      if (el.classList.contains('sect2') && el.closest('.sect1').classList.contains(match)) return
+      div.classList.add('page-labels')
+      labelType = 'page-labels'
+    }
     const p = createElement('p')
-    const span = createElement('span', `label label--${match}`)
+    const span = createElement('span', `label label--${match} group--${group}`)
+
     const text = optionMap.find((label) => label.value === match).text
+
     span.textContent = text
     p.appendChild(span)
+
     // if there is a label div, add the new label
-    const labelsDiv = el.firstElementChild.querySelector('div.labels')
+    // if no label div yet, add this label to the new div and insert the new div
+    // note: where it is inserted depends on whether it is a labels div or page-labels div
+    const labelsDiv = (labelType === 'labels') ? el.firstElementChild.querySelector(`div.${labelType}`) : el.querySelector(`div.${labelType}`)
     if (labelsDiv) {
       labelsDiv.append(p)
     } else {
       div.appendChild(p)
-      el.firstElementChild.appendChild(div)
+      if (labelType === 'labels') {
+        el.firstElementChild.prepend(div)
+      } else {
+        el.firstElementChild.after(div) // for a page label we assume that the first child is h2 or h3
+      }
+    }
+    if (addCLassToChildren) {
+      el.querySelectorAll('.sect2, .exampleblock').forEach((child) => {
+        child.classList.add(match)
+      })
     }
   }
 
@@ -142,37 +187,11 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   })
 
-  // toggle for default cheat sheet selection
-  const selected = cs.selectedIndex
+  const prodSelectorID = '#cheat-sheet-selector-products'
+  const prodSelector = document.querySelector(prodSelectorID)
+  prodSelector.dataset.current = prodSelector.options[prodSelector.selectedIndex].value
 
-  var versionSelector = document.querySelector('body.cheat-sheet .version-selector')
-  if (versionSelector) {
-    versionSelector.addEventListener('change', function (e) {
-      const target = e.target
-
-      const selectedProduct = cs.selectedIndex
-      const current = target.dataset.current
-      const next = target.selectedOptions[0].dataset.version
-      let newUrl
-      if (selectionFromPath) {
-        const re = new RegExp(`/${current}/`)
-        newUrl = document.URL.replace(re, `/${next}/`)
-      } else {
-        newUrl = `${target.value}?product=${cs.options[selectedProduct].value}`
-      }
-
-      if (window.ga) {
-        window.ga('send', 'event', 'version-select', 'From: ' + current + ';To:' + next + ';')
-      }
-
-      document.location.replace(newUrl)
-    })
-  }
-
-  toggleExamples(cs.options[selected].value)
-
-  // hide and unhide sections when the selection is changed
-  cs.addEventListener('change', function (e) {
+  prodSelector.addEventListener('change', function (e) {
     e.stopPropagation()
 
     // if we're using a proxied path, just load the new url
@@ -184,64 +203,172 @@ document.addEventListener('DOMContentLoaded', function () {
       document.location.replace(newURL)
     } else {
       // reset everything
-      clearHidden()
-      // fake a scroll event to trigger feedback scroll event
-      window.scrollTo(window.scrollX, window.scrollY + 1)
-      // hide content according to the new selection
-      toggleExamples(e.target.value)
-      // fake a scroll event to trigger feedback scroll event
-      window.scrollTo(window.scrollX, window.scrollY - 1)
+      setVisibility(hiddenOptionNames)
     }
+  })
+
+  var versionSelector = document.querySelector('body.cheat-sheet .version-selector')
+  if (versionSelector) {
+    versionSelector.addEventListener('change', function (e) {
+      const target = e.target
+
+      const selectedProduct = prodSelector.selectedIndex
+      const current = target.dataset.current
+      const next = target.selectedOptions[0].dataset.version
+      let newUrl
+      if (selectionFromPath) {
+        const re = new RegExp(`/${current}/`)
+        newUrl = document.URL.replace(re, `/${next}/`)
+      } else {
+        newUrl = `${target.value}?product=${prodSelector.options[selectedProduct].value}`
+      }
+
+      if (window.ga) {
+        window.ga('send', 'event', 'version-select', 'From: ' + current + ';To:' + next + ';')
+      }
+
+      document.location.replace(newUrl)
+    })
+  }
+
+  setVisibility(hiddenOptionNames)
+
+  const matchTo = parseFloat(document.querySelector('.nav-container .selectors').getBoundingClientRect().height)
+  const firstSection = document.querySelector('article h2')
+  firstSection.style.height = `${matchTo}px`
+  firstSection.style.margin = 0
+  firstSection.style.lineHeight = `${matchTo}px`
+
+  document.querySelectorAll('article h2').forEach((el) => {
+    el.style.height = `${matchTo}px`
+    el.style.margin = 0
+    el.style.lineHeight = `${matchTo}px`
   })
 })
 
-function clearHidden () {
-  document.querySelectorAll('.toc-menu .hidden, .content .sect1.hidden, .content .sect2.hidden, .content .exampleblock.hidden').forEach((el) => {
-    el.classList.remove('hidden')
-  })
-}
-
-function toggleExamples (value) {
-  // hide headers
-  document.querySelectorAll(`div.sect1:not(.cs-all, .${value})`).forEach((el) => {
-    el.classList.toggle('hidden')
-  })
-
-  // hide sections
-  document.querySelectorAll(`div.sect2:not(.cs-all, .${value})`).forEach((el) => {
-    el.classList.toggle('hidden')
-  })
-
-  // hide individual examples
-  document.querySelectorAll(`div.exampleblock:not(.cs-all, .${value})`).forEach((el) => {
-    el.classList.toggle('hidden')
-  })
-
-  // hide sections or headers where all the children are hidden
-  const hideableSections = ['div.sect1', 'div.sect2', 'div.exampleblock']
-  while (hideableSections.length >= 2) {
-    const child = hideableSections.pop()
-    const parent = hideableSections[hideableSections.length - 1]
-    hideContent(child, parent)
-  }
-
-  // hide toc entries
+function setVisibility (hiddenOptionNames) {
+  // reset everything
+  clearClass('hidden')
+  clearClass('hide-this')
+  clearClass('selectors-match')
+  selectorMatch(hiddenOptionNames)
   hideTocEntries()
+  document.querySelector('body.cheat-sheet').style.opacity = '1'
 }
 
-// hide any empty parent sections
-function hideContent (child, parent) {
-  document.querySelectorAll(`${parent}:not(.hidden)`).forEach((el) => {
-    // count the children and hidden children
-    const sects = el.querySelectorAll(child).length
-    const hidden = el.querySelectorAll(`${child}.hidden`).length
+function clearClass (cl) {
+  document.querySelectorAll(`.toc-menu .${cl}, .content .sect1.${cl}, .content .sect2.${cl}, .content .exampleblock.${cl}`).forEach((el) => {
+    el.classList.remove(cl)
+  })
+}
 
-    // if all children are hidden, hide the parent and its toc entry
-    // if not, unhide the parent and its toc entry
-    if (hidden === sects) {
-      el.classList.add('hidden')
+function selectorMatch (hiddenOptionNames) {
+  // what is currently selected?
+  const selections = document.querySelectorAll('.cs-selector option:checked')
+  const selectedValues = [...selections].filter(function (s) {
+    return s.value
+  }).map((s) => ({
+    value: s.value,
+    type: s.dataset.labelType,
+  })
+  )
+
+  // selectedValues.forEach((s) => {
+  //   // get all the values for this type
+  //   const these = [...new Set(optionMap.filter(function (f) {
+  //     return f.labelType === s.type && f.value !== 'all' && f.inScope
+  //   }).map((obj) => obj.value))]
+  // })
+
+  // hide headers and example sections that don't have labels for all the current selections
+  document.querySelectorAll('div.sect2:not(.cs-all), div.exampleblock:not(.cs-all)').forEach((el) => {
+    const classes = removeDefaultClasses([...el.classList])
+    // console.log(`classes on element: ${classes}`)
+    // assume all eamples are visible0
+    let display = true
+
+    selectedValues.forEach((s) => {
+      // console.log(`selected: ${s.type} : ${s.value}`)
+
+      // which value for s.type is selected?
+
+      // get all the values for this type
+      const these = [...new Set(optionMap.filter(function (f) {
+        return f.labelType === s.type && f.value !== 'all' && f.inScope
+      }).map((obj) => obj.value))]
+
+      // get out of scope values for this type
+      const notInScope = [...new Set(optionMap.filter(function (f) {
+        return f.labelType === s.type && f.value !== 'all' && !f.inScope
+      }).map((obj) => obj.value))]
+
+      // console.log(`not in scope: ${notInScope}`)
+
+      // what make us want to hide an example?
+
+      // 1. if it has a class for one or more of this type, but not the selected one, and all isn't selected for this type
+      if (these.some((v) => classes.includes(v)) && (!classes.includes(s.value) && s.value !== 'all')) {
+        // console.log(`el will be hidden based on classes (${classes}) versus current type ${s.type} (${these}), and current selection (${s.value})`)
+        display = false
+      }
+
+      // 2. If it has no classes of this type, and some that all out of scope
+      if (!these.some((v) => classes.includes(v)) && notInScope.some((v) => classes.includes(v))) {
+        // console.log(`el will be hidden based on classes (${classes}) versus current type ${s.type} (${these}), and current selection (${s.value})`)
+        display = false
+      }
+
+      // how about the difference between additive and subtractive labels?
+      // ie no product = all products, but no category does not mean all categories?
+      // if a category is chosen then the el has to have that to be displayed?
+    })
+
+    if (display) {
+      el.classList.add('selectors-match')
     } else {
-      el.classList.remove('hidden')
+      el.classList.add('hidden')
+      el.classList.remove('selectors-match')
+      // console.log('getting out of here')
+      // return
+    }
+
+    if (hiddenOptionNames.some((v) => classes.includes(v))) {
+      el.classList.add('label-match')
+    } else {
+      el.classList.remove('label-match')
+    }
+  })
+
+  document.querySelectorAll('.selectors-match .sect2:not(.hidden), .selectors-match .exampleblock:not(.hidden)').forEach((ch) => {
+    // console.log('adding to child')
+    ch.classList.add('selectors-match')
+  })
+
+  document.querySelectorAll('.label-match .sect2, .label-match .exampleblock').forEach((ch) => {
+    // console.log('adding to child')
+    ch.classList.add('label-match')
+  })
+
+  document.querySelectorAll('div.exampleblock.selectors-match').forEach((el) => {
+    el.closest('.sect2').classList.add('selectors-match')
+  })
+
+  document.querySelectorAll('div.sect2.selectors-match').forEach((el) => {
+    el.closest('.sect1').classList.add('selectors-match')
+  })
+
+  // document.querySelectorAll('div.exampleblock.label-match').forEach((el) => {
+  //   el.closest('.sect2').classList.add('label-match')
+  // })
+
+  // document.querySelectorAll('div.sect2.label-match').forEach((el) => {
+  //   el.closest('.sect1').classList.add('label-match')
+  // })
+
+  // hide headers and example sections that don't have labels for all the current selections
+  document.querySelectorAll('div.exampleblock:not(.selectors-match), div.sect2:not(.selectors-match), div.sect1:not(.selectors-match)').forEach((el) => {
+    if (!el.classList.contains('label-match')) {
+      el.classList.add('hidden')
     }
   })
 }
@@ -266,7 +393,7 @@ function cleanToc () {
 
 function updateSelectorFromProduct (product) {
   // set the default for the product
-  const productSelector = document.getElementById('cheat-sheet-selector')
+  const productSelector = document.getElementById('cheat-sheet-selector-products')
   const productSelectorOptions = productSelector.options
 
   // change selected value in options list
@@ -309,4 +436,21 @@ function getSelectionFromPath (pageURL) {
   if (Object.keys(prodMatrix).includes(pathProduct)) {
     return prodMatrix[pathProduct]
   }
+}
+
+function removeDefaultClasses (c) {
+  // remove defaultClasses to get an array of classes that could be labels
+  return c.filter(function (obj) {
+    return defaultClasses.indexOf(obj) === -1
+  }).sort()
+}
+
+function toggleLabels (l) {
+  document.querySelectorAll('span.group--products').forEach((div) => {
+    if (l.target.checked) {
+      div.style.display = 'flex'
+    } else {
+      div.style.display = 'none'
+    }
+  })
 }
