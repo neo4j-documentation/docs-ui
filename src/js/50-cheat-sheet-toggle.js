@@ -348,7 +348,7 @@ function updateSelectorFromProduct (product) {
 function updateOgFromProduct (product) {
   const ogUrl = document.querySelector('meta[property="og:url"]')
   const ogUrlContent = ogUrl.getAttribute('content')
-  
+
   const ogDesc = document.querySelector('meta[property="og:description"]')
 
   const ogUrlFromProduct = stripTrailingSlash(ogUrlContent) + '/' + product
@@ -356,8 +356,8 @@ function updateOgFromProduct (product) {
   const text = getProductFromOptionMap(product)
   const ogDescFromProduct = 'Cypher Cheat Sheet - ' + text
 
-  ogUrl.setAttribute('content',ogUrlFromProduct)
-  ogDesc.setAttribute('content',ogDescFromProduct)
+  ogUrl.setAttribute('content', ogUrlFromProduct)
+  ogDesc.setAttribute('content', ogDescFromProduct)
 }
 
 const stripTrailingSlash = (str) => {
