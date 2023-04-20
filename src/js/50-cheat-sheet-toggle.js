@@ -33,6 +33,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
   if (selectionFromPath) {
     updateSelectorFromProduct(selectionFromPath)
+    updateOgFromProduct(selectionFromPath)
   }
 
   // check for a checkbox to display or hide labels
@@ -118,7 +119,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const p = createElement('p')
     const span = createElement('span', `label label--${match} group--${group}`)
 
-    const text = optionMap.find((label) => label.value === match).text
+    const text = getProductFromOptionMap(match)
 
     span.textContent = text
     p.appendChild(span)
@@ -344,6 +345,21 @@ function updateSelectorFromProduct (product) {
   }
 }
 
+function updateOgFromProduct (product) {
+  const ogUrl = document.querySelector('meta[property="og:url"]')
+  const ogUrlContent = ogUrl.getAttribute('content')
+  
+  const ogDesc = document.querySelector('meta[property="og:description"]')
+
+  const ogUrlFromProduct = stripTrailingSlash(ogUrlContent) + '/' + product
+
+  const text = getProductFromOptionMap(product)
+  const ogDescFromProduct = 'Cypher Cheat Sheet - ' + text
+
+  ogUrl.setAttribute('content',ogUrlFromProduct)
+  ogDesc.setAttribute('content',ogDescFromProduct)
+}
+
 const stripTrailingSlash = (str) => {
   return str.endsWith('/') ? str.slice(0, -1) : str
 }
@@ -378,4 +394,9 @@ function toggleLabels (l) {
       div.style.display = 'none'
     }
   })
+}
+
+function getProductFromOptionMap (prod) {
+  const name = optionMap.find((opt) => opt.value === prod).text
+  return name
 }
