@@ -28,6 +28,11 @@ Description
 
 More description
 --
+
+[.extra] <6>
+--
+Additional content, to be used sparingly because this is a cheat sheet or quick reference, not a full Cypher reference manual.
+--
 ====
 -----
 
@@ -38,6 +43,7 @@ More description
 <3> Add an optional block for a Cypher example, specifying `[source, cypher,`role=noheader`].
 <4> Add a required description block.
 <5> If the description consists of more than one paragraph of text, use an open block.
+<6> If you need to, you can add `extra` content, which is displayed below the example code and description.
 --
 =====
 
@@ -49,26 +55,28 @@ More description
 -----
 asciidoc:
   attributes:
-    page-cheatsheets: <1>
-      - name: 'Neo4j Enterprise Edition' <2>
-        label: 'Enterprise Edition' <3>
-        class: 'neo4j-ee' <4>
-        default: true <5>
+    page-cheatsheet-product: Neo4j <1>
+    page-cheatsheet-products: <2>
+      - name: 'Neo4j Enterprise Edition' <3>
+        label: 'Enterprise Edition' <4>
+        class: 'neo4j-ee' <5>
+        default: true <6>
       - name: 'Neo4j Community Edition'
         class: 'neo4j-ce'
       - name: 'Deprecated'
         class: 'deprecated'
-        label-only: true <6>
+        label-only: true <7>
 -----
 
 [.description]
 --
-<1> Add a `page-cheatsheets` section to the playbook to define the different views that a user can choose from. In this example we've added two views: Neo4j Enterprise Edition and Neo4j Community Edition.
-<2> Add a name for each view. This text is displayed in the dropdown that you use to select which Cheat Sheet you want to view. 
-<3> [Optional] Add label text. When an example is not applicable in all views, a label is displayed to indicate which views it applies to. If no `label` value is specified, the value of `name` is used. 
-<4> Specify a class for each view. This is used to add a role to the example block. For example, the class `neo4j-ee` is specified by `[.neo4j-ee]`.
-<5> Specify a default view. This is the view that is displayed when the page is loaded.
-<6> If you want to display a label for some entries without that label appearing in the dropdown, you can use the `label-only` attribute. In this example, entries that have the `[.deprecated]` role will have the `Deprecated` label displayed, but 'Deprecated' is not an option you can select from the dropdown. In this preview build, both `Configuration` and `Deprecated` have been added as `label-only` views.
+<1> Add a product name to displayed before `Version` in the version selector. The default value is `Product`.
+<2> Add a `page-cheatsheet-products` section to the playbook to define the different views that a user can choose from. In this example we've added two views: Neo4j Enterprise Edition and Neo4j Community Edition.
+<3> Add a name for each view. This text is displayed in the dropdown that you use to select which Cheat Sheet you want to view. 
+<4> [Optional] Add label text. When an example is not applicable in all views, a label is displayed to indicate which views it applies to. If no `label` value is specified, the value of `name` is used. 
+<5> Specify a class for each view. This is used to add a role to the example block. For example, the class `neo4j-ee` is specified by `[.neo4j-ee]`.
+<6> Specify a default view. This is the view that is displayed when the page is loaded.
+<7> If you want to display a label for some entries without that label appearing in the dropdown, you can use the `label-only` attribute. In this example, entries that have the `[.deprecated]` role will have the `Deprecated` label displayed, but 'Deprecated' is not an option you can select from the dropdown. In this preview build, both `Configuration` and `Deprecated` have been added as `label-only` views.
 --
 =====
 
@@ -205,8 +213,8 @@ Can be any arbitrary asciidoc blocks and elements.
 | Asciidoctor
 | *Awesome* way to write documentation
 
-| Micronaut
-| Low resource usage and fast startup micro services
+| Neo4j
+| Graphy
 |===
 --
 ====
