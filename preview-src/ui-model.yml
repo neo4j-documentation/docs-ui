@@ -239,18 +239,17 @@ page:
           class: 'neo4j-ce'
         - name: 'Neo4j Enterprise Edition'
           class: 'neo4j-ee'
-          # default: true
         - name: 'AuraDB Free'
           class: 'aura-dbf'
-        # - name: 'AuraDB Professional'
-        #   class: 'aura-dbp'
-        # - name: 'AuraDB Enterprise'
-        #   class: 'aura-dbe'
-          # default: true
-        # - name: 'AuraDS Professional'
-        #   class: 'aura-dsp'
-        # - name: 'AuraDS Enterprise'
-        #   class: 'aura-dse'
+        - name: 'AuraDB Professional'
+          class: 'aura-dbp'
+        - name: 'AuraDB Enterprise'
+          class: 'aura-dbe'
+          default: true
+        - name: 'AuraDS Professional'
+          class: 'aura-dsp'
+        - name: 'AuraDS Enterprise'
+          class: 'aura-dse'
       cheatsheet-labels: &cheatsheet-labels
         - name: 'Deprecated'
           class: 'deprecated'
