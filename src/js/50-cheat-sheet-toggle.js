@@ -24,23 +24,15 @@ const prodMatrix = {
 }
 
 const defaultClasses = ['exampleblock', 'sect2', 'sect1']
-// const selectorTypes = [...new Set(optionMap.map((obj) => obj.labelType))]
 
 document.addEventListener('DOMContentLoaded', function () {
   if (!document.querySelector('body.cheat-sheet')) return
 
-  // const curURL = new URL('https://example.com/docs/cypher-cheat-sheet/4.1/auradb-free/')
   const curURL = document.location
   const selectionFromPath = getSelectionFromPath(curURL)
 
   if (selectionFromPath) {
     updateSelectorFromProduct(selectionFromPath)
-  } else {
-    const queryString = window.location.search
-    const selectionFromProduct = getSelectionFromProduct(queryString)
-    if (selectionFromProduct) {
-      updateSelectorFromProduct(selectionFromProduct)
-    }
   }
 
   // check for a checkbox to display or hide labels
@@ -52,37 +44,10 @@ document.addEventListener('DOMContentLoaded', function () {
     })
   }
 
-  // if (urlParams.has('category')) {
-  //   const category = urlParams.get('category')
-  //   // set the default for the category
-  //   const categorySelector = document.getElementById('cheat-sheet-selector-categories')
-  //   const categorySelectorOptions = categorySelector.options
-
-  //   // change selected value in options list
-  //   let match = false
-  //   for (const option of categorySelectorOptions) {
-  //     // console.log(`option:${option.label}`)
-  //     if (option.label === decodeURIComponent(category) || option.value === decodeURIComponent(category)) {
-  //       categorySelector.selectedIndex = option.index
-  //       match = true
-  //     }
-  //   }
-  //   if (!match) {
-  //     // display some html to say that the url params are not right?
-  //   }
-  // }
-
   const optionNames = [...selectorOptions].reduce(function (f, o) {
     f.push(o.value)
     return f
   }, []).sort()
-
-  // console.log(`optionNames: ${optionNames}`)
-
-  // const visibleOptionNames = [...selectorOptions].reduce(function (f, o) {
-  //   if (!o.hidden) f.push(o.value)
-  //   return f
-  // }, []).sort()
 
   const hiddenOptionNames = [...selectorOptions].reduce(function (f, o) {
     if (o.hidden) f.push(o.value)
@@ -273,13 +238,6 @@ function selectorMatch (hiddenOptionNames) {
   })
   )
 
-  // selectedValues.forEach((s) => {
-  //   // get all the values for this type
-  //   const these = [...new Set(optionMap.filter(function (f) {
-  //     return f.labelType === s.type && f.value !== 'all' && f.inScope
-  //   }).map((obj) => obj.value))]
-  // })
-
   // hide headers and example sections that don't have labels for all the current selections
   document.querySelectorAll('div.sect2:not(.cs-all), div.exampleblock:not(.cs-all)').forEach((el) => {
     const classes = removeDefaultClasses([...el.classList])
@@ -288,10 +246,6 @@ function selectorMatch (hiddenOptionNames) {
     let display = true
 
     selectedValues.forEach((s) => {
-      // console.log(`selected: ${s.type} : ${s.value}`)
-
-      // which value for s.type is selected?
-
       // get all the values for this type
       const these = [...new Set(optionMap.filter(function (f) {
         return f.labelType === s.type && f.value !== 'all' && f.inScope
@@ -302,10 +256,7 @@ function selectorMatch (hiddenOptionNames) {
         return f.labelType === s.type && f.value !== 'all' && !f.inScope
       }).map((obj) => obj.value))]
 
-      // console.log(`not in scope: ${notInScope}`)
-
       // what make us want to hide an example?
-
       // 1. if it has a class for one or more of this type, but not the selected one, and all isn't selected for this type
       if (these.some((v) => classes.includes(v)) && (!classes.includes(s.value) && s.value !== 'all')) {
         // console.log(`el will be hidden based on classes (${classes}) versus current type ${s.type} (${these}), and current selection (${s.value})`)
@@ -317,10 +268,6 @@ function selectorMatch (hiddenOptionNames) {
         // console.log(`el will be hidden based on classes (${classes}) versus current type ${s.type} (${these}), and current selection (${s.value})`)
         display = false
       }
-
-      // how about the difference between additive and subtractive labels?
-      // ie no product = all products, but no category does not mean all categories?
-      // if a category is chosen then the el has to have that to be displayed?
     })
 
     if (display) {
@@ -328,8 +275,6 @@ function selectorMatch (hiddenOptionNames) {
     } else {
       el.classList.add('hidden')
       el.classList.remove('selectors-match')
-      // console.log('getting out of here')
-      // return
     }
 
     if (hiddenOptionNames.some((v) => classes.includes(v))) {
@@ -340,12 +285,10 @@ function selectorMatch (hiddenOptionNames) {
   })
 
   document.querySelectorAll('.selectors-match .sect2:not(.hidden), .selectors-match .exampleblock:not(.hidden)').forEach((ch) => {
-    // console.log('adding to child')
     ch.classList.add('selectors-match')
   })
 
   document.querySelectorAll('.label-match .sect2, .label-match .exampleblock').forEach((ch) => {
-    // console.log('adding to child')
     ch.classList.add('label-match')
   })
 
@@ -356,14 +299,6 @@ function selectorMatch (hiddenOptionNames) {
   document.querySelectorAll('div.sect2.selectors-match').forEach((el) => {
     el.closest('.sect1').classList.add('selectors-match')
   })
-
-  // document.querySelectorAll('div.exampleblock.label-match').forEach((el) => {
-  //   el.closest('.sect2').classList.add('label-match')
-  // })
-
-  // document.querySelectorAll('div.sect2.label-match').forEach((el) => {
-  //   el.closest('.sect1').classList.add('label-match')
-  // })
 
   // hide headers and example sections that don't have labels for all the current selections
   document.querySelectorAll('div.exampleblock:not(.selectors-match), div.sect2:not(.selectors-match), div.sect1:not(.selectors-match)').forEach((el) => {
@@ -411,16 +346,6 @@ function updateSelectorFromProduct (product) {
 
 const stripTrailingSlash = (str) => {
   return str.endsWith('/') ? str.slice(0, -1) : str
-}
-
-function getSelectionFromProduct (queryString) {
-  const urlParams = new URLSearchParams(queryString)
-  if (urlParams.has('product')) {
-    const queryProduct = urlParams.get('product')
-    if (Object.values(prodMatrix).includes(queryProduct)) {
-      return queryProduct
-    }
-  }
 }
 
 function getSelectionFromPath (pageURL) {
