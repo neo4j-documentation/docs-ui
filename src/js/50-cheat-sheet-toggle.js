@@ -33,7 +33,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
   if (selectionFromPath) {
     updateSelectorFromProduct(selectionFromPath)
-    updateOgFromProduct(selectionFromPath, curURL)
+    updateMetaFromProduct(selectionFromPath, curURL)
   }
 
   // check for a checkbox to display or hide labels
@@ -345,14 +345,18 @@ function updateSelectorFromProduct (product) {
   }
 }
 
-function updateOgFromProduct (product, curURL) {
+function updateMetaFromProduct (product, curURL) {
   const ogDesc = document.querySelector('meta[property="og:description"]')
+  const ogTitle = document.querySelector('meta[property="og:title"]')
   const ogUrl = document.querySelector('meta[property="og:url"]')
+
   const text = getProductFromOptionMap(product)
   const ogDescFromProduct = 'Cypher Cheat Sheet - ' + text
 
   ogUrl.setAttribute('content', curURL)
   ogDesc.setAttribute('content', ogDescFromProduct)
+  ogTitle.setAttribute('content', ogDescFromProduct)
+  document.title = ogDescFromProduct
 }
 
 const stripTrailingSlash = (str) => {
