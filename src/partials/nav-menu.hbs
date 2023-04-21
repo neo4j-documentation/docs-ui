@@ -1,3 +1,11 @@
+{{#if (eq page.attributes.theme 'cheat-sheet') }}
+  <aside class="toc sidebar" data-title="{{or page.attributes.toctitle ''}}"
+  data-levels="{{{or page.attributes.toclevels 2}}}">
+  <div class="toc-menu">
+    <div class="toc-menu-placeholder"></div>
+  </div>
+</aside>
+{{else}}
 {{#with page.navigation}}
 <div class="nav-panel-menu is-active" data-panel="menu">
     <nav class="nav-menu">
@@ -10,3 +18,4 @@
   </nav>
 </div>
 {{/with}}
+{{/if}}

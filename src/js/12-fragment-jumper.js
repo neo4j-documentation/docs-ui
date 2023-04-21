@@ -2,6 +2,7 @@
   'use strict'
 
   var article = document.querySelector('article.doc')
+  var cheatSheet = document.querySelector('body.cheat-sheet')
   var toolbar = document.querySelector('.toolbar')
   var headerNavigationBar = document.querySelector('header > .navbar')
 
@@ -23,7 +24,15 @@
       e.preventDefault()
     }
     var topOffset = toolbar ? toolbar.getBoundingClientRect().bottom : headerNavigationBar.getBoundingClientRect().bottom
-    window.scrollTo(0, computePosition(this, 0) - topOffset)
+
+    if (cheatSheet) {
+      var scrollTarget = this.closest('div')
+      var selectorsTop = document.querySelector('.nav-container .selectors').querySelector('div').getBoundingClientRect().top
+      if (this.tagName === 'H3') topOffset = selectorsTop
+      window.scrollTo(0, computePosition(scrollTarget, 0) - topOffset)
+    } else {
+      window.scrollTo(0, computePosition(this, 0) - topOffset)
+    }
   }
 
   window.addEventListener('load', function jumpOnLoad (e) {

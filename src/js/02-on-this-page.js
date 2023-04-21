@@ -2,12 +2,15 @@
   'use strict'
 
   var sidebar = document.querySelector('aside.toc.sidebar')
+
   if (!sidebar) return
   if (document.querySelector('body.-toc')) return sidebar.parentNode.removeChild(sidebar)
   var levels = parseInt(sidebar.dataset.levels || 2)
   if (levels < 0) return
 
   var article = document.querySelector('article.doc')
+  var selectors = document.querySelector('.nav-container .selectors')
+  var selectorsHeight = selectors ? selectors.getBoundingClientRect().height : 0
   var headings
   var headingSelector = []
   for (var l = 0; l <= levels; l++) headingSelector.push(l ? '.sect' + l + '>h' + (l + 1) + '[id]' : 'h1[id].sect0')
@@ -50,7 +53,7 @@
   function onScroll () {
     var scrolledBy = window.pageYOffset
     var buffer = getNumericStyleVal(document.documentElement, 'fontSize') * 1.15
-    var ceil = article.offsetTop
+    var ceil = selectors ? article.offsetTop + (selectorsHeight * 1.15) : article.offsetTop
     if (scrolledBy && window.innerHeight + scrolledBy + 2 >= document.documentElement.scrollHeight) {
       lastActiveFragment = Array.isArray(lastActiveFragment) ? lastActiveFragment : Array(lastActiveFragment || 0)
       var activeFragments = []
