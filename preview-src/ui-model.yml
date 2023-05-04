@@ -172,6 +172,9 @@ page:
     - content: Tables
       url: tables.html
       urlType: internal
+    - content: Tables (No Captions)
+      url: tables-no-captions.html
+      urlType: internal      
     - content: Examples
       url: example.html
       urlType: internal
