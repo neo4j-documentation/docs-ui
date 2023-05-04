@@ -659,6 +659,15 @@ body {
   text-align: left;
 }
 
+.hide-table-captions .doc .tableblock caption {
+  position: absolute;
+  left: -10000px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
 .doc .admonitionblock .title {
   font-weight: bold;
   font-style: normal;
