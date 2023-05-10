@@ -10,7 +10,10 @@
         MktoForms2.loadForm("//app-ab10.marketo.com", "710-RRC-335", 2374, function (form) {
             // Add an onSuccess handler
             form.onSuccess(function (values, followUpUrl) {
-                document.getElementById("pp-text").style.display = "none";
+                var pp = document.getElementById("pp-text")
+                if (pp) {
+                    pp.style.display = "none";
+                }
                 document.getElementById("thks-subs").innerHTML = "<p class='byline'>Thank you! Email Node added.</p><p class='byline'>Receive more news and events: <a href='https://neo4j.com/manage-subscriptions/'>manage your subscriptions.<a/></p>";
                 form.getFormElem().hide();
                 return false;
