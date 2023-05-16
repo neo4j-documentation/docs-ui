@@ -114,7 +114,7 @@ span.fabric::after {
   border-width: 1px;
   border-radius: 6px;
   bottom: 2px;
-  /* margin-left: 8px; */
+  margin-left: 8px;
 }
 
 .sect1.show-roles h2::after,
@@ -148,7 +148,8 @@ span.fabric::after {
   padding-bottom: 0.5rem;
 }
 
-.sect1 div.roles > span.role {
+.sect1 div.roles > span.role,
+div.roles > span.role::after {
   margin: 0;
 }
 
