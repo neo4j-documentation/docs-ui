@@ -237,7 +237,9 @@ page:
       urlType: internal
   # additional page attributes indexed by page-slug
     pages-data:
-      cheatsheet-products: &cheatsheet-products 
+      cheatsheet-products: &cheatsheet-products
+        - name: 'All'
+          class: 'all'
         - name: 'Neo4j Community Edition'
           class: 'neo4j-ce'
         - name: 'Neo4j Enterprise Edition'

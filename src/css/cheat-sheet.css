@@ -392,11 +392,6 @@ body.cheat-sheet .exampleblock > .content > div.labels span.label {
   margin-top: 1rem;
 }
 
-body.cheat-sheet div.labels span.group--products,
-body.cheat-sheet div.page-labels span.group--products {
-  display: none;
-}
-
 body.cheat-sheet .exampleblock > .content > div.extra {
   flex-grow: 2;
   border-top: none;

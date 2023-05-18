@@ -41,7 +41,7 @@ document.addEventListener('DOMContentLoaded', function () {
   if (labelShow) {
     labelShow.addEventListener('click', function (c) {
       c.stopPropagation()
-      toggleLabels(c)
+      toggleLabels(c.target.checked)
     })
   }
 
@@ -160,17 +160,25 @@ document.addEventListener('DOMContentLoaded', function () {
   prodSelector.addEventListener('change', function (e) {
     e.stopPropagation()
 
+    // if localhost
+    if (curURL.host.indexOf('localhost') !== -1) {
+      setVisibility(hiddenOptionNames, e.target.value === 'all')
+      return
+    }
+
+    const currentProd = Object.keys(prodMatrix).find((key) => prodMatrix[key] === e.target.dataset.current)
+    const newProd = Object.keys(prodMatrix).find((key) => prodMatrix[key] === e.target.value)
+    const re = new RegExp(`/${currentProd}/`)
+    let newURL
+
     // if we're using a proxied path, just load the new url
     if (selectionFromPath) {
-      // get the new url
-      const currentProd = Object.keys(prodMatrix).find((key) => prodMatrix[key] === e.target.dataset.current)
-      const newProd = Object.keys(prodMatrix).find((key) => prodMatrix[key] === e.target.value)
-      const newURL = curURL.href.replace(currentProd, newProd)
-      document.location.replace(newURL)
+      newURL = newProd ? curURL.href.replace(re, `/${newProd}/`) : curURL.href.replace(re, '')
     } else {
-      // reset everything
-      setVisibility(hiddenOptionNames)
+      newURL = curURL.href.split('#')[0].concat(newProd).concat(curURL.hash)
     }
+
+    if (newURL) document.location.replace(newURL)
   })
 
   var versionSelector = document.querySelector('body.cheat-sheet .version-selector')
@@ -197,7 +205,7 @@ document.addEventListener('DOMContentLoaded', function () {
     })
   }
 
-  setVisibility(hiddenOptionNames)
+  setVisibility(hiddenOptionNames, prodSelector.dataset.current === 'all')
 
   const matchTo = parseFloat(document.querySelector('.nav-container .selectors').getBoundingClientRect().height)
   const firstSection = document.querySelector('article h2')
@@ -212,19 +220,22 @@ document.addEventListener('DOMContentLoaded', function () {
   })
 })
 
-function setVisibility (hiddenOptionNames) {
+function setVisibility (hiddenOptionNames, showLabels = false) {
   // reset everything
-  clearClass('hidden')
-  clearClass('hide-this')
-  clearClass('selectors-match')
+  clearClasses(['hidden', 'hide-this', 'selectors-match'])
+  // clearClass('hide-this')
+  // clearClass('selectors-match')
   selectorMatch(hiddenOptionNames)
   hideTocEntries()
+  toggleLabels(showLabels)
   document.querySelector('body.cheat-sheet').style.opacity = '1'
 }
 
-function clearClass (cl) {
-  document.querySelectorAll(`.toc-menu .${cl}, .content .sect1.${cl}, .content .sect2.${cl}, .content .exampleblock.${cl}`).forEach((el) => {
-    el.classList.remove(cl)
+function clearClasses (cl) {
+  cl.forEach((c) => {
+    document.querySelectorAll(`.toc-menu .${c}, .content .sect1.${c}, .content .sect2.${c}, .content .exampleblock.${c}`).forEach((el) => {
+      el.classList.remove(c)
+    })
   })
 }
 
@@ -387,7 +398,7 @@ function removeDefaultClasses (c) {
 
 function toggleLabels (l) {
   document.querySelectorAll('span.group--products').forEach((div) => {
-    if (l.target.checked) {
+    if (l) {
       div.style.display = 'flex'
     } else {
       div.style.display = 'none'
