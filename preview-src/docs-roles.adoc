@@ -15,6 +15,29 @@ Blocks with the appropriate roles have text appended.
 
 Lorem ipsum dolor `code test` sit
 
+Roles can be added anywhere, for example this definition list item has a role.
+
+[enterprise-edition]#Pipelined#::
+In the _pipelined_ runtime, the operators are grouped into pipelines in the execution plan to generate new combinations and orders of execution, which are optimized for performance and memory usage.
+
+And so does this table
+
+[options="header",cols="2m,2a,^1a"]
+|===
+|Option
+|Description
+|Default
+
+|`runtime=slotted`
+|Forces the Cypher query planner to use the _slotted_ runtime.
+|Default for Community Edition.
+
+|[enterprise-edition]#runtime=pipelined#
+| Forces the Cypher query planner to use the _pipelined_ runtime.
+| Default for Enterprise Edition.
+|===
+
+
 [role=aura-db-enterprise]
 == AuraDB Enterprise
 
