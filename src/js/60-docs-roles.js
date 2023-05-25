@@ -1,11 +1,11 @@
 import { createElement } from './modules/dom'
 
 document.addEventListener('DOMContentLoaded', function () {
-  const sectionDivs = document.querySelectorAll('body.docs div[class^="sect"]:not(.sectionbody,.sect-header)')
+  const sectionDivs = document.querySelectorAll('body.docs:not(.docshome) div[class^="sect"]:not(.sectionbody,.sect-header)')
   sectionDivs.forEach(function (sectionDiv) {
     var roles = sectionDiv.classList
     roles = [...roles].sort().filter(function (c) {
-      return (!c.startsWith('sect'))
+      return (!(c.startsWith('sect') || c === 'display'))
     })
 
     if (roles.length === 0) return
