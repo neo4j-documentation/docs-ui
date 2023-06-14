@@ -64,7 +64,7 @@ body.docshome .doc h2::after {
   content: "";
 }
 
-body.docshome .doc div:not(.display) h2 {
+body.docshome .doc div:not(.display) div h2 {
   display: none;
 }
 
