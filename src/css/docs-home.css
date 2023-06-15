@@ -107,7 +107,7 @@ body.docshome .sect2 {
   border: 1px solid #d5d9de;
 }
 
-body.docshome:not(.drivers-apis) .sect2 {
+body.docshome:not(.create-applications) .sect2 {
   min-height: 200px;
 }
 
@@ -126,7 +126,7 @@ body.docshome .sect2 .icon img {
   padding: 12px;
 }
 
-body.docshome:not(.drivers-apis) .sect2 .icon img {
+body.docshome:not(.create-applications) .sect2 .icon img {
   background: #e6f8ff;
 }
 
