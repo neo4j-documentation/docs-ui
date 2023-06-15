@@ -142,7 +142,7 @@ span.fabric::after {
   margin-bottom: 1rem;
 }
 
-.sect1 > .sect-header {
+.sect1:not(.display) > .sect-header {
   border-bottom: 1px solid var(--section-divider-color);
   margin-bottom: 1rem;
   padding-bottom: 0.5rem;
