@@ -1254,3 +1254,15 @@ body {
 .tabbed-container > .exampleblock > .content {
   border: none;
 }
+
+.doc details {
+  margin-bottom: 1.5rem;
+}
+
+.doc details[open] summary {
+  font-weight: bold;
+}
+
+.doc details div.content {
+  margin: 0.5rem 0 0 1.5rem;
+}
