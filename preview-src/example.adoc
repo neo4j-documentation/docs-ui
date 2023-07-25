@@ -239,9 +239,6 @@ Code blocks longer than 15 lines (+5 of tolerance) are collapsed, unless you add
 ----
 [source,js]
 ...
-
-[source,js,role=nocollapse]
-...
 ----
 
 [source,js]
@@ -325,37 +322,11 @@ Code blocks longer than 15 lines (+5 of tolerance) are collapsed, unless you add
 
 ----
 
-
-Let's assume there exists a procedure called `myProc`.
-
-This procedure gives the result `A` and `B` for a user with `EXECUTE PROCEDURE` privilege and `A`, `B` and `C` for a user with `EXECUTE BOOSTED PROCEDURE` privilege.
-
-Now, let's adapt the privileges in examples 1 to 4 to apply to this procedure and show what is returned.
-With the privileges from example 1, granted `EXECUTE PROCEDURE *` and denied `EXECUTE BOOSTED PROCEDURE myProc`, the `myProc` procedure returns the result `A` and `B`.
-
-With the privileges from example 2, granted `EXECUTE BOOSTED PROCEDURE *` and denied `EXECUTE PROCEDURE myProc`, execution of the `myProc` procedure is not allowed.
-
-With the privileges from example 3, granted `EXECUTE BOOSTED PROCEDURE *` and denied `EXECUTE BOOSTED PROCEDURE myProc`, execution of the `myProc` procedure is not allowed.
-
-With the privileges from example 4, granted `EXECUTE PROCEDURE myProc` and `EXECUTE BOOSTED PROCEDURE *` and denied `EXECUTE BOOSTED PROCEDURE myProc`, the `myProc` procedure returns the result `A` and `B`.
-
-For comparison, when only granted `EXECUTE BOOSTED PROCEDURE myProc`, the `myProc` procedure returns the result `A`, `B` and `C`, without needing to be granted the `EXECUTE PROCEDURE myProc` privilege.
-
-
-Let's assume there exists a procedure called `myProc`.
-
-This procedure gives the result `A` and `B` for a user with `EXECUTE PROCEDURE` privilege and `A`, `B` and `C` for a user with `EXECUTE BOOSTED PROCEDURE` privilege.
-
-Now, let's adapt the privileges in examples 1 to 4 to apply to this procedure and show what is returned.
-With the privileges from example 1, granted `EXECUTE PROCEDURE *` and denied `EXECUTE BOOSTED PROCEDURE myProc`, the `myProc` procedure returns the result `A` and `B`.
-
-With the privileges from example 2, granted `EXECUTE BOOSTED PROCEDURE *` and denied `EXECUTE PROCEDURE myProc`, execution of the `myProc` procedure is not allowed.
-
-With the privileges from example 3, granted `EXECUTE BOOSTED PROCEDURE *` and denied `EXECUTE BOOSTED PROCEDURE myProc`, execution of the `myProc` procedure is not allowed.
-
-With the privileges from example 4, granted `EXECUTE PROCEDURE myProc` and `EXECUTE BOOSTED PROCEDURE *` and denied `EXECUTE BOOSTED PROCEDURE myProc`, the `myProc` procedure returns the result `A` and `B`.
-
-For comparison, when only granted `EXECUTE BOOSTED PROCEDURE myProc`, the `myProc` procedure returns the result `A`, `B` and `C`, without needing to be granted the `EXECUTE PROCEDURE myProc` privilege.
+[source,adoc]
+----
+[source,js,role=nocollapse]
+...
+----
 
 [source,js,role=nocollapse]
 ----
@@ -382,7 +353,3 @@ var expandCollapseBlock = function (e) {
   }
 }
 ----
-
-With the privileges from example 4, granted `EXECUTE PROCEDURE myProc` and `EXECUTE BOOSTED PROCEDURE *` and denied `EXECUTE BOOSTED PROCEDURE myProc`, the `myProc` procedure returns the result `A` and `B`.
-
-For comparison, when only granted `EXECUTE BOOSTED PROCEDURE myProc`, the `myProc` procedure returns the result `A`, `B` and `C`, without needing to be granted the `EXECUTE PROCEDURE myProc` privilege.
