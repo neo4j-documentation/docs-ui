@@ -134,7 +134,7 @@ neo4j@system> SHOW DATABASES;
 
 == Source Blocks with Headers
 
-=== Copy Button
+== Copy Button
 
 The **Copy To Clipboard** button will appear on all code blocks:
 
@@ -153,56 +153,7 @@ Unless you add `role=nocopy`:
 Don't copy me!
 ----
 
-=== Play In Browser
-
-Source blocks with a type of cypher will have a deeplink to run the query in Neo4j Browser
-
-[source,cypher]
-----
-MATCH (n) RETURN count(n)
-----
-
-Unless you add `role=noplay`
-
-.Source block with `role=noplay`
-[source,adoc,role=noplay]
-----
-[source,adoc,role=noplay]
-MATCH (n) RETURN count(n)
-----
-
-
-
-=== Combining `nocopy` and `noplay`
-
-You can combine `noplay` and `nocopy`:
-
-[source,adoc]
-----
-[source,adoc,role=nocopy noplay]
-MATCH (n) RETURN count(n)
-----
-
-[source,cypher,role=nocopy noplay]
-----
-MATCH (n) RETURN count(n)
-----
-
-=== Suppress Header
-
-You can suppress the header by adding `role=noheader`
-
-[source,adoc]
-----
-[source,js,role=noheader]
-console.log('hello')
-----
-
-[source,js,role=noheader]
-console.log('hello')
-
-
-== Reference lines
+== Reference lines (Callouts)
 
 You can add number bubbles to reference specific lines by appending `<n>` to a line. It is advised to put them behind a line comment for the language the code is in.
 
