@@ -132,9 +132,22 @@ neo4j@system> SHOW DATABASES;
 ----
 ====
 
-== Source Blocks with Headers
+== Source Blocks with title
 
-=== Copy Button
+If a title is provided to the example block, it will show up in an additional blue header above the code:
+
+[source,adoc]
+----
+.This example has a title
+[source,adoc]
+Play with me!
+----
+
+.This example has a title
+[source,adoc]
+Play with me!
+
+== Copy Button
 
 The **Copy To Clipboard** button will appear on all code blocks:
 
@@ -146,63 +159,13 @@ Copy me!
 
 Unless you add `role=nocopy`:
 
-.Source block with role=nocopy
 [source,adoc,role=nocopy]
 ----
 [source,adoc,role=nocopy]
 Don't copy me!
 ----
 
-=== Play In Browser
-
-Source blocks with a type of cypher will have a deeplink to run the query in Neo4j Browser
-
-[source,cypher]
-----
-MATCH (n) RETURN count(n)
-----
-
-Unless you add `role=noplay`
-
-.Source block with `role=noplay`
-[source,adoc,role=noplay]
-----
-[source,adoc,role=noplay]
-MATCH (n) RETURN count(n)
-----
-
-
-
-=== Combining `nocopy` and `noplay`
-
-You can combine `noplay` and `nocopy`:
-
-[source,adoc]
-----
-[source,adoc,role=nocopy noplay]
-MATCH (n) RETURN count(n)
-----
-
-[source,cypher,role=nocopy noplay]
-----
-MATCH (n) RETURN count(n)
-----
-
-=== Suppress Header
-
-You can suppress the header by adding `role=noheader`
-
-[source,adoc]
-----
-[source,js,role=noheader]
-console.log('hello')
-----
-
-[source,js,role=noheader]
-console.log('hello')
-
-
-== Reference lines
+== Reference lines (Callouts)
 
 You can add number bubbles to reference specific lines by appending `<n>` to a line. It is advised to put them behind a line comment for the language the code is in.
 
@@ -238,9 +201,6 @@ Code blocks longer than 15 lines (+5 of tolerance) are collapsed, unless you add
 [source,adoc]
 ----
 [source,js]
-...
-
-[source,js,role=nocollapse]
 ...
 ----
 
@@ -325,37 +285,11 @@ Code blocks longer than 15 lines (+5 of tolerance) are collapsed, unless you add
 
 ----
 
-
-Let's assume there exists a procedure called `myProc`.
-
-This procedure gives the result `A` and `B` for a user with `EXECUTE PROCEDURE` privilege and `A`, `B` and `C` for a user with `EXECUTE BOOSTED PROCEDURE` privilege.
-
-Now, let's adapt the privileges in examples 1 to 4 to apply to this procedure and show what is returned.
-With the privileges from example 1, granted `EXECUTE PROCEDURE *` and denied `EXECUTE BOOSTED PROCEDURE myProc`, the `myProc` procedure returns the result `A` and `B`.
-
-With the privileges from example 2, granted `EXECUTE BOOSTED PROCEDURE *` and denied `EXECUTE PROCEDURE myProc`, execution of the `myProc` procedure is not allowed.
-
-With the privileges from example 3, granted `EXECUTE BOOSTED PROCEDURE *` and denied `EXECUTE BOOSTED PROCEDURE myProc`, execution of the `myProc` procedure is not allowed.
-
-With the privileges from example 4, granted `EXECUTE PROCEDURE myProc` and `EXECUTE BOOSTED PROCEDURE *` and denied `EXECUTE BOOSTED PROCEDURE myProc`, the `myProc` procedure returns the result `A` and `B`.
-
-For comparison, when only granted `EXECUTE BOOSTED PROCEDURE myProc`, the `myProc` procedure returns the result `A`, `B` and `C`, without needing to be granted the `EXECUTE PROCEDURE myProc` privilege.
-
-
-Let's assume there exists a procedure called `myProc`.
-
-This procedure gives the result `A` and `B` for a user with `EXECUTE PROCEDURE` privilege and `A`, `B` and `C` for a user with `EXECUTE BOOSTED PROCEDURE` privilege.
-
-Now, let's adapt the privileges in examples 1 to 4 to apply to this procedure and show what is returned.
-With the privileges from example 1, granted `EXECUTE PROCEDURE *` and denied `EXECUTE BOOSTED PROCEDURE myProc`, the `myProc` procedure returns the result `A` and `B`.
-
-With the privileges from example 2, granted `EXECUTE BOOSTED PROCEDURE *` and denied `EXECUTE PROCEDURE myProc`, execution of the `myProc` procedure is not allowed.
-
-With the privileges from example 3, granted `EXECUTE BOOSTED PROCEDURE *` and denied `EXECUTE BOOSTED PROCEDURE myProc`, execution of the `myProc` procedure is not allowed.
-
-With the privileges from example 4, granted `EXECUTE PROCEDURE myProc` and `EXECUTE BOOSTED PROCEDURE *` and denied `EXECUTE BOOSTED PROCEDURE myProc`, the `myProc` procedure returns the result `A` and `B`.
-
-For comparison, when only granted `EXECUTE BOOSTED PROCEDURE myProc`, the `myProc` procedure returns the result `A`, `B` and `C`, without needing to be granted the `EXECUTE PROCEDURE myProc` privilege.
+[source,adoc]
+----
+[source,js,role=nocollapse]
+...
+----
 
 [source,js,role=nocollapse]
 ----
@@ -382,7 +316,3 @@ var expandCollapseBlock = function (e) {
   }
 }
 ----
-
-With the privileges from example 4, granted `EXECUTE PROCEDURE myProc` and `EXECUTE BOOSTED PROCEDURE *` and denied `EXECUTE BOOSTED PROCEDURE myProc`, the `myProc` procedure returns the result `A` and `B`.
-
-For comparison, when only granted `EXECUTE BOOSTED PROCEDURE myProc`, the `myProc` procedure returns the result `A`, `B` and `C`, without needing to be granted the `EXECUTE PROCEDURE myProc` privilege.
