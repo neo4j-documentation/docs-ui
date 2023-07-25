@@ -132,7 +132,20 @@ neo4j@system> SHOW DATABASES;
 ----
 ====
 
-== Source Blocks with Headers
+== Source Blocks with title
+
+If a title is provided to the example block, it will show up in an additional blue header above the code:
+
+[source,adoc]
+----
+.This example has a title
+[source,adoc]
+Play with me!
+----
+
+.This example has a title
+[source,adoc]
+Play with me!
 
 == Copy Button
 
@@ -146,7 +159,6 @@ Copy me!
 
 Unless you add `role=nocopy`:
 
-.Source block with role=nocopy
 [source,adoc,role=nocopy]
 ----
 [source,adoc,role=nocopy]
