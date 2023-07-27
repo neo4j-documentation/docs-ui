@@ -178,6 +178,9 @@ page:
     - content: Examples
       url: example.html
       urlType: internal
+    - content: Feedback disabled
+      url: feedback-disabled.html
+      urlType: internal
     - content: Docs roles
       url: docs-roles.html
       urlType: internal

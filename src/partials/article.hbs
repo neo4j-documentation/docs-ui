@@ -98,6 +98,8 @@ If you typed the URL of this page manually, please double check that you entered
 {{#if (eq page.layout 'training')}}
   {{> training-help}}
 {{else}}
-  {{> feedback}}
+  {{#unless page.attributes.disablefeedback}}
+    {{> feedback}}
+  {{/unless}}
 {{/if}}
 </article>
