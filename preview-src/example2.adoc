@@ -1,0 +1,14 @@
+= Example 2
+
+[source, python]
+----
+summary = driver.execute_query(
+    "MERGE (:Person {name: $name})",  # <1>
+    name="Alice",  # <2>
+    database_="neo4j",  # <3>
+).summary
+print("Created {nodes_created} nodes in {time} ms.".format(
+    nodes_created=summary.counters.nodes_created,
+    time=summary.result_available_after
+))
+----

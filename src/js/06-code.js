@@ -241,6 +241,31 @@ document.addEventListener('DOMContentLoaded', function () {
   document.querySelectorAll('.highlight')
     .forEach(collapseCodeBlock)
 
+  //document.querySelectorAll('.hljs').forEach(
+  document.querySelectorAll('.hljs').forEach(
+    function(code) {
+      let div = document.createElement('div');
+      div.classList.add('callouts');
+      let ol = document.createElement('ol');
+      div.appendChild(ol)
+      let li = document.createElement('li');
+      li.textContent = 'specifies Cypher query';
+      ol.appendChild(li);
+      li = document.createElement('li');
+      li.textContent = 'is a map of query parameters';
+      ol.appendChild(li);
+      li = document.createElement('li');
+      li.textContent = 'specifies which database the query should be run against';
+      ol.appendChild(li);
+
+      var pre = code.parentNode;
+      var divParent = pre.parentNode;
+      pre.style.width = '60%';
+      pre.style.float = 'left';
+      divParent.appendChild(div);
+    }
+  )
+
   // Tagged examples
   var targetActive = 'tabbed-target--active'
   var tabActive = 'tabbed-tab--active'

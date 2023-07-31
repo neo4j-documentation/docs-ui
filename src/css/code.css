@@ -368,3 +368,8 @@
     display: none;
   }
 }
+
+.callouts {
+  width: 40%;
+  float: right;
+}

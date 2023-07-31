@@ -316,3 +316,8 @@ var expandCollapseBlock = function (e) {
   }
 }
 ----
+
+[discrete.glossary]
+== Glossary
+
+[[Driver]]Driver:: A link:{neo4j-docs-base-uri}/api/javascript-driver/current/class/lib6/driver.js~Driver.html[`Driver`] object holds the details required to establish connections with a Neo4j database.
