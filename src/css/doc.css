@@ -357,11 +357,6 @@ body {
   border-left-color: var(--color-red-600);
 }
 
-.doc .admonitionblock.warning pre {
-  background-color: var(--color-red-100);
-  color: var(--color-red-700);
-}
-
 .doc .admonitionblock.warning a.btn {
   background-color: var(--color-red-600);
 }
@@ -388,11 +383,6 @@ body {
   background-color: var(--color-orange-600);
 }
 
-.doc .admonitionblock.caution pre {
-  background-color: var(--color-orange-100);
-  color: var(--color-orange-700);
-}
-
 .doc .admonitionblock.tip {
   background-color: var(--color-blue-200);
   color: var(--color-blue-900);
@@ -409,11 +399,6 @@ body {
 
 .doc .admonitionblock.tip a.btn {
   background-color: var(--color-blue-600);
-}
-
-.doc .admonitionblock.tip pre {
-  background-color: var(--color-blue-100);
-  color: var(--color-blue-700);
 }
 
 .doc .admonitionblock.note {
