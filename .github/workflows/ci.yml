@@ -26,7 +26,7 @@ jobs:
     - name: Sync UI Bundle to S3
       uses: jakejarvis/s3-sync-action@master
       with:
-        args: --acl public-read --follow-symlinks --include '*.zip'
+        args: --follow-symlinks --include '*.zip'
       env:
         AWS_S3_BUCKET: ${{ secrets.STATIC_CONTENT_BUCKET }}
         AWS_ACCESS_KEY_ID: ${{ secrets.DEVREL_ACCESS_KEY_ID }}
