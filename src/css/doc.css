@@ -1252,6 +1252,8 @@ body {
   font-weight: bold;
 }
 
-.doc details div.content {
-  margin: 0.5rem 0 0 1.5rem;
+.doc details > div.content {
+  margin: 0.5rem 0 0 0.25rem;
+  border-left: 1px dashed var(--color-grey-300);
+  padding-left: 1rem;
 }
