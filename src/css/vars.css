@@ -274,9 +274,9 @@
   --admonition-label-font-weight: var(--body-font-weight-bold);
   --caption-font-color: var(--color-grey-700);
   --caption-font-weight: var(--body-font-weight-bold);
-  --code-background: var(--panel-background);
-  --code-font-color: var(--body-font-color);
-  --code-header-background: var(--color-grey-700);
+  --code-background: var(--panel-background); /*#282a36;*/
+  --code-font-color: var(--body-font-color); /*#f8f8f2;*/
+  --code-header-background: var(--color-indigo-700);
   --code-header-font-color: var(--color-grey-100);
   --code-button-background: var(--color-grey-700);
   --code-button-active-background: var(--color-grey-600);
@@ -286,8 +286,9 @@
   --example-border-color: var(--color-grey-700);
   --kbd-background: var(--panel-background);
   --kbd-border-color: var(--color-grey-400);
-  --pre-background: var(--panel-background);
+  --pre-background: #282a36;
   --pre-border-color: var(--panel-border-color);
+  --pre-font-color: #f8f8f2;
   --pre-annotation-font-color: var(--color-grey-700);
   --quote-background: var(--panel-background);
   --quote-border-color: var(--color-grey-700);

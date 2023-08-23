@@ -183,7 +183,7 @@ body {
 }
 
 .doc pre {
-  color: var(--code-font-color);
+  color: var(--pre-font-color);
   font-size: calc(16 / var(--rem-base) * 1rem);
   line-height: 1.5;
   margin: 0;
@@ -710,7 +710,7 @@ body {
 
 .doc pre:not(.highlight),
 .doc pre.highlight code {
-  /* background: var(--pre-background); */
+  background: var(--pre-background);
   display: block;
   overflow-x: auto;
   /* width: 100%; */
@@ -734,7 +734,7 @@ body {
   /* opacity: 0.9; */
   content: attr(data-lang);
   /* display: none; */
-  /* color: var(--pre-annotation-font-color); */
+  color: var(--color-grey-500);
   font-size: calc(12.5 / var(--rem-base) * 1rem);
   font-family: var(--monospace-font-family);
   letter-spacing: 0.05em;

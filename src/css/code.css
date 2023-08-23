@@ -30,8 +30,8 @@
 
 .doc .listingblock .code-title,
 .doc .listingblock .code-language {
-  /* background: var(--code-header-background); */
-  color: var(--pre-background);
+  background: var(--code-header-background);
+  color: var(--code-header-font-color);
   /* color: white; */
 }
 
@@ -96,7 +96,7 @@
 .doc .listingblock .code-inset {
   border-top-right-radius: 0.5rem;
   /* background: var(--pre-background); */
-  color: var(--color-grey-600);
+  color: var(--color-grey-500);
   font-size: calc(12.5 / var(--rem-base) * 1rem);
   position: absolute;
   /* float: right; */
