@@ -55,7 +55,7 @@
 .hljs-comment,
 .hljs-quote,
 .hljs-deletion {
-  /*color: #6272a4;*/
+  /* color: #6272a4; */
   color: var(--color-grey-500);
   font-style: italic;
 }

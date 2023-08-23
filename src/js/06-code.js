@@ -187,7 +187,7 @@ document.addEventListener('DOMContentLoaded', function () {
     .getPropertyValue('line-height')) //line-height property value (in px) in code blocks
   var codeMaxHeight = codeLineHeight * codeMaxLines
   var maskImage = 'linear-gradient(to bottom, black 0px, transparent ' +
-                   (codeMaxHeight + 100) + 'px)'
+                   (codeMaxHeight + 420) + 'px)'
 
   var codeBlockLinesNum = function (code) {
     var paddingTop = parseFloat(window.getComputedStyle(code, null).getPropertyValue('padding-top'))
