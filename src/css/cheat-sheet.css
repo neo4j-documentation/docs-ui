@@ -14,7 +14,7 @@ body.cheat-sheet {
 }
 
 body.cheat-sheet .article > .content {
-  background: var(--pre-background);
+  background: var(--panel-background);
   padding-top: 0;
 }
 
