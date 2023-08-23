@@ -1,106 +1,80 @@
-/*! Adapted from the GitHub style by Vasily Polovnyov <vast@whiteants.net> */
+/* Dracula Theme v1.2.5
+ *
+ * https://github.com/dracula/highlightjs
+ *
+ * Copyright 2016-present, All rights reserved
+ *
+ * Code licensed under the MIT license
+ *
+ * @author Denis Ciccale <dciccale@gmail.com>
+ * @author Zeno Rocha <hi@zenorocha.com>
+ */
+
+.hljs {
+  display: block;
+  overflow-x: auto;
+  padding: 0.5em;
+  background: #282a36;
+}
+
+.hljs-built_in,
+.hljs-selector-tag,
+.hljs-section,
+.hljs-link {
+  color: #8be9fd;
+}
+
+.hljs-keyword {
+  color: #ff79c6;
+}
+
+.hljs,
+.hljs-subst {
+  color: #f8f8f2;
+}
+
+.hljs-title,
+.hljs-attr,
+.hljs-meta-keyword {
+  color: #50fa7b;
+}
+
+.hljs-string,
+.hljs-meta,
+.hljs-name,
+.hljs-type,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition,
+.hljs-variable,
+.hljs-template-tag,
+.hljs-template-variable {
+  color: #f1fa8c;
+}
+
 .hljs-comment,
-.hljs-quote {
-  color: var(--color-grey-500);
-  font-style: italic;
+.hljs-quote,
+.hljs-deletion {
+  color: #6272a4;
 }
 
 .hljs-keyword,
 .hljs-selector-tag,
-.hljs-subst {
-  color: var(--color-grey-600);
-  font-weight: var(--monospace-font-weight-bold);
-}
-
-.hljs-number,
 .hljs-literal,
-.hljs-variable,
-.hljs-template-variable,
-.hljs-tag .hljs-attr {
-  color: var(--color-blue-600);
-}
-
-.hljs-string,
-.hljs-doctag {
-  color: var(--color-green-700);
-}
-
 .hljs-title,
 .hljs-section,
-.hljs-selector-id {
-  color: var(--color-purple-800);
-  font-weight: var(--monospace-font-weight-bold);
-}
-
-.hljs-subst {
-  font-weight: normal;
-}
-
+.hljs-doctag,
 .hljs-type,
-.hljs-class .hljs-title {
-  color: var(--color-blue-600);
-  font-weight: var(--monospace-font-weight-bold);
-}
-
-.hljs-tag,
 .hljs-name,
-.hljs-attribute {
-  color: var(--color-purple-600);
-  font-weight: normal;
+.hljs-strong {
+  font-weight: bold;
 }
 
-.hljs-regexp,
-.hljs-link {
-  color: var(--color-green-400);
-}
-
-.hljs-symbol,
-.hljs-bullet {
-  color: var(--color-indigo-800);
-}
-
-.hljs-built_in,
-.hljs-builtin-name {
-  color: var(--color-blue-600);
-}
-
-.hljs-meta {
-  color: var(--color-grey-500);
-  /* font-weight: var(--monospace-font-weight-bold); */
-}
-
-.language-shell,
-.language-cypher-shell {
-  color: var(--color-grey-600);
-}
-
-.language-shell > .bash,
-.language-cypher-shell > .cypher {
-  color: initial;
-}
-
-.language-shell > .hljs-meta,
-.language-cypher-shell > .hljs-meta {
-  color: var(--color-indigo-800);
-  user-select: none;
-}
-
-.language-shell .bash {
-  color: var(--color-grey-800);
-}
-
-.hljs-deletion {
-  background: var(--color-grey-200);
-}
-
-.hljs-addition {
-  background: var(--color-green-200);
+.hljs-literal,
+.hljs-number {
+  color: #bd93f9;
 }
 
 .hljs-emphasis {
   font-style: italic;
-}
-
-.hljs-strong {
-  font-weight: var(--monospace-font-weight-bold);
 }

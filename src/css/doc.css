@@ -710,7 +710,7 @@ body {
 
 .doc pre:not(.highlight),
 .doc pre.highlight code {
-  background: var(--pre-background);
+  /* background: var(--pre-background); */
   display: block;
   overflow-x: auto;
   /* width: 100%; */
