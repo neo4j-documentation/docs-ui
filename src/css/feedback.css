@@ -1,7 +1,7 @@
 .feedback {
   position: fixed;
   bottom: 0;
-  right: 2rem;
+  left: 2rem;
   border-top-left-radius: 0.25rem;
   border-top-right-radius: 0.25rem;
   background: var(--feedback-background-color);
