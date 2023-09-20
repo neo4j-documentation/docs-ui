@@ -4,6 +4,15 @@ const { getCookie } = require('./modules/cookies')
 ;(function () {
   'use strict'
 
+  let journey = JSON.parse(localStorage.getItem('userJourney'))
+  if (journey == null) journey = []
+  journey.push({
+    'url': window.location.href,
+    'title': document.title,
+    'landTime': Math.round(Date.now()/1000),
+  })
+  localStorage.setItem('userJourney', JSON.stringify(journey))
+
   var url = 'https://uglfznxroe.execute-api.us-east-1.amazonaws.com/dev/Feedback'
   var feedback = document.querySelector('.feedback')
   if (!feedback) return
@@ -11,13 +20,13 @@ const { getCookie } = require('./modules/cookies')
   var original = feedback.innerHTML
 
   var edit = ''
-  var editLink = document.querySelector('.edit-this-page a')
+  /*var editLink = document.querySelector('.edit-this-page a')
 
   if (editLink) {
     edit = ' <a href="' + editLink.getAttribute('href') + '" target="_blank">Edit this page</a>'
-  }
+  }*/
 
-  var sendFeedback = function (helpful, reason, moreInformation) {
+  var sendRequest = function (parameters) {
     const identity = getCookie('neo_identity')
     const gid = getCookie('_gid')
     const uetsid = getCookie('_uetsid')
@@ -30,7 +39,6 @@ const { getCookie } = require('./modules/cookies')
 
     var body = 'project=' + encodeURIComponent(project)
     body += '&url=' + encodeURIComponent(window.location.href)
-    body += '&helpful=' + helpful.toString()
 
     if (identity) {
       body += '&identity=' + identity
@@ -42,36 +50,77 @@ const { getCookie } = require('./modules/cookies')
       body += '&uetsid=' + uetsid
     }
 
-    if (!helpful) {
-      body += '&reason=' + encodeURIComponent(reason)
-
-      if (moreInformation) {
-        body += '&moreInformation=' + encodeURIComponent(moreInformation)
-      }
+    for (const [paramKey, paramVal] of Object.entries(parameters)) {
+      body += '&' + paramKey + '=' + encodeURIComponent(paramVal)
     }
 
-    fetch(url, {
+    body += '&userJourney=' + encodeURIComponent(localStorage.getItem('userJourney').toString())
+
+    console.log(body)
+    /*fetch(url, {
       method: 'post',
       headers: {
         'Content-Type': 'application/x-www-form-urlencoded',
       },
       body: body,
-    })
+    })*/
   }
 
   var isHelpful = function () {
-    sendFeedback(true)
-
     feedback.classList.add('positive')
 
-    feedback.innerHTML = '<div class="header thank-you-positive"><p><strong>Thank you for your feedback!</strong></p></div>'
+    feedback.innerHTML = `<form class="form">
+      <div class="header">
+        <p><strong>Would you like to share some feedback?</strong></p>
+        <svg width="14px" height="22px" viewBox="0 0 22 22" role="button" class="cancel" aria-label="Cancel Feedback">
+          <line x1="19.5833333" y1="0.416666667" x2="0.416666667" y2="19.5833333"></line>
+          <line x1="19.5833333" y1="19.5833333" x2="0.416666667" y2="0.416666667"></line>
+        </svg>
+      </div>
+      <div class="more-information">
+        <label for="more-information"><strong>More information</strong></label>
+        <textarea id="more-information" type="text" rows="3" cols="50" name="more-information" style="resize:none"></textarea>
+      </div>
+      <div class="buttons">
+        <input type="button" class="primary" data-submit="submit" value="Submit feedback">
+        <!--<input type="button" class="secondary" data-submit="skip" value="Skip">-->
+      </div>
+    </form>
+    `
+
+    feedback.querySelector('.cancel').addEventListener('click', function (e) {
+      e.preventDefault()
+      reset()
+    })
+
+    feedback.querySelector('.primary').addEventListener('click', function (e) {
+      e.preventDefault()
+
+      var moreInformation = feedback.querySelector('textarea[name="more-information"]').value
+
+      sendRequest({
+        'helpful': true,
+        'moreInformation': moreInformation,
+      })
+      localStorage.removeItem('userJourney')
+      feedback.innerHTML = '<div class="header thank-you-positive"><p><strong>Thank you for your feedback!</strong></p></div>'
+      setTimeout(() => {fadeOut(feedback)}, 2000)
+
+      if (window.mixpanel) {
+        window.mixpanel.track('DOCS_FEEDBACK_POSITIVE', {
+          pathname: window.location.origin + window.location.pathname,
+          search: window.location.search,
+          hash: window.location.hash,
+        })
+      }
+    })
   }
 
   var isUnhelpful = function () {
     feedback.classList.add('negative')
     feedback.innerHTML = `<form class="form">
       <div class="header">
-        <p><strong>We&rsquo;re sorry to hear that. How could we improve this page?</strong></p>
+        <p><strong>How could we improve this page?</strong></p>
         <svg width="14px" height="22px" viewBox="0 0 22 22" role="button" class="cancel" aria-label="Cancel Feedback">
           <line x1="19.5833333" y1="0.416666667" x2="0.416666667" y2="19.5833333"></line>
           <line x1="19.5833333" y1="19.5833333" x2="0.416666667" y2="0.416666667"></line>
@@ -91,23 +140,22 @@ const { getCookie } = require('./modules/cookies')
       </div>
       <div><input id="other" type="radio" class="feedback-option" data-reason="other" name="specific" value="other"><label for="other">Something else
           ${edit}</label></div>
-      <div class="more-information"><label for="more-information"><strong>More information</strong></label><textarea
+      <div class="more-information"><label for="more-information"><strong>More information *</strong></label><textarea
           id="more-information" type="text" rows="3" cols="50" name="more-information" style="resize:none"></textarea>
       </div>
-      <div class="buttons"><input type="button" class="primary" data-submit="submit" value="Submit feedback"><input
-          type="button" class="secondary" data-submit="skip" value="Skip"></div>
+      <div class="buttons"><input type="button" class="primary" data-submit="submit" value="Submit feedback"></div>
       </div>
     </form>
     `
 
     var thankyou = `<div class="header thank-you-positive">
-      <p><strong>Thank you for your feedback!</strong></p>
-      <p>We will take this information into account while updating our documentation.</p>
+      <p><strong>Thank you!</strong></p>
+      <p>We will consider your feedback while updating our documentation.</p>
     `
 
-    if (editLink) {
+    /*if (editLink) {
       thankyou += '<p>You can also help us by ' + edit.replace('Edit', 'editing') + '.</p></div>'
-    }
+    }*/
 
     feedback.querySelector('.cancel').addEventListener('click', function (e) {
       e.preventDefault()
@@ -132,8 +180,14 @@ const { getCookie } = require('./modules/cookies')
       var reason = feedback.querySelector('input[name="specific"]:checked').value
       var moreInformation = feedback.querySelector('textarea[name="more-information"]').value
 
-      sendFeedback(false, reason, moreInformation)
+      sendRequest({
+        'helpful': false,
+        'reason': reason,
+        'moreInformation': moreInformation,
+      })
       feedback.innerHTML = thankyou
+      localStorage.removeItem('userJourney')
+      setTimeout(() => {fadeOut(feedback)}, 2000)
 
       if (window.mixpanel) {
         window.mixpanel.track('DOCS_FEEDBACK_POSITIVE', {
@@ -144,13 +198,17 @@ const { getCookie } = require('./modules/cookies')
       }
     })
 
-    feedback.querySelector('.secondary').addEventListener('click', function (e) {
+    /*feedback.querySelector('.secondary').addEventListener('click', function (e) {
       e.preventDefault()
 
       var reason = feedback.querySelector('input[name="specific"]:checked').value
       var moreInformation = feedback.querySelector('textarea[name="more-information"]').value
 
-      sendFeedback(false, reason, moreInformation)
+      sendRequest({
+        'helpful': false,
+        'reason': reason,
+        'moreInformation': moreInformation,
+      })
       feedback.innerHTML = thankyou
 
       if (window.mixpanel) {
@@ -160,7 +218,7 @@ const { getCookie } = require('./modules/cookies')
           hash: window.location.hash,
         })
       }
-    })
+    })*/
   }
 
   var reset = function () {
@@ -202,3 +260,16 @@ const { getCookie } = require('./modules/cookies')
 
   reset()
 })()
+
+function fadeOut(element) {
+  var op = 1;  // initial opacity
+  var timer = setInterval(function () {
+    if (op <= 0.1){
+        clearInterval(timer);
+        element.style.display = 'none';
+    }
+    element.style.opacity = op;
+    element.style.filter = 'alpha(opacity=' + op * 100 + ")";
+    op -= op * 0.1;
+  }, 50);
+}
