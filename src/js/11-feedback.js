@@ -7,9 +7,9 @@ const { getCookie } = require('./modules/cookies')
   let journey = JSON.parse(localStorage.getItem('userJourney'))
   if (journey == null) journey = []
   journey.push({
-    'url': window.location.href,
-    'title': document.title,
-    'landTime': Math.round(Date.now()/1000),
+    url: window.location.href,
+    title: document.title,
+    landTime: Math.round(Date.now() / 1000),
   })
   localStorage.setItem('userJourney', JSON.stringify(journey))
 
@@ -99,12 +99,12 @@ const { getCookie } = require('./modules/cookies')
       var moreInformation = feedback.querySelector('textarea[name="more-information"]').value
 
       sendRequest({
-        'helpful': true,
-        'moreInformation': moreInformation,
+        helpful: true,
+        moreInformation: moreInformation,
       })
       localStorage.removeItem('userJourney')
       feedback.innerHTML = '<div class="header thank-you-positive"><p><strong>Thank you for your feedback!</strong></p></div>'
-      setTimeout(() => {fadeOut(feedback)}, 2000)
+      setTimeout(() => { fadeOut(feedback) }, 2000)
 
       if (window.mixpanel) {
         window.mixpanel.track('DOCS_FEEDBACK_POSITIVE', {
@@ -181,13 +181,13 @@ const { getCookie } = require('./modules/cookies')
       var moreInformation = feedback.querySelector('textarea[name="more-information"]').value
 
       sendRequest({
-        'helpful': false,
-        'reason': reason,
-        'moreInformation': moreInformation,
+        helpful: false,
+        reason: reason,
+        moreInformation: moreInformation,
       })
       feedback.innerHTML = thankyou
       localStorage.removeItem('userJourney')
-      setTimeout(() => {fadeOut(feedback)}, 2000)
+      setTimeout(() => { fadeOut(feedback) }, 2000)
 
       if (window.mixpanel) {
         window.mixpanel.track('DOCS_FEEDBACK_POSITIVE', {
@@ -261,15 +261,15 @@ const { getCookie } = require('./modules/cookies')
   reset()
 })()
 
-function fadeOut(element) {
-  var op = 1;  // initial opacity
+function fadeOut (element) {
+  var op = 1 // initial opacity
   var timer = setInterval(function () {
-    if (op <= 0.1){
-        clearInterval(timer);
-        element.style.display = 'none';
+    if (op <= 0.1) {
+      clearInterval(timer)
+      element.style.display = 'none'
     }
-    element.style.opacity = op;
-    element.style.filter = 'alpha(opacity=' + op * 100 + ")";
-    op -= op * 0.1;
-  }, 50);
+    element.style.opacity = op
+    element.style.filter = 'alpha(opacity=' + op * 100 + ')'
+    op -= op * 0.1
+  }, 50)
 }
