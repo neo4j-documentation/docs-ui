@@ -169,7 +169,7 @@ p.deprecated::before,
 section.deprecated .title::after,
 .deprecated > .title::after,
 span.deprecated::after {
-  content: "deprecated";
+  content: "Deprecated";
   color: var(--deprecation-color);
   border-color: var(--deprecation-color);
   margin-left: 8px;
@@ -281,13 +281,13 @@ span.beta::after {
 .sect1.alpha h2::after,
 .sect2.alpha h3::after,
 span.alpha::after {
-  content: "alpha";
+  content: "Alpha";
 }
 
 .sect1.beta h2::after,
 .sect2.beta h3::after,
 span.beta::after {
-  content: "beta";
+  content: "Beta";
 }
 
 div.tier-note p {
