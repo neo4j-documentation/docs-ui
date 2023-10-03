@@ -66,7 +66,7 @@
         window.ga('send', 'event', 'version-select', 'From: ' + current + ';To:' + next + ';')
       }
 
-      document.location.replace(url)
+      document.location.assign(url)
     })
   }
 
