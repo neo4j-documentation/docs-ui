@@ -36,6 +36,15 @@ document.addEventListener('DOMContentLoaded', function () {
     updateMetaFromProduct(selectionFromPath, curURL)
   }
 
+  const queryString = document.location.search
+  const urlParams = new URLSearchParams(queryString)
+
+  if (urlParams.has('sid')) {
+    const scrollToSection = urlParams.get('sid')
+    document.location.hash = scrollToSection
+    document.location.replace(document.location.href.replace(document.location.search,''))
+  }
+
   // check for a checkbox to display or hide labels
   const labelShow = document.querySelector('#products-highlight')
   if (labelShow) {
