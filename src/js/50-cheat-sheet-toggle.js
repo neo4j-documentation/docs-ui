@@ -42,7 +42,7 @@ document.addEventListener('DOMContentLoaded', function () {
   if (urlParams.has('sid')) {
     const scrollToSection = urlParams.get('sid')
     document.location.hash = scrollToSection
-    document.location.replace(document.location.href.replace(document.location.search,''))
+    document.location.replace(document.location.href.replace(document.location.search, ''))
   }
 
   // check for a checkbox to display or hide labels
