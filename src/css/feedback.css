@@ -1,16 +1,17 @@
 .feedback {
   position: fixed;
   bottom: 0;
-  left: 2rem;
+  left: 1rem;
   border-top-left-radius: 0.25rem;
   border-top-right-radius: 0.25rem;
   background: var(--color-blue-100);
   color: var(--color-blue-800);
   padding: 0.5rem 1rem;
-  width: 320px;
+  width: calc(var(--nav-width) - 2rem);
   font-size: 0.8rem;
   box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
   z-index: 1000;
+  height: var(--feedback-height);
 }
 
 .feedback.negative {
@@ -159,7 +160,7 @@
     max-width: var(--doc-max-width);
     min-width: 0;
     right: auto;
-    width: auto;
+    width: calc(var(--nav-width) - 2rem);
     box-shadow: none;
     margin-bottom: 2rem;
   }
