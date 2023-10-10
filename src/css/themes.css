@@ -288,8 +288,12 @@ body.developer .tableblock .icon i {
 }
 
 body.developer .navbar .navbar-item.getting-started-cta .navbar-link {
-  background: var(--color-grey-700);
+  background: rgba(var(--colors-baltic-50));
   color: var(--color-white);
+}
+
+body.developer .navbar .navbar-item.getting-started-cta:hover .navbar-link {
+  background: rgba(var(--colors-baltic-60));
 }
 
 /* Developer Home Page */
