@@ -235,7 +235,7 @@
 }
 
 .training-courses .course-content .course-duration {
-  color: var(--color-grey-600);
+  color: rgba(var(--colors-neutral-60));
   display: flex;
   align-items: center;
   margin-top: 0.1rem;
@@ -365,7 +365,7 @@
 .training-certification .course-actions a.button-logout,
 .training-enrollment .course-actions a.button-logout {
   background: none;
-  color: var(--color-grey-600);
+  color: rgba(var(--colors-neutral-60));
   text-decoration: underline;
   text-align: end;
   display: block;
@@ -427,12 +427,12 @@
 
 .training-certification .course-actions form input:hover,
 .training-enrollment .course-actions form input:hover {
-  border-color: var(--color-grey-500);
+  border-color: rgba(var(--colors-neutral-50));
 }
 
 .training-certification .course-actions form select:hover,
 .training-enrollment .course-actions form select:hover {
-  border-color: var(--color-grey-500);
+  border-color: rgba(var(--colors-neutral-50));
 }
 
 .training-certification .course-actions form select,
@@ -749,7 +749,7 @@ body.training .nav-item .nav-item.is-pending::before {
   color: white;
   text-align: center;
   font-weight: bold;
-  border: 1px solid var(--color-grey-500);
+  border: 1px solid rgba(var(--colors-neutral-50));
   background-color: var(--navbar-font-color);
   transition: all 0.2s linear;
 }
@@ -762,7 +762,7 @@ body.training .nav-item .nav-item.is-completed:hover::before {
 body.training .nav-item .nav-item.is-current-page::before,
 body.training .nav-item .nav-item:hover::before {
   opacity: 1;
-  background-color: var(--color-grey-500);
+  background-color: rgba(var(--colors-neutral-50));
   z-index: 1000;
 }
 

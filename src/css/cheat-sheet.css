@@ -29,50 +29,50 @@ body.cheat-sheet .search .search-container .search-form {
 body.cheat-sheet .navbar,
 body.cheat-sheet .navbar-brand .navbar-item:first-child,
 body.cheat-sheet .navbar-brand .navbar-item:first-child a {
-  color: var(--color-grey-600);
+  color: rgba(var(--colors-neutral-60));
 }
 
 @media screen and (min-width: 1024px) {
   body.cheat-sheet .navbar-end > .navbar-item,
   body.cheat-sheet .navbar-end .navbar-link {
-    color: var(--color-grey-600);
+    color: rgba(var(--colors-neutral-60));
   }
 
   body.cheat-sheet .navbar-end > a.navbar-item:hover,
   body.cheat-sheet .navbar-end .navbar-link:hover {
-    color: var(--color-grey-600);
+    color: rgba(var(--colors-neutral-60));
   }
 
   body.cheat-sheet .navbar-end .navbar-link::after {
-    border-color: var(--color-grey-600);
+    border-color: rgba(var(--colors-neutral-60));
   }
 
   body.cheat-sheet .navbar-item.has-dropdown:hover .navbar-link {
-    color: var(--color-grey-600);
+    color: rgba(var(--colors-neutral-60));
   }
 }
 
 body.cheat-sheet .navbar-burger {
-  color: var(--color-grey-600);
+  color: rgba(var(--colors-neutral-60));
 }
 
 body.cheat-sheet .navbar-burger span {
-  background: var(--color-grey-600);
+  background: rgba(var(--colors-neutral-60));
 }
 
 body.cheat-sheet .doc .button {
-  background: var(--color-blue-600);
+  background: rgba(var(--colors-baltic-50));
   color: var(--color-white);
 }
 
 body.cheat-sheet .doc .button:hover {
-  background: var(--color-blue-500);
+  background: rgba(var(--colors-baltic-60));
   color: var(--color-white);
 }
 
 body.cheat-sheet .nav-item .nav-item::before,
 body.cheat-sheet .toc-menu li a::before {
-  background-color: var(--color-blue-300);
+  background: rgba(var(--colors-baltic-30));
 }
 
 body.cheat-sheet .tooltip {
@@ -90,11 +90,11 @@ body.cheat-sheet .tooltip.tooltip--bottom::after {
 body.cheat-sheet #preamble .abstract .title,
 body.cheat-sheet #preamble .abstract blockquote {
   border-left-color: var(--color-docs);
-  color: var(--color-blue-800);
+  color: rgba(var(--colors-baltic-70));
 }
 
 body.cheat-sheet .tableblock .icon i {
-  color: var(--color-blue-600);
+  color: rgba(var(--colors-baltic-50));
 }
 
 body.cheat-sheet .navbar .navbar-item.getting-started-cta .navbar-link {
@@ -103,11 +103,11 @@ body.cheat-sheet .navbar .navbar-item.getting-started-cta .navbar-link {
 }
 
 body.cheat-sheet .navbar .navbar-item.getting-started-cta .navbar-link:hover {
-  background: var(--colors-primary-50);
+  background: rgba(var(--colors-baltic-50));
 }
 
 body.cheat-sheet .navbar .navbar-item.getting-started-cta .navbar-link:active {
-  background: var(--colors-primary-60);
+  background: rgba(var(--colors-baltic-60));
 }
 
 /* navpanel (version selector */
@@ -143,6 +143,10 @@ body.cheat-sheet .navbar-link a.external::after {
   background-position: center;
 }
 
+body.cheat-sheet .navbar-link a.external::after line {
+  stroke: var(--link-font-color);
+}
+
 body.cheat-sheet .selectors {
   display: flex;
   flex-direction: column;
@@ -161,10 +165,6 @@ body.cheat-sheet .nav-panel-versions {
   height: auto;
   padding: 0;
   display: flex;
-}
-
-body.cheat-sheet .nav-panel-versions .dropdown {
-  /* display: flex; */
 }
 
 body.cheat-sheet .selectors .dropdown {
@@ -236,23 +236,23 @@ body.cheat-sheet .toc-menu-placeholder h2 {
   display: none !important;
 }
 
+body.cheat-sheet .toc .toc-menu {
+  margin-right: 0rem;
+}
+
 body.cheat-sheet .toc .toc-menu ul {
   margin-top: 0.5rem;
 }
 
 body.cheat-sheet .toc .toc-menu li {
-  padding-left: 0.5rem;
+  padding-left: 0;
   /* line-height: 1.4; */
-}
-
-body.cheat-sheet .toc .toc-menu li[data-level="2"] {
-  padding-left: 2rem;
 }
 
 body.cheat-sheet .toc .toc-menu li a {
   border: none;
-  padding: 0.5rem 1rem;
-  margin: 0.5rem 0;
+  padding: 1rem;
+  margin: 0;
 }
 
 body.cheat-sheet .toc .toc-menu li[data-level="1"] a {
@@ -260,25 +260,41 @@ body.cheat-sheet .toc .toc-menu li[data-level="1"] a {
 }
 
 body.cheat-sheet .toc .toc-menu li[data-level="2"] a {
-  padding: 0.25rem 1rem;
+  padding: 0.25rem 1rem 0.25rem 2rem;
   margin: 0;
 }
 
-body.cheat-sheet .toc .toc-menu a.is-active {
-  /* border-left-color: var(--link-font-color); */
-  /* color: var(--link-font-color); */
+body.cheat-sheet .toc .toc-menu a:hover {
+  background-color: var(--toc_hover-background-color);
   color: var(--toc_active-font-color);
-  background-color: #e6f8ff;
-  border-radius: 0.5rem;
+  /* border-radius: 0.5rem; */
+}
+
+body.cheat-sheet .toc .toc-menu a.is-active {
+  background-color: rgba(var(--colors-baltic-10));
+  color: var(--color-docs);
+  /* border-radius: 0.5rem; */
+}
+
+body.cheat-sheet .toc .toc-menu a.is-active::before {
+  content: "";
+  width: 4px;
+  height: 100%;
+  position: absolute;
+  margin: 0;
+  left: 0;
+  top: 0;
+  background-color: var(--color-docs);
+  border-radius: 4px;
 }
 
 /* headings */
 
-body.cheat-sheet .sect-header:first-child {
+body.cheat-sheet .article .sect-header:first-child {
   display: none;
 }
 
-body.cheat-sheet h2:not(.discrete) {
+body.cheat-sheet .article h2:not(.discrete) {
   display: flex;
   font-size: 2rem;
   font-weight: 600;
@@ -289,26 +305,26 @@ body.cheat-sheet h2:not(.discrete) {
   line-height: 110px;
 }
 
-body.cheat-sheet h3:not(.discrete) {
+body.cheat-sheet .article h3:not(.discrete) {
   display: flex;
   flex: 0 0 60%;
   flex-grow: 1;
   padding-right: 0;
 }
 
-body.cheat-sheet h3:not(.discrete) a {
+body.cheat-sheet .article h3:not(.discrete) a {
   align-items: center;
   display: flex;
 }
 
-body.cheat-sheet h3:not(.discrete) span.label {
+body.cheat-sheet .article h3:not(.discrete) span.label {
   margin-left: auto;
 }
 
 /* override deprecations */
 
-body.cheat-sheet div.deprecated h2::after,
-body.cheat-sheet div.deprecated h3::after {
+body.cheat-sheet .article div.deprecated h2::after,
+body.cheat-sheet .article div.deprecated h3::after {
   display: none;
 }
 
@@ -332,7 +348,7 @@ body.cheat-sheet .sect2:first-child {
   margin-top: 0;
 }
 
-body.cheat-sheet h3 {
+body.cheat-sheet .article h3 {
   flex: 100%;
   margin: 1rem 0;
   margin: 0;
@@ -342,7 +358,8 @@ body.cheat-sheet h3 {
 body.cheat-sheet .exampleblock {
   width: 100%;
   margin-bottom: 0;
-  border-top: 1px solid var(--color-grey-300);
+  border: none;
+  border-top: 1px solid rgba(var(--theme-light-palette-neutral-border-weak));
 }
 
 body.cheat-sheet .exampleblock > .content {

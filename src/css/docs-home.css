@@ -56,7 +56,7 @@ body.docshome .doc {
 
 body.docshome .doc h2::after {
   display: block;
-  background-color: var(--color-blue-600);
+  background-color: rgba(var(--colors-baltic-50));
   height: 3px;
   width: 80px;
   margin-top: 1rem;
@@ -127,7 +127,7 @@ body.docshome .sect2 .icon img {
 }
 
 body.docshome:not(.create-applications) .sect2 .icon img {
-  background: #e6f8ff;
+  background: rgba(var(--colors-baltic-10));
 }
 
 @media all and (max-width: 820px) {
@@ -212,8 +212,8 @@ body.docshome .sect2 ul li {
 
 body.docshome .sect2 ul li a {
   display: inline-block;
-  color: var(--color-blue-600);
-  border: 1px solid var(--color-grey-200);
+  color: rgba(var(--colors-baltic-50));
+  border: 1px solid rgba(var(--colors-neutral-20));
   padding: 0.1rem 0.7rem;
   border-radius: 0.2rem;
   font-size: 0.7rem;

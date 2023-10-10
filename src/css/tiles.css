@@ -41,7 +41,7 @@ body.landing .doc h1.page {
 body.landing .doc .paragraph {
   flex: 0 0 100%;
   margin: 2rem auto;
-  color: var(--color-grey-600);
+  color: rgba(var(--colors-neutral-60));
 }
 
 body.tiles .doc .paragraph {
@@ -94,7 +94,7 @@ body.tiles .sect2 .paragraph {
   font-size: 0.8rem;
   text-align: left;
   margin-top: 0.5rem;
-  color: var(--color-grey-500);
+  color: rgba(var(--colors-neutral-50));
 }
 
 body.tiles .sect2 ul {

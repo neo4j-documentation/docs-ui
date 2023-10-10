@@ -23,7 +23,7 @@
 } */
 
 #c-left a {
-  color: var(--color-blue-600);
+  color: rgba(var(--colors-baltic-50));
   font-weight: bold;
 }
 /* #c-right {

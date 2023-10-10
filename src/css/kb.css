@@ -18,7 +18,7 @@ body.kb .label {
 body.kb .kb-search {
   max-width: 680px;
   margin: 2em auto 4rem;
-  background: var(--color-grey-600);
+  background: rgba(var(--colors-neutral-60));
   border-radius: 0.5rem;
   color: var(--color-grey-200);
   padding: 0.5rem 1rem;
@@ -41,7 +41,7 @@ body.kb .kb-search .search-placeholder {
 body.kb .kb-search .search-shortcut {
   flex: 0 0 auto;
   color: var(--color-grey-700);
-  background: var(--color-grey-500);
+  background: rgba(var(--colors-neutral-50));
   padding: 0.5rem 1rem;
   border-radius: 0.25rem;
   font-size: 0.8rem;

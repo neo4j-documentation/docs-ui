@@ -103,11 +103,11 @@ ul.graphgists > li > a {
 .graphgist-card dl.graphgist-info > dd {
   padding: 0;
   margin: 0 0 0.5rem;
-  color: var(--color-grey-600);
+  color: rgba(var(--colors-neutral-60));
 }
 
 .graphgist-card dl.graphgist-info > dt {
-  color: var(--color-grey-500);
+  color: rgba(var(--colors-neutral-50));
   text-transform: uppercase;
   font-size: 0.8rem;
 }
@@ -184,7 +184,7 @@ body.graphgist .doc > .sect1 > .sectionbody {
 }
 
 .graphgist-metadata dt {
-  color: var(--color-grey-500);
+  color: rgba(var(--colors-neutral-50));
   text-transform: uppercase;
   font-size: 0.8rem;
 }

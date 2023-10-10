@@ -7,7 +7,7 @@ body.docs {
     --navbar-background: var(--color-white);
     --navbar-top-border: var(--color-docs);
 
-    --navbar-font-color: var(--color-grey-600);
+    --navbar-font-color: rgba(var(--colors-neutral-60));
     --navbar_hover-background: transparent;
 
     --nav-bullet-color: var(--color-blue-300);
@@ -22,50 +22,50 @@ body.docs .search .search-container .search-form {
 body.docs .navbar,
 body.docs .navbar-brand .navbar-item:first-child,
 body.docs .navbar-brand .navbar-item:first-child a {
-  color: var(--color-grey-600);
+  color: rgba(var(--colors-neutral-60));
 }
 
 @media screen and (min-width: 1024px) {
   body.docs .navbar-end > .navbar-item,
   body.docs .navbar-end .navbar-link {
-    color: var(--color-grey-600);
+    color: rgba(var(--colors-neutral-60));
   }
 
   body.docs .navbar-end > a.navbar-item:hover,
   body.docs .navbar-end .navbar-link:hover {
-    color: var(--color-grey-600);
+    color: rgba(var(--colors-neutral-60));
   }
 
   body.docs .navbar-end .navbar-link::after {
-    border-color: var(--color-grey-600);
+    border-color: rgba(var(--colors-neutral-60));
   }
 
   body.docs .navbar-item.has-dropdown:hover .navbar-link {
-    color: var(--color-grey-600);
+    color: rgba(var(--colors-neutral-60));
   }
 }
 
 body.docs .navbar-burger {
-  color: var(--color-grey-600);
+  color: rgba(var(--colors-neutral-60));
 }
 
 body.docs .navbar-burger span {
-  background: var(--color-grey-600);
+  background: rgba(var(--colors-neutral-60));
 }
 
 body.docs .doc .button {
-  background: var(--color-blue-600);
+  color: rgba(var(--colors-baltic-50));
   color: var(--color-white);
 }
 
 body.docs .doc .button:hover {
-  background: var(--color-blue-500);
+  color: rgba(var(--colors-baltic-30));
   color: var(--color-white);
 }
 
 body.docs .nav-item .nav-item::before,
 body.docs .toc-menu li a::before {
-  background-color: var(--color-blue-300);
+  color: rgba(var(--colors-baltic-30));
 }
 
 body.docs .tooltip {
@@ -83,24 +83,24 @@ body.docs .tooltip.tooltip--bottom::after {
 body.docs #preamble .abstract .title,
 body.docs #preamble .abstract blockquote {
   border-left-color: var(--color-docs);
-  color: var(--color-blue-800);
+  color: rgba(var(--colors-baltic-60));
 }
 
 body.docs .tableblock .icon i {
-  color: var(--color-blue-600);
+  color: rgba(var(--colors-baltic-50));
 }
 
 body.docs .navbar .navbar-item.getting-started-cta .navbar-link {
-  background: var(--colors-primary-default);
+  background: rgba(var(--colors-baltic-50));
   color: var(--color-white);
 }
 
 body.docs .navbar .navbar-item.getting-started-cta .navbar-link:hover {
-  background: var(--colors-primary-50);
+  background: rgba(var(--colors-baltic-60));
 }
 
 body.docs .navbar .navbar-item.getting-started-cta .navbar-link:active {
-  background: var(--colors-primary-60);
+  background: rgba(var(--colors-baltic-70));
 }
 
 /*
@@ -108,7 +108,7 @@ body.labs {
     --navbar-background: var(--color-white);
     --navbar-top-border: var(--navbar-font-color);
 
-    --navbar-font-color: var(--color-grey-600);
+    --navbar-font-color: rgba(var(--colors-neutral-60));
     --navbar_hover-background: transparent;
 
     --nav-bullet-color: var(--color-purple-300);
@@ -123,35 +123,35 @@ body.labs .search .search-container .search-form {
 body.labs .navbar,
 body.labs .navbar-brand .navbar-item:first-child,
 body.labs .navbar-brand .navbar-item:first-child a {
-  color: var(--color-grey-600);
+  color: rgba(var(--colors-neutral-60));
 }
 
 @media screen and (min-width: 1024px) {
   body.labs .navbar-end > .navbar-item,
   body.labs .navbar-end .navbar-link {
-    color: var(--color-grey-600);
+    color: rgba(var(--colors-neutral-60));
   }
 
   body.labs .navbar-end > a.navbar-item:hover,
   body.labs .navbar-end .navbar-link:hover {
-    color: var(--color-grey-600);
+    color: rgba(var(--colors-neutral-60));
   }
 
   body.labs .navbar-end .navbar-link::after {
-    border-color: var(--color-grey-600);
+    border-color: rgba(var(--colors-neutral-60));
   }
 
   body.labs .navbar-item.has-dropdown:hover .navbar-link {
-    color: var(--color-grey-600);
+    color: rgba(var(--colors-neutral-60));
   }
 }
 
 body.labs .navbar-burger {
-  color: var(--color-grey-600);
+  color: rgba(var(--colors-neutral-60));
 }
 
 body.labs .navbar-burger span {
-  background: var(--color-grey-600);
+  background: rgba(var(--colors-neutral-60));
 }
 
 body.labs .doc .button {
@@ -243,7 +243,7 @@ body.landing.labs .buttons li a:active {
 }
 
 /* body.developer {
-    --nav-bullet-color: var(--color-grey-500);
+    --nav-bullet-color: rgba(var(--colors-neutral-50));
 } */
 body.developer .navbar,
 body.developer .search .search-container .search-form {
@@ -252,7 +252,7 @@ body.developer .search .search-container .search-form {
 
 body.developer .nav-item .nav-item::before,
 body.developer .toc-menu li a::before {
-  background-color: var(--color-grey-500);
+  background-color: rgba(var(--colors-neutral-50));
 }
 
 .developer .navbar-brand #neo4j-group {
@@ -274,7 +274,7 @@ body.developer .doc .button:hover {
 }
 
 body.developer .doc .button:active {
-  background: var(--color-grey-600);
+  background: rgba(var(--colors-neutral-60));
   color: var(--color-white);
 }
 
@@ -330,7 +330,7 @@ body.landing.developer .hero {
 }
 
 body.landing.developer .hero .buttons::before {
-  background-color: var(--color-grey-600);
+  background-color: rgba(var(--colors-neutral-60));
 }
 
 body.landing.developer .hero .buttons::after {
@@ -338,7 +338,7 @@ body.landing.developer .hero .buttons::after {
 }
 
 body.landing.developer .sect1 .buttons > * {
-  background: var(--color-grey-600);
+  background: rgba(var(--colors-neutral-60));
 }
 
 body.landing.developer .buttons li a {

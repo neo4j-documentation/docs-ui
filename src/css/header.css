@@ -460,7 +460,7 @@ body {
 .project-description {
   margin: 0.2rem 0;
   font-size: 0.8rem;
-  color: var(--color-grey-600);
+  color: rgba(var(--colors-neutral-60));
   white-space: normal;
 }
 
@@ -525,11 +525,11 @@ body {
 }
 
 .getting-started-cta .project:hover {
-  background: var(--colors-neutral-20);
+  background: rgba(var(--colors-neutral-20));
 }
 
 .getting-started-cta .project-subtitle {
-  color: var(--color-grey-600);
+  color: rgba(var(--colors-neutral-60));
   font-size: 13px;
   font-weight: 400;
 }
@@ -548,7 +548,7 @@ body {
 }
 
 .navbar-item.has-dropdown.getting-started-cta:hover::before {
-  border-bottom-color: var(--color-grey-600);
+  border-bottom-color: rgba(var(--colors-neutral-60));
 }
 
 .navbar-item.has-dropdown.getting-started-cta::after {
