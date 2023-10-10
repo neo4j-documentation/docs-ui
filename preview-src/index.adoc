@@ -49,6 +49,19 @@ Author Name
 You should be familiar with link:/developer/get-started/graph-database[graph database] concepts and the link:/developer/get-started/graph-database#property-graph[property graph model].
 It is also helpful to know the differences between link:/developer/graph-db-vs-rdbms/[relational and graph concepts] and their link:/developer/relational-to-graph-modeling/[data models].
 
+== Heading
+
+Lorem ipsum dolor sic est.
+
+
+== Quotes
+
+[quote,Citation]
+____
+Insert fantastically profound thought here
+____
+
+
 [.procedures,%headers, cols="5,2,1"]
 |===
 | Qualified Name | Type | Release
@@ -612,125 +625,6 @@ Est in reque homero principes, meis deleniti mediocrem ad has.
 Altera atomorum his ex, has cu elitr melius propriae.
 Eos suscipit scaevola at.
 
-[TIP]
-This oughta do it!
-
-Cum dicat putant ne.
-Est in reque homero principes, meis deleniti mediocrem ad has.
-Altera atomorum his ex, has cu elitr melius propriae.
-Eos suscipit scaevola at.
-
-[NOTE]
-====
-You've been down _this_ road before.
-
- $ npm i -g @antora/cli @antora/site-generator-default
-====
-
-Cum dicat putant ne.
-Est in reque homero principes, meis deleniti mediocrem ad has.
-Altera atomorum his ex, has cu elitr melius propriae.
-Eos suscipit scaevola at.
-
-[WARNING]
-====
-Watch out!
-
- $ npm i -g @antora/cli @antora/site-generator-default
-====
-
-[CAUTION]
-====
-[#inline]#I wouldn't try that if I were you.#
-
- $ npm i -g @antora/cli @antora/site-generator-default
-====
-
-[IMPORTANT]
-====
-Don't forget this step!
-
- $ npm i -g @antora/cli @antora/site-generator-default
-====
-
-.Key Points to Remember
-[TIP]
-====
-If you installed the CLI and the default site generator globally, you can upgrade both of them with the same command.
-
- $ npm i -g @antora/cli @antora/site-generator-default
-====
-
-== Admonition block margins
-
-[NOTE]
-====
-Admonition block with a single paragraph of text.
-====
-
-[NOTE]
-====
-Admonition block with multiple paragraphs.
-
-This is the second paragraph.
-====
-
-[NOTE]
-====
-Admonition block with multiple different elements.
-
-- List item 1
-- List item 2
-
-Paragraph of text.
-====
-
-[NOTE]
-====
-Admonition block with multiple different elements.
-
-- List item 1
-- List item 2
-
-```
-$ npm i -g @antora/cli @antora/site-generator-default
-```
-====
-
-.Admonition with title text
-[NOTE]
-====
-Admonition block with multiple different elements.
-
-- List item 1
-- List item 2
-
-```
-$ npm i -g @antora/cli @antora/site-generator-default
-```
-====
-
-[WARNING]
-====
-```
-$ npm i -g @antora/cli @antora/site-generator-default
-```
-
-```
-$ npm i -g @antora/cli @antora/site-generator-default
-```
-====
-
-.Admonition with title text
-[WARNING]
-====
-```
-$ npm i -g @antora/cli @antora/site-generator-default
-```
-====
-
-Nominavi luptatum eos, an vim hinc philosophia intellegebat.
-Eu mea inani iriure.
 
 [discrete]
 == Voluptua singulis
@@ -808,178 +702,6 @@ An advantage of enhancing graph visualization with these algorithms is that we c
 == Pad Headers
 
 == Pad Headers
-
-== Labels
-
-++++
-<div class="box">
-  <span class="label">Default Label Color</span>
-</div>
-
-<div class="box">
-  <span class="label label--aura-db-enterprise">AuraDB Enterprise</span>
-</div>
-
-<div class="box">
-  <span class="label label--not-on-aura">Not Available on Aura</span>
-</div>
-
-<div class="box">
-  <span class="label label--apoc-core">APOC Core</span>
-</div>
-
-<div class="box">
-  <span class="label label--core">Core</span>
-</div>
-
-<div class="box">
-  <span class="label label--apoc-full">APOC Full</span>
-</div>
-
-<div class="box">
-  <span class="label label--full">Full</span>
-</div>
-
-<div class="box">
-  <span class="label label--current">Current</span>
-</div>
-
-<div class="box">
-  <span class="label label--function">Function</span>
-</div>
-
-<div class="box">
-  <span class="label label--procedure">Procedure</span>
-</div>
-
-<div class="box">
-  <span class="label label--beginner">Beginner</span>
-</div>
-
-<div class="box">
-  <span class="label label--free">Free</span>
-</div>
-
-<div class="box">
-  <span class="label label--enterprise-edition">Enterprise Edition</span>
-</div>
-
-<div class="box">
-  <span class="label label--enterprise">Enterprise</span>
-</div>
-
-<div class="box">
-  <span class="label label--professional">Professional</span>
-</div>
-
-<div class="box">
-  <span class="label label--enterprise-only">Enterprise Only</span>
-</div>
-
-<div class="box">
-  <span class="label label--aura">Aura</span>
-</div>
-
-<div class="box">
-  <span class="label label--new">New</span>
-</div>
-
-<div class="box">
-  <span class="label label--yes">Yes</span>
-</div>
-
-<div class="box">
-  <span class="label label--renamed">Renamed</span>
-</div>
-
-<div class="box">
-  <span class="label label--changed">Changed</span>
-</div>
-
-<div class="box">
-  <span class="label label--added">Added</span>
-</div>
-
-<div class="box">
-  <span class="label label--updated">Updated</span>
-</div>
-
-<div class="box">
-  <span class="label label--removed">Removed</span>
-</div>
-
-<div class="box">
-  <span class="label label--no">No</span>
-</div>
-
-<div class="box">
-  <span class="label label--na">N / A</span>
-</div>
-
-<div class="box">
-  <span class="label label--discontinued">Discontinued</span>
-</div>
-
-<div class="box">
-  <span class="label label--deprecated">Deprecated</span>
-</div>
-
-<div class="box">
-  <span class="label label--warning">Warning!</span>
-</div>
-
-<div class="box">
-  <span class="label label--danger">Danger!</span>
-</div>
-
-<div class="box">
-  <span class="label label--recommended">Recommended</span>
-</div>
-
-<div class="box">
-  <span class="label label--default">Default</span>
-</div>
-
-<div class="box">
-  <span class="label label--windows">Windows</span>
-</div>
-
-<div class="box">
-  <span class="label label--linux">Linux</span>
-</div>
-
-<div class="box">
-  <span class="label label--unix">Unix</span>
-</div>
-
-<div class="box">
-  <span class="label label--mac-os">Mac OS</span>
-</div>
-
-<div class="box">
-  <span class="label label--syntax">Syntax</span>
-</div>
-
-<div class="box">
-  <span class="label label--functionality">Functionality</span>
-</div>
-
-<div class="box">
-  <span class="label label--cypher">Cypher</span>
-</div>
-
-<div class="box">
-  <span class="label label--cluster-member-core">CORE</span>
-</div>
-<div class="box">
-  <span class="label label--cluster-member-read-replica">READ_REPLICA</span>
-</div>
-<div class="box">
-  <span class="label label--cluster-member-single">SINGLE</span>
-</div>
-
-++++
-
 
 
 // tag::glossary[]

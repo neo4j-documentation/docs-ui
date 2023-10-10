@@ -83,7 +83,11 @@ Other blocks can have deprecated roles added.
 
 .Example block title
 ====
-Example 1 content - this example is not deprecated
+Example 1 content - this example is not deprecated.
+
+This is a second paragraph in the example.
+
+This is the third.
 ====
 
 [role=deprecated]
@@ -140,7 +144,7 @@ Multi-partite
 [.not-supported]
 Weighted
 
-[.supported]
+[.allowed]
 Unweighted
 --
 

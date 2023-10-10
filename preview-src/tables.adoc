@@ -70,6 +70,16 @@
 | Low resource usage and fast startup micro services
 |===
 
+.No header
+[cols="1,2"]
+|===
+| Asciidoctor
+| *Awesome* way to write documentation
+
+| Micronaut
+| Low resource usage and fast startup micro services
+|===
+
 .Table with top and bottom frame (topbot)
 [frame="topbot"]
 |===

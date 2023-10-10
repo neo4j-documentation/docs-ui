@@ -136,6 +136,12 @@ page:
           - content: English + 中文
             url: '/xyz/4.1/index.html#english+中文'
             urlType: internal      
+    - content: Admonitions
+      url: admonitions.html
+      urlType: internal
+    - content: Labels
+      url: labels.html
+      urlType: internal      
     - content: Cypher Cheat Sheet
       url: cheat-sheet.html
       urlType: internal
