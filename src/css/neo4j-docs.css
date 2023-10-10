@@ -173,9 +173,9 @@ section.deprecated .title::after,
 .deprecated > .title::after,
 span.deprecated::after {
   content: "Deprecated";
-  background: var(--deprecation-background-color);
-  border-color: var(--deprecation-background-color);
-  color: var(--deprecation-color);
+  background: var(--deprecated-background-color);
+  border-color: var(--deprecated-background-color);
+  color: var(--deprecated-color);
   margin-left: 8px;
 }
 
@@ -233,8 +233,8 @@ span.fabric::after {
 }
 
 .doc .admonitionblock.deprecated .icon {
-  background-color: var(--deprecation-color);
-  color: var(--deprecation-background-color);
+  background-color: var(--deprecated-color);
+  color: var(--deprecated-background-color);
 }
 
 .doc .admonitionblock.deprecated .icon i::after {
