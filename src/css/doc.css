@@ -49,10 +49,13 @@ body {
 
 .doc h4 {
   font-size: var(--doc-font-size-h5);
+  font-weight: 600;
 }
 
 .doc h5 {
   font-size: var(--doc-font-size-h6);
+  font-weight: 600;
+  margin-bottom: 0.5rem;
 }
 
 .doc h6 {
@@ -67,18 +70,6 @@ body {
 .doc h6 code {
   padding: 0.125em 0.25em;
   background: var(--code-background);
-}
-
-.doc h4 {
-  font-weight: 600;
-  font-size: 1rem;
-}
-
-.doc h5 {
-  font-weight: 600;
-  font-size: 1rem;
-  margin-bottom: 0.5rem;
-  color: rgba(var(--colors-neutral-60));
 }
 
 .doc > .sect-header > h1.page:first-child {
@@ -1055,7 +1046,6 @@ body {
   border-top: 2.5px solid var(--table-border-color);
 }
 
-
 .doc .tableblock thead {
   background: var(--table-header-color);
   border-bottom: var(--table-border-color);
@@ -1268,7 +1258,7 @@ body {
   border: 1px solid var(--example-border-color);
 }
 
-.doc .exampleblock > .title, 
+.doc .exampleblock > .title,
 .doc .exampleblock > .content {
   padding: 0.5rem 0.75rem;
 }

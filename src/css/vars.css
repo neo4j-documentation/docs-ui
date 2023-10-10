@@ -53,7 +53,6 @@
   --colors-mint-60: #2aada5;
   --colors-mint-70: #116161;
   --colors-mint-default: #55f9e2;
-  
   --body-font-color: rgba(var(--colors-neutral-65));
 
   /* end: design system colors  */
@@ -231,9 +230,9 @@
   /* kb metadata */
   --kb-metadata-font-color: rgba(var(--colors-neutral-70));
 
-  /* admonitions 
+  /* admonitions
      NB: admonitions are dark text on light background
-     to use the same colors on labels, reverse the 
+     to use the same colors on labels, reverse the
      background and color */
   --caution-color: rgba(var(--colors-marigold-70));
   --caution-border-color: rgba(var(--colors-marigold-50));
@@ -297,12 +296,11 @@
   --abstract-background: rgba(var(--colors-neutral-10));
   --abstract-font-color: rgba(var(--colors-neutral-70));
   --abstract-border-color: var(--panel-border-color);
-
   --admonition-background: var(--panel-background);
   --admonition-label-font-weight: var(--body-font-weight-bold);
   --caption-font-color: rgba(var(--colors-neutral-70));
   --caption-font-weight: var(--body-font-weight-bold);
- 
+
   /* code */
   --code-background: rgba(var(--theme-light-palette-neutral-bg-default));
   --code-result-background: rgba(var(--theme-light-palette-neutral-bg-strong));
@@ -317,7 +315,6 @@
   --pre-background: var(--panel-background);
   --pre-border-color: var(--panel-border-color);
   --pre-annotation-font-color: rgba(var(--colors-neutral-70));
-  
   --example-background: rgba(var(--colors-neutral-10));
   --example-border-color: var(--color-docs);
   --kbd-background: var(--panel-background);
@@ -330,8 +327,8 @@
   --table-border-color: var(--panel-border-color);
   --table-header-color: rgba(var(--colors-neutral-20));
   --table-stripe-background: rgba(var(--colors-neutral-15));
-  
-  
+
+
   /* roles */
   --deprecated-color: rgba(var(--theme-light-palette-danger-bg-strong));
   --deprecated-background-color: rgba(var(--theme-light-palette-danger-bg-weak));
