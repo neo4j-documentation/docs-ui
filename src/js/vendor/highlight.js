@@ -100,23 +100,16 @@
           name: 'HELLO INIT LOGON LOGOFF TELEMETRY GOODBYE ACK_FAILURE RESET RUN DISCARD DISCARD_ALL PULL PULL_ALL BEGIN COMMIT ROLLBACK ROUTE SUCCESS IGNORED FAILURE RECORD',
           keyword: 'C: S:',
           literal: 'true false null',
-        },
-        contains: [
-          hljs.COMMENT('//', '\n', {}),
-          hljs.QUOTE_STRING_MODE,
-          hljs.NUMBER_MODE,
-        ]
-      }
-    })
-  hljs.registerLanguage('bolt-spec',
-    function (hljs) {
-      return {
-        keywords: {
-          keyword: 'HELLO INIT LOGON LOGOFF TELEMETRY GOODBYE ACK_FAILURE RESET RUN DISCARD DISCARD_ALL PULL PULL_ALL BEGIN COMMIT ROLLBACK ROUTE SUCCESS IGNORED FAILURE RECORD',
           type: 'Null Boolean Integer Float Bytes String List Dictionary',
         },
         contains: [
           hljs.COMMENT('//', '$', {}),
+          hljs.QUOTE_STRING_MODE,
+          {
+            className: 'number',
+            begin: '-?\\b\\d+(\\.\\d*)?',
+            relevance: 0
+          },
           {
             className: '',
             begin: '(?=[a-zA-Z_]+?::)',
@@ -130,9 +123,9 @@
                 endsParent: true,
               },
             ]
-          }
+          },
         ]
       }
-    }),
+    })
   hljs.highlightAll()
 })()
