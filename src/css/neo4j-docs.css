@@ -173,9 +173,9 @@ section.deprecated .title::after,
 .deprecated > .title::after,
 span.deprecated::after {
   content: "Deprecated";
-  background: var(--deprecated-background-color);
-  border-color: var(--deprecated-background-color);
-  color: var(--deprecated-color);
+  background: var(--deprecated-color);
+  border-color: var(--deprecated-color);
+  color: var(--deprecated-background-color);
   margin-left: 8px;
 }
 
