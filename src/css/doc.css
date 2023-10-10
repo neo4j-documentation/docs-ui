@@ -1273,6 +1273,10 @@ body {
   margin-bottom: 0;
 }
 
+.tabbed-container > .exampleblock{
+  border: none;
+}
+
 .tabbed-container > .exampleblock > .content {
   border: none;
 }
