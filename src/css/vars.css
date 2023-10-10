@@ -333,16 +333,13 @@
   --quote-border-color: rgba(var(--colors-baltic-70));
   --quote-font-color: rgba(var(--colors-baltic-50));
   --quote-attribution-font-color: rgba(var(--colors-baltic-50));
-  
   --sidebar-background: rgba(var(--theme-light-palette-neutral-bg-strong));
-  
   --table-border-color: var(--panel-border-color);
   --table-header-color: rgba(var(--colors-neutral-20));
   --table-stripe-background: rgba(var(--colors-neutral-15));
-
   --kbd-background: var(--panel-background);
   --kbd-border-color: rgba(var(--colors-neutral-40));
-  
+
   /* roles */
   --deprecated-color: rgba(var(--theme-light-palette-danger-bg-strong));
   --deprecated-background-color: rgba(var(--theme-light-palette-danger-bg-weak));
