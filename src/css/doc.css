@@ -1264,12 +1264,12 @@ body {
 }
 
 .doc .exampleblock > .content {
-  border: 1px solid var(--example-border-color);
+  border-top: 1px solid var(--example-border-color);
 }
 
 .doc .exampleblock > .title {
-  background-color: var(--color-docs);
-  color: var(--color-white);
+  color: var(--example-header-font-color);
+  background: var(--example-header-background);
   margin-bottom: 0;
 }
 

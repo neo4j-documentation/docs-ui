@@ -136,16 +136,13 @@ Directed
 Undirected
 
 [.supported]
-Monopartite
-
-[.not-supported]
-Multi-partite
-
-[.not-supported]
-Weighted
+link:example.com[Heterogeneous nodes]
 
 [.allowed]
-Unweighted
+Heterogeneous relationships
+
+[.not-supported]
+Weighted relationships
 --
 
 == List of procedures

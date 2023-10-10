@@ -28,38 +28,38 @@ body.docs .navbar-brand .navbar-item:first-child a {
 @media screen and (min-width: 1024px) {
   body.docs .navbar-end > .navbar-item,
   body.docs .navbar-end .navbar-link {
-    color: rgba(var(--colors-neutral-60));
+    color: rgba(var(--colors-baltic-50));
   }
 
   body.docs .navbar-end > a.navbar-item:hover,
   body.docs .navbar-end .navbar-link:hover {
-    color: rgba(var(--colors-neutral-60));
+    color: rgba(var(--colors-baltic-50));
   }
 
   body.docs .navbar-end .navbar-link::after {
-    border-color: rgba(var(--colors-neutral-60));
+    border-color: rgba(var(--colors-baltic-50));
   }
 
   body.docs .navbar-item.has-dropdown:hover .navbar-link {
-    color: rgba(var(--colors-neutral-60));
+    color: rgba(var(--colors-baltic-50));
   }
 }
 
 body.docs .navbar-burger {
-  color: rgba(var(--colors-neutral-60));
+  color: rgba(var(--colors-baltic-50));
 }
 
 body.docs .navbar-burger span {
-  background: rgba(var(--colors-neutral-60));
+  background: rgba(var(--colors-baltic-50));
 }
 
 body.docs .doc .button {
-  color: rgba(var(--colors-baltic-50));
+  background: rgba(var(--colors-baltic-50));
   color: var(--color-white);
 }
 
 body.docs .doc .button:hover {
-  color: rgba(var(--colors-baltic-30));
+  background: rgba(var(--colors-baltic-60));
   color: var(--color-white);
 }
 

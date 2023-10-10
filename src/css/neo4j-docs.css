@@ -373,26 +373,26 @@ div.beta-symbol p::before {
   border-radius: 0.2rem;
 }
 
+.graph-variants > .content > .supported {
+  background-color: var(--success-background-color);
+  color: var(--success-color);
+}
+
 .graph-variants > .content > .supported::before {
   content: '\2714';
   margin-right: 0.5em;
   color: var(--success-color);
 }
 
-.graph-variants > .content > .supported {
-  background-color: var(--success-background-color);
-  color: var(--success-color);
+.graph-variants > .content > .allowed {
+  background-color: var(--neutral-background-color);
+  color: var(--neutral-color);
 }
 
 .graph-variants > .content > .allowed::before {
   content: '(\2714)';
   margin-right: 0.5em;
-  color: var(--note-color);
-}
-
-.graph-variants > .content > .allowed {
-  background-color: var(--note-background-color);
-  color: var(--note-color);
+  color: var(--neutral-color);
 }
 
 .graph-variants > .content > .not-supported {

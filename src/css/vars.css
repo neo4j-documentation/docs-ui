@@ -149,25 +149,27 @@
   --color-pink-700: #b83280;
   --color-pink-800: #97266d;
   --color-pink-900: #702459;
-  --color-developer: var(--color-green-600);
-  --color-labs: var(--color-purple-400);
+
+  /* theme accent colors */
+  --color-developer: rgba(var(--colors-forest-50));
+  --color-labs: rgba(var(--colors-lavender-50));
   --color-docs: rgba(var(--colors-baltic-50));
-  --color-kb: var(--color-purple-600);
-  --color-training: var(--color-pink-600);
-  --color-graphgists: var(--color-purple-600);
+  --color-kb: rgba(var(--colors-lavender-50));
+  --color-training: rgba(var(--colors-hibiscus-50));
+  --color-graphgists: rgba(var(--colors-lavender-50));
 
   /* fonts */
   --rem-base: 18; /* used to compute rem value from desired pixel value (e.g., calc(18 / var(--rem-base) * 1rem) = 18px) */
-  --body-font-weight: 400;
+  --body-font-weight: var(--font-weight-light);
   --body-font-size: 1.0625em; /* 17px */
   --body-font-size--desktop: 1em; /* 18px */
   --body-font-size--print: 0.9375em; /* 15px */
   --body-line-height: 1.5;
   --body-font-color: rgba(var(--colors-neutral-70));
   --body-font-family: "Public Sans", "Helvetica Neue", helvetica, roboto, arial, sans-serif;
-  --body-font-weight-bold: 600;
+  --body-font-weight-bold: var(--font-weight-semibold);
   --monospace-font-family: "Roboto Mono", monospace;
-  --monospace-font-weight-bold: 500;
+  --monospace-font-weight-bold: var(--font-weight-medium);
 
   /* base */
   --body-background: rgba(var(--colors-neutral-10));
@@ -253,6 +255,10 @@
   --success-color: rgba(var(--theme-light-palette-success-bg-strong));
   --success-background-color: rgba(var(--theme-light-palette-success-bg-weak));
 
+  /* neutral */
+  --neutral-color: rgba(var(--theme-light-palette-neutral-text-default));
+  --neutral-background-color: rgba(var(--theme-light-palette-neutral-bg-default));
+
   /* feedback */
   --feedback-color: var(--color-docs);
   --feedback-background-color: rgba(var(--theme-light-palette-primary-bg-weak));
@@ -302,12 +308,12 @@
   --caption-font-weight: var(--body-font-weight-bold);
 
   /* code */
+  --code-header-background: rgba(var(--theme-light-palette-neutral-bg-strong));
+  --code-header-font-color: rgba(var(--theme-light-palette-neutral-text-default));
+  --code-header-font-size: var(--font-size-body-medium);
   --code-background: rgba(var(--theme-light-palette-neutral-bg-default));
   --code-result-background: rgba(var(--theme-light-palette-neutral-bg-strong));
   --code-font-color: var(--body-font-color);
-  --code-header-background: var(--color-docs);
-  --code-header-font-color: rgba(var(--theme-light-palette-neutral-text-inverse));
-  --code-header-font-size: var(--font-size-body-medium);
   --code-button-background: rgba(var(--colors-neutral-70));
   --code-button-active-background: rgba(var(--colors-neutral-60));
   --code-button-disabled-background: rgba(var(--colors-neutral-80));
@@ -315,20 +321,28 @@
   --pre-background: var(--panel-background);
   --pre-border-color: var(--panel-border-color);
   --pre-annotation-font-color: rgba(var(--colors-neutral-70));
+
+  /* examples */
+  --example-header-background: rgba(var(--theme-light-palette-neutral-bg-default));
+  --example-header-font-color: rgba(var(--theme-light-palette-neutral-text-default));
   --example-background: rgba(var(--colors-neutral-10));
-  --example-border-color: var(--color-docs);
-  --kbd-background: var(--panel-background);
-  --kbd-border-color: rgba(var(--colors-neutral-40));
+  --example-border-color: rgba(var(--theme-light-palette-neutral-bg-strong));
+
+  /* quotes */
   --quote-background: rgba(var(--colors-baltic-10));
   --quote-border-color: rgba(var(--colors-baltic-70));
   --quote-font-color: rgba(var(--colors-baltic-50));
   --quote-attribution-font-color: rgba(var(--colors-baltic-50));
-  --sidebar-background: rgba(var(--colors-neutral-30));
+  
+  --sidebar-background: rgba(var(--theme-light-palette-neutral-bg-strong));
+  
   --table-border-color: var(--panel-border-color);
   --table-header-color: rgba(var(--colors-neutral-20));
   --table-stripe-background: rgba(var(--colors-neutral-15));
 
-
+  --kbd-background: var(--panel-background);
+  --kbd-border-color: rgba(var(--colors-neutral-40));
+  
   /* roles */
   --deprecated-color: rgba(var(--theme-light-palette-danger-bg-strong));
   --deprecated-background-color: rgba(var(--theme-light-palette-danger-bg-weak));
