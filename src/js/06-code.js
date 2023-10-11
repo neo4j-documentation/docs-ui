@@ -36,6 +36,7 @@ import { createElement } from './modules/dom'
 })()
 
 document.addEventListener('DOMContentLoaded', function () {
+  var body = document.querySelectorAll('body')
   var ignore = ['gram']
 
   var cleanCode = function (code, language) {
@@ -219,7 +220,7 @@ document.addEventListener('DOMContentLoaded', function () {
     var listingBlock = dotContent.parentNode
     var code = pre.querySelector('code')
 
-    if (!listingBlock.classList.contains('nocollapse') &&
+    if (!(listingBlock.classList.contains('nocollapse') || body.classList.contains('code-nocollapse')) &&
         pre.offsetHeight > (codeMaxLines + codeTolerance) * codeLineHeight) {
       pre.style.maxHeight = codeMaxHeight + 'px'
       pre.style.overflow = 'hidden'
