@@ -393,7 +393,7 @@
   --doc-max-width: calc(720 / var(--rem-base) * 1rem);
   --doc-max-width--desktop: calc(980 / var(--rem-base) * 1rem);
   --cheat-sheet-max-width--desktop: calc(1100 / var(--rem-base) * 1rem);
-  --feedback-height: 2.5rem;
+  --feedback-height: 2.75rem;
 
   /* stacking */
   --z-index-nav: 1;

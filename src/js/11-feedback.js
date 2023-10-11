@@ -1,4 +1,5 @@
 const { getCookie } = require('./modules/cookies')
+const URL = 'https://uglfznxroe.execute-api.us-east-1.amazonaws.com/dev/Feedback'
 
 /* global fetch */
 ;(function () {
@@ -13,7 +14,6 @@ const { getCookie } = require('./modules/cookies')
   })
   localStorage.setItem('userJourney', JSON.stringify(journey))
 
-  var url = 'https://uglfznxroe.execute-api.us-east-1.amazonaws.com/dev/Feedback'
   var feedback = document.querySelector('.feedback')
   if (!feedback) return
 
@@ -57,7 +57,7 @@ const { getCookie } = require('./modules/cookies')
     body += '&userJourney=' + encodeURIComponent(localStorage.getItem('userJourney').toString())
 
     console.log(body)
-    /*fetch(url, {
+    /*fetch(URL, {
       method: 'post',
       headers: {
         'Content-Type': 'application/x-www-form-urlencoded',
@@ -68,10 +68,10 @@ const { getCookie } = require('./modules/cookies')
 
   var isHelpful = function () {
     feedback.classList.add('positive')
-
+    feedback.style.height = null
     feedback.innerHTML = `<form class="form">
       <div class="header">
-        <p><strong>Would you like to share some feedback?</strong></p>
+        <p><strong>Thank you! Would you like to share some feedback?</strong></p>
         <svg width="14px" height="22px" viewBox="0 0 22 22" role="button" class="cancel" aria-label="Cancel Feedback">
           <line x1="19.5833333" y1="0.416666667" x2="0.416666667" y2="19.5833333"></line>
           <line x1="19.5833333" y1="19.5833333" x2="0.416666667" y2="0.416666667"></line>
@@ -90,6 +90,8 @@ const { getCookie } = require('./modules/cookies')
 
     feedback.querySelector('.cancel').addEventListener('click', function (e) {
       e.preventDefault()
+      sendRequest({ helpful: true }) // get positive feedback even if thet bail out before completion
+      localStorage.removeItem('userJourney')
       reset()
     })
 
@@ -104,7 +106,7 @@ const { getCookie } = require('./modules/cookies')
       })
       localStorage.removeItem('userJourney')
       feedback.innerHTML = '<div class="header thank-you-positive"><p><strong>Thank you for your feedback!</strong></p></div>'
-      setTimeout(() => { fadeOut(feedback) }, 2000)
+      setTimeout(() => { fadeOut(feedback, 50) }, 2000)
 
       if (window.mixpanel) {
         window.mixpanel.track('DOCS_FEEDBACK_POSITIVE', {
@@ -118,9 +120,10 @@ const { getCookie } = require('./modules/cookies')
 
   var isUnhelpful = function () {
     feedback.classList.add('negative')
+    feedback.style.height = null
     feedback.innerHTML = `<form class="form">
       <div class="header">
-        <p><strong>How could we improve this page?</strong></p>
+        <p><strong>How is this page unhelpful?</strong></p>
         <svg width="14px" height="22px" viewBox="0 0 22 22" role="button" class="cancel" aria-label="Cancel Feedback">
           <line x1="19.5833333" y1="0.416666667" x2="0.416666667" y2="19.5833333"></line>
           <line x1="19.5833333" y1="19.5833333" x2="0.416666667" y2="0.416666667"></line>
@@ -128,15 +131,15 @@ const { getCookie } = require('./modules/cookies')
       </div>
       <div>
         <input id="missing" type="radio" class="feedback-option" data-reason="missing" name="specific" value="missing" checked="true"><label
-          for="missing">It has missing information</label>
+          for="missing">Missing information</label>
       </div>
       <div>
         <input id="hard-to-follow" type="radio" class="feedback-option" data-reason="hard-to-follow" name="specific" value="hard-to-follow">
-        <label for="hard-to-follow">It&rsquo;s hard to follow or confusing</label>
+        <label for="hard-to-follow">Hard to follow or confusing</label>
       </div>
       <div>
         <input id="inaccurate" type="radio" class="feedback-option" data-reason="inaccurate" name="specific" value="inaccurate">
-        <label for="inaccurate">It&rsquo;s inaccurate, out of date, or doesn&rsquo;t work</label>
+        <label for="inaccurate">Inaccurate, out of date, or doesn&rsquo;t work</label>
       </div>
       <div><input id="other" type="radio" class="feedback-option" data-reason="other" name="specific" value="other"><label for="other">Something else
           ${edit}</label></div>
@@ -172,22 +175,37 @@ const { getCookie } = require('./modules/cookies')
     })
 
     feedback.querySelector('.primary').addEventListener('click', function (e) {
-      feedback.classList.remove('negative')
-      feedback.classList.add('positive')
+      // check more information not empty
+      var moreInformation = feedback.querySelector('textarea[name="more-information"]')
+      if (moreInformation.value === '') {
+        if (feedback.querySelector('p[class="error"]')) return //stubborn people
+        const error = document.createElement('p')
+        error.classList.add('error')
+        error.innerHTML = 'Please elaborate on your feedback.'
+        feedback.querySelector('div[class="more-information"]')
+          .insertAdjacentElement('afterend', error)
+        /*setIntervalX(function() {  // fadeOut is async, so the element never comes back
+          fadeOut(moreInformation, 50);
+          moreInformation.style.display = null
+        }, 1000, 1);*/
+        return
+      }
 
       e.preventDefault()
 
-      var reason = feedback.querySelector('input[name="specific"]:checked').value
-      var moreInformation = feedback.querySelector('textarea[name="more-information"]').value
+      var reason = feedback.querySelector('input[name="specific"]:checked')
 
       sendRequest({
         helpful: false,
-        reason: reason,
-        moreInformation: moreInformation,
+        reason: reason.value,
+        moreInformation: moreInformation.value,
       })
       feedback.innerHTML = thankyou
       localStorage.removeItem('userJourney')
-      setTimeout(() => { fadeOut(feedback) }, 2000)
+
+      feedback.classList.remove('negative')
+      feedback.classList.add('positive')
+      setTimeout(() => { fadeOut(feedback, 50) }, 2000)
 
       if (window.mixpanel) {
         window.mixpanel.track('DOCS_FEEDBACK_POSITIVE', {
@@ -225,6 +243,7 @@ const { getCookie } = require('./modules/cookies')
     feedback.classList.remove('negative')
     feedback.classList.remove('positive')
     feedback.innerHTML = original
+    feedback.style.height = 'var(--feedback-height)'
 
     var yes = feedback.querySelector('.yes')
     var no = feedback.querySelector('.no')
@@ -249,27 +268,39 @@ const { getCookie } = require('./modules/cookies')
 
     if (position + windowHeight > footerOffset) {
       feedback.classList.add('absolute')
-      feedback.style.top = (footerOffset - feedback.clientHeight) + 'px'
-      feedback.style.bottom = 'auto'
     } else {
       feedback.classList.remove('absolute')
-      feedback.style.top = 'auto'
-      feedback.style.bottom = '0px'
     }
   })
 
   reset()
 })()
 
-function fadeOut (element) {
+function fadeOut (element, speed) {
   var op = 1 // initial opacity
   var timer = setInterval(function () {
     if (op <= 0.1) {
       clearInterval(timer)
       element.style.display = 'none'
+      element.style.opacity = null
     }
     element.style.opacity = op
     element.style.filter = 'alpha(opacity=' + op * 100 + ')'
     op -= op * 0.1
-  }, 50)
+  }, speed)
+
+  // enlarge navigation to fill hole left by feedback widget faded out
+  document.documentElement.style.setProperty('--feedback-height', '0rem')
 }
+
+/*function setIntervalX(callback, delay, repetitions) {
+  var x = 0;
+  var intervalID = window.setInterval(function () {
+
+     callback();
+
+     if (++x === repetitions) {
+         window.clearInterval(intervalID);
+     }
+  }, delay);
+}*/
