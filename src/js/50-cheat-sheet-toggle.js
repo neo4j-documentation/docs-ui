@@ -378,8 +378,7 @@ const stripTrailingSlash = (str) => {
   return str.endsWith('/') ? str.slice(0, -1) : str
 }
 
-function fixURL() {
-
+function fixURL () {
   const url = window.location
   let href = url.href
   // eg /docs/cypher-cheat-sheet/current/where
@@ -403,7 +402,7 @@ function fixURL() {
 
   // just return if there's no product for some reason
   // todo: force a product
-  if(!product) return
+  if (!product) return
 
   if (possibleID) {
     id = checkHashVariations(possibleID)
@@ -413,7 +412,7 @@ function fixURL() {
   // update window.location.href
   if (!Object.keys(prodMatrix).includes(product)) {
     const reProd = new RegExp(`/${product}/?`)
-    href = href.replace(reProd,`/${defaultProd}/`)
+    href = href.replace(reProd, `/${defaultProd}/`)
     // maybe this was actually the page, which could be converted to a section id
     possibleID = product
     product = defaultProd
@@ -431,26 +430,24 @@ function fixURL() {
     href = href.replace(reHash, `#${id}`)
   }
 
-  if (href != url.href) {
+  if (href !== url.href) {
     window.location.replace(href)
   }
 
   return prodMatrix[product]
-
 }
 
-function checkHashVariations(id) {
+function checkHashVariations (id) {
   const idVariants = [
     id,
-    '_' + id.replace('-','_')
+    '_' + id.replace('-', '_'),
   ]
 
-  const actualID = idVariants.filter(function(i) {
+  const actualID = idVariants.filter(function (i) {
     return document.getElementById(i)
   })
-  
-  if (actualID) return actualID[0]
 
+  if (actualID) return actualID[0]
 }
 
 function removeDefaultClasses (c) {
