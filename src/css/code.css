@@ -90,13 +90,13 @@
 .doc .listingblock .code-inset .btn-copy.fa-check::before {
   display: block;
   background: transparent;
-  color: var(--color-white) !important;
+  color: var(--code-header-font-color) !important;
 }
 
 .doc .listingblock .code-inset {
   border-top-right-radius: 0.5rem;
   /* background: var(--pre-background); */
-  color: rgba(var(--colors-neutral-60));
+  color: var(--code-header-font-color);
   font-size: calc(12.5 / var(--rem-base) * 1rem);
   position: absolute;
   /* float: right; */

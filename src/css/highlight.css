@@ -22,7 +22,7 @@
 
 .hljs-string,
 .hljs-doctag {
-  color: rgba(var(--colors-forest-50));
+  color: rgba(var(--colors-forest-40));
 }
 
 .hljs-title,
@@ -51,7 +51,7 @@
 
 .hljs-regexp,
 .hljs-link {
-  color: rgba(var(--colors-forest-50));
+  color: rgba(var(--colors-forest-40));
 }
 
 .hljs-symbol,

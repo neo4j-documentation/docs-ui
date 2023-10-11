@@ -163,3 +163,29 @@ Weighted relationships
 +++
 
 |===
+
+== Examples
+
+=== Copying the data store of a database
+
+You can use `neo4j-admin database copy` to copy the data store of a database, for example, `neo4j`.
+
+. Stop the database named `neo4j`:
++
+[source, cypher, role=noplay]
+----
+STOP DATABASE neo4j
+----
+
+. Copy the data store from `neo4j` to a new database called `database-copy`.
++
+[TIP]
+====
+If you do not need an actual copy of the database, you can use the same values for `<fromDatabase>` and `<toDatabase>`.
+The command replaces the original database with the newly created copy.
+====
++
+[source, shell]
+----
+bin/neo4j-admin database copy neo4j database-copy
+----

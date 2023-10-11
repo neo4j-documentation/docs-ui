@@ -265,6 +265,7 @@ span.fabric::after {
   font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
   font-size: calc(14 / var(--rem-base) * 1rem);
   background-color: var(--code-result-background);
+  color: var(--code-result-font-color);
   margin: 0;
   margin-top: -1.5rem;
   margin-right: 30%;

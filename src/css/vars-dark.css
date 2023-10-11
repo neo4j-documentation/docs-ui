@@ -308,13 +308,13 @@
   --caption-font-weight: var(--body-font-weight-bold);
 
   /* code */
-  --code-header-background: rgba(var(--theme-light-palette-neutral-bg-strong));
-  --code-header-font-color: rgba(var(--theme-light-palette-neutral-text-default));
+  --code-header-background: rgba(var(--theme-dark-palette-neutral-bg-strong));
+  --code-header-font-color: rgba(var(--theme-dark-palette-neutral-text-default));
   --code-header-font-size: var(--font-size-body-medium);
-  --code-background: rgba(var(--theme-light-palette-neutral-bg-default));
-  --code-result-background: rgba(var(--theme-light-palette-neutral-bg-strong));
-  --code-result-font-color: rgba(var(--theme-light-palette-neutral-text-default));
-  --code-font-color: rgba(var(--theme-light-palette-neutral-text-default));
+  --code-background: rgba(var(--theme-dark-palette-neutral-bg-default));
+  --code-result-background: rgba(var(--theme-dark-palette-neutral-bg-strong));
+  --code-result-font-color: rgba(var(--theme-dark-palette-neutral-text-default));
+  --code-font-color: rgba(var(--theme-dark-palette-neutral-text-default));
   --code-button-background: rgba(var(--colors-neutral-70));
   --code-button-active-background: rgba(var(--colors-neutral-60));
   --code-button-disabled-background: rgba(var(--colors-neutral-80));
