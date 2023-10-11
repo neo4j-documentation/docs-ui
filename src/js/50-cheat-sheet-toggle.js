@@ -48,7 +48,6 @@ document.addEventListener('DOMContentLoaded', function () {
       document.location.hash = scrollToSection
     }
     document.location.replace(document.location.href.replace(document.location.search, ''))
-    console.log(document.location)
   }
 
   // check for a checkbox to display or hide labels
@@ -438,9 +437,10 @@ function fixURL () {
 }
 
 function checkHashVariations (id) {
+  const dashes = /-/g
   const idVariants = [
     id,
-    '_' + id.replace('-', '_'),
+    '_' + id.replace(dashes, '_'),
   ]
 
   const actualID = idVariants.filter(function (i) {
