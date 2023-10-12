@@ -166,7 +166,7 @@
   --body-font-size--print: 0.9375em; /* 15px */
   --body-line-height: 1.5;
   --body-font-color: rgba(var(--colors-neutral-70));
-  --body-font-family: "Public Sans", "Helvetica Neue", helvetica, roboto, arial, sans-serif;
+  --body-font-family: "Public Sans", "Nunito Sans", "Helvetica Neue", helvetica, roboto, arial, sans-serif;
   --body-font-weight-bold: var(--font-weight-semibold);
   --monospace-font-family: "Roboto Mono", monospace;
   --monospace-font-weight-bold: var(--font-weight-medium);
