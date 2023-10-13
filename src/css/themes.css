@@ -28,33 +28,33 @@ body.docs .navbar-brand .navbar-item:first-child a {
 @media screen and (min-width: 1024px) {
   body.docs .navbar-end > .navbar-item,
   body.docs .navbar-end .navbar-link {
-    color: rgba(var(--colors-baltic-50));
+    color: var(--color-docs);
   }
 
   body.docs .navbar-end > a.navbar-item:hover,
   body.docs .navbar-end .navbar-link:hover {
-    color: rgba(var(--colors-baltic-50));
+    color: var(--color-docs);
   }
 
   body.docs .navbar-end .navbar-link::after {
-    border-color: rgba(var(--colors-baltic-50));
+    border-color: var(--color-docs);
   }
 
   body.docs .navbar-item.has-dropdown:hover .navbar-link {
-    color: rgba(var(--colors-baltic-50));
+    color: var(--color-docs);
   }
 }
 
 body.docs .navbar-burger {
-  color: rgba(var(--colors-baltic-50));
+  color: var(--color-docs);
 }
 
 body.docs .navbar-burger span {
-  background: rgba(var(--colors-baltic-50));
+  background: var(--color-docs);
 }
 
 body.docs .doc .button {
-  background: rgba(var(--colors-baltic-50));
+  background: var(--color-docs);
   color: var(--color-white);
 }
 
@@ -87,11 +87,11 @@ body.docs #preamble .abstract blockquote {
 }
 
 body.docs .tableblock .icon i {
-  color: rgba(var(--colors-baltic-50));
+  color: var(--color-docs);
 }
 
 body.docs .navbar .navbar-item.getting-started-cta .navbar-link {
-  background: rgba(var(--colors-baltic-50));
+  background: var(--color-docs);
   color: var(--color-white);
 }
 
@@ -155,12 +155,12 @@ body.labs .navbar-burger span {
 }
 
 body.labs .doc .button {
-  background: var(--color-purple-500);
+  background: var(--color-labs);
   color: var(--color-white);
 }
 
 body.labs .doc .button:hover {
-  background: var(--color-purple-400);
+  background: rgba(var(--colors-lavender-60));
   color: var(--color-white);
 }
 
@@ -184,21 +184,26 @@ body.labs .tooltip.tooltip--bottom::after {
 body.labs #preamble .abstract .title,
 body.labs #preamble .abstract blockquote {
   border-left-color: var(--color-labs);
-  color: var(--color-purple-800);
+  color: rgba(var(--colors-lavender-80));
 }
 
 body.labs .tableblock .icon i {
-  color: var(--color-purple-600);
+  color: var(--color-labs);
 }
 
 body.labs .navbar .navbar-item.getting-started-cta .navbar-link {
-  background: var(--color-purple-400);
+  background: var(--color-labs);
+  color: var(--color-white);
+}
+
+body.labs .navbar .navbar-item.getting-started-cta .navbar-link:hover {
+  background: rgba(var(--colors-lavender-50));
   color: var(--color-white);
 }
 
 /* Labs Home Page */
 body.landing.labs .hero {
-  background-color: var(--color-purple-600);
+  background-color: var(--color-labs);
   background-image: url('https://cdn.neo4jlabs.com/images/lab-pipette-big.jpg');
   /* background-image: url('https://cdn.neo4jlabs.com/images/lab-pipette-big-overlay.jpg'); */
   background-repeat: no-repeat;
@@ -210,7 +215,7 @@ body.landing.labs .hero h2 {
 }
 
 body.landing.labs h2::after {
-  background-color: var(--color-purple-600) !important;
+  background-color: var(--color-labs) !important;
 }
 
 body.landing.labs .hero p {
@@ -218,7 +223,7 @@ body.landing.labs .hero p {
 }
 
 .landing.labs .hero .buttons::before {
-  background-color: var(--color-purple-600);
+  background-color: rgba(var(--colors-lavender-40));
 }
 
 .landing.labs .hero .buttons::after {
@@ -226,16 +231,16 @@ body.landing.labs .hero p {
 }
 
 body.landing.labs .buttons > * {
-  background: var(--color-purple-600);
+  background: rgba(var(--colors-lavender-40));
 }
 
 body.landing.labs .buttons li a {
-  background: var(--color-purple-800);
+  background: var(--color-labs);
   color: white;
 }
 
 body.landing.labs .buttons li a:hover {
-  background: var(--color-purple-700);
+  background: rgba(var(--colors-lavender-50));
 }
 
 body.landing.labs .buttons li a:active {
@@ -288,7 +293,7 @@ body.developer .tableblock .icon i {
 }
 
 body.developer .navbar .navbar-item.getting-started-cta .navbar-link {
-  background: rgba(var(--colors-baltic-50));
+  background: var(--color-docs);
   color: var(--color-white);
 }
 
@@ -377,7 +382,7 @@ body.kb .search .search-container .search-form {
 }
 
 body.kb .navbar .navbar-item.getting-started-cta .navbar-link {
-  background: var(--color-purple-600);
+  background: var(--color-labs);
   color: var(--color-white);
 }
 
@@ -407,7 +412,7 @@ body.graphgists svg.graphgists {
 body.graphgists .navbar,
 body.graphgists .search .search-container .search-form {
   border-top-color: var(--color-graphgists);
-  border-bottom-color: var(--color-grey-800);
+  border-bottom-color: var(--color-black);
 }
 
 .graphgists .navbar-brand #developer {
@@ -419,6 +424,6 @@ body.graphgists .search .search-container .search-form {
 }
 
 body.graphgists .navbar .navbar-item.getting-started-cta .navbar-link {
-  background: var(--color-purple-600);
+  background: var(--color-labs);
   color: var(--color-white);
 }

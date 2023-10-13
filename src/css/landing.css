@@ -95,12 +95,16 @@ section.hero p {
 
 .landing .doc h2::after {
   display: block;
-  background-color: var(--color-green-600);
+  background-color: var(--color-docs);
   height: 3px;
   width: 80px;
   margin-top: 1rem;
   margin-bottom: 0;
   content: "";
+}
+
+.landing.graphgists .doc h2::after {
+  background-color: var(--color-graphgists);
 }
 
 /**
@@ -257,7 +261,7 @@ body.landing .ulist.buttons li a {
   padding: 8rem 0 0 !important;
   background: var(--color-grey-800);
   background: rgb(2, 0, 36);
-  background: linear-gradient(180deg, var(--color-grey-800) 0%, var(--color-grey-700) 45%, var(--color-grey-700) 100%);
+  background: linear-gradient(180deg, var(--color-black) 0%, rgba(var(--colors-lavender-70)) 45%, var(--color-graphgists) 100%);
   text-align: left;
 }
 
@@ -279,14 +283,14 @@ body.landing .ulist.buttons li a {
   font-size: 1.2rem;
   font-weight: 300;
   display: block;
-  color: var(--color-grey-400);
+  color: var(--color-white);
   margin-bottom: 1rem;
 }
 
 .hero h1::after,
 .hero h2::after {
   display: block;
-  background-color: var(--color-green-600);
+  background-color: rgba(var(--colors-forest-50));
   height: 3px;
   width: 80px;
   margin-top: 1rem;

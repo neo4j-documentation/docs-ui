@@ -923,7 +923,7 @@ body {
 
 .doc .button {
   display: inline-block;
-  background: rgba(var(--colors-neutral-60));
+  background: var(--color-docs);
   color: var(--color-white);
   padding: 0.5rem 2rem;
   border-radius: 0.25rem;
@@ -932,7 +932,7 @@ body {
 }
 
 .doc .button:hover {
-  background: rgba(var(--colors-neutral-50));
+  background: rgba(var(--colors-baltic-60));
   color: var(--color-white);
 }
 
