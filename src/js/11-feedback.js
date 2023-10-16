@@ -5,14 +5,17 @@ const URL = 'https://uglfznxroe.execute-api.us-east-1.amazonaws.com/dev/Feedback
 ;(function () {
   'use strict'
 
-  let journey = JSON.parse(localStorage.getItem('userJourney'))
-  if (journey == null) journey = []
-  journey.push({
-    url: window.location.href,
-    title: document.title,
-    landTime: Math.round(Date.now() / 1000),
-  })
-  localStorage.setItem('userJourney', JSON.stringify(journey))
+  /*let updateUserJourney = function() {
+    JSON.parse(localStorage.getItem('userJourney'))
+    if (journey == null) journey = []
+    journey.push({
+      url: window.location.href,
+      title: document.title,
+      landTime: Math.round(Date.now() / 1000),
+    })
+    localStorage.setItem('userJourney', JSON.stringify(journey))
+  }
+  updateUserJourney()*/
 
   var feedback = document.querySelector('.feedback')
   if (!feedback) return
@@ -54,16 +57,17 @@ const URL = 'https://uglfznxroe.execute-api.us-east-1.amazonaws.com/dev/Feedback
       body += '&' + paramKey + '=' + encodeURIComponent(paramVal)
     }
 
-    body += '&userJourney=' + encodeURIComponent(localStorage.getItem('userJourney').toString())
+    //body += '&userJourney=' + encodeURIComponent(localStorage.getItem('userJourney').toString())
 
-    console.log(body)
-    /*fetch(URL, {
+    //console.log(body)
+    fetch(URL, {
       method: 'post',
       headers: {
         'Content-Type': 'application/x-www-form-urlencoded',
       },
       body: body,
-    })*/
+    })
+    //localStorage.removeItem('userJourney')
   }
 
   var isHelpful = function () {
@@ -91,7 +95,7 @@ const URL = 'https://uglfznxroe.execute-api.us-east-1.amazonaws.com/dev/Feedback
     feedback.querySelector('.cancel').addEventListener('click', function (e) {
       e.preventDefault()
       sendRequest({ helpful: true }) // get positive feedback even if thet bail out before completion
-      localStorage.removeItem('userJourney')
+      //localStorage.removeItem('userJourney')
       reset()
     })
 
@@ -104,7 +108,7 @@ const URL = 'https://uglfznxroe.execute-api.us-east-1.amazonaws.com/dev/Feedback
         helpful: true,
         moreInformation: moreInformation,
       })
-      localStorage.removeItem('userJourney')
+      //localStorage.removeItem('userJourney')
       feedback.innerHTML = '<div class="header thank-you-positive"><p><strong>Thank you for your feedback!</strong></p></div>'
       setTimeout(() => { fadeOut(feedback, 50) }, 2000)
 
@@ -201,7 +205,7 @@ const URL = 'https://uglfznxroe.execute-api.us-east-1.amazonaws.com/dev/Feedback
         moreInformation: moreInformation.value,
       })
       feedback.innerHTML = thankyou
-      localStorage.removeItem('userJourney')
+      //localStorage.removeItem('userJourney')
 
       feedback.classList.remove('negative')
       feedback.classList.add('positive')
