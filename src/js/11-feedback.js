@@ -96,7 +96,7 @@ const URL = 'https://uglfznxroe.execute-api.us-east-1.amazonaws.com/dev/Feedback
       e.preventDefault()
       sendRequest({ helpful: true }) // get positive feedback even if thet bail out before completion
       //localStorage.removeItem('userJourney')
-      reset()
+      setTimeout(() => { fadeOut(feedback, 50) }, 2000)
     })
 
     feedback.querySelector('.primary').addEventListener('click', function (e) {
