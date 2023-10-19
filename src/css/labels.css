@@ -111,7 +111,7 @@
 .label--mac-os,
 .label--linux,
 .label--windows {
-  background: rgba(var(--colors-baltic-40));
+  background: rgba(var(--colors-baltic-70));
   color: rgba(var(--colors-neutral-10));
 }
 
@@ -133,6 +133,6 @@
 }
 
 .label--cluster-member-single {
-  background: rgba(var(--colors-lemon-15));
-  background: rgba(var(--colors-lemon-50));
+  background: rgba(var(--colors-lemon-10));
+  background: rgba(var(--colors-lemon-60));
 }

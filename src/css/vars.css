@@ -354,8 +354,8 @@
   --enterprise-edition-background-color: rgba(var(--colors-baltic-50));
   --fabric-color: rgba(var(--colors-baltic-10));
   --fabric-background-color: rgba(var(--colors-baltic-50));
-  --alpha-beta-color: rgba(var(--colors-marigold-10));
-  --alpha-beta-background-color: rgba(var(--colors-marigold-50));
+  --alpha-beta-color: var(--color-black);
+  --alpha-beta-background-color: rgba(var(--colors-marigold-40));
 
   /* footer */
   --footer-font-size: var(--font-size-body-medium);
