@@ -110,7 +110,7 @@
   content: '';
   display: block;
   position: absolute;
-  background: var(--color-grey-200);
+  background: rgba(var(--colors-neutral-20));
   height: 2px;
   top: 1.25rem;
 }
@@ -140,9 +140,9 @@
 .training-home .hero {
   color: white;
   padding: 8rem 0 2rem !important;
-  background: var(--color-grey-800);
+  background: rgba(var(--colors-neutral-80));
   background: rgb(2, 0, 36);
-  background: linear-gradient(180deg, var(--color-grey-800) 0%, var(--color-grey-700) 45%, var(--color-grey-700) 100%);
+  background: linear-gradient(180deg, rgba(var(--colors-neutral-80)) 0%, rgba(var(--colors-neutral-70)) 45%, rgba(var(--colors-neutral-70)) 100%);
   text-align: left;
 }
 
@@ -358,7 +358,7 @@
 .training-enrollment .course-actions .panel {
   display: grid;
   padding: 1rem;
-  background-color: var(--color-grey-100);
+  background-color: rgba(var(--colors-neutral-15));
   border-top: 5px solid var(--color-training);
 }
 
@@ -389,7 +389,7 @@
 /* Form */
 .training-certification .course-actions form label,
 .training-enrollment .course-actions form label {
-  color: var(--color-grey-800);
+  color: rgba(var(--colors-neutral-80));
   display: block;
   font-size: 1rem;
   margin-bottom: 0.5rem;
@@ -443,10 +443,10 @@
   outline: 0;
   background-color: white;
   border-radius: 4px;
-  color: var(--color-grey-800);
+  color: rgba(var(--colors-neutral-80));
   -webkit-appearance: none;
   align-items: center;
-  border: 1px solid var(--color-grey-400);
+  border: 1px solid rgba(var(--colors-neutral-40));
   box-shadow: none;
   font-size: 1rem;
   height: 2.5em;
@@ -465,11 +465,11 @@
   width: 100%;
   background-color: white;
   border-radius: 4px;
-  color: var(--color-grey-800);
+  color: rgba(var(--colors-neutral-80));
   -moz-appearance: none;
   -webkit-appearance: none;
   align-items: center;
-  border: 1px solid var(--color-grey-300);
+  border: 1px solid rgba(var(--colors-neutral-30));
   box-shadow: none;
   display: inline-flex;
   font-size: 1rem;
@@ -893,7 +893,7 @@ body.training .button {
 
 #yelp-dataset-agreement {
   padding: 0.75em;
-  border: 1px solid var(--color-grey-300);
+  border: 1px solid rgba(var(--colors-neutral-30));
   margin-bottom: 1em;
   margin-right: 1em;
 }

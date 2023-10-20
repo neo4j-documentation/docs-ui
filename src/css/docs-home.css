@@ -1,5 +1,5 @@
 body.docshome {
-  background: var(--color-grey-100);
+  background: rgba(var(--colors-neutral-15));
 }
 
 /* nav */

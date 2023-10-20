@@ -4,14 +4,22 @@ body.kb .navbar {
   border-top-color: var(--color-kb);
 }
 
+body.kb section.hero {
+  padding: 8rem 0 0;
+  background: var(--navbar-background);
+  background: rgb(2, 0, 36);
+  background: linear-gradient(180deg, var(--navbar-background) 0%, var(--color-kb) 100%);
+  text-align: left;
+}
+
 body.kb h1::after,
 body.kb h2::after {
   background-color: var(--color-kb) !important;
 }
 
 body.kb .label {
-  background-color: var(--color-purple-200) !important;
-  color: var(--color-purple-800);
+  background-color: var(--color-kb) !important;
+  color: var(--color-kb);
 }
 
 /* Hero */
@@ -20,7 +28,7 @@ body.kb .kb-search {
   margin: 2em auto 4rem;
   background: rgba(var(--colors-neutral-60));
   border-radius: 0.5rem;
-  color: var(--color-grey-200);
+  color: rgba(var(--colors-neutral-15));
   padding: 0.5rem 1rem;
   display: flex;
   flex-direction: row;
@@ -40,7 +48,7 @@ body.kb .kb-search .search-placeholder {
 
 body.kb .kb-search .search-shortcut {
   flex: 0 0 auto;
-  color: var(--color-grey-700);
+  color: rgba(var(--colors-neutral-70));
   background: rgba(var(--colors-neutral-50));
   padding: 0.5rem 1rem;
   border-radius: 0.25rem;
@@ -57,7 +65,7 @@ body.kb .kb-search svg {
   flex-grow: 0;
   width: 1.6rem;
   height: 1.6rem;
-  stroke: var(--color-grey-800);
+  stroke: rgba(var(--colors-neutral-80));
   margin-left: 12px;
 }
 
@@ -133,7 +141,7 @@ body.landing.kb .doc .sectionbody .column ul {
 
 body.landing.kb.kb-home ul.category-tags span.count {
   float: right;
-  color: var(--color-grey-800);
+  color: rgba(var(--colors-neutral-80));
   align-items: center;
   display: inline-flex;
   font-size: 0.75em;

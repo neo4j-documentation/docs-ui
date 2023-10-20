@@ -1197,19 +1197,19 @@ body {
   margin-bottom: calc(var(--tabbed-border) * -1);
   /* background: var(--color-white);
   color: rgba(var(--colors-neutral-60));
-  border: 1px solid var(--color-grey-200);
+  border: 1px solid rgba(var(--colors-neutral-20));
   border-top-left-radius: .25rem;
   border-top-right-radius: .25rem;
 }
 /* .doc li.tabbed-tabs--active {
-  background: var(--color-grey-100);
-  border-bottom-color: var(--color-grey-100);
+  background: rgba(var(--colors-neutral-15));
+  border-bottom-color: rgba(var(--colors-neutral-15));
 
 }
 
 /* .doc .tabbed-container {
   background: var(--color-white);
-  /* border-top: var(--tabbed-border) solid var(--color-grey-200);
+  /* border-top: var(--tabbed-border) solid rgba(var(--colors-neutral-20));
 
 } */
 
@@ -1297,6 +1297,6 @@ body {
 
 .doc details > div.content {
   margin: 0.5rem 0 0 0.25rem;
-  border-left: 1px dashed var(--color-grey-300);
+  border-left: 1px dashed rgba(var(--colors-neutral-30));
   padding-left: 1rem;
 }

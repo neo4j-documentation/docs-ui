@@ -114,7 +114,7 @@ body.cheat-sheet .navbar .navbar-item.getting-started-cta .navbar-link:active {
 
 body.cheat-sheet .navbar-brand {
   width: 18rem;
-  /* border-right: 1px solid var(--color-grey-300); */
+  /* border-right: 1px solid rgba(var(--colors-neutral-30)); */
 }
 
 body.cheat-sheet .navbar-start {
@@ -377,7 +377,7 @@ body.cheat-sheet .example-block > .content > .listingblock {
   flex: 0 0 42%;
   margin: 0;
   padding: 1rem 0.5rem;
-  /* border-top: 1px solid var(--color-grey-300); */
+  /* border-top: 1px solid rgba(var(--colors-neutral-30)); */
 }
 
 body.cheat-sheet .listingblock .content {
@@ -434,7 +434,7 @@ body.cheat-sheet .page-labels {
   padding: 0;
   align-items: center;
   gap: 0.25rem;
-  /* border-bottom: 1px solid var(--color-grey-200); */
+  /* border-bottom: 1px solid rgba(var(--colors-neutral-20)); */
 }
 
 body.cheat-sheet .sect1 > h2 {
@@ -458,7 +458,7 @@ body.cheat-sheet .labels {
   /* flex: 0 0 12%; */
   /* padding: 1rem 0; */
   /* margin: 0; */
-  /* border-top: 1px solid var(--color-grey-300); */
+  /* border-top: 1px solid rgba(var(--colors-neutral-30)); */
 }
 
 body.cheat-sheet .label {
@@ -514,15 +514,15 @@ body.cheat-sheet span.label.hidden,
   }
 
   body.cheat-sheet .toc-menu-placeholder li[data-level="1"] {
-    border-bottom: 1px dotted var(--color-blue-300);
-    /* background-color: var(--color-grey-200); */
+    border-bottom: 1px dotted rgba(var(--color-baltic-30));
+    /* background-color: rgba(var(--colors-neutral-20)); */
     /* margin-left: 0; */
     width: 100%;
     margin-top: 0.5rem;
   }
 
   body.cheat-sheet .toc-menu-placeholder li[data-level="2"] {
-    border: 1px solid var(--color-grey-300);
+    border: 1px solid rgba(var(--colors-neutral-30));
     font-size: calc(var(--doc-font-size--desktop) * 0.8);
   }
 
@@ -544,10 +544,10 @@ body.cheat-sheet span.label.hidden,
   }
 
   body.cheat-sheet h3:not(.discrete) {
-    background: var(--color-grey-200);
+    background: rgba(var(--colors-neutral-20));
     margin: 0 0.5rem 0 0.5rem;
     flex-grow: 1;
-    border: 1px solid var(--color-grey-300);
+    border: 1px solid rgba(var(--colors-neutral-30));
     /* border-right: none; */
   }
 
@@ -556,8 +556,8 @@ body.cheat-sheet span.label.hidden,
     flex-grow: 1;
     padding: 0.5rem;
     margin: 0 0.5rem;
-    background-color: var(--color-grey-200);
-    border: 1px solid var(--color-grey-300);
+    background-color: rgba(var(--colors-neutral-20));
+    border: 1px solid rgba(var(--colors-neutral-70));
     border-radius: 0;
   }
 

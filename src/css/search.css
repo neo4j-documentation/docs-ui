@@ -233,7 +233,7 @@ body.search--active {
 .search-results .search-result-label {
   line-height: 1;
   font-size: 0.7rem;
-  background: var(--color-grey-200);
+  background: rgba(var(--colors-neutral-20));
   color: rgba(var(--colors-neutral-60));
   font-style: normal;
   padding: 0.2rem 0.5rem;
@@ -247,8 +247,8 @@ body.search--active {
 }
 
 .search-results .label--developer-guide {
-  background: var(--color-grey-800);
-  color: var(--color-grey-200);
+  background: rgba(var(--colors-neutral-80));
+  color: rgba(var(--colors-neutral-20));
 }
 
 .search-results .label--knowledge-base {

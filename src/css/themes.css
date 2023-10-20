@@ -90,6 +90,16 @@ body.docs .tableblock .icon i {
   color: var(--color-docs);
 }
 
+/* positive and negative */
+
+body.docs .icon i.fa-thumbs-up {
+  color: rgba(var(--theme-light-palette-success-icon));
+}
+
+body.docs .icon i.fa-thumbs-down {
+  color: rgba(var(--theme-light-palette-danger-icon));
+}
+
 body.docs .navbar .navbar-item.getting-started-cta .navbar-link {
   background: var(--color-docs);
   color: var(--color-white);
@@ -265,7 +275,7 @@ body.developer .toc-menu li a::before {
 }
 
 .developer .navbar-brand #developer {
-  fill: var(--color-grey-400);
+  fill: rgba(var(--colors-neutral-40));
 }
 
 body.developer .doc .button {
@@ -307,7 +317,7 @@ body.landing.developer .navbar {
 }
 
 body.landing.developer .hero {
-  background: linear-gradient(180deg, var(--color-grey-800) 0%, var(--color-grey-700) 45%, var(--color-grey-700) 100%);
+  background: linear-gradient(180deg, rgba(var(--colors-neutral-80)) 0%, rgba(var(--colors-neutral-70)) 45%, rgba(var(--colors-neutral-70)) 100%);
 }
 
 @media all and (min-width: 760px) {
@@ -351,12 +361,12 @@ body.landing.developer .sect1 .buttons > * {
 }
 
 body.landing.developer .buttons li a {
-  background: var(--color-grey-800);
+  background: rgba(var(--colors-neutral-80));
   color: white;
 }
 
 body.landing.developer .buttons li a:hover {
-  background: var(--color-grey-700);
+  background: rgba(var(--colors-neutral-70));
 }
 
 body.landing.developer .buttons li a:active {
@@ -374,7 +384,7 @@ body.kb .search .search-container .search-form {
 }
 
 .kb .navbar-brand #developer {
-  fill: var(--color-grey-400);
+  fill: rgba(var(--colors-neutral-40));
 }
 
 .kb .navbar-brand #neo4j-group {
@@ -386,6 +396,14 @@ body.kb .navbar .navbar-item.getting-started-cta .navbar-link {
   color: var(--color-white);
 }
 
+body.kb .navbar .navbar-item.getting-started-cta .navbar-link:hover {
+  background: rgba(var(--colors-lavender-50));
+}
+
+body.kb .navbar .navbar-item.getting-started-cta .navbar-link:active {
+  background: rgba(var(--colors-lavender-60));
+}
+
 body.training .navbar,
 body.training .search .search-container .search-form {
   border-top-color: var(--color-training);
@@ -393,7 +411,7 @@ body.training .search .search-container .search-form {
 }
 
 .training .navbar-brand #developer {
-  fill: var(--color-grey-400);
+  fill: rgba(var(--colors-neutral-40));
 }
 
 .training .navbar-brand #neo4j-group {
@@ -416,7 +434,7 @@ body.graphgists .search .search-container .search-form {
 }
 
 .graphgists .navbar-brand #developer {
-  fill: var(--color-grey-400);
+  fill: rgba(var(--colors-neutral-40));
 }
 
 .graphgists .navbar-brand #neo4j-group {

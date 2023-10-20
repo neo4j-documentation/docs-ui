@@ -113,7 +113,7 @@
 .doc .code-inset .copy-success .btn {
   position: absolute;
   right: -1rem;
-  background: var(--color-green-500);
+  background: rgba(var(--colors-forest-50));
   color: var(--color-white) !important;
   padding: 0.4rem;
   margin: 0;
@@ -135,7 +135,7 @@
   margin-top: -0.25rem;
   border-left: 0.5rem solid transparent;
   border-right: 0.5rem solid transparent;
-  border-bottom: 0.5rem solid var(--color-green-500);
+  border-bottom: 0.5rem solid rgba(var(--colors-forest-50));
 }
 
 .doc .code-footer {
@@ -179,12 +179,12 @@
   flex-direction: column;
   justify-content: center;
   padding: 0 0.6rem;
-  color: var(--color-grey-200);
+  color: rgba(var(--colors-neutral-20));
   font-size: 0.7rem;
 }
 
 .doc .code-results {
-  background: var(--color-grey-200);
+  background: rgba(var(--colors-neutral-20));
   color: rgba(var(--colors-neutral-60));
   border: 1px solid rgba(var(--colors-neutral-50));
   border-bottom-width: 2px;
@@ -197,7 +197,7 @@
 .doc .code-results .code-result-options {
   display: flex;
   justify-content: space-between;
-  border-bottom: 1px solid var(--color-grey-400);
+  border-bottom: 1px solid rgba(var(--colors-neutral-40));
   margin: 0 12px 4px;
 }
 
@@ -247,8 +247,8 @@
 }
 
 .doc .code-results .code-result-table tbody td {
-  border-right: 1px solid var(--color-grey-300);
-  border-bottom: 1px solid var(--color-grey-300);
+  border-right: 1px solid rgba(var(--colors-neutral-30));
+  border-bottom: 1px solid rgba(var(--colors-neutral-30));
 }
 
 .doc .code-results .code-result-table tbody tr td:last-child {
@@ -257,16 +257,16 @@
 
 /*
 .doc .code-results .code-result-table tbody tr:nth-child(even) {
-  background: var(--color-grey-100);
+  background: rgba(var(--colors-neutral-15));
 }
 
 .doc .code-results .code-result-table tbody tr:hover {
-  background: var(--color-grey-100);
+  background: rgba(var(--colors-neutral-15));
 }
 */
 
 .doc .code-results .code-result-table tbody tr:hover {
-  background: var(--color-grey-100);
+  background: rgba(var(--colors-neutral-15));
 }
 
 .doc .code-results pre {
@@ -327,7 +327,7 @@
     bottom: -2rem;
     right: 0;
     width: 48%;
-    background: var(--color-grey-100);
+    background: rgba(var(--colors-neutral-15));
     z-index: 1;
   }
 

@@ -154,7 +154,7 @@
   --color-developer: rgba(var(--colors-forest-45));
   --color-labs: rgba(var(--colors-lavender-45));
   --color-docs: rgba(var(--colors-baltic-50));
-  --color-kb: rgba(var(--colors-lavender-50));
+  --color-kb: rgba(var(--colors-lavender-45));
   --color-training: rgba(var(--colors-hibiscus-50));
   --color-graphgists: rgba(var(--colors-lavender-45));
 
@@ -178,12 +178,13 @@
   --scrollbar-thumb-color: rgba(var(--colors-neutral-15));
   /* navbar */
   --navbar-background: rgba(var(--colors-neutral-80));
+  --hero-fade: rgba(var(--colors-neutral-50));
   --navbar-font-color: rgba(var(--colors-neutral-15));
   --navbar-font-weight: 400;
   --navbar_hover-background: transparent;
-  --navbar-button-background: var(--color-orange-600);
-  --navbar-button-border-color: var(--color-blue-800);
-  --navbar-button-font-color: var(--color-blue-100);
+  --navbar-button-background: var(--color-docs);
+  --navbar-button-border-color: rgba(var(--color-baltic-60));
+  --navbar-button-font-color: var(--color-white);
   --navbar-menu-border-color: var(--panel-border-color);
   --navbar-menu-background: rgba(var(--colors-neutral-10));
   --navbar-menu-font-color: var(--body-font-color);
