@@ -17,6 +17,9 @@
 
   main > .content {
     display: flex;
+  }
+
+  body:not(.landing) main > .content {
     margin-top: 2rem;
   }
 

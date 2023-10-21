@@ -8,7 +8,7 @@ body.kb section.hero {
   padding: 8rem 0 0;
   background: var(--navbar-background);
   background: rgb(2, 0, 36);
-  background: linear-gradient(180deg, var(--navbar-background) 0%, var(--color-kb) 100%);
+  background: linear-gradient(180deg, var(--navbar-background) 0%, var(--hero-fade) 100%);
   text-align: left;
 }
 
@@ -26,7 +26,7 @@ body.kb .label {
 body.kb .kb-search {
   max-width: 680px;
   margin: 2em auto 4rem;
-  background: rgba(var(--colors-neutral-60));
+  background: rgba(var(--colors-neutral-50));
   border-radius: 0.5rem;
   color: rgba(var(--colors-neutral-15));
   padding: 0.5rem 1rem;

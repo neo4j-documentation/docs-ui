@@ -452,7 +452,7 @@ body {
 }
 
 .project .project-name {
-  color: var(--navbar-dropdown-link);
+  color: var(--doc-font-color);
   font-weight: 600;
   font-size: calc(16 / var(--rem-base) * 1rem);
 }
