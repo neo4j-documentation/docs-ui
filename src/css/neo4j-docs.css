@@ -181,6 +181,7 @@ span.deprecated::after {
   border-color: var(--deprecated-color);
   color: var(--deprecated-background-color);
   margin-left: 8px;
+  vertical-align: middle;
 }
 
 div.not-on-aura h2::after,
