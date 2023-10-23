@@ -1,5 +1,5 @@
 .toc .toc-ad {
-  border: 1px solid var(--color-grey-300);
+  border: 1px solid rgba(var(--colors-neutral-30));
   padding: 1rem 0.5rem;
   border-radius: 0.5rem;
   margin: 2rem -0.5rem 0;
@@ -16,7 +16,7 @@
 
 .toc .toc-ad .toc-ad-overline {
   font-size: 0.7rem;
-  color: var(--color-grey-600);
+  color: rgba(var(--colors-neutral-60));
   text-transform: uppercase;
   background-color: var(--color-white);
 }
@@ -24,7 +24,7 @@
 .toc .toc-ad .toc-ad-overline a {
   padding-left: 0 !important;
   border-left: 0 none !important;
-  color: var(--color-grey-600);
+  color: rgba(var(--colors-neutral-60));
 }
 
 .toc .toc-ad .toc-ad-image {
@@ -33,24 +33,24 @@
 }
 
 .toc .toc-ad .toc-ad-overline a:hover {
-  color: var(--color-grey-800);
+  color: rgba(var(--colors-neutral-80));
 }
 
 .toc .toc-ad .toc-ad-title {
-  color: var(--color-blue-600);
+  color: rgba(var(--colors-baltic-50));
   font-size: 1rem;
   margin: 0.2rem 0 !important;
   padding: 0 !important;
 }
 
 .toc .toc-ad-description {
-  color: var(--color-grey-500);
+  color: rgba(var(--colors-neutral-50));
   font-size: 0.8rem;
   margin-top: 0;
 }
 
 .toc .toc-ad-underline {
-  color: var(--color-blue-600);
+  color: rgba(var(--colors-baltic-50));
   font-weight: bold;
   font-size: 0.8rem;
 }
@@ -58,7 +58,7 @@
 .toc .toc-ad-underline-button,
 .toc .toc-ad .button {
   border-radius: 0.25rem;
-  background-color: var(--color-blue-600);
+  background-color: rgba(var(--colors-baltic-50));
   color: var(--color-white);
   display: inline-block;
   font-size: 0.8rem;
@@ -67,7 +67,7 @@
 }
 
 .doc .ad {
-  border: 1px solid var(--color-grey-300);
+  border: 1px solid rgba(var(--colors-neutral-30));
   border-radius: 0.5rem;
   background: var(--color-white);
   margin: 2rem -1rem 0;
@@ -77,14 +77,14 @@
 }
 
 .doc .ad h2 {
-  color: var(--color-grey-500);
+  color: rgba(var(--colors-neutral-50));
   font-size: 0.8rem !important;
   text-transform: uppercase;
   margin-top: 0;
 }
 
 .doc .ad h2 a {
-  color: var(--color-grey-500);
+  color: rgba(var(--colors-neutral-50));
 }
 
 .doc .ad .anchor {

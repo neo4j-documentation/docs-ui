@@ -53,7 +53,7 @@
   --colors-mint-60: #2aada5;
   --colors-mint-70: #116161;
   --colors-mint-default: #55f9e2;
-  --body-font-color: rgba(var(--colors-neutral-60));
+  --body-font-color: rgba(var(--colors-neutral-65));
 
   /* end: design system colors  */
 
@@ -151,13 +151,12 @@
   --color-pink-900: #702459;
 
   /* theme accent colors */
-  --color-developer: rgba(var(--colors-forest-45));
-  --color-labs: rgba(var(--colors-lavender-45));
+  --color-developer: rgba(var(--colors-forest-40));
+  --color-labs: rgba(var(--colors-lavender-50));
   --color-docs: rgba(var(--colors-baltic-50));
-  --color-kb: rgba(var(--colors-lavender-45));
-  --color-kb-weak: rgba(var(--colors-lavender-20));
+  --color-kb: rgba(var(--colors-lavender-50));
   --color-training: rgba(var(--colors-hibiscus-50));
-  --color-graphgists: rgba(var(--colors-lavender-45));
+  --color-graphgists: rgba(var(--colors-lavender-50));
 
   /* fonts */
   --rem-base: 18; /* used to compute rem value from desired pixel value (e.g., calc(18 / var(--rem-base) * 1rem) = 18px) */
@@ -179,13 +178,12 @@
   --scrollbar-thumb-color: rgba(var(--colors-neutral-15));
   /* navbar */
   --navbar-background: rgba(var(--colors-neutral-80));
-  --hero-fade: rgba(var(--colors-neutral-50));
   --navbar-font-color: rgba(var(--colors-neutral-15));
   --navbar-font-weight: 400;
   --navbar_hover-background: transparent;
-  --navbar-button-background: var(--color-docs);
-  --navbar-button-border-color: rgba(var(--color-baltic-60));
-  --navbar-button-font-color: var(--color-white);
+  --navbar-button-background: var(--color-orange-600);
+  --navbar-button-border-color: var(--color-blue-800);
+  --navbar-button-font-color: var(--color-blue-100);
   --navbar-menu-border-color: var(--panel-border-color);
   --navbar-menu-background: rgba(var(--colors-neutral-10));
   --navbar-menu-font-color: var(--body-font-color);
@@ -310,13 +308,13 @@
   --caption-font-weight: var(--body-font-weight-bold);
 
   /* code */
-  --code-header-background: rgba(var(--theme-light-palette-neutral-bg-strong));
-  --code-header-font-color: rgba(var(--theme-light-palette-neutral-text-default));
+  --code-header-background: rgba(var(--theme-dark-palette-neutral-bg-strong));
+  --code-header-font-color: rgba(var(--theme-dark-palette-neutral-text-default));
   --code-header-font-size: var(--font-size-body-medium);
-  --code-background: rgba(var(--theme-light-palette-neutral-bg-default));
-  --code-result-background: rgba(var(--theme-light-palette-neutral-bg-strong));
-  --code-result-font-color: rgba(var(--theme-light-palette-neutral-text-default));
-  --code-font-color: rgba(var(--theme-light-palette-neutral-text-default));
+  --code-background: rgba(var(--theme-dark-palette-neutral-bg-default));
+  --code-result-background: rgba(var(--theme-dark-palette-neutral-bg-strong));
+  --code-result-font-color: rgba(var(--theme-dark-palette-neutral-text-default));
+  --code-font-color: rgba(var(--theme-dark-palette-neutral-text-default));
   --code-button-background: rgba(var(--colors-neutral-70));
   --code-button-active-background: rgba(var(--colors-neutral-60));
   --code-button-disabled-background: rgba(var(--colors-neutral-80));
@@ -356,8 +354,8 @@
   --enterprise-edition-background-color: rgba(var(--colors-baltic-50));
   --fabric-color: rgba(var(--colors-baltic-10));
   --fabric-background-color: rgba(var(--colors-baltic-50));
-  --alpha-beta-color: var(--color-black);
-  --alpha-beta-background-color: rgba(var(--colors-marigold-40));
+  --alpha-beta-color: rgba(var(--colors-marigold-10));
+  --alpha-beta-background-color: rgba(var(--colors-marigold-50));
 
   /* footer */
   --footer-font-size: var(--font-size-body-medium);
@@ -401,7 +399,7 @@
   --z-index-navbar: 5000;
 
   /* landing page */
-  --landing-leading-background: rgba(var(--colors-neutral-20));
+  --landing-leading-background: rgba(var(--colors-neutral-30));
 
   /* Label colors */
   --label-group-syntax: #e6e6e6;
