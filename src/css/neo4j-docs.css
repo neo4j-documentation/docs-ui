@@ -58,10 +58,10 @@ div.roles > span.role {
   }
 }
 
-.sect1.alpha h2::after,
-.sect1.beta h2::after,
-.sect2.alpha h3::after,
-.sect2.beta h3::after,
+.sect1.alpha > h2::after,
+.sect1.beta > h2::after,
+.sect2.alpha > h3::after,
+.sect2.beta > h3::after,
 span.alpha::after,
 span.beta::after,
 body.deprecated article h2::after,
@@ -71,34 +71,35 @@ div.deprecated h2::after,
 div.deprecated h3::after,
 div.deprecated h4::after,
 body.deprecated article dt::after,
+div.deprecated p::after,
 p.deprecated::before,
 section.deprecated .title::after,
 span.deprecated::after,
 .deprecated > .title::after,
-div.not-on-aura h2::after,
-div.not-on-aura h3::after,
-div.not-on-aura h4::after,
+div.not-on-aura > h2::after,
+div.not-on-aura > h3::after,
+div.not-on-aura > h4::after,
 p.not-on-aura::before,
 section.not-on-aura .title::after,
 span.not-on-aura::after,
-div.aura-db-enterprise h2::after,
-div.aura-db-enterprise h3::after,
-div.aura-db-enterprise h4::after,
+div.aura-db-enterprise > h2::after,
+div.aura-db-enterprise > h3::after,
+div.aura-db-enterprise > h4::after,
 p.aura-db-enterprise::before,
 section.aura-db-enterprise.title::after,
 span.aura-db-enterprise::after,
 section.enterprise-edition .title::after,
-div.enterprise-edition h2::after,
-div.enterprise-edition h3::after,
-div.enterprise-edition h4::after,
+div.enterprise-edition > h2::after,
+div.enterprise-edition > h3::after,
+div.enterprise-edition > h4::after,
 p.enterprise-edition::before,
 span.enterprise-edition::after,
-body.fabric article h2::after,
-body.fabric article h3::after,
-body.fabric article h4::after,
-div.fabric h2::after,
-div.fabric h3::after,
-div.fabric h4::after,
+body.fabric article > h2::after,
+body.fabric article > h3::after,
+body.fabric article > h4::after,
+div.fabric > h2::after,
+div.fabric > h3::after,
+div.fabric > h4::after,
 section.fabric .title::after,
 p.fabric::before,
 span.fabric::after {
@@ -184,9 +185,9 @@ span.deprecated::after {
   vertical-align: middle;
 }
 
-div.not-on-aura h2::after,
-div.not-on-aura h3::after,
-div.not-on-aura h4::after,
+div.not-on-aura > h2::after,
+div.not-on-aura > h3::after,
+div.not-on-aura > h4::after,
 p.not-on-aura::before,
 section.not-on-aura .title::after,
 span.not-on-aura::after {
@@ -196,9 +197,9 @@ span.not-on-aura::after {
   color: var(--not-on-aura-color);
 }
 
-div.aura-db-enterprise h2::after,
-div.aura-db-enterprise h3::after,
-div.aura-db-enterprise h4::after,
+div.aura-db-enterprise > h2::after,
+div.aura-db-enterprise > h3::after,
+div.aura-db-enterprise > h4::after,
 p.aura-db-enterprise::before,
 section.aura-db-enterprise.title::after,
 span.aura-db-enterprise::after {
@@ -208,9 +209,9 @@ span.aura-db-enterprise::after {
   color: var(--aura-db-enterprise-color);
 }
 
-div.enterprise-edition h2::after,
-div.enterprise-edition h3::after,
-div.enterprise-edition h4::after,
+div.enterprise-edition > h2::after,
+div.enterprise-edition > h3::after,
+div.enterprise-edition > h4::after,
 p.enterprise-edition::before,
 section.enterprise-edition .title::after,
 span.enterprise-edition::after {
@@ -220,9 +221,9 @@ span.enterprise-edition::after {
   color: var(--enterprise-edition-color);
 }
 
-div.fabric h2::after,
-div.fabric h3::after,
-div.fabric h4::after,
+div.fabric > h2::after,
+div.fabric > h3::after,
+div.fabric > h4::after,
 p.fabric::before,
 section.fabric .title::after,
 span.fabric::after {
