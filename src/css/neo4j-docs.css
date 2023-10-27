@@ -306,6 +306,10 @@ span.beta::after {
   content: "Beta";
 }
 
+.doc .paragraph.tier-note {
+  margin: 1.5rem 0;
+}
+
 div.tier-note p {
   padding: 10px;
   /* text-align: justify; */
