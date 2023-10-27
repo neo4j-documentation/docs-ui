@@ -1,5 +1,5 @@
 = Docs `code test` flags
-:page-role: enterprise-edition not-on-aura
+:page-role: not-on-aura
 :page-theme: docs
 // :page-labels: fabric enterprise-edition alpha test
 
@@ -76,6 +76,12 @@ Lorem ipsum
 
 Lorem ipsum
 
+=== H3 inside labeled section
+
+Lorem ipsum
+
+==== H4 inside labeled section
+
 [role=deprecated]
 == Deprecated content
 
@@ -99,17 +105,41 @@ Example 2 content - this example is deprecated
 [role=alpha]
 == Alpha content
 
+
 [.alpha-symbol]
 [.tier-note]
 This algorithm is in the alpha tier.
 For more information on algorithm tiers, see <<algorithms>>.
 
+=== Third level heading in Alpha section
+
+Lorem ipsum
+
+
+[role=beta]
 == Beta content
+
 
 [.beta-symbol]
 [.tier-note]
 This algorithm is in the beta tier.
 For more information on algorithm tiers, see <<algorithms>>.
+
+
+=== Third level heading in Beta section
+
+Lorem ipsum
+
+
+[role=deprecated]
+== Deprecated content
+
+Lorem ipsum
+
+
+=== Third level heading in Deprecated section
+
+Lorem ipsum
 
 
 == Function symbol
