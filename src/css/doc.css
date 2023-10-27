@@ -627,8 +627,8 @@ body {
   margin-bottom: 0.5rem;
 }
 
-.doc .olist li div:first-of-type,
-.doc .ulist li div:first-of-type {
+.doc .olist li > div:first-of-type,
+.doc .ulist li > div:first-of-type {
   margin-top: 1.5rem;
 }
 

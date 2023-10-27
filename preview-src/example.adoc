@@ -132,187 +132,23 @@ neo4j@system> SHOW DATABASES;
 ----
 ====
 
-== Source Blocks with title
 
-If a title is provided to the example block, it will show up in an additional blue header above the code:
+== Example block inside a list
 
-[source,adoc]
-----
-.This example has a title
-[source,adoc]
-Play with me!
-----
-
-.This example has a title
-[source,adoc]
-Play with me!
-
-== Copy Button
-
-The **Copy To Clipboard** button will appear on all code blocks:
-
-[source,adoc]
-----
-[source,adoc]
-Copy me!
-----
-
-Unless you add `role=nocopy`:
-
-[source,adoc,role=nocopy]
-----
-[source,adoc,role=nocopy]
-Don't copy me!
-----
-
-== Reference lines (Callouts)
-
-You can add number bubbles to reference specific lines by appending `<n>` to a line. It is advised to put them behind a line comment for the language the code is in.
-
-[source,ruby]
-----
-require 'sinatra' <1>
-
-get '/hi' do <2> <3>
-  "Hello World!"
-end
-----
-<1> Library import
-<2> URL mapping
-<3> Response block
-
-[source]
-----
-line of code // <1>
-line of code # <2>
-line of code ;; <3>
-line of code <!--4-->
-----
-<1> A callout behind a line comment for C-style languages.
-<2> A callout behind a line comment for Ruby, Python, Perl, etc.
-<3> A callout behind a line comment for Clojure.
-<4> A callout behind a line comment for XML or SGML languages like HTML.
-
-
-== Expand code block
-
-Code blocks longer than 15 lines (+5 of tolerance) are collapsed, unless you add `role=nocollapse`
-
-[source,adoc]
-----
-[source,js]
-...
-----
-
-[source,js]
-----
-  // Collapse/Expand long blocks
-  var codeMaxLines = 15 // lines
-  var codeTolerance = 5 // lines
-  var codeLineHeight = parseFloat(window.getComputedStyle(
-                          document.getElementsByClassName('highlight')[0], null)
-                          .getPropertyValue('line-height'))
-  var codeMaxHeight = codeLineHeight*codeMaxLines
-  var maskImage = 'linear-gradient(to bottom, black 0px, transparent ' +
-                   (codeMaxHeight + 100) + 'px)'
-
-  var codeBlockLinesNum = function (code) {
-      var paddingTop = parseFloat(window.getComputedStyle(code, null).getPropertyValue('padding-top'))
-      var paddingBottom = parseFloat(window.getComputedStyle(code, null).getPropertyValue('padding-bottom'))
-      var height = code.clientHeight-paddingTop-paddingBottom;
-      var lines = Math.ceil(height / codeLineHeight)
-      var hiddenLines = Math.ceil(lines - codeMaxLines)
-      return hiddenLines
-  }
-
-  var expandCollapseBlock = function (e) {
-    e.preventDefault()
-    var showMore = e.target
-    var pre = showMore.parentNode
-    var code = pre.querySelector('code')
-
-    if (pre.style.overflow === 'hidden') {
-      window.sessionStorage.setItem('scrollpos', window.scrollY)
-      pre.style.maxHeight = pre.scrollHeight + 'px'
-      pre.style.overflow = 'visible'
-      code.style.webkitMaskImage = ''
-      code.style.maskImage = ''
-      showMore.innerHTML = '&uarr;' // show less
-    } else {
-      // Scoll back to where you where before expanding
-      var scrollpos = window.sessionStorage.getItem('scrollpos')
-      if (scrollpos) {
-        window.scrollTo({
-          top: scrollpos,
-          behavior: 'auto',
-        })
-      }
-      window.sessionStorage.removeItem('scrollpos')
-
-      var hiddenLines = codeBlockLinesNum(code)
-      pre.style.maxHeight = codeMaxHeight + 'px'
-      pre.style.overflow = 'hidden'
-      code.style.webkitMaskImage = maskImage
-      code.style.maskImage = maskImage
-      showMore.innerHTML = '&darr; View all (' + hiddenLines + ' lines more) &darr;'
-    }
-  }
-
-  // Collapse long blocks on load
-  var collapseCodeBlock = function (pre) {
-    var dotContent = pre.parentNode
-    var listingBlock = dotContent.parentNode
-    var code = pre.querySelector('code')
-
-    if (!listingBlock.classList.contains('nocollapse') &&
-        pre.offsetHeight > (codeMaxLines+codeTolerance)*codeLineHeight) {
-      pre.style.maxHeight = codeMaxHeight + 'px'
-      pre.style.overflow = 'hidden'
-      code.style.webkitMaskImage = maskImage
-      code.style.maskImage = maskImage
-
-      var hiddenLines = codeBlockLinesNum(code)
-      var showMore = createElement('a', 'show-more')
-      showMore.innerHTML = '&darr; View all (' + hiddenLines + ' lines more) &darr;'
-      showMore.addEventListener('click', expandCollapseBlock)
-      pre.appendChild(showMore)
-    }
-  }
-
-  // Apply collapseCodeBlock
-  document.querySelectorAll('.highlight')
-    .forEach(collapseCodeBlock)
-
-----
-
-[source,adoc]
-----
-[source,js,role=nocollapse]
-...
-----
-
-[source,js,role=nocollapse]
-----
-// Collapse/Expand long blocks
-var codeBlockMaxHeight = 300  // px
-var styleMaskImage = 'linear-gradient(to bottom, black 0px, transparent ' + (codeBlockMaxHeight+100) + 'px)'
-
-var expandCollapseBlock = function (e) {
-  e.preventDefault();
-  var showMore = e.target
-  var pre = showMore.parentNode
-  var codeBlock = pre.querySelector('code')
-
-  if (pre.st.style.webkitMaskImage = styleMaskImage
-    codeBlock.style.maskImage = styleMaskImage
-    showMore.innerHTML = '&darr;'  // show more
-    //codeBlock.scrollIntoView({behavior: 'smooth'})
-  }
-}
-  if (pre.st.style.webkitMaskImage = styleMaskImage
-    codeBlock.style.maskImage = styleMaskImage
-    showMore.innerHTML = '&darr;'  // show more
-    //codeBlock.scrollIntoView({behavior: 'smooth'})
-  }
-}
-----
+. List item
++
+.An Example
+====
+Lorem ipsum
+====
++
+. List item
+. List item
+. List item
++
+.An Example
+====
+Lorem ipsum
+====
++
+. List item
