@@ -1,9 +1,9 @@
 #cookiebanner {
-  background: var(--color-grey-100);
+  background: rgba(var(--colors-neutral-15));
   box-shadow: 0 -5px 5px 1px rgba(0, 0, 0, 0.08) !important;
   padding: 1rem;
   font-size: 0.8rem;
-  color: var(--color-grey-700);
+  color: rgba(var(--colors-neutral-70));
 }
 
 #cookiebanner .row {
@@ -14,7 +14,7 @@
 #cookiebanner .c-header {
   font-size: 0.9rem;
   font-weight: 600;
-  color: var(--color-grey-800);
+  color: rgba(var(--colors-neutral-80));
 }
 
 /* #cookiebanner .columns {
@@ -23,7 +23,7 @@
 } */
 
 #c-left a {
-  color: var(--color-blue-600);
+  color: rgba(var(--colors-baltic-50));
   font-weight: bold;
 }
 /* #c-right {

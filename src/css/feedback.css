@@ -4,8 +4,8 @@
   left: 1rem;
   border-top-left-radius: 0.25rem;
   border-top-right-radius: 0.25rem;
-  background: var(--color-blue-100);
-  color: var(--color-blue-800);
+  background: var(--feedback-background-color);
+  color: var(--feedback-color);
   padding: 0.5rem 1rem;
   width: calc(var(--nav-width) - 2rem);
   font-size: 0.8rem;
@@ -14,21 +14,21 @@
 }
 
 .feedback.negative {
-  background: var(--color-red-100);
-  color: var(--color-red-800);
+  background: var(--feedback-negative-color);
+  color: var(--feedback-negative-background-color);
 }
 
 .feedback.negative line {
-  stroke: var(--color-red-800);
+  stroke: var(--feedback-negative-background-color);
 }
 
 .feedback.negative a {
-  color: var(--color-red-700);
+  color: var(--feedback-negative-background-color);
 }
 
 .feedback.positive {
-  background: var(--color-green-100);
-  color: var(--color-green-800);
+  background: var(--feedback-positive-color);
+  color: var(--feedback-positive-background-color);
 }
 
 .feedback .header {
@@ -93,7 +93,7 @@
 .feedback circle,
 .feedback line {
   fill: transparent;
-  stroke: var(--color-blue-700);
+  stroke: var(--feedback-color);
   stroke-width: 1;
 }
 

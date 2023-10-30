@@ -1,5 +1,5 @@
 = Docs `code test` flags
-:page-role: enterprise-edition not-on-aura
+:page-role: not-on-aura
 :page-theme: docs
 // :page-labels: fabric enterprise-edition alpha test
 
@@ -76,6 +76,12 @@ Lorem ipsum
 
 Lorem ipsum
 
+=== H3 inside labeled section
+
+Lorem ipsum
+
+==== H4 inside labeled section
+
 [role=deprecated]
 == Deprecated content
 
@@ -83,7 +89,11 @@ Other blocks can have deprecated roles added.
 
 .Example block title
 ====
-Example 1 content - this example is not deprecated
+Example 1 content - this example is not deprecated.
+
+This is a second paragraph in the example.
+
+This is the third.
 ====
 
 [role=deprecated]
@@ -95,17 +105,41 @@ Example 2 content - this example is deprecated
 [role=alpha]
 == Alpha content
 
+
 [.alpha-symbol]
 [.tier-note]
 This algorithm is in the alpha tier.
 For more information on algorithm tiers, see <<algorithms>>.
 
+=== Third level heading in Alpha section
+
+Lorem ipsum
+
+
+[role=beta]
 == Beta content
+
 
 [.beta-symbol]
 [.tier-note]
 This algorithm is in the beta tier.
 For more information on algorithm tiers, see <<algorithms>>.
+
+
+=== Third level heading in Beta section
+
+Lorem ipsum
+
+
+[role=deprecated]
+== Deprecated content
+
+Lorem ipsum
+
+
+=== Third level heading in Deprecated section
+
+Lorem ipsum
 
 
 == Function symbol
@@ -132,16 +166,13 @@ Directed
 Undirected
 
 [.supported]
-Monopartite
+link:example.com[Heterogeneous nodes]
+
+[.allowed]
+Heterogeneous relationships
 
 [.not-supported]
-Multi-partite
-
-[.not-supported]
-Weighted
-
-[.supported]
-Unweighted
+Weighted relationships
 --
 
 == List of procedures
@@ -162,3 +193,29 @@ Unweighted
 +++
 
 |===
+
+== Examples
+
+=== Copying the data store of a database
+
+You can use `neo4j-admin database copy` to copy the data store of a database, for example, `neo4j`.
+
+. Stop the database named `neo4j`:
++
+[source, cypher, role=noplay]
+----
+STOP DATABASE neo4j
+----
+
+. Copy the data store from `neo4j` to a new database called `database-copy`.
++
+[TIP]
+====
+If you do not need an actual copy of the database, you can use the same values for `<fromDatabase>` and `<toDatabase>`.
+The command replaces the original database with the newly created copy.
+====
++
+[source, shell]
+----
+bin/neo4j-admin database copy neo4j database-copy
+----

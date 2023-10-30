@@ -31,8 +31,8 @@
 .doc .listingblock .code-title,
 .doc .listingblock .code-language {
   /* background: var(--code-header-background); */
-  color: var(--pre-background);
-  /* color: white; */
+  color: var(--code-header-font-color);
+  font-size: var(--code-header-font-size);
 }
 
 .doc .listingblock .code-header {
@@ -82,7 +82,7 @@
 }
 
 .doc .listingblock .code-inset .btn-copy.fa-check {
-  background: var(--color-grey-600);
+  background: rgba(var(--colors-neutral-60));
   margin: 0.2rem;
   padding: 0.4rem;
 }
@@ -90,13 +90,13 @@
 .doc .listingblock .code-inset .btn-copy.fa-check::before {
   display: block;
   background: transparent;
-  color: var(--color-white) !important;
+  color: var(--code-header-font-color) !important;
 }
 
 .doc .listingblock .code-inset {
   border-top-right-radius: 0.5rem;
   /* background: var(--pre-background); */
-  color: var(--color-grey-600);
+  color: var(--code-header-font-color);
   font-size: calc(12.5 / var(--rem-base) * 1rem);
   position: absolute;
   /* float: right; */
@@ -113,7 +113,7 @@
 .doc .code-inset .copy-success .btn {
   position: absolute;
   right: -1rem;
-  background: var(--color-green-500);
+  background: rgba(var(--colors-forest-50));
   color: var(--color-white) !important;
   padding: 0.4rem;
   margin: 0;
@@ -135,11 +135,11 @@
   margin-top: -0.25rem;
   border-left: 0.5rem solid transparent;
   border-right: 0.5rem solid transparent;
-  border-bottom: 0.5rem solid var(--color-green-500);
+  border-bottom: 0.5rem solid rgba(var(--colors-forest-50));
 }
 
 .doc .code-footer {
-  background: var(--color-grey-500);
+  background: rgba(var(--colors-neutral-50));
   color: var(--color-white);
   padding: 0.3rem 12px 0.3rem 0;
   font-size: 0.8em;
@@ -179,14 +179,14 @@
   flex-direction: column;
   justify-content: center;
   padding: 0 0.6rem;
-  color: var(--color-grey-200);
+  color: rgba(var(--colors-neutral-20));
   font-size: 0.7rem;
 }
 
 .doc .code-results {
-  background: var(--color-grey-200);
-  color: var(--color-grey-600);
-  border: 1px solid var(--color-grey-500);
+  background: rgba(var(--colors-neutral-20));
+  color: rgba(var(--colors-neutral-60));
+  border: 1px solid rgba(var(--colors-neutral-50));
   border-bottom-width: 2px;
   border-bottom-left-radius: 0.25rem;
   border-bottom-right-radius: 0.25rem;
@@ -197,7 +197,7 @@
 .doc .code-results .code-result-options {
   display: flex;
   justify-content: space-between;
-  border-bottom: 1px solid var(--color-grey-400);
+  border-bottom: 1px solid rgba(var(--colors-neutral-40));
   margin: 0 12px 4px;
 }
 
@@ -211,7 +211,7 @@
   padding: 0;
   font-weight: 600;
   border: 0 none;
-  color: var(--color-grey-600);
+  color: rgba(var(--colors-neutral-60));
   background: transparent;
 }
 
@@ -243,12 +243,12 @@
 .doc .code-results .code-result-table td {
   vertical-align: top;
   padding: 0.25rem;
-  color: var(--color-grey-600);
+  color: rgba(var(--colors-neutral-60));
 }
 
 .doc .code-results .code-result-table tbody td {
-  border-right: 1px solid var(--color-grey-300);
-  border-bottom: 1px solid var(--color-grey-300);
+  border-right: 1px solid rgba(var(--colors-neutral-30));
+  border-bottom: 1px solid rgba(var(--colors-neutral-30));
 }
 
 .doc .code-results .code-result-table tbody tr td:last-child {
@@ -257,16 +257,16 @@
 
 /*
 .doc .code-results .code-result-table tbody tr:nth-child(even) {
-  background: var(--color-grey-100);
+  background: rgba(var(--colors-neutral-15));
 }
 
 .doc .code-results .code-result-table tbody tr:hover {
-  background: var(--color-grey-100);
+  background: rgba(var(--colors-neutral-15));
 }
 */
 
 .doc .code-results .code-result-table tbody tr:hover {
-  background: var(--color-grey-100);
+  background: rgba(var(--colors-neutral-15));
 }
 
 .doc .code-results pre {
@@ -296,12 +296,12 @@
   padding: 0.5rem 0 0.5rem;
   margin-left: 0.4rem;
   border-bottom: 2px solid transparent;
-  color: var(--color-grey-500);
+  color: rgba(var(--colors-neutral-50));
 }
 
 .doc .code-result-toggle button.code-result-toggle--current {
-  color: var(--color-grey-600);
-  border-bottom-color: var(--color-grey-600);
+  color: rgba(var(--colors-neutral-60));
+  border-bottom-color: rgba(var(--colors-neutral-60));
 }
 
 @media all and (min-width: 760px) {
@@ -327,7 +327,7 @@
     bottom: -2rem;
     right: 0;
     width: 48%;
-    background: var(--color-grey-100);
+    background: rgba(var(--colors-neutral-15));
     z-index: 1;
   }
 

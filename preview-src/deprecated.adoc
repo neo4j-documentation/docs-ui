@@ -13,7 +13,23 @@ All headers have 'Deprecated' appended.
 
 Lorem ipsum
 
+Simple paragraph.
+
+[.deprecated]
+Simple paragraph marked as deprecated.
+
+
+[.deprecated]
+
 == Deprecated Heading 2
+
+Lorem ipsum
+
+=== Deprecated Heading 2.1
+
+Lorem ipsum
+
+==== Deprecated Heading 2.2
 
 Lorem ipsum
 
