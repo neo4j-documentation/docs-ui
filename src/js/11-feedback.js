@@ -5,7 +5,7 @@ const URL = 'https://uglfznxroe.execute-api.us-east-1.amazonaws.com/dev/Feedback
 ;(function () {
   'use strict'
 
-  let updateUserJourney = function() {
+  const updateUserJourney = function () {
     var journey = JSON.parse(localStorage.getItem('userJourney'))
     if (journey == null) journey = []
     journey.push({
