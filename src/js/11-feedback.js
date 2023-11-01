@@ -5,8 +5,8 @@ const URL = 'https://uglfznxroe.execute-api.us-east-1.amazonaws.com/dev/Feedback
 ;(function () {
   'use strict'
 
-  /*let updateUserJourney = function() {
-    JSON.parse(localStorage.getItem('userJourney'))
+  let updateUserJourney = function() {
+    var journey = JSON.parse(localStorage.getItem('userJourney'))
     if (journey == null) journey = []
     journey.push({
       url: window.location.href,
@@ -15,7 +15,7 @@ const URL = 'https://uglfznxroe.execute-api.us-east-1.amazonaws.com/dev/Feedback
     })
     localStorage.setItem('userJourney', JSON.stringify(journey))
   }
-  updateUserJourney()*/
+  updateUserJourney()
 
   var feedback = document.querySelector('.feedback')
   if (!feedback) return
@@ -57,7 +57,10 @@ const URL = 'https://uglfznxroe.execute-api.us-east-1.amazonaws.com/dev/Feedback
       body += '&' + paramKey + '=' + encodeURIComponent(paramVal)
     }
 
-    //body += '&userJourney=' + encodeURIComponent(localStorage.getItem('userJourney').toString())
+    var userJourney = localStorage.getItem('userJourney')
+    if (JSON.parse(userJourney).length > 1) {
+      body += '&userJourney=' + encodeURIComponent(userJourney)
+    }
 
     //console.log(body)
     fetch(URL, {
@@ -67,7 +70,7 @@ const URL = 'https://uglfznxroe.execute-api.us-east-1.amazonaws.com/dev/Feedback
       },
       body: body,
     })
-    //localStorage.removeItem('userJourney')
+    localStorage.removeItem('userJourney')
   }
 
   var isHelpful = function () {
