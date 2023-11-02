@@ -98,7 +98,6 @@ const URL = 'https://uglfznxroe.execute-api.us-east-1.amazonaws.com/dev/Feedback
     feedback.querySelector('.cancel').addEventListener('click', function (e) {
       e.preventDefault()
       sendRequest({ helpful: true }) // get positive feedback even if thet bail out before completion
-      //localStorage.removeItem('userJourney')
       setTimeout(() => { fadeOut(feedback, 50) }, 0)
     })
 
@@ -111,7 +110,6 @@ const URL = 'https://uglfznxroe.execute-api.us-east-1.amazonaws.com/dev/Feedback
         helpful: true,
         moreInformation: moreInformation,
       })
-      //localStorage.removeItem('userJourney')
       feedback.innerHTML = '<div class="header thank-you-positive"><p><strong>Thank you for your feedback!</strong></p></div>'
       setTimeout(() => { fadeOut(feedback, 50) }, 2000)
 
@@ -191,10 +189,6 @@ const URL = 'https://uglfznxroe.execute-api.us-east-1.amazonaws.com/dev/Feedback
         error.innerHTML = 'Please elaborate on your feedback.'
         feedback.querySelector('div[class="more-information"]')
           .insertAdjacentElement('afterend', error)
-        /*setIntervalX(function() {  // fadeOut is async, so the element never comes back
-          fadeOut(moreInformation, 50);
-          moreInformation.style.display = null
-        }, 1000, 1);*/
         return
       }
 
@@ -208,7 +202,6 @@ const URL = 'https://uglfznxroe.execute-api.us-east-1.amazonaws.com/dev/Feedback
         moreInformation: moreInformation.value,
       })
       feedback.innerHTML = thankyou
-      //localStorage.removeItem('userJourney')
 
       feedback.classList.remove('negative')
       feedback.classList.add('positive')
@@ -222,28 +215,6 @@ const URL = 'https://uglfznxroe.execute-api.us-east-1.amazonaws.com/dev/Feedback
         })
       }
     })
-
-    /*feedback.querySelector('.secondary').addEventListener('click', function (e) {
-      e.preventDefault()
-
-      var reason = feedback.querySelector('input[name="specific"]:checked').value
-      var moreInformation = feedback.querySelector('textarea[name="more-information"]').value
-
-      sendRequest({
-        'helpful': false,
-        'reason': reason,
-        'moreInformation': moreInformation,
-      })
-      feedback.innerHTML = thankyou
-
-      if (window.mixpanel) {
-        window.mixpanel.track('DOCS_FEEDBACK_SKIP', {
-          pathname: window.location.origin + window.location.pathname,
-          search: window.location.search,
-          hash: window.location.hash,
-        })
-      }
-    })*/
   }
 
   var reset = function () {
@@ -299,15 +270,3 @@ function fadeOut (element, speed) {
   // enlarge navigation to fill hole left by feedback widget faded out
   document.documentElement.style.setProperty('--feedback-height', '0rem')
 }
-
-/*function setIntervalX(callback, delay, repetitions) {
-  var x = 0;
-  var intervalID = window.setInterval(function () {
-
-     callback();
-
-     if (++x === repetitions) {
-         window.clearInterval(intervalID);
-     }
-  }, delay);
-}*/
