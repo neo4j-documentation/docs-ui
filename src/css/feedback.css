@@ -172,26 +172,11 @@
     box-shadow: none;
     margin-bottom: 2rem;
   }
-
-  .feedback.absolute {
-    top: auto !important;
-    bottom: auto !important;
-  }
-}
-
-@media all and (min-width: 712px) {
-  /* .feedback {
-        margin: 1em auto 0;
-    } */
 }
 
 @media all and (min-width: 1025px) {
-  /* .feedback {
-        margin: 1em auto 0;
-    } */
   .feedback.absolute {
     position: absolute;
-    margin: 0;
   }
 }
 
