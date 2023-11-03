@@ -99,6 +99,14 @@ const URL = 'https://uglfznxroe.execute-api.us-east-1.amazonaws.com/dev/Feedback
       e.preventDefault()
       sendRequest({ helpful: true }) // get positive feedback even if thet bail out before completion
       setTimeout(() => { fadeOut(feedback, 50) }, 0)
+
+      if (window.mixpanel) {
+        window.mixpanel.track('DOCS_FEEDBACK_POSITIVE', {
+          pathname: window.location.origin + window.location.pathname,
+          search: window.location.search,
+          hash: window.location.hash,
+        })
+      }
     })
 
     feedback.querySelector('.primary').addEventListener('click', function (e) {
