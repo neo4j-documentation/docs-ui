@@ -158,6 +158,7 @@
 
 .feedback .error {
   font-size: 0.8rem;
+  margin-bottom: 1rem;
 }
 
 @media all and (max-width: 1024px) {

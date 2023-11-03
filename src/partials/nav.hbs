@@ -5,7 +5,9 @@
         {{> nav-selectors}}
       </div>
       {{> nav-menu}}
-      {{> feedback}}
+      {{#unless page.attributes.disablefeedback}}
+        {{> feedback}}
+      {{/unless}}
     </div>
   </aside>
 </div>
