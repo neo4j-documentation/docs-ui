@@ -378,8 +378,9 @@
   --nav-panel-height: calc(var(--nav-height) - var(--drawer-height));
   --nav-panel-height--desktop:
     calc(
-      var(--nav-height--desktop) - var(--drawer-height)
-    );
+      var(--nav-height--desktop) - var(--drawer-height) - var(--feedback-height) - 1rem
+    );  /* 1rem is feedback padding */
+
   --nav-width: 18rem;
   --toc-top: calc(var(--body-top) + var(--toolbar-height));
   --kb-metadata-top: calc(var(--body-top) + var(--toolbar-height));
@@ -392,6 +393,7 @@
   --doc-max-width: calc(720 / var(--rem-base) * 1rem);
   --doc-max-width--desktop: calc(980 / var(--rem-base) * 1rem);
   --cheat-sheet-max-width--desktop: calc(1100 / var(--rem-base) * 1rem);
+  --feedback-height: 2.75rem;
 
   /* stacking */
   --z-index-nav: 1;

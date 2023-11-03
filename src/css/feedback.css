@@ -1,13 +1,13 @@
 .feedback {
   position: fixed;
   bottom: 0;
-  right: 2rem;
+  left: 1rem;
   border-top-left-radius: 0.25rem;
   border-top-right-radius: 0.25rem;
   background: var(--feedback-background-color);
   color: var(--feedback-color);
   padding: 0.5rem 1rem;
-  width: 320px;
+  width: calc(var(--nav-width) - 2rem);
   font-size: 0.8rem;
   box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
   z-index: 1000;
@@ -74,6 +74,10 @@
   font-size: 0.8rem;
 }
 
+.feedback div.more-information {
+  margin: 10px 0;
+}
+
 .feedback textarea {
   border-radius: 0.25rem;
   border: 1px solid var(--color-blue-300);
@@ -105,6 +109,7 @@
   font-weight: 600;
   margin-right: 0.5rem;
   margin-bottom: 1rem;
+  cursor: pointer;
 }
 
 .feedback .primary:focus,
@@ -151,6 +156,10 @@
   margin-bottom: 0.5rem;
 }
 
+.feedback .error {
+  font-size: 0.8rem;
+}
+
 @media all and (max-width: 1024px) {
   .feedback {
     position: relative;
@@ -159,7 +168,7 @@
     max-width: var(--doc-max-width);
     min-width: 0;
     right: auto;
-    width: auto;
+    width: calc(var(--nav-width) - 2rem);
     box-shadow: none;
     margin-bottom: 2rem;
   }
