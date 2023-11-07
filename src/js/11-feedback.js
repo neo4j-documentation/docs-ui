@@ -85,7 +85,7 @@ const URL = 'https://uglfznxroe.execute-api.us-east-1.amazonaws.com/dev/Feedback
         </svg>
       </div>
       <div class="more-information">
-        <label for="more-information"><strong>More information</strong></label>
+        <label for="more-information"><strong>More information</strong> (optional)</label>
         <textarea id="more-information" type="text" rows="3" cols="50" name="more-information" style="resize:none"></textarea>
       </div>
       <div class="buttons">
