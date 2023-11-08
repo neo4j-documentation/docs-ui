@@ -8,12 +8,15 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    permissions:
+      id-token: write
+      contents: read
 
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
 
       - name: Use Node.js 14
-        uses: actions/setup-node@v1
+        uses: actions/setup-node@v4
         with:
           node-version: '14'
       - run: npm install
@@ -24,14 +27,13 @@ jobs:
         env:
           GITHUB_REF: ${{ github.ref }}
 
-      - name: Sync UI Bundle to S3
-        uses: jakejarvis/s3-sync-action@master
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v4
         with:
-          args: --follow-symlinks --include '*.zip'
-        env:
-          AWS_S3_BUCKET: ${{ secrets.STATIC_CONTENT_BUCKET }}
-          AWS_ACCESS_KEY_ID: ${{ secrets.DEVREL_ACCESS_KEY_ID }}
-          AWS_SECRET_ACCESS_KEY: ${{ secrets.DEVREL_SECRET_ACCESS_KEY }}
-          AWS_REGION: 'eu-west-1'
-          SOURCE_DIR: 'build'
-          DEST_DIR: 'build'
+          role-to-assume: ${{ secrets.AWS_ROLE }}[
+          aws-region: ${{ secrets.AWS_REGION }}
+          role-session-name: GitHub-OIDC-docs-ui
+
+      - name: Sync UI Bundle to S3
+        run: |
+          aws s3 sync --follow-symlinks --include '*.zip' --no-progress --region eu-west-1 build s3://${{ secrets.STATIC_CONTENT_BUCKET }}/build
