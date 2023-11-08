@@ -30,7 +30,7 @@ jobs:
       - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v4
         with:
-          role-to-assume: ${{ secrets.AWS_ROLE }}[
+          role-to-assume: ${{ vars.DEVREL_GH_OIDC_ROLE_ARN }}
           aws-region: eu-west-1
           role-session-name: GitHub-OIDC-docs-ui
 
