@@ -220,7 +220,7 @@ document.addEventListener('DOMContentLoaded', function () {
     var listingBlock = dotContent.parentNode
     var code = pre.querySelector('code')
 
-    if (!(listingBlock.classList.contains('nocollapse') || body.classList.contains('code-nocollapse')) &&
+    if (!(listingBlock.classList.contains('nocollapse') || body[0].classList.contains('code-nocollapse')) &&
         pre.offsetHeight > (codeMaxLines + codeTolerance) * codeLineHeight) {
       pre.style.maxHeight = codeMaxHeight + 'px'
       pre.style.overflow = 'hidden'

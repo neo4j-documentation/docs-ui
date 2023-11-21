@@ -135,13 +135,13 @@ page:
           items:
           - content: English + 中文
             url: '/xyz/4.1/index.html#english+中文'
-            urlType: internal      
+            urlType: internal
     - content: Admonitions
       url: admonitions.html
       urlType: internal
     - content: Labels
       url: labels.html
-      urlType: internal      
+      urlType: internal
     - content: Cypher Cheat Sheet
       url: cheat-sheet.html
       urlType: internal
@@ -180,9 +180,12 @@ page:
       urlType: internal
     - content: Tables (No Captions)
       url: tables-no-captions.html
-      urlType: internal      
+      urlType: internal
     - content: Examples
       url: example.html
+      urlType: internal
+    - content: Code blocks
+      url: code.html
       urlType: internal
     - content: Feedback disabled
       url: feedback-disabled.html
@@ -246,7 +249,7 @@ page:
       urlType: internal
   # additional page attributes indexed by page-slug
     pages-data:
-      cheatsheet-products: &cheatsheet-products 
+      cheatsheet-products: &cheatsheet-products
         - name: 'Neo4j Community Edition'
           class: 'neo4j-ce'
         - name: 'Neo4j Enterprise Edition'
