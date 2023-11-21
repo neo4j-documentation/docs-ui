@@ -6,6 +6,9 @@ const URL = 'https://uglfznxroe.execute-api.us-east-1.amazonaws.com/dev/Feedback
   'use strict'
 
   const updateUserJourney = function () {
+    var cookieConsent = getCookie('CookieConsent')
+    if (cookieConsent == null || cookieConsent.indexOf('statistics:true') === -1) return
+
     var journey = JSON.parse(localStorage.getItem('userJourney'))
     if (journey == null) journey = []
     journey.push({
@@ -58,7 +61,7 @@ const URL = 'https://uglfznxroe.execute-api.us-east-1.amazonaws.com/dev/Feedback
     }
 
     var userJourney = localStorage.getItem('userJourney')
-    if (JSON.parse(userJourney).length > 1) {
+    if (userJourney != null && JSON.parse(userJourney).length > 1) {
       body += '&userJourney=' + encodeURIComponent(userJourney)
     }
 
