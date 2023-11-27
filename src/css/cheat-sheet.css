@@ -16,6 +16,7 @@ body.cheat-sheet {
 body.cheat-sheet .article > .content {
   background: var(--pre-background);
   padding-top: 0;
+  margin-top: 0;
 }
 
 /*  navbar */
