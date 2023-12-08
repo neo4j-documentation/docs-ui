@@ -4,6 +4,7 @@
 {{> head defaultPageTitle='Untitled'}}
   </head>
   <body class="article{{#with (or page.attributes.role page.role)}} {{{this}}}{{/with}}{{#with asciidoc.attributes.role}} {{{this}}}{{/with}}{{#with (or page.attributes.theme "developer")}} {{{this}}}{{/with}}{{#with (or page.attributes.styles page.styles)}} {{{this}}}{{/with}}{{#if (or page.attributes.show-labels page.show-labels)}} show-labels{{/if}}">
+  
 {{> header}}
 {{> body}}
 {{> footer}}
