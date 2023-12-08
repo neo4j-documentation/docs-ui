@@ -176,8 +176,10 @@ body {
   text-decoration: underline;
 }
 
-.doc a:hover, .doc a:focus,
-.doc a:hover code:hover, .doc a:focus code:focus  {
+.doc a:hover,
+.doc a:focus,
+.doc a:hover code:hover,
+.doc a:focus code:focus {
   color: var(--link_hover-font-color);
   /* border-bottom: 1px solid var(--link_hover-font-color); */
 }
