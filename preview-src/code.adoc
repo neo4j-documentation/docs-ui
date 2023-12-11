@@ -4,6 +4,21 @@
 
 The **Copy To Clipboard** button will appear on all code blocks:
 
+
+[source,shell]
+----
+Copy me!
+Do something else
+Callout # <1>
+Callout # <2>
+Comment # Just a regular comment after some code
+----
+
+<1> Callout
+<2> Callout
+
+
+
 [source,adoc]
 ----
 [source,adoc]

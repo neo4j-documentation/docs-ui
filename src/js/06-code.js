@@ -46,6 +46,8 @@ document.addEventListener('DOMContentLoaded', function () {
       input = window.neo4jDocs.copyableCommand(input)
     }
 
+    input = input.replace(/[ ]+\n/g, '\n').trimEnd()
+
     return input
   }
 
