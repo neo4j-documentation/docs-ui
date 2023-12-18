@@ -22,12 +22,12 @@ Don't copy me!
 
 You can add number bubbles to reference specific lines by appending `<n>` to a line. It is advised to put them behind a line comment for the language the code is in.
 
-[source,js]
+[source,ruby]
 ----
 require 'sinatra' <1>
 
 get '/hi' do <2> <3>
-  "Hello World!"  //mark-line
+  "Hello World!"
 end
 ----
 <1> Library import
