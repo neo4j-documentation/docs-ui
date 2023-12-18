@@ -45,7 +45,7 @@
     "gulp-vinyl-zip": "~2.2",
     "handlebars": "~4.7",
     "highlight.js": "^10.7",
-    "highlightjs-cypher": "^1.1",
+    "highlightjs-cypher": "^1.2",
     "husky": "^4.3.0",
     "js-yaml": "~3.13",
     "medium-zoom": "^1.0.6",
