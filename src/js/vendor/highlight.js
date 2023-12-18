@@ -128,4 +128,12 @@
       }
     })
   hljs.highlightAll()
+
+  // Apply line highlighting to lines marked with `// marked-line`
+  // eat away line breaks or they would be doubled by the div
+  hljs.addPlugin({
+    'after:highlightElement': ({ el, result, text }) => {
+      result.value = result.value.replaceAll(/^(\s*)(.+?)\s*<span class="hljs-comment">.*?\bmark-line\b.*?<\/span>\n/mg, '<div class="highlight-line">$1$2</div>')
+    }
+  });
 })()
