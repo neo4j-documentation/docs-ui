@@ -54,12 +54,12 @@ Highlight one or more lines of code by adding e.g. `//mark-line` at the end of e
 [source, adoc]
 ----
 [source, java]
-----
+---
 var result = driver.executableQuery("MATCH (p:Person {name: $name})")
     .withParameters(Map.of("name", "Alice"))  //mark-line
     .withConfig(QueryConfig.builder().withDatabase("neo4j").build())
     .execute();
-----
+---
 ----
 
 [source, java]
