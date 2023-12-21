@@ -35,6 +35,10 @@ import { createElement } from './modules/dom'
   }
 })()
 
+var cleanCallouts = function (code) {
+  return code.replace(/[ |\t]+\n/g, '\n').trimEnd()
+}
+
 document.addEventListener('DOMContentLoaded', function () {
   var body = document.querySelectorAll('body')
   var ignore = ['gram']
@@ -46,11 +50,13 @@ document.addEventListener('DOMContentLoaded', function () {
       input = window.neo4jDocs.copyableCommand(input)
     }
 
-    input = input.replace(/[ ]+\n/g, '\n').trimEnd()
+    input = cleanCallouts(input)
+
+    // input = input.replace(/[ |\t]+\n/g, '\n').trimEnd()
 
     return input
   }
-
+  
   var copyToClipboard = function (code, language) {
     var textarea = document.createElement('textarea')
     textarea.value = cleanCode(code, language)
@@ -74,6 +80,16 @@ document.addEventListener('DOMContentLoaded', function () {
       })
     }
   }
+
+  // capture copy command
+  let copyThis = document.querySelectorAll("pre code")
+  copyThis.forEach((code) => {
+    code.addEventListener("copy", (e) => {
+      const selection = document.getSelection();
+      e.clipboardData.setData("text/plain", cleanCallouts(selection.toString()))
+      e.preventDefault()
+    });
+  });
 
   function capitalizeFirstLetter (string) {
     return string.charAt(0).toUpperCase() + string.slice(1)
