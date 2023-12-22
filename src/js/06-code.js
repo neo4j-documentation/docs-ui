@@ -49,11 +49,7 @@ document.addEventListener('DOMContentLoaded', function () {
     if (language === 'bash' || language === 'sh' || language === 'shell' || language === 'console') {
       input = window.neo4jDocs.copyableCommand(input)
     }
-
     input = cleanCallouts(input)
-
-    // input = input.replace(/[ |\t]+\n/g, '\n').trimEnd()
-
     return input
   }
 
