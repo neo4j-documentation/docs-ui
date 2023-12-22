@@ -206,7 +206,7 @@ document.addEventListener('DOMContentLoaded', function () {
     var code = pre.querySelector('code')
     var showMore = pre.querySelector('div.show-more')
 
-    pre.style.maxHeight = pre.scrollHeight + 'px'
+    pre.style.maxHeight = ''
     pre.style.overflow = ''
     pre.style.cursor = ''
     code.style.webkitMaskImage = ''
