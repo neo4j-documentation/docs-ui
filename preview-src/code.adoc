@@ -47,6 +47,30 @@ line of code <!--4-->
 <4> A callout behind a line comment for XML or SGML languages like HTML.
 
 
+== Highlight lines
+
+Highlight one or more lines of code by adding e.g. `//mark-line` at the end of each of them. Use the line comment syntax for the language the block contains.
+
+[source, adoc]
+----
+[source, java]
+---
+var result = driver.executableQuery("MATCH (p:Person {name: $name})")
+    .withParameters(Map.of("name", "Alice"))  //mark-line
+    .withConfig(QueryConfig.builder().withDatabase("neo4j").build())
+    .execute();
+---
+----
+
+[source, java]
+----
+var result = driver.executableQuery("MATCH (p:Person {name: $name})")
+    .withParameters(Map.of("name", "Alice"))  //mark-line
+    .withConfig(QueryConfig.builder().withDatabase("neo4j").build())
+    .execute();
+----
+
+
 == Expand code block
 
 Code blocks longer than 15 lines (+5 of tolerance) are collapsed, unless you add `role=nocollapse`

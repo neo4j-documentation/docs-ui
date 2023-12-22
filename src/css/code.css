@@ -367,4 +367,8 @@
   .code-walkthrough .toc {
     display: none;
   }
+
+  .highlight .highlight-line {
+    background: var(--mark-background);
+  }
 }
