@@ -251,7 +251,7 @@
   --tip-background-color: rgba(var(--theme-light-palette-primary-bg-weak));
   --warning-color: rgba(var(--theme-light-palette-danger-bg-strong));
   --warning-background-color: rgba(var(--theme-light-palette-danger-bg-weak));
-  --mark-background: rgba(247 151 103 / 0.3);
+  --mark-background: rgba(var(--theme-light-palette-primary-bg-weak));
 
   /* success */
   --success-color: rgba(var(--theme-light-palette-success-bg-strong));
