@@ -9,6 +9,14 @@
   font-style: normal;
 }
 
+h2 > span.label,
+h3 > span.label,
+h4 > span.label,
+h5 > span.label,
+h6 > span.label {
+  float: right;
+}
+
 .tableblock .label {
   margin-top: 0.2rem;
 }
