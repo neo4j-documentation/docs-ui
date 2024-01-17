@@ -21,8 +21,9 @@
   var list = headings.reduce(function (accum, heading) {
     var link = document.createElement('a')
     var headingWithoutLabels = heading.cloneNode(true)
-    if (headingWithoutLabels.querySelector('span.label') != null)
+    if (headingWithoutLabels.querySelector('span.label') != null) {
       headingWithoutLabels.removeChild(headingWithoutLabels.querySelector('span.label'))
+    }
     link.textContent = headingWithoutLabels.textContent
     links[(link.href = '#' + heading.id)] = link
     var listItem = document.createElement('li')
