@@ -20,11 +20,8 @@
   var links = {}
   var list = headings.reduce(function (accum, heading) {
     var link = document.createElement('a')
-    var headingWithoutLabels = heading.cloneNode(true)
-    if (headingWithoutLabels.querySelector('span.label') != null) {
-      headingWithoutLabels.removeChild(headingWithoutLabels.querySelector('span.label'))
-    }
-    link.textContent = headingWithoutLabels.textContent
+    var headingTextWithoutLabels = Array.from(heading.childNodes).filter((el) => el.nodeType === Node.TEXT_NODE).map((el) => el.textContent).join(' ').trim()
+    link.textContent = headingTextWithoutLabels
     links[(link.href = '#' + heading.id)] = link
     var listItem = document.createElement('li')
     listItem.dataset.level = parseInt(heading.nodeName.slice(1)) - 1
