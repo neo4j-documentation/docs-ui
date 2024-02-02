@@ -1,3 +1,52 @@
+.flex-labels-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.header-label {
+  float: inline-end;
+  line-height: var(--doc-line-height);
+  margin-left: 0.2rem;
+  margin-top: 0.2rem;
+}
+
+.doc > .sect-header h1.page:first-child:has(> .header-label) {
+  margin-right: 0;
+}
+
+h1 > .header-label {
+  margin-top: 1.2rem;
+}
+
+.listing-block .content-labels,
+.example-block .content-labels {
+  margin-bottom: 0.2rem;
+}
+
+.content-labels {
+  margin-bottom:0.2rem;
+}
+
+.has-label {
+  padding-left: 0.4rem;
+  border-left: 2px solid rgba(var(--colors-baltic-60));
+}
+
+.has-label:has(> .content--new) {
+  border-left-color: var(--success-color);
+}
+
+.has-label:has(> .content--deprecated) {
+  border-left-color: var(--deprecated-color);
+}
+
+h2 > .flex-label {
+  float: inline-end;
+  line-height: var(--doc-line-height);
+  margin-left: 0.2rem;
+  margin-top: 0.2rem;
+}
+
 .label {
   display: inline-block;
   padding: 0.2rem 0.8rem;
