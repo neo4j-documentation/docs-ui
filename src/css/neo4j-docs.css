@@ -417,3 +417,13 @@ div.beta-symbol p::before {
   background-color: var(--warning-background-color);
   color: var(--warning-color);
 }
+
+ul.bibliography {
+  list-style-type: none;
+  padding: 0;
+}
+
+ul.bibliography > li > p > a {
+  list-style-type: none;
+  padding: 0;
+}
