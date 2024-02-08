@@ -35,6 +35,6 @@ Continued in <<Freeman1977>>.
 [bibliography]
 == References (`no-bullets`)
 
-[.no-bullets]
+[.no-marker]
 * [[[Brandes2001, 1]]] Brandes, Ulrik. "A faster algorithm for betweenness centrality." _Journal of mathematical sociology_ 25, no. 2 (2001): 163-177. link:https://snap.stanford.edu/class/cs224w-readings/brandes01centrality.pdf[].
 * [[[Freeman1977]]] Freeman, Linton C. "A set of measures of centrality based on betweenness." _Sociometry_ (1977): 35-41. link:http://moreno.ss.uci.edu/23.pdf[].
