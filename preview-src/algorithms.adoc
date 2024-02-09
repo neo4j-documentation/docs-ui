@@ -20,21 +20,3 @@
 [[undirected]]Undirected:: xref:introduction.adoc#introduction-algorithms-undirected[Undirected trait]. The algorithm is well-defined on an undirected graph.
 
 [[homogeneous]]Homogeneous:: xref:introduction.adoc#introduction-algorithms-homogeneous[Homogeneous trait]. The algorithm will treat all nodes and relationships in its input graph(s) similarly, as if they were all of the same type. If multiple types of nodes or relationships exist in the graph, this must be taken into account when analysing the results of the algorithm.
-
-== Algorithm
-
-Work started in <<Brandes2001>> and <<Brandes2007>>.
-Continued in <<Freeman1977>>.
-
-[bibliography]
-== References (default)
-
-* [[[Brandes2001, 1]]] Brandes, Ulrik. "A faster algorithm for betweenness centrality." _Journal of mathematical sociology_ 25, no. 2 (2001): 163-177. link:https://snap.stanford.edu/class/cs224w-readings/brandes01centrality.pdf[].
-* [[[Freeman1977]]] Freeman, Linton C. "A set of measures of centrality based on betweenness." _Sociometry_ (1977): 35-41. link:http://moreno.ss.uci.edu/23.pdf[].
-
-[bibliography]
-== References (`no-bullets`)
-
-[.no-marker]
-* [[[Brandes2001, 1]]] Brandes, Ulrik. "A faster algorithm for betweenness centrality." _Journal of mathematical sociology_ 25, no. 2 (2001): 163-177. link:https://snap.stanford.edu/class/cs224w-readings/brandes01centrality.pdf[].
-* [[[Freeman1977]]] Freeman, Linton C. "A set of measures of centrality based on betweenness." _Sociometry_ (1977): 35-41. link:http://moreno.ss.uci.edu/23.pdf[].
