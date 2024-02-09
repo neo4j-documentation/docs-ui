@@ -1291,6 +1291,10 @@ body {
   margin-bottom: 1.5rem;
 }
 
+.doc details summary {
+  cursor: pointer;
+}
+
 .doc details[open] summary {
   font-weight: bold;
 }
