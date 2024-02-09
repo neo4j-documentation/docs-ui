@@ -1,92 +1,65 @@
 import { createElement } from './modules/dom'
+import rolesData from './data/rolesData.json'
+
+function checkWrapped () {
+  const labelContainers = document.querySelectorAll('body.docs:not(.docshome) .header-label-container')
+  for (const container of labelContainers) {
+    var child = container.querySelector('.labels')
+    var lineHeight = parseInt(window.getComputedStyle(container).lineHeight, 10)
+    if (child.offsetTop - container.offsetTop >= lineHeight) {
+      child.classList.add('wrapped')
+    } else {
+      child.classList.remove('wrapped')
+    }
+  }
+}
 
 document.addEventListener('DOMContentLoaded', function () {
-  // // legacy roles on headers
-  // const sectionDivs = document.querySelectorAll('body.docs:not(.docshome) div[class^="sect"]:not(.sectionbody,.sect-header)')
+  var camelCased = function (str) {
+    return str.split(/-|\./)
+      .map((text) => text.substr(0, 1).toUpperCase() + text.substr(1))
+      .join('')
+  }
 
-  // sectionDivs.forEach(function (sectionDiv) {
-  //   var roles = sectionDiv.classList
-  //   roles = [...roles].sort().filter(function (c) {
-  //     return (!(c.startsWith('sect') || c === 'display'))
-  //   })
+  var getLabelDetails = function (role) {
+    var label = role.replace('label--', '')
+    var labelParts = label.split('-')
 
-  //   if (roles.length === 0) return
+    // label could be eg label--new-5.19 but in rolesData it's just new
+    label = rolesData[labelParts[0]] ? labelParts[0] : label
 
-  //   var newRolesDiv = createElement('div', 'sect-header')
-  //   var head = sectionDiv.querySelector('h2,h3,h4,h5,h6')
+    if (!rolesData[label]) {
+      return
+    }
 
-  //   if (roles.length > 0) {
-  //     newRolesDiv.append(head)
-  //     var insert = createElement('div', 'roles')
-  //     roles.forEach(function (role) {
-  //       insert.append(createElement('span', `label inline-label ${role}`))
-  //     })
-  //     newRolesDiv.append(insert)
-  //     sectionDiv.prepend(newRolesDiv)
-  //     sectionDiv.classList.add('show-roles')
-  //   }
-  // })
+    var labelDetails = {
+      class: label,
+      role: label,
+      text: rolesData[label].displayText || '',
+      data: {
+        labelCategory: rolesData[label].labelCategory || '',
+        product: rolesData[label].product || '',
+        function: rolesData[label].function || '',
+      },
+    }
 
-  // new styles - convert all roles everywhere to a label
-  // add a role starting with label-- to any elament
+    // get version number for version labels
+    if (rolesData[label].labelCategory === 'version' && labelParts[1]) {
+      labelDetails.data.version = labelParts[1]
+      labelDetails.text += ' in ' + labelDetails.data.version
+    }
+
+    return labelDetails
+  }
+
+  // convert all label-- roles everywhere to a label
   // display a label right-aligned to headings and table captions
+  // wrap to the left on headings when not enough space for labels
   // display a label left-aligned to everything else
   // ignore inline labels
 
   const headings = ['H2', 'H3', 'H4', 'H5', 'H6', 'CAPTION']
-
   const roleDivs = document.querySelectorAll('body.docs:not(.docshome) *[class*="label--"]')
-
-  // handle different div Classs
-  // eg headings the role is on the parent div
-
-  const labelClassMapping = {
-    new: 'introduced',
-  }
-
-  const labelTextMapping = {
-    'enterprise-edition': 'Enterprise Edition',
-    'aura-db-enterprise': 'Aura DB Enterprise',
-    'not-on-aura': 'Not available on Aura',
-    fabric: 'Fabric',
-    alpha: 'Alpha',
-    beta: 'Beta',
-    'apoc-core': 'APOC Core',
-    'apoc-full': 'APOC Full',
-    na: 'N / A',
-    warning: 'Warning!',
-    danger: 'Danger!',
-    'mac-os': 'Mac OS',
-    'cluster-member-core': 'CORE',
-    'cluster-member-read-replica': 'READ_REPLICA',
-    'cluster-member-single': 'SINGLE',
-  }
-
-  var getLabelText = function (role) {
-    // label will be eg new-5.19, enterprise-edition, not-on-aura
-    var label = role.replace('label--', '')
-    var labelParts = label.split('-')
-    var labelDetails = {}
-
-    if (labelTextMapping[label] !== undefined) {
-      labelDetails.text = labelTextMapping[label]
-      labelDetails.class = label
-      return labelDetails
-    }
-
-    labelDetails.class = labelParts[0]
-
-    // figure out label text
-    labelParts[0] = labelClassMapping[labelParts[0]] || labelParts[0]
-    labelParts = labelParts.map((text) => text.substr(0, 1).toUpperCase() + text.substr(1))
-
-    // if second part is a number, insert 'in' before it
-    if (!isNaN(labelParts[1])) labelParts.splice(1, 0, 'in')
-
-    labelDetails.text = labelParts.join(' ')
-
-    return labelDetails
-  }
 
   roleDivs.forEach(function (roleDiv) {
     // ignore spans because they're inline
@@ -101,47 +74,61 @@ document.addEventListener('DOMContentLoaded', function () {
 
     if (roles.length === 0) return
 
-    // console.log(roles)
-
     const labels = []
 
-    // var newRolesDiv = createElement('div', 'flex-labels')
-
     roles.forEach(function (role) {
-      // construct label name and text
-      const labelDetails = getLabelText(role)
+      const labelDetails = getLabelDetails(role)
+      if (typeof labelDetails === 'undefined') {
+        return
+      }
 
       // create a span element for the label
-      const labelDiv = createElement('span', `label content-label label--${labelDetails.class}`)
-      labelDiv.appendChild(document.createTextNode(labelDetails.text))
+      const labelSpan = createElement('span', `label content-label label--${labelDetails.class}`)
+
+      // add dataset to the label
+      if (labelDetails.data.version) labelSpan.dataset.version = labelDetails.data.version
+      if (labelDetails.data.product !== '') labelSpan.dataset.product = labelDetails.data.product
+      if (labelDetails.data.function !== '') labelSpan.dataset.function = labelDetails.data.function
+
+      labelSpan.appendChild(document.createTextNode(labelDetails.text))
 
       // remove the role from the parent div
       roleDiv.classList.remove(role)
 
-      labels.push(labelDiv)
+      labels.push(labelSpan)
     })
 
-    if (headings.includes(roleDiv.firstElementChild.nodeName) || roleDiv.nodeName === 'H1') {
-      var labelsDiv
-      if (roleDiv.nodeName === 'H1') {
-        labelsDiv = roleDiv
-      } else {
-        labelsDiv = roleDiv.firstElementChild
-      }
-      for (const label of labels) {
+    // we only generate labels from defined roles
+    // no need to do anything if we found only undefined roles
+    if (labels.length === 0) return
+
+    const labelsLocation = (roleDiv.firstElementChild && headings.includes(roleDiv.firstElementChild.nodeName)) ? roleDiv.firstElementChild : roleDiv
+    const labelsDiv = createElement('div', 'labels')
+
+    for (const label of labels) {
+      if (roleDiv.nodeName === 'H1' || headings.includes(roleDiv.firstElementChild.nodeName)) {
         label.classList.add('header-label')
-        labelsDiv.append(label)
       }
+      labelsDiv.append(label)
+      const contentLabel = Array.from(label.classList).find((c) => c.startsWith('label--')).replace('label--', '')
+      roleDiv.dataset[camelCased(contentLabel)] = contentLabel
+    }
+
+    if (roleDiv.nodeName === 'H1' || headings.includes(roleDiv.firstElementChild.nodeName)) {
+      labelsLocation.append(labelsDiv)
+      labelsLocation.classList.add('header-label-container')
     } else {
-      var newRolesDiv = createElement('div', 'content-labels')
-      // add the span to the parent div
-      for (const label of labels) {
-        newRolesDiv.append(label)
-      }
-      const contentLabel = Array.from(labels[0].classList).find((c) => c.startsWith('label--')).replace('label--', '')
-      roleDiv.firstElementChild.classList.add('labeled', `content--${contentLabel}`)
-      roleDiv.prepend(newRolesDiv)
+      labelsLocation.prepend(labelsDiv)
       roleDiv.classList.add('has-label')
     }
   })
+
+  // check whether div containing header labels has wrapped onto new line
+  // if it has wrapped, we left-align the div
+  checkWrapped()
+})
+
+// when the window is resized, check whether labels have wrapped or unwrapped
+window.addEventListener('resize', function () {
+  checkWrapped()
 })

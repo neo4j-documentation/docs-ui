@@ -1,4 +1,4 @@
-= Docs `code test` flags
+= Docs roles with a long title
 :page-role: not-on-aura new-5.17
 :page-theme: docs
 // :page-labels: fabric enterprise-edition alpha test
@@ -8,19 +8,34 @@
 Flags sections as Not Available on Aura, Aura DB Enterprise, Enterprise Edition, Fabric, and Deprecated
 --
 
+
 [role="label--new-5.17 label--enterprise-edition"]
 == Relationship property type constraints
 
 Blocks with the appropriate roles have labels added.
 
+
+[role=label--aura-db-enterprise label--not-on-aura]
+=== H3 AuraDB Enterprise AND Not on Aura
+
+Lorem ipsum dolor sit
+
+Open blocks can be used to mark multiple paragraphs within a section.
+
 [role=label--new-5.17]
+--
 Lorem ipsum dolor sit amet, consectetur adipiscing elit.
 Mauris eget leo nunc, nec tempus mi? Curabitur id nisl mi, ut vulputate urna.
+
 Quisque porta facilisis tortor, vitae bibendum velit fringilla vitae! Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+--
+
 
 This is a normal paragraph.
 
-[role=label--deprecated-5.17]
+The next paragraph has a label, but it's not one we support.
+
+[role=label--invented-label]
 Lorem ipsum dolor sit amet, consectetur adipiscing elit.
 
 [role=label--enterprise-edition]
