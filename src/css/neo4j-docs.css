@@ -418,7 +418,11 @@ div.beta-symbol p::before {
   color: var(--warning-color);
 }
 
-.no-marker > ul.bibliography {
+.no-bullet > ul.bibliography {
   list-style-type: none;
-  padding: 0;
+}
+
+.unstyled > ul.bibliography {
+  list-style-type: none;
+  padding-left: 0;
 }
