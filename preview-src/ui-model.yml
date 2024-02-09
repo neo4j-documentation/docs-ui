@@ -208,6 +208,9 @@ page:
     - content: Algorithms
       url: algorithms.html
       urlType: internal
+    - content: Bibliography
+      url: bibliography.html
+      urlType: internal
     - content: Private Page
       url: private-page.html
       urlType: internal
