@@ -35,7 +35,12 @@ import { createElement } from './modules/dom'
   }
 })()
 
+var cleanCallouts = function (code) {
+  return code.replace(/[ |\t]+\n/g, '\n').trimEnd()
+}
+
 document.addEventListener('DOMContentLoaded', function () {
+  var body = document.querySelectorAll('body')
   var ignore = ['gram']
 
   var cleanCode = function (code, language) {
@@ -44,7 +49,7 @@ document.addEventListener('DOMContentLoaded', function () {
     if (language === 'bash' || language === 'sh' || language === 'shell' || language === 'console') {
       input = window.neo4jDocs.copyableCommand(input)
     }
-
+    input = cleanCallouts(input)
     return input
   }
 
@@ -71,6 +76,16 @@ document.addEventListener('DOMContentLoaded', function () {
       })
     }
   }
+
+  // capture copy command
+  const copyThis = document.querySelectorAll('pre code')
+  copyThis.forEach((code) => {
+    code.addEventListener('copy', (e) => {
+      const selection = document.getSelection()
+      e.clipboardData.setData('text/plain', cleanCallouts(selection.toString()))
+      e.preventDefault()
+    })
+  })
 
   function capitalizeFirstLetter (string) {
     return string.charAt(0).toUpperCase() + string.slice(1)
@@ -205,8 +220,8 @@ document.addEventListener('DOMContentLoaded', function () {
     var code = pre.querySelector('code')
     var showMore = pre.querySelector('div.show-more')
 
-    pre.style.maxHeight = pre.scrollHeight + 'px'
-    pre.style.overflow = 'visible'
+    pre.style.maxHeight = ''
+    pre.style.overflow = ''
     pre.style.cursor = ''
     code.style.webkitMaskImage = ''
     code.style.maskImage = ''
@@ -219,7 +234,7 @@ document.addEventListener('DOMContentLoaded', function () {
     var listingBlock = dotContent.parentNode
     var code = pre.querySelector('code')
 
-    if (!listingBlock.classList.contains('nocollapse') &&
+    if (!(listingBlock.classList.contains('nocollapse') || body[0].classList.contains('code-nocollapse')) &&
         pre.offsetHeight > (codeMaxLines + codeTolerance) * codeLineHeight) {
       pre.style.maxHeight = codeMaxHeight + 'px'
       pre.style.overflow = 'hidden'

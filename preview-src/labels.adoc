@@ -1,0 +1,217 @@
+= Labels
+
+
+== All the labels
+
+++++
+<div class="box">
+  <span class="label">Default Label Color</span>
+</div>
+
+<div class="box">
+  <span class="label label--current">Current</span>
+</div>
+
+<div class="box">
+  <span class="label label--aura-db-enterprise">AuraDB Enterprise</span>
+</div>
+
+<div class="box">
+  <span class="label label--enterprise-edition">Enterprise Edition</span>
+</div>
+
+<div class="box">
+  <span class="label label--enterprise">Enterprise</span>
+</div>
+
+<div class="box">
+  <span class="label label--professional">Professional</span>
+</div>
+
+<div class="box">
+  <span class="label label--enterprise-only">Enterprise Only</span>
+</div>
+
+<div class="box">
+  <span class="label label--aura">Aura</span>
+</div>
+
+<div class="box">
+  <span class="label label--recommended">Recommended</span>
+</div>
+
+<div class="box">
+  <span class="label label--default">Default</span>
+</div>
+
+<div class="box">
+  <span class="label label--new">New</span>
+</div>
+
+<div class="box">
+  <span class="label label--yes">Yes</span>
+</div>
+
+<div class="box">
+  <span class="label label--renamed">Renamed</span>
+</div>
+
+<div class="box">
+  <span class="label label--changed">Changed</span>
+</div>
+
+<div class="box">
+  <span class="label label--added">Added</span>
+</div>
+
+<div class="box">
+  <span class="label label--updated">Updated</span>
+</div>
+
+<div class="box">
+  <span class="label label--not-on-aura">Not Available on Aura</span>
+</div>
+
+<div class="box">
+  <span class="label label--removed">Removed</span>
+</div>
+
+<div class="box">
+  <span class="label label--no">No</span>
+</div>
+
+<div class="box">
+  <span class="label label--na">N / A</span>
+</div>
+
+<div class="box">
+  <span class="label label--warning">Warning!</span>
+</div>
+
+<div class="box">
+  <span class="label label--danger">Danger!</span>
+</div>
+
+<div class="box">
+  <span class="label label--discontinued">Discontinued</span>
+</div>
+
+<div class="box">
+  <span class="label label--deprecated">Deprecated</span>
+</div>
+
+<div class="box">
+  <span class="label label--alpha">Alpha</span>
+</div>
+
+<div class="box">
+  <span class="label label--beta">Beta</span>
+</div>
+
+<div class="box">
+  <span class="label label--apoc-core">APOC Core</span>
+</div>
+
+<div class="box">
+  <span class="label label--core">Core</span>
+</div>
+
+<div class="box">
+  <span class="label label--apoc-full">APOC Full</span>
+</div>
+
+<div class="box">
+  <span class="label label--full">Full</span>
+</div>
+
+<div class="box">
+  <span class="label label--function">Function</span>
+</div>
+
+<div class="box">
+  <span class="label label--procedure">Procedure</span>
+</div>
+
+<div class="box">
+  <span class="label label--beginner">Beginner</span>
+</div>
+
+<div class="box">
+  <span class="label label--free">Free</span>
+</div>
+
+<div class="box">
+  <span class="label label--windows">Windows</span>
+</div>
+
+<div class="box">
+  <span class="label label--linux">Linux</span>
+</div>
+
+<div class="box">
+  <span class="label label--unix">Unix</span>
+</div>
+
+<div class="box">
+  <span class="label label--mac-os">Mac OS</span>
+</div>
+
+<div class="box">
+  <span class="label label--syntax">Syntax</span>
+</div>
+
+<div class="box">
+  <span class="label label--functionality">Functionality</span>
+</div>
+
+<div class="box">
+  <span class="label label--cypher">Cypher</span>
+</div>
+
+<div class="box">
+  <span class="label label--cluster-member-core">CORE</span>
+</div>
+
+<div class="box">
+  <span class="label label--cluster-member-read-replica">READ_REPLICA</span>
+</div>
+
+<div class="box">
+  <span class="label label--cluster-member-single">SINGLE</span>
+</div>
+
+++++
+
+== Tables with labels!
+
+
+++++
+
+<table id="procedure_dbms_cluster_protocols" class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 44. dbms.cluster.protocols() <span class="label label--enterprise-edition">Enterprise Edition</span></caption>
+<colgroup>
+<col style="width: 15%;">
+<col style="width: 85%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Description</strong></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Overview of installed protocols.</p>
+</div>
+<div class="paragraph">
+<p>Note that this can only be executed on a cluster core member.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Signature</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>dbms.cluster.protocols() :: (orientation :: STRING, remoteAddress :: STRING, applicationProtocol :: STRING, applicationProtocolVersion :: INTEGER, modifierProtocols :: STRING)</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Mode</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>READ</code></p></td>
+</tr>
+</tbody>
+</table>
+
+++++

@@ -45,7 +45,7 @@
     "gulp-vinyl-zip": "~2.2",
     "handlebars": "~4.7",
     "highlight.js": "^10.7",
-    "highlightjs-cypher": "^1.1",
+    "highlightjs-cypher": "^1.2",
     "husky": "^4.3.0",
     "js-yaml": "~3.13",
     "medium-zoom": "^1.0.6",
@@ -79,7 +79,7 @@
   "dependencies": {
     "@antora/cli": "^2.3.3",
     "@antora/site-generator-default": "^2.3.3",
-    "@neo4j-ndl/base": "^0.8.3",
+    "@neo4j-ndl/base": "^2.0.0",
     "font-awesome": "^4.7.0"
   },
   "husky": {

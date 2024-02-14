@@ -2,6 +2,7 @@
 @import "../../node_modules/@neo4j-ndl/base/lib/tokens/css/tokens.css";
 @import "typeface-roboto-mono.css";
 @import "vars.css";
+/* @import "vars-dark.css"; */
 @import "base.css";
 @import "body.css";
 @import "nav.css";
@@ -17,6 +18,7 @@
 @import "header.css";
 @import "footer.css";
 @import "highlight.css";
+/* @import "highlight-dark.css"; */
 @import "print.css";
 @import "gram.css";
 @import "labels.css";

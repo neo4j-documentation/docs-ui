@@ -7,7 +7,7 @@ body.docs {
     --navbar-background: var(--color-white);
     --navbar-top-border: var(--color-docs);
 
-    --navbar-font-color: var(--color-grey-600);
+    --navbar-font-color: rgba(var(--colors-neutral-60));
     --navbar_hover-background: transparent;
 
     --nav-bullet-color: var(--color-blue-300);
@@ -22,50 +22,50 @@ body.docs .search .search-container .search-form {
 body.docs .navbar,
 body.docs .navbar-brand .navbar-item:first-child,
 body.docs .navbar-brand .navbar-item:first-child a {
-  color: var(--color-grey-600);
+  color: rgba(var(--colors-neutral-60));
 }
 
 @media screen and (min-width: 1024px) {
   body.docs .navbar-end > .navbar-item,
   body.docs .navbar-end .navbar-link {
-    color: var(--color-grey-600);
+    color: var(--color-docs);
   }
 
   body.docs .navbar-end > a.navbar-item:hover,
   body.docs .navbar-end .navbar-link:hover {
-    color: var(--color-grey-600);
+    color: var(--color-docs);
   }
 
   body.docs .navbar-end .navbar-link::after {
-    border-color: var(--color-grey-600);
+    border-color: var(--color-docs);
   }
 
   body.docs .navbar-item.has-dropdown:hover .navbar-link {
-    color: var(--color-grey-600);
+    color: var(--color-docs);
   }
 }
 
 body.docs .navbar-burger {
-  color: var(--color-grey-600);
+  color: var(--color-docs);
 }
 
 body.docs .navbar-burger span {
-  background: var(--color-grey-600);
+  background: var(--color-docs);
 }
 
 body.docs .doc .button {
-  background: var(--color-blue-600);
+  background: var(--color-docs);
   color: var(--color-white);
 }
 
 body.docs .doc .button:hover {
-  background: var(--color-blue-500);
+  background: rgba(var(--colors-baltic-60));
   color: var(--color-white);
 }
 
 body.docs .nav-item .nav-item::before,
 body.docs .toc-menu li a::before {
-  background-color: var(--color-blue-300);
+  color: rgba(var(--colors-baltic-30));
 }
 
 body.docs .tooltip {
@@ -83,24 +83,34 @@ body.docs .tooltip.tooltip--bottom::after {
 body.docs #preamble .abstract .title,
 body.docs #preamble .abstract blockquote {
   border-left-color: var(--color-docs);
-  color: var(--color-blue-800);
+  color: rgba(var(--colors-baltic-60));
 }
 
 body.docs .tableblock .icon i {
-  color: var(--color-blue-600);
+  color: var(--color-docs);
+}
+
+/* positive and negative */
+
+body.docs .icon i.fa-thumbs-up {
+  color: rgba(var(--theme-light-palette-success-icon));
+}
+
+body.docs .icon i.fa-thumbs-down {
+  color: rgba(var(--theme-light-palette-danger-icon));
 }
 
 body.docs .navbar .navbar-item.getting-started-cta .navbar-link {
-  background: var(--colors-primary-default);
+  background: var(--color-docs);
   color: var(--color-white);
 }
 
 body.docs .navbar .navbar-item.getting-started-cta .navbar-link:hover {
-  background: var(--colors-primary-50);
+  background: rgba(var(--colors-baltic-60));
 }
 
 body.docs .navbar .navbar-item.getting-started-cta .navbar-link:active {
-  background: var(--colors-primary-60);
+  background: rgba(var(--colors-baltic-70));
 }
 
 /*
@@ -108,7 +118,7 @@ body.labs {
     --navbar-background: var(--color-white);
     --navbar-top-border: var(--navbar-font-color);
 
-    --navbar-font-color: var(--color-grey-600);
+    --navbar-font-color: rgba(var(--colors-neutral-60));
     --navbar_hover-background: transparent;
 
     --nav-bullet-color: var(--color-purple-300);
@@ -123,44 +133,44 @@ body.labs .search .search-container .search-form {
 body.labs .navbar,
 body.labs .navbar-brand .navbar-item:first-child,
 body.labs .navbar-brand .navbar-item:first-child a {
-  color: var(--color-grey-600);
+  color: rgba(var(--colors-neutral-60));
 }
 
 @media screen and (min-width: 1024px) {
   body.labs .navbar-end > .navbar-item,
   body.labs .navbar-end .navbar-link {
-    color: var(--color-grey-600);
+    color: rgba(var(--colors-neutral-60));
   }
 
   body.labs .navbar-end > a.navbar-item:hover,
   body.labs .navbar-end .navbar-link:hover {
-    color: var(--color-grey-600);
+    color: rgba(var(--colors-neutral-60));
   }
 
   body.labs .navbar-end .navbar-link::after {
-    border-color: var(--color-grey-600);
+    border-color: rgba(var(--colors-neutral-60));
   }
 
   body.labs .navbar-item.has-dropdown:hover .navbar-link {
-    color: var(--color-grey-600);
+    color: rgba(var(--colors-neutral-60));
   }
 }
 
 body.labs .navbar-burger {
-  color: var(--color-grey-600);
+  color: rgba(var(--colors-neutral-60));
 }
 
 body.labs .navbar-burger span {
-  background: var(--color-grey-600);
+  background: rgba(var(--colors-neutral-60));
 }
 
 body.labs .doc .button {
-  background: var(--color-purple-500);
+  background: var(--color-labs);
   color: var(--color-white);
 }
 
 body.labs .doc .button:hover {
-  background: var(--color-purple-400);
+  background: rgba(var(--colors-lavender-60));
   color: var(--color-white);
 }
 
@@ -184,21 +194,26 @@ body.labs .tooltip.tooltip--bottom::after {
 body.labs #preamble .abstract .title,
 body.labs #preamble .abstract blockquote {
   border-left-color: var(--color-labs);
-  color: var(--color-purple-800);
+  color: rgba(var(--colors-lavender-80));
 }
 
 body.labs .tableblock .icon i {
-  color: var(--color-purple-600);
+  color: var(--color-labs);
 }
 
 body.labs .navbar .navbar-item.getting-started-cta .navbar-link {
-  background: var(--color-purple-400);
+  background: var(--color-labs);
+  color: var(--color-white);
+}
+
+body.labs .navbar .navbar-item.getting-started-cta .navbar-link:hover {
+  background: rgba(var(--colors-lavender-50));
   color: var(--color-white);
 }
 
 /* Labs Home Page */
 body.landing.labs .hero {
-  background-color: var(--color-purple-600);
+  background-color: var(--color-labs);
   background-image: url('https://cdn.neo4jlabs.com/images/lab-pipette-big.jpg');
   /* background-image: url('https://cdn.neo4jlabs.com/images/lab-pipette-big-overlay.jpg'); */
   background-repeat: no-repeat;
@@ -210,7 +225,7 @@ body.landing.labs .hero h2 {
 }
 
 body.landing.labs h2::after {
-  background-color: var(--color-purple-600) !important;
+  background-color: var(--color-labs) !important;
 }
 
 body.landing.labs .hero p {
@@ -218,7 +233,7 @@ body.landing.labs .hero p {
 }
 
 .landing.labs .hero .buttons::before {
-  background-color: var(--color-purple-600);
+  background-color: rgba(var(--colors-lavender-40));
 }
 
 .landing.labs .hero .buttons::after {
@@ -226,16 +241,16 @@ body.landing.labs .hero p {
 }
 
 body.landing.labs .buttons > * {
-  background: var(--color-purple-600);
+  background: rgba(var(--colors-lavender-40));
 }
 
 body.landing.labs .buttons li a {
-  background: var(--color-purple-800);
+  background: var(--color-labs);
   color: white;
 }
 
 body.landing.labs .buttons li a:hover {
-  background: var(--color-purple-700);
+  background: rgba(var(--colors-lavender-50));
 }
 
 body.landing.labs .buttons li a:active {
@@ -243,7 +258,7 @@ body.landing.labs .buttons li a:active {
 }
 
 /* body.developer {
-    --nav-bullet-color: var(--color-grey-500);
+    --nav-bullet-color: rgba(var(--colors-neutral-50));
 } */
 body.developer .navbar,
 body.developer .search .search-container .search-form {
@@ -252,7 +267,7 @@ body.developer .search .search-container .search-form {
 
 body.developer .nav-item .nav-item::before,
 body.developer .toc-menu li a::before {
-  background-color: var(--color-grey-500);
+  background-color: rgba(var(--colors-neutral-50));
 }
 
 .developer .navbar-brand #neo4j-group {
@@ -260,7 +275,7 @@ body.developer .toc-menu li a::before {
 }
 
 .developer .navbar-brand #developer {
-  fill: var(--color-grey-400);
+  fill: rgba(var(--colors-neutral-40));
 }
 
 body.developer .doc .button {
@@ -274,7 +289,7 @@ body.developer .doc .button:hover {
 }
 
 body.developer .doc .button:active {
-  background: var(--color-grey-600);
+  background: rgba(var(--colors-neutral-60));
   color: var(--color-white);
 }
 
@@ -288,8 +303,12 @@ body.developer .tableblock .icon i {
 }
 
 body.developer .navbar .navbar-item.getting-started-cta .navbar-link {
-  background: var(--color-grey-700);
+  background: var(--color-docs);
   color: var(--color-white);
+}
+
+body.developer .navbar .navbar-item.getting-started-cta:hover .navbar-link {
+  background: rgba(var(--colors-baltic-60));
 }
 
 /* Developer Home Page */
@@ -298,7 +317,7 @@ body.landing.developer .navbar {
 }
 
 body.landing.developer .hero {
-  background: linear-gradient(180deg, var(--color-grey-800) 0%, var(--color-grey-700) 45%, var(--color-grey-700) 100%);
+  background: linear-gradient(180deg, rgba(var(--colors-neutral-80)) 0%, rgba(var(--colors-neutral-70)) 45%, rgba(var(--colors-neutral-70)) 100%);
 }
 
 @media all and (min-width: 760px) {
@@ -330,7 +349,7 @@ body.landing.developer .hero {
 }
 
 body.landing.developer .hero .buttons::before {
-  background-color: var(--color-grey-600);
+  background-color: rgba(var(--colors-neutral-60));
 }
 
 body.landing.developer .hero .buttons::after {
@@ -338,16 +357,16 @@ body.landing.developer .hero .buttons::after {
 }
 
 body.landing.developer .sect1 .buttons > * {
-  background: var(--color-grey-600);
+  background: rgba(var(--colors-neutral-60));
 }
 
 body.landing.developer .buttons li a {
-  background: var(--color-grey-800);
+  background: rgba(var(--colors-neutral-80));
   color: white;
 }
 
 body.landing.developer .buttons li a:hover {
-  background: var(--color-grey-700);
+  background: rgba(var(--colors-neutral-70));
 }
 
 body.landing.developer .buttons li a:active {
@@ -365,7 +384,7 @@ body.kb .search .search-container .search-form {
 }
 
 .kb .navbar-brand #developer {
-  fill: var(--color-grey-400);
+  fill: rgba(var(--colors-neutral-40));
 }
 
 .kb .navbar-brand #neo4j-group {
@@ -373,8 +392,16 @@ body.kb .search .search-container .search-form {
 }
 
 body.kb .navbar .navbar-item.getting-started-cta .navbar-link {
-  background: var(--color-purple-600);
+  background: var(--color-labs);
   color: var(--color-white);
+}
+
+body.kb .navbar .navbar-item.getting-started-cta .navbar-link:hover {
+  background: rgba(var(--colors-lavender-50));
+}
+
+body.kb .navbar .navbar-item.getting-started-cta .navbar-link:active {
+  background: rgba(var(--colors-lavender-60));
 }
 
 body.training .navbar,
@@ -384,7 +411,7 @@ body.training .search .search-container .search-form {
 }
 
 .training .navbar-brand #developer {
-  fill: var(--color-grey-400);
+  fill: rgba(var(--colors-neutral-40));
 }
 
 .training .navbar-brand #neo4j-group {
@@ -403,11 +430,11 @@ body.graphgists svg.graphgists {
 body.graphgists .navbar,
 body.graphgists .search .search-container .search-form {
   border-top-color: var(--color-graphgists);
-  border-bottom-color: var(--color-grey-800);
+  border-bottom-color: var(--color-black);
 }
 
 .graphgists .navbar-brand #developer {
-  fill: var(--color-grey-400);
+  fill: rgba(var(--colors-neutral-40));
 }
 
 .graphgists .navbar-brand #neo4j-group {
@@ -415,6 +442,6 @@ body.graphgists .search .search-container .search-form {
 }
 
 body.graphgists .navbar .navbar-item.getting-started-cta .navbar-link {
-  background: var(--color-purple-600);
+  background: var(--color-labs);
   color: var(--color-white);
 }

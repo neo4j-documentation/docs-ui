@@ -5,22 +5,23 @@
 
 .toc.sidebar {
   padding-right: 1rem;
+  padding-bottom: 2rem;
   position: relative;
 }
 
 .toc.sidebar .toc-menu {
   margin-right: 0.75rem;
   position: sticky;
-  top: var(--toc-top);
+  top: calc(var(--toc-top) + 1rem);
 }
 
 .toc .toc-menu h2 {
   color: var(--toc-heading-font-color);
-  font-size: calc(16 / var(--rem-base) * 1rem);
+  font-size: var(--doc-font-size-h5);
   font-weight: var(--body-font-weight-bold);
   line-height: 1.5;
-  margin: 1.5rem -0.5px 0;
-  padding: 0.5rem 0 0.25rem;
+  margin: 1rem -0.5px 0;
+  padding: 1.5rem 0 1.25rem;
 }
 
 .toc.sidebar .toc-menu h3 {
@@ -88,7 +89,7 @@
 
 .toc .toc-menu a {
   color: inherit;
-  border-left: 1px solid var(--toc-border-color);
+  border-left: 1px solid rgba(var(--colors-neutral-20));
   display: inline-block;
   padding: 0.25rem 0 0.25rem 0.5rem;
   text-decoration: none;
@@ -104,9 +105,9 @@
 }
 
 .toc .toc-menu a.is-active {
-  /* border-left-color: var(--link-font-color); */
-  /* color: var(--link-font-color); */
-  color: var(--toc_active-font-color);
+  border-left-color: var(--link-font-color);
+  color: var(--link-font-color);
+  /* color: var(--toc_active-font-color); */
 }
 
 .toc .toc-menu a.is-active::before {

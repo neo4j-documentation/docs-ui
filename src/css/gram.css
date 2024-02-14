@@ -2,7 +2,7 @@
   width: 100%;
   /* 12px padding top + 12px padding bottom */
   height: calc(600px - 24px);
-  background: var(--color-grey-100);
+  background: rgba(var(--colors-neutral-15));
   border-radius: 0.5rem;
 }
 

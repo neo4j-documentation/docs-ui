@@ -92,5 +92,48 @@
       illegal: /([;<']|BEGIN)/,
     }
   })
+  hljs.registerLanguage('bolt',
+    function (hljs) {
+      return {
+        keywords: {
+          $pattern: /[a-zA-Z_]+:?/,
+          name: 'HELLO INIT LOGON LOGOFF TELEMETRY GOODBYE ACK_FAILURE RESET RUN DISCARD DISCARD_ALL PULL PULL_ALL BEGIN COMMIT ROLLBACK ROUTE SUCCESS IGNORED FAILURE RECORD',
+          keyword: 'C: S:',
+          literal: 'true false null',
+          type: 'Null Boolean Integer Float Bytes String List Dictionary',
+        },
+        contains: [
+          hljs.COMMENT('//', '$', {}),
+          hljs.QUOTE_STRING_MODE,
+          {
+            className: 'number',
+            begin: '-?\\b\\d+(\\.\\d*)?',
+            relevance: 0
+          },
+          {
+            className: '',
+            begin: '(?=[a-zA-Z_]+?::)',
+            returnBegin: true,
+            contains: [
+              {
+                className: 'name',
+                begin: '[a-zA-Z_]+?',
+                end: '::',
+                excludeEnd: true,
+                endsParent: true,
+              },
+            ]
+          },
+        ]
+      }
+    })
   hljs.highlightAll()
+
+  // Apply line highlighting to lines marked with `// marked-line`
+  // eat away line breaks or they would be doubled by the div
+  hljs.addPlugin({
+    'after:highlightElement': ({ el, result, text }) => {
+      result.value = result.value.replaceAll(/^(\s*)(.+?)\s*<span class="hljs-comment">.*?\bmark-line\b.*?<\/span>\n?/mg, '<div class="highlight-line">$1$2</div>')
+    }
+  });
 })()

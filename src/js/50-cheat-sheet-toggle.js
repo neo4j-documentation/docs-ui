@@ -23,17 +23,31 @@ const prodMatrix = {
   'neo4j-enterprise': 'neo4j-ee',
 }
 
+const defaultProd = 'auradb-enterprise'
+
 const defaultClasses = ['exampleblock', 'sect2', 'sect1']
 
 document.addEventListener('DOMContentLoaded', function () {
   if (!document.querySelector('body.cheat-sheet')) return
 
+  const selectionFromPath = fixURL()
+
   const curURL = document.location
-  const selectionFromPath = getSelectionFromPath(curURL)
 
   if (selectionFromPath) {
     updateSelectorFromProduct(selectionFromPath)
     updateMetaFromProduct(selectionFromPath, curURL)
+  }
+
+  const queryString = document.location.search
+  const urlParams = new URLSearchParams(queryString)
+
+  if (urlParams.has('sid')) {
+    const scrollToSection = checkHashVariations(urlParams.get('sid'))
+    if (scrollToSection) {
+      document.location.hash = scrollToSection
+    }
+    document.location.replace(document.location.href.replace(document.location.search, ''))
   }
 
   // check for a checkbox to display or hide labels
@@ -374,19 +388,77 @@ const stripTrailingSlash = (str) => {
   return str.endsWith('/') ? str.slice(0, -1) : str
 }
 
-function getSelectionFromPath (pageURL) {
-  const pathArr = stripTrailingSlash(pageURL.pathname).split('/')
+function fixURL () {
+  const url = window.location
+  let href = url.href
+  // eg /docs/cypher-cheat-sheet/current/where
+  // or /docs/cypher-cheat-sheet/5/auradb-free/
+  // or /docs/cypher-cheat-sheet/5/auradb-free/where
+
+  const pathArr = stripTrailingSlash(url.pathname).split('/')
   if (pathArr[0] === '') pathArr.shift()
   const values = pathArr.slice(pathArr.indexOf('cypher-cheat-sheet'))
   values.shift()
+  // there should be three elements to the path from here: version, product, [section]
+  values.length = 3
+
   // the first item in values should be a version number
+  // let version = values[0]
   // the second item in values should be the product
-  const pathProduct = values[1]
-  if (!pathProduct) return
-  // parse pathProduct to match something you could select in the product dropdown
-  if (Object.keys(prodMatrix).includes(pathProduct)) {
-    return prodMatrix[pathProduct]
+  let product = values[1]
+  // the third is a page that can be turned into a section id
+  let possibleID = values[2]
+  let id = ''
+
+  // just return if there's no product for some reason
+  // todo: force a product
+  if (!product) return
+
+  if (possibleID) {
+    id = checkHashVariations(possibleID)
+    console.log(id)
   }
+
+  // update window.location.href
+  if (!Object.keys(prodMatrix).includes(product)) {
+    const reProd = new RegExp(`/${product}/?`)
+    href = href.replace(reProd, `/${defaultProd}/`)
+    // maybe this was actually the page, which could be converted to a section id
+    possibleID = product
+    product = defaultProd
+    id = checkHashVariations(possibleID)
+    if (id) {
+      window.location.hash = '#' + id
+      href = href + '#' + id
+    }
+  }
+
+  // update window.location.hash
+  if (id && Object.keys(prodMatrix).includes(product)) {
+    window.location.hash = '#' + id
+    const reHash = new RegExp(`/${possibleID}/?`)
+    href = href.replace(reHash, `#${id}`)
+  }
+
+  if (href !== url.href) {
+    window.location.replace(href)
+  }
+
+  return prodMatrix[product]
+}
+
+function checkHashVariations (id) {
+  const dashes = /-/g
+  const idVariants = [
+    id,
+    '_' + id.replace(dashes, '_'),
+  ]
+
+  const actualID = idVariants.filter(function (i) {
+    return document.getElementById(i)
+  })
+
+  if (actualID) return actualID[0]
 }
 
 function removeDefaultClasses (c) {

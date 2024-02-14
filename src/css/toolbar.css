@@ -51,6 +51,7 @@
   background-size: 50%;
   display: block;
   height: 2.5rem;
+  margin: 0;
   padding: 0;
   width: 2.5rem;
 }
@@ -58,6 +59,11 @@
 .home-link:hover,
 .home-link.is-current {
   background-image: url(../img/home.svg);
+  /* color: rgba(var(--colors-baltic-50)); */
+}
+
+.home-link a line {
+  stroke: rgba(var(--colors-baltic-50));
 }
 
 .edit-this-page {
@@ -78,5 +84,5 @@
 }
 
 .toolbar .edit-this-page a {
-  color: var(--toolbar-muted-color);
+  color: rgba(var(--colors-baltic-50));
 }

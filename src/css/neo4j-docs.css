@@ -10,7 +10,7 @@
 
 .docs.image-border article img,
 .docs article .border img {
-  border: 1px solid var(--color-blue-400);
+  border: 1px solid var(--color-docs);
   border-radius: 4px;
   padding: 1rem;
 }
@@ -18,10 +18,10 @@
 .docs.image-shadow article img,
 .docs article .shadow img {
   box-shadow:
-    2px 2px 4px 0 var(--color-grey-500),
-    0 4px 4px 2px var(--color-grey-300),
-    0 4px 6px 4px var(--color-grey-200),
-    4px 4px 4px 4px var(--color-grey-100);
+    2px 2px 4px 0 rgba(var(--colors-neutral-50)),
+    0 4px 4px 2px rgba(var(--colors-neutral-30)),
+    0 4px 6px 4px rgba(var(--colors-neutral-20)),
+    4px 4px 4px 4px rgba(var(--colors-neutral-10));
 }
 
 .docs article .no-border img {
@@ -58,10 +58,10 @@ div.roles > span.role {
   }
 }
 
-.sect1.alpha h2::after,
-.sect1.beta h2::after,
-.sect2.alpha h3::after,
-.sect2.beta h3::after,
+.sect1.alpha > h2::after,
+.sect1.beta > h2::after,
+.sect2.alpha > h3::after,
+.sect2.beta > h3::after,
 span.alpha::after,
 span.beta::after,
 body.deprecated article h2::after,
@@ -71,50 +71,54 @@ div.deprecated h2::after,
 div.deprecated h3::after,
 div.deprecated h4::after,
 body.deprecated article dt::after,
+div.deprecated p::after,
 p.deprecated::before,
 section.deprecated .title::after,
 span.deprecated::after,
 .deprecated > .title::after,
-div.not-on-aura h2::after,
-div.not-on-aura h3::after,
-div.not-on-aura h4::after,
+div.not-on-aura > h2::after,
+div.not-on-aura > h3::after,
+div.not-on-aura > h4::after,
 p.not-on-aura::before,
 section.not-on-aura .title::after,
 span.not-on-aura::after,
-div.aura-db-enterprise h2::after,
-div.aura-db-enterprise h3::after,
-div.aura-db-enterprise h4::after,
+div.aura-db-enterprise > h2::after,
+div.aura-db-enterprise > h3::after,
+div.aura-db-enterprise > h4::after,
 p.aura-db-enterprise::before,
 section.aura-db-enterprise.title::after,
 span.aura-db-enterprise::after,
 section.enterprise-edition .title::after,
-div.enterprise-edition h2::after,
-div.enterprise-edition h3::after,
-div.enterprise-edition h4::after,
+div.enterprise-edition > h2::after,
+div.enterprise-edition > h3::after,
+div.enterprise-edition > h4::after,
 p.enterprise-edition::before,
 span.enterprise-edition::after,
-body.fabric article h2::after,
-body.fabric article h3::after,
-body.fabric article h4::after,
-div.fabric h2::after,
-div.fabric h3::after,
-div.fabric h4::after,
+body.fabric article > h2::after,
+body.fabric article > h3::after,
+body.fabric article > h4::after,
+div.fabric > h2::after,
+div.fabric > h3::after,
+div.fabric > h4::after,
 section.fabric .title::after,
 p.fabric::before,
 span.fabric::after {
+  display: inline-block;
   text-align: center;
-  font-family: "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
-  font-weight: normal;
+  font-family: var(--body-font-family);
+  font-weight: var(--font-weight-semibold);
   font-style: normal;
-  font-size: 1rem;
+  font-size: 0.7rem;
+  line-height: var(--doc-line-height);
+  padding: 0.2rem 0.8rem;
+  border-radius: 0.25rem;
   position: relative;
-  box-sizing: border-box;
-  padding: 5px 8px;
-  border-style: solid;
-  border-width: 1px;
-  border-radius: 6px;
   bottom: 2px;
-  /* margin-left: 8px; */
+  margin-left: 0.5rem;
+}
+
+.doc > .sect-header span.role::after {
+  bottom: 0.5rem;
 }
 
 .sect1.show-roles h2::after,
@@ -142,13 +146,18 @@ span.fabric::after {
   margin-bottom: 1rem;
 }
 
-.sect1 > .sect-header {
+.sect-header:first-of-type {
+  margin-bottom: 0;
+}
+
+.sect1:not(.display) > .sect-header {
   border-bottom: 1px solid var(--section-divider-color);
   margin-bottom: 1rem;
   padding-bottom: 0.5rem;
 }
 
-.sect1 div.roles > span.role {
+.sect1 div.roles > span.role,
+div.roles > span.role::after {
   margin: 0;
 }
 
@@ -168,54 +177,60 @@ p.deprecated::before,
 section.deprecated .title::after,
 .deprecated > .title::after,
 span.deprecated::after {
-  content: "deprecated";
-  color: var(--deprecation-color);
-  border-color: var(--deprecation-color);
+  content: "Deprecated";
+  background: var(--deprecated-color);
+  border-color: var(--deprecated-color);
+  color: var(--deprecated-background-color);
   margin-left: 8px;
+  vertical-align: middle;
 }
 
-div.not-on-aura h2::after,
-div.not-on-aura h3::after,
-div.not-on-aura h4::after,
+div.not-on-aura > h2::after,
+div.not-on-aura > h3::after,
+div.not-on-aura > h4::after,
 p.not-on-aura::before,
 section.not-on-aura .title::after,
 span.not-on-aura::after {
   content: "Not available on Aura";
+  background-color: var(--not-on-aura-background-color);
+  border-color: var(--not-on-aura-background-color);
   color: var(--not-on-aura-color);
-  border-color: var(--not-on-aura-color);
 }
 
-div.aura-db-enterprise h2::after,
-div.aura-db-enterprise h3::after,
-div.aura-db-enterprise h4::after,
+div.aura-db-enterprise > h2::after,
+div.aura-db-enterprise > h3::after,
+div.aura-db-enterprise > h4::after,
 p.aura-db-enterprise::before,
 section.aura-db-enterprise.title::after,
 span.aura-db-enterprise::after {
   content: "AuraDB Enterprise";
+  background: var(--aura-db-enterprise-background-color);
+  border-color: var(--aura-db-enterprise-background-color);
   color: var(--aura-db-enterprise-color);
-  border-color: var(--aura-db-enterprise-color);
 }
 
-div.enterprise-edition h2::after,
-div.enterprise-edition h3::after,
-div.enterprise-edition h4::after,
+div.enterprise-edition > h2::after,
+div.enterprise-edition > h3::after,
+div.enterprise-edition > h4::after,
 p.enterprise-edition::before,
 section.enterprise-edition .title::after,
 span.enterprise-edition::after {
   content: "Enterprise Edition";
+  background: var(--enterprise-edition-background-color);
+  border-color: var(--enterprise-edition-background-color);
   color: var(--enterprise-edition-color);
-  border-color: var(--enterprise-edition-color);
 }
 
-div.fabric h2::after,
-div.fabric h3::after,
-div.fabric h4::after,
+div.fabric > h2::after,
+div.fabric > h3::after,
+div.fabric > h4::after,
 p.fabric::before,
 section.fabric .title::after,
 span.fabric::after {
   content: "Fabric";
+  background-color: var(--fabric-background-color);
+  border-color: var(--fabric-background-color);
   color: var(--fabric-color);
-  border-color: var(--fabric-color);
 }
 
 .admonitionblock td.icon .icon-::before {
@@ -224,8 +239,8 @@ span.fabric::after {
 }
 
 .doc .admonitionblock.deprecated .icon {
-  background-color: var(--deprecation-color);
-  color: var(--deprecation-on-color);
+  background-color: var(--deprecated-color);
+  color: var(--deprecated-background-color);
 }
 
 .doc .admonitionblock.deprecated .icon i::after {
@@ -234,8 +249,8 @@ span.fabric::after {
 
 .doc .admonitionblock.deprecated {
   background-color: var(--color-pink-200);
-  color: var(--color-pink-900);
   border-left-color: var(--color-pink-600);
+  color: var(--color-pink-900);
 }
 
 .doc .admonitionblock.deprecated pre {
@@ -255,7 +270,8 @@ span.fabric::after {
 .doc .paragraph.erroronlyqueryresult {
   font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
   font-size: calc(14 / var(--rem-base) * 1rem);
-  background-color: var(--color-grey-200);
+  background-color: var(--code-result-background);
+  color: var(--code-result-font-color);
   margin: 0;
   margin-top: -1.5rem;
   margin-right: 30%;
@@ -274,19 +290,24 @@ span.fabric::after {
 .sect2.beta h3::after,
 span.alpha::after,
 span.beta::after {
+  background: var(--alpha-beta-background-color);
   color: var(--alpha-beta-color);
 }
 
 .sect1.alpha h2::after,
 .sect2.alpha h3::after,
 span.alpha::after {
-  content: "alpha";
+  content: "Alpha";
 }
 
 .sect1.beta h2::after,
 .sect2.beta h3::after,
 span.beta::after {
-  content: "beta";
+  content: "Beta";
+}
+
+.doc .paragraph.tier-note {
+  margin: 1.5rem 0;
 }
 
 div.tier-note p {
@@ -295,12 +316,12 @@ div.tier-note p {
 }
 
 div.tier-note p::before {
-  border-right: thin solid var(--color-grey-400);
+  border-right: thin solid var(--alpha-beta-background-color);
   padding: 0 10px;
   margin-right: 10px;
   font-family: fantasy;
   font-size: 2rem;
-  color: var(--alpha-beta-color);
+  color: var(--alpha-beta-background-color);
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
 }
 
@@ -363,32 +384,41 @@ div.beta-symbol p::before {
   border-radius: 0.2rem;
 }
 
+.graph-variants > .content > .supported {
+  background-color: var(--success-background-color);
+  color: var(--success-color);
+}
+
 .graph-variants > .content > .supported::before {
   content: '\2714';
   margin-right: 0.5em;
-  color: #00ba88;
+  color: var(--success-color);
 }
 
-.graph-variants > .content > .supported {
-  background-color: #e1faef;
+.graph-variants > .content > .allowed {
+  background-color: var(--neutral-background-color);
+  color: var(--neutral-color);
 }
 
 .graph-variants > .content > .allowed::before {
   content: '(\2714)';
   margin-right: 0.5em;
-  color: #808a87;
-}
-
-.graph-variants > .content > .allowed {
-  background-color: #e4e9e8;
+  color: var(--neutral-color);
 }
 
 .graph-variants > .content > .not-supported {
-  background-color: #ffe6e9;
+  background-color: var(--warning-background-color);
+  color: var(--warning-color);
 }
 
 .graph-variants > .content > .not-supported::before {
   content: '\2716';
   margin-right: 0.5em;
-  color: #ed1252;
+  background-color: var(--warning-background-color);
+  color: var(--warning-color);
+}
+
+ul.bibliography {
+  list-style-type: none;
+  padding-left: 0;
 }
