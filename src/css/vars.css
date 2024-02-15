@@ -392,6 +392,7 @@
   --toolbar-wrapper-width: 69rem;
   --doc-max-width: calc(720 / var(--rem-base) * 1rem);
   --doc-max-width--desktop: calc(980 / var(--rem-base) * 1rem);
+  --page-wide-max-width--desktop: var(--toolbar-wrapper-width);
   --cheat-sheet-max-width--desktop: calc(1100 / var(--rem-base) * 1rem);
   --feedback-height: 2.75rem;
 

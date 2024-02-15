@@ -175,6 +175,9 @@ page:
     - content: Course Yelp
       url: applied-graph-algo-course-yelp.html
       urlType: internal
+    - content: Tables (wide)
+      url: tables-wide.html
+      urlType: internal
     - content: Tables
       url: tables.html
       urlType: internal

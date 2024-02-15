@@ -20,6 +20,10 @@ body {
     min-width: 0;
     padding-bottom: 4rem;
   }
+
+  body.page-wide .doc {
+    max-width: var(--page-wide-max-width--desktop)
+  }
 }
 
 .doc h1,
