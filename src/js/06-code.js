@@ -36,7 +36,7 @@ import { createElement } from './modules/dom'
 })()
 
 var cleanCallouts = function (code) {
-  return code.replace(/[ |\t]+\n/g, '\n').trimEnd()
+  return code.replace(/[ \t]+\n/g, '\n').trimEnd()
 }
 
 document.addEventListener('DOMContentLoaded', function () {
