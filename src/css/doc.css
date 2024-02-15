@@ -22,7 +22,7 @@ body {
   }
 
   body.page-wide .doc {
-    max-width: var(--page-wide-max-width--desktop)
+    max-width: var(--page-wide-max-width--desktop);
   }
 }
 
