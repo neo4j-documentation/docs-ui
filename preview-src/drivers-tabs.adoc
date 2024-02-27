@@ -8,10 +8,12 @@ GDS also uses tabs, but they have a different list of tab separators. Rather tha
 [.tabbed-example]
 ====
 [.include-with-macos]
+[[mac-os-bit]]
 ======
 Tab for macOS
 ======
 [.include-with-linux]
+[[linux-bit]]
 ======
 Tab for Linux
 ======
@@ -105,6 +107,7 @@ Note that this requires that Go modules are enabled.
 ======
 
 [.include-with-java]
+[[java-bit]]
 ======
 
 To use the Java driver, it is recommended employing a dependency manager, such as Maven or Gradle.

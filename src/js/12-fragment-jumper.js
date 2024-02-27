@@ -37,7 +37,7 @@
 
   window.addEventListener('load', function jumpOnLoad (e) {
     var fragment, target
-    if ((fragment = decodeFragment(window.location.hash)) && (target = document.getElementById(fragment))) {
+    if ((fragment = decodeFragment(window.location.hash)) && (target = document.getElementById(fragment)) && (!target.closest('.tabbed-container'))) {
       jumpToAnchor.bind(target)()
       setTimeout(jumpToAnchor.bind(target), 0)
     }
