@@ -24,14 +24,18 @@
       e.preventDefault()
     }
     var topOffset = toolbar ? toolbar.getBoundingClientRect().bottom : headerNavigationBar.getBoundingClientRect().bottom
-
+    var target = this
+    var tabs
+    if ((tabs = target.closest('.tabbed'))) {
+      target = tabs
+    }
     if (cheatSheet) {
       var scrollTarget = this.closest('div')
       var selectorsTop = document.querySelector('.nav-container .selectors').querySelector('div').getBoundingClientRect().top
       if (this.tagName === 'H3') topOffset = selectorsTop
       window.scrollTo(0, computePosition(scrollTarget, 0) - topOffset)
     } else {
-      window.scrollTo(0, computePosition(this, 0) - topOffset)
+      window.scrollTo(0, computePosition(target, 0) - topOffset)
     }
   }
 
