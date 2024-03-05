@@ -146,6 +146,10 @@ body {
     font-weight: 600;
   }
 
+  .doc .header-label-container > div.labels {
+    padding-top: 0;
+  }
+
   .doc h2:not(.discrete) {
     font-size: 1.2rem;
   }
