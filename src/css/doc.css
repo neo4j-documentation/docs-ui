@@ -182,6 +182,10 @@ body {
   color: var(--link_hover-font-color);
 }
 
+.doc a:visited {
+  color: var(--link_visited-font-color);
+}
+
 .doc code a {
   color: inherit;
 }
