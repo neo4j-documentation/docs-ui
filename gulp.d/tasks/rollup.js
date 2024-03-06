@@ -5,6 +5,7 @@ const rollupPluginNodeResolve = require('@rollup/plugin-node-resolve').nodeResol
 const rollupPluginCommonJS = require('@rollup/plugin-commonjs')
 const rollupPluginBabel = require('@rollup/plugin-babel').babel
 const rollupPluginTerser = require('rollup-plugin-terser').terser
+const rollupPluginJSON = require('@rollup/plugin-json')
 
 const toCamel = (s) => {
   return s.replace(/([-_][a-z])/ig, ($1) => {
@@ -35,6 +36,7 @@ async function bundle (vinylFile) {
         babelHelpers: 'bundled',
       }),
       rollupPluginTerser(),
+      rollupPluginJSON(),
     ],
     onwarn: (warning) => {
       if (warning.code === 'CIRCULAR_DEPENDENCY' && ignoredCircular.some((d) => warning.importer.includes(d))) {
