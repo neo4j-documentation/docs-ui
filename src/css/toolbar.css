@@ -12,6 +12,10 @@
   z-index: var(--z-index-toolbar);
 }
 
+body.has-banner .toolbar {
+  top: calc(var(--navbar-height) + var(--banner-height));
+}
+
 .toolbar-wrapper {
   display: flex;
   width: 100%;

@@ -1,6 +1,10 @@
 = Docs roles with a long title
 :page-role: not-on-aura new-5.17
 :page-theme: docs
+:page-banner: warning
+:page-banner-text: Lorem ipsum dolor sit est.
+:page-banner-link: https://neo4j.com/docs
+:page-banner-link-text: Link text
 // :page-labels: fabric enterprise-edition alpha test
 
 [abstract]
