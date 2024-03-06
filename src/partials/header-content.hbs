@@ -103,4 +103,15 @@
       {{/if}}
     </div>
   </nav>
+  {{#if (and page.attributes.banner page.attributes.banner-text)}}
+  <div class="header-banner{{#with (or page.attributes.banner "info")}} {{{this}}}-banner{{/with}}">
+    <span>{{#with page.attributes.banner-text}}{{{this}}}{{/with}}</span>
+    {{#if page.attributes.banner-link}}
+    <span>
+      <a href="{{{page.attributes.banner-link}}}">{{#with (or page.attributes.banner-link-text page.attributes.banner-link)}}{{{this}}}{{/with}}</a>
+    </span>
+    {{/if}}
+  </div>
+  {{/if}}
+
 </header>
