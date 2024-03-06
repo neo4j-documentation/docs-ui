@@ -68,7 +68,7 @@ body {
 .doc h4 code,
 .doc h5 code,
 .doc h6 code {
-  padding: 0.125em 0.25em;
+  padding: 0 0.25em;
   background: var(--code-background);
 }
 
@@ -144,6 +144,10 @@ body {
   .doc > .sect-header > h1.page:first-child {
     font-size: 1.4rem;
     font-weight: 600;
+  }
+
+  .doc .header-label-container > div.labels {
+    padding-top: 0;
   }
 
   .doc h2:not(.discrete) {
@@ -666,6 +670,11 @@ body {
   letter-spacing: 0.01em;
   padding-bottom: 0.25rem;
   text-align: left;
+}
+
+.doc .tableblock caption {
+  display: table-caption;
+  margin-top: 0.25rem;
 }
 
 .hide-table-captions .doc .tableblock caption {
