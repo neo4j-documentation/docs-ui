@@ -674,6 +674,7 @@ body {
 
 .doc .tableblock caption {
   display: table-caption;
+  margin-top: 0.25rem;
 }
 
 .hide-table-captions .doc .tableblock caption {

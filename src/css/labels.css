@@ -16,8 +16,11 @@
   justify-content: space-between;
   gap: 0.25rem;
   margin-left: auto;
-  padding-top: 0.4rem;
   line-height: var(--doc-line-height);
+}
+
+.sect-header .header-label-container > div.labels {
+  padding-top: 0.4rem;
 }
 
 .header-label-container > div.labels.wrapped {
@@ -38,6 +41,7 @@ h1 > .header-label {
 
 .doc .tableblock caption > .labels {
   float: inline-end;
+  margin-top: -0.25rem;
 }
 
 .listing-block .content-labels,
