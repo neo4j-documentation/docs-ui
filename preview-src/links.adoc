@@ -1,0 +1,39 @@
+= Links
+:nofooter:
+:neo4j-docs-base-uri: https://neo4j.com/docs
+
+== angle brackets
+
+<<to-docs, to docs!>>
+
+
+== xref
+
+xref:labs.adoc[]
+
+
+[[to-docs]]
+== link to neo4j.com/docs
+
+internal: link:https://neo4j.com/docs[neo4j.com/docs]
+
+external: link:https://neo4j.com/docs[neo4j.com/docs^]
+
+attribute: link:{neo4j-docs-base-uri}[neo4j.com/docs]
+
+attribute (external): link:{neo4j-docs-base-uri}[neo4j.com/docs^]
+
+
+== link to neo4j.com
+
+internal: link:https://neo4j.com[neo4j.com]
+
+external: link:https://neo4j.com[neo4j.com^]
+
+
+== link to example.com
+
+internal: link:https://example.com[example.com]
+
+external: link:https://example.com[example.com^]
+
