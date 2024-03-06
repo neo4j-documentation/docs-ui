@@ -6,6 +6,31 @@ body {
   padding-top: var(--navbar-height);
 }
 
+.header-banner {
+  background: var(--note-background-color);
+  color: var(--note-color);
+  box-shadow: 0 0 1px var(--note-border-color);
+  font-size: calc(16 / var(--rem-base) * 1rem);
+  height: var(--banner-height);
+  position: fixed;
+  top: var(--navbar-height);
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: var(--z-index-banner);
+}
+
+.header-banner.warning-banner {
+  background: var(--warning-background-color);
+  color: var(--warning-color);
+  box-shadow: 0 0 1px var(--warning-border-color);
+}
+
+.header-banner span {
+  padding: 0.25rem;
+}
+
 .navbar {
   background: var(--navbar-background);
   color: var(--navbar-font-color);

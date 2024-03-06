@@ -50,6 +50,10 @@
     position: sticky;
     height: var(--nav-height--desktop);
   }
+
+  body.has-banner .nav {
+    top: calc(var(--navbar-height) + var(--banner-height));
+  }
 }
 
 .nav .panels {
