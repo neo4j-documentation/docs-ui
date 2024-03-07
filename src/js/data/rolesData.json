@@ -88,7 +88,8 @@
     },
     "dynamic":{
         "labelCategory": "function",
-        "displayText": "Dynamic"
+        "displayText": "Dynamic",
+        "versionText": "since"
     },
     "alpha":{
         "labelCategory": "version",
@@ -187,6 +188,10 @@
     "windows":{
         "labelCategory": "environment",
         "displayText": "Windows"
+    },
+    "cluster":{
+        "labelCategory": "function",
+        "displayText": "Cluster"
     },
     "cluster-member-core":{
         "labelCategory": "function",
