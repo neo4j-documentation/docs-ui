@@ -10,6 +10,10 @@
   flex-wrap: wrap;
 }
 
+.admonitionblock > div.labels {
+  padding: 1rem 1rem 0.75rem;
+}
+
 .header-label-container > div.labels {
   display: flex;
   align-self: center;
