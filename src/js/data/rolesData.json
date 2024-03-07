@@ -86,6 +86,10 @@
         "labelCategory": "version",
         "displayText": "Discontinued"
     },
+    "dynamic":{
+        "labelCategory": "function",
+        "displayText": "Dynamic"
+    },
     "alpha":{
         "labelCategory": "version",
         "displayText": "Alpha"
