@@ -44,9 +44,10 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     // get version number for version labels
-    if (rolesData[label].labelCategory === 'version' && labelParts[1]) {
+    if ((rolesData[label].labelCategory === 'version' || rolesData[label].versionText) && labelParts[1]) {
       labelDetails.data.version = labelParts[1]
-      labelDetails.text += ' in ' + labelDetails.data.version
+      const joinText = rolesData[label].versionText ? rolesData[label].versionText : 'in'
+      labelDetails.text = [labelDetails.text, joinText, labelDetails.data.version].join(' ')
     }
 
     return labelDetails
