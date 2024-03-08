@@ -10,6 +10,10 @@
   flex-wrap: wrap;
 }
 
+.admonitionblock > div.labels {
+  padding: 1rem 1rem 0.75rem;
+}
+
 .header-label-container > div.labels {
   display: flex;
   align-self: center;
@@ -25,6 +29,7 @@
 
 .header-label-container > div.labels.wrapped {
   margin-left: 0;
+  margin-top: 0.5rem;
 }
 
 .doc > .sect-header > h1.page:first-child:has(> .labels) {
