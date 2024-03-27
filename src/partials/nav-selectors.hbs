@@ -24,6 +24,15 @@
     </select>
   </div>
 </div>
+{{else}}
+{{#unless (or @root.page.attributes.nav-hide-site-title (eq @root.page.attributes.theme 'cheat-sheet'))}}
+{{#with @root.page.componentVersion}}
+<div class="nav-product">
+  <span class="nav-product-name">{{{ ./title }}}</span>
+</div>
+{{/with}}
+{{/unless}}
+
 {{/if}}
 
 {{#if (eq page.attributes.theme 'cheat-sheet') }}
