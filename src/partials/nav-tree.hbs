@@ -1,27 +1,42 @@
 {{#if navigation.length}}
 <ul class="nav-list">
-  {{#each navigation}}
-  <li class="nav-item{{#if (eq this.url @root.page.url)}} is-current-page{{/if}}" data-depth="{{or ../level 0}}"{{#with this.asciidoc}} data-slug="{{this.attributes.page-slug}}"{{/with}}>
-    {{#if this.content}}
-    {{#if this.items.length}}
-    {{!-- <button class="nav-item-toggle"></button> --}}
-    {{/if}}
-    {{#if this.url}}
-    <a class="nav-link{{#if this.items.length}} nav-item-toggle{{/if}}" href="
-      {{~#if (eq this.urlType 'internal')}}{{{relativize this.url}}}
-      {{~else}}{{{this.url}}}{{~/if}}">{{{this.content}}}</a>
-    {{else if this.items.length }}
-    <span class="nav-text nav-item-toggle">{{{this.content}}}</span>
-    {{else if (has-string this.content "href=") }}
-      {{{this.content}}}
-    {{else}}
-    <span class="nav-text nav-section-header">
-      {{{this.content}}}
-      </span>
-    {{/if}}
-    {{/if}}
-{{> nav-tree navigation=this.items level=(increment ../level)}}
+
+
+  {{!-- add link back to home --}}
+  <li class="nav-item" data-depth="0">
+    {{#with site.homeUrl}}
+    <a href="{{{relativize this}}}" class="home-link{{#if @root.page.home}} is-current{{/if}}" aria-label="Go to home page">Back to home</a>
+    {{/with}}
   </li>
+
+
+  {{#each navigation}}
+   
+
+
+    <li class="nav-item{{#if (eq this.url @root.page.url)}} is-current-page{{/if}}" data-depth="{{or ../level 0}}"{{#with this.asciidoc}} data-slug="{{this.attributes.page-slug}}"{{/with}}>
+      {{#if this.content}}
+      {{#if this.url}}
+      <a class="nav-link{{#if this.items.length}} nav-item-toggle{{/if}}" href="
+        {{~#if (eq this.urlType 'internal')}}{{{relativize this.url}}}
+        {{~else}}{{{this.url}}}{{~/if}}">{{{this.content}}}</a>
+      {{else if this.items.length }}
+      <span class="nav-text nav-item-toggle">{{{this.content}}}</span>
+      {{else if (has-string this.content "href=") }}
+        {{{this.content}}}
+      {{else}}
+      <span class="nav-text nav-section-header">
+        {{{this.content}}}
+        </span>
+      {{/if}}
+      {{/if}}
+      
+      {{#unless (and (eq @root.page.attributes.nav-tree 'module-only') (ne this.module @root.page.attributes.module))}}
+        {{> nav-tree navigation=this.items level=(increment ../level)}}
+      {{/unless}}
+
+    </li>
+      
   {{/each}}
 </ul>
 {{/if}}

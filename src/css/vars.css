@@ -171,6 +171,7 @@
   --body-font-weight-bold: var(--font-weight-semibold);
   --monospace-font-family: "Roboto Mono", monospace;
   --monospace-font-weight-bold: var(--font-weight-medium);
+  --header-font-family: "Syne Neo", "Public Sans", "Nunito Sans", "Helvetica Neue", helvetica, roboto, arial, sans-serif;
 
   /* base */
   --body-background: rgba(var(--colors-neutral-10));

@@ -109,6 +109,12 @@ page:
       - content: Cu Solet
         url: '/xyz/4.1/index.html#cu-solet'
         urlType: internal
+    - content: Docs Needle styles
+      url: docs-ndl.html
+      urlType: internal
+    - content: Docs Sub Hub
+      url: docs-sub-hub.html
+      urlType: internal      
     - content: Liber Recusabo
       url: '#liber-recusabo'
       urlType: fragment
@@ -155,9 +161,6 @@ page:
       urlType: internal
     - content: Cypher DELETE
       url: cheat-sheet.html#delete
-      urlType: internal
-    - content: Docs Index
-      url: docs-index.html
       urlType: internal
     - content: Drivers and APIs
       url: drivers-apis.html

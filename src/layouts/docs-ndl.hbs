@@ -3,7 +3,7 @@
   <head>
 {{> head defaultPageTitle='Untitled'}}
   </head>
-  <body class="article docshome{{#with (or page.attributes.role page.role)}} {{{this}}}{{/with}}{{#with asciidoc.attributes.role}} {{{this}}}{{/with}}{{#with (or page.attributes.theme "developer")}} {{{this}}}{{/with}}">
+  <body class="article docs-ndl{{#with (or page.attributes.role page.role)}} {{{this}}}{{/with}}{{#with asciidoc.attributes.role}} {{{this}}}{{/with}}{{#with (or page.attributes.theme "developer")}} {{{this}}}{{/with}}">
 {{> header}}
 
 <div class="body">
@@ -18,6 +18,7 @@
 
   <div class="content">
 {{> article}}
+{{> toc}}
   </div>
 </main>
 </div>

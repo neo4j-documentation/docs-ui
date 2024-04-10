@@ -6,16 +6,26 @@
   </div>
 </aside>
 {{else}}
-{{#with page.navigation}}
 <div class="nav-panel-menu is-active" data-panel="menu">
     <nav class="nav-menu">
-    {{!-- {{#unless @root.page.attributes.hide-nav-title }}
-    {{#with @root.page.componentVersion}}
-    <span class="title component-title"><a href="{{{relativize ./url}}}">{{./title}}</a></span>
-    {{/with}}
-    {{/unless}} --}}
-    {{> nav-tree navigation=this}}
+
+      
+
+      {{!-- add link back to home --}}
+      {{#unless page.home}}
+      {{#if page.attributes.show-home-link}}
+      <ul class="nav-list">
+        <li class="nav-item home-link" data-depth="0" aria-label="home-link">
+          {{#with site.homeUrl}}
+          <a href="{{{relativize this}}}" aria-label="Go to home page">Back to home</a>
+          {{/with}}
+        </li>
+      </ul>
+      {{/if}}
+      {{/unless}}
+
+
+    {{#with page.navigation}}{{> nav-tree navigation=this}}{{/with}}
   </nav>
 </div>
-{{/with}}
 {{/if}}
