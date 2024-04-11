@@ -252,6 +252,7 @@ body.docs-ndl .cards.selectable .sect2 {
 body.docs-ndl .cards.selectable .sect2:hover {
   transform: translateY(-0.25rem);
   transition: 0.2s linear;
+  text-decoration: underline;
 }
 
 /* highlights */
