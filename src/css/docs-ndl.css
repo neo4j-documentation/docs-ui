@@ -89,7 +89,7 @@ body.docs-ndl:not(.explainer) .content {
 }
 
 body.docs-ndl:not(.explainer) .doc {
-  width: 100%;
+  /* width: 100%; */
   max-width: 1440px;
   padding: 0;
 }
@@ -304,12 +304,12 @@ body.docs-ndl .lists ul li {
 /* cards */
 
 body.docs-ndl .cards .sectionbody > div.sect2 {
-  min-width: 32%;
+  flex: 0 1 32%;
   /* margin-right: 1rem; */
 }
 
 body.docs-ndl.explainer .sectionbody > div.sect2 {
-  min-width: 40%;
+  flex: 0 1 48%;
 }
 
 body.docs-ndl .sect2 {
@@ -330,8 +330,16 @@ body.docs-ndl .sect2 {
 }
 
 body.docs-ndl.explainer .sect2 {
+  background: none;
+}
+
+body.docs-ndl.explainer .cards.selectable .sect2:hover {
+  transform: none;
+}
+
+body.docs-ndl.color-docs .sect2 {
   color: rgba(var(--colors-neutral-10));
-  background: rgba(var(--colors-baltic-50));
+  background: var(--color-docs);
   /* background: none; */
   /* box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06); */
   /* border: 1px solid #d5d9de; */
@@ -350,8 +358,12 @@ body.docs-ndl.explainer .cards .sect2 .icon {
 
 body.docs-ndl.explainer .cards .sect2 h3,
 body.docs-ndl.explainer .cards .sect2 .description {
-  color: rgba(var(--colors-neutral-10));
   margin-left: 5rem;
+}
+
+body.docs-ndl.color-docs .cards .sect2 h3,
+body.docs-ndl.color-docs .cards .sect2 .description {
+  color: rgba(var(--colors-neutral-10));
 }
 
 body.docs-ndl .align-center .sect2 {
@@ -493,9 +505,16 @@ body.docs-ndl .cards .sect2 ul li a {
   body.docs-ndl .toolbar {
     display: none;
   }
+
 }
 
 @media screen and (max-width: 1023px) {
+  body.docs-ndl .doc {
+    margin: 0 1rem;
+  }
+}
+
+@media screen and (max-width: 1439px) {
   body.docs-ndl .doc {
     padding: 1rem;
   }
@@ -508,4 +527,52 @@ body.docs-ndl .cards .sect2 ul li a {
     z-index: 30;
     margin-top: var(--toolbar-height);
   }
+
+  body.docs-ndl .cards .sectionbody > div.sect2 {
+    flex: 0 1 48%;
+  }
+
+  body.docs-ndl .cards .sect2 h3 {
+    text-align: center;
+  }
+
+  body.docs-ndl .widget .sectionbody {
+    row-gap: 2rem;
+  }
+
+  body.docs-ndl .widget .sectionbody > div {
+    flex: 0 1 100%;
+    justify-content: center;
+  }
+
+  body.docs-ndl .widget ul {
+    text-align: center;
+  }
+
+  body.docs-ndl .lists .sectionbody > div.sect2 {
+    flex: 0 0 50%;
+  }
+
+  body.docs-ndl .lists .sectionbody > div.sect2 > * {
+    margin: 0 auto;
+  }
+
+  body.docs-ndl .highlights .sectionbody > div {
+    flex: 0 1 100%;
+    justify-content: center;
+  }
+
+  body.docs-ndl .highlights .sectionbody > div.openblock {
+    order: 2;
+  }
+
+  body.docs-ndl .paragraph.caption,
+  body.docs-ndl .paragraph.footer-link {
+    justify-content: center;
+  }
+
+  body.docs-ndl.explainer .sectionbody > div.sect2 {
+    flex: 0 1 100%;
+  }
+
 }
