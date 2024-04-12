@@ -1,0 +1,12 @@
+= Use of `bibliography`
+
+Citations with xreftext: <<Brandes2001>>, <<Brandes2007>>.
+
+Citations without xreftext (ID only): <<Freeman1977>>.
+
+[bibliography]
+== References
+
+* [[[Brandes2001, 1]]] Brandes, Ulrik. "A faster algorithm for betweenness centrality." _Journal of mathematical sociology_ 25, no. 2 (2001): 163-177. link:https://snap.stanford.edu/class/cs224w-readings/brandes01centrality.pdf[].
+* [[[Brandes2007, 2]]] Brandes, Ulrik, and Christian Pich. "Centrality estimation in large networks." _International Journal of Bifurcation and Chaos_ 17, no. 07 (2007): 2303-2318. link:https://www.uni-konstanz.de/mmsp/pubsys/publishedFiles/BrPi07.pdf[].
+* [[[Freeman1977]]] Freeman, Linton C. "A set of measures of centrality based on betweenness." _Sociometry_ (1977): 35-41.

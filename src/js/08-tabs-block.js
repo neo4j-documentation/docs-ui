@@ -205,4 +205,21 @@ document.addEventListener('DOMContentLoaded', function () {
 
       parent.removeChild(originalTab)
     })
+
+  //
+  // Make active tab based on url hash
+  //
+  function decodeFragment (hash) {
+    return hash && (~hash.indexOf('%') ? decodeURIComponent(hash) : hash).slice(1)
+  }
+
+  var fragment, target, langSelection, scrollTo
+  if ((fragment = decodeFragment(window.location.hash)) &&
+      (target = document.getElementById(fragment)) &&
+      (langSelection = target.getAttribute('data-lang')) &&
+      (scrollTo = target.closest('.tabbed').querySelector(`[data-lang=${langSelection}]`))) {
+    switchTab({
+      target: scrollTo,
+    })
+  }
 })

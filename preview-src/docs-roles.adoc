@@ -1,6 +1,10 @@
-= Docs `code test` flags
-:page-role: not-on-aura
+= Docs roles with a long title
+:page-role: not-on-aura new-5.17
 :page-theme: docs
+:page-banner: warning
+:page-banner-text: Lorem ipsum dolor sit est.
+:page-banner-link: https://neo4j.com/docs
+:page-banner-link-text: Link text
 // :page-labels: fabric enterprise-edition alpha test
 
 [abstract]
@@ -8,9 +12,102 @@
 Flags sections as Not Available on Aura, Aura DB Enterprise, Enterprise Edition, Fabric, and Deprecated
 --
 
-Blocks with the appropriate roles have text appended.
 
-[role=not-on-aura]
+[role="label--new-5.17 label--enterprise-edition"]
+== Relationship property type constraints
+
+Blocks with the appropriate roles have labels added.
+
+[discrete]
+[role="label--new-5.17 label--enterprise-edition"]
+=== (Discrete) H3 AuraDB Enterprise AND Not on Aura
+
+Lorem ipsum dolor sit
+
+
+[role=label--aura-db-enterprise label--not-on-aura]
+=== H3 AuraDB Enterprise AND Not on Aura
+
+Lorem ipsum dolor sit
+
+Open blocks can be used to mark multiple paragraphs within a section.
+
+[role=label--dynamic-5.17]
+--
+Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+Mauris eget leo nunc, nec tempus mi? Curabitur id nisl mi, ut vulputate urna.
+
+Quisque porta facilisis tortor, vitae bibendum velit fringilla vitae! Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+--
+
+
+This is a normal paragraph.
+
+The next paragraph has a label, but it's not one we support.
+
+[role=label--invented-label]
+Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+
+[role=label--enterprise-edition]
+Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+Mauris eget leo nunc, nec tempus mi? Curabitur id nisl mi, ut vulputate urna.
+
+[role=label--deprecated-5.17]
+. list with label
+. item 2
+. item 3
+
+These labels from roles should be used for block elements only.
+For inline elements, use a label.
+
+
+=== Code
+
+Intro para
+
+[role=label--deprecated-5.17]
+.Title
+[source, shell]
+----
+How does a label look on a code block?
+----
+
+
+=== Examples
+
+Intro para
+
+[role=label--new-5.17]
+.This is a short one
+[example]
+====
+Lorem Ipsunm
+====
+
+
+=== Tables
+
+Intro para
+
+[[procedure_db_create_setVectorProperty]]
+[role=label--admin-only label--deprecated-5.9]
+.db.create.setVectorProperty()
+[cols="<15s,<85"]
+|===
+| Description
+a|
+Set a vector property on a given node in a more space efficient representation than Cypher’s link:{neo4j-docs-base-uri}/cypher-manual/{page-version}/clauses/set#set-set-a-property[`SET`].
+| Signature
+m| db.create.setVectorProperty(node :: NODE, key :: STRING, vector :: LIST<FLOAT>) :: (node :: NODE)
+| Mode
+m|WRITE
+| Replaced by
+a|xref:reference/procedures.adoc#procedure_db_create_setNodeVectorProperty[`db.create.setNodeVectorProperty()`]
+|===
+
+
+
+[role=label--not-on-aura]
 == Not on `code test` Aura
 
 Lorem ipsum dolor `code test` sit
@@ -38,13 +135,13 @@ And so does this table
 |===
 
 
-[role=aura-db-enterprise]
+[role=label--aura-db-enterprise]
 == AuraDB Enterprise
 
 Lorem ipsum dolor sit
 
 
-[role=aura-db-enterprise not-on-aura]
+[role=label--aura-db-enterprise label--not-on-aura]
 == H2 AuraDB Enterprise AND Not on Aura
 
 Lorem ipsum dolor sit
@@ -55,23 +152,23 @@ Lorem ipsum dolor sit
 Lorem ipsum dolor sit
 
 
-[role=aura-db-enterprise not-on-aura]
+[role=label--aura-db-enterprise label--not-on-aura]
 === H3 AuraDB Enterprise AND Not on Aura
 
 Lorem ipsum dolor sit
 
-[role=aura-db-enterprise not-on-aura]
+[role=label--aura-db-enterprise label--not-on-aura]
 === H4 show roles
 
 Lorem ipsum dolor sit
 
 
-[role=fabric]
+[role=label--fabric]
 == Fabric Heading
 
 Lorem ipsum
 
-[role=enterprise-edition]
+[role=label--enterprise-edition]
 == Enterprise Edition content
 
 Lorem ipsum
@@ -82,7 +179,7 @@ Lorem ipsum
 
 ==== H4 inside labeled section
 
-[role=deprecated]
+[role=label--deprecated]
 == Deprecated content
 
 Other blocks can have deprecated roles added.
@@ -96,13 +193,13 @@ This is a second paragraph in the example.
 This is the third.
 ====
 
-[role=deprecated]
+[role=label--deprecated]
 .Example 2 title
 ====
 Example 2 content - this example is deprecated
 ====
 
-[role=alpha]
+[role=label--alpha]
 == Alpha content
 
 
@@ -116,7 +213,7 @@ For more information on algorithm tiers, see <<algorithms>>.
 Lorem ipsum
 
 
-[role=beta]
+[role=label--beta]
 == Beta content
 
 
@@ -131,7 +228,7 @@ For more information on algorithm tiers, see <<algorithms>>.
 Lorem ipsum
 
 
-[role=deprecated]
+[role=label--deprecated]
 == Deprecated content
 
 Lorem ipsum

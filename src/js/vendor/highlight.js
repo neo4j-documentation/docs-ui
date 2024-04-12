@@ -19,6 +19,7 @@
   hljs.registerLanguage('java', require('highlight.js/lib/languages/java'))
   hljs.registerLanguage('javascript', require('highlight.js/lib/languages/javascript'))
   hljs.registerLanguage('json', require('highlight.js/lib/languages/json'))
+  hljs.registerLanguage('parameters', require('highlight.js/lib/languages/json'))  // cypher parameters
   hljs.registerLanguage('kotlin', require('highlight.js/lib/languages/kotlin'))
   hljs.registerLanguage('makefile', require('highlight.js/lib/languages/makefile'))
   hljs.registerLanguage('markdown', require('highlight.js/lib/languages/markdown'))
@@ -133,7 +134,7 @@
   // eat away line breaks or they would be doubled by the div
   hljs.addPlugin({
     'after:highlightElement': ({ el, result, text }) => {
-      result.value = result.value.replaceAll(/^(\s*)(.+?)\s*<span class="hljs-comment">.*?\bmark-line\b.*?<\/span>\n/mg, '<div class="highlight-line">$1$2</div>')
+      result.value = result.value.replaceAll(/^(\s*)(.+?)\s*<span class="hljs-comment">.*?\bmark-line\b.*?<\/span>\n?/mg, '<div class="highlight-line">$1$2</div>')
     }
   });
 })()

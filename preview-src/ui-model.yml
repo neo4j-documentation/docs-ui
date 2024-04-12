@@ -139,6 +139,14 @@ page:
     - content: Admonitions
       url: admonitions.html
       urlType: internal
+    - content: Page Banners
+      items:
+      - content: note
+        url: banner-note.html
+        urlType: internal
+      - content: warning
+        url: banner-warning.html
+        urlType: internal
     - content: Labels
       url: labels.html
       urlType: internal
@@ -210,6 +218,9 @@ page:
       urlType: internal
     - content: Algorithms
       url: algorithms.html
+      urlType: internal
+    - content: Bibliography
+      url: bibliography.html
       urlType: internal
     - content: Private Page
       url: private-page.html

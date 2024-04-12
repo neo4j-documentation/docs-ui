@@ -68,7 +68,7 @@ body {
 .doc h4 code,
 .doc h5 code,
 .doc h6 code {
-  padding: 0.125em 0.25em;
+  padding: 0 0.25em;
   background: var(--code-background);
 }
 
@@ -146,6 +146,10 @@ body {
     font-weight: 600;
   }
 
+  .doc .header-label-container > div.labels {
+    padding-top: 0;
+  }
+
   .doc h2:not(.discrete) {
     font-size: 1.2rem;
   }
@@ -182,6 +186,10 @@ body {
 .doc a:focus code:focus {
   color: var(--link_hover-font-color);
   /* border-bottom: 1px solid var(--link_hover-font-color); */
+}
+
+.doc a:visited {
+  color: var(--link_visited-font-color);
 }
 
 .doc code a {
@@ -668,6 +676,11 @@ body {
   letter-spacing: 0.01em;
   padding-bottom: 0.25rem;
   text-align: left;
+}
+
+.doc .tableblock caption {
+  display: table-caption;
+  margin-top: 0.25rem;
 }
 
 .hide-table-captions .doc .tableblock caption {
@@ -1295,6 +1308,10 @@ body {
 
 .doc details {
   margin-bottom: 1.5rem;
+}
+
+.doc details summary {
+  cursor: pointer;
 }
 
 .doc details[open] summary {
