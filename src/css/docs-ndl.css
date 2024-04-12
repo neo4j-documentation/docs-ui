@@ -505,7 +505,6 @@ body.docs-ndl .cards .sect2 ul li a {
   body.docs-ndl .toolbar {
     display: none;
   }
-
 }
 
 @media screen and (max-width: 1023px) {
@@ -574,5 +573,4 @@ body.docs-ndl .cards .sect2 ul li a {
   body.docs-ndl.explainer .sectionbody > div.sect2 {
     flex: 0 1 100%;
   }
-
 }
