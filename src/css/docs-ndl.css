@@ -276,7 +276,6 @@ body.docs-ndl .widget.highlights .footer-link {
 
 body.docs-ndl .widget.highlights .icon img {
   width: 40rem;
-  height: 24rem;
   padding: 0;
 }
 
@@ -409,12 +408,6 @@ body.docs-ndl .icon-s .sect2 .icon img {
 body.docs-ndl .lists .sect2 .icon img path {
   color: rgba(var(--colors-baltic-30));
   fill: rgba(var(--colors-baltic-30));
-}
-
-@media all and (max-width: 820px) {
-  body.docs-ndl .cards .sect2 {
-    min-width: 90%;
-  }
 }
 
 body.docs-ndl .cards .sect2 h3,
@@ -572,5 +565,17 @@ body.docs-ndl .cards .sect2 ul li a {
 
   body.docs-ndl.explainer .sectionbody > div.sect2 {
     flex: 0 1 100%;
+  }
+}
+
+@media all and (max-width: 820px) {
+  body.docs-ndl .cards .sectionbody > div.sect2 {
+    /* min-width: 90%; */
+    flex: 1 1 100%;
+  }
+
+  body.docs-ndl .lists .sectionbody > div.sect2 {
+    flex: 1 1 100%;
+    padding: 1rem;
   }
 }
