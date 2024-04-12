@@ -304,7 +304,7 @@ body.docs-ndl .lists ul li {
 /* cards */
 
 body.docs-ndl .cards .sectionbody > div.sect2 {
-  flex: 0 1 32%;
+  flex: 1 1 32%;
   /* margin-right: 1rem; */
 }
 
