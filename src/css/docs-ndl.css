@@ -568,7 +568,7 @@ body.docs-ndl .cards .sect2 ul li a {
   }
 }
 
-@media all and (max-width: 820px) {
+@media all and (max-width: 600px) {
   body.docs-ndl .cards .sectionbody > div.sect2 {
     /* min-width: 90%; */
     flex: 1 1 100%;
