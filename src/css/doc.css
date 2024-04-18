@@ -1306,7 +1306,7 @@ body {
   border: none;
 }
 
-.doc details {
+.doc div > details {
   margin-bottom: 1.5rem;
 }
 
