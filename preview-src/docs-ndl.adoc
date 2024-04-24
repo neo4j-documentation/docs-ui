@@ -3,7 +3,7 @@
 :page-theme: docs
 :page-show-home-link: true
 :page-hide-nav-title: true
-:page-disablefeedback: true
+// :page-disablefeedback: true
 :!toc:
 :page-toclevels: -1
 

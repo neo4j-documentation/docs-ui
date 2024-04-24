@@ -4,7 +4,7 @@
 :page-role: explainer
 :page-show-home-link: true
 :page-hide-nav-title: true
-:page-disablefeedback: true
+// :page-disablefeedback: true
 :page-toclevels: 1
 
 
