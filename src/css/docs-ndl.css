@@ -530,12 +530,16 @@ body.docs-ndl .cards .sect2 ul li a {
     margin-top: var(--toolbar-height);
   }
 
-  body.docs-ndl .cards .sectionbody > div.sect2 a {
+  body.docs-ndl .cards .sectionbody > div.sect2 {
     flex: 0 1 48%;
   }
 
   body.docs-ndl .cards .sect2 h3 {
     text-align: center;
+  }
+
+  body.docs-ndl.explainer .cards .sect2 h3 {
+    text-align: left;
   }
 
   body.docs-ndl .widget .sectionbody {
@@ -547,7 +551,7 @@ body.docs-ndl .cards .sect2 ul li a {
     justify-content: center;
   }
 
-  body.docs-ndl .widget ul {
+  body.docs-ndl .lists ul {
     text-align: center;
   }
 
@@ -578,13 +582,35 @@ body.docs-ndl .cards .sect2 ul li a {
   }
 }
 
-@media all and (max-width: 600px) {
-  body.docs-ndl .cards .sectionbody > div.sect2 a {
+@media all and (max-width: 620px) {
+  body.docs-ndl .doc > .sect-header > h1.page:first-child {
+    text-align: center;
+    margin: 1rem auto;
+  }
+
+  body.docs-ndl .cards .sect2 > a {
+    align-items: center;
+  }
+
+  body.docs-ndl.explainer .cards .sect2 > a {
+    align-items: flex-start;
+    padding: 1rem 0;
+  }
+
+  body.docs-ndl .cards .sect2 .paragraph:not(.icon) {
+    text-align: center;
+  }
+
+  body.docs-ndl.explainer .cards .sect2 .paragraph:not(.icon) {
+    text-align: left;
+  }
+
+  body.docs-ndl .cards .sectionbody > div.sect2 {
     /* min-width: 90%; */
     flex: 1 1 100%;
   }
 
-  body.docs-ndl .lists .sectionbody > div.sect2 a {
+  body.docs-ndl .lists .sectionbody > div.sect2 {
     flex: 1 1 100%;
     padding: 1rem;
   }
