@@ -65,7 +65,6 @@
                 <li><a href="/docs/status-codes/current/" class="project-link">Status Codes</a></li>
                 <li><a href="/docs/java-reference/current/" class="project-link">Java Reference</a></li>
                 <li><a href="/docs/kerberos-add-on/current/" class="project-link">Kerberos Add-on</a></li>
-                <li><a href="/docs/cdc/current/" class="project-link">Change Data Capture (CDC)</a></li>
               </ul>
             </div>
 
@@ -93,7 +92,7 @@
               <span class="project-name">Neo4j Graph Data Science</span>
               <ul class="project-links">
                 <li><a href="/docs/graph-data-science/current/" class="project-link">Neo4j Graph Data Science Library</a></li>
-              <li><a href="/docs/graph-data-science-client/current/" class="project-link">Neo4j Graph Data Science Client</a></li>
+                <li><a href="/docs/graph-data-science-client/current/" class="project-link">Neo4j Graph Data Science Client</a></li>
               </ul>
             </div>
 
@@ -108,7 +107,7 @@
             </div>
 
             <div class="navbar-item project">
-              <span class="project-name" href="/docs/drivers-apis">Create applications</span>
+              <span class="project-name" href="/docs/create-applications">Create applications</span>
               <ul class="project-links">
                 <li><a href="{{#with (docs-driver-manual-url page 'python-manual')}}{{{this}}}{{/with}}" class="project-link">Python Driver</a></li>
                 <li><a href="{{#with (docs-driver-manual-url page 'go-manual')}}{{{this}}}{{/with}}" class="project-link">Go Driver</a></li>
@@ -116,14 +115,23 @@
                 <li><a href="{{#with (docs-driver-manual-url page 'javascript-manual')}}{{{this}}}{{/with}}" class="project-link">JavaScript Driver</a></li>
                 <li><a href="{{#with (docs-driver-manual-url page 'dotnet-manual')}}{{{this}}}{{/with}}" class="project-link">.Net Driver</a></li>
                 <li><a href="/docs/graphql-manual/current/" class="project-link">Neo4j GraphQL Library</a></li>
-                <li><a href="/docs/http-api/current/" class="project-link">HTTP API</a></li>
                 <li><a href="/docs/ogm-manual/current/" class="project-link">OGM Library</a></li>
                 <li><a href="https://docs.spring.io/spring-data/neo4j/docs/current/reference/html/#reference" class="project-link">Spring Data Neo4j</a></li>
-                <li><a href="/docs/spark/" class="project-link">Neo4j Connector for Apache Spark</a></li>
-                <li><a href="/docs/kafka/" class="project-link">Neo4j Connector for Apache Kafka</a></li>
+                <li><a href="/docs/http-api/current/" class="project-link">HTTP API</a></li>
+                <li><a href="/docs/query-api" class="project-link">Neo4j Query API</a></li>
               </ul>
             </div>
 
+            <div class="navbar-item project">
+              <span class="project-name" href="/docs/connectors">Connect data sources</span>
+              <ul class="project-links">
+                <li><a href="/docs/spark/" class="project-link">Neo4j Connector for Apache Spark</a></li>
+                <li><a href="/docs/kafka/" class="project-link">Neo4j Connector for Apache Kafka</a></li>
+                <li><a href="/docs/cdc/" class="project-link">Change Data Capture (CDC)</a></li>
+                <li><a href="/docs/dataflow-bigquery/" class="project-link">BigQuery to Neo4j</a></li>
+                <li><a href="/docs/dataflow-google-cloud/" class="project-link">Google Cloud to Neo4j</a></li>
+              </ul>
+            </div>
           </div>
         </div>
         <div class="navbar-item has-dropdown is-hoverable labs">
