@@ -283,7 +283,6 @@ document.addEventListener('DOMContentLoaded', function () {
           el.classList.add(tabActive)
         })
     })
-
   }
 
   // Tabbed code
