@@ -25,7 +25,10 @@
 @import "glossary.css";
 @import "landing.css";
 /* @import "tiles.css"; */
+/* new NDL-based docs-home styles */
 @import "docs-ndl.css";
+/* legacy docs-home styles */
+@import "docs-home.css";
 /* @import "developer.css"; */
 @import "feedback.css";
 @import "themes.css";

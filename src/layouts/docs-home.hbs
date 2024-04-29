@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+{{> head defaultPageTitle='Untitled'}}
+  </head>
+  <body class="article docshome{{#with (or page.attributes.role page.role)}} {{{this}}}{{/with}}{{#with asciidoc.attributes.role}} {{{this}}}{{/with}}{{#with (or page.attributes.theme "developer")}} {{{this}}}{{/with}}">
+{{> header}}
+
+<div class="body">
+{{> nav}}
+<main class="article">
+  {{!-- toolbar for responsive nav --}}
+  <div class="toolbar" role="navigation">
+    <div class="toolbar-wrapper">
+      {{> nav-toggle}}
+    </div>
+  </div>
+
+  <div class="content">
+{{> article}}
+  </div>
+</main>
+</div>
+
+
+
+{{> footer}}
+  </body>
+</html>
