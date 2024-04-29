@@ -20,18 +20,17 @@ body.docs-ndl .nav {
 body.docs-ndl .nav-menu .home-link {
   width: auto;
   background: none;
-  border-bottom: 1px solid rgba(var(--colors-neutral-20));
 }
 
-body.docs-ndl .nav-menu .home-link::before {
+body.docs-ndl .nav-menu .home-link a::before {
   display: inline-block;
   content: url(../img/arrow-long-left.svg);
-  margin-left: 1em;
+  margin-right: 1em;
   vertical-align: middle;
 }
 
 body.docs-ndl .nav-menu .home-link a {
-  display: inline-block;
+  border-bottom: 1px solid rgba(var(--colors-neutral-20));
 }
 
 /* body.docs-ndl .nav-menu > .nav-list {

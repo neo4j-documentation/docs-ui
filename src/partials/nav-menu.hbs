@@ -15,9 +15,9 @@
       {{#unless page.home}}
       {{#if page.attributes.show-home-link}}
       <ul class="nav-list">
-        <li class="nav-item home-link" data-depth="0" aria-label="home-link">
+        <li class="nav-item home-link" data-depth="1" aria-label="home-link">
           {{#with site.homeUrl}}
-          <a href="{{{relativize this}}}" aria-label="Go to home page">Back to home</a>
+          <a href="{{{relativize this}}}" aria-label="Go to docs home page">Docs home</a>
           {{/with}}
         </li>
       </ul>

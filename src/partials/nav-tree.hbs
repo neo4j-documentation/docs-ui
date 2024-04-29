@@ -3,9 +3,9 @@
 
 
   {{!-- add link back to home --}}
-  <li class="nav-item" data-depth="0">
+  <li class="nav-item" data-depth="1">
     {{#with site.homeUrl}}
-    <a href="{{{relativize this}}}" class="home-link{{#if @root.page.home}} is-current{{/if}}" aria-label="Go to home page">Back to home</a>
+    <a href="{{{relativize this}}}" class="home-link{{#if @root.page.home}} is-current{{/if}}" aria-label="Go to docs home page">Docs home</a>
     {{/with}}
   </li>
 

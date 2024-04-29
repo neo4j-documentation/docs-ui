@@ -176,6 +176,7 @@ image:icons/ndl/trophy.svg[]
 [.link]
 link:{docs-home}/getting-started[Explore Graph Academy]
 
+
 === Join forums and discussions
 
 [.icon]
@@ -184,15 +185,14 @@ image:icons/ndl/user-group.svg[]
 [.link]
 link:{docs-home}/getting-started[Neo4j community]
 
-// === Developer blogs, articles and books
 
-// [.icon]
-// image:icons/ndl/academic-cap.svg[]
+=== Developer blogs, articles and books
 
-// [.link]
-// link:{docs-home}/getting-started[Developer center]
+[.icon]
+image:icons/ndl/academic-cap.svg[]
 
-
+[.link]
+link:{docs-home}/getting-started[Developer center]
 
 
 // == License
