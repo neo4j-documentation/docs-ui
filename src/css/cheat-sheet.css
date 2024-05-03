@@ -174,10 +174,6 @@ body.cheat-sheet .selectors .dropdown {
   align-items: center;
 }
 
-body.cheat-sheet .selectors .dropdown .dropdown-styles {
-  background-color: var(--colors-neutral-10);
-}
-
 body.cheat-sheet .nav-panel-types .dropdown .dropdown-label,
 body.cheat-sheet .nav-panel-versions .dropdown .dropdown-label {
   display: flex;
@@ -204,7 +200,7 @@ body.cheat-sheet .selectors > div {
 body.cheat-sheet .selectors .dropdown .dropdown-styles {
   display: inline-block;
   width: 100%;
-  /* background-color: var(--toolbar-background); */
+  background-color: var(--colors-neutral-10);
 }
 
 /* toc */
