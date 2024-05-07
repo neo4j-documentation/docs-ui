@@ -169,6 +169,7 @@ span.label--beta {
 
 span.label--na,
 span.label--no,
+span.label.not-available,
 span.label--removed {
   background: var(--warning-color);
   color: var(--warning-background-color);

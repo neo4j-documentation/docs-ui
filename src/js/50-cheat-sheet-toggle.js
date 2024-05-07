@@ -79,7 +79,7 @@ document.addEventListener('DOMContentLoaded', function () {
     // console.log(`classes on the element: ${elClasses}`)
 
     // get an array of classes that match the select options
-    const labelsToAdd = optionNames.filter(function (obj) {
+    let labelsToAdd = optionNames.filter(function (obj) {
       return elClasses.indexOf(obj) !== -1
     }).sort()
 
@@ -100,9 +100,17 @@ document.addEventListener('DOMContentLoaded', function () {
       return
     }
 
+    const allLabels = Object.values(prodMatrix)
+    let availableOn = true
+    const difference = allLabels.filter((l) => !labelsToAdd.includes(l))
+    if (difference && difference.length <= 2) {
+      labelsToAdd = difference
+      availableOn = false
+    }
+
     if (labelsToAdd && labelsToAdd.length > 0) {
       labelsToAdd.forEach((label) => {
-        addLabel(el, label)
+        addLabel(el, label, availableOn)
       })
     }
   })
@@ -110,7 +118,7 @@ document.addEventListener('DOMContentLoaded', function () {
   // if we've removed elements we need to clean the toc by removing entries for those elements
   cleanToc()
 
-  function addLabel (el, match) {
+  function addLabel (el, match, availableOn) {
     const div = createElement('div', 'paragraph')
     let labelType = 'labels'
 
@@ -133,8 +141,11 @@ document.addEventListener('DOMContentLoaded', function () {
     const p = createElement('p')
     const span = createElement('span', `label label--${match} group--${group}`)
 
-    const text = getProductFromOptionMap(match)
-
+    let text = getProductFromOptionMap(match)
+    if (!availableOn) {
+      text = 'Not available on ' + text
+      span.classList.add('not-available')
+    }
     span.textContent = text
     p.appendChild(span)
 

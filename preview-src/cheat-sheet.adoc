@@ -116,6 +116,18 @@ This example only applies to Neo4j Enterprise Edition and is marked with the `[.
 === Read queries subsection
 
 
+[.neo4j-ce.neo4j-ee.aura-dbe.aura-dsp.aura-dbp.aura-dse]
+====
+[source, cypher, role=noheader]
+----
+<CYPHER EXAMPLE>
+----
+
+[.description]
+This example only applies to Neo4j Enterprise Edition and is marked with the `[.neo4j-ee]` role.
+====
+
+
 ====
 [source, cypher, role=noheader]
 ----
