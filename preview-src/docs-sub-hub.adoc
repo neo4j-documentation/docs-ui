@@ -33,7 +33,7 @@ Nunc lacinia, ipsum sed pharetra luctus, orci magna condimentum enim, sit amet c
 === Cypher Query Language
 
 [.icon]
-image:icons/ndl/command-line.svg[]
+image:icon-gds.png[]
 
 [.description]
 Phasellus in purus massa.
@@ -47,7 +47,7 @@ link:{docs-home}/cypher-manual[]
 === Drivers and connectors
 
 [.icon]
-image:icons/ndl/command-line.svg[]
+image:icon-gds.png[]
 
 [.description]
 Phasellus in purus massa.
@@ -61,7 +61,7 @@ link:{docs-home}/connectors[]
 === Neo4j Tools
 
 [.icon]
-image:icons/ndl/command-line.svg[]
+image:icon-gds.png[]
 
 [.description]
 Phasellus in purus massa.
