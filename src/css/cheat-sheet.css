@@ -185,6 +185,7 @@ body.cheat-sheet .nav-panel-versions .dropdown .dropdown-label {
 body.cheat-sheet .nav-panel-versions .dropdown .dropdown-styles {
   width: 50%;
   display: inline-block;
+  background-color: var(--colors-neutral-10);
 }
 
 body.cheat-sheet .selectors > div {
@@ -199,7 +200,7 @@ body.cheat-sheet .selectors > div {
 body.cheat-sheet .selectors .dropdown .dropdown-styles {
   display: inline-block;
   width: 100%;
-  /* background-color: var(--toolbar-background); */
+  background-color: var(--colors-neutral-10);
 }
 
 /* toc */
@@ -408,11 +409,6 @@ body.cheat-sheet .exampleblock > .content > div.labels {
 
 body.cheat-sheet .exampleblock > .content > div.labels span.label {
   margin-top: 1rem;
-}
-
-body.cheat-sheet div.labels span.group--products,
-body.cheat-sheet div.page-labels span.group--products {
-  display: none;
 }
 
 body.cheat-sheet .exampleblock > .content > div.extra {
