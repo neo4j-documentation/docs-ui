@@ -362,6 +362,7 @@
   .code-walkthrough .doc .listingblock code {
     box-shadow: none;
     border: 0 none !important;
+    tab-size: 2;
   }
 
   .code-walkthrough .toc {
