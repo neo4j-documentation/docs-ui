@@ -216,6 +216,16 @@ body.docs-ndl.explainer .sectionbody .video {
   width: 100%;
 }
 
+/* video embeds */
+
+.video iframe {
+  border-radius: 0.75rem;
+}
+
+body.docs-ndl #preamble + .sect1 {
+  margin-top: 0;
+}
+
 /* sections */
 
 body.docs-ndl .sect1 {
