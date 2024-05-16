@@ -258,6 +258,9 @@ page:
     - content: Category Pop Culture
       url: graph-gist-category-pop-culture.html
       urlType: internal
+    - content: Contribute
+      url: contribute.html
+      urlType: internal
   # additional page attributes indexed by page-slug
     pages-data:
       cheatsheet-products: &cheatsheet-products
