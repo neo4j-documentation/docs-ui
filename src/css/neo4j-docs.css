@@ -24,6 +24,10 @@
     4px 4px 4px 4px rgba(var(--colors-neutral-10));
 }
 
+.docs article .rounded-corners img {
+  border-radius: 15px;
+}
+
 .docs article .no-border img {
   border: none;
   padding: 0;
