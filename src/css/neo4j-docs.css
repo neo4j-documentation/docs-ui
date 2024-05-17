@@ -24,7 +24,8 @@
     4px 4px 4px 4px rgba(var(--colors-neutral-10));
 }
 
-.docs article .rounded-corners img {
+.docs article .rounded-corners img,
+.docs article video.rounded-corners {
   border-radius: 15px;
 }
 
