@@ -53,13 +53,13 @@ body {
 }
 
 .doc h5 {
-  font-size: var(--doc-font-size-h6);
+  font-size: var(--doc-font-size-h5);
   font-weight: 600;
   margin-bottom: 0.5rem;
 }
 
 .doc h6 {
-  font-size: var(--doc-font-size-h6);
+  font-size: var(--doc-font-size-h5);
 }
 
 .doc h1 code,
