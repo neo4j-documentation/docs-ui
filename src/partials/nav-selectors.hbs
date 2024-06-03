@@ -1,13 +1,25 @@
+{{#unless (or @root.page.attributes.nav-hide-site-title (eq @root.page.attributes.theme 'cheat-sheet'))}}
+
+<div class="nav-product">
+  <span class="nav-product-name">
+    {{#with @root.site.homeUrl}}
+    <a href="{{{relativize this}}}" aria-label="Go to home page">{{#with @root.page.componentVersion}}{{{ ./title }}}{{/with}}</a>
+    {{/with}}
+  </span>
+</div>
+
+{{/unless}}
+
 {{#if page.versions.[1]}}
 <div class="nav-panel-versions{{#unless page.navigation}} is-active{{/unless}}" data-panel="explore">
 
   <div class="dropdown">
-    <span class="dropdown-label">{{#with (or page.attributes.cheatsheet-product 'Product')}}{{this}}{{/with}} Version</span>
+    <span class="dropdown-label">Version</span>
 
     <select data-current="{{@root.page.version}}" class="version-selector dropdown-styles">
       {{#with @root.page.componentVersion}}
       <option value="" selected>
-        {{#unless (or @root.page.attributes.nav-hide-component-title (eq @root.page.attributes.theme 'cheat-sheet'))}} {{{ ./title }}} {{/unless}}{{ this.displayVersion }}{{#if (and @root.page.attributes.nav-indicate-latest (eq @root.page.version @root.page.latest.version)) }} (latest){{/if}}
+        {{ this.displayVersion }}{{#if (and @root.page.attributes.nav-indicate-latest (eq @root.page.version @root.page.latest.version)) }} (latest){{/if}}
       </option>
       {{/with}}
       {{#each page.versions}}
@@ -24,14 +36,6 @@
     </select>
   </div>
 </div>
-{{else}}
-{{#unless (or @root.page.attributes.nav-hide-site-title (eq @root.page.attributes.theme 'cheat-sheet'))}}
-{{#with @root.page.componentVersion}}
-<div class="nav-product">
-  <span class="nav-product-name">{{{ ./title }}}</span>
-</div>
-{{/with}}
-{{/unless}}
 
 {{/if}}
 

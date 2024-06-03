@@ -73,16 +73,26 @@ html.is-clipped--nav {
   }
 }
 
-.nav-product {
-  height: 2.5rem;
-  padding: 0.5rem 1.5rem;
+.nav .selectors {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 0 1.5rem;
   box-shadow: 0 1px 0 var(--nav-panel-divider-color);
 }
 
-.nav-product .nav-product-name {
+.nav .selectors .nav-product {
+  height: 2.5rem;
+  padding: 0.5rem 0;
+}
+
+.nav .nav-product .nav-product-name {
   font-size: 1rem;
-  font-weight: 700;
-  /* color: var(--color-docs); */
+  font-weight: 500;
+}
+
+.nav .nav-product .nav-product-name a:visited {
+  color: var(--link-font-color);
 }
 
 .nav-panel-menu {
@@ -476,8 +486,8 @@ html.is-clipped--nav {
 }
 
 .nav-panel-versions {
-  height: var(--toolbar-height);
-  padding: 0.25rem 0.5rem;
+  height: 2.5rem;
+  padding: 0.25rem 0;
 }
 
 .nav-panel-versions .dropdown .dropdown-styles {
