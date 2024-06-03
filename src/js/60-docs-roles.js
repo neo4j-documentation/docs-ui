@@ -25,9 +25,11 @@ document.addEventListener('DOMContentLoaded', function () {
     var label = role.replace('label--', '')
     var labelParts = label.split('-')
 
-    // label could be eg label--new-5.19 but in rolesData it's just new
-    label = rolesData[labelParts[0]] ? labelParts[0] : label
+    // label could be eg aura-db-enterprise - we use the full label
+    // label could be eg new-5.20 - we use 'new' for the label and add the version as text
+    label = (rolesData[label] && rolesData[label].category !== 'version') ? label : labelParts[0]
 
+    // ignore labels that are not defined in rolesData
     if (!rolesData[label]) {
       return
     }
@@ -63,12 +65,13 @@ document.addEventListener('DOMContentLoaded', function () {
   const roleDivs = document.querySelectorAll('body.docs:not(.docshome) *[class*="label--"]')
 
   roleDivs.forEach(function (roleDiv) {
-    // ignore spans because they're inline
-    // we only care about labels on block elements
-    // DIV or TABLE
-    if (roleDiv.nodeName === 'SPAN') return
-
     var roles = roleDiv.classList
+
+    // ignore:
+    // - spans because they're inline and we only care about labels on block elements DIV or TABLE
+    // - discrete headers
+    if (roleDiv.nodeName === 'SPAN' || [...roles].includes('discrete')) return
+
     roles = [...roles].sort().filter(function (c) {
       return (c.startsWith('label--'))
     })
@@ -79,6 +82,10 @@ document.addEventListener('DOMContentLoaded', function () {
 
     roles.forEach(function (role) {
       const labelDetails = getLabelDetails(role)
+
+      // remove the role from the parent div
+      roleDiv.classList.remove(role)
+
       if (typeof labelDetails === 'undefined') {
         return
       }
@@ -92,9 +99,6 @@ document.addEventListener('DOMContentLoaded', function () {
       if (labelDetails.data.function !== '') labelSpan.dataset.function = labelDetails.data.function
 
       labelSpan.appendChild(document.createTextNode(labelDetails.text))
-
-      // remove the role from the parent div
-      roleDiv.classList.remove(role)
 
       labels.push(labelSpan)
     })
