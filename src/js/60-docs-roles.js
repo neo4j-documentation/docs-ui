@@ -27,8 +27,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // label could be eg aura-db-enterprise - we use the full label
     // label could be eg new-5.20 - we use 'new' for the label and add the version as text
-    label = (rolesData[label] && rolesData[label].category != 'version') ? label : labelParts[0]
-    
+    label = (rolesData[label] && rolesData[label].category !== 'version') ? label : labelParts[0]
+
     // ignore labels that are not defined in rolesData
     if (!rolesData[label]) {
       return
@@ -66,14 +66,11 @@ document.addEventListener('DOMContentLoaded', function () {
 
   roleDivs.forEach(function (roleDiv) {
     var roles = roleDiv.classList
-    //  ignore discrete headers
-    // ignore spans because they're inline
-    // we only care about labels on block elements
-    // DIV or TABLE
-    if (roleDiv.nodeName === 'SPAN') return
 
-    
-    if ([...roles].includes('discrete')) return
+    // ignore:
+    // - spans because they're inline and we only care about labels on block elements DIV or TABLE
+    // - discrete headers
+    if (roleDiv.nodeName === 'SPAN' || [...roles].includes('discrete')) return
 
     roles = [...roles].sort().filter(function (c) {
       return (c.startsWith('label--'))
@@ -88,7 +85,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
       // remove the role from the parent div
       roleDiv.classList.remove(role)
-      
+
       if (typeof labelDetails === 'undefined') {
         return
       }
