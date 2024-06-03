@@ -198,6 +198,9 @@ page:
     - content: Feedback disabled
       url: feedback-disabled.html
       urlType: internal
+    - content: Links
+      url: links.html
+      urlType: internal
     - content: Docs roles
       url: docs-roles.html
       urlType: internal
