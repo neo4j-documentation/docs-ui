@@ -73,7 +73,7 @@ html.is-clipped--nav {
   }
 }
 
-.nav .selectors {
+.nav .component {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
@@ -81,7 +81,7 @@ html.is-clipped--nav {
   box-shadow: 0 1px 0 var(--nav-panel-divider-color);
 }
 
-.nav .selectors .nav-product {
+.nav .component .nav-product {
   height: 2.5rem;
   padding: 0.5rem 0;
 }
@@ -93,6 +93,10 @@ html.is-clipped--nav {
 
 .nav .nav-product .nav-product-name a:visited {
   color: var(--link-font-color);
+}
+
+.nav .selectors {
+  padding: 1rem 1.5rem 0;
 }
 
 .nav-panel-menu {
@@ -487,7 +491,8 @@ html.is-clipped--nav {
 
 .nav-panel-versions {
   height: 2.5rem;
-  padding: 0.25rem 0;
+  padding: 0;
+  width: max-content;
 }
 
 .nav-panel-versions .dropdown .dropdown-styles {
