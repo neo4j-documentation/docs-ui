@@ -1,3 +1,4 @@
+<div id="skip-to-content"></div>
 <article class="doc">
 {{#if (eq page.layout '404')}}
 <h1 class="page">{{{or page.title 'Page Not Found'}}}</h1>
@@ -10,16 +11,7 @@ If you typed the URL of this page manually, please double check that you entered
 </div>
 {{else}}
 <div class="sect-header">
-{{#with page.title}}
-<h1 class="page">{{{this}}}</h1>
-{{/with}}
-{{#with (or page.attributes.role page.role)}}
-<div class="roles is-before-toc">
-  {{#each (split-string this ' ')}}
-    <span class="role {{{this}}}"></span>
-  {{/each}}
-</div>
-{{/with}}
+  <h1 class="page{{#with (or page.attributes.role page.role) }}{{#each (split-string this ' ')}} label--{{{this}}}{{/each}}{{/with}}">{{{ page.title }}}</h1>
 </div>
 
 {{#with (or page.attributes.labels page.labels)}}

@@ -139,6 +139,14 @@ page:
     - content: Admonitions
       url: admonitions.html
       urlType: internal
+    - content: Page Banners
+      items:
+      - content: note
+        url: banner-note.html
+        urlType: internal
+      - content: warning
+        url: banner-warning.html
+        urlType: internal
     - content: Labels
       url: labels.html
       urlType: internal
@@ -192,6 +200,9 @@ page:
       urlType: internal
     - content: Feedback disabled
       url: feedback-disabled.html
+      urlType: internal
+    - content: Links
+      url: links.html
       urlType: internal
     - content: Docs roles
       url: docs-roles.html
@@ -252,6 +263,9 @@ page:
       urlType: internal
     - content: Category Pop Culture
       url: graph-gist-category-pop-culture.html
+      urlType: internal
+    - content: Contribute
+      url: contribute.html
       urlType: internal
   # additional page attributes indexed by page-slug
     pages-data:

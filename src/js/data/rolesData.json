@@ -1,0 +1,213 @@
+{
+    "enterprise":{
+        "description": "Function available in Enterprise Edition only",
+        "labelCategory": "product",
+        "product": "Enterprise Edition",
+        "displayText": "Enterprise Edition"
+    },
+    "enterprise-edition":{
+        "description": "Function available in Enterprise Edition only",
+        "labelCategory": "product",
+        "product": "Enterprise Edition",
+        "displayText": "Enterprise Edition"
+    },
+    "enterprise-only":{
+        "description": "Function available in Enterprise Edition only",
+        "labelCategory": "product",
+        "product": "Enterprise Edition",
+        "displayText": "Enterprise Only"
+    },
+    "free":{
+        "description": "Function available in Free version only",
+        "labelCategory": "product",
+        "product": "AuraDB Free",
+        "displayText": "Free"
+    },
+    "full":{
+        "description": "Function available in Enterprise Edition only",
+        "labelCategory": "product",
+        "product": "Enterprise Edition",
+        "displayText": "Full"
+    },
+    "professional":{
+        "description": "Function or feature is available on AuraDB Professional",
+        "labelCategory": "product",
+        "product": "AuraDB Professional",
+        "displayText": "Only available on AuraDB Professional"
+    },
+    "aura-db-enterprise":{
+        "description": "Function available in AuraDB Enterprise",
+        "labelCategory": "product",
+        "product": "AuraDB Enterprise",
+        "displayText": "AuraDB Enterprise"
+    },
+    "not-on-aura":{
+        "description": "Function or feature is not available on Aura",
+        "labelCategory": "product",
+        "product": "Aura",
+        "displayText": "Not available on Aura"
+    },
+    "aura":{
+        "description": "Function or feature is available on Aura",
+        "labelCategory": "product",
+        "product": "Aura",
+        "displayText": "Available on Aura"
+    },
+    "aura-only":{
+        "description": "Function or feature is available on Aura only",
+        "labelCategory": "product",
+        "product": "Aura",
+        "displayText": "Only available on Aura"
+    },
+    "new":{
+        "description": "The feature or function was added in the version stated",
+        "labelCategory": "version",
+        "displayText": "Introduced",
+        "altDisplayText": "Added"
+    },
+    "added":{
+        "description": "The feature or function was added in the version stated",
+        "labelCategory": "version",
+        "displayText": "Introduced",
+        "altDisplayText": "Added"
+    },
+    "changed":{
+        "description": "The feature or function was changed in the version stated",
+        "labelCategory": "version",
+        "displayText": "Changed"
+    },
+    "default":{
+        "description": "The value shown is the default value",
+        "labelCategory": "function",
+        "displayText": "Default"
+    },
+    "discontinued":{
+        "description": "The feature is no longer available",
+        "labelCategory": "version",
+        "displayText": "Discontinued"
+    },
+    "dynamic":{
+        "labelCategory": "function",
+        "displayText": "Dynamic",
+        "versionText": "since"
+    },
+    "alpha":{
+        "labelCategory": "version",
+        "displayText": "Alpha"
+    },
+    "beta":{
+        "labelCategory": "version",
+        "displayText": "Beta"
+    },
+    "deprecated":{
+        "labelCategory": "version",
+        "displayText": "Deprecated"
+    },
+    "removed":{
+        "labelCategory": "version",
+        "displayText": "Removed"
+    },
+    "renamed":{
+        "labelCategory": "version",
+        "displayText": "Renamed"
+    },
+    "updated":{
+        "description": "The feature or function was updated in the version stated",
+        "labelCategory": "version",
+        "displayText": "Updated"
+    },
+    "fabric":{
+        "labelCategory": "function",
+        "function": "Fabric",
+        "displayText": "Fabric"
+    },
+    "apoc-core":{
+        "labelCategory": "function",
+        "displayText": "APOC Core"
+    },
+    "apoc-full":{
+        "labelCategory": "function",
+        "displayText": "APOC Full"
+    },
+    "recommended":{
+        "labelCategory": "admonition",
+        "displayText": "Recommended"
+    },
+    "danger":{
+        "labelCategory": "admonition",
+        "displayText": "Danger"
+    },
+    "warning":{
+        "labelCategory": "admonition",
+        "displayText": "Warning"
+    },
+    "information":{
+        "labelCategory": "admonition",
+        "displayText": "Information"
+    },
+    "yes":{
+        "labelCategory": "admonition",
+        "displayText": "Yes"
+    },
+    "no":{
+        "labelCategory": "admonition",
+        "displayText": "No"
+    },
+    "admin-only": {
+        "labelCategory": "function",
+        "displayText": "Admin Only"
+    },
+    "function":{
+        "labelCategory": "function",
+        "displayText": "Function"
+    },
+    "procedure":{
+        "labelCategory": "procedure",
+        "displayText": "Procedure"
+    },
+    "syntax":{
+        "labelCategory": "function",
+        "displayText": "Syntax"
+    },
+    "beginner":{
+        "labelCategory": "persona",
+        "displayText": "Beginner"
+    },
+    "linux":{
+        "labelCategory": "environment",
+        "displayText": "Linux"
+    },
+    "unix":{
+        "labelCategory": "environment",
+        "displayText": "Unix"
+    },
+    "mac-os":{
+        "labelCategory": "environment",
+        "displayText": "Mac OS"
+    },
+    "windows":{
+        "labelCategory": "environment",
+        "displayText": "Windows"
+    },
+    "cluster":{
+        "labelCategory": "function",
+        "displayText": "Cluster"
+    },
+    "cluster-member-core":{
+        "labelCategory": "function",
+        "displayText": "CORE"
+    },
+    "cluster-member-read-replica":{
+        "labelCategory": "function",
+        "displayText": "READ_REPLICA"
+    },
+    "cluster-member-single":{
+        "labelCategory": "function",
+        "displayText": "SINGLE"
+    },
+    "na":{
+        "labelCategory": "admonition",
+        "displayText": "N/A"
+    }
+
+}
