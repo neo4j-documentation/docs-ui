@@ -1,5 +1,4 @@
 = Tables
-:nofooter:
 :page-ogtitle: This page uses the page-ogtitle attribute to generate a custom title for SEO meta
 :page-theme: docs
 :page-layout: page-wide
@@ -10,6 +9,7 @@
 
 [[bolt-metrics]]
 .Bolt metrics
+=== Bolt metrics
 
 [options="header",cols="<5m,<8,2"]
 |===

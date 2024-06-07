@@ -45,6 +45,22 @@
   scrollbar-width: none;
 }
 
+.page-wide .toc.sidebar .toc-menu ul {
+  max-height: 12rem;
+  overflow-y: scroll;
+  scrollbar-width: thin;
+  border: 1px solid;
+  padding: .25rem;
+}
+
+.page-wide .toc.sidebar .toc-menu ul li a {
+  border: none;
+}
+
+.page-wide .toc.sidebar .toc-menu ul li a:hover {
+  color: var(--link_hover-font-color);
+}
+
 .toc .toc-menu ul::-webkit-scrollbar {
   width: 0;
 }

@@ -29,6 +29,24 @@
     return accum
   }, document.createElement('ul'))
 
+  // var sel = document.createElement('select')
+  // var options = headings.reduce(function (accum, heading) {
+  //   // var link = document.createElement('a')
+  //   // link.textContent = heading.textContent
+  //   // links[(link.href = '#' + heading.id)] = link
+  //   var option = document.createElement('option')
+  //   option.value = heading.id
+  //   option.text = heading.textContent
+  //   // listItem.dataset.level = parseInt(heading.nodeName.slice(1)) - 1
+  //   // listItem.appendChild(link)
+  //   accum.appendChild(option)
+  //   return accum
+  // }, sel)
+
+  // options.classList.add('version-selector', 'dropdown-styles', 'page-wide-selector')
+
+  // console.log(options)
+
   var menu = sidebar.querySelector('.toc-menu-placeholder')
   if (!menu) (menu = document.createElement('div')).className = 'toc-menu-placeholder'
 
@@ -36,6 +54,16 @@
   title.textContent = sidebar.dataset.title || 'Contents'
   menu.appendChild(title)
   menu.appendChild(list)
+
+  // var tableSelector = document.querySelector('.page-wide-selector')
+  // if (tableSelector) {
+  //   tableSelector.addEventListener('change', function (e) {
+  //     const target = e.target
+  //     const url = target.value
+  //     window.location.hash = url
+  //     location.reload()
+  //   })
+  // }
 
   var startOfContent = !document.getElementById('toc') && article.querySelector('h1.page ~ :not(.is-before-toc)')
   if (startOfContent) {

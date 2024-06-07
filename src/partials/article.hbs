@@ -22,6 +22,10 @@ If you typed the URL of this page manually, please double check that you entered
 </div>
 {{/with}}
 
+{{#if (eq page.attributes.layout 'page-wide')}}
+  {{> toc-wide}}
+{{/if}}
+
 {{!-- <span class="{{#with asciidoc.attributes.role}} {{{this}}}{{/with}}"></span> --}}
 
 
