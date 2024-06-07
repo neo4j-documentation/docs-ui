@@ -50,7 +50,7 @@
   overflow-y: scroll;
   scrollbar-width: thin;
   border: 1px solid;
-  padding: .25rem;
+  padding: 0.25rem;
 }
 
 .page-wide .toc.sidebar .toc-menu ul li a {
