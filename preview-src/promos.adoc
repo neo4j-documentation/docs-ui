@@ -1,0 +1,50 @@
+= Promo Blocks
+:author: Neo4j
+:category: development
+:tags: community, contributions, share
+:page-ad-icon: mortarboard
+// :page-ad-overline-link: {aura_signup}
+// :page-ad-overline: Neo4j Aura
+:page-ad-title: Master Neo4j +
+with GraphAcademy
+:page-ad-description: Take your Neo4j skills to the next level with free, hands-on courses
+:page-ad-link: https://graphacademy.neo4j.com?ref=docs
+:page-ad-underline-role: button
+:page-ad-underline: Start Learning
+
+==  Sidebar
+
+See sidebar...
+
+== Some non-graphacademy promo
+
+[.promo]
+====
+This is something worthy to promote but it doesn't have an icon or anything.
+====
+
+== One Liner
+
+[.promo.promo-graphacademy]
+====
+New to Neo4j? Take our free introductory
+link:#[Neo4j Fundamentals course^].
+====
+
+[.promo.promo-graphacademy]
+====
+Learn everything about Graph Algorithms and Machine Learning Pipelines with our
+link:#[Graph Data Science Fundamentals course^].
+====
+
+
+== Learning Path
+
+[.promo.promo-graphacademy]
+====
+You can learn about this topic and so much more in our link:#[Data Reporting Learning Path^]:
+
+* link:#[Foo Fundamentals^].
+* link:#[Introduction to Bar^].
+* link:#[Baz for Data Scientists^].
+====
