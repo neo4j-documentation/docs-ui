@@ -177,12 +177,12 @@ page:
     - content: Training enrollement [disabled]
       url: training-enrollment-disabled.html
       urlType: internal
-    - content: Certification
-      url: neo4j-gds-certify.html
-      urlType: internal
-    - content: Course Yelp
-      url: applied-graph-algo-course-yelp.html
-      urlType: internal
+    # - content: Certification
+    #   url: neo4j-gds-certify.html
+    #   urlType: internal
+    # - content: Course Yelp
+    #   url: applied-graph-algo-course-yelp.html
+    #   urlType: internal
     - content: Tables
       url: tables.html
       urlType: internal
@@ -263,6 +263,9 @@ page:
       urlType: internal
     - content: Contribute
       url: contribute.html
+      urlType: internal
+    - content: Promos
+      url: promos.html
       urlType: internal
   # additional page attributes indexed by page-slug
     pages-data:
