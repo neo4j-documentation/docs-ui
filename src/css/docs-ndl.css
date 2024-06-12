@@ -395,6 +395,11 @@ body.docs-ndl .cards .sect2 .icon img {
   padding: 0;
 }
 
+body.docs-ndl .cards.icon-l .sect2 .icon img {
+  width: 6rem;
+  height: 6rem;
+}
+
 body.docs-ndl .lists .sect2 .icon img,
 body.docs-ndl .icon-s .sect2 .icon img {
   width: 3rem;
