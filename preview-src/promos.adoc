@@ -2,19 +2,11 @@
 :author: Neo4j
 :category: development
 :tags: community, contributions, share
-:page-ad-icon: mortarboard
-// :page-ad-overline-link: {aura_signup}
-// :page-ad-overline: Neo4j Aura
-:page-ad-title: Master Neo4j +
-with GraphAcademy
-:page-ad-description: Take your Neo4j skills to the next level with free, hands-on courses
-:page-ad-link: https://graphacademy.neo4j.com?ref=docs
-:page-ad-underline-role: button
-:page-ad-underline: Start Learning
+include::preview-src/promos-ad-include.adoc[]
 
-==  Sidebar
 
-See sidebar...
+For an example ad block in the sidebar, look to the right.
+The attributes are set by the `include::` on line 5.
 
 == Some non-graphacademy promo
 
@@ -37,7 +29,6 @@ Learn everything about Graph Algorithms and Machine Learning Pipelines with our
 link:#[Graph Data Science Fundamentals course^].
 ====
 
-
 == Learning Path
 
 [.promo.promo-graphacademy]
@@ -48,3 +39,14 @@ You can learn about this topic and so much more in our link:#[Data Reporting Lea
 * link:#[Introduction to Bar^].
 * link:#[Baz for Data Scientists^].
 ====
+
+== Python Example
+
+[.promo.promo-graphacademy]
+====
+Learn how to use the Neo4j Python Driver to build a Neo4j-backed movie recommendation website in the link:https://graphacademy.neo4j.com/courses/app-python/?ref=docs-promo[free Building Neo4j Applications with Python^] course on link:https://graphacademy.neo4j.com/?ref=docs-promo[Neo4j GraphAcademy^].
+====
+
+== Include Example
+
+include::preview-src/promos-include.adoc[]
