@@ -226,7 +226,7 @@
   --toc-font-color: rgba(var(--colors-neutral-70));
   --toc_active-font-color: rgba(var(--colors-baltic-70));
   --toc_active-background-color: rgba(var(--colors-baltic-10));
-  --toc_hover-background-color: rgba(var(--colors-neutral-15));
+  --toc_hover-background-color: rgba(var(--theme-light-palette-neutral-hover));
   --toc-heading-font-color: rgba(var(--colors-neutral-70));
   --toc-border-color: rgba(var(--colors-neutral-30));
   --toc-line-height: 1.4;
