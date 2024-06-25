@@ -90,19 +90,77 @@ Learn how to import data from various data formats, including JSON, XML, and XLS
 [.link]
 link:{docs-home}/apoc/current/import/[*Import data using APOC Core*]
 
+
+[.cards.selectable]
+== Keep exploring
+
+=== GraphAcademy
+
+[.icon]
+image:icons/ndl/icon-graphacademy.svg[]
+
+[.description]
+Learn how to import CSV data into Neo4j using Cypher.
+
+[.link]
+link:https://graphacademy.neo4j.com/courses/importing-cypher/[*GraphAcademy: Importing CSV data into Neo4j*]
+
+
+=== Import CSV data with Neo4j Desktop
+
+[.icon]
+image:icons/ndl/icon-import.svg[]
+
+[.description]
+Learn how to use CSV files to import data to a graph with Neo4j Desktop.
+
+[.link]
+link:{docs-home}/getting-started/appendix/tutorials/guide-import-desktop-csv/[*How-To: Import CSV data with Neo4j Desktop*]
+
+
+=== Importing JSON data from a REST API into Neo4j
+
+[.icon]
+image:icons/ndl/icon-neo4j.svg[]
+
+[.description]
+See techniques for loading data from JSON-based REST APIs into Neo4j.
+
+[.link]
+link:{docs-home}/getting-started/data-import/json-rest-api-import/[*Importing JSON data from a REST API into Neo4j*]
+
+
+
 [.next-steps]
 == Keep exploring
 
 Here are some recommended resources start importing your data:
 
-. link:https://graphacademy.neo4j.com/courses/importing-cypher/[*GraphAcademy: Importing CSV data into Neo4j*]
+* link:https://graphacademy.neo4j.com/courses/importing-cypher/[GraphAcademy: Importing CSV data into Neo4j]
 + 
 Learn how to import CSV data into Neo4j using Cypher.
 
-. link:{docs-home}/getting-started/appendix/tutorials/guide-import-desktop-csv/[*How-To: Import CSV data with Neo4j Desktop*]
+* link:{docs-home}/getting-started/appendix/tutorials/guide-import-desktop-csv/[How-To: Import CSV data with Neo4j Desktop]
 + 
 Learn how to use CSV files to import data to a graph with Neo4j Destktop.
 
-. link:{docs-home}/getting-started/data-import/json-rest-api-import/[*Importing JSON data from a REST API into Neo4j*]
+* link:{docs-home}/getting-started/data-import/json-rest-api-import/[Importing JSON data from a REST API into Neo4j]
++
+See techniques for loading data from JSON-based REST APIs into Neo4j.
+
+[.next-steps]
+== Keep exploring
+
+Here are some recommended resources start importing your data:
+
+. link:https://graphacademy.neo4j.com/courses/importing-cypher/[GraphAcademy: Importing CSV data into Neo4j]
++ 
+Learn how to import CSV data into Neo4j using Cypher.
+
+. link:{docs-home}/getting-started/appendix/tutorials/guide-import-desktop-csv/[How-To: Import CSV data with Neo4j Desktop]
++ 
+Learn how to use CSV files to import data to a graph with Neo4j Destktop.
+
+. link:{docs-home}/getting-started/data-import/json-rest-api-import/[Importing JSON data from a REST API into Neo4j]
 +
 See techniques for loading data from JSON-based REST APIs into Neo4j.

@@ -7,17 +7,12 @@
 {{> header}}
 
 <div class="body">
-{{> nav}}
+{{> nav-ndl}}
 <main class="article">
-  {{!-- toolbar for responsive nav --}}
-  <div class="toolbar" role="navigation">
-    <div class="toolbar-wrapper">
-      {{> nav-toggle}}
-    </div>
-  </div>
+{{#unless page.attributes.no-toolbar}}{{> toolbar}}{{/unless}}
 
   <div class="content">
-{{> article}}
+{{> article-ndl}}
 {{> toc}}
   </div>
 </main>

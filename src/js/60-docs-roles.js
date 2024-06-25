@@ -2,7 +2,7 @@ import { createElement } from './modules/dom'
 import rolesData from './data/rolesData.json'
 
 function checkWrapped () {
-  const labelContainers = document.querySelectorAll('body.docs:not(.docs-ndl) .header-label-container')
+  const labelContainers = document.querySelectorAll('body.docs .header-label-container')
   for (const container of labelContainers) {
     var child = container.querySelector('.labels')
     var lineHeight = parseInt(window.getComputedStyle(container).lineHeight, 10)
@@ -60,7 +60,7 @@ document.addEventListener('DOMContentLoaded', function () {
   // ignore inline labels
 
   const headings = ['H2', 'H3', 'H4', 'H5', 'H6', 'CAPTION']
-  const roleDivs = document.querySelectorAll('body.docs:not(.docs-ndl) *[class*="label--"]')
+  const roleDivs = document.querySelectorAll('body.docs *[class*="label--"]')
 
   roleDivs.forEach(function (roleDiv) {
     // ignore spans because they're inline

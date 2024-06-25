@@ -1,5 +1,6 @@
 = Neo4j documentation
 :page-layout: docs-ndl
+:page-role: hub
 :page-theme: docs
 :page-hide-nav-title: true
 :!toc:
@@ -18,6 +19,7 @@ Choose from self-managed local and cloud deployments, or fully-managed options. 
 
 [.link]
 xref:deployment-options:index.adoc[Create your database]
+
 
 === Cypher
 
