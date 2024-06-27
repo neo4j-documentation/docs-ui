@@ -128,6 +128,11 @@ body.docs-ndl.hub aside.toc.sidebar {
   flex-basis: 0;
 }
 
+body.docs-ndl .toolbar.is-home {
+  background: rgba(var(--colors-neutral-15));
+  box-shadow: none;
+}
+
 body.docs-ndl.hub main > .content {
   /* align-items: center; */
   flex-direction: column;
