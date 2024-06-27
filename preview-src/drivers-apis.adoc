@@ -1,6 +1,6 @@
 [.drivers-apis]
 = Neo4j documentation - Drivers and APIs
-:page-layout: docs-home
+:page-layout: docs-ndl
 :page-theme: docs
 :!toc:
 :page-toclevels: -1

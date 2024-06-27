@@ -1,3 +1,7 @@
+div.labels {
+  font-family: var(--body-font-family);
+}
+
 .flex-labels-container {
   display: flex;
   justify-content: space-between;

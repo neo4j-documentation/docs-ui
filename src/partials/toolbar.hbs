@@ -1,11 +1,13 @@
-<div class="toolbar" role="navigation">
+<div class="toolbar{{#if @root.page.home}} is-home{{/if}}" role="navigation">
   <div class="toolbar-wrapper">
     {{> nav-toggle}}
+    {{#unless @root.page.home}}
     {{#with site.homeUrl}}
     <a href="{{{relativize this}}}" class="home-link{{#if @root.page.home}} is-current{{/if}}" aria-label="Go to home page"></a>
     {{/with}}
     {{> breadcrumbs}}
     {{!-- {{> page-versions}} --}}
     {{> edit-this-page-link}}
+    {{/unless}}
   </div>
 </div>

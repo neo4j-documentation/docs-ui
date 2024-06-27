@@ -109,6 +109,15 @@ page:
       - content: Cu Solet
         url: '/xyz/4.1/index.html#cu-solet'
         urlType: internal
+    - content: Docs Needle Home
+      url: docs-ndl.html
+      urlType: internal
+      module: ROOT
+    - content: Docs Sub Hub
+      url: docs-sub-hub.html
+      urlType: internal
+      module: ROOT
+      items:
     - content: Liber Recusabo
       url: '#liber-recusabo'
       urlType: fragment
@@ -119,10 +128,12 @@ page:
       url: labs.html
       urlType: internal
     - content: Reference - a long title that also has child pages
+      module: ROOT
       items:
       - content: Keyboard Shortcuts
         url: '#'
         urlType: fragment
+        module: ROOT
       - content: Importing and Exporting
         url: '#'
         urlType: fragment
@@ -155,9 +166,6 @@ page:
       urlType: internal
     - content: Cypher DELETE
       url: cheat-sheet.html#delete
-      urlType: internal
-    - content: Docs Index
-      url: docs-index.html
       urlType: internal
     - content: Drivers and APIs
       url: drivers-apis.html
