@@ -1,4 +1,19 @@
+{{#unless (or @root.page.attributes.nav-hide-site-title (eq @root.page.attributes.theme 'cheat-sheet'))}}
+<div class="component">
+  <div class="nav-product">
+    <span class="nav-product-name">
+      {{#with @root.site.homeUrl}}
+      <a href="{{{relativize this}}}" aria-label="Go to home page">{{#with @root.page.componentVersion}}{{{ ./title }}}{{/with}}</a>
+      {{/with}}
+    </span>
+  </div>
+</div>
+{{/unless}}
+      
+{{!-- {{#unless (eq page.attributes.theme 'cheat-sheet') }} --}}
+
 {{#if page.versions.[1]}}
+<div class="selectors">
 <div class="nav-panel-versions{{#unless page.navigation}} is-active{{/unless}}" data-panel="explore">
 
   <div class="dropdown">
@@ -7,7 +22,7 @@
     <select data-current="{{@root.page.version}}" class="version-selector dropdown-styles">
       {{#with @root.page.componentVersion}}
       <option value="" selected>
-        {{#unless (or @root.page.attributes.nav-hide-component-title (eq @root.page.attributes.theme 'cheat-sheet'))}} {{{ ./title }}} {{/unless}}{{ this.displayVersion }}{{#if (and @root.page.attributes.nav-indicate-latest (eq @root.page.version @root.page.latest.version)) }} (latest){{/if}}
+        Version {{ this.displayVersion }}{{#if (and @root.page.attributes.nav-indicate-latest (eq @root.page.version @root.page.latest.version)) }} (latest){{/if}}
       </option>
       {{/with}}
       {{#each page.versions}}
@@ -17,16 +32,20 @@
         value="{{{relativize this.url}}}"
         {{~#if this.missing}} disabled{{/if}}
       >
-        {{ this.displayVersion }}{{#if (and @root.page.attributes.nav-indicate-latest (eq this.version @root.page.latest.version)) }} (latest){{/if}}
+        Version {{ this.displayVersion }}{{#if (and @root.page.attributes.nav-indicate-latest (eq this.version @root.page.latest.version)) }} (latest){{/if}}
       </option>
       {{/unless}}
       {{/each}}
     </select>
   </div>
 </div>
+</div>
 {{/if}}
 
+{{!-- {{/unless}} --}}
+
 {{#if (eq page.attributes.theme 'cheat-sheet') }}
+<div class="selectors">
 <div class="nav-panel-types{{#unless page.navigation}} is-active{{/unless}}" data-panel="explore" data-selector-type="products">
   <div class="dropdown">
     <select id="cheat-sheet-selector-products" class="cs-selector dropdown-styles" data-label-type="products">
@@ -88,5 +107,7 @@
 </div>
 {{/if}} --}}
 
-
+</div>
 {{/if}}
+
+
