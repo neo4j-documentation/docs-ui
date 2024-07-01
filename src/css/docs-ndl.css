@@ -302,9 +302,9 @@ body.docs-ndl .next-steps .sectionbody ul li div.paragraph {
   top: -3.875rem;
 } */
 
-body.docs-ndl .article a:visited {
+/* body.docs-ndl .article a:visited {
   color: var(--neutral-color);
-}
+} */
 
 /* explainer */
 
@@ -585,6 +585,7 @@ body.docs-ndl .cards:not(.selectable) .sect2 .paragraph.link {
 
 body.docs-ndl .cards:not(.selectable) .sect2 .paragraph.link a {
   font-weight: 500;
+  margin-right: 1rem;
 }
 
 body.docs-ndl .cards .sect2 .paragraph.category {
