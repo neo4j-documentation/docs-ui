@@ -1,7 +1,7 @@
 <div class="toolbar{{#if @root.page.home}} is-home{{/if}}" role="navigation">
   <div class="toolbar-wrapper">
     {{> nav-toggle}}
-    {{#unless @root.page.home}}
+    {{#unless (and @root.page.home (eq page.attributes.layout 'docs-ndl'))}}
     {{#with @root.site.url}}
     <a href="{{{relativize this}}}" class="home-link" aria-label="Go to docs home page"></a>
     {{/with}}

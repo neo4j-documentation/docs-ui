@@ -73,6 +73,32 @@ html.is-clipped--nav {
   }
 }
 
+.nav .component {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding-left: 1.5rem;
+  box-shadow: 0 1px 0 var(--nav-panel-divider-color);
+}
+
+.nav .component .nav-product {
+  height: 2.5rem;
+  padding: 0.5rem 0;
+}
+
+.nav .nav-product .nav-product-name {
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.nav .nav-product .nav-product-name a:visited {
+  color: var(--link-font-color);
+}
+
+.nav .selectors {
+  padding: 0;
+}
+
 .nav-panel-menu {
   overflow-y: scroll;
   display: flex;
@@ -464,8 +490,8 @@ html.is-clipped--nav {
 }
 
 .nav-panel-versions {
-  height: var(--toolbar-height);
-  padding: 0.25rem 0.5rem;
+  padding: 1rem 1.5rem 0.5rem;
+  width: max-content;
 }
 
 .nav-panel-versions .dropdown .dropdown-styles {
