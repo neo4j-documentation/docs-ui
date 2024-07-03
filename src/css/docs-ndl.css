@@ -124,6 +124,22 @@ body.docs-ndl .nav-menu .nav-item > a > strong {
 
 /* end of nav */
 
+body.docs-ndl .doc a {
+  text-decoration: none;
+}
+
+body.docs-ndl .doc a::after {
+  display: inline-block;
+}
+
+body.docs-ndl .doc a:hover {
+  text-decoration: underline;
+}
+
+body.docs-ndl .doc a:hover::after {
+  text-decoration: none;
+}
+
 body.docs-ndl.hub aside.toc.sidebar {
   flex-basis: 0;
 }
@@ -240,6 +256,10 @@ body.docs-ndl .next-steps .sectionbody ol li {
   counter-increment: step-counter;
   margin-bottom: 0;
   padding-bottom: 2rem;
+}
+
+body.docs-ndl .next-steps .sectionbody ol li a {
+  text-emphasis: none;
 }
 
 body.docs-ndl .next-steps .sectionbody ol li:last-of-type {
@@ -434,6 +454,7 @@ body.docs-ndl .lists ul li {
 
 body.docs-ndl .lists ul li a {
   font-weight: var(--font-weight-normal);
+  text-decoration: none;
 }
 
 /* cards */
@@ -480,6 +501,7 @@ body.docs-ndl .widget:not(.video) {
 body.docs-ndl .cards .sect2 > a {
   color: var(--neutral-color);
   font-weight: var(--font-weight-normal);
+  text-decoration: none;
 }
 
 body.docs-ndl.color-docs .sect2 {
@@ -590,6 +612,7 @@ body.docs-ndl .cards:not(.selectable) .sect2 .paragraph.link {
 body.docs-ndl .cards:not(.selectable) .sect2 .paragraph.link a {
   font-weight: 500;
   margin-right: 1rem;
+  /* text-decoration: none; */
 }
 
 body.docs-ndl .cards .sect2 .paragraph.category {
@@ -605,6 +628,7 @@ body.docs-ndl .highlights a {
   justify-content: space-between;
   color: var(--neutral-color);
   font-weight: var(--font-weight-normal);
+  text-decoration: none;
 }
 
 body.docs-ndl .highlights a::after,
@@ -620,6 +644,7 @@ body.docs-ndl .highlights a::after {
   display: flex;
   margin-left: 1.5rem;
   color: var(--neutral-color);
+  float: right;
 }
 
 body.docs-ndl .cards .sect2 .ulist {
