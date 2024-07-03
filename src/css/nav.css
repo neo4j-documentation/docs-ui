@@ -490,8 +490,9 @@ html.is-clipped--nav {
 }
 
 .nav-panel-versions {
-  padding: 1rem 1.5rem 0.5rem;
-  width: max-content;
+  /* padding: 1rem 1.5rem 0.5rem; */
+  /* width: max-content; */
+  padding: 0.25rem 0.5rem;
 }
 
 .nav-panel-versions .dropdown .dropdown-styles {
