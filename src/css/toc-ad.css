@@ -1,6 +1,6 @@
 .toc .toc-ad {
   border: 1px solid #e2e3e5;
-  padding: 24px 16px 48px;
+  padding: 24px 24px 18px 18px;
   border-radius: 12px;
   margin: 2rem -0.5rem 0;
   background: #fff url(../img/ad-blob.svg) no-repeat bottom right;
@@ -13,8 +13,9 @@
   color: #1a1b1d;
 }
 
-.toc .toc-ad a:active {
-  background-color: var(--color-white) !important;
+.toc .toc-ad a:active,
+.toc .toc-ad a:focus {
+  background-color: transparent !important;
 }
 
 .toc .toc-ad .toc-ad-icon {
@@ -35,19 +36,21 @@
 
 .toc .toc-ad .toc-ad-title {
   color: rgba(var(--colors-neutral-75));
-  font-size: 18px;
+  font-size: 16px;
   margin: 12px 0 !important;
   padding: 0 !important;
+  font-weight: 600;
 }
 
 .toc .toc-ad-description {
   color: rgba(var(--colors-neutral-75));
-  margin-top: 0;
+  margin: 12px 0 18px;
+  font-size: 14px;
 }
 
 .toc .toc-ad-underline {
   color: rgba(var(--colors-baltic-50));
-  font-weight: bold;
+  font-weight: 600;
 }
 
 .toc .toc-ad-underline-button,
@@ -56,8 +59,8 @@
   background-color: rgba(var(--colors-baltic-50));
   color: var(--color-white);
   display: inline-block;
-  font-weight: bold;
   padding: 8px 24px;
+  font-weight: 600;
 }
 
 .doc .ad {

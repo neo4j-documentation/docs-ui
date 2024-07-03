@@ -102,6 +102,10 @@ body {
   display: none;
 }
 
+.navbar .navbar-grow {
+  flex-grow: 1;
+}
+
 @media screen and (min-width: 1024px) {
   .navbar-end > .navbar-item,
   .navbar-end .navbar-link {
