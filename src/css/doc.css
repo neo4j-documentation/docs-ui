@@ -53,13 +53,13 @@ body {
 }
 
 .doc h5 {
-  font-size: var(--doc-font-size-h6);
+  font-size: var(--doc-font-size-h5);
   font-weight: 600;
   margin-bottom: 0.5rem;
 }
 
 .doc h6 {
-  font-size: var(--doc-font-size-h6);
+  font-size: var(--doc-font-size-h5);
 }
 
 .doc h1 code,
@@ -175,11 +175,17 @@ body {
 .doc a {
   font-weight: 600;
   color: var(--link-font-color);
+  /* border-bottom: 1px solid var(--link-font-color); */
+  /* text-decoration: none; */
+  text-decoration: underline;
 }
 
 .doc a:hover,
-.doc a:hover code:hover {
+.doc a:focus,
+.doc a:hover code:hover,
+.doc a:focus code:focus {
   color: var(--link_hover-font-color);
+  /* border-bottom: 1px solid var(--link_hover-font-color); */
 }
 
 .doc a:visited {
@@ -1300,7 +1306,7 @@ body {
   border: none;
 }
 
-.doc details {
+.doc div > details {
   margin-bottom: 1.5rem;
 }
 

@@ -1,0 +1,11 @@
+body.center-align .toolbar {
+  justify-content: center;
+}
+
+body.center-align .content {
+  justify-content: center;
+}
+
+body.center-align .doc {
+  max-width: 1104px;
+}

@@ -15,6 +15,10 @@
     {{/if}}
 
     <a href="{{{page.attributes.ad-link}}}" target="_blank">
+        {{#with page.attributes.ad-icon}}
+        <i class="toc-ad-icon toc-ad-icon--{{{this}}}"></i>
+        {{/with}}
+
         {{#with page.attributes.ad-image}}
         <img class="toc-ad-image" src="{{{this}}}" alt="{{{ page.attributes.ad-title }}}">
         {{/with}}

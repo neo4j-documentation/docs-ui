@@ -12,7 +12,6 @@
     .forEach(function (el) {
       if (document.location.hostname !== el.hostname && !el.hostname.match(nonExternals)) {
         el.classList.add('external')
-        el.setAttribute('aria-label', 'Link label (opens in new tab)')
       }
 
       if (el.target === '_blank') {

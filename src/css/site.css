@@ -24,6 +24,7 @@
 @import "labels.css";
 @import "glossary.css";
 @import "landing.css";
+@import "center-align.css";
 /* @import "tiles.css"; */
 /* new NDL-based docs-home styles */
 @import "docs-ndl.css";
@@ -45,3 +46,4 @@
 @import "neo4j-docs.css";
 @import "newsletter.css";
 @import "challenges.css";
+@import "promo.css";

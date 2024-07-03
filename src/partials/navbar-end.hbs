@@ -65,7 +65,6 @@
                 <li><a href="/docs/status-codes/current/" class="project-link">Status Codes</a></li>
                 <li><a href="/docs/java-reference/current/" class="project-link">Java Reference</a></li>
                 <li><a href="/docs/kerberos-add-on/current/" class="project-link">Kerberos Add-on</a></li>
-                <li><a href="/docs/cdc/current/" class="project-link">Change Data Capture (CDC)</a></li>
               </ul>
             </div>
 
@@ -93,6 +92,7 @@
               <span class="project-name">Neo4j Graph Data Science</span>
               <ul class="project-links">
                 <li><a href="/docs/graph-data-science/current/" class="project-link">Neo4j Graph Data Science Library</a></li>
+                <li><a href="/docs/graph-data-science-client/current/" class="project-link">Neo4j Graph Data Science Client</a></li>
               </ul>
             </div>
 
@@ -107,7 +107,7 @@
             </div>
 
             <div class="navbar-item project">
-              <span class="project-name" href="/docs/drivers-apis">Create applications</span>
+              <span class="project-name" href="/docs/create-applications">Create applications</span>
               <ul class="project-links">
                 <li><a href="{{#with (docs-driver-manual-url page 'python-manual')}}{{{this}}}{{/with}}" class="project-link">Python Driver</a></li>
                 <li><a href="{{#with (docs-driver-manual-url page 'go-manual')}}{{{this}}}{{/with}}" class="project-link">Go Driver</a></li>
@@ -115,98 +115,94 @@
                 <li><a href="{{#with (docs-driver-manual-url page 'javascript-manual')}}{{{this}}}{{/with}}" class="project-link">JavaScript Driver</a></li>
                 <li><a href="{{#with (docs-driver-manual-url page 'dotnet-manual')}}{{{this}}}{{/with}}" class="project-link">.Net Driver</a></li>
                 <li><a href="/docs/graphql-manual/current/" class="project-link">Neo4j GraphQL Library</a></li>
-                <li><a href="/docs/http-api/current/" class="project-link">HTTP API</a></li>
+                <li><a href="/docs/nvl/current/" class="project-link">Neo4j Visualization Library</a></li>
                 <li><a href="/docs/ogm-manual/current/" class="project-link">OGM Library</a></li>
                 <li><a href="https://docs.spring.io/spring-data/neo4j/docs/current/reference/html/#reference" class="project-link">Spring Data Neo4j</a></li>
-                <li><a href="/docs/spark/" class="project-link">Neo4j Connector for Apache Spark</a></li>
-                <li><a href="/docs/kafka/" class="project-link">Neo4j Connector for Apache Kafka</a></li>
+                <li><a href="/docs/http-api/current/" class="project-link">HTTP API</a></li>
+                <li><a href="/docs/query-api/current/" class="project-link">Neo4j Query API</a></li>
               </ul>
             </div>
 
+            <div class="navbar-item project">
+              <span class="project-name" href="/docs/connectors">Connect data sources</span>
+              <ul class="project-links">
+                <li><a href="/docs/spark/current/" class="project-link">Neo4j Connector for Apache Spark</a></li>
+                <li><a href="/docs/kafka/" class="project-link">Neo4j Connector for Apache Kafka</a></li>
+                <li><a href="/docs/cdc/" class="project-link">Change Data Capture (CDC)</a></li>
+                <li><a href="/docs/dataflow-bigquery/" class="project-link">BigQuery to Neo4j</a></li>
+                <li><a href="/docs/dataflow-google-cloud/" class="project-link">Google Cloud to Neo4j</a></li>
+              </ul>
+            </div>
           </div>
         </div>
         <div class="navbar-item has-dropdown is-hoverable labs">
           <a class="navbar-link" href="/labs/">Labs</a>
           <div class="navbar-dropdown">
             <div class="navbar-item project">
-              <a class="project-name" href="/labs/apoc/">APOC Extended</a>
-              {{!-- <p class="project-description">A library of procedures and functions for interacting with Neo4j</p> --}}
-
-              {{!-- <ul class="project-links">
-                <li><a href="/labs/apoc/5/" class="project-link">Documentation</a></li>
-                <li><a href="/developer/neo4j-apoc/" class="project-link">Developer Guide</a></li>
-              </ul> --}}
-            </div>
-            <div class="navbar-item project">
-              <a class="project-name" href="/labs/arrows/">arrows.app</a>
-              {{!-- <ul class="project-links">
-                <li><a href="/labs/arrows/" class="project-link">Details</a></li>
-                <li><a href="https://arrows.app" class="project-link">arrows.app</a></li>
-              </ul> --}}
-            </div>
-            <div class="navbar-item project">
-              <a class="project-name" href="/labs/aura-cli/">Aura CLI</a>
-            </div>
-            <div class="navbar-item project">
-              <a class="project-name" href="/labs/cypher-workbench/">Cypher Workbench</a>
-            </div>
-            <div class="navbar-item project">
-              <a class="project-name" href="/labs/etl-tool/">ETL Tool</a>
-              {{!-- <p class="project-description">A library of procedures and functions for interacting with Neo4j</p> --}}
-              {{!-- <ul class="project-links">
-                <li><a href="/labs/etl-tool/" class="project-link">Details</a></li>
-                <li><a href="/labs/etl-tool/1.5.0/" class="project-link">Documentation</a></li>
-              </ul> --}}
-            </div>
-            <div class="navbar-item project">
-              <a class="project-name" href="/labs/halin/">Halin</a>
-            </div>
-            <div class="navbar-item project">
-              <a class="project-name" href="/labs/neo4j-needle-starterkit/">Needle Starter Kit</a>
-            </div>
-            <div class="navbar-item project">
-              <a class="project-name" href="/labs/neo4j-helm/">Neo4j Helm</a>
-              {{!-- <ul class="project-links">
-                <li><a href="/labs/neo4j-helm/" class="project-link">Details</a></li>
-                <li><a href="/labs/neo4j-helm/1.0.0/" class="project-link">Documentation</a></li>
-              </ul> --}}
-            </div>
-            <div class="navbar-item project">
-              <a class="project-name" href="/labs/neo4j-migrations/">Neo4j Migrations</a>
-              {{!-- <ul class="project-links">
-                <li><a href="/labs/neo4j-migrations/" class="project-link">Details</a></li>
-                <li><a href="/labs/neo4j-migrations/2.0/" class="project-link">Documentation</a></li>
-              </ul> --}}
-            </div>
-            <div class="navbar-item project">
-              <a class="project-name" href="/labs/liquibase/">Neo4j Plugin For Liquibase</a>
-              {{!-- <ul class="project-links">
-                <li><a href="/labs/liquibase/" class="project-link">Details</a></li>
-                <li><a href="https://github.com/liquibase/liquibase-neo4j" class="project-link">Documentation</a></li>
-              </ul> --}}
-            </div>
-            <div class="navbar-item project">
-              <a class="project-name" href="/labs/neosemantics/">Neosemantics</a>
-              {{!-- <p class="project-description">A library of procedures and functions for interacting with Neo4j</p> --}}
+              <a class="project-name" href="/labs/genai-ecosystem/">GenAI Ecosystem</a>
               <ul class="project-links">
-                <li><a href="/labs/rdflib-neo4j/" class="project-link">RDFLib-Neo4j</a></li>
+                <li><a href="/labs/genai-ecosystem/llm-graph-builder/" class="project-link">LLM Knowledge Graph Builder</a></li>
+                <li><a href="/labs/genai-ecosystem/vector-search/" class="project-link">Vector Index &amp; Search</a></li>
+                <li><a href="/labs/genai-ecosystem/langchain/" class="project-link">LangChain</a></li>
+                {{!-- <li><a href="/labs/genai-ecosystem/langchain4j/" class="project-link">LangChain4j</a></li> --}}
+                <li><a href="/labs/genai-ecosystem/langchain-js/" class="project-link">LangChain.js</a></li>
+                <li><a href="/labs/genai-ecosystem/llamaindex/" class="project-link">LlamaIndex</a></li>
+                {{!-- <li><a href="/labs/genai-ecosystem/spring-ai/" class="project-link">SpringAI</a></li> --}}
+                {{!-- <li><a href="/labs/genai-ecosystem/semantic-kernel/" class="project-link">Semantic Kernel</a></li> --}}
+                <li><a href="/labs/genai-ecosystem/haystack/" class="project-link">Haystack</a></li>
+                <li><a href="/labs/genai-ecosystem/dspy/" class="project-link">DSPy</a></li>
+              </ul>
+            </div>
+
+            <div class="navbar-item project">
+              <strong class="project-name" href="/labs/apoc/">Developer Tools</strong>
+              <ul class="project-links">
+                <li><a href="/labs/apoc/" class="project-link">APOC Extended</a></li>
+                <li><a class="project-link" href="/labs/aura-cli/">Aura CLI</a></li>
+                <li><a class="project-link" href="/labs/arrows/">arrows.app</a></li>
+                <li><a class="project-link" href="/labs/cypher-workbench/">Cypher Workbench</a></li>
+                <li><a class="project-link" href="/labs/etl-tool/">ETL Tool</a></li>
+                <li><a class="project-link" href="/labs/neodash/">NeoDash</a></li>
+                {{!-- Graduated: --}}
+                {{!-- <li><a class="project-halin" href="/labs/halin/">Halin</a></li> --}}
+                {{!-- <li><a class="project-link" href="/labs/neo4j-helm/">Neo4j Helm</a></li> --}}
+              </ul>
+            </div>
+
+            <div class="navbar-item project">
+              <strong class="project-name">Frameworks &amp; Integrations</strong>
+              <ul class="project-links">
+                <li><a class="project-link" href="/labs/neo4j-needle-starterkit/">Needle Starter Kit</a></li>
+                <li><a class="project-link" href="/labs/neomodel/">neomodel</a></li>
+                <li><a class="project-link" href="/labs/liquibase/">Neo4j Plugin for Liquibase</a></li>
+                <li><a class="project-link" href="/labs/neo4j-migrations/">Neo4j Migrations</a></li>
+                <li><a class="project-link" href="/labs/neomodel/">neomodel</a></li>
               </ul>
             </div>
             <div class="navbar-item project">
-              <a class="project-name" href="/labs/neodash/">NeoDash</a>
+              <a class="project-name" href="/labs/neosemantics/">RDF &amp; Linked Data</a>
+              {{!-- <p class="project-description">A library of procedures and functions for interacting with Neo4j</p> --}}
+              <ul class="project-links">
+                <li><a href="/labs/neosemantics/" class="project-link">Neosemantics (Java)</a></li>
+                <li><a href="/labs/rdflib-neo4j/" class="project-link">RDFLib-Neo4j (Python)</a></li>
+              </ul>
+            </div>
+
+
+
+
+
+
+
+            <div class="navbar-item project">
+
               {{!-- <p class="project-description">A library of procedures and functions for interacting with Neo4j</p> --}}
               {{!-- <ul class="project-links">
                 <li><a href="/labs/neodash/" class="project-link">Details</a></li>
                 <li><a href="/labs/neodash/2.1/" class="project-link">Documentation</a></li>
               </ul> --}}
             </div>
-            <div class="navbar-item project">
-              <a class="project-name" href="/labs/neomodel/">neomodel</a>
-              {{!-- <ul class="project-links">
-                <li><a href="/labs/neomodel/" class="project-link">Details</a></li>
-                <li><a href="https://neomodel.readthedocs.io/en/latest/" target="_blank" class="project-link">Documentation</a></li>
-              </ul> --}}
-            </div>
+
           </div>
         </div>
         <div class="navbar-item has-dropdown is-hoverable developer">
@@ -237,6 +233,7 @@
               <ul class="project-links">
                 <li><a class="project-link" href="https://graphacademy.neo4j.com/courses/neo4j-fundamentals/?ref=docs-nav">Neo4j Fundamentals</a></li>
                 <li><a class="project-link" href="https://graphacademy.neo4j.com/courses/cypher-fundamentals/?ref=docs-nav">Cypher Fundamentals</a></li>
+                <li><a class="project-link" href="https://graphacademy.neo4j.com/courses/importing-fundamentals/?ref=docs-nav">Importing Data Fundamentals</a></li>
                 <li><a class="project-link" href="https://graphacademy.neo4j.com/courses/importing-csv-data/?ref=docs-nav">Importing CSV Data</a></li>
                 <li><a class="project-link" href="https://graphacademy.neo4j.com/courses/modeling-fundamentals/?ref=docs-nav">Graph Data Modeling</a></li>
               </ul>
@@ -246,7 +243,6 @@
               <ul class="project-links">
                 <li><a class="project-link" href="https://graphacademy.neo4j.com/courses/gds-product-introduction/?ref=docs-nav">Into to Graph Data Science</a></li>
                 <li><a class="project-link" href="https://graphacademy.neo4j.com/courses/graph-data-science-fundamentals/?ref=docs-nav">Graph Data Science Fundamentals</a></li>
-                <li><a class="project-link" href="https://graphacademy.neo4j.com/courses/gds-community-detection/?ref=docs-nav">Community Detection</a></li>
                 <li><a class="project-link" href="https://graphacademy.neo4j.com/courses/gds-shortest-paths/?ref=docs-nav">Path Finding</a></li>
               </ul>
             </div>
@@ -254,6 +250,7 @@
               <a class="project-name" href="https://graphacademy.neo4j.com/categories/llms/?ref=docs-nav" target="_blank">Generative AI Courses</a>
               <ul class="project-links">
                 <li><a class="project-link" href="https://graphacademy.neo4j.com/courses/llm-fundamentals/?ref=docs-nav">Neo4j &amp; LLM Fundamentals</a></li>
+                <li><a class="project-link" href="https://graphacademy.neo4j.com/courses/llm-vectors-unstructured//?ref=docs-nav">Vector Indexes &amp; Unstructured Data</a></li>
                 <li><a class="project-link" href="https://graphacademy.neo4j.com/courses/llm-chatbot-python/?ref=docs-nav">Build a Chatbot with Python</a></li>
                 <li><a class="project-link" href="https://graphacademy.neo4j.com/courses/llm-chatbot-typescript/?ref=docs-nav">Build a Chatbot with TypeScript</a></li>
               </ul>

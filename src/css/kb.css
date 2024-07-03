@@ -19,7 +19,7 @@ body.kb h2::after {
 
 body.kb .label {
   background-color: var(--color-kb) !important;
-  color: var(--color-kb);
+  color: rgba(var(--colors-neutral-15));
 }
 
 /* Hero */

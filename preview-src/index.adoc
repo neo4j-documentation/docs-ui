@@ -740,3 +740,9 @@ For more information, see the link:/ops-manual[Operations Manual^]
 . Text <<test-links,testing link text styling>> text text.
 . Text <<test-links,`testing link text styling monospace`>> text text.
 . Text `<<test-links,testing link text styling monospace>>` text text.
+
+
+== skip-to-content links
+Link to a section down the page: link:#skip-to-content[]
+
++++<a class="show-on-focus skip-link" href="#skip-to-content" title="Skip to content">Skip to content</a>+++

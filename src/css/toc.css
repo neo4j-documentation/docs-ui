@@ -1,6 +1,7 @@
 .toc-menu {
   color: var(--toc-font-color);
   margin-bottom: 2rem;
+  width: 220px !important;
 }
 
 .toc.sidebar {
