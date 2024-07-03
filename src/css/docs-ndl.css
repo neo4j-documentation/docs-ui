@@ -183,7 +183,7 @@ body.docs-ndl.explainer .sectionbody {
   row-gap: 1rem;
   column-gap: 2%;
   align-content: stretch;
-  justify-content: space-between;
+  /* justify-content: space-between; */
 }
 
 body.docs-ndl .widget .sectionbody {
