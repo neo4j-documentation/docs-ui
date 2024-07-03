@@ -351,10 +351,14 @@ body.docs-ndl .paragraph.footer-link {
   padding-right: 0;
 }
 
-/* clickable cards */
+/* selectable cards */
 
 body.docs-ndl .cards.selectable .sect2 {
   cursor: pointer;
+}
+
+body.docs-ndl .cards.selectable .sect2 a {
+  text-decoration: none;
 }
 
 body.docs-ndl .cards.selectable .sect2:hover {
