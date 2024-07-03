@@ -2,8 +2,8 @@
   <div class="toolbar-wrapper">
     {{> nav-toggle}}
     {{#unless @root.page.home}}
-    {{#with site.homeUrl}}
-    <a href="{{{relativize this}}}" class="home-link{{#if @root.page.home}} is-current{{/if}}" aria-label="Go to home page"></a>
+    {{#with @root.site.url}}
+    <a href="{{{relativize this}}}" class="home-link" aria-label="Go to docs home page"></a>
     {{/with}}
     {{> breadcrumbs}}
     {{!-- {{> page-versions}} --}}

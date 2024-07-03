@@ -1,6 +1,11 @@
 <nav class="breadcrumbs" aria-label="breadcrumbs">
   {{#if page.breadcrumbs}}
   <ul>
+    {{#if (and @root.page.attributes.breadcrumb-title @root.page.attributes.breadcrumb-path)}}
+    {{#with @root.site.url}}
+    <li><a href="{{{relativize this}}}/{{{@root.page.attributes.breadcrumb-path}}}">{{{@root.page.attributes.breadcrumb-title}}}</a></li>
+    {{/with}}
+    {{/if}}
     {{#each (or asciidoc.attributes.breadcrumbs page.attributes.breadcrumbs)}}
     <li>
       {{#if this.url}}
@@ -12,11 +17,16 @@
       {{/if}}
     </li>
     {{/each}}
+
+    {{!-- don't display the component name in breadcrumbs for docs-home --}}
+    {{#unless (eq page.attributes.layout 'docs-ndl') }}
     {{#with page.componentVersion}}
     {{#if (and ./title (not (or ./root (eq ./title @root.page.breadcrumbs.0.content))))}}
     <li><a href="{{{relativize ./url}}}">{{{./title}}}</a></li>
     {{/if}}
     {{/with}}
+    {{/unless}}
+
     {{#each page.breadcrumbs}}
     <li>
     {{~#if (and ./url (eq ./urlType 'internal'))~}}
