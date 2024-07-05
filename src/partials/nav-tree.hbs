@@ -1,27 +1,31 @@
 {{#if navigation.length}}
 <ul class="nav-list">
+{{!-- <span>Show pages from this module: {{{show}}}</span> --}}
   {{#each navigation}}
-  <li class="nav-item{{#if (eq this.url @root.page.url)}} is-current-page{{/if}}" data-depth="{{or ../level 0}}"{{#with this.asciidoc}} data-slug="{{this.attributes.page-slug}}"{{/with}}>
-    {{#if this.content}}
-    {{#if this.items.length}}
-    {{!-- <button class="nav-item-toggle"></button> --}}
+  {{!-- <span>module: {{{or this.module ../module}}}</span> --}}
+  {{!-- <span>Show if this module: {{{../show}}}</span> --}}
+  {{!-- <span>Show li?{{{(eq ../show (or this.module ../module))}}}</span> --}}
+  {{!-- <span>Root Page module: {{{@root.page.module}}}</span> --}}
+    {{#if (or (eq (or this.module ../module) ../show) (ne @root.page.attributes.nav-tree 'module-only'))}}
+    <li class="nav-item{{#if (eq this.url @root.page.url)}} is-current-page{{/if}}" data-module="{{or ../module this.module}}" data-depth="{{or ../level 0}}"{{#with this.asciidoc}} data-slug="{{this.attributes.page-slug}}"{{/with}}>
+      {{#if this.content}}
+      {{#if this.url}}
+      <a class="nav-link{{#if this.items.length}} nav-item-toggle{{/if}}" href="
+        {{~#if (eq this.urlType 'internal')}}{{{relativize this.url}}}
+        {{~else}}{{{this.url}}}{{~/if}}">{{{this.content}}}</a>
+      {{else if this.items.length }}
+      <span class="nav-text nav-item-toggle">{{{this.content}}}</span>
+      {{else if (has-string this.content "href=") }}
+        {{{this.content}}}
+      {{else}}
+      <span class="nav-text nav-section-header">
+        {{{this.content}}}
+        </span>
+      {{/if}}
+      {{/if}}
+        {{> nav-tree navigation=this.items level=(increment ../level) module=(or this.module ../module) show=../show}}
+    </li>
     {{/if}}
-    {{#if this.url}}
-    <a class="nav-link{{#if this.items.length}} nav-item-toggle{{/if}}" href="
-      {{~#if (eq this.urlType 'internal')}}{{{relativize this.url}}}
-      {{~else}}{{{this.url}}}{{~/if}}">{{{this.content}}}</a>
-    {{else if this.items.length }}
-    <span class="nav-text nav-item-toggle">{{{this.content}}}</span>
-    {{else if (has-string this.content "href=") }}
-      {{{this.content}}}
-    {{else}}
-    <span class="nav-text nav-section-header">
-      {{{this.content}}}
-      </span>
-    {{/if}}
-    {{/if}}
-{{> nav-tree navigation=this.items level=(increment ../level)}}
-  </li>
   {{/each}}
 </ul>
 {{/if}}

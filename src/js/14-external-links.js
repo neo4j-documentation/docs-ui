@@ -7,20 +7,15 @@
 
 ;(function () {
   'use strict'
-
-  // open all non neo4j.com/docs links in a new tab
-  // document.querySelectorAll('.doc a[href^="http"]')
-  //   .forEach(function (el) {
-  //     if (!el.href.includes('neo4j.com/docs')) {
-  //       // el.setAttribute('target', '_blank');
-  //       // el.classList.add('external')
-  //     }
-  //   })
-
-  // add class and aria-label to all links that open in a new tab
-  document.querySelectorAll('.doc a[target="_blank"]')
+  const nonExternals = /neo4j\.[com|dev]/g
+  document.querySelectorAll('.doc a[href^="http"], .doc a[target="_blank"]')
     .forEach(function (el) {
-      el.classList.add('external')
-      el.setAttribute('aria-label', 'Link label (opens in new tab)')
+      if (document.location.hostname !== el.hostname && !el.hostname.match(nonExternals)) {
+        el.classList.add('external')
+      }
+
+      if (el.target === '_blank') {
+        el.setAttribute('aria-label', 'Link label (opens in new tab)')
+      }
     })
 })()

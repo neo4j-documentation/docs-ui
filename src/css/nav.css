@@ -73,6 +73,32 @@ html.is-clipped--nav {
   }
 }
 
+.nav .component {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding-left: 1.5rem;
+  box-shadow: 0 1px 0 var(--nav-panel-divider-color);
+}
+
+.nav .component .nav-product {
+  height: 2.5rem;
+  padding: 0.5rem 0;
+}
+
+.nav .nav-product .nav-product-name {
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.nav .nav-product .nav-product-name a:visited {
+  color: var(--link-font-color);
+}
+
+.nav .selectors {
+  padding: 0;
+}
+
 .nav-panel-menu {
   overflow-y: scroll;
   display: flex;
@@ -348,7 +374,7 @@ html.is-clipped--nav {
 
 .nav-item a:hover,
 .nav-item span:hover {
-  background-color: rgba(var(--colors-neutral-25));
+  background-color: var(--toc_hover-background-color);
 }
 
 .is-current-page.is-active > a {
@@ -448,8 +474,8 @@ html.is-clipped--nav {
 }
 
 .nav-item .nav-section-header {
-  margin-top: 1.5rem;
-  margin-bottom: 0.5rem;
+  margin-top: 1rem;
+  margin-bottom: 0;
   padding-top: 1.5rem !important;
   border-top: 1px solid var(--colors-netural-25);
 }
@@ -464,7 +490,8 @@ html.is-clipped--nav {
 }
 
 .nav-panel-versions {
-  height: var(--toolbar-height);
+  /* padding: 1rem 1.5rem 0.5rem; */
+  /* width: max-content; */
   padding: 0.25rem 0.5rem;
 }
 
