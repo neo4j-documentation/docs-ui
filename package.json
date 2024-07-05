@@ -1,6 +1,6 @@
 {
   "name": "@neo4j/docs-ui",
-  "version": "0.23.8",
+  "version": "0.24.2",
   "description": "Produces the UI bundle for the Neo4j documentation site",
   "homepage": "https://github.com/neo4j-documentation/docs-ui",
   "license": "MPL-2.0",
@@ -81,6 +81,7 @@
     "@antora/cli": "^2.3.3",
     "@antora/site-generator-default": "^2.3.3",
     "@neo4j-ndl/base": "^2.0.0",
+    "@neo4j-ndl/react": "^2.9.4",
     "font-awesome": "^4.7.0"
   },
   "husky": {

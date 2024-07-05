@@ -96,7 +96,7 @@ html.is-clipped--nav {
 }
 
 .nav .selectors {
-  padding: 1rem 1.5rem 0;
+  padding: 1.5rem 1rem 0;
 }
 
 .nav-panel-menu {
@@ -374,7 +374,7 @@ html.is-clipped--nav {
 
 .nav-item a:hover,
 .nav-item span:hover {
-  background-color: rgba(var(--colors-neutral-25));
+  background-color: var(--toc_hover-background-color);
 }
 
 .is-current-page.is-active > a {
@@ -474,8 +474,8 @@ html.is-clipped--nav {
 }
 
 .nav-item .nav-section-header {
-  margin-top: 1.5rem;
-  margin-bottom: 0.5rem;
+  margin-top: 1rem;
+  margin-bottom: 0;
   padding-top: 1.5rem !important;
   border-top: 1px solid var(--colors-netural-25);
 }
@@ -490,9 +490,9 @@ html.is-clipped--nav {
 }
 
 .nav-panel-versions {
-  height: 2.5rem;
-  padding: 0;
   width: max-content;
+  padding: 1rem 1.5rem 0.5rem;
+  padding: 0.25rem 0.5rem;
 }
 
 .nav-panel-versions .dropdown .dropdown-styles {
