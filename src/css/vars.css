@@ -299,7 +299,7 @@
   /* links */
   --link-font-color: rgba(var(--colors-baltic-50));
   --link_hover-font-color: rgba(var(--colors-baltic-55));
-  --link_visited-font-color: rgba(var(--colors-neutral-60));
+  --link_visited-font-color: var(--palette-categorical-8);
   --link_unresolved-font-color: var(--important-color);
 
   /* abstract */

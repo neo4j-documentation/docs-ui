@@ -166,6 +166,7 @@ body.cheat-sheet .nav-panel-versions {
   height: auto;
   padding: 0;
   display: flex;
+  width: auto;
 }
 
 body.cheat-sheet .selectors .dropdown {
