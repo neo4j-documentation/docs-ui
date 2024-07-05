@@ -77,8 +77,13 @@ html.is-clipped--nav {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  margin-bottom: 1rem;
   padding: 0 1.5rem;
   box-shadow: 0 1px 0 var(--nav-panel-divider-color);
+}
+
+.nav .component:has(+ .selectors) {
+  margin-bottom: 0;
 }
 
 .nav .component .nav-product {
