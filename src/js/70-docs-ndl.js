@@ -24,9 +24,9 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   // Remove H3 anchors
-  document.querySelectorAll('h3 a').forEach(function (a) {
+  /* document.querySelectorAll('h3 a').forEach(function (a) {
     a.remove()
-  })
+  })*/
 
   // Add links to cards
   document.querySelectorAll('.cards.selectable')
