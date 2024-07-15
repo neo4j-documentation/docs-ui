@@ -348,8 +348,10 @@
   --kbd-border-color: rgba(var(--colors-neutral-40));
 
   /* roles */
-  --deprecated-color: rgba(var(--theme-light-palette-danger-bg-strong));
-  --deprecated-background-color: rgba(var(--theme-light-palette-danger-bg-weak));
+  --deprecated-color: rgba(var(--colors-lemon-80));
+  --deprecated-background-color: rgba(var(--colors-lemon-30));
+  --discontinued-color: rgba(var(--theme-light-palette-danger-bg-strong));
+  --discontinued-background-color: rgba(var(--theme-light-palette-danger-bg-weak));
   --not-on-aura-color: var(--warning-background-color);
   --not-on-aura-background-color: var(--warning-color);
   --aura-db-enterprise-color: rgba(var(--colors-baltic-10));

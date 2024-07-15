@@ -186,10 +186,14 @@ span.label--warning {
   color: var(--warning-background-color);
 }
 
-span.label--deprecated,
 span.label--discontinued {
-  background: var(--deprecated-color);
-  color: var(--deprecated-background-color);
+  background: var(--discontinued-color);
+  color: var(--discontinued-background-color);
+}
+
+span.label--deprecated {
+  background: var(--deprecated-background-color);
+  color: var(--deprecated-color);
 }
 
 span.label--unix,
