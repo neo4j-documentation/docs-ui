@@ -339,7 +339,7 @@ body {
   }
 
   .navbar-item .navbar-dropdown {
-    max-width: 320px;
+    max-width: 660px;
   }
 
   .navbar-item.is-hoverable:hover .navbar-dropdown {
