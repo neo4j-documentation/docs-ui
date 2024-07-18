@@ -327,7 +327,8 @@ body {
   }
 
   .navbar-item.docs .navbar-dropdown {
-    width: 320px;
+    width: 660px;
+    max-width: 660px;
   }
 
   .navbar-item.labs .navbar-dropdown {
@@ -339,7 +340,7 @@ body {
   }
 
   .navbar-item .navbar-dropdown {
-    max-width: 660px;
+    max-width: 320px;
   }
 
   .navbar-item.is-hoverable:hover .navbar-dropdown {
