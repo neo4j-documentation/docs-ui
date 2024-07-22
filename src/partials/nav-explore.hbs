@@ -5,16 +5,12 @@
     <span class="dropdown-label">Neo4j Version</span>
 
     <select data-current="{{@root.page.version}}" class="version-selector dropdown-styles">
-      {{#with @root.page.componentVersion}}
-      <option value="" selected>
-        {{#unless (or @root.page.attributes.nav-hide-component-title (eq @root.page.attributes.theme 'cheat-sheet'))}} {{{ ./title }}} {{/unless}}{{ this.displayVersion }}{{#if (and @root.page.attributes.nav-indicate-latest (eq @root.page.version @root.page.latest.version)) }} (latest){{/if}}
-      </option>
-      {{/with}}
       {{#each page.versions}}
       {{#unless (or this.prerelease (and (eq this.version @root.page.version) (eq @root.page.attributes.theme 'cheat-sheet') ))}}
       <option
         data-version="{{this.displayVersion}}"
         value="{{{relativize this.url}}}"
+        {{#if (eq this.version @root.page.version)}} selected{{/if}}
         {{~#if this.missing}} disabled{{/if}}
       >
         {{ this.displayVersion }}{{#if (and @root.page.attributes.nav-indicate-latest (eq this.version @root.page.latest.version)) }} (latest){{/if}}
