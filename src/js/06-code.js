@@ -283,6 +283,23 @@ document.addEventListener('DOMContentLoaded', function () {
           el.classList.add(tabActive)
         })
     })
+
+    var toolbarOffset = 0
+    var toolbar = document.querySelector('.toolbar')
+    if (toolbar.offsetHeight) {
+      toolbarOffset = toolbar.offsetHeight
+    }
+    var offset = document.querySelector('.navbar').offsetHeight + toolbarOffset + 20
+
+    var bodyRect = document.body.getBoundingClientRect().top
+    var elementRect = tab.getBoundingClientRect().top
+    var elementPosition = elementRect - bodyRect
+    var offsetPosition = elementPosition - offset
+
+    window.scrollTo({
+      top: offsetPosition,
+      behavior: 'smooth',
+    })
   }
 
   // Tabbed code
