@@ -23,6 +23,8 @@ endif::[]
 
 This section is designed to help you learn how to import various types of data into Neo4j. From JSON to APIs to another database, you can retrieve data from nearly any source and use it to populate your graph.
 
+
+[role=label--new-5.12]
 === `LOAD CSV`
 [.icon]
 image:icons/ndl/icon-import.svg[]
@@ -34,6 +36,7 @@ Use Cypher for importing bulk data into Neo4j. Suited for non-admin users.
 link:{docs-home}/cypher-manual/current/clauses/load-csv/[]
 
 
+[.labs.label--labs]
 === From relational into graph
 
 [.icon]
@@ -46,6 +49,7 @@ Learn how to translate and migrate tabular data and relational datasets into a g
 link:{docs-home}/data-import/relational-to-graph-import/[]
 
 
+[.not-selectable]
 === Neo4j Connectors
 
 [.icon]
@@ -57,7 +61,9 @@ Learn how to use connectors to connect data from various sources into Neo4j.
 [.link]
 link:{docs-home}/connectors/[]
 
-=== Neo4j Data Importer
+
+[.label--graph-academy.label--featured]
+=== Graph Academy
 
 [.icon]
 image:icons/ndl/icon-neo4j.svg[]
@@ -94,6 +100,8 @@ link:{docs-home}/apoc/current/import/[*Import data using APOC Core*]
 [.cards.selectable]
 == Keep exploring
 
+
+[.graph-academy.label--graph-academy.label--featured]
 === GraphAcademy
 
 [.icon]

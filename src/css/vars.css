@@ -239,6 +239,9 @@
      NB: admonitions are dark text on light background
      to use the same colors on labels, reverse the
      background and color */
+  --featured-color: rgba(var(--colors-hibiscus-70));
+  --featured-border-color: rgba(var(--colors-lavender-50));
+  --featured-background-color: rgba(var(--colors-hibiscus-10));
   --caution-color: rgba(var(--colors-marigold-70));
   --caution-border-color: rgba(var(--colors-marigold-50));
   --caution-background-color: rgba(var(--colors-marigold-10));

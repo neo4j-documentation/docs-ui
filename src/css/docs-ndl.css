@@ -373,20 +373,21 @@ body.docs-ndl .paragraph.footer-link {
 
 /* selectable cards */
 
-body.docs-ndl .cards.selectable .sect2 {
+body.docs-ndl .cards .sect2.selectable {
   cursor: pointer;
 }
 
-body.docs-ndl .cards.selectable .sect2 a {
+body.docs-ndl .cards .sect2.selectable a {
   text-decoration: none;
 }
 
-body.docs-ndl .cards.selectable .sect2:hover {
-  transform: translateY(-0.25rem);
-  transition: 0.2s linear;
+body.docs-ndl .cards .sect2.selectable a:hover {
+  transform: scale(1.02);
+  transition: 0.1s linear;
+  box-shadow: 0 4px 8px 0 rgba(12, 26, 37, 0.08);
 }
 
-body.docs-ndl .cards.selectable .sect2:hover div.description {
+body.docs-ndl .cards .sect2.selectable:hover div.description {
   text-decoration: underline;
 }
 
@@ -474,6 +475,7 @@ body.docs-ndl.explainer .sectionbody > div.sect2 {
 }
 
 body.docs-ndl .cards .sect2 > a,
+body.docs-ndl .cards .sect2.not-selectable,
 body.docs-ndl .cards:not(.selectable) .sect2,
 body.docs-ndl .lists .sect2 {
   overflow: hidden;
@@ -490,7 +492,40 @@ body.docs-ndl .lists .sect2 {
   background: var(--color-white);
 }
 
+/* styles for specific types of cards:
+- featured - for new and exciting items
+- labs
+- graph-academy
+*/
+
+/* this would give a background image on cards marked with [.ga-promo] */
+body.docs-ndl .cards .sectionbody > div.sect2.graph-academy > a,
+body.docs-ndl .cards .sectionbody > div.sect2.graph-academy:not(.selectable) {
+  background: #fff url(../img/ad-blob.svg) no-repeat 100% 100%;
+  border: 1px solid var(--success-color);
+  box-shadow: 0 2px 4px 0 rgba(63, 120, 36, 0.5), 0 1px 2px 0 rgba(63, 120, 36, 0.2);
+}
+
+body.docs-ndl .cards .sectionbody > div.sect2.labs > a,
+body.docs-ndl .cards .sectionbody > div.sect2.labs:not(.selectable) {
+  border: 1px solid var(--color-labs);
+  box-shadow: 0 2px 4px 0 rgba(90, 52, 170, 0.5), 0 1px 2px 0 rgba(90, 52, 170, 0.2);
+}
+
+body.docs-ndl .cards .sectionbody > div.sect2.featured > a,
+body.docs-ndl .cards .sectionbody > div.sect2.featured:not(.selectable) {
+  border: 1px solid var(--success-color);
+  box-shadow: 0 2px 4px 0 rgba(63, 120, 36, 0.5), 0 1px 2px 0 rgba(63, 120, 36, 0.2);
+}
+
+/* add a labs label to a title in a card */
+body.docs-ndl .header-label-container > div.labels {
+  display: inline-flex;
+  margin-left: auto;
+}
+
 body.docs-ndl .cards .sect2 > a,
+body.docs-ndl .cards .sect2.not-selectable,
 body.docs-ndl .cards:not(.selectable) .sect2,
 body.docs-ndl .widget:not(.video) {
   /* box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.1), 0 1px 2px -1px rgba(0, 0, 0, 0.06); */
@@ -539,6 +574,20 @@ body.docs-ndl .widget .icon {
   order: 1;
   padding: 0;
   margin: 0;
+  width: 100%;
+}
+
+body.docs-ndl .cards .sect2 .icon p {
+  display: flex;
+  width: -webkit-fill-available;
+  justify-content: space-between;
+}
+
+body.docs-ndl .cards .sect2 .icon p div.labels {
+  display: flex;
+  flex-direction: row;
+  gap: 0.25rem;
+  height: min-content;
 }
 
 body.docs-ndl .cards .icon span {
@@ -578,6 +627,7 @@ body.docs-ndl .lists .sect2 h3 {
   order: 2;
   margin: 0;
   font-weight: var(--font-weight-semibold);
+  width: -webkit-fill-available;
 }
 
 body.docs-ndl .cards .sect2 h3 .anchor::before {
@@ -601,7 +651,7 @@ body.docs-ndl .cards .sect2 .paragraph:not(.icon) {
   /* flex-grow: 1; */
 }
 
-body.docs-ndl .cards.selectable .sect2 .paragraph.link {
+body.docs-ndl .cards .sect2.selectable .paragraph.link {
   display: none;
 }
 

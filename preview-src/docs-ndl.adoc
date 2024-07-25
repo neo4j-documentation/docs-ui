@@ -9,6 +9,8 @@
 [.cards.icon-l]
 == CTA cards
 
+
+[.featured.label--featured]
 === Deployment options
 
 [.icon]

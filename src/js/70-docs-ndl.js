@@ -8,10 +8,11 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   var makeClickable = function (card) {
-    var links = card.querySelectorAll('div.link')
+    var links = card.querySelectorAll('div.sect2:not(.not-selectable) div.link')
     links.forEach(function (link) {
       var target = link.querySelector('a').getAttribute('href')
       var card = link.parentElement
+      card.classList.add('selectable')
       const cardLink = createElement('a', 'link')
       cardLink.setAttribute('href', target)
       moveElements(card, cardLink)
@@ -20,6 +21,18 @@ document.addEventListener('DOMContentLoaded', function () {
         e.preventDefault()
         window.location.href = target
       })
+    })
+  }
+
+  var moveLabels = function (section) {
+    var cards = section.querySelectorAll('div.sect2')
+    cards.forEach(function (card) {
+      // do we have any labels to move?
+      var labels = card.querySelector('div.labels')
+      if (labels) {
+        var icon = card.querySelector('div.icon p')
+        icon.append(labels)
+      }
     })
   }
 
@@ -33,4 +46,9 @@ document.addEventListener('DOMContentLoaded', function () {
   // Add links to cards
   document.querySelectorAll('.cards.selectable')
     .forEach(makeClickable)
+
+  // Move labels to the icon div to position them
+  // in the top-right corner of the card
+  document.querySelectorAll('.cards')
+    .forEach(moveLabels)
 })
