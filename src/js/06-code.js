@@ -299,7 +299,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     window.scrollTo({
       top: offsetPosition, // center clicked tab to a fifth of viewport height
-      behavior: 'smooth'
+      behavior: 'smooth',
     })
   }
 
