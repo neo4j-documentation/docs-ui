@@ -70,14 +70,15 @@ document.addEventListener('DOMContentLoaded', function () {
     }
     var offset = document.querySelector('.navbar').offsetHeight + toolbarOffset + 20
 
+    var vh = Math.max(document.documentElement.clientHeight || 0, window.innerHeight || 0)
     var bodyRect = document.body.getBoundingClientRect().top
     var elementRect = tab.getBoundingClientRect().top
     var elementPosition = elementRect - bodyRect
-    var offsetPosition = elementPosition - offset
+    var offsetPosition = elementPosition - offset - vh / 5
 
     window.scrollTo({
-      top: offsetPosition,
-      behavior: 'smooth',
+      top: offsetPosition, // center clicked tab to a fifth of viewport height
+      behavior: 'smooth'
     })
 
     if (sessionStorageAvailable) {
