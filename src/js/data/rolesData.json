@@ -1,4 +1,21 @@
 {
+    "featured": {
+        "description": "Featured cards",
+        "labelCategory": "content",
+        "displayText": "NEW"
+    },
+    "labs":{ 
+        "description": "Neo4j Labs project",
+        "labelCategory": "content",
+        "product": "Labs",
+        "displayText": "Labs"
+    },
+    "graph-academy":{ 
+        "description": "Neo4j Graph Academy",
+        "labelCategory": "content",
+        "product": "Graph Academy",
+        "displayText": "Graph Academy"
+    },
     "enterprise":{
         "description": "Function available in Enterprise Edition only",
         "labelCategory": "product",
