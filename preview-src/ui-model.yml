@@ -30,6 +30,7 @@ site:
       url: '/4.1'
       version: '4.1'
       displayVersion: '4.1'
+      title: 'Component title wraps onto a second line'
     - url: '/4.0'
       version: '4.0'
       displayVersion: '4.0'
