@@ -560,7 +560,7 @@ body.cheat-sheet span.label.hidden,
   }
 
   body.cheat-sheet h3:not(.discrete) {
-    background: rgba(var(--colors-neutral-20));
+    /* background: rgba(var(--colors-neutral-20)); */
     /* margin: 0 0.5rem 0 0.5rem; */
     padding: 1rem;
     flex-grow: 1;
@@ -593,11 +593,11 @@ body.cheat-sheet span.label.hidden,
   }
 
   body.cheat-sheet .sect2 > div.page-labels {
-    background: rgba(var(--colors-neutral-20));
+    /* background: rgba(var(--colors-neutral-20)); */
     border-left: none;
     margin-left: 0;
-    padding: 1rem;
-    flex-grow: 1;
+    padding: 0 1rem 1rem;
+    /* flex-grow: 1; */
   }
 
   body.cheat-sheet .sect2 > div.listingblock {
