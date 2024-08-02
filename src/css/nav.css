@@ -79,15 +79,16 @@ html.is-clipped--nav {
   justify-content: space-between;
   margin-bottom: 1rem;
   padding: 0 1.5rem;
-  box-shadow: 0 1px 0 var(--nav-panel-divider-color);
+  /* box-shadow: 0 1px 0 var(--nav-panel-divider-color); */
 }
 
 .nav .component:has(+ .selectors) {
-  margin-bottom: 0;
+  margin-bottom: 0.25rem;
 }
 
 .nav .component .nav-product {
-  height: 2.5rem;
+  min-height: 2.5rem;
+  height: fit-content;
   padding: 0.5rem 0;
 }
 
@@ -101,7 +102,7 @@ html.is-clipped--nav {
 }
 
 .nav .selectors {
-  padding: 0.5rem 1rem 0;
+  padding: 0 1rem 0;
 }
 
 .nav-panel-menu {
@@ -150,10 +151,11 @@ html.is-clipped--nav {
 
 .nav-menu {
   flex-grow: 1;
-  min-height: 0;
+  /* min-height: 0; */
   width: 100%;
   line-height: var(--nav-line-height);
   position: relative;
+  margin-bottom: calc(var(--feedback-height) + 1rem);
 }
 
 .nav-menu .component-title {
