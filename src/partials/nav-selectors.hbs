@@ -44,7 +44,7 @@
       {{!-- <option value="all" data-label="all" data-class="all" data-label-type="products">All</option> --}}
       {{#each page.attributes.cheatsheet-products}}
       {{#if this.default}}
-      <option value="{{this.class}}" data-label="{{#with (or this.label this.name) }}{{{this}}}{{/with}}" data-class="{{this.class}}" data-label-type="products" selected>{{this.name}}</option>
+      <option value="{{this.class}}" data-label="{{#with (or this.label this.name) }}{{{this}}}{{/with}}" data-class="{{this.class}}" data-label-type="products" data-default-value="true" selected>{{this.name}}</option>
       {{else}}
       <option value="{{this.class}}" data-label="{{#with (or this.label this.name) }}{{{this}}}{{/with}}" data-class="{{this.class}}" data-label-type="products" {{#if this.label-only }}hidden{{/if}}>{{this.name}}</option>
       {{/if}}
