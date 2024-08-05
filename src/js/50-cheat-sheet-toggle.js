@@ -7,6 +7,7 @@ const optionMap = [...selectorOptions].map((o) => ({
   text: o.dataset.label,
   class: o.dataset.class,
   labelType: o.dataset.labelType,
+  default: o.dataset.defaultValue,
   labelOnly: o.hidden,
   selected: o.selected,
   inScope: true,
@@ -23,8 +24,9 @@ const prodMatrix = {
   'neo4j-enterprise': 'neo4j-ee',
 }
 
-// if a product is not selected in the dropdown default to 'All'
-const defaultProd = 'all'
+// get the default product from optionMap
+const defaultProdArray = optionMap.find((prod) => prod.default === 'true')
+const defaultProd = defaultProdArray ? defaultProdArray.value : optionMap[0].value
 
 const defaultClasses = ['exampleblock', 'sect2', 'sect1']
 
