@@ -23,7 +23,8 @@ const prodMatrix = {
   'neo4j-enterprise': 'neo4j-ee',
 }
 
-const defaultProd = 'auradb-enterprise'
+// if a product is not selected in the dropdown default to 'All'
+const defaultProd = 'all'
 
 const defaultClasses = ['exampleblock', 'sect2', 'sect1']
 
@@ -110,7 +111,9 @@ document.addEventListener('DOMContentLoaded', function () {
 
     if (labelsToAdd && labelsToAdd.length > 0) {
       labelsToAdd.forEach((label) => {
-        addLabel(el, label, availableOn)
+        if (label !== 'all') {
+          addLabel(el, label, availableOn)
+        }
       })
     }
   })
