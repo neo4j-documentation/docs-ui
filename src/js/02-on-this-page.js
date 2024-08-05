@@ -6,7 +6,7 @@
   if (!sidebar) return
   if (document.querySelector('body.-toc')) return sidebar.parentNode.removeChild(sidebar)
   var levels = parseInt(sidebar.dataset.levels || 2)
-  if (levels < 0) return
+  if (levels < 0) return sidebar.parentNode.removeChild(sidebar) // remove the sidebar if :page-toclevels: -1
 
   var article = document.querySelector('article.doc')
   var selectors = document.querySelector('.nav-container .selectors')
@@ -14,7 +14,7 @@
   var headings
   var headingSelector = []
   for (var l = 0; l <= levels; l++) headingSelector.push(l ? '.sect' + l + '>h' + (l + 1) + '[id]' : 'h1[id].sect0')
-  if (!(headings = find(headingSelector.join(','), article)).length) return sidebar.parentNode.removeChild(sidebar)
+  if (!(headings = find(headingSelector.join(','), article)).length) return sidebar.parentNode.removeChild(sidebar) // remove sidebar if there are no headings
 
   var lastActiveFragment
   var links = {}
