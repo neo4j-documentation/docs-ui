@@ -195,6 +195,9 @@ page:
     - content: Tables
       url: tables.html
       urlType: internal
+    - content: Tables (no toc)
+      url: tables-no-toc.html
+      urlType: internal
     - content: Tables (No Captions)
       url: tables-no-captions.html
       urlType: internal
