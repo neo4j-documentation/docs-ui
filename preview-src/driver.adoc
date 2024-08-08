@@ -1,6 +1,7 @@
 = Neo4j & Python
 :page-theme: docs
 :page-role: code-walkthrough
+:page-chatbot: http://localhost:3000/
 :!toc:
 
 
