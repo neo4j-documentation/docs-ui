@@ -1,3 +1,10 @@
+/* chatbot */
+.docs .ndl-drawer.ndl-drawer-overlay {
+  position: fixed;
+  top: 4px;
+  box-shadow: -2px 1px 2px 1px rgba(var(--colors-neutral-20));
+}
+
 .doc .paragraph .title {
   font-weight: var(--body-font-weight-bold);
 }
