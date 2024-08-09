@@ -1,6 +1,11 @@
 <link rel="stylesheet" href="https://neo4j.com/wp-content/themes/neo4jweb/assets/neo4j-react-modules-assets/search-preact/chunkless/bundle.css" />
 <link rel="stylesheet" href="https://neo4j.com/wp-content/themes/neo4jweb/assets/neo4j-react-modules-assets/search-preact/chunkless/utilities.min.css" />
 
+
+{{#if page.attributes.chatbot}}
+<link rel="stylesheet" crossorigin href="{{{ page.attributes.chatbot }}}/index.css">
+{{/if}}
+
 {{#if page.attributes.cdn}}
     <link rel="preload" href="{{{page.attributes.cdn}}}/fonts/fontawesome-webfont.woff2?v=4.7.0" as="font">
     <link rel="stylesheet" href="{{{page.attributes.cdn}}}/css/site.css">
@@ -18,8 +23,3 @@
     <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
     <link rel="shortcut icon" href="https://neo4j.com/wp-content/themes/neo4jweb/favicon.ico" />
-
-
-{{#if page.attributes.chatbot}}
-<link rel="stylesheet" crossorigin href="{{{ page.attributes.chatbot }}}/index.css">
-{{/if}}
