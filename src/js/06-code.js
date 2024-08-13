@@ -131,7 +131,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     listingBlock.classList.add('has-header')
 
-    if (originalTitle) {
+    if (originalTitle && !listingBlock.classList.contains('noheader')) {
       listingBlock.classList.add('has-title')
       var titleDiv = document.createElement('div')
       titleDiv.className = 'code-title'
@@ -139,6 +139,8 @@ document.addEventListener('DOMContentLoaded', function () {
       originalTitle.style.display = 'none'
       headerDivs.push(titleDiv)
     }
+
+    var inset = createElement('div', 'code-inset')
 
     if (addCopyButton) {
       var copyButton = createElement('span', 'btn btn-copy fa fa-copy')
@@ -168,21 +170,12 @@ document.addEventListener('DOMContentLoaded', function () {
         }, 1000)
       })
 
-      var inset = createElement('div', 'code-inset', copyButton)
-      if (language !== 'none' && language) inset.dataset.lang = casedLang(language)
-
+      inset.appendChild(copyButton)
       inset.appendChild(copySuccess)
-
-      // if (originalTitle) {
-      //   div.insertBefore(inset, pre)
-      // } else {
-      //   pre.appendChild(inset)
-      // }
-
-      // pre.appendChild(inset)
-
-      headerDivs.push(inset)
     }
+
+    if (language !== 'none' && language) inset.dataset.lang = casedLang(language)
+    headerDivs.push(inset)
 
     var header = createElement('div', 'code-header', headerDivs)
     div.insertBefore(header, pre)
