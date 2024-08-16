@@ -1,0 +1,37 @@
+div.promo.promo-graphacademy .content {
+  background-image: url(../img/icons/mortarboard.svg);
+  background-repeat: no-repeat;
+  background-position: 0 4px;
+  padding-left: 48px !important;
+}
+
+div.promo {
+  background-image: url(../img/promo-blob.svg);
+  background-repeat: no-repeat;
+  background-position: bottom right;
+  padding: 24px;
+  border: 1px solid #e2e3e5;
+  border-radius: 16px;
+}
+
+div.promo .content {
+  padding: 0 !important;
+  border: 0 none !important;
+}
+
+div.promo .content .paragraph,
+div.promo .content .ulist {
+  margin-bottom: 0;
+}
+
+div.promo .content .ulist ul {
+  padding-left: 12px;
+}
+
+div.promo .content .ulist li {
+  margin-bottom: 0;
+}
+
+div.promo a {
+  font-weight: 400;
+}

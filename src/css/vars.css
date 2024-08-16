@@ -171,6 +171,7 @@
   --body-font-weight-bold: var(--font-weight-semibold);
   --monospace-font-family: "Roboto Mono", monospace;
   --monospace-font-weight-bold: var(--font-weight-medium);
+  --header-font-family: "Syne Neo", "Public Sans", "Nunito Sans", "Helvetica Neue", helvetica, roboto, arial, sans-serif;
 
   /* base */
   --body-background: rgba(var(--colors-neutral-10));
@@ -225,7 +226,7 @@
   --toc-font-color: rgba(var(--colors-neutral-70));
   --toc_active-font-color: rgba(var(--colors-baltic-70));
   --toc_active-background-color: rgba(var(--colors-baltic-10));
-  --toc_hover-background-color: rgba(var(--colors-neutral-15));
+  --toc_hover-background-color: rgba(var(--theme-light-palette-neutral-hover));
   --toc-heading-font-color: rgba(var(--colors-neutral-70));
   --toc-border-color: rgba(var(--colors-neutral-30));
   --toc-line-height: 1.4;
@@ -238,6 +239,9 @@
      NB: admonitions are dark text on light background
      to use the same colors on labels, reverse the
      background and color */
+  --featured-color: rgba(var(--colors-hibiscus-70));
+  --featured-border-color: rgba(var(--colors-lavender-50));
+  --featured-background-color: rgba(var(--colors-hibiscus-10));
   --caution-color: rgba(var(--colors-marigold-70));
   --caution-border-color: rgba(var(--colors-marigold-50));
   --caution-background-color: rgba(var(--colors-marigold-10));
@@ -298,7 +302,7 @@
   /* links */
   --link-font-color: rgba(var(--colors-baltic-50));
   --link_hover-font-color: rgba(var(--colors-baltic-55));
-  --link_visited-font-color: rgba(var(--colors-neutral-60));
+  --link_visited-font-color: var(--palette-categorical-8);
   --link_unresolved-font-color: var(--important-color);
 
   /* abstract */
@@ -347,8 +351,10 @@
   --kbd-border-color: rgba(var(--colors-neutral-40));
 
   /* roles */
-  --deprecated-color: rgba(var(--theme-light-palette-danger-bg-strong));
-  --deprecated-background-color: rgba(var(--theme-light-palette-danger-bg-weak));
+  --deprecated-color: rgba(var(--colors-lemon-80));
+  --deprecated-background-color: rgba(var(--colors-lemon-30));
+  --discontinued-color: rgba(var(--theme-light-palette-danger-bg-strong));
+  --discontinued-background-color: rgba(var(--theme-light-palette-danger-bg-weak));
   --not-on-aura-color: var(--warning-background-color);
   --not-on-aura-background-color: var(--warning-color);
   --aura-db-enterprise-color: rgba(var(--colors-baltic-10));

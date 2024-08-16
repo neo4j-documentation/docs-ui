@@ -102,6 +102,10 @@ body {
   display: none;
 }
 
+.navbar .navbar-grow {
+  flex-grow: 1;
+}
+
 @media screen and (min-width: 1024px) {
   .navbar-end > .navbar-item,
   .navbar-end .navbar-link {
@@ -323,7 +327,8 @@ body {
   }
 
   .navbar-item.docs .navbar-dropdown {
-    width: 320px;
+    width: 660px;
+    max-width: 660px;
   }
 
   .navbar-item.labs .navbar-dropdown {
@@ -401,7 +406,7 @@ body {
     border-radius: 0 0 0.25rem 0.25rem;
     display: none;
     top: 100%;
-    right: 0;
+    left: 0;
     min-width: 100%;
     position: absolute;
   }

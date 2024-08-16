@@ -1,39 +1,50 @@
+{{#unless (or @root.page.attributes.nav-hide-site-title (eq @root.page.attributes.theme 'cheat-sheet'))}}
+<div class="component">
+  <div class="nav-product">
+    <span class="nav-product-name">{{#with @root.page.componentVersion}}{{{ ./title }}}{{/with}}</span>
+  </div>
+</div>
+{{/unless}}
+      
+{{!-- {{#unless (eq page.attributes.theme 'cheat-sheet') }} --}}
+
 {{#if page.versions.[1]}}
+<div class="selectors">
 <div class="nav-panel-versions{{#unless page.navigation}} is-active{{/unless}}" data-panel="explore">
 
   <div class="dropdown">
     <span class="dropdown-label">{{#with (or page.attributes.cheatsheet-product 'Product')}}{{this}}{{/with}} Version</span>
 
     <select data-current="{{@root.page.version}}" class="version-selector dropdown-styles">
-      {{#with @root.page.componentVersion}}
-      <option value="" selected>
-        {{#unless (or @root.page.attributes.nav-hide-component-title (eq @root.page.attributes.theme 'cheat-sheet'))}} {{{ ./title }}} {{/unless}}{{ this.displayVersion }}{{#if (and @root.page.attributes.nav-indicate-latest (eq @root.page.version @root.page.latest.version)) }} (latest){{/if}}
-      </option>
-      {{/with}}
       {{#each page.versions}}
       {{#unless (or this.prerelease (and (eq this.version @root.page.version) (eq @root.page.attributes.theme 'cheat-sheet') ))}}
       <option
         data-version="{{this.displayVersion}}"
         value="{{{relativize this.url}}}"
+        {{#if (eq this.version @root.page.version)}} selected{{/if}}
         {{~#if this.missing}} disabled{{/if}}
       >
-        {{ this.displayVersion }}{{#if (and @root.page.attributes.nav-indicate-latest (eq this.version @root.page.latest.version)) }} (latest){{/if}}
+        Version {{ this.displayVersion }}{{#if (and @root.page.attributes.nav-indicate-latest (eq this.version @root.page.latest.version)) }} (latest){{/if}}
       </option>
       {{/unless}}
       {{/each}}
     </select>
   </div>
 </div>
+</div>
 {{/if}}
 
+{{!-- {{/unless}} --}}
+
 {{#if (eq page.attributes.theme 'cheat-sheet') }}
+<div class="selectors">
 <div class="nav-panel-types{{#unless page.navigation}} is-active{{/unless}}" data-panel="explore" data-selector-type="products">
   <div class="dropdown">
     <select id="cheat-sheet-selector-products" class="cs-selector dropdown-styles" data-label-type="products">
       {{!-- <option value="all" data-label="all" data-class="all" data-label-type="products">All</option> --}}
       {{#each page.attributes.cheatsheet-products}}
       {{#if this.default}}
-      <option value="{{this.class}}" data-label="{{#with (or this.label this.name) }}{{{this}}}{{/with}}" data-class="{{this.class}}" data-label-type="products" selected>{{this.name}}</option>
+      <option value="{{this.class}}" data-label="{{#with (or this.label this.name) }}{{{this}}}{{/with}}" data-class="{{this.class}}" data-label-type="products" data-default-value="true" selected>{{this.name}}</option>
       {{else}}
       <option value="{{this.class}}" data-label="{{#with (or this.label this.name) }}{{{this}}}{{/with}}" data-class="{{this.class}}" data-label-type="products" {{#if this.label-only }}hidden{{/if}}>{{this.name}}</option>
       {{/if}}
@@ -88,5 +99,7 @@
 </div>
 {{/if}} --}}
 
-
+</div>
 {{/if}}
+
+

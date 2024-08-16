@@ -1,3 +1,7 @@
+div.labels {
+  font-family: var(--body-font-family);
+}
+
 .flex-labels-container {
   display: flex;
   justify-content: space-between;
@@ -154,6 +158,7 @@ span.label--recommended {
 span.label--added,
 span.label--changed,
 span.label--new,
+span.label--featured,
 span.label--renamed,
 span.label--updated,
 span.label--yes {
@@ -169,6 +174,7 @@ span.label--beta {
 
 span.label--na,
 span.label--no,
+span.label.not-available,
 span.label--removed {
   background: var(--warning-color);
   color: var(--warning-background-color);
@@ -181,10 +187,14 @@ span.label--warning {
   color: var(--warning-background-color);
 }
 
-span.label--deprecated,
 span.label--discontinued {
-  background: var(--deprecated-color);
-  color: var(--deprecated-background-color);
+  background: var(--discontinued-color);
+  color: var(--discontinued-background-color);
+}
+
+span.label--deprecated {
+  background: var(--deprecated-background-color);
+  color: var(--deprecated-color);
 }
 
 span.label--unix,
@@ -215,4 +225,12 @@ span.label--cluster-member-read-replica {
 span.label--cluster-member-single {
   background: rgba(var(--colors-lemon-10));
   background: rgba(var(--colors-lemon-60));
+}
+
+span.label--labs {
+  background: var(--color-labs);
+}
+
+span.label--graph-academy {
+  background: var(--success-color);
 }

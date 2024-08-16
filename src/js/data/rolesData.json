@@ -1,4 +1,21 @@
 {
+    "featured": {
+        "description": "Featured cards",
+        "labelCategory": "content",
+        "displayText": "NEW"
+    },
+    "labs":{ 
+        "description": "Neo4j Labs project",
+        "labelCategory": "content",
+        "product": "Labs",
+        "displayText": "Labs"
+    },
+    "graph-academy":{ 
+        "description": "Neo4j Graph Academy",
+        "labelCategory": "content",
+        "product": "Graph Academy",
+        "displayText": "Graph Academy"
+    },
     "enterprise":{
         "description": "Function available in Enterprise Edition only",
         "labelCategory": "product",
@@ -35,11 +52,35 @@
         "product": "AuraDB Professional",
         "displayText": "Only available on AuraDB Professional"
     },
+    "aura-db-free":{
+        "description": "Function available in AuraDB Free",
+        "labelCategory": "product",
+        "product": "AuraDB Free",
+        "displayText": "AuraDB Free"
+    },
     "aura-db-enterprise":{
         "description": "Function available in AuraDB Enterprise",
         "labelCategory": "product",
         "product": "AuraDB Enterprise",
         "displayText": "AuraDB Enterprise"
+    },
+    "aura-db-professional":{
+        "description": "Function available in AuraDB Professional",
+        "labelCategory": "product",
+        "product": "AuraDB Professional",
+        "displayText": "AuraDB Professional"
+    },
+    "aura-ds-enterprise":{
+        "description": "Function available in AuraDS Enterprise",
+        "labelCategory": "product",
+        "product": "AuraDS Enterprise",
+        "displayText": "AuraDS Enterprise"
+    },
+    "aura-ds-professional":{
+        "description": "Function available in AuraDS Professional",
+        "labelCategory": "product",
+        "product": "AuraDS Professional",
+        "displayText": "AuraDS Professional"
     },
     "not-on-aura":{
         "description": "Function or feature is not available on Aura",

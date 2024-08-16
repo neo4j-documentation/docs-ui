@@ -7,6 +7,7 @@ const optionMap = [...selectorOptions].map((o) => ({
   text: o.dataset.label,
   class: o.dataset.class,
   labelType: o.dataset.labelType,
+  default: o.dataset.defaultValue,
   labelOnly: o.hidden,
   selected: o.selected,
   inScope: true,
@@ -23,7 +24,9 @@ const prodMatrix = {
   'neo4j-enterprise': 'neo4j-ee',
 }
 
-const defaultProd = 'auradb-enterprise'
+// get the default product from optionMap
+const defaultProdArray = optionMap.find((prod) => prod.default === 'true')
+const defaultProd = defaultProdArray ? defaultProdArray.value : optionMap[0].value
 
 const defaultClasses = ['exampleblock', 'sect2', 'sect1']
 
@@ -55,7 +58,7 @@ document.addEventListener('DOMContentLoaded', function () {
   if (labelShow) {
     labelShow.addEventListener('click', function (c) {
       c.stopPropagation()
-      toggleLabels(c)
+      toggleLabels(c.target.checked)
     })
   }
 
@@ -79,7 +82,7 @@ document.addEventListener('DOMContentLoaded', function () {
     // console.log(`classes on the element: ${elClasses}`)
 
     // get an array of classes that match the select options
-    const labelsToAdd = optionNames.filter(function (obj) {
+    let labelsToAdd = optionNames.filter(function (obj) {
       return elClasses.indexOf(obj) !== -1
     }).sort()
 
@@ -100,9 +103,19 @@ document.addEventListener('DOMContentLoaded', function () {
       return
     }
 
+    const allLabels = Object.values(prodMatrix)
+    let availableOn = true
+    const difference = allLabels.filter((l) => !labelsToAdd.includes(l))
+    if (difference && difference.length <= 2) {
+      labelsToAdd = difference
+      availableOn = false
+    }
+
     if (labelsToAdd && labelsToAdd.length > 0) {
       labelsToAdd.forEach((label) => {
-        addLabel(el, label)
+        if (label !== 'all') {
+          addLabel(el, label, availableOn)
+        }
       })
     }
   })
@@ -110,7 +123,7 @@ document.addEventListener('DOMContentLoaded', function () {
   // if we've removed elements we need to clean the toc by removing entries for those elements
   cleanToc()
 
-  function addLabel (el, match) {
+  function addLabel (el, match, availableOn) {
     const div = createElement('div', 'paragraph')
     let labelType = 'labels'
 
@@ -133,8 +146,11 @@ document.addEventListener('DOMContentLoaded', function () {
     const p = createElement('p')
     const span = createElement('span', `label label--${match} group--${group}`)
 
-    const text = getProductFromOptionMap(match)
-
+    let text = getProductFromOptionMap(match)
+    if (!availableOn) {
+      text = 'Not available on ' + text
+      span.classList.add('not-available')
+    }
     span.textContent = text
     p.appendChild(span)
 
@@ -174,17 +190,25 @@ document.addEventListener('DOMContentLoaded', function () {
   prodSelector.addEventListener('change', function (e) {
     e.stopPropagation()
 
+    // if localhost
+    if (curURL.host.indexOf('localhost') !== -1) {
+      setVisibility(hiddenOptionNames, e.target.value === 'all')
+      return
+    }
+
+    const currentProd = Object.keys(prodMatrix).find((key) => prodMatrix[key] === e.target.dataset.current)
+    const newProd = Object.keys(prodMatrix).find((key) => prodMatrix[key] === e.target.value)
+    const re = new RegExp(`/${currentProd}/`)
+    let newURL
+
     // if we're using a proxied path, just load the new url
     if (selectionFromPath) {
-      // get the new url
-      const currentProd = Object.keys(prodMatrix).find((key) => prodMatrix[key] === e.target.dataset.current)
-      const newProd = Object.keys(prodMatrix).find((key) => prodMatrix[key] === e.target.value)
-      const newURL = curURL.href.replace(currentProd, newProd)
-      document.location.replace(newURL)
+      newURL = newProd ? curURL.href.replace(re, `/${newProd}/`) : curURL.href.replace(re, '')
     } else {
-      // reset everything
-      setVisibility(hiddenOptionNames)
+      newURL = curURL.href.split('#')[0].concat(newProd).concat(curURL.hash)
     }
+
+    if (newURL) document.location.replace(newURL)
   })
 
   var versionSelector = document.querySelector('body.cheat-sheet .version-selector')
@@ -211,7 +235,7 @@ document.addEventListener('DOMContentLoaded', function () {
     })
   }
 
-  setVisibility(hiddenOptionNames)
+  setVisibility(hiddenOptionNames, prodSelector.dataset.current === 'all')
 
   const matchTo = parseFloat(document.querySelector('.nav-container .selectors').getBoundingClientRect().height)
   const firstSection = document.querySelector('article h2')
@@ -226,19 +250,22 @@ document.addEventListener('DOMContentLoaded', function () {
   })
 })
 
-function setVisibility (hiddenOptionNames) {
+function setVisibility (hiddenOptionNames, showLabels = false) {
   // reset everything
-  clearClass('hidden')
-  clearClass('hide-this')
-  clearClass('selectors-match')
+  clearClasses(['hidden', 'hide-this', 'selectors-match'])
+  // clearClass('hide-this')
+  // clearClass('selectors-match')
   selectorMatch(hiddenOptionNames)
   hideTocEntries()
+  toggleLabels(showLabels)
   document.querySelector('body.cheat-sheet').style.opacity = '1'
 }
 
-function clearClass (cl) {
-  document.querySelectorAll(`.toc-menu .${cl}, .content .sect1.${cl}, .content .sect2.${cl}, .content .exampleblock.${cl}`).forEach((el) => {
-    el.classList.remove(cl)
+function clearClasses (cl) {
+  cl.forEach((c) => {
+    document.querySelectorAll(`.toc-menu .${c}, .content .sect1.${c}, .content .sect2.${c}, .content .exampleblock.${c}`).forEach((el) => {
+      el.classList.remove(c)
+    })
   })
 }
 
@@ -459,7 +486,7 @@ function removeDefaultClasses (c) {
 
 function toggleLabels (l) {
   document.querySelectorAll('span.group--products').forEach((div) => {
-    if (l.target.checked) {
+    if (l) {
       div.style.display = 'flex'
     } else {
       div.style.display = 'none'

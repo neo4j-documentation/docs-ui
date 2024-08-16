@@ -1,20 +1,64 @@
-  <div class="nav-panel-types{{#unless page.navigation}} is-active{{/unless}}" data-panel="explore">
-    <div class="dropdown">
-      <select id="cheat-sheet-selector" class="cs-selector dropdown-styles">
-        {{#each page.attributes.cheatsheets}}
-        {{#if this.default}}
-        <option value="{{this.class}}" data-label="{{#with (or this.label this.name) }}{{{this}}}{{/with}}" data-product="{{this.class}}" selected>{{this.name}}</option>
-        {{else}}
-        <option value="{{this.class}}" data-label="{{#with (or this.label this.name) }}{{{this}}}{{/with}}" data-product="{{this.class}}" {{#if this.label-only }}hidden{{/if}}>{{this.name}}</option>
-        {{/if}}
-        {{/each}}
-      </select>
+{{#if (eq page.attributes.theme 'cheat-sheet') }}
+<div class="nav-panel-types{{#unless page.navigation}} is-active{{/unless}}" data-panel="explore" data-selector-type="products">
+  <div class="dropdown">
+    <select id="cheat-sheet-selector-products" class="cs-selector dropdown-styles" data-label-type="products">
+      {{!-- <option value="all" data-label="all" data-class="all" data-label-type="products">All</option> --}}
+      {{#each page.attributes.cheatsheet-products}}
+      {{#if this.default}}
+      <option value="{{this.class}}" data-label="{{#with (or this.label this.name) }}{{{this}}}{{/with}}" data-class="{{this.class}}" data-label-type="products" selected>{{this.name}}</option>
+      {{else}}
+      <option value="{{this.class}}" data-label="{{#with (or this.label this.name) }}{{{this}}}{{/with}}" data-class="{{this.class}}" data-label-type="products" {{#if this.label-only }}hidden{{/if}}>{{this.name}}</option>
+      {{/if}}
+      {{/each}}
+    </select>
+    {{!-- <div class="toggle-menu">
+      <label class="form-item-label cursor-pointer">
+        <input type="checkbox" role="checkbox" id="products-highlight">
+      </label>
+    </div> --}}
   </div>
 </div>
 
-  <aside class="toc sidebar" data-title="{{or page.attributes.toctitle ''}}"
-  data-levels="{{{or page.attributes.toclevels 2}}}">
-  <div class="toc-menu">
-    <div class="toc-menu-placeholder"></div>
+{{#if page.attributes.cheatsheet-categories}}
+<div class="nav-panel-types{{#unless page.navigation}} is-active{{/unless}}" data-panel="explore"  data-selector-type="categories">
+  {{!-- categories - eg read, write, structure, general --}}
+  <div class="dropdown">
+    <select id="cheat-sheet-selector-categories" class="cs-selector dropdown-styles" data-label-type="categories">
+      <option value="all" data-label="all" data-class="all" data-label-type="categories">All</option>
+      {{#each page.attributes.cheatsheet-categories}}
+      {{#if this.default}}
+      <option value="{{this.class}}" data-label="{{#with (or this.label this.name) }}{{{this}}}{{/with}}" data-class="{{this.class}}" data-label-type="categories" selected>{{this.name}}</option>
+      {{else}}
+      <option value="{{this.class}}" data-label="{{#with (or this.label this.name) }}{{{this}}}{{/with}}" data-class="{{this.class}}" data-label-type="categories" {{#if this.label-only }}hidden{{/if}}>{{this.name}}</option>
+      {{/if}}
+      {{/each}}
+    </select>
+
+    <div class="toggle-menu">
+      <label class="form-item-label cursor-pointer">
+        <input type="checkbox" role="checkbox" id="categories-highlight" checked="true">
+      </label>
+    </div>
   </div>
-</aside>
+</div>
+{{/if}}
+
+{{!-- {{#if page.attributes.cheatsheet-labels}}
+<div class="nav-panel-types{{#unless page.navigation}} is-active{{/unless}}" data-panel="explore" data-selector-type="labels">
+  <div class="dropdown">
+    <select id="cheat-sheet-selector-labels" class="cs-selector dropdown-styles" data-label-type="labels">
+      <option value="all" data-label="all" data-class="all" data-label-type="labels">All</option>
+      {{#each page.attributes.cheatsheet-labels}}
+      {{#if this.default}}
+      <option value="{{this.class}}" data-label="{{#with (or this.label this.name) }}{{{this}}}{{/with}}" data-class="{{this.class}}" data-label-type="labels" selected>{{this.name}}</option>
+      {{else}}
+      <option value="{{this.class}}" data-label="{{#with (or this.label this.name) }}{{{this}}}{{/with}}" data-class="{{this.class}}" data-label-type="labels" {{#if this.label-only }}hidden{{/if}}>{{this.name}}</option>
+      {{/if}}
+      {{/each}}
+    </select>
+  </div>
+</div>
+{{/if}} --}}
+
+
+{{/if}}

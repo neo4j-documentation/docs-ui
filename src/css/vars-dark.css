@@ -382,9 +382,9 @@
   --toc-top: calc(var(--body-top) + var(--toolbar-height));
   --kb-metadata-top: calc(var(--body-top) + var(--toolbar-height));
   --toc-height: calc(100vh - var(--toc-top) - 8.5rem);
-  --toc-width: calc(162 / var(--rem-base) * 1rem);
+  --toc-width: 274px;
   --kb-metadata-width: calc(216 / var(--rem-base) * 1rem);
-  --toc-width--widescreen: calc(216 / var(--rem-base) * 1rem);
+  --toc-width--widescreen: 274px;
   --kb-metadata-width--widescreen: calc(244 / var(--rem-base) * 1rem);
   --toolbar-wrapper-width: 69rem;
   --doc-max-width: calc(720 / var(--rem-base) * 1rem);

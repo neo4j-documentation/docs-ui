@@ -30,6 +30,7 @@ site:
       url: '/4.1'
       version: '4.1'
       displayVersion: '4.1'
+      title: 'Component title wraps onto a second line'
     - url: '/4.0'
       version: '4.0'
       displayVersion: '4.0'
@@ -109,6 +110,15 @@ page:
       - content: Cu Solet
         url: '/xyz/4.1/index.html#cu-solet'
         urlType: internal
+    - content: Docs Needle Home
+      url: docs-ndl.html
+      urlType: internal
+      module: ROOT
+    - content: Docs Sub Hub
+      url: docs-sub-hub.html
+      urlType: internal
+      module: ROOT
+      items:
     - content: Liber Recusabo
       url: '#liber-recusabo'
       urlType: fragment
@@ -119,10 +129,12 @@ page:
       url: labs.html
       urlType: internal
     - content: Reference - a long title that also has child pages
+      module: ROOT
       items:
       - content: Keyboard Shortcuts
         url: '#'
         urlType: fragment
+        module: ROOT
       - content: Importing and Exporting
         url: '#'
         urlType: fragment
@@ -156,9 +168,6 @@ page:
     - content: Cypher DELETE
       url: cheat-sheet.html#delete
       urlType: internal
-    - content: Docs Index
-      url: docs-index.html
-      urlType: internal
     - content: Drivers and APIs
       url: drivers-apis.html
       urlType: internal
@@ -177,17 +186,17 @@ page:
     - content: Training enrollement [disabled]
       url: training-enrollment-disabled.html
       urlType: internal
-    - content: Certification
-      url: neo4j-gds-certify.html
-      urlType: internal
-    - content: Course Yelp
-      url: applied-graph-algo-course-yelp.html
-      urlType: internal
-    - content: Tables (wide)
-      url: tables-wide.html
-      urlType: internal
+    # - content: Certification
+    #   url: neo4j-gds-certify.html
+    #   urlType: internal
+    # - content: Course Yelp
+    #   url: applied-graph-algo-course-yelp.html
+    #   urlType: internal
     - content: Tables
       url: tables.html
+      urlType: internal
+    - content: Tables (no toc)
+      url: tables-no-toc.html
       urlType: internal
     - content: Tables (No Captions)
       url: tables-no-captions.html
@@ -267,9 +276,15 @@ page:
     - content: Contribute
       url: contribute.html
       urlType: internal
+    - content: Promos
+      url: promos.html
+      urlType: internal
   # additional page attributes indexed by page-slug
     pages-data:
       cheatsheet-products: &cheatsheet-products
+        - name: 'All'
+          class: 'all'
+          default: true
         - name: 'Neo4j Community Edition'
           class: 'neo4j-ce'
         - name: 'Neo4j Enterprise Edition'
@@ -280,7 +295,6 @@ page:
           class: 'aura-dbp'
         - name: 'AuraDB Enterprise'
           class: 'aura-dbe'
-          default: true
         - name: 'AuraDS Professional'
           class: 'aura-dsp'
         - name: 'AuraDS Enterprise'
