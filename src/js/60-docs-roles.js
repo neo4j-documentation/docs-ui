@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // label could be eg aura-db-enterprise - we use the full label
     // label could be eg new-5.20 - we use 'new' for the label and add the version as text
-    label = (rolesData[label] && rolesData[label].category !== 'version') ? label : labelParts[0]
+    label = (rolesData[label] && rolesData[label].labelCategory !== 'version') ? label : labelParts.slice(0,-1).join('-')
 
     // ignore labels that are not defined in rolesData
     if (!rolesData[label]) {
@@ -47,7 +47,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // get version number for version labels
     if ((rolesData[label].labelCategory === 'version' || rolesData[label].versionText) && labelParts[1]) {
-      labelDetails.data.version = labelParts[1]
+      labelDetails.data.version = labelParts.pop()
       const joinText = rolesData[label].versionText ? rolesData[label].versionText : 'in'
       labelDetails.text = [labelDetails.text, joinText, labelDetails.data.version].join(' ')
     }

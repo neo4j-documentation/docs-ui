@@ -140,7 +140,7 @@
         "labelCategory": "version",
         "displayText": "Beta"
     },
-    "betaUntil":{
+    "beta-until":{
         "description": "The feature or function was in beta until the version specified",
         "labelCategory": "version",
         "displayText": "Beta",
