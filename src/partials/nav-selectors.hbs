@@ -17,7 +17,7 @@
 
     <select data-current="{{@root.page.version}}" class="version-selector dropdown-styles">
       {{#each page.versions}}
-      {{#unless (or this.prerelease (and (eq this.version @root.page.version) (eq @root.page.attributes.theme 'cheat-sheet') ))}}
+      {{#unless this.prerelease}}
       <option
         data-version="{{this.displayVersion}}"
         value="{{{relativize this.url}}}"
