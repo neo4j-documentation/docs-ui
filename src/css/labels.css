@@ -168,7 +168,7 @@ span.label--yes {
 
 span.label--alpha,
 span.label--beta,
-span.label--betaUntil {
+span.label--beta-until {
   background: var(--alpha-beta-background-color);
   color: var(--alpha-beta-color);
 }
