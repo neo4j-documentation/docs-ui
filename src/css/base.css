@@ -1,6 +1,6 @@
 html,
 body {
-  height: 100%;
+  height: fit-content;
 }
 
 *,
@@ -27,6 +27,11 @@ body {
   font-family: var(--body-font-family);
   line-height: var(--body-line-height);
   margin: 0;
+}
+
+h1,
+h2 {
+  font-family: var(--body-font-family);
 }
 
 a {
