@@ -13,6 +13,12 @@ Flags sections as Not Available on Aura, Aura DB Enterprise, Enterprise Edition,
 --
 
 
+[role=label--new-5.11 label--beta-until-5.12]
+== Beta until
+
+Lorem ipsum.
+
+
 [role="label--new-5.17 label--enterprise-edition"]
 == Relationship property type constraints
 

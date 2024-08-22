@@ -140,6 +140,12 @@
         "labelCategory": "version",
         "displayText": "Beta"
     },
+    "beta-until":{
+        "description": "The feature or function was in beta until the version specified",
+        "labelCategory": "version",
+        "displayText": "Beta",
+        "versionText": "until"
+    },
     "deprecated":{
         "labelCategory": "version",
         "displayText": "Deprecated"
