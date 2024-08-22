@@ -26,8 +26,14 @@ const prodMatrix = {
 
 // get the default product from optionMap
 const defaultProdArray = optionMap.find((prod) => prod.default === 'true')
-const defaultProd = defaultProdArray ? defaultProdArray.value : optionMap[0].value
 
+// display for 'all' products unless a differnt value is specified via attributes in source
+let defaultProd
+if (defaultProdArray && optionMap) {
+  defaultProd = defaultProdArray ? defaultProdArray.value : optionMap[0].value
+} else {
+  defaultProd = 'all'
+}
 const defaultClasses = ['exampleblock', 'sect2', 'sect1']
 
 document.addEventListener('DOMContentLoaded', function () {
