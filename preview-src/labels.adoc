@@ -1,4 +1,6 @@
 = Labels
+:page-selector-label: Custom version label
+// :page-selector-hide-label: true
 
 
 == All the labels

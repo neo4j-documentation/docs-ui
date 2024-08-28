@@ -24,7 +24,7 @@
         {{#if (eq this.version @root.page.version)}} selected{{/if}}
         {{~#if this.missing}} disabled{{/if}}
       >
-        Version {{ this.displayVersion }}{{#if (and @root.page.attributes.nav-indicate-latest (eq this.version @root.page.latest.version)) }} (latest){{/if}}
+        {{#unless @root.page.attributes.selector-hide-label }}{{#with (or @root.page.attributes.selector-label 'Version') }}{{{this}}} {{/with}}{{/unless}}{{ this.displayVersion }}{{#if (and @root.page.attributes.nav-indicate-latest (eq this.version @root.page.latest.version)) }} (latest){{/if}}
       </option>
       {{/unless}}
       {{/each}}
