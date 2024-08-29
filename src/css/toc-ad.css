@@ -18,6 +18,10 @@
   background-color: transparent !important;
 }
 
+.toc .toc-ad .toc-ad-image {
+  width: 192px;
+}
+
 .toc .toc-ad .toc-ad-icon {
   display: block;
   content: "";
