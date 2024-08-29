@@ -25,7 +25,6 @@ document.addEventListener('DOMContentLoaded', function () {
     var label = role.replace('label--', '')
     var labelParts = label.split('-')
 
-
     // roles can be single word ie beta - use beta as label class and text from rolesDatee.beta
     // roles can be single word + version ie new-5.20 - use new as label class and text from rolesData.new + version number
     // roles can be multiple words ie aura-db-enterprise - use aura-db-enterprise as label class and text from rolesData.aura-db-enterprise
@@ -36,7 +35,7 @@ document.addEventListener('DOMContentLoaded', function () {
     // so if the role is a single word, we use the role as is - ie deprecated
     // if it is longer we test to see if it is a 'versionable' roke - ie deprecated-5.20
     // if it is a versionable role, and a veresion is specified, we remove the version and use the remaining text as the label class
-    if (labelParts.length >1) {
+    if (labelParts.length > 1) {
       label = (rolesData[label] && rolesData[label].labelCategory !== 'version') ? label : labelParts.slice(0, -1).join('-')
     }
 
