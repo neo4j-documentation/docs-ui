@@ -25,9 +25,20 @@ document.addEventListener('DOMContentLoaded', function () {
     var label = role.replace('label--', '')
     var labelParts = label.split('-')
 
-    // label could be eg aura-db-enterprise - we use the full label
-    // label could be eg new-5.20 - we use 'new' for the label and add the version as text
-    label = (rolesData[label] && rolesData[label].labelCategory !== 'version') ? label : labelParts.slice(0, -1).join('-')
+
+    // roles can be single word ie beta - use beta as label class and text from rolesDatee.beta
+    // roles can be single word + version ie new-5.20 - use new as label class and text from rolesData.new + version number
+    // roles can be multiple words ie aura-db-enterprise - use aura-db-enterprise as label class and text from rolesData.aura-db-enterprise
+    // roles like deprecated can appear with or without a version number - deprecated-5.20 or deprecated
+    // - use deprecated as label class and text from rolesData.deprecated
+    // - use deprecated as label class and text from rolesData.deprecated + version number
+
+    // so if the role is a single word, we use the role as is - ie deprecated
+    // if it is longer we test to see if it is a 'versionable' roke - ie deprecated-5.20
+    // if it is a versionable role, and a veresion is specified, we remove the version and use the remaining text as the label class
+    if (labelParts.length >1) {
+      label = (rolesData[label] && rolesData[label].labelCategory !== 'version') ? label : labelParts.slice(0, -1).join('-')
+    }
 
     // ignore labels that are not defined in rolesData
     if (!rolesData[label]) {
