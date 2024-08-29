@@ -205,28 +205,28 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     const currentProd = (e.target.dataset.current === 'all') ? 'all' : Object.keys(prodMatrix).find((key) => prodMatrix[key] === e.target.dataset.current)
-    console.log(currentProd)
+    // console.log(currentProd)
     const newProd = (e.target.value === 'all') ? 'all' : Object.keys(prodMatrix).find((key) => prodMatrix[key] === e.target.value)
-    console.log(newProd)
+    // console.log(newProd)
 
     const re = new RegExp(`/${currentProd}`)
     let newURL
 
     // if we're using a proxied path, just load the new url
     if (selectionFromPath) {
-      console.log(`using selection from path: ${selectionFromPath}`)
-      console.log(`current URL: ${curURL.href}`)
-      console.log(`regex: ${re}`)
+      // console.log(`using selection from path: ${selectionFromPath}`)
+      // console.log(`current URL: ${curURL.href}`)
+      // console.log(`regex: ${re}`)
       newURL = newProd ? curURL.href.replace(re, `/${newProd}`) : curURL.href.replace(re, '')
     } else {
-      console.log('no selectionFromPath')
+      // console.log('no selectionFromPath')
       newURL = curURL.href.split('#')[0].concat(newProd).concat(curURL.hash)
     }
 
-    console.log(newURL)
+    // console.log(newURL)
 
     if (newURL) {
-      console.log('replacing url with ' + newURL)
+      // console.log('replacing url with ' + newURL)
       document.location.replace(newURL)
     }
   })
@@ -431,7 +431,7 @@ function fixURL () {
   // or /docs/cypher-cheat-sheet/5/auradb-free/where
   // or (special case) /docs/cypher-cheat-sheet/5/all
 
-  console.log(`checking url ${href} for product name`)
+  // console.log(`checking url ${href} for product name`)
 
   const pathArr = stripTrailingSlash(url.pathname).split('/')
   if (pathArr[0] === '') pathArr.shift()
@@ -445,7 +445,7 @@ function fixURL () {
   // the second item in values should be the product
   let product = values[1]
 
-  console.log(`product is ${product}`)
+  // console.log(`product is ${product}`)
   // the third is a page that can be turned into a section id
   let possibleID = values[2]
   let id = ''
@@ -456,7 +456,7 @@ function fixURL () {
 
   if (possibleID) {
     id = checkHashVariations(possibleID)
-    console.log(id)
+    // console.log(id)
   }
 
   // update window.location.href
