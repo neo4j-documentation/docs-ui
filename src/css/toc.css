@@ -46,11 +46,21 @@
   scrollbar-width: none;
 }
 
+.page-wide .toc-menu {
+  width: fit-content !important;
+  min-width: 50%;
+}
+
+.page-wide .toc-menu h2 {
+  border: none;
+}
+
 .page-wide .toc.sidebar .toc-menu ul {
   max-height: 12rem;
   overflow-y: scroll;
   scrollbar-width: thin;
-  border: 1px solid;
+  border: 1px solid rgba(var(--theme-light-palette-neutral-bg-strong));
+  box-shadow: 0 2px 4px var(--code-header-background), 0 1px 2px 0 var(--code-header-background);
   padding: 0.25rem;
 }
 
