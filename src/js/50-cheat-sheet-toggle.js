@@ -233,23 +233,13 @@ document.addEventListener('DOMContentLoaded', function () {
 
   if (versionSelector) {
     versionSelector.addEventListener('change', function (e) {
-      const target = e.target
-
-      const selectedProduct = prodSelector.selectedIndex
-      const current = target.dataset.current
-      const next = target.selectedOptions[0].dataset.version
-      let newUrl
-      if (selectionFromPath) {
-        const re = new RegExp(`/${current}/`)
-        newUrl = document.URL.replace(re, `/${next}/`)
-      } else {
-        newUrl = `${target.value}?product=${prodSelector.options[selectedProduct].value}`
-      }
-
+      const current = e.target.dataset.current
+      const next = e.target.selectedOptions[0].dataset.version
+      const re = new RegExp(`/${current}/`)
+      const newUrl = document.URL.replace(re, `/${next}/`)
       if (window.ga) {
         window.ga('send', 'event', 'version-select', 'From: ' + current + ';To:' + next + ';')
       }
-
       document.location.replace(newUrl)
     })
   }
