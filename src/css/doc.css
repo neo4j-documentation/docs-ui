@@ -172,11 +172,14 @@ body {
   margin-right: 0.5rem;
 }
 
-.doc a {
+.doc a,
+.tooltip-body a {
   font-weight: 600;
   color: var(--link-font-color);
-  /* border-bottom: 1px solid var(--link-font-color); */
-  /* text-decoration: none; */
+}
+
+.doc a:not(.glossary-term),
+.tooltip-body a {
   text-decoration: underline;
 }
 
@@ -185,7 +188,6 @@ body {
 .doc a:hover code:hover,
 .doc a:focus code:focus {
   color: var(--link_hover-font-color);
-  /* border-bottom: 1px solid var(--link_hover-font-color); */
 }
 
 .doc a:visited {
