@@ -5,12 +5,55 @@
 :page-banner-text: Lorem ipsum dolor sit est.
 :page-banner-link: https://neo4j.com/docs
 :page-banner-link-text: Link text
+:page-product: Neo4j
 // :page-labels: fabric enterprise-edition alpha test
 
 [abstract]
 --
 Flags sections as Not Available on Aura, Aura DB Enterprise, Enterprise Edition, Fabric, and Deprecated
 --
+
+
+[role=label--beta-until-bolt-1.0 label--removed-2.0]
+== Adding a product name to versioned labels
+
+
+[role=label--beta-until-1.0 label--dynamic-5.22 label--dynamic]
+[[messages-ack-failure]]
+=== Request message `ACK_FAILURE`
+
+The request message `ACK_FAILURE` signals to the server that the client has acknowledged a previous failure and should return to a `READY` state.
+
+The request message `ACK_FAILURE` is only valid in version *1* and *2* and the request message `RESET` should be used in its place in version *3+*.
+
+*Signature:* `0E`
+
+*Fields:* No fields.
+
+*Detail messages*:
+
+No detail messages should be returned.
+
+*Valid summary messages:*
+
+** `SUCCESS`
+** `FAILURE`
+
+The server must be in a `FAILED` state to be able to successfully process an `ACK_FAILURE` request.
+For any other states, receipt of an `ACK_FAILURE` request will be considered a protocol violation and will lead to connection closure.
+
+==== Examples
+.Synopsis
+[source, bolt]
+----
+ACK_FAILURE
+----
+
+.Example
+[source, bolt]
+----
+ACK_FAILURE
+----
 
 
 [role=label--new-5.11 label--beta-until-5.12]
