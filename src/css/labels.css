@@ -135,7 +135,8 @@ span.label--not-on-aura {
   color: var(--warning-background-color);
 }
 
-span.label--aura-db-enterprise {
+span.label--aura-db-enterprise,
+span.label--aura-db-dedicated {
   background: rgba(var(--colors-baltic-50));
   color: rgba(var(--colors-baltic-10));
 }

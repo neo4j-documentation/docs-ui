@@ -17,7 +17,7 @@ const optionMap = [...selectorOptions].map((o) => ({
 const prodMatrix = {
   'auradb-free': 'aura-dbf',
   'auradb-professional': 'aura-dbp',
-  'auradb-enterprise': 'aura-dbe',
+  'auradb-dedicated': 'aura-dbe',
   'aurads-professional': 'aura-dsp',
   'aurads-enterprise': 'aura-dse',
   'neo4j-community': 'neo4j-ce',

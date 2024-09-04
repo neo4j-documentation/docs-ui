@@ -59,10 +59,16 @@
         "displayText": "AuraDB Free"
     },
     "aura-db-enterprise":{
-        "description": "Function available in AuraDB Enterprise",
+        "description": "Function available in AuraDB Virtual Dedicated Cloud",
         "labelCategory": "product",
-        "product": "AuraDB Enterprise",
-        "displayText": "AuraDB Enterprise"
+        "product": "AuraDB Virtual Dedicated Cloud",
+        "displayText": "AuraDB Virtual Dedicated Cloud"
+    },
+    "aura-db-dedicated":{
+        "description": "Function available in AuraDB Virtual Dedicated Cloud",
+        "labelCategory": "product",
+        "product": "AuraDB Virtual Dedicated Cloud",
+        "displayText": "AuraDB Virtual Dedicated Cloud"
     },
     "aura-db-professional":{
         "description": "Function available in AuraDB Professional",

@@ -100,6 +100,12 @@ div.aura-db-enterprise > h4::after,
 p.aura-db-enterprise::before,
 section.aura-db-enterprise.title::after,
 span.aura-db-enterprise::after,
+div.aura-db-dedicated > h2::after,
+div.aura-db-dedicated > h3::after,
+div.aura-db-dedicated > h4::after,
+p.aura-db-dedicated::before,
+section.aura-db-dedicated.title::after,
+span.aura-db-dedicated::after,
 section.enterprise-edition .title::after,
 div.enterprise-edition > h2::after,
 div.enterprise-edition > h3::after,
@@ -215,10 +221,22 @@ div.aura-db-enterprise > h4::after,
 p.aura-db-enterprise::before,
 section.aura-db-enterprise.title::after,
 span.aura-db-enterprise::after {
-  content: "AuraDB Enterprise";
+  content: "AuraDB Virtual Dedicated Cloud";
   background: var(--aura-db-enterprise-background-color);
   border-color: var(--aura-db-enterprise-background-color);
   color: var(--aura-db-enterprise-color);
+}
+
+div.aura-db-dedicated > h2::after,
+div.aura-db-dedicated > h3::after,
+div.aura-db-dedicated > h4::after,
+p.aura-db-dedicated::before,
+section.aura-db-dedicated.title::after,
+span.aura-db-dedicated::after {
+  content: "AuraDB Virtual Dedicated Cloud";
+  background: var(--aura-db-dedicated-background-color);
+  border-color: var(--aura-db-dedicated-background-color);
+  color: var(--aura-db-dedicated-color);
 }
 
 div.enterprise-edition > h2::after,
