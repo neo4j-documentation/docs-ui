@@ -73,10 +73,10 @@ document.addEventListener('DOMContentLoaded', function () {
       text: rolesData[dataLabel].displayText || '',
       joinText: dataVersion ? rolesData[dataLabel].joinText || 'in' : '',
       data: {
-        labelCategory: rolesData[dataLabel].labelCategory || '',
         product: dataVersion ? dataProduct || rolesData[dataLabel].product || contentDataset.product || '' : '',
         version: dataVersion || '',
         function: rolesData[dataLabel].function || '',
+        event: rolesData[dataLabel].labelCategory === 'version' ? dataLabel : '',
       },
     }
 
@@ -127,9 +127,9 @@ document.addEventListener('DOMContentLoaded', function () {
       const labelSpan = createElement('span', `label content-label label--${labelDetails.class}`)
 
       // add dataset to the label
-      if (labelDetails.data.version) labelSpan.dataset.version = labelDetails.data.version
-      if (labelDetails.data.product !== '') labelSpan.dataset.product = labelDetails.data.product
-      if (labelDetails.data.function !== '') labelSpan.dataset.function = labelDetails.data.function
+      for (var d in labelDetails.data) {
+        if (labelDetails.data[d] !== '') labelSpan.dataset[d] = labelDetails.data[d]
+      }
 
       labelSpan.appendChild(document.createTextNode(labelDetails.text))
 
@@ -148,8 +148,10 @@ document.addEventListener('DOMContentLoaded', function () {
         label.classList.add('header-label')
       }
       labelsDiv.append(label)
-      const contentLabel = Array.from(label.classList).find((c) => c.startsWith('label--')).replace('label--', '')
-      roleDiv.dataset[camelCased(contentLabel)] = contentLabel
+
+      for (var d in label.dataset) {
+        roleDiv.dataset[d] = label.dataset[d]
+      }
     }
 
     if (roleDiv.nodeName === 'H1' || headings.includes(roleDiv.firstElementChild.nodeName)) {
