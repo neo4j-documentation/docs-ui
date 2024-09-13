@@ -1,3 +1,7 @@
+.doc * {
+  all: revert;
+}
+
 .doc {
   color: var(--doc-font-color);
   font-size: var(--doc-font-size);
