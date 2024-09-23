@@ -1,5 +1,5 @@
 <div id="skip-to-content"></div>
-<article class="doc">
+<article class="doc"{{#with page.attributes.product}} data-product="{{this}}"{{/with}}>
 {{#if (eq page.layout '404')}}
 <h1 class="page">{{{or page.title 'Page Not Found'}}}</h1>
 <div class="paragraph">

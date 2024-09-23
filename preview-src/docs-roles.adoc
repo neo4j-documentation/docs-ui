@@ -5,12 +5,35 @@
 :page-banner-text: Lorem ipsum dolor sit est.
 :page-banner-link: https://neo4j.com/docs
 :page-banner-link-text: Link text
+:page-product: Neo4j
 // :page-labels: fabric enterprise-edition alpha test
 
 [abstract]
 --
 Flags sections as Not Available on Aura, Aura DB Enterprise, Enterprise Edition, Fabric, and Deprecated
 --
+
+This page has the `:page-product:` attribute set to `Neo4j`.
+By default, labels that related to a version of a product have `Neo4j` prepended to the version number.
+
+For example, `label--beta-until-5.12` is displayed as `Beta until Neo4j 5.12`.
+
+To override this value, include the product name in the label.
+For example, `label--beta-until-bolt-1.0` is displayed as `Beta until Bolt 1.0`.
+
+[role=test-role]
+Paragraph with non-label role.
+
+
+[role=label--beta-until-bolt-1.0 label--removed-2.0]
+== Adding a product name to versioned labels
+
+
+[role=label--beta-until-1.0 label--dynamic-5.22 label--dynamic]
+[[messages-ack-failure]]
+=== Request message `ACK_FAILURE`
+
+The request message `ACK_FAILURE` signals to the server that the client has acknowledged a previous failure and should return to a `READY` state.
 
 
 [role=label--new-5.11 label--beta-until-5.12]

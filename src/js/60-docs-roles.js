@@ -15,6 +15,8 @@ function checkWrapped () {
 }
 
 document.addEventListener('DOMContentLoaded', function () {
+  const contentDataset = document.querySelector('article.doc').dataset
+
   var camelCased = function (str) {
     return str.split(/-|\./)
       .map((text) => text.substr(0, 1).toUpperCase() + text.substr(1))
@@ -34,32 +36,53 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // so if the role is a single word, we use the role as is - ie deprecated
     // if it is longer we test to see if it is a 'versionable' roke - ie deprecated-5.20
-    // if it is a versionable role, and a veresion is specified, we remove the version and use the remaining text as the label class
-    if (labelParts.length > 1) {
-      label = (rolesData[label] && rolesData[label].labelCategory !== 'version') ? label : labelParts.slice(0, -1).join('-')
+    // if it is a versionable role, and a version is specified, we remove the version and use the remaining text as the label class
+    // if (labelParts.length > 1) {
+    //   label = (rolesData[label] && rolesData[label].labelCategory !== 'version') ? label : labelParts.slice(0, -1).join('-')
+    // }
+
+    let dataLabel, dataProduct, dataVersion
+    const dataExtras = []
+
+    // what about roles like new-bolt-5.20 if we want to use a product name in the label?
+    while (!dataLabel && labelParts.length > 0) {
+      const labelCandidate = labelParts.join('-')
+      if (rolesData[labelCandidate]) {
+        dataLabel = labelCandidate
+      } else {
+        dataExtras.push(labelParts.pop())
+      }
     }
 
     // ignore labels that are not defined in rolesData
-    if (!rolesData[label]) {
+    if (!dataLabel) {
       return
     }
 
+    if (dataExtras.length > 0) {
+      dataVersion = dataExtras.shift()
+    }
+
+    if (dataExtras.length > 0) {
+      dataProduct = camelCased(dataExtras.join(' '))
+    }
+
     var labelDetails = {
-      class: label,
-      role: label,
-      text: rolesData[label].displayText || '',
+      class: dataLabel,
+      role: dataLabel,
+      text: rolesData[dataLabel].displayText || '',
+      joinText: dataVersion ? rolesData[dataLabel].joinText || 'in' : '',
       data: {
-        labelCategory: rolesData[label].labelCategory || '',
-        product: rolesData[label].product || '',
-        function: rolesData[label].function || '',
+        product: dataVersion ? dataProduct || rolesData[dataLabel].product || contentDataset.product || '' : '',
+        version: dataVersion || '',
+        function: rolesData[dataLabel].function || '',
+        event: rolesData[dataLabel].labelCategory === 'version' ? dataLabel : '',
       },
     }
 
-    // get version number for version labels
-    if ((rolesData[label].labelCategory === 'version' || rolesData[label].versionText) && labelParts[1]) {
-      labelDetails.data.version = labelParts.pop()
-      const joinText = rolesData[label].versionText ? rolesData[label].versionText : 'in'
-      labelDetails.text = [labelDetails.text, joinText, labelDetails.data.version].join(' ')
+    // update label text for versioned labels
+    if ((rolesData[dataLabel].labelCategory === 'version' || (rolesData[dataLabel].joinText && dataVersion))) {
+      labelDetails.text = [labelDetails.text, labelDetails.joinText, labelDetails.data.product, labelDetails.data.version].join(' ')
     }
 
     return labelDetails
@@ -104,9 +127,9 @@ document.addEventListener('DOMContentLoaded', function () {
       const labelSpan = createElement('span', `label content-label label--${labelDetails.class}`)
 
       // add dataset to the label
-      if (labelDetails.data.version) labelSpan.dataset.version = labelDetails.data.version
-      if (labelDetails.data.product !== '') labelSpan.dataset.product = labelDetails.data.product
-      if (labelDetails.data.function !== '') labelSpan.dataset.function = labelDetails.data.function
+      for (var d in labelDetails.data) {
+        if (labelDetails.data[d] !== '') labelSpan.dataset[d] = labelDetails.data[d]
+      }
 
       labelSpan.appendChild(document.createTextNode(labelDetails.text))
 
@@ -125,8 +148,10 @@ document.addEventListener('DOMContentLoaded', function () {
         label.classList.add('header-label')
       }
       labelsDiv.append(label)
-      const contentLabel = Array.from(label.classList).find((c) => c.startsWith('label--')).replace('label--', '')
-      roleDiv.dataset[camelCased(contentLabel)] = contentLabel
+
+      for (var d in label.dataset) {
+        roleDiv.dataset[d] = label.dataset[d]
+      }
     }
 
     if (roleDiv.nodeName === 'H1' || headings.includes(roleDiv.firstElementChild.nodeName)) {

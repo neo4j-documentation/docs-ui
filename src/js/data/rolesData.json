@@ -130,7 +130,7 @@
     "dynamic":{
         "labelCategory": "function",
         "displayText": "Dynamic",
-        "versionText": "since"
+        "joinText": "since"
     },
     "alpha":{
         "labelCategory": "version",
@@ -144,7 +144,7 @@
         "description": "The feature or function was in beta until the version specified",
         "labelCategory": "version",
         "displayText": "Beta",
-        "versionText": "until"
+        "joinText": "until"
     },
     "deprecated":{
         "labelCategory": "version",
