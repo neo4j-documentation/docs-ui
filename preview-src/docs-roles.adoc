@@ -1,5 +1,5 @@
 = Docs roles with a long title
-:page-role: alpha aura-db-enterprise beta deprecated-5.17 invented-label new-5.17 not-on-aura
+:page-role: alpha aura-db-dedicated beta deprecated-5.17 invented-label new-5.17 not-on-aura
 :page-theme: docs
 :page-banner: warning
 :page-banner-text: Lorem ipsum dolor sit est.
@@ -49,13 +49,13 @@ Blocks with the appropriate roles have labels added.
 
 [discrete]
 [role="label--new-5.17 label--enterprise-edition"]
-=== (Discrete) H3 AuraDB Enterprise AND Not on Aura
+=== (Discrete) H3 AuraDB Virtual Dedicated Cloud AND Not on Aura
 
 Labels are not displayed for discrete headers.
 
 
-[role=label--aura-db-enterprise label--not-on-aura]
-=== H3 AuraDB Enterprise AND Not on Aura
+[role=label--aura-db-dedicated label--not-on-aura]
+=== H3 AuraDB Virtual Dedicated Cloud AND Not on Aura
 
 Lorem ipsum dolor sit
 
@@ -164,14 +164,14 @@ And so does this table
 |===
 
 
-[role=label--aura-db-enterprise]
-== AuraDB Enterprise
+[role=label--aura-db-dedicated]
+== AuraDB Virtual Dedicated Cloud
 
 Lorem ipsum dolor sit
 
 
-[role=label--aura-db-enterprise label--not-on-aura]
-== H2 AuraDB Enterprise AND Not on Aura
+[role=label--aura-db-dedicated label--not-on-aura]
+== H2 AuraDB Virtual Dedicated Cloud AND Not on Aura
 
 Lorem ipsum dolor sit
 
@@ -181,12 +181,12 @@ Lorem ipsum dolor sit
 Lorem ipsum dolor sit
 
 
-[role=label--aura-db-enterprise label--not-on-aura]
-=== H3 AuraDB Enterprise AND Not on Aura
+[role=label--aura-db-dedicated label--not-on-aura]
+=== H3 AuraDB Virtual Dedicated Cloud AND Not on Aura
 
 Lorem ipsum dolor sit
 
-[role=label--aura-db-enterprise label--not-on-aura]
+[role=label--aura-db-dedicated label--not-on-aura]
 === H4 show roles
 
 Lorem ipsum dolor sit

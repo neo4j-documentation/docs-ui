@@ -266,7 +266,7 @@ RETURN n.name AS name
 ----
 
 [.description]
-This example is displayed for AuraDB Enterprise (`[.aura-dbe]`)
+This example is displayed for AuraDB Virtual Dedicated Cloud (`[.aura-dbe]`)
 ====
 
 
@@ -280,7 +280,7 @@ RETURN n.name AS name
 ----
 
 [.description]
-This example is displayed for both AuraDB Free and AuraDB Enterprise.
+This example is displayed for both AuraDB Free and AuraDB Virtual Dedicated Cloud.
 ====
 
 
@@ -310,7 +310,7 @@ When generating a Neo4j (ie not Aura) cheat sheet, we would only add those two v
 
 In this example the labels would _not_ be displayed.
 
-If we add any other versions to the playbook, such as AuraDB Enterprise, the labels will be displayed when viewing the examples for Neo4j Community Edition or Neo4j Enterprise Edition, but the content will be hidden entirely when viewing the AuraDB Enterprise examples.
+If we add any other versions to the playbook, such as AuraDB Virtual Dedicated Cloud, the labels will be displayed when viewing the examples for Neo4j Community Edition or Neo4j Enterprise Edition, but the content will be hidden entirely when viewing the AuraDB Virtual Dedicated Cloud examples.
 --
 ====
 

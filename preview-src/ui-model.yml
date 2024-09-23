@@ -293,7 +293,7 @@ page:
           class: 'aura-dbf'
         - name: 'AuraDB Professional'
           class: 'aura-dbp'
-        - name: 'AuraDB Enterprise'
+        - name: 'AuraDB Virtual Dedicated Cloud'
           class: 'aura-dbe'
         - name: 'AuraDS Professional'
           class: 'aura-dsp'

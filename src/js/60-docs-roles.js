@@ -29,7 +29,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // roles can be single word ie beta - use beta as label class and text from rolesDatee.beta
     // roles can be single word + version ie new-5.20 - use new as label class and text from rolesData.new + version number
-    // roles can be multiple words ie aura-db-enterprise - use aura-db-enterprise as label class and text from rolesData.aura-db-enterprise
+    // roles can be multiple words ie aura-db-dedicated - use aura-db-dedicated as label class and text from rolesData.aura-db-dedicated
     // roles like deprecated can appear with or without a version number - deprecated-5.20 or deprecated
     // - use deprecated as label class and text from rolesData.deprecated
     // - use deprecated as label class and text from rolesData.deprecated + version number

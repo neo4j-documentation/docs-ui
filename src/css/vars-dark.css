@@ -350,6 +350,8 @@
   --not-on-aura-background-color: var(--warning-color);
   --aura-db-enterprise-color: rgba(var(--colors-baltic-10));
   --aura-db-enterprise-background-color: rgba(var(--colors-baltic-50));
+  --aura-db-dedicated-color: rgba(var(--colors-baltic-10));
+  --aura-db-dedicated-background-color: rgba(var(--colors-baltic-50));
   --enterprise-edition-color: rgba(var(--colors-baltic-10));
   --enterprise-edition-background-color: rgba(var(--colors-baltic-50));
   --fabric-color: rgba(var(--colors-baltic-10));

@@ -15,7 +15,7 @@
 </div>
 
 <div class="box">
-  <span class="label label--aura-db-enterprise">AuraDB Enterprise</span>
+  <span class="label label--aura-db-dedicated">AuraDB Virtual Dedicated Cloud</span>
 </div>
 
 <div class="box">
