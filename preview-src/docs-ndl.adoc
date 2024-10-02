@@ -6,6 +6,24 @@
 :!toc:
 :page-toclevels: -1
 
+
+[.widget2.banner]
+== Getting started
+
+[.icon]
+image:icons/ndl/start.svg[]
+
+--
+[.caption2]
+Get started with Neo4j
+
+[.description2]
+Learn more about graph databases and start working with your data using Neo4j tools.
+
+[.banner.button]
+xref:tutorials:index.adoc[Get started]
+--
+
 [.cards.icon-l]
 == CTA cards
 
@@ -18,10 +36,6 @@ image:icons/ndl/deployment-options.svg[]
 
 [.description]
 Choose from self-managed local and cloud deployments, or fully-managed options. See how to run Neo4j on Docker or Kubernetes.
-
-[.link]
-xref:deployment-options:index.adoc[Create your database]
-
 
 === Cypher
 
@@ -163,6 +177,26 @@ Tutorials & How-to guides
 xref:tutorials:index.adoc[All tutorials]
 --
 
+[.widget3.highlights]
+== GraphAcademy courses
+
+[.icon2]
+image:icons/ndl/ga-home.png[]
+
+--
+[.caption]
+GraphAcademy courses
+
+[.list2]
+* link:{docs-home}/genai/tutorials/embeddings-vector-indexes/[Embedding & Vector Indexes Tutorial]
+* link:{docs-home}/getting-started/appendix/tutorials/guide-import-relational-and-etl/[Import data from a relational database into Neo4j]
+* link:{docs-home}/getting-started/appendix/tutorials/guide-build-a-recommendation-engine/[Build a Cypher recommendation engine]
+* link:{docs-home}/operations-manual/current/tutorial/tutorial-composite-database/[Set up and use a composite database]
+
+[.footer-link]
+xref:tutorials:index.adoc[All tutorials]
+--
+
 
 [.cards.icon-s.align-center]
 == Other resources
@@ -185,7 +219,7 @@ image:icons/ndl/icon-community.svg[]
 link:https://community.neo4j.com/[Community forum] 
 link:https://discord.com/invite/neo4j[Discord]
 
-=== Developer blogs, articles and books
+=== Dev blogs, articles, and books
 
 [.icon]
 image:icons/ndl/icon-developercenter.svg[]

@@ -1,7 +1,11 @@
 :root {
 
+  /* --colors-baltic-25: #5CC3C9; */
+  /* --colors-baltic-20: #8FE3E8; */
   /* --colors-baltic-50: #0A6190; */
   /* --colors-baltic-60: #014063; */
+  /* --text-inverse: #1A1B1D; */
+  /* --text-white: #F5F6F6; */
 
   /* Picked from Neo4j Design System */
   /* ToDo: use it directly from the Design System when avaiable instead of redefining here */
@@ -149,6 +153,7 @@
   --color-pink-700: #b83280;
   --color-pink-800: #97266d;
   --color-pink-900: #702459;
+  --color-baltic-20: #8FE3E8; 
 
   /* theme accent colors */
   --color-developer: rgba(var(--colors-forest-45));
@@ -273,6 +278,11 @@
   --feedback-positive-background-color: rgba(var(--theme-light-palette-success-bg-strong));
   --feedback-negative-color: rgba(var(--theme-light-palette-danger-bg-weak));
   --feedback-negative-background-color: rgba(var(--theme-light-palette-danger-bg-strong));
+
+  /* landing page banner */
+  --banner-background-color: rgba(var(--colors-baltic-20));
+  --banner-hover-color: rgba(var(--colors-baltic-25));
+  --banner-text-color: rgba(var(--text-inverse));
 
   /* tbc: success indicator for tutorials */
   --success-color: rgba(var(--theme-light-palette-success-bg-strong));
