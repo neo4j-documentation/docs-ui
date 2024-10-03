@@ -15,13 +15,18 @@
     {{/if}}
 
     <a href="{{{page.attributes.ad-link}}}" target="_blank">
+
+        {{#unless page.attributes.ad-image}}
         {{#with page.attributes.ad-icon}}
         <i class="toc-ad-icon toc-ad-icon--{{{this}}}"></i>
         {{/with}}
+        {{/unless}}
 
+        {{#unless page.attributes.ad-icon}}
         {{#with page.attributes.ad-image}}
         <img class="toc-ad-image" src="{{{this}}}" alt="{{{ page.attributes.ad-title }}}">
         {{/with}}
+        {{/unless}}
 
         <h2 class="toc-ad-title">
             {{{page.attributes.ad-title}}}
