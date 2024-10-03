@@ -224,9 +224,9 @@ body.docs-ndl .widget3 .sectionbody {
   background: rgba(var(--colors-neutral-10));
   border-radius: 1rem;
   border: none;
-  padding: 1rem;
+  padding: 1rem 0 1rem;
   row-gap: 0;
-  column-gap: 0;
+  column-gap: 3rem;
 }
 
 body.docs-ndl.sub .widget .sectionbody {
@@ -304,7 +304,7 @@ body.docs-ndl .next-steps .sectionbody ol li:last-of-type {
 
 body.docs-ndl .next-steps .sectionbody ol li p {
   margin: 0 0 0 1rem;
-}dd
+}
 
 body.docs-ndl .next-steps .sectionbody ol li div.paragraph {
   margin: 0;
@@ -385,11 +385,18 @@ body.docs-ndl.explainer .sect1 {
   flex-wrap: wrap;
 }
 
-body.docs-ndl .paragraph.caption,
-body.docs-ndl .paragraph.footer-link {
+body.docs-ndl .paragraph.caption {
   display: flex;
   width: 100%;
   padding: 1rem;
+  margin: 0;
+  color: var(--neutral-color);
+}
+
+body.docs-ndl .paragraph.footer-link {
+  display: flex;
+  width: 100%;
+  padding: 0;
   margin: 0;
   color: var(--neutral-color);
 }
@@ -400,16 +407,29 @@ body.docs-ndl .paragraph.caption {
   font-weight: var(--font-weight-normal);
 }
 
-body.docs-ndl .paragraph.caption2,
-body.docs-ndl .paragraph.footer-link {
+body.docs-ndl .paragraph.caption2 {
   display: flex;
   width: 100%;
-  padding: 12px 0 0;
-  margin: 0;
+  padding: 0;
+  margin: 12px 24px 0;
   color: var(--color-white);
 }
 
 body.docs-ndl .paragraph.caption2 {
+  font-family: var(--header-font-family);
+  font-size: var(--doc-font-size-h2);
+  font-weight: var(--font-weight-normal);
+}
+
+body.docs-ndl .paragraph.caption3 {
+  display: flex;
+  width: 100%;
+  padding: 12px 30px 12px;
+  margin: 0;
+  color: var(--neutral-color);
+}
+
+body.docs-ndl .paragraph.caption3 {
   font-family: var(--header-font-family);
   font-size: var(--doc-font-size-h2);
   font-weight: var(--font-weight-normal);
@@ -481,7 +501,7 @@ body.docs-ndl .banner .button {
 .banner .button:hover {
   background: rgba(var(--banner-background-color));
   color: var(--colors-baltic-25);
-  }
+}
 
 .description2 {
   color: var(--color-white);
@@ -534,7 +554,7 @@ body.docs-ndl .highlights .list ul li {
 }
 
 body.docs-ndl .highlights .list2 {
-  padding-left: 1rem;
+  padding: 0;
 }
 
 body.docs-ndl .highlights .list2 ul li {
@@ -936,7 +956,6 @@ body.docs-ndl .cards .sect2 .ulist ul li {
   body.docs-ndl.sub .widget3 .sectionbody .sect2 {
     flex: 0 0 48%;
   }
-
 
   body.docs-ndl .lists .sectionbody > div.sect2 > * {
     /* margin: 0 auto; */

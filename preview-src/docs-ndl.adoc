@@ -184,14 +184,16 @@ xref:tutorials:index.adoc[All tutorials]
 image:icons/ndl/ga-home.png[]
 
 --
-[.caption]
+[.caption3]
 GraphAcademy courses
 
 [.list2]
 * link:{docs-home}/genai/tutorials/embeddings-vector-indexes/[Embedding & Vector Indexes Tutorial]
-* link:{docs-home}/getting-started/appendix/tutorials/guide-import-relational-and-etl/[Import data from a relational database into Neo4j]
-* link:{docs-home}/getting-started/appendix/tutorials/guide-build-a-recommendation-engine/[Build a Cypher recommendation engine]
+* xref:{docs-home}/getting-started/tutorials/import-relational/[Import data from a relational database into Neo4j]
+* xref:{docs-home}/getting-started/tutorials/recommendation-engine/[Build a Cypher recommendation engine]
 * link:{docs-home}/operations-manual/current/tutorial/tutorial-composite-database/[Set up and use a composite database]
+* link:{docs-home}/cdc/current/procedures/query-examples/[Capture and track changes in real-time]
+* link:{docs-home}/graph-data-science-client/current/tutorials/centrality-algorithms/[Apply centrality algorithms to your graph]
 
 [.footer-link]
 xref:tutorials:index.adoc[All tutorials]
