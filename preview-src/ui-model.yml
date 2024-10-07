@@ -114,8 +114,13 @@ page:
       url: docs-ndl.html
       urlType: internal
       module: ROOT
-    - content: Docs Sub Hub
-      url: docs-sub-hub.html
+    - content: Docs Hub
+      url: docs-hub.html
+      urlType: internal
+      module: ROOT
+      items:
+    - content: Explainer
+      url: docs-explainer.html
       urlType: internal
       module: ROOT
       items:

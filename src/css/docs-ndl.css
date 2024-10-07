@@ -328,6 +328,11 @@ body.docs-ndl .next-steps .sectionbody ul li div.paragraph {
 
 /* explainer */
 
+body.docs-ndl .cards .sectionbody > div.paragraph {
+  display: flex;
+  flex: 0 1 100%;
+}
+
 body.docs-ndl.explainer .sectionbody .video {
   display: block;
   width: 100%;
