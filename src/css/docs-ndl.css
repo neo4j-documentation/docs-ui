@@ -478,7 +478,7 @@ body.docs-ndl .cards .sect2 > a,
 body.docs-ndl .cards .sect2.not-selectable,
 body.docs-ndl .cards:not(.selectable) .sect2,
 body.docs-ndl .lists .sect2 {
-  overflow: hidden;
+  /* overflow: hidden; */
   position: relative;
   display: flex;
   flex-direction: column;
@@ -487,8 +487,21 @@ body.docs-ndl .lists .sect2 {
   /* justify-content: space-between; */
   gap: 1rem;
   /* min-width: 30%; */
-  padding: 1rem;
+  /* padding: 1rem; */
   /* margin: 0 1rem 1rem 0; */
+  /* background: var(--color-white); */
+}
+
+body.docs-ndl .cards .sect2.selectable > a,
+body.docs-ndl .cards .sect2.not-selectable,
+body.docs-ndl .cards:not(.selectable) .sect2:not(.selectable),
+body.docs-ndl .lists .sect2 {
+  padding: 1rem;
+}
+
+body.docs-ndl .cards .sect2.not-selectable:not(.dark),
+body.docs-ndl .cards .sect2:not(.dark) a,
+body.docs-ndl .cards:not(.selectable) .sect2:not(.dark) {
   background: var(--color-white);
 }
 
@@ -497,6 +510,24 @@ body.docs-ndl .lists .sect2 {
 - labs
 - graph-academy
 */
+
+body.docs-ndl .cards .sectionbody > div.sect2.dark a {
+  background-image: url(https://dist.neo4j.com/wp-content/uploads/20240514071252/nodes-patterns.svg);
+  background-position: center right;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-color: var(--color-black);
+  color: var(--color-white);
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.5), 0 1px 2px 0 rgba(0, 0, 0, 0.2);
+}
+
+body.docs-ndl .cards .sect2.dark h3 {
+  color: var(--color-white);
+}
+
+body.docs-ndl .cards .sect2.nodes .icon img {
+  width: 12rem;
+}
 
 /* this would give a background image on cards marked with [.ga-promo] */
 body.docs-ndl .cards .sectionbody > div.sect2.graph-academy > a,
