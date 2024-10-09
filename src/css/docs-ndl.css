@@ -512,10 +512,6 @@ body.docs-ndl .cards:not(.selectable) .sect2:not(.dark) {
 */
 
 body.docs-ndl .cards .sectionbody > div.sect2.dark a {
-  background-image: url(https://dist.neo4j.com/wp-content/uploads/20240514071252/nodes-patterns.svg);
-  background-position: center right;
-  background-repeat: no-repeat;
-  background-size: contain;
   background-color: var(--color-black);
   color: var(--color-white);
   box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.5), 0 1px 2px 0 rgba(0, 0, 0, 0.2);
@@ -525,8 +521,16 @@ body.docs-ndl .cards .sect2.dark h3 {
   color: var(--color-white);
 }
 
-body.docs-ndl .cards .sect2.nodes .icon img {
+body.docs-ndl .cards .sect2.icon-w .icon img,
+body.docs-ndl .cards.icon-l .sect2.icon-w .icon img {
   width: 12rem;
+}
+
+body.docs-ndl .cards .sectionbody > div.sect2.nodes-patterns a {
+  background-image: url(https://dist.neo4j.com/wp-content/uploads/20240514071252/nodes-patterns.svg);
+  background-position: center right;
+  background-repeat: no-repeat;
+  background-size: contain;
 }
 
 /* this would give a background image on cards marked with [.ga-promo] */

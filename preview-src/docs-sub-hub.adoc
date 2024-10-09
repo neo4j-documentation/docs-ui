@@ -24,7 +24,7 @@ endif::[]
 This section is designed to help you learn how to import various types of data into Neo4j. From JSON to APIs to another database, you can retrieve data from nearly any source and use it to populate your graph.
 
 
-[.dark.nodes]
+[.dark.icon-w.nodes-patterns]
 === Neo4j Online Developer Conference
 
 [.icon]

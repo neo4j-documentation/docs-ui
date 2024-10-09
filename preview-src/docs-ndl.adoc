@@ -9,7 +9,7 @@
 [.cards.icon-l]
 == CTA cards
 
-[.dark.nodes.selectable]
+[.dark.icon-w.nodes-patterns.selectable]
 === Neo4j Online Developer Conference
 
 [.icon]
