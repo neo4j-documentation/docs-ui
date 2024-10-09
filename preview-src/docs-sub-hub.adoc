@@ -24,6 +24,20 @@ endif::[]
 This section is designed to help you learn how to import various types of data into Neo4j. From JSON to APIs to another database, you can retrieve data from nearly any source and use it to populate your graph.
 
 
+[.dark.nodes]
+=== Neo4j Online Developer Conference
+
+[.icon]
+image:https://dist.neo4j.com/wp-content/uploads/20240514071251/node-24-logo.svg[]
+
+[.description]
+Join us on November 7 for live and unique tech talks over 24 hours across all timezones
+
+[.link]
+link:https://neo4j.registration.goldcast.io/events/03805ea9-fe3a-4cac-8c15-aa622666531a?utm_source=neodocs&utm_medium=banner&utm_campaign=std[Register]
+
+
+
 [role=label--new-5.12]
 === `LOAD CSV`
 [.icon]

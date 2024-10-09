@@ -7,8 +7,14 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   }
 
-  var makeClickable = function (card) {
-    var links = card.querySelectorAll('div.sect2:not(.not-selectable) div.link')
+  var makeClickable = function (cards) {
+    var links
+    if (cards.classList.contains('selectable')) {
+      links = cards.querySelectorAll('div.sect2:not(.not-selectable) div.link')
+    } else {
+      links = cards.querySelectorAll('div.sect2.selectable div.link')
+    }
+
     links.forEach(function (link) {
       var target = link.querySelector('a').getAttribute('href')
       var card = link.parentElement
@@ -44,7 +50,7 @@ document.addEventListener('DOMContentLoaded', function () {
   })
 
   // Add links to cards
-  document.querySelectorAll('.cards.selectable')
+  document.querySelectorAll('.cards')
     .forEach(makeClickable)
 
   // Move labels to the icon div to position them
