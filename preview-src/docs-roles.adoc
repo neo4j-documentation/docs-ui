@@ -21,6 +21,8 @@ For example, `label--beta-until-5.12` is displayed as `Beta until Neo4j 5.12`.
 To override this value, include the product name in the label.
 For example, `label--beta-until-bolt-1.0` is displayed as `Beta until Bolt 1.0`.
 
+For a list of all roles, see `src/js/data/rolesData.json`.
+
 [role=test-role]
 Paragraph with non-label role.
 
