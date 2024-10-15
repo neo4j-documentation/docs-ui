@@ -56,7 +56,7 @@ Blocks with the appropriate roles have labels added.
 Labels are not displayed for discrete headers.
 
 
-[role=label--aura-db-dedicated label--not-on-aura]
+[role=label--aura-db-dedicated label--aura-db-business-critical label--not-on-aura]
 === H3 AuraDB Virtual Dedicated Cloud AND Not on Aura
 
 Lorem ipsum dolor sit
