@@ -4,13 +4,13 @@
         "labelCategory": "content",
         "displayText": "NEW"
     },
-    "labs":{ 
+    "labs":{
         "description": "Neo4j Labs project",
         "labelCategory": "content",
         "product": "Labs",
         "displayText": "Labs"
     },
-    "graph-academy":{ 
+    "graph-academy":{
         "description": "Neo4j Graph Academy",
         "labelCategory": "content",
         "product": "Graph Academy",
@@ -63,6 +63,12 @@
         "labelCategory": "product",
         "product": "AuraDB Virtual Dedicated Cloud",
         "displayText": "AuraDB Virtual Dedicated Cloud"
+    },
+    "aura-db-business-critical":{
+        "description": "Function available in AuraDB Business Critical",
+        "labelCategory": "product",
+        "product": "AuraDB Business Critical",
+        "displayText": "AuraDB Business Critical"
     },
     "aura-db-dedicated":{
         "description": "Function available in AuraDB Virtual Dedicated Cloud",
