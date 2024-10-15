@@ -35,6 +35,10 @@
 </div>
 
 <div class="box">
+  <span class="label label--aura-db-business-critical">AuraDB Business Critical</span>
+</div>
+
+<div class="box">
   <span class="label label--aura">Aura</span>
 </div>
 
