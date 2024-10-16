@@ -15,7 +15,7 @@
   <div class="dropdown">
     <span class="dropdown-label">{{#with (or page.attributes.cheatsheet-product 'Product')}}{{this}}{{/with}} Version</span>
 
-    <select data-current="{{@root.page.version}}" class="version-selector dropdown-styles">
+    <select id="selector-version" data-current="{{@root.page.version}}" class="version-selector dropdown-styles">
       {{#each page.versions}}
       {{#unless this.prerelease}}
       <option
