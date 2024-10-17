@@ -408,17 +408,6 @@ body.docs-ndl .banner .paragraph.description {
   padding-right: 2rem;
 }
 
-body.docs-ndl .paragraph.caption3 {
-  display: flex;
-  width: 100%;
-  padding: 12px 30px 12px;
-  margin: 0;
-  color: var(--neutral-color);
-  font-family: var(--header-font-family);
-  font-size: var(--doc-font-size-h2);
-  font-weight: var(--font-weight-normal);
-}
-
 /* selectable cards */
 
 body.docs-ndl .cards .sect2.selectable {
@@ -744,10 +733,7 @@ body.docs-ndl .cards:nth-last-child(-n+2) .sectionbody {
   flex: 0 0 152%;
 }
 
-
-
-body.docs-ndl 
-body.docs-ndl .cards .sect2 .icon img {
+body.docs-ndl body.docs-ndl .cards .sect2 .icon img {
   width: 4rem;
   height: 4rem;
   padding: 0;
