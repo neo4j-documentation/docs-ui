@@ -76,12 +76,7 @@ div.roles > span.role {
 .sect2.beta > h3::after,
 span.alpha::after,
 span.beta::after,
-body.deprecated article h2::after,
-body.deprecated article h3::after,
-body.deprecated article h4::after,
-div.deprecated h2::after,
-div.deprecated h3::after,
-div.deprecated h4::after,
+body.deprecated article h1::after,
 body.deprecated article dt::after,
 div.deprecated p::after,
 p.deprecated::before,
@@ -184,21 +179,16 @@ div.roles > span.role::after {
   margin-bottom: 0;
 }
 
-body.deprecated article h2::after,
-body.deprecated article h3::after,
-body.deprecated article h4::after,
-div.deprecated h2::after,
-div.deprecated h3::after,
-div.deprecated h4::after,
+body.deprecated article h1::after,
 .deprecated dt::after,
 p.deprecated::before,
 section.deprecated .title::after,
 .deprecated > .title::after,
 span.deprecated::after {
   content: "Deprecated";
-  background: var(--deprecated-color);
+  background: var(--deprecated-background-color);
   border-color: var(--deprecated-color);
-  color: var(--deprecated-background-color);
+  color: var(--deprecated-color);
   margin-left: 8px;
   vertical-align: middle;
 }
