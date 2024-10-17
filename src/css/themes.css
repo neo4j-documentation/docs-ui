@@ -64,12 +64,19 @@ body.docs .doc .button:hover {
 }
 
 body.docs .banner .button {
+  display: flex;
+  width: fit-content;
   background: var(--banner-background-color);
+  border: 1px solid var(--banner-background-color);
   color: var(--colors-baltic-60);
 }
 
 body.docs .banner .button:hover {
   background: rgba(var(--banner-background-color));
+  border: 1px solid var(--banner-hover-color);
+}
+
+body.docs .banner .button:hover a {
   color: var(--banner-hover-color);
 }
 

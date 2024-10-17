@@ -211,13 +211,20 @@ body.docs-ndl .widget .sectionbody {
   column-gap: 0;
 }
 
-body.docs-ndl .widget2 .sectionbody {
+body.docs-ndl .widget.banner .sectionbody {
   background: rgba(var(--colors-baltic-60));
+  background-repeat: no-repeat;
+  background-position: right;
+  background-size: contain;
   border-radius: 1rem;
   border: none;
-  padding: 0;
+  padding: 2rem;
   row-gap: 0;
   column-gap: 0;
+}
+
+body.docs-ndl .widget.banner.start .sectionbody {
+  background-image: url(../img/start.svg);
 }
 
 body.docs-ndl .widget3 .sectionbody {
@@ -237,7 +244,7 @@ body.docs-ndl.sub .widget .sectionbody {
   column-gap: 1rem;
 }
 
-body.docs-ndl.sub .widget2 .sectionbody {
+body.docs-ndl.sub .widget.banner .sectionbody {
   background: transparent;
   padding: 0;
   justify-content: flex-start;
@@ -391,6 +398,9 @@ body.docs-ndl .paragraph.caption {
   padding: 1rem;
   margin: 0;
   color: var(--neutral-color);
+  font-family: var(--header-font-family);
+  font-size: var(--doc-font-size-h2);
+  font-weight: var(--font-weight-normal);
 }
 
 body.docs-ndl .paragraph.footer-link {
@@ -399,26 +409,20 @@ body.docs-ndl .paragraph.footer-link {
   padding: 0;
   margin: 0;
   color: var(--neutral-color);
+  justify-content: flex-end;
+  padding-right: 0;
 }
 
-body.docs-ndl .paragraph.caption {
-  font-family: var(--header-font-family);
-  font-size: var(--doc-font-size-h2);
-  font-weight: var(--font-weight-normal);
-}
-
-body.docs-ndl .paragraph.caption2 {
+body.docs-ndl .banner .paragraph {
   display: flex;
   width: 100%;
   padding: 0;
-  margin: 12px 24px 0;
+  margin: 1rem;
   color: var(--color-white);
 }
 
-body.docs-ndl .paragraph.caption2 {
-  font-family: var(--header-font-family);
-  font-size: var(--doc-font-size-h2);
-  font-weight: var(--font-weight-normal);
+body.docs-ndl .banner .paragraph.description {
+  padding-right: 2rem;
 }
 
 body.docs-ndl .paragraph.caption3 {
@@ -427,17 +431,9 @@ body.docs-ndl .paragraph.caption3 {
   padding: 12px 30px 12px;
   margin: 0;
   color: var(--neutral-color);
-}
-
-body.docs-ndl .paragraph.caption3 {
   font-family: var(--header-font-family);
   font-size: var(--doc-font-size-h2);
   font-weight: var(--font-weight-normal);
-}
-
-body.docs-ndl .paragraph.footer-link {
-  justify-content: flex-end;
-  padding-right: 0;
 }
 
 /* selectable cards */
@@ -462,11 +458,13 @@ body.docs-ndl .cards .sect2.selectable:hover div.description {
 
 /* banner */
 
+body.docs-ndl.hub .banner .sectionbody,
+body.docs-ndl.explainer .banner .sectionbody {
+  justify-content: space-between;
+}
+
 body.docs-ndl .banner .sectionbody > div.openblock {
   flex: 0 0 50%;
-  padding: 3px 3px 3px;
-  border-bottom: 0;
-  margin-bottom: 0;
 }
 
 body.docs-ndl .banner .sectionbody > div.icon {
@@ -478,9 +476,8 @@ body.docs-ndl .banner .sectionbody > div.icon {
 }
 
 body.docs-ndl .banner .icon img {
-  width: 639px;
-  height: 246px;
-  padding: 0 6.7rem 0;
+  height: 100%;
+  padding: 0;
   margin: 0;
 }
 
@@ -489,7 +486,17 @@ body.docs-ndl .banner .button {
   padding: 0.5em 1.5em;
   font-weight: 400;
   text-align: center;
-  margin-left: 24px;
+  /* margin-left: 24px; */
+}
+
+@media screen and (max-width: 1240px) {
+  body.docs-ndl .widget.banner .sectionbody {
+    background-image: none !important;
+  }
+
+  body.docs-ndl .widget.banner .sectionbody > div.openblock {
+    flex: 0 0 100%;
+  }
 }
 
 @media screen and (min-width: 1024px) {
@@ -519,7 +526,7 @@ body.docs-ndl .highlights .sectionbody > div.openblock {
 }
 
 body.docs-ndl .highlights .sectionbody > div.icon {
-  flex: 0 1 40%;
+  flex: 0 1 60%;
   padding-top: 1rem;
   padding-bottom: 1rem;
   padding-left: 8rem;
@@ -613,7 +620,7 @@ body.docs-ndl .sect2 {
 }
 
 body.docs-ndl .cards .sectionbody > div.sect2 {
-  flex: 0 1 29%;
+  flex: 0 1 32%;
   /* margin-right: 1rem; */
 }
 
@@ -718,14 +725,13 @@ body.docs-ndl .sect2 a > h3 {
 
 body.docs-ndl .cards .sect2 .icon,
 body.docs-ndl .widget .icon {
-  order: 1;
   padding: 0;
   margin: 0;
   width: 100%;
 }
 
 body.docs-ndl .cards .sect2 .icon,
-body.docs-ndl .widget2 .icon {
+body.docs-ndl .widget.banner .icon {
   order: 1;
   padding: 0;
   margin: 0;
@@ -759,6 +765,16 @@ body.docs-ndl .cards .icon span {
 
 body.docs-ndl .widget.highlights .icon {
   padding: 2rem;
+}
+
+/* For the 1st, 3rd etc highlights, move the image to the right */
+body.docs-ndl .widget.highlights:nth-of-type(odd) .icon {
+  order: 1;
+}
+
+/* We can use this rule to apply styles to the 2nd, 4th highlights etc widget */
+body.docs-ndl .widget.highlights:nth-of-type(even) .openblock {
+  /* margin-right:40px; */
 }
 
 body.docs-ndl .widget3.highlights .icon {
@@ -920,14 +936,14 @@ body.docs-ndl .cards .sect2 .ulist ul li {
     justify-content: center;
   }
 
-  body.docs-ndl .widget2 .sectionbody {
+  body.docs-ndl .widget.banner .sectionbody {
     row-gap: 2rem;
   }
 
-  body.docs-ndl .widget2 .sectionbody > div {
+  /* body.docs-ndl .widget.banner .sectionbody > div {
     flex: 0 1 100%;
     justify-content: center;
-  }
+  } */
 
   body.docs-ndl .widget3 .sectionbody {
     row-gap: 2rem;
@@ -944,11 +960,6 @@ body.docs-ndl .cards .sect2 .ulist ul li {
 
   body.docs-ndl .widget .sectionbody .sect2,
   body.docs-ndl.sub .widget .sectionbody .sect2 {
-    flex: 0 0 48%;
-  }
-
-  body.docs-ndl .widget2 .sectionbody .sect2,
-  body.docs-ndl.sub .widget2 .sectionbody .sect2 {
     flex: 0 0 48%;
   }
 

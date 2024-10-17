@@ -7,20 +7,20 @@
 :page-toclevels: -1
 
 
-[.widget2.banner]
+[.widget.banner.start]
 == Getting started
 
-[.icon]
-image:icons/ndl/start.svg[]
+// [.icon]
+// image:icons/ndl/start.svg[]
 
 --
-[.caption2]
+[.caption]
 Get started with Neo4j
 
-[.description2]
+[.description]
 Learn more about graph databases and start working with your data using Neo4j tools.
 
-[.banner.button]
+[.button]
 xref:tutorials:index.adoc[Get started]
 --
 
@@ -177,17 +177,17 @@ Tutorials & How-to guides
 xref:tutorials:index.adoc[All tutorials]
 --
 
-[.widget3.highlights]
+[.widget.highlights]
 == GraphAcademy courses
 
-[.icon2]
+[.icon]
 image:icons/ndl/ga-home.png[]
 
 --
-[.caption3]
+[.caption]
 GraphAcademy courses
 
-[.list2]
+[.list]
 * link:{docs-home}/genai/tutorials/embeddings-vector-indexes/[Embedding & Vector Indexes Tutorial]
 * xref:{docs-home}/getting-started/tutorials/import-relational/[Import data from a relational database into Neo4j]
 * xref:{docs-home}/getting-started/tutorials/recommendation-engine/[Build a Cypher recommendation engine]
