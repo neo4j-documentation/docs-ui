@@ -63,6 +63,23 @@ body.docs .doc .button:hover {
   color: var(--color-white);
 }
 
+body.docs .banner .button {
+  display: flex;
+  width: fit-content;
+  background: var(--banner-background-color);
+  border: 1px solid var(--banner-background-color);
+  color: var(--colors-baltic-60);
+}
+
+body.docs .banner .button:hover {
+  background: rgba(var(--banner-background-color));
+  border: 1px solid var(--banner-hover-color);
+}
+
+body.docs .banner .button:hover a {
+  color: var(--banner-hover-color);
+}
+
 body.docs .nav-item .nav-item::before,
 body.docs .toc-menu li a::before {
   color: rgba(var(--colors-baltic-30));
@@ -111,6 +128,19 @@ body.docs .navbar .navbar-item.getting-started-cta .navbar-link:hover {
 
 body.docs .navbar .navbar-item.getting-started-cta .navbar-link:active {
   background: rgba(var(--colors-baltic-70));
+}
+
+body.docs .banner .button .banner-link {
+  background: var(--banner-background-color);
+  color: var(--banner-text-color);
+}
+
+body.docs .banner .button .banner-link:hover {
+  background: rgba(var(--banner-hover-color));
+}
+
+body.docs .banner .button .banner-link:active {
+  background: rgba(var(--banner-background-color));
 }
 
 /*
@@ -209,6 +239,16 @@ body.labs .navbar .navbar-item.getting-started-cta .navbar-link {
 body.labs .navbar .navbar-item.getting-started-cta .navbar-link:hover {
   background: rgba(var(--colors-lavender-50));
   color: var(--color-white);
+}
+
+body.labs .banner .button .banner-link {
+  background: var(--banner-background-color);
+  color: var(--colors-baltic-30);
+}
+
+body.labs .banner .button .banner-link:hover {
+  background: rgba(var(--colors-lavender-50));
+  color: var(--banner-hover-color);
 }
 
 /* Labs Home Page */
@@ -311,6 +351,15 @@ body.developer .navbar .navbar-item.getting-started-cta:hover .navbar-link {
   background: rgba(var(--colors-baltic-60));
 }
 
+body.developer .banner .button .banner-link {
+  background: var(--color-docs);
+  color: var(--color-white);
+}
+
+body.developer .banner .button:hover .banner-link {
+  background: rgba(var(--colors-baltic-60));
+}
+
 /* Developer Home Page */
 body.landing.developer .navbar {
   border-bottom: 0 none;
@@ -401,6 +450,19 @@ body.kb .navbar .navbar-item.getting-started-cta .navbar-link:hover {
 }
 
 body.kb .navbar .navbar-item.getting-started-cta .navbar-link:active {
+  background: rgba(var(--colors-lavender-60));
+}
+
+body.kb .banner .banner-item.button-cta .banner-link {
+  background: var(--color-labs);
+  color: var(--color-white);
+}
+
+body.kb .banner .banner-item.button-cta .banner-link:hover {
+  background: rgba(var(--colors-lavender-50));
+}
+
+body.kb .banner .banner-item.button-cta .banner-link:active {
   background: rgba(var(--colors-lavender-60));
 }
 
