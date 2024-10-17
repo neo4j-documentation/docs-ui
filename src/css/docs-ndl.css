@@ -505,11 +505,11 @@ body.docs-ndl .banner .button {
 /* highlights */
 
 body.docs-ndl .highlights .sectionbody > div.openblock {
-  flex: 0 1 40%;
+  flex: 1 1 40%;
 }
 
 body.docs-ndl .highlights .sectionbody > div.icon {
-  flex: 0 1 57%;
+  flex: 0 1 52%;
   padding-top: 1rem;
   padding-bottom: 1rem;
   padding-left: 4rem;
@@ -732,7 +732,6 @@ body.docs-ndl .widget.highlights .icon {
 /* For the 1st, 3rd etc highlights, move the image to the right */
 body.docs-ndl .widget.highlights:nth-of-type(odd) .icon {
   order: 1;
-  padding-left: 1rem;
 }
 
 /* We can use this rule to apply styles to the 2nd, 4th highlights etc widget */
