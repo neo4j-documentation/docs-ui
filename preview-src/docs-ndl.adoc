@@ -27,7 +27,6 @@ xref:tutorials:index.adoc[Get started]
 [.cards.icon-l]
 == CTA cards
 
-
 [.featured.label--featured]
 === Deployment options
 
@@ -181,7 +180,7 @@ xref:tutorials:index.adoc[All tutorials]
 == GraphAcademy courses
 
 [.icon]
-image:icons/ndl/ga-home.png[]
+image:icons/ndl/ga-home.svg[]
 
 --
 [.caption]
@@ -202,15 +201,6 @@ xref:tutorials:index.adoc[All tutorials]
 
 [.cards.icon-s.align-center]
 == Other resources
-
-
-=== Learn and become Neo4j certified
-
-[.icon]
-image:icons/ndl/icon-graphacademy.svg[]
-
-[.link]
-link:https://graphacademy.neo4j.com/?ref=docs-nav[Explore GraphAcademy]
 
 === Join forums and discussions
 

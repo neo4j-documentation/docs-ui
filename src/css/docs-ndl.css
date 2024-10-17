@@ -208,7 +208,7 @@ body.docs-ndl .widget .sectionbody {
   border: none;
   padding: 1rem;
   row-gap: 0;
-  column-gap: 0;
+  column-gap: 2rem;
 }
 
 body.docs-ndl .widget.banner .sectionbody {
@@ -227,15 +227,6 @@ body.docs-ndl .widget.banner.start .sectionbody {
   background-image: url(../img/start.svg);
 }
 
-body.docs-ndl .widget3 .sectionbody {
-  background: rgba(var(--colors-neutral-10));
-  border-radius: 1rem;
-  border: none;
-  padding: 1rem 0 1rem;
-  row-gap: 0;
-  column-gap: 3rem;
-}
-
 body.docs-ndl.sub .widget .sectionbody {
   background: transparent;
   padding: 0;
@@ -245,14 +236,6 @@ body.docs-ndl.sub .widget .sectionbody {
 }
 
 body.docs-ndl.sub .widget.banner .sectionbody {
-  background: transparent;
-  padding: 0;
-  justify-content: flex-start;
-  row-gap: 1rem;
-  column-gap: 1rem;
-}
-
-body.docs-ndl.sub .widget3 .sectionbody {
   background: transparent;
   padding: 0;
   justify-content: flex-start;
@@ -526,28 +509,15 @@ body.docs-ndl .highlights .sectionbody > div.openblock {
 }
 
 body.docs-ndl .highlights .sectionbody > div.icon {
-  flex: 0 1 60%;
+  flex: 0 1 57%;
   padding-top: 1rem;
   padding-bottom: 1rem;
-  padding-left: 8rem;
+  padding-left: 4rem;
   padding-right: 5.438rem;
   align-self: center;
 }
 
-body.docs-ndl .highlights .sectionbody > div.icon2 {
-  flex: 0 1 40%;
-  padding-top: 1rem;
-  padding-bottom: 1rem;
-  padding-left: 5rem;
-  padding-right: 4rem;
-  align-self: center;
-}
-
 body.docs-ndl .highlights .sectionbody > div.icon span.image {
-  display: flex;
-}
-
-body.docs-ndl .highlights .sectionbody > div.icon2 span.image {
   display: flex;
 }
 
@@ -738,14 +708,6 @@ body.docs-ndl .widget.banner .icon {
   width: 100%;
 }
 
-body.docs-ndl .cards .sect2 .icon,
-body.docs-ndl .widget3 .icon {
-  order: 0;
-  padding: 0;
-  margin: 0;
-  width: 100%;
-}
-
 body.docs-ndl .cards .sect2 .icon p {
   display: flex;
   width: -webkit-fill-available;
@@ -770,15 +732,12 @@ body.docs-ndl .widget.highlights .icon {
 /* For the 1st, 3rd etc highlights, move the image to the right */
 body.docs-ndl .widget.highlights:nth-of-type(odd) .icon {
   order: 1;
+  padding-left: 1rem;
 }
 
 /* We can use this rule to apply styles to the 2nd, 4th highlights etc widget */
 body.docs-ndl .widget.highlights:nth-of-type(even) .openblock {
   /* margin-right:40px; */
-}
-
-body.docs-ndl .widget3.highlights .icon {
-  padding: 2rem;
 }
 
 body.docs-ndl .cards .sect2 .icon img {
@@ -945,26 +904,12 @@ body.docs-ndl .cards .sect2 .ulist ul li {
     justify-content: center;
   } */
 
-  body.docs-ndl .widget3 .sectionbody {
-    row-gap: 2rem;
-  }
-
-  body.docs-ndl .widget3 .sectionbody > div {
-    flex: 0 1 100%;
-    justify-content: center;
-  }
-
   body.docs-ndl .lists ul {
     /* text-align: center; */
   }
 
   body.docs-ndl .widget .sectionbody .sect2,
   body.docs-ndl.sub .widget .sectionbody .sect2 {
-    flex: 0 0 48%;
-  }
-
-  body.docs-ndl .widget3 .sectionbody .sect2,
-  body.docs-ndl.sub .widget3 .sectionbody .sect2 {
     flex: 0 0 48%;
   }
 
