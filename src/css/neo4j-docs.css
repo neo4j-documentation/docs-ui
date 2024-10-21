@@ -76,12 +76,7 @@ div.roles > span.role {
 .sect2.beta > h3::after,
 span.alpha::after,
 span.beta::after,
-body.deprecated article h1::after,
-div.deprecated p::after,
-p.deprecated::before,
-section.deprecated .title::after,
 span.deprecated::after,
-.deprecated > .title::after,
 div.not-on-aura > h2::after,
 div.not-on-aura > h3::after,
 div.not-on-aura > h4::after,
@@ -178,11 +173,6 @@ div.roles > span.role::after {
   margin-bottom: 0;
 }
 
-body.deprecated article h1::after,
-.deprecated dt::after,
-p.deprecated::before,
-section.deprecated .title::after,
-.deprecated > .title::after,
 span.deprecated::after {
   content: "Deprecated";
   background: var(--deprecated-background-color);
@@ -258,23 +248,19 @@ span.fabric::after {
 }
 
 .doc .admonitionblock.deprecated .icon {
-  background-color: var(--deprecated-color);
-  color: var(--deprecated-background-color);
-}
-
-.doc .admonitionblock.deprecated .icon i::after {
-  content: 'DEPRECATED';
+  background-color: var(--deprecated-background-color);
+  color: var(--deprecated-color);
 }
 
 .doc .admonitionblock.deprecated {
-  background-color: var(--color-pink-200);
-  border-left-color: var(--color-pink-600);
-  color: var(--color-pink-900);
+  background-color: var(--deprecated-background-color);
+  border-left-color: var(--deprecated-color);
+  color: var(--deprecated-color);
 }
 
 .doc .admonitionblock.deprecated pre {
-  background-color: var(--color-red-100);
-  color: var(--color-red-700);
+  background-color: var(--deprecated-background-color);
+  color: var(--deprecated-color);
 }
 
 .doc .admonitionblock.deprecated a {
