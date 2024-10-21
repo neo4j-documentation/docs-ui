@@ -76,7 +76,6 @@ div.roles > span.role {
 .sect2.beta > h3::after,
 span.alpha::after,
 span.beta::after,
-body.deprecated article h1::after,
 div.deprecated p::after,
 p.deprecated::before,
 section.deprecated .title::after,
@@ -267,14 +266,14 @@ span.fabric::after {
 }
 
 .doc .admonitionblock.deprecated {
-  background-color: var(--color-pink-200);
-  border-left-color: var(--color-pink-600);
-  color: var(--color-pink-900);
+  background-color: var(--deprecated-background-color);
+  border-left-color: var(--deprecated-color);
+  color: var(--deprecated-color);
 }
 
 .doc .admonitionblock.deprecated pre {
-  background-color: var(--color-red-100);
-  color: var(--color-red-700);
+  background-color: var(--deprecated-background-color);
+  color: var(--deprecated-color);
 }
 
 .doc .admonitionblock.deprecated a {
