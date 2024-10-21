@@ -77,7 +77,6 @@ div.roles > span.role {
 span.alpha::after,
 span.beta::after,
 body.deprecated article h1::after,
-body.deprecated article dt::after,
 div.deprecated p::after,
 p.deprecated::before,
 section.deprecated .title::after,
