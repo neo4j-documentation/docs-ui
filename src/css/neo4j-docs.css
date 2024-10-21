@@ -258,8 +258,8 @@ span.fabric::after {
 }
 
 .doc .admonitionblock.deprecated .icon {
-  background-color: var(--deprecated-color);
-  color: var(--deprecated-background-color);
+  background-color: var(--deprecated-background-color);
+  color: var(--deprecated-color);
 }
 
 .doc .admonitionblock.deprecated .icon i::after {
