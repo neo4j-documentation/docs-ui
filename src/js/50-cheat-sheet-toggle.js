@@ -193,6 +193,8 @@ document.addEventListener('DOMContentLoaded', function () {
   const prodSelector = document.querySelector(prodSelectorID)
   prodSelector.dataset.current = prodSelector.options[prodSelector.selectedIndex].value
 
+  var versionSelector = document.querySelector('body.cheat-sheet .version-selector')
+
   prodSelector.addEventListener('change', function (e) {
     e.stopPropagation()
 
@@ -202,41 +204,42 @@ document.addEventListener('DOMContentLoaded', function () {
       return
     }
 
-    const currentProd = Object.keys(prodMatrix).find((key) => prodMatrix[key] === e.target.dataset.current)
-    const newProd = Object.keys(prodMatrix).find((key) => prodMatrix[key] === e.target.value)
-    const re = new RegExp(`/${currentProd}/`)
+    const currentProd = (e.target.dataset.current === 'all') ? 'all' : Object.keys(prodMatrix).find((key) => prodMatrix[key] === e.target.dataset.current)
+    // console.log(currentProd)
+    const newProd = (e.target.value === 'all') ? 'all' : Object.keys(prodMatrix).find((key) => prodMatrix[key] === e.target.value)
+    // console.log(newProd)
+
+    const re = new RegExp(`/${currentProd}`)
     let newURL
 
     // if we're using a proxied path, just load the new url
     if (selectionFromPath) {
-      newURL = newProd ? curURL.href.replace(re, `/${newProd}/`) : curURL.href.replace(re, '')
+      // console.log(`using selection from path: ${selectionFromPath}`)
+      // console.log(`current URL: ${curURL.href}`)
+      // console.log(`regex: ${re}`)
+      newURL = newProd ? curURL.href.replace(re, `/${newProd}`) : curURL.href.replace(re, '')
     } else {
+      // console.log('no selectionFromPath')
       newURL = curURL.href.split('#')[0].concat(newProd).concat(curURL.hash)
     }
 
-    if (newURL) document.location.replace(newURL)
+    // console.log(newURL)
+
+    if (newURL) {
+      // console.log('replacing url with ' + newURL)
+      document.location.replace(newURL)
+    }
   })
 
-  var versionSelector = document.querySelector('body.cheat-sheet .version-selector')
   if (versionSelector) {
     versionSelector.addEventListener('change', function (e) {
-      const target = e.target
-
-      const selectedProduct = prodSelector.selectedIndex
-      const current = target.dataset.current
-      const next = target.selectedOptions[0].dataset.version
-      let newUrl
-      if (selectionFromPath) {
-        const re = new RegExp(`/${current}/`)
-        newUrl = document.URL.replace(re, `/${next}/`)
-      } else {
-        newUrl = `${target.value}?product=${prodSelector.options[selectedProduct].value}`
-      }
-
+      const current = e.target.dataset.current
+      const next = e.target.selectedOptions[0].dataset.version
+      const re = new RegExp(`/${current}/`)
+      const newUrl = document.URL.replace(re, `/${next}/`)
       if (window.ga) {
         window.ga('send', 'event', 'version-select', 'From: ' + current + ';To:' + next + ';')
       }
-
       document.location.replace(newUrl)
     })
   }
@@ -416,6 +419,9 @@ function fixURL () {
   // eg /docs/cypher-cheat-sheet/current/where
   // or /docs/cypher-cheat-sheet/5/auradb-free/
   // or /docs/cypher-cheat-sheet/5/auradb-free/where
+  // or (special case) /docs/cypher-cheat-sheet/5/all
+
+  // console.log(`checking url ${href} for product name`)
 
   const pathArr = stripTrailingSlash(url.pathname).split('/')
   if (pathArr[0] === '') pathArr.shift()
@@ -428,6 +434,8 @@ function fixURL () {
   // let version = values[0]
   // the second item in values should be the product
   let product = values[1]
+
+  // console.log(`product is ${product}`)
   // the third is a page that can be turned into a section id
   let possibleID = values[2]
   let id = ''
@@ -438,7 +446,7 @@ function fixURL () {
 
   if (possibleID) {
     id = checkHashVariations(possibleID)
-    console.log(id)
+    // console.log(id)
   }
 
   // update window.location.href
@@ -459,11 +467,15 @@ function fixURL () {
   if (id && Object.keys(prodMatrix).includes(product)) {
     window.location.hash = '#' + id
     const reHash = new RegExp(`/${possibleID}/?`)
-    href = href.replace(reHash, `#${id}`)
+    href = stripTrailingSlash(href).replace(reHash, `/#${id}`)
   }
 
   if (href !== url.href) {
     window.location.replace(href)
+  }
+
+  if (product === 'all') {
+    return product
   }
 
   return prodMatrix[product]
