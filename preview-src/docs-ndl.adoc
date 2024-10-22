@@ -6,9 +6,26 @@
 :!toc:
 :page-toclevels: -1
 
+
+[.widget.banner.start]
+== Getting started
+
+// [.icon]
+// image:icons/ndl/start.svg[]
+
+--
+[.caption]
+Get started with Neo4j
+
+[.description]
+Learn more about graph databases and start working with your data using Neo4j tools.
+
+[.button]
+xref:tutorials:index.adoc[Get started]
+--
+
 [.cards.icon-l]
 == CTA cards
-
 
 [.featured.label--featured]
 === Deployment options
@@ -18,10 +35,6 @@ image:icons/ndl/deployment-options.svg[]
 
 [.description]
 Choose from self-managed local and cloud deployments, or fully-managed options. See how to run Neo4j on Docker or Kubernetes.
-
-[.link]
-xref:deployment-options:index.adoc[Create your database]
-
 
 === Cypher
 
@@ -163,18 +176,31 @@ Tutorials & How-to guides
 xref:tutorials:index.adoc[All tutorials]
 --
 
+[.widget.highlights]
+== GraphAcademy courses
+
+[.icon]
+image:icons/ndl/ga-home.svg[]
+
+--
+[.caption]
+GraphAcademy courses
+
+[.list]
+* link:{docs-home}/genai/tutorials/embeddings-vector-indexes/[Embedding & Vector Indexes Tutorial]
+* xref:{docs-home}/getting-started/tutorials/import-relational/[Import data from a relational database into Neo4j]
+* xref:{docs-home}/getting-started/tutorials/recommendation-engine/[Build a Cypher recommendation engine]
+* link:{docs-home}/operations-manual/current/tutorial/tutorial-composite-database/[Set up and use a composite database]
+* link:{docs-home}/cdc/current/procedures/query-examples/[Capture and track changes in real-time]
+* link:{docs-home}/graph-data-science-client/current/tutorials/centrality-algorithms/[Apply centrality algorithms to your graph]
+
+[.footer-link]
+xref:tutorials:index.adoc[All tutorials]
+--
+
 
 [.cards.icon-s.align-center]
 == Other resources
-
-
-=== Learn and become Neo4j certified
-
-[.icon]
-image:icons/ndl/icon-graphacademy.svg[]
-
-[.link]
-link:https://graphacademy.neo4j.com/?ref=docs-nav[Explore GraphAcademy]
 
 === Join forums and discussions
 
@@ -185,7 +211,7 @@ image:icons/ndl/icon-community.svg[]
 link:https://community.neo4j.com/[Community forum] 
 link:https://discord.com/invite/neo4j[Discord]
 
-=== Developer blogs, articles and books
+=== Dev blogs, articles, and books
 
 [.icon]
 image:icons/ndl/icon-developercenter.svg[]
