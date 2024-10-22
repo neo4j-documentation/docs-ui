@@ -3,7 +3,9 @@
   
   <div class="content">
     {{> article}}
+    {{#if (ne page.attributes.layout 'page-wide')}}
     {{> toc}}
+    {{/if}}
   </div>
   
 </main>
