@@ -734,8 +734,8 @@ body.docs-ndl .widget.highlights:nth-of-type(even) .openblock {
 }
 
 /* For the bottom cards */
-body.docs-ndl .cards:nth-last-child(-n+2) .sectionbody {
-  flex: 0 0 152%;
+body.docs-ndl .cards:nth-last-child(-n+2) .sectionbody>div.sect2 {
+  flex: 0 0 49%;
 }
 
 body.docs-ndl body.docs-ndl .cards .sect2 .icon img {
