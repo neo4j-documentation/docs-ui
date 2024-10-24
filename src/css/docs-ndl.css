@@ -731,8 +731,8 @@ body.docs-ndl .widget.highlights:nth-of-type(even) .icon {
 } */
 
 /* For the bottom cards */
-body.docs-ndl .cards.two-column .sectionbody > div.sect2 {
-  flex: 0 0 49%;
+body.docs-ndl .cards:nth-last-child(-n+2) .sectionbody {
+  flex: 0 0 152%;
 }
 
 body.docs-ndl body.docs-ndl .cards .sect2 .icon img {
@@ -950,8 +950,7 @@ body.docs-ndl .cards .sect2 .ulist ul li {
     text-align: left;
   }
 
-  body.docs-ndl .cards .sectionbody > div.sect2,
-  body.docs-ndl .cards.two-column .sectionbody > div.sect2 {
+  body.docs-ndl .cards .sectionbody > div.sect2 {
     /* min-width: 90%; */
     flex: 1 1 100%;
   }

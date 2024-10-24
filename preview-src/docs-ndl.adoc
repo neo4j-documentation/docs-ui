@@ -199,7 +199,7 @@ xref:tutorials:index.adoc[All tutorials]
 --
 
 
-[.cards.icon-s.align-center.two-column]
+[.cards.icon-s.align-center]
 == Other resources
 
 === Join forums and discussions
