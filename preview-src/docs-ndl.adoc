@@ -199,7 +199,7 @@ xref:tutorials:index.adoc[All tutorials]
 --
 
 
-[.cards.icon-s.align-center]
+[.bottom-cards]
 == Other resources
 
 === Join forums and discussions
