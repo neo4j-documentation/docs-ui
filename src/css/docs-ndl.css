@@ -207,8 +207,14 @@ body.docs-ndl .widget .sectionbody {
   border-radius: 1rem;
   border: none;
   padding: 1rem;
+  column-gap: 0;
   row-gap: 0;
-  column-gap: 2rem;
+  justify-content: center;
+  align-content: center;
+}
+
+body.docs-ndl .widget.lists .sectionbody {
+  justify-content: space-between;
 }
 
 body.docs-ndl .widget.banner .sectionbody {
@@ -498,25 +504,20 @@ body.docs-ndl .banner .button {
 
 /* highlights */
 
-body.docs-ndl .highlights .sectionbody > div.openblock {
-  flex: 1 1 40%;
-}
-
-body.docs-ndl .highlights .sectionbody > div.icon {
-  flex: 0 1 52%;
-  padding-top: 1rem;
-  padding-bottom: 1rem;
-  padding-left: 4rem;
-  padding-right: 5.438rem;
+body.docs-ndl .highlights .sectionbody > div {
+  flex: 0 1 50%;
+  justify-content: center;
   align-self: center;
+  padding: 1rem;
 }
 
 body.docs-ndl .highlights .sectionbody > div.icon span.image {
   display: flex;
 }
 
-body.docs-ndl .highlights .list {
-  padding-left: 1rem;
+body.docs-ndl .highlights .list,
+body.docs-ndl .highlights .caption {
+  padding-left: 0;
 }
 
 body.docs-ndl .highlights .list ul li {
@@ -719,19 +720,15 @@ body.docs-ndl .cards .icon span {
   display: flex;
 }
 
-body.docs-ndl .widget.highlights .icon {
-  padding: 2rem;
-}
-
 /* For the 1st, 3rd etc highlights, move the image to the right */
-body.docs-ndl .widget.highlights:nth-of-type(odd) .icon {
+body.docs-ndl .widget.highlights:nth-of-type(even) .icon {
   order: 1;
 }
 
 /* We can use this rule to apply styles to the 2nd, 4th highlights etc widget */
-body.docs-ndl .widget.highlights:nth-of-type(even) .openblock {
-  /* margin-right:40px; */
-}
+/* body.docs-ndl .widget.highlights:nth-of-type(even) .openblock {
+  margin-right:40px;
+} */
 
 /* For the bottom cards */
 body.docs-ndl .cards:nth-last-child(-n+2) .sectionbody {
