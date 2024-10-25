@@ -199,7 +199,7 @@ xref:tutorials:index.adoc[All tutorials]
 --
 
 
-[.bottom-cards]
+[.cards.bottom-cards]
 == Other resources
 
 === Join forums and discussions
