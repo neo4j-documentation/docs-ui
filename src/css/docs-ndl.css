@@ -508,11 +508,12 @@ body.docs-ndl .highlights .sectionbody > div {
   flex: 0 1 50%;
   justify-content: center;
   align-self: center;
-  padding: 1rem;
+  padding: 1rem 2rem 1rem;  
 }
 
 body.docs-ndl .highlights .sectionbody > div.icon span.image {
   display: flex;
+  justify-content: center;
 }
 
 body.docs-ndl .highlights .list,
@@ -685,7 +686,7 @@ body.docs-ndl .cards .sect2 a > div {
 body.docs-ndl .highlights .sectionbody > div,
 body.docs-ndl .sect2 a > div,
 body.docs-ndl .sect2 a > h3 {
-  display: flex;
+  display: flow;
 }
 
 body.docs-ndl .cards .sect2 .icon,
