@@ -7,7 +7,7 @@
 // :page-disablefeedback: true
 :page-toclevels: -1
 
-[.display.cards.not-selectable]
+[.cards.not-selectable]
 == Developer tools documentation
 
 Use Neo4j tools to query and manage your databases, import data, and create graphical visualizations. 
@@ -15,7 +15,7 @@ Use Neo4j tools to query and manage your databases, import data, and create grap
 === Neo4j Bloom/Explore
 
 [.icon]
-image:icons/ndl/science-molecule.svg[]
+image:icons/ndl/icon-scientist.svg[]
 
 [.description]
 Visualize and explore graph data using natural language search and an intuitive and graphical interface.
@@ -27,7 +27,7 @@ link:{docs-home}/aura/preview/explore/introduction/[Explore (Aura)]
 === Neo4j Browser/Query
 
 [.icon]
-image:icons/ndl/data-science.svg[]
+image:icons/ndl/icon-scientist.svg[]
 
 [.description]
 Write and execute Cypher queries and visualize the results in nodes and relationships.
@@ -44,7 +44,7 @@ link:{docs-home}/aura/preview/query/introduction/[Query (Aura)]
 Neo4j Data Importer
 
 [.icon]
-image:icons/ndl/query-browser.svg[]
+image:icons/ndl/icon-scientist.svg[]
 
 [.description]
 Learn how to model and import data to your Neo4j database.
@@ -60,7 +60,7 @@ link:{docs-home}/data-importer[]
 Neo4j Desktop
 
 [.icon]
-image:icons/ndl/neo4j-tools.svg[]
+image:icons/ndl/icon-scientist.svg[]
 
 [.description]
 Learn how to experience Neo4j on your local desktop.
@@ -73,7 +73,7 @@ link:{docs-home}/desktop-manual[]
 === Neo4j Ops Manager
 
 [.icon]
-image:icons/ndl/query-browser.svg[]
+image:icons/ndl/icon-scientist.svg[]
 
 [.category]
 Neo4j Ops Manager
