@@ -721,7 +721,7 @@ body.docs-ndl .cards .icon span {
 }
 
 /* For the 1st, 3rd etc highlights, move the image to the right */
-body.docs-ndl .widget.highlights:nth-of-type(even) .icon {
+body.docs-ndl .widget.highlights:nth-of-type(odd) .icon {
   order: 1;
 }
 
