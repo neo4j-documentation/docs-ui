@@ -120,6 +120,11 @@ span.label--function {
   color: rgba(var(--colors-lavender-50));
 }
 
+span.label--labs {
+  background: rgba(var(--color-labs));
+  color: rgba(var(--colors-neutral-10));
+}
+
 span.label--current {
   background: rgba(var(--colors-baltic-50));
   color: rgba(var(--colors-baltic-10));

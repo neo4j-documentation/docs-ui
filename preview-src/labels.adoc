@@ -182,6 +182,10 @@
   <span class="label label--cluster-member-single">SINGLE</span>
 </div>
 
+<div class="box">
+  <span class="label label--labs">Labs</span>
+</div>
+
 ++++
 
 == Tables with labels!
