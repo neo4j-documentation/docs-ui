@@ -640,7 +640,7 @@ body {
 
 .doc .olist li,
 .doc .ulist li {
-  margin-bottom: 0rem;
+  margin-bottom: 0;
 }
 
 .doc .olist li > div:first-of-type,
