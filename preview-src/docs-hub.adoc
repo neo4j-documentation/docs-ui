@@ -36,6 +36,18 @@ Write and execute Cypher queries and visualize the results in nodes and relation
 link:{docs-home}/browser-manual/[Neo4j Browser] +
 link:{docs-home}/aura/preview/query/introduction/[Query (Aura)]
 
+=== Neo4j Browser/Query
+
+[.icon]
+image:icons/ndl/icon-scientist.svg[]
+
+[.description]
+Write and execute Cypher queries and visualize the results in nodes and relationships.
+
+[.link]
+link:{docs-home}/browser-manual/[Neo4j Browser] +
+link:{docs-home}/aura/preview/query/introduction/[Query (Aura)]
+
 [.display.card.selectable]
 
 === Neo4j Data Importer

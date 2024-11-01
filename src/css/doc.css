@@ -32,7 +32,7 @@ body {
   font-weight: var(--heading-font-weight);
   hyphens: none;
   line-height: calc((var(--doc-line-height) + 1) / 2);
-  margin: 2rem 0 1rem;
+  margin: 17px 0 8px;
 }
 
 .doc h1 {
@@ -191,7 +191,7 @@ body {
 }
 
 .doc a:visited {
-  color: var(--link_visited-font-color);
+  color: var(--link-font-color);
 }
 
 .doc code a {
@@ -640,7 +640,7 @@ body {
 
 .doc .olist li,
 .doc .ulist li {
-  margin-bottom: 0.5rem;
+  margin-bottom: 0rem;
 }
 
 .doc .olist li > div:first-of-type,
@@ -1261,7 +1261,6 @@ body {
   margin: 0 0.2rem;
   content: "→";
   color: var(--link-font-color);
-  transform: rotate(-45deg);
   transition: all 0.2s linear;
   top: 0;
 }
