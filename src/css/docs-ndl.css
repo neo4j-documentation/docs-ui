@@ -219,10 +219,12 @@ body.docs-ndl .widget .sectionbody {
   row-gap: 0;
   justify-content: center;
   align-content: center;
+  border: 1px solid var(--panel-border-color);
 }
 
 body.docs-ndl .widget.lists .sectionbody {
   justify-content: space-between;
+  line-height: 24px;
 }
 
 body.docs-ndl .widget.banner .sectionbody {
@@ -438,9 +440,9 @@ body.docs-ndl .cards .sect2.selectable a {
 }
 
 body.docs-ndl .cards .sect2.selectable a:hover {
-  transform: scale(1.02);
   transition: 0.1s linear;
-  box-shadow: 0 4px 8px 0 rgba(12, 26, 37, 0.08);
+  border: 1px solid var(--page-version-missing-font-color);
+  box-shadow: 0 1px 2px 0 rgba(26, 27, 29, 0.18);
 }
 
 body.docs-ndl .cards .sect2.selectable:hover div.description {
@@ -582,15 +584,18 @@ body.docs-ndl .sect2 {
 
 body.docs-ndl .cards .sectionbody > div.sect2 {
   flex: 0 1 32%;
+  border: 1px solid var(--panel-border-color);
   /* margin-right: 1rem; */
 }
 
 body.docs-ndl .cards.bottom-cards .sectionbody > div.sect2 {
   flex: 0 1 49%;
+  border: 1px solid var(--panel-border-color);
 }
 
 body.docs-ndl.explainer .sectionbody > div.sect2 {
   flex: 0 1 49%;
+  border: 1px solid var(--panel-border-color);
 }
 
 body.docs-ndl .cards .sect2 > a,
@@ -606,22 +611,23 @@ body.docs-ndl .lists .sect2 {
   /* min-width: 30%; */
   padding: 1rem;
   background: var(--color-white);
+  line-height: 2rem;
 }
 
 body.docs-ndl .cards .sect2 a::before,
 body.docs-ndl .cards:not(.selectable) .sect2 a::before {
   content: "";
   position: absolute;
-  top: 0px;
-  right: 0px;
-  bottom: 0px;
-  left: 0px;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
 }
 
 body.docs-ndl .cards:not(.selectable) .sect2:hover {
-  transform: scale(1.02);
   transition: 0.1s linear;
-  box-shadow: 0 4px 8px 0 rgba(12, 26, 37, 0.08);
+  border: 1px solid var(--page-version-missing-font-color);
+  box-shadow: 0 1px 2px 0 rgba(26, 27, 29, 0.18);
 }
 
 /* styles for specific types of cards:

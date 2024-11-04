@@ -1266,8 +1266,7 @@ body {
 }
 
 .doc a.external:hover::after {
-  top: -12px;
-  opacity: 0;
+  text-decoration: underline;
 }
 
 .doc .no-arrows a::after {

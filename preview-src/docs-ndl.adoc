@@ -217,7 +217,7 @@ link:https://discord.com/invite/neo4j[Discord]
 image:icons/ndl/icon-developercenter.svg[]
 
 [.link]
-link:https://neo4j.com/developer-blog/[Developer blog] xref:reference:resources.adoc[Other resources]
+link:https://neo4j.com/developer-blog/[Developer blog] link:https://www.neo4.com/docs/reference/resources[Other resources]
 
 
 
