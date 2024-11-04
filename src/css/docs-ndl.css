@@ -18,14 +18,26 @@ body.docs-ndl.explainer .nav-panel-menu {
   scrollbar-width: none;
 }
 
+body.docs-ndl .nav-menu .docs-home-link a::before {
+  content: "";
+  width: 4px;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  background-color: rgba(10 97 144 / 1);
+  background-color: var(--color-docs);
+  border-radius: 4px;
+}
+
 body.docs-ndl .nav-menu .docs-home-link {
   margin-bottom: 0;
 }
 
 body.docs-ndl .nav-menu .docs-home-link:hover,
 body.docs-ndl .nav-menu .docs-home-link:focus {
-  text-decoration: underline;
-  /* background-color: var(--toc_hover-background-color); */
+  text-decoration: none;
+  background-color: var(--colors-baltic-15);
 }
 
 body.docs-ndl .nav-menu .home-link {
@@ -39,7 +51,9 @@ body.docs-ndl .nav-menu .home-link.is-home {
 }
 
 body.docs-ndl .nav-menu .home-link.is-home a {
-  display: none;
+  display: flex;
+  background-color: rgba(var(--colors-baltic-10));
+  color: rgba(var(--colors-baltic-50));
 }
 
 body.docs-ndl .nav-module {
@@ -70,7 +84,6 @@ body.docs-ndl .nav-text {
 
 body.docs-ndl .nav-menu .home-link a::before {
   display: inline-block;
-  content: url(../img/arrow-long-left.svg);
   margin-right: 1em;
   vertical-align: middle;
   line-height: 1;
