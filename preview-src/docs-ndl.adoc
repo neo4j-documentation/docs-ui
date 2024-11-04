@@ -45,7 +45,7 @@ image:icons/ndl/cypher-manual.svg[]
 Learn how to write Cypher, Neo4j's declarative query language.
 
 [.link]
-xref:cypher:index.adoc[Query your data]
+link:https://www.neo4j.com/docs/cypher-manual/[Query your data]
 
 === Neo4j Tools
 
