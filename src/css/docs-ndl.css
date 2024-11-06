@@ -219,7 +219,6 @@ body.docs-ndl .widget .sectionbody {
   row-gap: 0;
   justify-content: center;
   align-content: center;
-  border: 1px solid var(--panel-border-color);
 }
 
 body.docs-ndl .widget.lists .sectionbody {
@@ -405,6 +404,7 @@ body.docs-ndl .paragraph.caption {
   font-family: var(--header-font-family);
   font-size: var(--doc-font-size-h2);
   font-weight: var(--font-weight-normal);
+  letter-spacing: 0.25px;
 }
 
 body.docs-ndl .paragraph.footer-link {
@@ -435,18 +435,17 @@ body.docs-ndl .cards .sect2.selectable {
   cursor: pointer;
 }
 
-body.docs-ndl .cards .sect2.selectable a {
-  text-decoration: none;
+body.docs-ndl .cards .sect2.selectable .description {
+  color: var(--doc-font-color);
+  font-weight: 200;
 }
 
-body.docs-ndl .cards .sect2.selectable a:hover {
-  transition: 0.1s linear;
-  border: 1px solid var(--page-version-missing-font-color);
-  box-shadow: 0 1px 2px 0 rgba(26, 27, 29, 0.18);
+body.docs-ndl .cards .sect2.selectable a {
+  text-decoration: solid;
 }
 
 body.docs-ndl .cards .sect2.selectable:hover div.description {
-  text-decoration: underline;
+  text-decoration: none;
 }
 
 /* banner */
@@ -609,22 +608,12 @@ body.docs-ndl .lists .sect2 {
   /* justify-content: space-between; */
   gap: 8px;
   /* min-width: 30%; */
-  padding: 1rem;
+  padding: 24px;
   background: var(--color-white);
   line-height: 2rem;
 }
 
-body.docs-ndl .cards .sect2 a::before,
-body.docs-ndl .cards:not(.selectable) .sect2 a::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-}
-
-body.docs-ndl .cards:not(.selectable) .sect2:hover {
+body.docs-ndl .cards.selectable .sect2:hover {
   transition: 0.1s linear;
   border: 1px solid var(--page-version-missing-font-color);
   box-shadow: 0 1px 2px 0 rgba(26, 27, 29, 0.18);
@@ -651,11 +640,12 @@ body.docs-ndl .cards .sectionbody > div.sect2.labs:not(.selectable) {
 }
 
 body.docs-ndl .cards .sectionbody > div.sect2.featured > a,
+body.docs-ndl .cards .sectionbody > div.sect2.featured,
+body.docs-ndl .cards.selectable .sectionbody > div.sect2.featured,
 body.docs-ndl .cards .sectionbody > div.sect2.featured:not(.selectable) {
   border: 1px solid var(--success-color);
   box-shadow: 0 2px 4px 0 rgba(63, 120, 36, 0.5), 0 1px 2px 0 rgba(63, 120, 36, 0.2);
 }
-
 /* add a labs label to a title in a card */
 body.docs-ndl .header-label-container > div.labels {
   display: inline-flex;
@@ -754,7 +744,7 @@ body.docs-ndl body.docs-ndl .cards .sect2 .icon img {
   padding: 0;
 }
 
-body.docs-ndl .cards.icon-l .sect2 .icon img {
+body.docs-ndl .cards .sect2 .icon.icon-l img {
   width: 6rem;
   height: 6rem;
   margin-bottom: 9px;
@@ -803,13 +793,14 @@ body.docs-ndl .cards .sect2 .paragraph:not(.icon) {
 }
 
 body.docs-ndl .cards .sect2.selectable .paragraph.link {
-  display: none;
+  display: flex;
 }
 
+body.docs-ndl .cards.selectable .sect2 .paragraph.link,
 body.docs-ndl .cards:not(.selectable) .sect2 .paragraph.link {
   box-sizing: border-box;
-  margin-top: 30px;
-  margin-bottom: 9px;
+  padding-top: 30px;
+  margin-top: auto;
 }
 
 body.docs-ndl .bottom-cards:not(.selectable) .sect2 .paragraph.link {
@@ -818,7 +809,7 @@ body.docs-ndl .bottom-cards:not(.selectable) .sect2 .paragraph.link {
 }
 
 body.docs-ndl .cards .sect2 .paragraph.category {
-  display: none;
+  display: flex;
 }
 
 body.docs-ndl .plain-links a.external::after {

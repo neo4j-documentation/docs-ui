@@ -174,7 +174,7 @@ body {
 
 .doc a,
 .tooltip-body a {
-  font-weight: 600;
+  font-weight: 400;
   color: var(--link-font-color);
 }
 
