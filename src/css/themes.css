@@ -53,6 +53,10 @@ body.docs .navbar-burger span {
   background: var(--color-docs);
 }
 
+body.docs .banner .button {
+  margin-top: 24px;
+}
+
 body.docs .doc .button a {
   background: var(--color-docs);
   color: var(--color-white);
@@ -63,7 +67,14 @@ body.docs .banner .button a {
   width: fit-content;
   background: var(--banner-background-color);
   border: 1px solid var(--banner-background-color);
-  color: var(--colors-baltic-60);
+  color: var(--text-inverse);
+  font-weight: 500;
+}
+
+body.docs .banner .button a:hover {
+  background: var(--colors-baltic-30);
+  border: 1px solid var(--colors-baltic-30);
+  text-decoration: none;
 }
 
 body.docs .nav-item .nav-item::before,

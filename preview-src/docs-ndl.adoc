@@ -27,7 +27,7 @@ xref:tutorials:index.adoc[Get started]
 [.cards.selectable]
 == CTA cards
 
-[.featured.label--featured]
+[role=label--featured]
 === Deployment options
 
 [.icon.icon-l]

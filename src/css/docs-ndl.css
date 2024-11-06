@@ -401,9 +401,12 @@ body.docs-ndl .paragraph.caption {
   padding: 1rem;
   margin: 0;
   color: var(--neutral-color);
-  font-family: var(--header-font-family);
-  font-size: var(--doc-font-size-h2);
-  font-weight: var(--font-weight-normal);
+  font-feature-settings: 'liga' off, 'clig' off;
+  font-family: var(--font-font-family-h2);
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 32px; /* 100% */
   letter-spacing: 0.25px;
 }
 
@@ -426,7 +429,11 @@ body.docs-ndl .banner .paragraph {
 }
 
 body.docs-ndl .banner .paragraph.description {
-  padding-right: 2rem;
+  font-family: var(--font-family-h2);
+  font-size: 16px;
+  font-weight: 100;
+  line-height: 24px;
+  letter-spacing: 0px;
 }
 
 /* selectable cards */
@@ -639,13 +646,6 @@ body.docs-ndl .cards .sectionbody > div.sect2.labs:not(.selectable) {
   box-shadow: 0 2px 4px 0 rgba(90, 52, 170, 0.5), 0 1px 2px 0 rgba(90, 52, 170, 0.2);
 }
 
-body.docs-ndl .cards .sectionbody > div.sect2.featured > a,
-body.docs-ndl .cards .sectionbody > div.sect2.featured,
-body.docs-ndl .cards.selectable .sectionbody > div.sect2.featured,
-body.docs-ndl .cards .sectionbody > div.sect2.featured:not(.selectable) {
-  border: 1px solid var(--success-color);
-  box-shadow: 0 2px 4px 0 rgba(63, 120, 36, 0.5), 0 1px 2px 0 rgba(63, 120, 36, 0.2);
-}
 /* add a labs label to a title in a card */
 body.docs-ndl .header-label-container > div.labels {
   display: inline-flex;
