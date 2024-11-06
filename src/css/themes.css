@@ -75,6 +75,7 @@ body.docs .banner .button a:hover {
   background: var(--colors-baltic-30);
   border: 1px solid var(--colors-baltic-30);
   text-decoration: none;
+  cursor: default;
 }
 
 body.docs .nav-item .nav-item::before,

@@ -68,7 +68,7 @@ strong strong { /* stylelint-disable-line */
 }
 
 button {
-  cursor: default;
+  cursor: pointer;
   font-family: inherit;
   font-size: 1em;
   line-height: var(--body-line-height);

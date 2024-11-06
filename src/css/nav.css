@@ -222,7 +222,7 @@ html.is-clipped--nav {
 }
 
 .nav-item-toggle {
-  cursor: default;
+  cursor: pointer;
 }
 
 /* .nav-item-toggle {
@@ -276,7 +276,7 @@ html.is-clipped--nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  cursor: default;
+  cursor: pointer;
   line-height: 1;
   height: var(--drawer-height);
 }
