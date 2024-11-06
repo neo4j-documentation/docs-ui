@@ -1179,7 +1179,7 @@ body {
   border-top-left-radius: 6px;
   border-top-right-radius: 6px;
   border-bottom: none;
-  cursor: pointer;
+  cursor: default;
 }
 
 .doc .tabbed-tabs .tabbed-tab--active {
@@ -1311,7 +1311,7 @@ body {
 }
 
 .doc details summary {
-  cursor: pointer;
+  cursor: default;
 }
 
 .doc details[open] summary {

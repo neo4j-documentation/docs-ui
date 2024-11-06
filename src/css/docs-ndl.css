@@ -36,6 +36,7 @@ body.docs-ndl .nav-menu .docs-home-link {
 
 body.docs-ndl .nav-menu .docs-home-link:hover,
 body.docs-ndl .nav-menu .docs-home-link:focus {
+  cursor: default;
   text-decoration: none;
   background-color: var(--colors-baltic-15);
 }
@@ -51,6 +52,7 @@ body.docs-ndl .nav-menu .home-link.is-home {
 }
 
 body.docs-ndl .nav-menu .home-link.is-home a {
+  cursor: default;
   display: flex;
   background-color: rgba(var(--colors-baltic-10));
   color: rgba(var(--colors-baltic-50));
@@ -79,6 +81,7 @@ body.docs-ndl .nav-menu .nav-module > ul:not(ul:has(li)) {
 
 body.docs-ndl .nav-menu a,
 body.docs-ndl .nav-text {
+  cursor: default;
   color: var(--neutral-color);
 }
 
@@ -433,14 +436,10 @@ body.docs-ndl .banner .paragraph.description {
   font-size: 16px;
   font-weight: 100;
   line-height: 24px;
-  letter-spacing: 0px;
+  letter-spacing: 0;
 }
 
 /* selectable cards */
-
-body.docs-ndl .cards .sect2.selectable {
-  cursor: pointer;
-}
 
 body.docs-ndl .cards .sect2.selectable .description {
   color: var(--doc-font-color);
@@ -448,6 +447,7 @@ body.docs-ndl .cards .sect2.selectable .description {
 }
 
 body.docs-ndl .cards .sect2.selectable a {
+  cursor: default;
   text-decoration: solid;
 }
 
@@ -583,7 +583,6 @@ body.docs-ndl .lists ul li a {
 body.docs-ndl .sect2 {
   display: flex;
   flex-direction: column;
-  cursor: pointer;
   border-radius: 16px;
   position: relative;
 }
@@ -596,7 +595,7 @@ body.docs-ndl .cards .sectionbody > div.sect2 {
 
 body.docs-ndl .cards.bottom-cards .sectionbody > div.sect2 {
   flex: 0 1 49%;
-  border: 1px solid var(--panel-border-color);
+  border: 0;
 }
 
 body.docs-ndl.explainer .sectionbody > div.sect2 {
@@ -803,9 +802,16 @@ body.docs-ndl .cards:not(.selectable) .sect2 .paragraph.link {
   margin-top: auto;
 }
 
+body.docs-ndl .bottom-cards .sect2 .icon {
+  padding-bottom: 16px;
+}
+
+body.docs-ndl .bottom-cards .sect2 h3 {
+  padding-bottom: 8px;
+}
+
 body.docs-ndl .bottom-cards:not(.selectable) .sect2 .paragraph.link {
-  margin-top: 8px;
-  margin-bottom: 9px;
+  padding-top: 0;
 }
 
 body.docs-ndl .cards .sect2 .paragraph.category {
