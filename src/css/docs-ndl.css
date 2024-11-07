@@ -405,7 +405,7 @@ body.docs-ndl .paragraph.caption {
   margin: 0;
   color: var(--neutral-color);
   font-feature-settings: 'liga' off, 'clig' off;
-  font-family: var(--font-font-family-h2);
+  font-family: var(--font-font-family-h1);
   font-size: 32px;
   font-style: normal;
   font-weight: 500;

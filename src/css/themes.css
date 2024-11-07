@@ -68,7 +68,8 @@ body.docs .banner .button a {
   background: var(--banner-background-color);
   border: 1px solid var(--banner-background-color);
   color: var(--text-inverse);
-  font-weight: 500;
+  font-size: var(--font-size-h6);
+  font-weight: 600;
 }
 
 body.docs .banner .button a:hover {
