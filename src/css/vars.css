@@ -253,11 +253,11 @@
   --important-color: rgba(var(--colors-lavender-70));
   --important-border-color: rgba(var(--colors-lavender-50));
   --important-background-color: rgba(var(--colors-lavender-10));
-  --note-color: rgba(var(--colors-forest-70));
-  --note-border-color: rgba(var(--colors-forest-40));
-  --note-background-color: rgba(var(--colors-forest-10));
-  --tip-color: rgba(var(--theme-light-palette-primary-bg-strong));
-  --tip-background-color: rgba(var(--theme-light-palette-primary-bg-weak));
+  --tip-color: rgba(var(--colors-forest-70));
+  --tip-border-color: rgba(var(--colors-forest-40));
+  --tip-background-color: rgba(var(--colors-forest-10));
+  --note-color: rgba(var(--theme-light-palette-primary-bg-strong));
+  --note-background-color: rgba(var(--theme-light-palette-primary-bg-weak));
   --warning-color: rgba(var(--theme-light-palette-danger-bg-strong));
   --warning-border-color: rgba(var(--theme-light-palette-danger-bg-strong));
   --warning-background-color: rgba(var(--theme-light-palette-danger-bg-weak));
