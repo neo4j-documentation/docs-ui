@@ -578,6 +578,14 @@ body {
   padding: 0 0 0 2rem;
 }
 
+.doc ol {
+  list-style-type: decimal;
+}
+
+.doc ul {
+  list-style-type: disc;
+}
+
 .doc ol.arabic {
   list-style-type: decimal;
 }
