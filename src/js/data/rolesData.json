@@ -12,7 +12,7 @@
     },
     "labs-label":{
         "description": "Neo4j Labs project label",
-        "labelCategory": "product",
+        "labelCategory": "content",
         "product": "Labs",
         "displayText": "Labs"
     },
