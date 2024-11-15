@@ -10,6 +10,12 @@
         "product": "Labs",
         "displayText": "Labs"
     },
+    "labs-label":{
+        "description": "Neo4j Labs project label",
+        "labelCategory": "content",
+        "product": "Labs",
+        "displayText": "Labs"
+    },
     "graph-academy":{
         "description": "Neo4j Graph Academy",
         "labelCategory": "content",

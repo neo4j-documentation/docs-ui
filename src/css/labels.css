@@ -234,6 +234,11 @@ span.label--labs {
   background: var(--color-labs);
 }
 
+span.label--labs-label {
+  background: var(--color-labs);
+  color: rgba(var(--colors-neutral-10));
+}
+
 span.label--graph-academy {
   background: var(--success-color);
 }
