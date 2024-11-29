@@ -291,8 +291,8 @@ document.addEventListener('DOMContentLoaded', function () {
     var shift = topOfTabPosition - newTopOfTabPosition
 
     window.scrollTo({
-      top: topOfWindowPosition - shift - offset, // center clicked tab to a fifth of viewport height
-      behavior: 'instant',
+      top: topOfWindowPosition - shift - offset, // scroll back to the same position before the click
+      behavior: 'instant', // instantly so nothing is visible to the user
     })
   }
 
