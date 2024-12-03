@@ -256,6 +256,16 @@ document.addEventListener('DOMContentLoaded', function () {
   var switchTab = function (e) {
     var tab = e.target
     var title = tab.innerHTML
+
+    var toolbarOffset = 0
+    var toolbar = document.querySelector('.toolbar')
+    if (toolbar.offsetHeight) {
+      toolbarOffset = toolbar.offsetHeight
+    }
+    var offset = document.querySelector('.navbar').offsetHeight + toolbarOffset + 20
+    var topOfWindowPosition = window.scrollY + offset
+    var topOfTabPosition = tab.getBoundingClientRect().top + window.scrollY
+
     // Switch Tabs
     var targetTabs = document.querySelectorAll('.tabbed-target[data-title="' + title + '"]')
     targetTabs.forEach(function (target) {
@@ -277,22 +287,12 @@ document.addEventListener('DOMContentLoaded', function () {
         })
     })
 
-    var toolbarOffset = 0
-    var toolbar = document.querySelector('.toolbar')
-    if (toolbar.offsetHeight) {
-      toolbarOffset = toolbar.offsetHeight
-    }
-    var offset = document.querySelector('.navbar').offsetHeight + toolbarOffset + 20
-
-    var vh = Math.max(document.documentElement.clientHeight || 0, window.innerHeight || 0)
-    var bodyRect = document.body.getBoundingClientRect().top
-    var elementRect = tab.getBoundingClientRect().top
-    var elementPosition = elementRect - bodyRect
-    var offsetPosition = elementPosition - offset - vh / 5
+    var newTopOfTabPosition = tab.getBoundingClientRect().top + window.scrollY
+    var shift = topOfTabPosition - newTopOfTabPosition
 
     window.scrollTo({
-      top: offsetPosition, // center clicked tab to a fifth of viewport height
-      behavior: 'smooth',
+      top: topOfWindowPosition - shift - offset, // scroll back to the same position before the click
+      behavior: 'instant', // instantly so nothing is visible to the user
     })
   }
 
