@@ -152,6 +152,10 @@ body.docs-ndl .doc a:hover {
   text-decoration: underline;
 }
 
+body.docs-ndl .cards.bottom-cards a:hover {
+  text-decoration: none;
+}
+
 body.docs-ndl .doc a:hover::after {
   text-decoration: none;
 }
