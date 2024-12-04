@@ -4,7 +4,6 @@
   /* --colors-baltic-20: #8FE3E8; */
   /* --colors-baltic-50: #0A6190; */
   /* --colors-baltic-60: #014063; */
-  /* --text-inverse: #1A1B1D; */
   /* --text-white: #F5F6F6; */
 
   /* Picked from Neo4j Design System */
@@ -154,6 +153,10 @@
   --color-pink-800: #97266d;
   --color-pink-900: #702459;
   --color-baltic-20: #8fe3e8;
+  --colors-baltic-30: #5db3bf;
+
+  /* dark mode */
+  --text-inverse: #1a1b1d;
 
   /* theme accent colors */
   --color-developer: rgba(var(--colors-forest-45));
@@ -312,7 +315,6 @@
   /* links */
   --link-font-color: rgba(var(--colors-baltic-50));
   --link_hover-font-color: rgba(var(--colors-baltic-55));
-  --link_visited-font-color: var(--palette-categorical-8);
   --link_unresolved-font-color: var(--important-color);
 
   /* abstract */
@@ -398,7 +400,7 @@
   --nav-panel-height: calc(var(--nav-height) - var(--drawer-height));
   --nav-panel-height--desktop:
     calc(
-      var(--nav-height--desktop) - var(--drawer-height) - var(--feedback-height) - 1rem
+      var(--nav-height--desktop) - var(--drawer-height) - var(--feedback-height) * 8px
     );  /* 1rem is feedback padding */
 
   --nav-width: 18rem;

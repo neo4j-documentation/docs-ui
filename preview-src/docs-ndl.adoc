@@ -24,43 +24,46 @@ Learn more about graph databases and start working with your data using Neo4j to
 xref:tutorials:index.adoc[Get started]
 --
 
-[.cards.icon-l]
+[.cards.selectable]
 == CTA cards
 
-[.featured.label--featured]
+[role=label--featured]
 === Deployment options
 
-[.icon]
+[.icon.icon-l]
 image:icons/ndl/deployment-options.svg[]
 
 [.description]
-Choose from self-managed local and cloud deployments, or fully-managed options. See how to run Neo4j on Docker or Kubernetes.
+Choose from self-managed local and cloud deployments, or fully-managed options.
+
+[.link]
+link:https://www.neo4j.com/docs/deployment-options[Get a Neo4j instance]
 
 === Cypher
 
-[.icon]
+[.icon.icon-l]
 image:icons/ndl/cypher-manual.svg[]
 
 [.description]
 Learn how to write Cypher, Neo4j's declarative query language.
 
 [.link]
-xref:cypher:index.adoc[Query your data]
+link:https://www.neo4j.com/docs/cypher-manual/[Query your data]
 
 === Neo4j Tools
 
-[.icon]
+[.icon.icon-l]
 image:icons/ndl/neo4j-tools.svg[]
 
 [.description]
 Use Neo4j's tools to explore, visualize, manage, monitor, and import data to your graph.
 
 [.link]
-xref:tools:index.adoc[Discover the products]
+link:https://www.neo4j.com/docs/tools[Discover the products]
 
 === Graph Data Science
 
-[.icon]
+[.icon.icon-l]
 image:icons/ndl/data-science.svg[]
 
 [.description]
@@ -71,7 +74,7 @@ xref:gds:index.adoc[Unlock insights from data]
 
 === Create applications
 
-[.icon]
+[.icon.icon-l]
 image:icons/ndl/create-applications.svg[]
 
 [.description]
@@ -82,7 +85,7 @@ xref:create-applications:index.adoc[Start developing]
 
 === Connect data sources
 
-[.icon]
+[.icon.icon-l]
 image:icons/ndl/connectors.svg[]
 
 [.description]
@@ -217,7 +220,7 @@ link:https://discord.com/invite/neo4j[Discord]
 image:icons/ndl/icon-developercenter.svg[]
 
 [.link]
-link:https://neo4j.com/developer-blog/[Developer blog] xref:reference:resources.adoc[Other resources]
+link:https://neo4j.com/developer-blog/[Developer blog] link:https://www.neo4j.com/docs/reference/resources[Other resources]
 
 
 

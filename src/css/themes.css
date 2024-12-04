@@ -53,31 +53,30 @@ body.docs .navbar-burger span {
   background: var(--color-docs);
 }
 
-body.docs .doc .button {
+body.docs .banner .button {
+  margin-top: 24px;
+}
+
+body.docs .doc .button a {
   background: var(--color-docs);
   color: var(--color-white);
 }
 
-body.docs .doc .button:hover {
-  background: rgba(var(--colors-baltic-60));
-  color: var(--color-white);
-}
-
-body.docs .banner .button {
+body.docs .banner .button a {
   display: flex;
   width: fit-content;
   background: var(--banner-background-color);
   border: 1px solid var(--banner-background-color);
-  color: var(--colors-baltic-60);
+  color: var(--text-inverse);
+  font-size: var(--font-size-h6);
+  font-weight: 600;
 }
 
-body.docs .banner .button:hover {
-  background: rgba(var(--banner-background-color));
-  border: 1px solid var(--banner-hover-color);
-}
-
-body.docs .banner .button:hover a {
-  color: var(--banner-hover-color);
+body.docs .banner .button a:hover {
+  background: var(--colors-baltic-30);
+  border: 1px solid var(--colors-baltic-30);
+  text-decoration: none;
+  cursor: default;
 }
 
 body.docs .nav-item .nav-item::before,
