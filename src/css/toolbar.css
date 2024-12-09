@@ -1,3 +1,17 @@
+.toolbar {
+  color: var(--toolbar-font-color);
+  align-items: center;
+  background-color: var(--toolbar-background);
+  box-shadow: 0 1px 0 var(--toolbar-border-color);
+  display: flex;
+  font-size: calc(15 / var(--rem-base) * 1rem);
+  height: var(--toolbar-height);
+  justify-content: flex-start;
+  position: sticky;
+  top: var(--navbar-height);
+  z-index: var(--z-index-toolbar);
+}
+
 body.has-banner .toolbar {
   top: calc(var(--navbar-height) + var(--banner-height));
 }
@@ -37,6 +51,8 @@ body.has-banner .toolbar {
 }
 
 .home-link {
+  background: url(../img/home-o.svg) no-repeat 50% 45%;
+  background-size: 50%;
   display: block;
   height: 2.5rem;
   margin: 0;
@@ -46,8 +62,7 @@ body.has-banner .toolbar {
 
 .home-link:hover,
 .home-link.is-current {
-  background: rgba(var(--colors-baltic-10));
-  color: rgba(var(--colors-baltic-50));
+  background-image: url(../img/home.svg);
 }
 
 .home-link a line {
