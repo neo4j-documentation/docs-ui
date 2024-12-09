@@ -140,6 +140,16 @@ body.docs-ndl .nav-menu .nav-item > a > strong {
 
 /* end of nav */
 
+/* toolbar */
+
+body.docs-ndl .toolbar {
+  box-shadow: none;
+}
+
+/* body.docs-ndl.explainer .toolbar {
+  background-color: rgba(var(--colors-neutral-10));
+} */
+
 body.docs-ndl .doc a {
   text-decoration: none;
 }
