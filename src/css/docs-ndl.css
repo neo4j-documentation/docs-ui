@@ -4,7 +4,13 @@
 }
 
 @media screen and (min-width: 1024px) {
-  body:not(.landing) main>.content {
+  body:not(.landing) main > .content {
+    margin-top: 0;
+  }
+}
+
+@media screen and (min-width: 769px) {
+  .doc > .sect-header > h1.page:first-child {
       margin-top: 0;
   }
 }
@@ -198,9 +204,9 @@ body.docs-ndl .doc .flex-column {
 }
 
 body.docs-ndl .doc > .sect-header > h1.page:first-child {
-  margin-top: 1rem;
+  margin-top: 0;
   /* font-size: var(--font-size-h1); */
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
 }
 
 body.docs-ndl.hub .doc div:not(.display) h2 {
