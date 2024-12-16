@@ -3,6 +3,18 @@
   src: url('https://storage.googleapis.com/neo4j-fonts/Syne%20Neo%20Medium%20Font.otf') format('opentype');
 }
 
+@media screen and (min-width: 1024px) {
+  body:not(.landing) main > .content {
+    margin-top: 0;
+  }
+}
+
+@media screen and (min-width: 769px) {
+  .doc > .sect-header > h1.page:first-child {
+    margin-top: 0;
+  }
+}
+
 body.docs-ndl.hub,
 body.docs-ndl.explainer {
   background: rgba(var(--colors-neutral-15));
@@ -152,6 +164,7 @@ body.docs-ndl.explainer .toolbar {
 
 body.docs-ndl .doc a {
   text-decoration: none;
+  cursor: default;
 }
 
 body.docs-ndl .doc a::after {
@@ -191,9 +204,9 @@ body.docs-ndl .doc .flex-column {
 }
 
 body.docs-ndl .doc > .sect-header > h1.page:first-child {
-  margin-top: 1rem;
+  margin-top: 0;
   /* font-size: var(--font-size-h1); */
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem;
 }
 
 body.docs-ndl.hub .doc div:not(.display) h2 {
@@ -465,6 +478,10 @@ body.docs-ndl .cards .sect2.selectable a {
   text-decoration: solid;
 }
 
+body.docs-ndl .cards .sect2.selectable .link a:hover {
+  text-decoration: underline;
+}
+
 body.docs-ndl .cards .sect2.selectable:hover div.description {
   text-decoration: none;
 }
@@ -544,6 +561,7 @@ body.docs-ndl .highlights .list a:hover,
 body.docs-ndl .highlights .list a:focus {
   text-decoration: none;
   background-color: var(--toc_hover-background-color);
+  cursor: default;
 }
 
 body.docs-ndl .highlights .list ul li {
@@ -590,6 +608,7 @@ body.docs-ndl .lists ul li {
 body.docs-ndl .lists ul li a {
   font-weight: var(--font-weight-normal);
   text-decoration: none;
+  cursor: default;
 }
 
 /* cards */
@@ -637,6 +656,7 @@ body.docs-ndl .cards.selectable .sect2:hover {
   transition: 0.1s linear;
   border: 1px solid var(--page-version-missing-font-color);
   box-shadow: 0 1px 2px 0 rgba(26, 27, 29, 0.18);
+  cursor: default;
 }
 
 /* styles for specific types of cards:
