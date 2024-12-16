@@ -11,7 +11,7 @@
 
 @media screen and (min-width: 769px) {
   .doc > .sect-header > h1.page:first-child {
-      margin-top: 0;
+    margin-top: 0;
   }
 }
 
@@ -206,7 +206,7 @@ body.docs-ndl .doc .flex-column {
 body.docs-ndl .doc > .sect-header > h1.page:first-child {
   margin-top: 0;
   /* font-size: var(--font-size-h1); */
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
 }
 
 body.docs-ndl.hub .doc div:not(.display) h2 {
