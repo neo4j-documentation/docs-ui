@@ -78,8 +78,8 @@ body {
 }
 
 @media screen and (min-width: 769px) {
-  .doc > .sect-header > h1.page:first-child {
-    /* margin-top: 2.5rem; */
+  .has-banner .doc > .sect-header > h1.page:first-child {
+    margin-top: 2.5rem;
   }
 }
 

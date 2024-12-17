@@ -4,13 +4,13 @@
 }
 
 @media screen and (min-width: 1024px) {
-  body:not(.landing) main > .content {
+  body.docs-ndl:not(.explainer) main > .content {
     margin-top: 0;
   }
 }
 
 @media screen and (min-width: 769px) {
-  .doc > .sect-header > h1.page:first-child {
+  body.docs-ndl .doc > .sect-header > h1.page:first-child {
     margin-top: 0;
   }
 }
