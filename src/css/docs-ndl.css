@@ -3,6 +3,18 @@
   src: url('https://storage.googleapis.com/neo4j-fonts/Syne%20Neo%20Medium%20Font.otf') format('opentype');
 }
 
+@media screen and (min-width: 1024px) {
+  body:not(.landing) main > .content {
+    margin-top: 0;
+  }
+}
+
+@media screen and (min-width: 769px) {
+  .doc > .sect-header > h1.page:first-child {
+    margin-top: 0;
+  }
+}
+
 body.docs-ndl.hub,
 body.docs-ndl.explainer {
   background: rgba(var(--colors-neutral-15));
@@ -152,6 +164,7 @@ body.docs-ndl.explainer .toolbar {
 
 body.docs-ndl .doc a {
   text-decoration: none;
+  cursor: default;
 }
 
 body.docs-ndl .doc a::after {
@@ -191,9 +204,9 @@ body.docs-ndl .doc .flex-column {
 }
 
 body.docs-ndl .doc > .sect-header > h1.page:first-child {
-  margin-top: 1rem;
+  margin-top: 0;
   /* font-size: var(--font-size-h1); */
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem;
 }
 
 body.docs-ndl.hub .doc div:not(.display) h2 {
