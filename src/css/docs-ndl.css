@@ -478,6 +478,10 @@ body.docs-ndl .cards .sect2.selectable a {
   text-decoration: solid;
 }
 
+body.docs-ndl .cards .sect2.selectable .link a:hover {
+  text-decoration: underline;
+}
+
 body.docs-ndl .cards .sect2.selectable:hover div.description {
   text-decoration: none;
 }
@@ -557,6 +561,7 @@ body.docs-ndl .highlights .list a:hover,
 body.docs-ndl .highlights .list a:focus {
   text-decoration: none;
   background-color: var(--toc_hover-background-color);
+  cursor: default;
 }
 
 body.docs-ndl .highlights .list ul li {
@@ -603,6 +608,7 @@ body.docs-ndl .lists ul li {
 body.docs-ndl .lists ul li a {
   font-weight: var(--font-weight-normal);
   text-decoration: none;
+  cursor: default;
 }
 
 /* cards */
@@ -650,6 +656,7 @@ body.docs-ndl .cards.selectable .sect2:hover {
   transition: 0.1s linear;
   border: 1px solid var(--page-version-missing-font-color);
   box-shadow: 0 1px 2px 0 rgba(26, 27, 29, 0.18);
+  cursor: default;
 }
 
 /* styles for specific types of cards:
