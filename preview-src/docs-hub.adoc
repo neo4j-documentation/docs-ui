@@ -7,7 +7,8 @@
 // :page-disablefeedback: true
 :page-toclevels: -1
 
-[.cards.not-selectable]
+[.cards.selectable]
+
 == Developer tools documentation
 
 Use Neo4j tools to query and manage your databases, import data, and create graphical visualizations. 
@@ -49,7 +50,7 @@ image:icons/ndl/icon-scientist.svg[]
 [.description]
 Learn how to model and import data to your Neo4j database.
 
-[.link]
+[.link.hide]
 link:{docs-home}/data-importer[]
 
 [.display.card.selectable]
@@ -65,7 +66,7 @@ image:icons/ndl/icon-scientist.svg[]
 [.description]
 Learn how to experience Neo4j on your local desktop.
 
-[.link]
+[.link.hide]
 link:{docs-home}/desktop-manual[]
 
 [.display.card.selectable]
@@ -81,5 +82,22 @@ Neo4j Ops Manager
 [.description]
 Learn how to monitor, administer, and operate all of the Neo4j DBMSs in an Enterprise with Neo4j Ops Manager.
 
-[.link]
+[.link.hide]
 link:{docs-home}/ops-manager[]
+
+[.next-steps]
+== Keep exploring
+
+Here are some recommended resources to get started with data visualization:
+
+. link:https://neo4j.com/developer-blog/15-tools-for-visualizing-your-neo4j-graph-database/[*15 Tools for Visualizing Your Neo4j Graph Database*]
++
+Read an overview of the graph visualization landscape.
+
+. link:https://medium.com/neo4j/showing-charts-for-neo4j-query-results-using-amcharts-and-structr-efae0b7a04f0[*Showing Charts for Neo4j Query Results using amCharts and Structr*]
++ 
+Learn how to render a bar chart based upon the example movies graph.
+
+. link:https://medium.com/neo4j/working-with-neo4j-date-and-spatial-types-in-a-react-js-app-5475b5042b50[*Working With Neo4j Date And Spatial Types In A React.js App*]
++
+Learn how to build a dashboard app with Neo4j, Mapbox, React, and Nivo Charts.
