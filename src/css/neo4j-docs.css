@@ -118,7 +118,7 @@ span.fabric::after {
   font-size: 0.7rem;
   line-height: var(--doc-line-height);
   padding: 0.2rem 0.8rem;
-  border-radius: 0.25rem;
+  border-radius: 9999px;
   position: relative;
   bottom: 2px;
   margin-left: 0.5rem;

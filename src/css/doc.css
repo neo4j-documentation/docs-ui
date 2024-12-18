@@ -32,7 +32,7 @@ body {
   font-weight: var(--heading-font-weight);
   hyphens: none;
   line-height: calc((var(--doc-line-height) + 1) / 2);
-  margin: 17px 0 8px;
+  margin: 2rem 0 1rem;
 }
 
 .doc h1 {
@@ -78,8 +78,8 @@ body {
 }
 
 @media screen and (min-width: 769px) {
-  .doc > .sect-header > h1.page:first-child {
-    /* margin-top: 2.5rem; */
+  .has-banner .doc > .sect-header > h1.page:first-child {
+    margin-top: 2.5rem;
   }
 }
 

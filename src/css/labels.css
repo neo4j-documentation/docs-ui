@@ -84,10 +84,10 @@ h2 > .flex-label {
 
 .label {
   display: inline-block;
-  height: 24px;
+  /* height: 24px; */
   padding: 0.2rem 0.8rem;
-  justify-content: center;
-  align-items: center;
+  /* justify-content: center; */
+  /* align-items: center; */
   flex-shrink: 0;
   border-radius: 9999px;
   background: rgba(var(--colors-baltic-50));
