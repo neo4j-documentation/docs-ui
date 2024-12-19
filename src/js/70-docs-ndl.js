@@ -7,8 +7,12 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   }
 
+  // if a card is 'selectable' then make it a click target
+  // by taking the link from the card and wrapping the whole card in an anchor tag with that link
+  // if the card contains more than one link, the first link is used
+  // css hides the link div in selectable cards
   var makeClickable = function (card) {
-    var links = card.querySelectorAll('div.sect2:not(.not-selectable) div.link')
+    var links = card.querySelectorAll('div.link')
     links.forEach(function (link) {
       var target = link.querySelector('a').getAttribute('href')
       var card = link.parentElement
@@ -43,8 +47,10 @@ document.addEventListener('DOMContentLoaded', function () {
     a.remove()
   })
 
-  // Add links to cards
-  document.querySelectorAll('.cards.selectable')
+  // Add links to selectable cards
+  // all cards in a cards.selectable container are clickable
+  // cards in a .cards container are clickable if the card has .selectable
+  document.querySelectorAll('.cards .selectable, .cards.selectable .sect2')
     .forEach(makeClickable)
 
   // Move labels to the icon div to position them
