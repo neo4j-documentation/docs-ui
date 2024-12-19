@@ -918,6 +918,9 @@ body {
 .doc .menuseq,
 .doc .icon i::after {
   hyphens: none;
+}
+
+.doc code {
   line-height: inherit;
   font-weight: inherit;
   font-size: inherit;
