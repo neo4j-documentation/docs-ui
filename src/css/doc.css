@@ -920,6 +920,12 @@ body {
   hyphens: none;
 }
 
+.doc code {
+  line-height: inherit;
+  font-weight: inherit;
+  font-size: inherit;
+}
+
 .doc th.tableblock,
 .doc td.tableblock code,
 .doc td.tableblock a {
