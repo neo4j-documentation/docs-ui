@@ -829,6 +829,13 @@ body.docs-ndl .cards .sect2.selectable .paragraph.link {
   display: flex;
 }
 
+body.docs-ndl .cards.selectable .sect2 .paragraph.link.hide {
+  box-sizing: border-box;
+  padding-top: 0;
+  margin-top: auto;
+  font-size: 0;
+}
+
 body.docs-ndl .cards.selectable .sect2 .paragraph.link,
 body.docs-ndl .cards:not(.selectable) .sect2 .paragraph.link {
   box-sizing: border-box;
