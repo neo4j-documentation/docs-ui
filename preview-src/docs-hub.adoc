@@ -7,7 +7,7 @@
 // :page-disablefeedback: true
 :page-toclevels: -1
 
-[.cards.selectable]
+[.cards.not.selectable]
 
 == Developer tools documentation
 
