@@ -7,7 +7,7 @@
 // :page-disablefeedback: true
 :page-toclevels: -1
 
-[.cards.not.selectable]
+[.cards]
 
 == Developer tools documentation
 
@@ -37,7 +37,7 @@ Write and execute Cypher queries and visualize the results in nodes and relation
 link:{docs-home}/browser-manual/[Neo4j Browser] +
 link:{docs-home}/aura/preview/query/introduction/[Query (Aura)]
 
-[.display.card.selectable]
+[.selectable]
 
 === Neo4j Data Importer
 
@@ -50,10 +50,11 @@ image:icons/ndl/icon-scientist.svg[]
 [.description]
 Learn how to model and import data to your Neo4j database.
 
-[.link.hide]
+[.link]
+link:{docs-home}/data-importer[]
 link:{docs-home}/data-importer[]
 
-[.display.card.selectable]
+[.selectable]
 
 === Neo4j Desktop
 
@@ -66,10 +67,10 @@ image:icons/ndl/icon-scientist.svg[]
 [.description]
 Learn how to experience Neo4j on your local desktop.
 
-[.link.hide]
+[.link]
 link:{docs-home}/desktop-manual[]
 
-[.display.card.selectable]
+[.selectable]
 
 === Neo4j Ops Manager
 
@@ -82,7 +83,7 @@ Neo4j Ops Manager
 [.description]
 Learn how to monitor, administer, and operate all of the Neo4j DBMSs in an Enterprise with Neo4j Ops Manager.
 
-[.link.hide]
+[.link]
 link:{docs-home}/ops-manager[]
 
 [.display.next-steps]

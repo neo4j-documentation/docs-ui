@@ -636,8 +636,8 @@ body.docs-ndl.explainer .sectionbody > div.sect2 {
   border: 1px solid var(--panel-border-color);
 }
 
-body.docs-ndl .cards .sect2 > a,
-body.docs-ndl .cards:not(.selectable) .sect2,
+body.docs-ndl .cards .sect2.selectable > a,
+body.docs-ndl .cards .sect2:not(.selectable),
 body.docs-ndl .lists .sect2 {
   overflow: hidden;
   display: flex;
@@ -652,7 +652,8 @@ body.docs-ndl .lists .sect2 {
   line-height: 2rem;
 }
 
-body.docs-ndl .cards.selectable .sect2:hover {
+body.docs-ndl .cards.selectable .sect2:hover,
+body.docs-ndl .cards .sect2.selectable:hover {
   transition: 0.1s linear;
   border: 1px solid var(--page-version-missing-font-color);
   box-shadow: 0 1px 2px 0 rgba(26, 27, 29, 0.18);
@@ -826,14 +827,7 @@ body.docs-ndl .cards .sect2 .paragraph:not(.icon) {
 }
 
 body.docs-ndl .cards .sect2.selectable .paragraph.link {
-  display: flex;
-}
-
-body.docs-ndl .cards.selectable .sect2 .paragraph.link.hide {
-  box-sizing: border-box;
-  padding-top: 0;
-  margin-top: auto;
-  font-size: 0;
+  display: none;
 }
 
 body.docs-ndl .cards.selectable .sect2 .paragraph.link,
