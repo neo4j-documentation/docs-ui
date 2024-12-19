@@ -918,6 +918,9 @@ body {
 .doc .menuseq,
 .doc .icon i::after {
   hyphens: none;
+  line-height: inherit;
+  font-weight: inherit;
+  font-size: inherit;
 }
 
 .doc th.tableblock,
