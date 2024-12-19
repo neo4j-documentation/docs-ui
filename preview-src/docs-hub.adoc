@@ -85,7 +85,7 @@ Learn how to monitor, administer, and operate all of the Neo4j DBMSs in an Enter
 [.link.hide]
 link:{docs-home}/ops-manager[]
 
-[.next-steps]
+[.display.next-steps]
 == Keep exploring
 
 Here are some recommended resources to get started with data visualization:

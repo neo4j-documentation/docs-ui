@@ -210,7 +210,7 @@ body.docs-ndl .doc > .sect-header > h1.page:first-child {
 }
 
 body.docs-ndl.hub .doc div:not(.display) h2 {
-  display: flex;
+  display: none;
 }
 
 body.landing .toc {
