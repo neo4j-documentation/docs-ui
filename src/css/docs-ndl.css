@@ -474,7 +474,6 @@ body.docs-ndl .cards .sect2.selectable .description {
 }
 
 body.docs-ndl .cards .sect2.selectable a {
-  cursor: default;
   text-decoration: solid;
 }
 
