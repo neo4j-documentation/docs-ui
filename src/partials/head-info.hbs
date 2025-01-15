@@ -1,6 +1,8 @@
     {{#unless (ne page.attributes.no-canonical undefined)}}
     {{#if page.canonicalUrl}}
+    {{#with page.canonicalUrl}}
     <link rel="canonical" href="{{{this}}}">
+    {{/with}}
     {{else}}
     <link rel="canonical" href="https://neo4j.com{{{ page.attributes.canonical-root }}}{{ page.url }}">
     {{/if}}
