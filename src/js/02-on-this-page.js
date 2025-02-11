@@ -32,6 +32,10 @@
   var menu = sidebar.querySelector('.toc-menu-placeholder')
   if (!menu) (menu = document.createElement('div')).className = 'toc-menu-placeholder'
 
+  if (document.querySelector('body.has-banner')) {
+    document.querySelector('.toc-menu').style.top = 'calc(var(--toc-top) + var(--banner-height))'
+  }
+
   var title = document.createElement('h2')
   title.textContent = sidebar.dataset.title || 'Contents'
   menu.appendChild(title)
@@ -87,7 +91,8 @@
       if (lastActiveFragment) links[lastActiveFragment].classList.remove('is-active')
       var activeLink = links[activeFragment]
       activeLink.classList.add('is-active')
-      if (list.scrollHeight > list.offsetHeight) {
+      // don't scroll page contents if cheat-sheet
+      if (list.scrollHeight > list.offsetHeight && !document.querySelector('body.cheat-sheet')) {
         list.scrollTop = Math.max(0, activeLink.offsetTop + activeLink.offsetHeight - list.offsetHeight)
       }
       lastActiveFragment = activeFragment
