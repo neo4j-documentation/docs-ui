@@ -3,7 +3,13 @@
     <link rel="canonical" href="{{{this}}}">
     {{/with}}
     {{else}}
+    {{#if page.attributes.custom-canonical}}
+    {{#with page.attributes.custom-canonical}}
+    <link rel="canonical" href="{{{this}}}">
+    {{/with}}    
+    {{else}}
     <link rel="canonical" href="https://neo4j.com{{{ page.attributes.canonical-root }}}{{ page.url }}">
+    {{/if}}
     {{/if}}
 
     {{#unless (eq page.attributes.pagination undefined)}}
