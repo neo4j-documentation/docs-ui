@@ -1,6 +1,7 @@
 = Tables
 :nofooter:
 :page-ogtitle: This page uses the page-ogtitle attribute to generate a custom title for SEO meta
+:page-custom-canonical: https://neo4j.com/docs/cypher-manual/current/clauses/where/
 
 .No striping
 // Alternative to stripes attributes is
