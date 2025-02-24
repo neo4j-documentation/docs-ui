@@ -33,9 +33,9 @@
       var scrollTarget = this.closest('div')
       var selectorsTop = document.querySelector('.nav-container .selectors').querySelector('div').getBoundingClientRect().top
       if (this.tagName === 'H3') topOffset = selectorsTop
-      window.scrollTo(0, computePosition(scrollTarget, 0) - topOffset)
+      window.scrollTo(0, computePosition(scrollTarget, 0) - (topOffset + 20))
     } else {
-      window.scrollTo(0, computePosition(target, 0) - topOffset)
+      window.scrollTo(0, computePosition(target, 0) - (topOffset + 20))
     }
   }
 
