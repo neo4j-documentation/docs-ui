@@ -1,6 +1,10 @@
 = Tables
 :nofooter:
+:page-theme: docs
 :page-ogtitle: This page uses the page-ogtitle attribute to generate a custom title for SEO meta
+// :page-edit-url-body: Custom raise an issue body text
+// :page-edit-url-title: Custom raise an issue title text
+:page-edit-url-uri: https://github.com/neo4j/docs-cypher/blob/dev/modules/ROOT/pages/queries/index.adoc
 :page-custom-canonical: https://neo4j.com/docs/cypher-manual/current/clauses/where/
 
 .No striping
