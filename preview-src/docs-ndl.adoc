@@ -24,7 +24,7 @@ Learn more about graph databases and start working with your data using Neo4j to
 xref:tutorials:index.adoc[Get started]
 --
 
-[.cards.selectable]
+[.cards]
 == CTA cards
 
 [role=label--featured]

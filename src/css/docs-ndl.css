@@ -651,6 +651,7 @@ body.docs-ndl .lists .sect2 {
   line-height: 2rem;
 }
 
+body.docs-ndl .cards .sect2:hover,
 body.docs-ndl .cards.selectable .sect2:hover,
 body.docs-ndl .cards .sect2.selectable:hover {
   transition: 0.1s linear;
