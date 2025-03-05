@@ -651,7 +651,6 @@ body.docs-ndl .lists .sect2 {
   line-height: 2rem;
 }
 
-body.docs-ndl .cards .sect2:hover,
 body.docs-ndl .cards.selectable .sect2:hover,
 body.docs-ndl .cards .sect2.selectable:hover {
   transition: 0.1s linear;
@@ -828,6 +827,10 @@ body.docs-ndl .cards .sect2 .paragraph:not(.icon) {
 
 body.docs-ndl .cards .sect2.selectable .paragraph.link {
   display: none;
+}
+
+body.docs-ndl .cards .sect2.selectable .paragraph.link.display {
+  display: flex;
 }
 
 body.docs-ndl .cards.selectable .sect2 .paragraph.link,
