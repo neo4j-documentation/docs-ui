@@ -36,7 +36,7 @@ image:icons/ndl/deployment-options.svg[]
 [.description]
 Choose from self-managed local and cloud deployments, or fully-managed options.
 
-[.link]
+[.link.display]
 link:https://www.neo4j.com/docs/deployment-options[Get a Neo4j instance]
 
 === Cypher
@@ -47,7 +47,7 @@ image:icons/ndl/cypher-manual.svg[]
 [.description]
 Learn how to write Cypher, Neo4j's declarative query language.
 
-[.link]
+[.link.display]
 link:https://www.neo4j.com/docs/cypher-manual/[Query your data]
 
 === Neo4j Tools
@@ -58,7 +58,7 @@ image:icons/ndl/neo4j-tools.svg[]
 [.description]
 Use Neo4j's tools to explore, visualize, manage, monitor, and import data to your graph.
 
-[.link]
+[.link.display]
 link:https://www.neo4j.com/docs/tools[Discover the products]
 
 === Graph Data Science
@@ -69,7 +69,7 @@ image:icons/ndl/data-science.svg[]
 [.description]
 Run graph algorithms and machine learning models to analyze your data at scale.
 
-[.link]
+[.link.display]
 xref:gds:index.adoc[Unlock insights from data]
 
 === Create applications
@@ -80,7 +80,7 @@ image:icons/ndl/create-applications.svg[]
 [.description]
 Discover the client libraries and APIs to develop applications with Neo4j and AuraDB.
 
-[.link]
+[.link.display]
 xref:create-applications:index.adoc[Start developing]
 
 === Connect data sources
@@ -91,7 +91,7 @@ image:icons/ndl/connectors.svg[]
 [.description]
 Learn how to use connectors and other tools to connect Neo4j with other data sources.
 
-[.link]
+[.link.display]
 xref:connectors:index.adoc[Connect to Neo4j]
 
 
