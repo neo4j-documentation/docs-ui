@@ -164,6 +164,20 @@ page:
       - content: warning
         url: banner-warning.html
         urlType: internal
+    - content: Sidebar
+      items:
+      - content: No headings, no ad
+        url: sidebar-no-headings-no-ad.html
+        urlType: internal
+      - content: No headings, with ad
+        url: sidebar-no-headings-ad.html
+        urlType: internal
+      - content: Headings, no ad
+        url: sidebar-headings-no-ad.html
+        urlType: internal
+      - content: Headings, with ad
+        url: sidebar-headings-ad.html
+        urlType: internal
     - content: Labels
       url: labels.html
       urlType: internal

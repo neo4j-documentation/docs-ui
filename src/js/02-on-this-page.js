@@ -11,10 +11,19 @@
   var article = document.querySelector('article.doc')
   var selectors = document.querySelector('.nav-container .selectors')
   var selectorsHeight = selectors ? selectors.getBoundingClientRect().height : 0
-  var headings
   var headingSelector = []
   for (var l = 0; l <= levels; l++) headingSelector.push(l ? '.sect' + l + '>h' + (l + 1) + '[id]' : 'h1[id].sect0')
-  if (!(headings = find(headingSelector.join(','), article)).length) return sidebar.parentNode.removeChild(sidebar) // remove sidebar if there are no headings
+  var headings = find(headingSelector.join(','), article)
+
+  var menu = sidebar.querySelector('.toc-menu-placeholder')
+  if (!menu) (menu = document.createElement('div')).className = 'toc-menu-placeholder'
+  var ad = document.querySelector('.toc-ad')
+
+  // display an ad or nothing if there are no headings
+  if (!(headings.length)) {
+    if (!ad) return sidebar.parentNode.removeChild(sidebar) // remove sidebar if there is no ad
+    return menu.parentNode.removeChild(menu) // remove toc menu if there are no headings but still display ad
+  }
 
   var lastActiveFragment
   var links = {}
@@ -28,9 +37,6 @@
     accum.appendChild(listItem)
     return accum
   }, document.createElement('ul'))
-
-  var menu = sidebar.querySelector('.toc-menu-placeholder')
-  if (!menu) (menu = document.createElement('div')).className = 'toc-menu-placeholder'
 
   if (document.querySelector('body.has-banner')) {
     document.querySelector('.toc-menu').style.top = 'calc(var(--toc-top) + var(--banner-height))'
