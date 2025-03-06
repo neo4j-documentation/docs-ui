@@ -1,5 +1,5 @@
     {{#if page.canonicalUrl}}
-    {{#with page.canonicalUrl}}
+    {{#with (neo-canonical-current page)}}
     <link rel="canonical" href="{{{this}}}">
     {{/with}}
     {{else}}

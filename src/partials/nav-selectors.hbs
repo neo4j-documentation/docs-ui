@@ -17,9 +17,10 @@
 
     <select id="selector-version" data-current="{{@root.page.version}}" class="version-selector dropdown-styles">
       {{#each page.versions}}
-      {{#unless this.prerelease}}
+      {{#unless (and this.prerelease @root.page.attributes.nav-selectors-hide-prerelease)}}
       <option
         data-version="{{this.displayVersion}}"
+        {{#if this.prerelease }}data-prerelease="{{this.prerelease}}"{{/if}}
         value="{{{relativize this.url}}}"
         {{#if (eq this.version @root.page.version)}} selected{{/if}}
         {{~#if this.missing}} disabled{{/if}}
