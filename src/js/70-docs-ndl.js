@@ -12,6 +12,11 @@ document.addEventListener('DOMContentLoaded', function () {
     a.classList.add('banner-link')
   })
 
+  // add a class to the link itself for tracking
+  document.querySelectorAll('.cards .link a').forEach(function (a) {
+    a.classList.add('card-link')
+  })
+
   // if a card is 'selectable' then make it a click target
   // by taking the link from the card and wrapping the whole card in an anchor tag with that link
   // if the card contains more than one link, the first link is used
@@ -29,11 +34,6 @@ document.addEventListener('DOMContentLoaded', function () {
       card.addEventListener('click', function (e) {
         e.preventDefault()
         window.location.href = target
-      })
-
-      // add a class to the link itself for tracking
-      link.querySelectorAll('a').forEach(function (a) {
-        a.classList.add('card-link')
       })
     })
   }
