@@ -8,8 +8,6 @@
 
   if (navContainer && navToggle) {
     navToggle && navToggle.addEventListener('click', showNav)
-    // NOTE don't let click events propagate outside of nav container
-    navContainer && navContainer.addEventListener('click', concealEvent)
 
     var menuPanel = navContainer.querySelector('[data-panel=menu]')
     if (!menuPanel) return
@@ -27,6 +25,8 @@
     find(menuPanel, '.nav-item-toggle:not(a)').forEach(function (btn) {
       var li = btn.parentElement
       btn.addEventListener('click', toggleActive.bind(li))
+      // don't let toggle clicks propagate
+      btn.addEventListener('click', concealEvent)
       var navItemSpan = findNextElement(btn, '.nav-text')
       if (navItemSpan) {
         navItemSpan.style.cursor = 'pointer'
