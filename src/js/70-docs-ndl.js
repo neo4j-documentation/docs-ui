@@ -7,6 +7,11 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   }
 
+  // add a class to the banner link for tracking
+  document.querySelectorAll('.banner a').forEach(function (a) {
+    a.classList.add('banner-link')
+  })
+
   // if a card is 'selectable' then make it a click target
   // by taking the link from the card and wrapping the whole card in an anchor tag with that link
   // if the card contains more than one link, the first link is used
@@ -17,13 +22,18 @@ document.addEventListener('DOMContentLoaded', function () {
       var target = link.querySelector('a').getAttribute('href')
       var card = link.parentElement
       card.classList.add('selectable')
-      const cardLink = createElement('a', 'link')
+      const cardLink = createElement('a', 'link card-link')
       cardLink.setAttribute('href', target)
       moveElements(card, cardLink)
       card.appendChild(cardLink)
       card.addEventListener('click', function (e) {
         e.preventDefault()
         window.location.href = target
+      })
+
+      // add a class to the link itself for tracking
+      link.querySelectorAll('a').forEach(function (a) {
+        a.classList.add('card-link')
       })
     })
   }
