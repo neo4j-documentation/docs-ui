@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', function () {
   })
 
   // add a class to the link itself for tracking
-  document.querySelectorAll('.cards .link a').forEach(function (a) {
+  document.querySelectorAll('.cards:not(.bottom-cards) .link a').forEach(function (a) {
     a.classList.add('card-link')
   })
 
