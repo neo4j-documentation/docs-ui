@@ -7,6 +7,7 @@
 'use strict'
 
 module.exports = (page) => {
+  if (!page.latest) return page.canonicalUrl
   const re = new RegExp(`/${page.latest.version}/`)
   const latestVersionPath = `/${(page.attributes['latest-version-path'] || 'current')}/`
   return page.canonicalUrl.replace(re, latestVersionPath)
