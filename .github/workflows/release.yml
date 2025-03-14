@@ -37,3 +37,4 @@ jobs:
       - name: Sync UI Bundle to S3
         run: |
           aws s3 sync --follow-symlinks --include '*.zip' --no-progress build s3://${{ secrets.STATIC_CONTENT_BUCKET }}/build
+          aws cloudfront create-invalidation --distribution-id ${{ vars.CDN_ID }} --paths "/build/*"
