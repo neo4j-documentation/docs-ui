@@ -825,14 +825,6 @@ body.docs-ndl .cards .sect2 .paragraph:not(.icon) {
   /* flex-grow: 1; */
 }
 
-body.docs-ndl .cards .sect2.selectable .paragraph.link:not(.display) {
-  display: none;
-}
-
-body.docs-ndl .cards .sect2.selectable .paragraph.link.display {
-  display: flex;
-}
-
 body.docs-ndl .cards.selectable .sect2 .paragraph.link,
 body.docs-ndl .cards:not(.selectable) .sect2 .paragraph.link {
   box-sizing: border-box;
