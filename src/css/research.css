@@ -50,22 +50,6 @@ body.research .nav-container {
   border-bottom: 1px solid #ccc;
 }
 
-.faq-item .arrow {
-  content: "+";
-  text-align: center;
-  position: relative;
-  font-size: 12px;
-  line-height: 15px;
-  left: 1rem;
-  display: inline-block;
-  transition: transform 0.3s ease;
-  transform: rotate(90deg);
-}
-
-.faq-item[open] .arrow {
-  transform: rotate(0deg);
-}
-
 /* end of collapsible */
 
 /* toolbar */
