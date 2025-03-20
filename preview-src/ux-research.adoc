@@ -19,7 +19,7 @@ We believe that understanding our users is the key to delivering a great product
 Our goal is to make Neo4j front-end products user friendly, match your needs and enable your success, whether you are a new or long-term user.
 
 [.button]
-link:https://p.consentkit.com/baf41f1b-7816-4e04-82a7-b4c6d93ddf19[*Sign up to research panel*]
+link:https://p.consentkit.com/baf41f1b-7816-4e04-82a7-b4c6d93ddf19[*Take part in user research*]
 --
 
 [.cards.bottom-cards]
