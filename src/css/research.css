@@ -1,0 +1,840 @@
+@font-face {
+  font-family: 'Syne Neo';
+  src: url('https://storage.googleapis.com/neo4j-fonts/Syne%20Neo%20Medium%20Font.otf') format('opentype');
+}
+
+@media screen and (min-width: 1024px) {
+  body.research main > .content {
+    margin-top: 0;
+  }
+}
+
+@media screen and (min-width: 769px) {
+  body.research .doc .content {
+    margin-top: 0;
+  }
+}
+
+body.research {
+  background: rgba(var(--colors-neutral-15));
+}
+
+/* nav */
+
+body.research .nav-container {
+  display: none;
+}
+
+/* end of nav */
+
+/* collapsible items */
+
+.faq-container {
+  width: 100%;
+  margin: auto;
+}
+
+.faq-item {
+  padding: 10px 0;
+  color: black;
+}
+
+.faq-question {
+  display: flex;
+  color: black;
+}
+
+.faq-answer {
+  display: block; /* Make answers visible by default */
+  padding-bottom: 15px;
+  border-bottom: 1px solid #ccc;
+}
+
+/* end of collapsible */
+
+/* toolbar */
+
+body.research .toolbar {
+  visibility: hidden;
+}
+
+/* end of toolbar */
+
+body.research .doc a {
+  text-decoration: none;
+  cursor: default;
+}
+
+body.research .doc a::after {
+  display: inline-block;
+}
+
+body.research .doc a:hover {
+  text-decoration: underline;
+}
+
+body.research .cards.bottom-cards a:hover {
+  text-decoration: none;
+}
+
+body.research .doc a:hover::after {
+  text-decoration: none;
+}
+
+body.research main > .content {
+  align-items: center;
+  flex-direction: column;
+  margin-bottom: 2rem;
+}
+
+body.research .doc {
+  width: 100%;
+  max-width: 1058px;
+  padding: 0 1rem 4rem;
+}
+
+body.research .doc .flex-column {
+  flex-direction: column;
+}
+
+body.research .doc > .sect-header > h1.page:first-child {
+  margin-top: 0;
+  /* font-size: var(--font-size-h1); */
+  margin-bottom: 1.5rem;
+}
+
+body.landing .toc {
+  display: none;
+}
+
+body.research .doc h2 {
+  margin: 1rem 0 1rem;
+}
+
+body.research h2 {
+  display: none;
+}
+
+body.research .doc h1,
+body.research .doc h2 {
+  font-family: var(--header-font-family);
+  border-bottom: 0 none;
+  flex-basis: 100%;
+}
+
+body.research .widget .sectionbody {
+  background: rgba(var(--colors-neutral-10));
+  border-radius: 1rem;
+  border: none;
+  padding: 1rem;
+  column-gap: 0;
+  row-gap: 2rem;
+  justify-content: center;
+  align-content: center;
+}
+
+body.research .widget.lists .sectionbody {
+  justify-content: space-between;
+  line-height: 24px;
+}
+
+body.research .widget.banner .sectionbody {
+  background: rgba(var(--colors-baltic-60));
+  background-repeat: no-repeat;
+  background-position: right;
+  background-size: contain;
+  border-radius: 1rem;
+  border: none;
+  padding: 2rem;
+  row-gap: 0;
+  column-gap: 0;
+  background-image: url(../img/start-ux.svg);
+}
+
+body.research.sub .widget .sectionbody {
+  background: transparent;
+  padding: 0;
+  justify-content: flex-start;
+  row-gap: 1rem;
+  column-gap: 1rem;
+}
+
+body.research.sub .widget.banner .sectionbody {
+  background: transparent;
+  padding: 0;
+  justify-content: flex-start;
+  row-gap: 1rem;
+  column-gap: 1rem;
+}
+
+body.research.sub .widget .sectionbody .sect2 {
+  border-radius: 1rem;
+  flex: 0 0 32%;
+}
+
+body.research .next-steps .sectionbody {
+  display: -webkit-inline-box;
+}
+
+body.research .next-steps .sectionbody .dlist {
+  margin-left: 1rem;
+  padding-left: 2rem;
+  border-left: 1px solid rgba(var(--colors-neutral-20));
+}
+
+body.research .next-steps .sectionbody .dlist dd {
+  margin-bottom: 1rem;
+}
+
+body.research .next-steps .sectionbody .dlist dt,
+body.research .next-steps .sectionbody .dlist dd {
+  margin-left: 0;
+  padding: 0.5rem;
+}
+
+body.research .next-steps .sectionbody ol {
+  list-style-type: none;
+  counter-reset: step-counter;
+  padding-left: 0;
+}
+
+body.research .next-steps .sectionbody ol li {
+  border-left: 1px solid rgba(var(--colors-baltic-50));
+  margin-left: 1rem;
+  counter-increment: step-counter;
+  margin-bottom: 0;
+  padding-bottom: 76px;
+}
+
+body.research .next-steps .sectionbody ol li a {
+  text-emphasis: none;
+}
+
+body.research .next-steps .sectionbody ol li:last-of-type {
+  counter-increment: step-counter;
+  margin-bottom: 0;
+  border: none;
+  padding-bottom: 0;
+}
+
+body.research .next-steps .sectionbody ol li p > strong {
+  color: black;
+}
+
+body.research .next-steps .sectionbody ol li p {
+  margin: 0 0 0 2rem;
+}
+
+body.research .next-steps .sectionbody ol li div.paragraph {
+  margin: 0;
+}
+
+body.research .next-steps .sectionbody ol li::before {
+  content: counter(step-counter);
+  /* display: inline-block; */
+  float: left;
+  position: relative;
+  z-index: 1;
+  margin-left: -1rem;
+  margin-right: 1rem;
+  font-style: normal;
+  background: rgba(var(--colors-baltic-50));
+  color: white;
+  border: 1px solid rgba(var(--colors-baltic-50));
+  border-radius: 50%;
+  width: 2rem;
+  height: 2rem;
+  line-height: 2rem;
+  text-align: center;
+}
+
+body.research .next-steps .sectionbody ul {
+  /* list-style-type: none; */
+  padding: 1rem;
+}
+
+body.research .next-steps .sectionbody ul li {
+  margin-bottom: 1rem;
+}
+
+body.research .next-steps .sectionbody ul li div.paragraph {
+  margin: 0;
+}
+
+/* body.research .next-steps .sectionbody ol li:last-of-type:after {
+  content: "";
+  background: rgba(var(--colors-neutral-10));
+  border: 1px solid rgba(var(--colors-baltic-50));
+  border-radius: 50%;
+  width: 2.5rem;
+  height: 2.5rem;
+  display: inline-block;
+  position: relative;
+  left: -3.25rem;
+  top: -3.875rem;
+} */
+
+/* body.research .article a:visited {
+  color: var(--neutral-color);
+} */
+
+/* video embeds */
+
+.video iframe {
+  border-radius: 0.75rem;
+}
+
+body.research #preamble + .sect1 {
+  margin-top: 0;
+}
+
+/* sections */
+
+body.research .paragraph.caption {
+  display: flex;
+  width: 100%;
+  padding: 1rem;
+  margin-right: 1rem;
+  color: var(--neutral-color);
+  font-feature-settings: 'liga' off, 'clig' off;
+  font-family: var(--font-font-family-h1);
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 32px; /* 100% */
+  letter-spacing: 0.25px;
+}
+
+body.research .paragraph.footer-link {
+  display: flex;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  color: var(--neutral-color);
+  justify-content: flex-end;
+  padding-right: 0;
+}
+
+body.research .banner .paragraph {
+  display: flex;
+  width: fit-content;
+  padding: 0;
+  margin-right: 25rem;
+  margin-bottom: 2rem;
+  color: var(--color-white);
+}
+
+body.research .banner .paragraph.description {
+  font-family: var(--font-family-h2);
+  font-size: 16px;
+  font-weight: 100;
+  line-height: 24px;
+  letter-spacing: 0;
+}
+
+/* selectable cards */
+
+body.research .cards .sect2.selectable .description {
+  color: var(--doc-font-color);
+  font-weight: 200;
+}
+
+body.research .cards .sect2.selectable a {
+  text-decoration: solid;
+}
+
+body.research .cards .sect2.selectable .link a:hover {
+  text-decoration: underline;
+}
+
+body.research .cards .sect2.selectable:hover div.description {
+  text-decoration: none;
+}
+
+/* banner */
+
+body.research .banner .sectionbody > div.openblock {
+  flex: 0 0 50%;
+}
+
+body.research .banner .sectionbody > div.icon {
+  flex: 0 0 40%;
+  padding: 0;
+  object-fit: cover;
+  border-radius: 0.25rem;
+  margin-bottom: 0;
+}
+
+body.research .banner .icon img {
+  height: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+body.research .banner .button a.external {
+  color: var(--heading-font-color);
+  background: rgba(var(--colors-baltic-25));
+}
+
+body.research .banner .button a.external::after {
+  display: none;
+}
+
+body.research .banner .button a {
+  border-radius: 0.25rem;
+  padding: 0.5em 1.5em;
+  font-weight: 400;
+  text-align: center;
+  /* margin-left: 24px; */
+}
+
+.banner .button:hover {
+  background: rgba(var(--banner-background-color));
+  color: var(--colors-baltic-25);
+}
+
+.description2 {
+  color: var(--color-white);
+  font-size: var(--doc-font-size--desktop);
+  line-height: var(--doc-line-height);
+  margin: var(--doc-margin);
+  max-width: var(--doc-max-width);
+  padding: 12px 24px 12px;
+}
+
+/* highlights */
+
+body.research .highlights .sectionbody > div {
+  flex: 0 1 50%;
+  justify-content: center;
+  align-self: center;
+  padding: 1rem 2rem 1rem;
+}
+
+body.research .highlights .sectionbody > div.icon span.image {
+  display: flex;
+  justify-content: center;
+}
+
+body.research .highlights .list,
+body.research .highlights .caption {
+  padding-left: 0;
+}
+
+body.research .highlights .list a {
+  padding: 8px;
+  text-decoration: none;
+}
+
+body.research .highlights .list a:hover,
+body.research .highlights .list a:focus {
+  text-decoration: none;
+  background-color: var(--toc_hover-background-color);
+  cursor: default;
+}
+
+body.research .highlights .list ul li {
+  border-bottom: 1px solid rgba(var(--colors-neutral-20));
+}
+
+body.research .widget.highlights .footer-link {
+  text-align: end;
+}
+
+body.research .widget.highlights .footer-link a,
+body.research .widget.highlights .footer-link a:visited,
+body.research .widget.highlights .footer-link a::after {
+  color: var(--link-font-color);
+}
+
+body.research .widget.highlights .icon img {
+  max-width: 100%;
+  height: auto;
+  padding: 0;
+}
+
+/* lists */
+
+body.research .lists .sectionbody > div.sect2 {
+  flex: 0 0 22%;
+}
+
+body.research .widget .sectionbody > div.sect2 .ulist {
+  flex-grow: 1;
+  order: 3;
+  margin-top: 1rem;
+}
+
+body.research .widget ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+body.research .lists ul li {
+  font-size: var(--font-size-body-medium);
+}
+
+body.research .lists ul li a {
+  font-weight: var(--font-weight-normal);
+  text-decoration: none;
+  cursor: default;
+}
+
+/* cards */
+
+body.research .sect2 {
+  display: flex;
+  flex-direction: column;
+  border-radius: 16px;
+  position: relative;
+}
+
+body.research .cards .sectionbody > div.sect2 {
+  flex: 0 1 32%;
+  border: 1px solid var(--panel-border-color);
+  /* margin-right: 1rem; */
+}
+
+body.research .cards.bottom-cards .sectionbody > div.sect2 {
+  border: 0;
+  display: flex;
+  flex: 0 1 48.8%;
+  margin-right: 24px;
+}
+
+body.research .cards .sect2.selectable > a,
+body.research .cards .sect2:not(.selectable),
+body.research .lists .sect2 {
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  flex: 1;
+  /* justify-content: space-between; */
+  gap: 8px;
+  /* min-width: 30%; */
+  padding: 24px;
+  background: var(--color-white);
+  line-height: 2rem;
+}
+
+body.research .cards.selectable .sect2:hover,
+body.research .cards .sect2.selectable:hover {
+  transition: 0.1s linear;
+  border: 1px solid var(--page-version-missing-font-color);
+  box-shadow: 0 1px 2px 0 rgba(26, 27, 29, 0.18);
+  cursor: default;
+}
+
+/* styles for specific types of cards:
+- featured - for new and exciting items
+- labs
+- graph-academy
+*/
+
+/* this would give a background image on cards marked with [.ga-promo] */
+body.research .cards .sectionbody > div.sect2.graph-academy > a,
+body.research .cards .sectionbody > div.sect2.graph-academy:not(.selectable) {
+  background: #fff url(../img/ad-blob.svg) no-repeat 100% 100%;
+  border: 1px solid var(--success-color);
+  box-shadow: 0 2px 4px 0 rgba(63, 120, 36, 0.5), 0 1px 2px 0 rgba(63, 120, 36, 0.2);
+}
+
+body.research .cards .sectionbody > div.sect2.labs > a,
+body.research .cards .sectionbody > div.sect2.labs:not(.selectable) {
+  border: 1px solid var(--color-labs);
+  box-shadow: 0 2px 4px 0 rgba(90, 52, 170, 0.5), 0 1px 2px 0 rgba(90, 52, 170, 0.2);
+}
+
+/* add a labs label to a title in a card */
+body.research .header-label-container > div.labels {
+  display: inline-flex;
+  margin-left: auto;
+}
+
+body.research .cards .sect2 > a,
+body.research .cards:not(.selectable) .sect2 > a,
+body.research .widget:not(.video) {
+  /* box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.1), 0 1px 2px -1px rgba(0, 0, 0, 0.06); */
+  border: none;
+  border-radius: 1rem;
+}
+
+body.research .cards .sect2 > a {
+  color: var(--neutral-color);
+  font-weight: var(--font-weight-normal);
+  text-decoration: none;
+}
+
+body.research.color-docs .sect2 {
+  color: rgba(var(--colors-neutral-10));
+  background: var(--color-docs);
+}
+
+body.research.color-docs .cards .sect2 h3,
+body.research.color-docs .cards .sect2 .description {
+  color: rgba(var(--colors-neutral-10));
+}
+
+body.research .cards .sect2 .paragraph {
+  margin: 0;
+}
+
+/* body.research:not(.create-applications) .sect2 {
+  min-height: 200px;
+} */
+
+body.research .cards .sect2 a > h3,
+body.research .cards .sect2 a > div {
+  margin: 0;
+  padding: 0;
+}
+
+body.research .highlights .sectionbody > div,
+body.research .sect2 a > div,
+body.research .sect2 a > h3 {
+  display: flow;
+}
+
+body.research .cards .sect2 .icon,
+body.research .widget .icon {
+  padding: 0;
+  margin: 0;
+  width: 100%;
+}
+
+body.research .cards .sect2 .icon,
+body.research .widget.banner .icon {
+  order: 1;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+}
+
+body.research .cards .sect2 .icon p {
+  display: flex;
+  width: -webkit-fill-available;
+  justify-content: space-between;
+}
+
+body.research .cards .sect2 .icon p div.labels {
+  display: flex;
+  flex-direction: row;
+  gap: 0.25rem;
+  height: min-content;
+}
+
+body.research .cards .icon span {
+  display: flex;
+}
+
+/* For the 1st, 3rd etc highlights, move the image to the right */
+body.research .widget.highlights:nth-of-type(odd) .icon {
+  order: 1;
+}
+
+/* We can use this rule to apply styles to the 2nd, 4th highlights etc widget */
+/* body.research .widget.highlights:nth-of-type(even) .openblock {
+  margin-right:40px;
+} */
+
+body.research body.research .cards .sect2 .icon img {
+  width: 4rem;
+  height: 4rem;
+  padding: 0;
+}
+
+body.research .cards .sect2 .icon.icon-l img {
+  width: 6rem;
+  height: 6rem;
+  margin-bottom: 9px;
+}
+
+body.research .lists .sect2 .icon img,
+body.research .icon-s .sect2 .icon img {
+  width: 3rem;
+  height: 3rem;
+  padding: 0;
+}
+
+body.research .lists .sect2 .icon img path {
+  color: rgba(var(--colors-baltic-30));
+  fill: rgba(var(--colors-baltic-30));
+}
+
+body.research .cards .sect2 h3,
+body.research .lists .sect2 h3 {
+  /* flex-grow: 1; */
+  order: 2;
+  margin: 0;
+  font-weight: var(--font-weight-semibold);
+  width: -webkit-fill-available;
+}
+
+body.research .cards .sect2 h3 .anchor::before {
+  display: none;
+}
+
+body.research .cards .sect2 .paragraph:not(.icon) {
+  font-size: var(--font-size-body-medium);
+  line-height: 1.5;
+  text-align: left;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-ordinal-group: 4;
+  -ms-flex-order: 3;
+  order: 0;
+  /* z-index: 10; */
+  /* margin: 0.5rem 1rem 0 1rem; */
+  /* -webkit-box-flex: 1; */
+  /* -ms-flex-positive: 1; */
+  /* flex-grow: 1; */
+}
+
+body.research .cards .sect2.selectable .paragraph.link {
+  display: none;
+}
+
+body.research .cards.selectable .sect2 .paragraph.link,
+body.research .cards:not(.selectable) .sect2 .paragraph.link {
+  box-sizing: border-box;
+  padding-top: 30px;
+  margin-top: auto;
+}
+
+body.research .bottom-cards .sect2 .icon {
+  padding-bottom: 16px;
+}
+
+body.research .bottom-cards .sect2 h3 {
+  padding-bottom: 8px;
+  order: 0;
+  font-family: 'Syne Neo';
+  font-size: xx-large;
+}
+
+body.research .bottom-cards:not(.selectable) .sect2 .paragraph.link {
+  padding-top: 0;
+  display: flex;
+  justify-content: end;
+}
+
+body.research .cards .sect2 .paragraph.category {
+  display: none;
+}
+
+body.research .plain-links a.external::after {
+  all: unset;
+}
+
+body.research .highlights a {
+  display: flex;
+  justify-content: space-between;
+  color: var(--neutral-color);
+  font-weight: var(--font-weight-normal);
+  text-decoration: none;
+}
+
+body.research .highlights a::after,
+body.research .cards .link a::after {
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+  content: "→";
+  font-weight: 600;
+  color: var(--link-font-color);
+  transition: margin 0.2s linear;
+}
+
+body.research .highlights a::after {
+  display: flex;
+  margin-left: 1.5rem;
+  color: var(--neutral-color);
+  float: right;
+}
+
+body.research .cards .sect2 .ulist {
+  display: inline-flex;
+  order: 4;
+  margin: 0;
+  font-size: var(--font-size-body-medium);
+  line-height: 1.5;
+  text-align: left;
+}
+
+body.research .cards .sect2 .ulist ul {
+  padding: 0;
+}
+
+body.research .cards .sect2 .ulist ul li {
+  list-style-type: none;
+  margin: 0.5rem 0 0;
+}
+
+@media screen and (max-width: 1439px) {
+  body.research .toolbar {
+    top: 0;
+  }
+}
+
+body.research .cards .sectionbody > div.sect2 {
+  flex: 0 1 10%;
+}
+
+body.research .widget .sectionbody > div {
+  flex: 0 1 100%;
+  justify-content: center;
+}
+
+body.research .widget.banner .sectionbody {
+  row-gap: 2rem;
+}
+
+body.research .lists ul {
+  /* text-align: center; */
+}
+
+body.research .widget .sectionbody .sect2,
+body.research.sub .widget .sectionbody .sect2 {
+  flex: 0 0 48%;
+}
+
+body.research .lists .sectionbody > div.sect2 > * {
+  /* margin: 0 auto; */
+}
+
+body.research .highlights .sectionbody > div {
+  flex: 0 1 100%;
+  justify-content: center;
+}
+
+body.research .highlights .sectionbody > div.openblock {
+  order: 2;
+  flex: 0 1 100%;
+}
+
+body.research .highlights .sectionbody > div.icon {
+  margin: auto;
+}
+
+@media all and (max-width: 1157px) {
+  body.research .doc > .sect-header > h1.page:first-child {
+    text-align: center;
+    margin: 1rem auto;
+  }
+
+  body.research .bottom-cards .sect2 > a,
+  body.research .cards .sect2 > a {
+    align-items: center;
+  }
+
+  body.research .cards .sectionbody > div.sect2 {
+    /* min-width: 90%; */
+    flex: 1 1 100%;
+  }
+
+  body.research .lists .sectionbody > div.sect2 {
+    flex: 1 1 100%;
+    padding: 1rem;
+  }
+}
