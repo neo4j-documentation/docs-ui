@@ -380,6 +380,11 @@
   --alpha-beta-color: var(--color-black);
   --alpha-beta-background-color: rgba(var(--colors-marigold-40));
 
+  /* labels and admonitions */
+
+  --label-title-font-size: calc(0.8 * var(--font-size-label)); /* set label font size from ndl */
+  --admonition-title-font-size: var(--font-size-label); /* set admonitino font size from ndl */
+
   /* footer */
   --footer-font-size: var(--font-size-body-medium);
   --footer-line-height: var(--doc-line-height);

@@ -180,3 +180,56 @@ $ npm i -g @antora/cli @antora/site-generator-default
 
 Nominavi luptatum eos, an vim hinc philosophia intellegebat.
 Eu mea inani iriure.
+
+== Admonition in a table
+
+[options="header",width="100%",cols="2,3a"]
+|===
+| Parameter
+| Explanation
+
+
+| Parameter name
+| Parameter explanation
+Lorem ipsum
+
+Dolor sit est.
+
+[NOTE]
+====
+Note text goes here.
+Note should be nicely aligned and have no borders
+====
+
+|===
+
+
+== Admonition first element in an example block
+
+
+[.tabbed-example]
+=====
+[.include-with-admonition-first]
+======
+
+
+[WARNING]
+====
+Admonition should be given enough margin if it is the first element in an example block.
+====
+
+======
+
+[.include-with-admonition-not-first]
+======
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+
+Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+
+[TIP]
+====
+Admonition should be given normal margin if it is not the first element in an example block.
+====
+
+=====
