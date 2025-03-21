@@ -9,7 +9,7 @@
 
           {{!-- add link back to home --}}
           {{!-- {{#unless page.home}} --}}
-          {{!-- {{#if page.attributes.show-home-link}} --}}
+          {{#if page.attributes.show-home-link}}
           <ul class="nav-list docs-home-link">
             <li class="nav-item home-link{{#if page.home}} is-home{{/if}}" data-depth="1" aria-label="home-link">
               {{#with site.homeUrl}}
@@ -17,7 +17,7 @@
               {{/with}}
             </li>
           </ul>
-          {{!-- {{/if}} --}}
+          {{/if}}
           {{!-- {{/unless}} --}}
         
         {{#if (ne @root.page.module 'ROOT')}}
