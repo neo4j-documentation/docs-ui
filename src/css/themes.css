@@ -102,7 +102,7 @@ body.docs #preamble .abstract blockquote {
   color: rgba(var(--colors-baltic-60));
 }
 
-body.docs .tableblock .icon i {
+body.docs .tableblock .icon i:not(.fa) {
   color: var(--color-docs);
 }
 
@@ -337,7 +337,7 @@ body.developer #preamble .abstract blockquote {
   border-left-color: var(--color-green-600);
 }
 
-body.developer .tableblock .icon i {
+body.developer .tableblock .icon i:not(.fa) {
   color: var(--color-green-600);
 }
 

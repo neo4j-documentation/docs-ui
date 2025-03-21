@@ -93,7 +93,7 @@ h2 > .flex-label {
   background: rgba(var(--colors-baltic-50));
   color: rgba(var(--colors-baltic-10));
   font-weight: 600;
-  font-size: 0.7rem;
+  font-size: var(--label-title-font-size);
   font-style: normal;
 }
 
