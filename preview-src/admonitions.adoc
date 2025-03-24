@@ -1,5 +1,5 @@
 = Admonitions
-
+:check-mark: icon:check[]
 
 
 == NOTE
@@ -233,3 +233,18 @@ Admonition should be given normal margin if it is not the first element in an ex
 ====
 
 =====
+
+== Icons in tables
+
+Icons that are not part of an admonition block should have no color filter applied.
+
+[options="header", cols="^,^,^,^"]
+|===
+| Type            | Date support | Time support | Time zone support
+| `DATE`          | {check-mark} |              |
+| `LOCAL TIME`     |              | {check-mark} |
+| `ZONED TIME`          |              | {check-mark} | {check-mark}
+| `LOCAL DATETIME` | {check-mark} | {check-mark} |
+| `ZONED DATETIME`      | {check-mark} | {check-mark} | {check-mark}
+| `DURATION`      | `-`          | `-`          | `-`
+|===
