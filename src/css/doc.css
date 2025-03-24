@@ -169,7 +169,6 @@ body {
 
 .doc .tableblock .icon {
   display: inline-block;
-  margin-right: 0.5rem;
 }
 
 .doc a,
@@ -203,7 +202,8 @@ body {
   font-size: var(--admonition-title-font-size);
 }
 
-.doc i.fa::before {
+/* style the icons in admonition blocks only */
+.doc .admonitionblock i.fa::before {
   width: 24px;
   height: inherit;
   background-size: 20px;
