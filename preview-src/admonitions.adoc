@@ -248,3 +248,51 @@ Icons that are not part of an admonition block should have no color filter appli
 | `ZONED DATETIME`      | {check-mark} | {check-mark} | {check-mark}
 | `DURATION`      | `-`          | `-`          | `-`
 |===
+
+== Admonition that contains a code block
+
+[source, shell]
+----
+docker container exec -u neo4j -it <containerName> /bin/bash
+----
+
+
+[TIP]
+====
+If working with a Neo4j Docker container, ensure you connect to it with the user `neo4j` before issuing import commands, or you will get permission issues after the import.
+
+[source, shell]
+----
+docker container exec -u neo4j -it <containerName> /bin/bash
+----
+====
+
+
+== Admonition that contains a table?
+
+
+[TIP]
+====
+This is an admonition that contains a table.
+
+[options="header", cols="^,^,^,^"]
+|===
+| Type            | Date support | Time support | Time zone support
+| `DATE`          | {check-mark} |              |
+| `LOCAL TIME`     |              | {check-mark} |
+| `ZONED TIME`          |              | {check-mark} | {check-mark}
+| `LOCAL DATETIME` | {check-mark} | {check-mark} |
+| `ZONED DATETIME`      | {check-mark} | {check-mark} | {check-mark}
+| `DURATION`      | `-`          | `-`          | `-`
+|===
+
+====
+
+== Admonition with a title
+
+.note with title
+[NOTE]
+====
+This is a note with a title.
+====
+
