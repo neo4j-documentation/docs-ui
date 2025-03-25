@@ -20,14 +20,11 @@ To use this UI with Antora, add the following configuration to your playbook fil
 ----
 ui:
   bundle:
-    url: https://s3-eu-west-1.amazonaws.com/static-content.neo4j.com/build/ui-bundle-{latest-version}.zip
+    url: https://static-content.neo4j.com/build/ui-bundle-latest.zip
 ----
 
-NOTE: If you want to use the latest version (unreleased) you can use the following URL: `\https://s3-eu-west-1.amazonaws.com/static-content.neo4j.com/build/ui-bundle.zip`.
 
 == Installation
-
-In order to build the UI:
 
 [source,sh]
 npm i
@@ -57,17 +54,22 @@ PORT=3000 npm start
 ====
 
 
-== Publish a new version
+== Publish a new UI bundle version
 
-The release process is automated and relies on GitHub Actions.
+The release process is automated and uses GitHub Actions.
 See the `.github/workflows/release.yml` file for details.
 
-The release will be performed when a tag is pushed, the procedure is:
+The release is performed when a tag is pushed.
 
-. Tag and push to `master` (don't forget the `v` prefix and replace `x.y.z` with an actual version):
+. Use `npm version patch` or `npm version minor` to increase the version in the `package.json` file and create a tag for the new verrsion.
+. Push the tag upstream:
 +
- $ git tag vx.y.z && git push origin master --tags
+ $ git push--tags upstream master
 
-The UI bundle will be published to S3 and available shortly at: `\https://s3-eu-west-1.amazonaws.com/static-content.neo4j.com/build/ui-bundle-vx.y.z.zip`
+The UI bundle is published to S3.
+It is available from two URLs:
 
-The UI bundle and docs pages are shipped/built separately. You don't have to rebuild docs projects for them to take the updated UI bundle, but you do need to run the TC build located at `documentation / UI / Publish UI` for the latest tag of the UI bundle to be deployed.
+- `\https://static-content.neo4j.com/build/ui-bundle-vx.y.z.zip`
+- `\https://static-content.neo4j.com/build/ui-bundle-latest.zip`
+
+When the tag is pushed, a TC build is triggered, which generates the `.css`, `.js` and other assets so they can be published immediately.
