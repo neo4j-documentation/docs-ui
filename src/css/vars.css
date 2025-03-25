@@ -265,7 +265,6 @@
   --warning-border-color: rgba(var(--theme-light-palette-danger-bg-strong));
   --warning-background-color: rgba(var(--theme-light-palette-danger-bg-weak));
   --mark-background: rgba(var(--theme-light-palette-primary-bg-weak));
-
   --admonition-table-border-color: rgba(var(--colors-neutral-70));
   --admonition-table-header-color: rgba(var(--colors-neutral-20));
 
