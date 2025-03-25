@@ -72,4 +72,5 @@ It is available from two URLs:
 - `\https://static-content.neo4j.com/build/ui-bundle-vx.y.z.zip`
 - `\https://static-content.neo4j.com/build/ui-bundle-latest.zip`
 
-When the tag is pushed, a TC build is triggered, which generates the `.css`, `.js` and other assets so they can be published immediately.
+When the tag is pushed, a TC build is triggered, which generates and publishes the latest `.css`, `.js` and other assets.
+If the changes to the bundle include updates to any of the templates in _src/layouts_ or _src/partials_, each docset needs to be rebuilt with the new bundle and republished for the changes to take effect.
