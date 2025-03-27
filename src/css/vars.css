@@ -299,6 +299,7 @@
   --doc-line-height: 1.8;
   --doc-margin: 0 auto;
   --doc-margin--desktop: 0 2rem;
+  --docs-ndl-spacer: 1.5rem;
 
   /* headers */
   --doc-font-size-h1: var(--font-size-h2);
