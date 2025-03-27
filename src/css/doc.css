@@ -203,7 +203,7 @@ body {
 }
 
 /* style the icons in admonition blocks only */
-.doc .admonitionblock i.fa::before {
+.doc .admonitionblock td.icon i.fa::before {
   width: 24px;
   height: inherit;
   background-size: 20px;
@@ -448,7 +448,6 @@ body {
 }
 
 .doc .admonitionblock td .content {
-  word-wrap: anywhere;
   padding: 1rem 1rem 0.75rem;
   width: 100%;
 }
@@ -1179,6 +1178,15 @@ body {
 .doc table.tableblock,
 .doc table.tableblock > * > tr > * {
   border: 0 solid var(--table-border-color);
+}
+
+.doc .admonitionblock .tableblock thead {
+  background: none;
+}
+
+.doc .admonitionblock table.tableblock,
+.doc .admonitionblock table.tableblock > * > tr > * {
+  border-color: var(--admonition-table-border-color);
 }
 
 .doc table.grid-all > * > tr > * {
