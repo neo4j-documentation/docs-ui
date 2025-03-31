@@ -187,9 +187,9 @@
   --panel-border-color: rgba(var(--colors-neutral-20));
   --scrollbar-thumb-color: rgba(var(--colors-neutral-15));
   /* navbar */
-  --navbar-background: rgba(var(--colors-neutral-80));
+  --navbar-background: rgba(var(--colors-neutral-10));
   --hero-fade: rgba(var(--colors-neutral-50));
-  --navbar-font-color: rgba(var(--colors-neutral-15));
+  --navbar-font-color: rgba(var(--colors-neutral-80));
   --navbar-font-weight: 400;
   --navbar_hover-background: transparent;
   --navbar-button-background: var(--color-docs);
@@ -210,7 +210,7 @@
   --navbar-kb-border: var(--color-kb);
 
   /* nav */
-  --nav-background: rgba(var(--colors-neutral-15));
+  --nav-background: rgba(var(--colors-neutral-10));
   --nav-border-color: rgba(var(--colors-neutral-20));
   --nav-font-weight: 400;
   --nav_active-font-weight: 400;
@@ -222,7 +222,7 @@
   --nav-bullet-color: rgba(var(--colors-neutral-40));
 
   /* toolbar */
-  --toolbar-background: var(--panel-background);
+  --toolbar-background: rgba(var(--colors-neutral-10));
   --toolbar-border-color: rgba(var(--colors-neutral-20));
   --toolbar-font-color: rgba(var(--colors-neutral-70));
   --toolbar-muted-color: rgba(var(--colors-neutral-50));
@@ -382,6 +382,9 @@
   --alpha-beta-color: var(--color-black);
   --alpha-beta-background-color: rgba(var(--colors-marigold-40));
 
+  /* toolbar */
+  --toolbar-font-size: calc(16 / var(--rem-base) * 1rem);
+
   /* labels and admonitions */
 
   --label-title-font-size: calc(0.8 * var(--font-size-label)); /* set label font size from ndl */
@@ -396,6 +399,7 @@
   --footer-link_hover-font-color: rgba(var(--colors-neutral-20));
 
   /* dimensions and positioning */
+  --category-tabs-height: calc(68 / var(--rem-base) * 1rem);
   --navbar-height: calc(68 / var(--rem-base) * 1rem);
   --toolbar-height: calc(45 / var(--rem-base) * 1rem);
   --banner-height: calc(45 / var(--rem-base) * 1rem);

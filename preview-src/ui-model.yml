@@ -2,8 +2,7 @@ antoraVersion: '1.0.0'
 site:
   url: http://localhost:5252
   title: Brand Docs
-  homeUrl: &home_url /xyz/4.1/index.html
-  theme: docs
+  homeUrl: &home_url /xyz/5.2/index.html
   components:
   - name: abc
     title: Project ABC
@@ -19,26 +18,26 @@ site:
     latestVersion: *latest_version_abc
   - &component
     name: xyz
-    title: Project XYZ
-    url: /xyz/4.2/index.html
+    title: &component_title Project XYZ
+    url: /xyz/6.0/index.html
     versions:
     - &latest_version_xyz
-      url: /xyz/4.2/index.html
-      version: '4.2'
-      displayVersion: '4.2'
+      url: /xyz/6.0/index.html
+      version: '6.0'
+      displayVersion: '6.0'
     - &component_version
-      url: '/4.1'
-      version: '4.1'
-      displayVersion: '4.1'
-      title: 'Component title wraps onto a second line'
-    - url: '/4.0'
-      version: '4.0'
-      displayVersion: '4.0'
-    - url: '/3.5'
-      version: '3.5'
-      displayVersion: '3.5'
+      title: *component_title
+      url: '#'
+      version: '5.2'
+      displayVersion: '5.2'
+    - url: '#'
+      version: '5.1'
+      displayVersion: '5.1'
+    - url: '#'
+      version: '5.0'
+      displayVersion: '5.0'
     latestVersion: *latest_version_xyz
-  - name: 123
+  - name: '123'
     title: Project 123
     url: '#'
     versions:
@@ -56,13 +55,14 @@ site:
 page:
   url: *home_url
   home: true
-  title: Brand&#8217;s Hardware &amp; Software Requirements
+  title: Home
   component: *component
   componentVersion: *component_version
-  version: '4.1'
-  displayVersion: '4.1'
+  version: '5.2'
+  displayVersion: '5.2'
   module: ROOT
-  editUrl: http://example.com/project-xyz/blob/master/index.adoc
+  relativeSrcPath: index.adoc
+  editUrl: http://example.com/project-xyz/blob/main/index.adoc
   origin:
     private: false
   previous:
@@ -78,432 +78,27 @@ page:
     url: '#'
     urlType: fragment
   - content: Brand&#8217;s Hardware &amp; Software Requirements
-    url: /xyz/4.1/index.html
+    url: /xyz/5.2/index.html
     urlType: internal
   versions:
-  - version: '4.2'
-    displayVersion: '4.2'
-    url: '/4.2'
-  - version: '4.1'
-    displayVersion: '4.1'
-    url: '/4.1'
-  - version: '4.0'
-    displayVersion: '4.0'
-    url: '/4.0'
-  - version: '3.5'
-    displayVersion: '3.5'
+  - version: '6.0'
+    displayVersion: '6.0'
+    url: '#'
+  - version: '5.2'
+    displayVersion: '5.2'
+    url: '#'
+  - version: '5.1'
+    displayVersion: '5.1'
+    url: '#'
+  - version: '5.0'
+    displayVersion: '5.0'
     missing: true
-    url: '/3.5'
+    url: '#'
   navigation:
   - root: true
-    content: Project XYZ
-    url: '#'
-    urlType: fragment
     items:
-    - content: Quickstart
-      url: '#'
-      urlType: fragment
+    - content: Fundamentals
       items:
-      - content: Brand&#8217;s Hardware &amp; Software Requirements
-        url: /xyz/4.1/index.html
+      - content: Docs Remix
+        url: fundamentals.html
         urlType: internal
-      - content: Cu Solet
-        url: '/xyz/4.1/index.html#cu-solet'
-        urlType: internal
-    - content: Docs Needle Home
-      url: docs-ndl.html
-      urlType: internal
-      module: ROOT
-    - content: Docs Hub
-      url: docs-hub.html
-      urlType: internal
-      module: ROOT
-      items:
-    - content: Explainer
-      url: docs-explainer.html
-      urlType: internal
-      module: ROOT
-      items:
-    - content: Liber Recusabo
-      url: '#liber-recusabo'
-      urlType: fragment
-    - content: Tiled Template
-      url: tiles.html
-      urlType: internal
-    - content: Labs Template
-      url: labs.html
-      urlType: internal
-    - content: Reference - a long title that also has child pages
-      module: ROOT
-      items:
-      - content: Keyboard Shortcuts
-        url: '#'
-        urlType: fragment
-        module: ROOT
-      - content: Importing and Exporting
-        url: '#'
-        urlType: fragment
-      - content: Some Code
-        url: '/xyz/4.1/index.html#some-code'
-        urlType: internal
-      - content: Level 2 title
-        items:
-        - content: Level 3 title
-          items:
-          - content: English + 中文
-            url: '/xyz/4.1/index.html#english+中文'
-            urlType: internal
-    - content: Admonitions
-      url: admonitions.html
-      urlType: internal
-    - content: Page Banners
-      items:
-      - content: note
-        url: banner-note.html
-        urlType: internal
-      - content: warning
-        url: banner-warning.html
-        urlType: internal
-    - content: Sidebar
-      items:
-      - content: No headings, no ad
-        url: sidebar-no-headings-no-ad.html
-        urlType: internal
-      - content: No headings, with ad
-        url: sidebar-no-headings-ad.html
-        urlType: internal
-      - content: Headings, no ad
-        url: sidebar-headings-no-ad.html
-        urlType: internal
-      - content: Headings, with ad
-        url: sidebar-headings-ad.html
-        urlType: internal
-    - content: Labels
-      url: labels.html
-      urlType: internal
-    - content: Cypher Cheat Sheet
-      url: cheat-sheet.html
-      urlType: internal
-    - content: Cypher DELETE
-      url: cheat-sheet.html#delete
-      urlType: internal
-    - content: Drivers and APIs
-      url: drivers-apis.html
-      urlType: internal
-    - content: Developer Template
-      url: developer.html
-      urlType: internal
-    - content: Knowledge Base
-      url: kb-index.html
-      urlType: internal
-    - content: KB Article Template
-      url: kb-article.html
-      urlType: internal
-    - content: Training enrollement
-      url: training-enrollment.html
-      urlType: internal
-    - content: Training enrollement [disabled]
-      url: training-enrollment-disabled.html
-      urlType: internal
-    # - content: Certification
-    #   url: neo4j-gds-certify.html
-    #   urlType: internal
-    # - content: Course Yelp
-    #   url: applied-graph-algo-course-yelp.html
-    #   urlType: internal
-    - content: Tables
-      url: tables.html
-      urlType: internal
-    - content: Tables (no toc)
-      url: tables-no-toc.html
-      urlType: internal
-    - content: Tables (No Captions)
-      url: tables-no-captions.html
-      urlType: internal
-    - content: Examples
-      url: example.html
-      urlType: internal
-    - content: Code blocks
-      url: code.html
-      urlType: internal
-    - content: Feedback disabled
-      url: feedback-disabled.html
-      urlType: internal
-    - content: Links
-      url: links.html
-      urlType: internal
-    - content: Docs roles
-      url: docs-roles.html
-      urlType: internal
-    - content: Image styles
-      url: image-borders.html
-      urlType: internal
-    - content: Deprecated
-      url: deprecated.html
-      urlType: internal
-    - content: Alpha
-      url: alpha.html
-      urlType: internal
-    - content: Beta
-      url: beta.html
-      urlType: internal
-    - content: Algorithms
-      url: algorithms.html
-      urlType: internal
-    - content: Bibliography
-      url: bibliography.html
-      urlType: internal
-    - content: Private Page
-      url: private-page.html
-      urlType: internal
-    - content: Drivers tabs
-      url: drivers-tabs.html
-      urlType: internal
-    - content: Edit & Run Cypher
-      url: edit-run-cypher.html
-      urlType: internal
-    - content: GraphGists
-      url: graph-gist-index.html
-      urlType: internal
-    - content: Reference - a long title that also has child pages
-      items:
-      - content: Keyboard Shortcuts
-        url: '#'
-        urlType: fragment
-      - content: Importing and Exporting
-        url: '#'
-        urlType: fragment
-      - content: Some Code
-        url: '/xyz/4.1/index.html#some-code'
-        urlType: internal
-      - content: Level 2 title
-        items:
-        - content: Level 3 title
-          items:
-          - content: English + 中文
-            url: '/xyz/4.1/index.html#english+中文'
-            urlType: internal
-    - content: Star Wars Social Network
-      url: graph-gist-star-wars-social-network.html
-      urlType: internal
-    - content: First Steps with Cypher
-      url: first-steps-with-cypher.html
-      urlType: internal
-    - content: Category Pop Culture
-      url: graph-gist-category-pop-culture.html
-      urlType: internal
-    - content: Contribute
-      url: contribute.html
-      urlType: internal
-    - content: Promos
-      url: promos.html
-      urlType: internal
-  # additional page attributes indexed by page-slug
-    pages-data:
-      cheatsheet-products: &cheatsheet-products
-        - name: 'All'
-          class: 'all'
-          default: true
-        - name: 'Neo4j Community Edition'
-          class: 'neo4j-ce'
-        - name: 'Neo4j Enterprise Edition'
-          class: 'neo4j-ee'
-        - name: 'AuraDB Free'
-          class: 'aura-dbf'
-        - name: 'AuraDB Professional'
-          class: 'aura-dbp'
-        - name: 'AuraDB Virtual Dedicated Cloud'
-          class: 'aura-dbe'
-        - name: 'AuraDS Professional'
-          class: 'aura-dsp'
-        - name: 'AuraDS Enterprise'
-          class: 'aura-dse'
-      cheatsheet-labels: &cheatsheet-labels
-        - name: 'Deprecated'
-          class: 'deprecated'
-          label-only: true
-        - name: 'Configuration'
-          class: 'configuration'
-          label-only: true
-      cheatsheet-categories: &cheatsheet-categories
-        - name: 'Read'
-          class: 'read'
-          # default: true
-        - name: 'Write'
-          class: 'write'
-        - name: 'General'
-          class: 'general'
-        - name: 'Functions'
-          class: 'functions'
-        # - name: 'Configuration'
-        #   class: 'configuration'
-        #   label-only: true
-        # - name: 'Deprecated'
-          # class: 'deprecated'
-          # label-only: true
-      cheatsheet-personas: &cheatsheet-personas
-      industries: &industries
-        - imageUrl: 'https://graphgist-portal-production.s3.amazonaws.com/graph_starter/images/sources/398/dbb/3b-/medium/noun_129319.png'
-          name: 'Sports and Recreation'
-          pub:
-            url: '#'
-        - imageUrl: 'https://graphgist-portal-production.s3.amazonaws.com/graph_starter/images/sources/03e/fe4/b2-/medium/noun_144785.png'
-          name: 'Transportation and Logistics'
-          pub:
-            url: '#'
-      usecases: &usecases
-        - imageUrl: 'https://graphgist-portal-production.s3.amazonaws.com/graph_starter/images/sources/c17/a61/68-/medium/noun_301197.png'
-          name: 'Data Analysis'
-          pub:
-            url: '#'
-        - imageUrl: 'https://graphgist-portal-production.s3.amazonaws.com/graph_starter/images/sources/cbf/24f/11-/medium/noun_106914.png'
-          name: 'Graph Gist How-tos'
-          pub:
-            url: '#'
-        - imageUrl: 'https://graphgist-portal-production.s3.amazonaws.com/graph_starter/images/sources/809/ef4/12-/medium/rook.png'
-          name: 'GraphGist Challenge Entries'
-          pub:
-            url: '#'
-        - imageUrl: 'https://graphgist-portal-production.s3.amazonaws.com/graph_starter/images/sources/d23/998/76-/medium/noun_401.png'
-          name: 'General Business'
-          pub:
-            url: '#'
-        - imageUrl: 'https://graphgist-portal-production.s3.amazonaws.com/graph_starter/images/sources/de8/b13/4f-/medium/noun_253701.png?1457514437'
-          name: 'Pop Culture'
-          pub:
-            url: '/graph-gist-category-pop-culture.html'
-      star-wars-social-network-page: &star_wars_social_network_page
-        title: 'Exploring the Star Wars social network'
-        pub:
-          url: '/graph-gist-star-wars-social-network.html'
-        asciidoc:
-          attributes:
-            page-illustration: 'https://graphgist-portal-production.s3.amazonaws.com/graph_starter/images/sources/c31/9cd/38-/medium/c319cd38-52f9-4641-95e4-bd374f99f6e5.png'
-            page-author: Evelina Gabasova
-            page-industries:
-              - name: 'Education'
-                pub:
-                  url: '#'
-            page-usecases:
-              - name: 'Pop Culture'
-                pub:
-                  url: '/graph-gist-category-pop-culture.html'
-      first-steps-with-cypher: &first_steps_with_cypher
-        title: 'First Steps with Cypher'
-        pub:
-          url: '/first-steps-with-cypher.html'
-        asciidoc:
-          attributes:
-            page-illustration: 'https://graphgist-portal-production.s3.amazonaws.com/graph_starter/images/sources/8b4/f25/5a-/medium/8b4f255a-a843-4797-8741-3e435e7f4c0d.png'
-            page-author: Michael Hunger
-  attributes:
-    exploring-the-star-wars-social-network:
-      usecases: *usecases
-      industries: *industries
-      author: Evelina Gabasova
-      browserGuideUrl: 'https://guides.neo4j.com/graph-examples/exploring-the-star-wars-social-network/graph_guide'
-    pop-culture:
-      graphgist-pages:
-        - *star_wars_social_network_page
-      usecases: *usecases
-      industries: *industries
-    cheat-sheet:
-      cheatsheet-products: *cheatsheet-products
-      # cheatsheet-categories: *cheatsheet-categories
-      # cheatsheet-personas: *cheatsheet-personas
-      # cheatsheet-labels: *cheatsheet-labels
-      cheatsheet-product: 'Neo4j'
-      show-labels: true
-
-    graphgists:
-      featured-pages:
-        - *first_steps_with_cypher
-        - *star_wars_social_network_page
-        - title: 'Bank Fraud Detection'
-          asciidoc:
-            attributes:
-              page-author: Kenny Bastani
-              page-illustration: 'https://graphgist-portal-production.s3.amazonaws.com/graph_starter/images/sources/477/3fc/f1-/medium/open-uri20151208-3-1s2nvy3?1457514688'
-              page-industries:
-                - name: 'Transportation and Logistics'
-                  pub:
-                    url: '#'
-                - name: 'Finance'
-                  pub:
-                    url: '#'
-                - name: 'Web & Social'
-                  pub:
-                    url: '#'
-                - name: 'Education'
-                  pub:
-                    url: '#'
-              page-usecases:
-                - name: 'Fraud Detection'
-                  pub:
-                    url: '#'
-        - title: 'Cypher Introduction - Social Movie Database'
-          asciidoc:
-            attributes:
-              page-author: Adam Cowley
-              page-industries:
-                - name: 'Transportation and Logistics'
-                  pub:
-                    url: '#'
-                - name: 'Science'
-                  pub:
-                    url: '#'
-                - name: 'Web & Social'
-                  pub:
-                    url: '#'
-                - name: 'Sports and Recreation'
-                  pub:
-                    url: '#'
-                - name: 'Education'
-                  pub:
-                    url: '#'
-                - name: 'Health Care'
-                  pub:
-                    url: '#'
-              page-usecases:
-                - name: 'Graph Gist How-tos'
-                  pub:
-                    url: '#'
-        - title: 'First Steps with Cypher'
-          asciidoc:
-            attributes:
-              page-author: Michael Hunger
-              page-illustration: 'https://graphgist-portal-production.s3.amazonaws.com/graph_starter/images/sources/8b4/f25/5a-/medium/8b4f255a-a843-4797-8741-3e435e7f4c0d.png'
-              page-industries:
-                - name: 'Transportation and Logistics'
-                  pub:
-                    url: '#'
-                - name: 'Finance'
-                  pub:
-                    url: '#'
-                - name: 'Retail'
-                  pub:
-                    url: '#'
-                - name: 'Comp Sci and Programming'
-                  pub:
-                    url: '#'
-              page-usecases:
-                - name: 'Graph Gist How-tos'
-                  pub:
-                    url: '#'
-      usecases: *usecases
-      industries: *industries
-
-asciidoc:
-  attributes:
-    theme: labs
-    # cdn: https://neo4j-appli-t0bbh89jwvia-895689428.us-east-1.elb.amazonaws.com/static/assets
-    'page-disabletracking': true
-    disabletracking: true
-    breadcrumbs:
-      - name: Neo4j Labs
-        url: https://neo4j.com/labs/
-      - name: Neosemantics
-        url: https://neo4j.com/labs/neosemantics
-      - name: Documentation
-    page-mixpanel: ef1696f0a9c88563894dcba2019a9bef
-    mixpanel: ef1696f0a9c88563894dcba2019a9bef

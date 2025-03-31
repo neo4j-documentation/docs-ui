@@ -1,12 +1,3 @@
-{{#unless (or @root.page.attributes.nav-hide-site-title (eq @root.page.attributes.theme 'cheat-sheet'))}}
-<div class="component">
-  <div class="nav-product">
-    <span class="nav-product-name">{{#with @root.page.componentVersion}}{{{ ./title }}}{{/with}}</span>
-  </div>
-</div>
-{{/unless}}
-      
-{{!-- {{#unless (eq page.attributes.theme 'cheat-sheet') }} --}}
 
 {{#if page.versions.[1]}}
 <div class="selectors">

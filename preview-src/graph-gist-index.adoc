@@ -1,6 +1,0 @@
-= GraphGists
-// the content of this page will be automatically generated from the GraphQL API
-:page-layout: graphgist-index
-:page-component: graphgist
-:page-slug: graphgists
-:page-theme: graphgists

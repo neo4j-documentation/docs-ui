@@ -1,0 +1,115 @@
+.docs-remix .body {
+  flex-wrap: wrap;
+}
+
+.docs-remix .navbar a {
+  text-transform: uppercase;
+  font-weight: var(--body-font-weight-bold);
+  font-size: var(--toolbar-font-size);
+}
+
+.docs-remix div.category-tabs {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  flex: 0 0 100%;
+  align-items: stretch;
+  background-color: var(--toolbar-background);
+  box-shadow: 0 1px 0 var(--toolbar-border-color);
+  position: sticky;
+  padding: 0 0 0 1.5rem;
+  top: var(--navbar-height);
+  height: var(--category-tabs-height);
+  z-index: 30;
+}
+
+.docs-remix div.category-tabs ul {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 1rem;
+  font-size: var(--toolbar-font-size);
+}
+
+.docs-remix div.category-tabs ul li {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.docs-remix div.category-tabs ul li.is-active {
+  border-bottom: 2px solid var(--color-docs);
+  padding-top: 2px;
+}
+
+.docs-remix div.category-tabs ul li a {
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  color: var(--color-docs);
+}
+
+.docs-remix div.category-tabs ul li a:hover {
+  background-color: var(--toc_hover-background-color);
+}
+
+.docs-remix .doc {
+  padding-top: 2rem;
+}
+
+.docs-remix .toolbar {
+  position: relative;
+  top: unset;
+  background: var(--toolbar-background);
+  box-shadow: none;
+  margin: 0;
+  padding: 0;
+  font-size: var(--toolbar-font-size);
+  flex: 0 0 100%;
+}
+
+.docs-remix .nav {
+  top: calc(var(--navbar-height) + var(--category-tabs-height));
+}
+
+.docs-remix .nav-container {
+  padding-top: 2rem;
+}
+
+.docs-remix .nav-menu > .nav-list {
+  margin-top: 0;
+}
+
+.docs-remix .page-header {
+  margin-bottom: 2rem;
+}
+
+.docs-remix .breadcrumbs {
+  padding: 0;
+}
+
+.docs-remix .breadcrumbs ul {
+  margin: 0;
+  padding: 0;
+}
+
+.docs-remix .breadcrumbs ul a {
+  text-decoration: none;
+}
+
+.docs-remix h1 {
+  margin: 0;
+  flex: 0 0 100%;
+}
+
+body.docs-remix .header-label-container > div.labels.wrapped {
+  margin-bottom: 1rem;
+}
+
+body.docs-remix main > .content {
+  margin-top: 0;
+}
+
+.docs-remix .nav-panel-versions {
+  padding: 0;
+  margin: 0.5rem 0;
+}

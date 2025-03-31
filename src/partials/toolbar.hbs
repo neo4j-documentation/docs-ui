@@ -1,28 +1,9 @@
 <div class="toolbar{{#if @root.page.home}} is-home{{/if}}" role="navigation">
   <div class="toolbar-wrapper">
     {{> nav-toggle}}
-    
     {{#unless (and @root.page.home (eq page.attributes.layout 'docs-ndl'))}}
-    
-    {{#if (eq page.attributes.theme "docs")}}
-
-    
-    {{#with @root.site.url}}
-    <a href="{{{relativize this}}}" class="home-link" aria-label="Go to docs home page"></a>
-    {{/with}}
-    
-    {{else}}
-
-    {{#with site.homeUrl}}
-      <a href="{{{relativize this}}}" class="home-link{{#if @root.page.home}} is-current{{/if}}" aria-label="Go to home page"></a>
-    {{/with}}
-
-    {{/if}}
-
-
     {{> breadcrumbs}}
-    {{!-- {{> page-versions}} --}}
-    {{> edit-this-page-link}}
+    {{!-- {{> edit-this-page-link}} --}}
     {{/unless}}
   </div>
 </div>

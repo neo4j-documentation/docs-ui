@@ -1,0 +1,12 @@
+<div class="category-tabs">
+    <ul class="category-ul">
+        <li><a href=""><span>Fundamentals</span></a></li>
+        <li{{#if (eq page.attributes.category-tab 'get-started' ) }} class="is-active"{{/if}}><a href=""><span>Get Started</span></a></li>
+        <li>{{#if (eq page.attributes.category-tab 'work-with-data' ) }} class="is-active"{{/if}}<a href=""><span>Work with data</span></a></li>
+        <li{{#if (eq page.attributes.category-tab 'query-language' ) }} class="is-active"{{/if}}><a href=""><span>Query Language</span></a></li>
+        <li{{#if (eq page.attributes.category-tab 'administration' ) }} class="is-active"{{/if}}><a href=""><span>Administration</span></a></li>
+        <li{{#if (eq page.attributes.category-tab 'developers' ) }} class="is-active"{{/if}}><a href=""><span>Developers</span></a></li>
+        <li{{#if (eq page.attributes.category-tab 'tutorials' ) }} class="is-active"{{/if}}><a href=""><span>Tutorials</span></a></li>
+        <li{{#if (eq page.attributes.category-tab 'reference' ) }} class="is-active"{{/if}}><a href=""><span>Reference</span></a></li>
+    </ul>
+</div>

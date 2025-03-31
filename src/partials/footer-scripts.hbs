@@ -5,9 +5,7 @@
 <script src="https://d3js.org/d3-force.v2.min.js"></script> --}}
 
 {{#with (assets-path page)}}
-  {{#if (or (eq @root.page.layout 'training-certification') (eq @root.page.layout 'training-enrollment') (eq @root.page.layout 'training'))}}
-    <script src="//go.neo4j.com/js/forms2/js/forms2.min.js"></script>
-  {{/if}}
+  
   {{#if (and (eq @root.page.attributes.theme "cheat-sheet") @root.page.attributes.publish)}}
   <script src="{{{@root.site.path}}}{{{@root.site.ui.url}}}/js/vendor/auth0.js"></script>
 

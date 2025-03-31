@@ -1,5 +1,0 @@
-= Page with no subheadings and no ad
-
-This page has no subheadings.
-
-It has no ad to display so there should be no `<aside class="toc sidebar">...</aside>` in the HTML.
