@@ -12,6 +12,12 @@ body {
 }
 
 @media screen and (min-width: 1024px) {
+  .doc.research {
+    max-width: 2000px;
+  }
+}
+
+@media screen and (min-width: 1024px) {
   .doc {
     flex: auto;
     font-size: var(--doc-font-size--desktop);
