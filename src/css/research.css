@@ -146,7 +146,7 @@ body.research .widget.banner .sectionbody {
   border-radius: 1rem;
   border: none;
   padding: 2rem;
-  row-gap: 0;
+  row-gap: 2rem;
   column-gap: 0;
   background-image: url(../img/start-ux.svg);
 }
@@ -409,6 +409,7 @@ body.research .highlights .sectionbody > div {
   justify-content: center;
   align-self: center;
   padding: 1rem 2rem 1rem;
+  display: flow;
 }
 
 body.research .highlights .sectionbody > div.icon span.image {
@@ -590,7 +591,6 @@ body.research .cards .sect2 a > div {
   padding: 0;
 }
 
-body.research .highlights .sectionbody > div,
 body.research .sect2 a > div,
 body.research .sect2 a > h3 {
   display: flow;
@@ -710,7 +710,7 @@ body.research .bottom-cards .sect2 .icon {
 body.research .bottom-cards .sect2 h3 {
   padding-bottom: 8px;
   order: 0;
-  font-family: 'Syne Neo';
+  font-family: var(--header-font-family);
   font-size: xx-large;
 }
 
@@ -777,17 +777,9 @@ body.research .cards .sect2 .ulist ul li {
   }
 }
 
-body.research .cards .sectionbody > div.sect2 {
-  flex: 0 1 10%;
-}
-
 body.research .widget .sectionbody > div {
   flex: 0 1 100%;
   justify-content: center;
-}
-
-body.research .widget.banner .sectionbody {
-  row-gap: 2rem;
 }
 
 body.research .lists ul {
@@ -801,11 +793,6 @@ body.research.sub .widget .sectionbody .sect2 {
 
 body.research .lists .sectionbody > div.sect2 > * {
   /* margin: 0 auto; */
-}
-
-body.research .highlights .sectionbody > div {
-  flex: 0 1 100%;
-  justify-content: center;
 }
 
 body.research .highlights .sectionbody > div.openblock {
@@ -826,11 +813,6 @@ body.research .highlights .sectionbody > div.icon {
   body.research .bottom-cards .sect2 > a,
   body.research .cards .sect2 > a {
     align-items: center;
-  }
-
-  body.research .cards .sectionbody > div.sect2 {
-    /* min-width: 90%; */
-    flex: 1 1 100%;
   }
 
   body.research .lists .sectionbody > div.sect2 {
