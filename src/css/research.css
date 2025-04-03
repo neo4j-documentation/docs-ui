@@ -62,7 +62,7 @@ body.research .toolbar {
 
 body.research .doc a {
   text-decoration: none;
-  cursor: default;
+  cursor: pointer;
 }
 
 body.research .doc a::after {
