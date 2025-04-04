@@ -3,6 +3,7 @@
 :page-role: hub
 :page-theme: docs
 :page-hide-nav-title: true
+:page-disablefeedback: true
 :!page-show-home-link:
 :!toc:
 :page-toclevels: -1
