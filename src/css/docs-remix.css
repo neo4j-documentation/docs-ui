@@ -17,7 +17,7 @@
   background-color: var(--toolbar-background);
   box-shadow: 0 1px 0 var(--toolbar-border-color);
   position: sticky;
-  padding: 0 0 0 1.5rem;
+  padding: 0 0 0 1rem;
   top: var(--navbar-height);
   height: var(--category-tabs-height);
   z-index: 30;
@@ -64,7 +64,12 @@
   margin: 0;
   padding: 0;
   font-size: var(--toolbar-font-size);
-  flex: 0 0 100%;
+  display: block;
+  height: auto;
+}
+
+.docs-remix .toolbar-wrapper {
+  display: block;
 }
 
 .docs-remix .nav {
@@ -97,8 +102,8 @@
 }
 
 .docs-remix h1 {
-  margin: 0;
-  flex: 0 0 100%;
+  margin: 0.5rem 0;
+  /* flex: 0 0 100%; */
 }
 
 body.docs-remix .header-label-container > div.labels.wrapped {
@@ -109,7 +114,19 @@ body.docs-remix main > .content {
   margin-top: 0;
 }
 
+.docs-remix .page-header > div {
+  margin: 0.5rem  0;
+}
+
+.docs-remix .page-header > div.labels {
+  margin: 1rem  0;
+  display: flex;
+  gap: 0.25rem;
+  margin-left: auto;
+  line-height: var(--doc-line-height);
+}
+
 .docs-remix .nav-panel-versions {
   padding: 0;
-  margin: 0.5rem 0;
+  margin: 0;
 }

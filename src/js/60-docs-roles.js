@@ -140,8 +140,8 @@ document.addEventListener('DOMContentLoaded', function () {
     // no need to do anything if we found only undefined roles
     if (labels.length === 0) return
 
-    const labelsLocation = (roleDiv.firstElementChild && headings.includes(roleDiv.firstElementChild.nodeName)) ? roleDiv.firstElementChild : roleDiv
-    const labelsDiv = createElement('div', 'labels')
+    // const labelsLocation = (roleDiv.firstElementChild && headings.includes(roleDiv.firstElementChild.nodeName)) ? roleDiv.firstElementChild : roleDiv
+    const labelsDiv = document.querySelector('div.page-header > div.labels')
 
     for (const label of labels) {
       if (roleDiv.nodeName === 'H1' || headings.includes(roleDiv.firstElementChild.nodeName)) {
@@ -155,10 +155,10 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     if (roleDiv.nodeName === 'H1' || headings.includes(roleDiv.firstElementChild.nodeName)) {
-      labelsLocation.append(labelsDiv)
-      labelsLocation.classList.add('header-label-container')
+      // labelsLocation.append(labelsDiv)
+      // labelsLocation.classList.add('header-label-container')
     } else {
-      labelsLocation.prepend(labelsDiv)
+      // labelsLocation.prepend(labelsDiv)
       roleDiv.classList.add('has-label')
     }
   })
