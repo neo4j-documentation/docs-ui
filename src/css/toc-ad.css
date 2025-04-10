@@ -38,6 +38,10 @@
   background-image: url(../img/icons/mortarboard.svg);
 }
 
+.toc .toc-ad .toc-ad-icon.toc-ad-icon--chat-bubble-left-right {
+  background-image: url(../img/icons/chat-bubble-left-right.svg);
+}
+
 .toc .toc-ad .toc-ad-title {
   color: rgba(var(--colors-neutral-75));
   font-size: 16px;
