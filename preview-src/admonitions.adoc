@@ -1,5 +1,6 @@
 = Admonitions
 :check-mark: icon:check[]
+// :page-disablefeedback: true
 
 
 == NOTE
@@ -27,7 +28,7 @@ Eos suscipit scaevola at.
 
 Cum dicat putant ne.
 Est in reque homero principes, meis deleniti mediocrem ad has.
-Altera atomorum his ex, has cu elitr melius propriae.
+// Altera atomorum his ex, has cu elitr melius propriae.
 
 [TIP]
 ====

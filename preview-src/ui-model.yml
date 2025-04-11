@@ -265,6 +265,21 @@ page:
     - content: GraphGists
       url: graph-gist-index.html
       urlType: internal
+    - content: Star Wars Social Network
+      url: graph-gist-star-wars-social-network.html
+      urlType: internal
+    - content: First Steps with Cypher
+      url: first-steps-with-cypher.html
+      urlType: internal
+    - content: Category Pop Culture
+      url: graph-gist-category-pop-culture.html
+      urlType: internal
+    - content: Contribute
+      url: contribute.html
+      urlType: internal
+    - content: Promos
+      url: promos.html
+      urlType: internal
     - content: Reference - a long title that also has child pages
       items:
       - content: Keyboard Shortcuts
@@ -283,21 +298,6 @@ page:
           - content: English + 中文
             url: '/xyz/4.1/index.html#english+中文'
             urlType: internal
-    - content: Star Wars Social Network
-      url: graph-gist-star-wars-social-network.html
-      urlType: internal
-    - content: First Steps with Cypher
-      url: first-steps-with-cypher.html
-      urlType: internal
-    - content: Category Pop Culture
-      url: graph-gist-category-pop-culture.html
-      urlType: internal
-    - content: Contribute
-      url: contribute.html
-      urlType: internal
-    - content: Promos
-      url: promos.html
-      urlType: internal
   # additional page attributes indexed by page-slug
     pages-data:
       cheatsheet-products: &cheatsheet-products

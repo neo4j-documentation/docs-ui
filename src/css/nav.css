@@ -157,8 +157,9 @@ html.is-clipped--nav {
   position: relative;
 }
 
-.nav-panel-manu.has-feedback .nav-menu {
-  margin-bottom: calc(var(--feedback-height) + 1rem);
+.nav-panel-menu.has-feedback {
+  height: calc(var(--nav-panel-height--desktop) - var(--feedback-height) - 1.5rem);
+  padding-bottom: calc(var(--feedback-height) * 1.5);
 }
 
 .nav-menu .component-title {
