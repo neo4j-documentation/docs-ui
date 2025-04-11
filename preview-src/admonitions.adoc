@@ -1,0 +1,299 @@
+= Admonitions
+:check-mark: icon:check[]
+// :page-disablefeedback: true
+
+
+== NOTE
+
+[NOTE]
+====
+You've been down _this_ road before.
+
+`$ npm i -g @antora/cli @antora/site-generator-default`
+
+* list 1
+* list 2
+
+Link example: link:https://neo4j.com[Neo4j]
+
+Xref example: xref:alpha.adoc[]
+====
+
+Cum dicat putant ne.
+Est in reque homero principes, meis deleniti mediocrem ad has.
+Altera atomorum his ex, has cu elitr melius propriae.
+Eos suscipit scaevola at.
+
+== TIP
+
+Cum dicat putant ne.
+Est in reque homero principes, meis deleniti mediocrem ad has.
+// Altera atomorum his ex, has cu elitr melius propriae.
+
+[TIP]
+====
+This oughta do it!
+
+Cum dicat putant ne.
+Est in reque homero principes, meis deleniti mediocrem ad has.
+Altera atomorum his ex, has cu elitr melius propriae.
+Eos suscipit scaevola at.
+====
+
+
+
+== IMPORTANT
+
+[IMPORTANT]
+====
+Don't forget this step!
+
+ $ npm i -g @antora/cli @antora/site-generator-default
+
+* list 1
+* list 2
+
+Link example: link:https://neo4j.com[Neo4j]
+
+Xref example: xref:alpha.adoc[]
+====
+
+
+
+== CAUTION
+
+[CAUTION]
+====
+[#inline]#I wouldn't try that if I were you.#
+
+ $ npm i -g @antora/cli @antora/site-generator-default
+
+* list 1
+* list 2
+
+Link example: link:https://neo4j.com[Neo4j]
+
+Xref example: xref:alpha.adoc[]
+====
+
+== WARNING
+
+[WARNING]
+====
+Watch out!
+
+ $ npm i -g @antora/cli @antora/site-generator-default
+
+* list 1
+* list 2
+
+Link example: link:https://neo4j.com[Neo4j]
+
+Xref example: xref:alpha.adoc[]
+====
+
+
+
+== TIP
+
+.Key Points to Remember
+[TIP]
+====
+If you installed the CLI and the default site generator globally, you can upgrade both of them with the same command.
+
+ $ npm i -g @antora/cli @antora/site-generator-default
+
+* list 1
+* list 2
+
+Link example: link:https://neo4j.com[Neo4j]
+
+Xref example: xref:alpha.adoc[]
+====
+
+== Admonition block margins
+
+[NOTE]
+====
+Admonition block with a single paragraph of text.
+====
+
+[NOTE]
+====
+Admonition block with multiple paragraphs.
+
+This is the second paragraph.
+====
+
+[NOTE]
+====
+Admonition block with multiple different elements.
+
+- List item 1
+- List item 2
+
+Paragraph of text.
+====
+
+[NOTE]
+====
+Admonition block with multiple different elements.
+
+- List item 1
+- List item 2
+
+```
+$ npm i -g @antora/cli @antora/site-generator-default
+```
+====
+
+.Admonition with title text
+[NOTE]
+====
+Admonition block with multiple different elements.
+
+- List item 1
+- List item 2
+
+```
+$ npm i -g @antora/cli @antora/site-generator-default
+```
+====
+
+[WARNING]
+====
+```
+$ npm i -g @antora/cli @antora/site-generator-default
+```
+
+```
+$ npm i -g @antora/cli @antora/site-generator-default
+```
+====
+
+.Admonition with title text
+[WARNING]
+====
+```
+$ npm i -g @antora/cli @antora/site-generator-default
+```
+====
+
+Nominavi luptatum eos, an vim hinc philosophia intellegebat.
+Eu mea inani iriure.
+
+== Admonition in a table
+
+[options="header",width="100%",cols="2,3a"]
+|===
+| Parameter
+| Explanation
+
+
+| Parameter name
+| Parameter explanation
+Lorem ipsum
+
+Dolor sit est.
+
+[NOTE]
+====
+Note text goes here.
+Note should be nicely aligned and have no borders
+====
+
+|===
+
+
+== Admonition first element in an example block
+
+
+[.tabbed-example]
+=====
+[.include-with-admonition-first]
+======
+
+
+[WARNING]
+====
+Admonition should be given enough margin if it is the first element in an example block.
+====
+
+======
+
+[.include-with-admonition-not-first]
+======
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+
+Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+
+[TIP]
+====
+Admonition should be given normal margin if it is not the first element in an example block.
+====
+
+=====
+
+== Icons in tables
+
+Icons that are not part of an admonition block should have no color filter applied.
+
+[options="header", cols="^,^,^,^"]
+|===
+| Type            | Date support | Time support | Time zone support
+| `DATE`          | {check-mark} |              |
+| `LOCAL TIME`     |              | {check-mark} |
+| `ZONED TIME`          |              | {check-mark} | {check-mark}
+| `LOCAL DATETIME` | {check-mark} | {check-mark} |
+| `ZONED DATETIME`      | {check-mark} | {check-mark} | {check-mark}
+| `DURATION`      | `-`          | `-`          | `-`
+|===
+
+== Admonition that contains a code block
+
+[source, shell]
+----
+docker container exec -u neo4j -it <containerName> /bin/bash
+----
+
+
+[TIP]
+====
+If working with a Neo4j Docker container, ensure you connect to it with the user `neo4j` before issuing import commands, or you will get permission issues after the import.
+
+[source, shell]
+----
+docker container exec -u neo4j -it <containerName> /bin/bash
+----
+====
+
+
+== Admonition that contains a table?
+
+
+[TIP]
+====
+This is an admonition that contains a table.
+
+[options="header", cols="^,^,^,^"]
+|===
+| Type            | Date support | Time support | Time zone support
+| `DATE`          | {check-mark} |              |
+| `LOCAL TIME`     |              | {check-mark} |
+| `ZONED TIME`          |              | {check-mark} | {check-mark}
+| `LOCAL DATETIME` | {check-mark} | {check-mark} |
+| `ZONED DATETIME`      | {check-mark} | {check-mark} | {check-mark}
+| `DURATION`      | `-`          | `-`          | `-`
+|===
+
+====
+
+== Admonition with a title
+
+.note with title
+[NOTE]
+====
+This is a note with a title.
+====
+

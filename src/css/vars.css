@@ -410,11 +410,7 @@
   --nav-height: calc(var(--body-min-height) - var(--toolbar-height));
   --nav-height--desktop: var(--body-min-height);
   --nav-panel-height: calc(var(--nav-height) - var(--drawer-height));
-  --nav-panel-height--desktop:
-    calc(
-      var(--nav-height--desktop) - var(--drawer-height) - var(--feedback-height) * 8px
-    );  /* 1rem is feedback padding */
-
+  --nav-panel-height--desktop: calc(var(--nav-height--desktop) - var(--drawer-height));
   --nav-width: 18rem;
   --toc-top: calc(var(--body-top) + var(--toolbar-height));
   --kb-metadata-top: calc(var(--body-top) + var(--toolbar-height));
