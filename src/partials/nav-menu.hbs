@@ -6,7 +6,7 @@
   </div>
 </aside>
 {{else}}
-<div class="nav-panel-menu is-active" data-panel="menu">
+<div class="nav-panel-menu is-active{{#unless page.attributes.disablefeedback}} has-feedback{{/unless}}" data-panel="menu">
     <nav class="nav-menu">
     {{#with page.navigation}}{{> nav-tree navigation=this module=@root.page.module}}{{/with}}
   </nav>
