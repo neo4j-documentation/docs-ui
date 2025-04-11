@@ -152,7 +152,8 @@ body.docs-ndl .nav-menu .nav-item > a > strong {
 /* toolbar */
 
 body.docs-ndl.hub .toolbar {
-  visibility: hidden;
+  /* visibility: hidden; */
+  display: none;
 }
 
 body.docs-ndl.explainer .toolbar {
@@ -200,9 +201,8 @@ body.docs-ndl .doc .flex-column {
 }
 
 body.docs-ndl .doc > .sect-header > h1.page:first-child {
-  margin-top: 0;
-  /* font-size: var(--font-size-h1); */
-  margin-bottom: 1.5rem;
+  margin: var(--docs-ndl-spacer) 0;
+  line-height: 1;
 }
 
 body.docs-ndl.hub .doc div:not(.display) h2 {
@@ -415,10 +415,11 @@ body.docs-ndl #preamble + .sect1 {
 
 /* sections */
 
-body.docs-ndl.hub .sect1,
+body.docs-ndl.hub .sect1:not(.banner),
 body.docs-ndl.explainer .sect1 {
   display: flex;
   flex-wrap: wrap;
+  margin-top: var(--docs-ndl-spacer);
 }
 
 body.docs-ndl .paragraph.caption {
@@ -489,7 +490,7 @@ body.docs-ndl.explainer .banner .sectionbody {
 }
 
 body.docs-ndl .banner .sectionbody > div.openblock {
-  flex: 0 0 50%;
+  flex: 0 0 65%;
 }
 
 body.docs-ndl .banner .sectionbody > div.icon {
@@ -727,7 +728,7 @@ body.docs-ndl .cards .sect2 .icon,
 body.docs-ndl .widget .icon {
   padding: 0;
   margin: 0;
-  width: 100%;
+  display: flex;
 }
 
 body.docs-ndl .cards .sect2 .icon,
@@ -745,7 +746,7 @@ body.docs-ndl .cards .sect2 .icon p {
 }
 
 body.docs-ndl .cards .sect2 .icon p div.labels {
-  display: flex;
+  display: none;
   flex-direction: row;
   gap: 0.25rem;
   height: min-content;
@@ -791,7 +792,7 @@ body.docs-ndl .lists .sect2 .icon img path {
 
 body.docs-ndl .cards .sect2 h3,
 body.docs-ndl .lists .sect2 h3 {
-  /* flex-grow: 1; */
+  display: flex;
   order: 2;
   margin: 0;
   font-weight: var(--font-weight-semibold);
@@ -819,12 +820,8 @@ body.docs-ndl .cards .sect2 .paragraph:not(.icon) {
   /* flex-grow: 1; */
 }
 
-body.docs-ndl .cards .sect2.selectable .paragraph.link:not(.display) {
+body.docs-ndl .cards .sect2.selectable .paragraph.link {
   display: none;
-}
-
-body.docs-ndl .cards .sect2.selectable .paragraph.link.display {
-  display: flex;
 }
 
 body.docs-ndl .cards.selectable .sect2 .paragraph.link,
