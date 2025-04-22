@@ -18,6 +18,7 @@ const prodMatrix = {
   'auradb-free': 'aura-dbf',
   'auradb-professional': 'aura-dbp',
   'auradb-dedicated': 'aura-dbe',
+  'auradb-critical': 'aura-dbc',
   'aurads-professional': 'aura-dsp',
   'aurads-enterprise': 'aura-dse',
   'neo4j-community': 'neo4j-ce',
