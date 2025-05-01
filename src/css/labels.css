@@ -62,6 +62,21 @@ h1 > .header-label {
   margin-bottom: 0.2rem;
 }
 
+
+.paragraph.has-label {
+  padding-left: 0.4rem;
+  border-left: 2px solid rgba(var(--colors-baltic-60));
+}
+
+.paragraph.has-label:has(> .labels > .label--new) {
+  border-left-color: var(--success-color);
+}
+
+.paragraph.has-label:has(> .labels > .label--deprecated) {
+  border-left-color: var(--deprecated-color);
+}
+
+
 h2 > .flex-label {
   float: inline-end;
   line-height: var(--doc-line-height);
