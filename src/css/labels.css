@@ -14,8 +14,8 @@ div.labels {
   flex-wrap: wrap;
 }
 
-.admonitionblock > div.labels {
-  padding: 1rem 1rem 0.75rem;
+.admonitionblock div.labels {
+  padding: 0.5rem 0 1rem;
 }
 
 .header-label-container > div.labels {
@@ -62,16 +62,16 @@ h1 > .header-label {
   margin-bottom: 0.2rem;
 }
 
-.has-label {
+.paragraph.has-label {
   padding-left: 0.4rem;
   border-left: 2px solid rgba(var(--colors-baltic-60));
 }
 
-.has-label:has(> .labels > .label--new) {
+.paragraph.has-label:has(> .labels > .label--new) {
   border-left-color: var(--success-color);
 }
 
-.has-label:has(> .labels > .label--deprecated) {
+.paragraph.has-label:has(> .labels > .label--deprecated) {
   border-left-color: var(--deprecated-color);
 }
 

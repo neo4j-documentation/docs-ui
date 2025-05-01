@@ -140,8 +140,8 @@ document.addEventListener('DOMContentLoaded', function () {
     // no need to do anything if we found only undefined roles
     if (labels.length === 0) return
 
-    // const labelsLocation = (roleDiv.firstElementChild && headings.includes(roleDiv.firstElementChild.nodeName)) ? roleDiv.firstElementChild : roleDiv
-    const labelsDiv = document.querySelector('div.page-header > div.labels')
+    let labelsLocation = (roleDiv.firstElementChild && headings.includes(roleDiv.firstElementChild.nodeName)) ? roleDiv.firstElementChild : roleDiv
+    const labelsDiv = createElement('div', 'labels')
 
     for (const label of labels) {
       if (roleDiv.nodeName === 'H1' || headings.includes(roleDiv.firstElementChild.nodeName)) {
@@ -152,6 +152,12 @@ document.addEventListener('DOMContentLoaded', function () {
       for (var d in label.dataset) {
         roleDiv.dataset[d] = label.dataset[d]
       }
+    }
+
+    console.log(roleDiv.classList)
+
+    if (roleDiv.classList.contains('admonitionblock')) {
+      labelsLocation = roleDiv.querySelector('td.content')
     }
 
     if (roleDiv.nodeName === 'H1' || headings.includes(roleDiv.firstElementChild.nodeName)) {
