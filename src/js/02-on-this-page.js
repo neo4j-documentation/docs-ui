@@ -12,7 +12,7 @@
   var selectors = document.querySelector('.nav-container .selectors')
   var selectorsHeight = selectors ? selectors.getBoundingClientRect().height : 0
   var headingSelector = []
-  for (var l = 0; l <= levels; l++) headingSelector.push(l ? '.sect' + l + '>h' + (l + 1) + '[id]' : 'h1[id].sect0')
+  for (var l = 0; l <= levels; l++) headingSelector.push(l ? '.sect' + l + ':not(.discrete)>h' + (l + 1) + '[id]' : 'h1[id].sect0')
   var headings = find(headingSelector.join(','), article)
 
   var menu = sidebar.querySelector('.toc-menu-placeholder')
