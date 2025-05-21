@@ -29,7 +29,9 @@
   var links = {}
   var list = headings.reduce(function (accum, heading) {
     var link = document.createElement('a')
-    link.textContent = [...heading.childNodes].reduce((acc, el) => { return acc + (el.nodeType === Node.TEXT_NODE ? el.textContent : '') }, '')
+    var headingClone = heading.cloneNode(true)
+    headingClone.querySelectorAll('div, a').forEach(function (el) { el.remove() })
+    link.innerHTML = headingClone.innerHTML
     links[(link.href = '#' + heading.id)] = link
     var listItem = document.createElement('li')
     listItem.dataset.level = parseInt(heading.nodeName.slice(1)) - 1
