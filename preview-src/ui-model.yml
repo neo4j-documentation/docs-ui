@@ -309,6 +309,8 @@ page:
           class: 'aura-dbp'
         - name: 'AuraDB Virtual Dedicated Cloud'
           class: 'aura-dbe'
+        - name: 'AuraDB Business Critical'
+          class: 'aura-dbc'
         - name: 'AuraDS Professional'
           class: 'aura-dsp'
         - name: 'AuraDS Enterprise'
