@@ -54,6 +54,10 @@
   color: rgba(var(--colors-forest-40));
 }
 
+.hljs-operator {
+  color: rgba(var(--colors-neutral-60));
+}
+
 .hljs-symbol,
 .hljs-bullet {
   color: var(--color-indigo-800);

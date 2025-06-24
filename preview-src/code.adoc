@@ -210,3 +210,31 @@ var expandCollapseBlock = function (e) {
   }
 }
 ----
+
+== BNF syntax example
+
+=== Single-line rules
+
+[source, gql-bnf]
+----
+<simple match statement> ::= "MATCH" <graph pattern>
+<path pattern> ::= [ <identifier> "=" ] [ <path pattern prefix> ] <path pattern expression>
+----
+
+=== Multi-line rules
+
+[source, gql-bnf]
+----
+<simple match statement> ::=
+  "MATCH" <graph pattern> "{}"
+
+<graph pattern> ::=
+  [ <match mode> ] <path pattern> [ { "," <path pattern> }... ] [ <graph pattern where clause> ]
+
+<match mode> ::=
+    "REPEATABLE" { "ELEMENT" [ "BINDINGS" ] | "ELEMENTS" }
+  | "DIFFERENT" { "RELATIONSHIP" [ "BINDINGS" ] | "RELATIONSHIPS" }
+
+<path pattern> ::=
+  [ <identifier> "=" ] [ <path pattern prefix> ] <path pattern expression>
+----
