@@ -1,1 +1,26 @@
 {{! add scripts here }}
+<script>
+var cookiebotEventFired = false;
+
+window.addEventListener('CookiebotOnAccept', function () {
+  cookiebotEventFired = true;
+  if (Cookiebot.consent.marketing) {
+    var img = document.createElement('img')
+    img.src = 'https://static.neo4j.com/a.png?x-pxid=dae9b690-6a56-4889-a951-9d0207a18da6'
+    img.referrerPolicy = 'no-referrer-when-downgrade'
+    img.style.display = 'none'
+    document.body.appendChild(img)
+    // Cookie consent given. Scarf Pixel loaded.
+    console.log('cc1. sp1.')
+  }
+}, false)
+
+// Debugging
+setTimeout(function () {
+  if (!cookiebotEventFired) {
+    // Cookie NOT consent given. Scarf Pixel NOT loaded.
+    console.log('cc0. sp0.')
+  }
+}, 2000)
+
+</script>
