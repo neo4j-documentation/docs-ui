@@ -1,4 +1,3 @@
-
 // This script is used to load a pixel for Scarf analytics, but only if the user has accepted marketing cookies
 window.addEventListener('CookiebotOnAccept', function () {
   if (Cookiebot.consent.marketing) {
