@@ -61,10 +61,10 @@ See the `.github/workflows/release.yml` file for details.
 
 The release is performed when a tag is pushed.
 
-. Use `npm version patch` or `npm version minor` to increase the version in the `package.json` file and create a tag for the new verrsion.
+. Use `npm version patch` (i.e. 0.1.1 -> 0.1.2) or `npm version minor` (i.e. 0.1.1 -> 0.2.0) to increase the version in the `package.json` file and create a tag for the new version. Running these commands will make the changes AND create a commit.
 . Push the tag upstream:
 +
- $ git push--tags upstream master
+ $ git push --tags origin master
 
 The UI bundle is published to S3.
 It is available from two URLs:
