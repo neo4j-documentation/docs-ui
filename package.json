@@ -74,7 +74,7 @@
     "start": "LIVERELOAD=true gulp preview",
     "lint": "npm run lint:css && npm run lint:js",
     "lint:css": "stylelint \"src/css/**/*.css\"",
-    "lint:js": "eslint gulpfile.js \"gulp.d/**/*.js\" \"src/{helpers,js}/**/*.js\"",
+    "lint:js": "eslint gulpfile.js \"gulp.d/**/*.js\" \"src/{helpers,js}/**/*.js\" --ignore-pattern \"src/js/no-lint/**/*.js\"",
     "build": "gulp bundle"
   },
   "dependencies": {
