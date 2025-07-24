@@ -128,6 +128,34 @@
         ]
       }
     })
+    // Custom flavor of BNF syntax defined in GQL standard docs
+    hljs.registerLanguage('gql-bnf',
+      function gql_bnf(hljs) {
+        return {
+          name: 'Custom BNF syntax for GQL',
+          contains: [
+            {
+              // Use "attribute" for nonterminals as the included BNF/ABNF/EBNF do
+              className: 'attribute',
+              begin: /</,
+              end: />/
+            },
+            {
+              // It should be enough to treat syntax extension symbols just as simple operators.
+              // Symbols include:
+              // - Square brackets (optional elements)
+              // - Braces (element group)
+              // - Vertical bar (alternative operator)
+              // - Ellipsis (element repetition)
+              className: 'operator',
+              begin: /[[\]{}|]|\.\.\./
+            },
+            // Double quote-delimited strings
+            hljs.QUOTE_STRING_MODE,
+            hljs.C_LINE_COMMENT_MODE
+          ]
+        };
+      })
   hljs.highlightAll()
 
   // Apply line highlighting to lines marked with `// marked-line`
