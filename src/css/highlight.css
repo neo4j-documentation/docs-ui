@@ -55,7 +55,7 @@
 }
 
 .hljs-operator {
-  color: rgba(var(--colors-neutral-60));
+  color: rgba(var(--colors-neutral-50));
 }
 
 .hljs-symbol,
