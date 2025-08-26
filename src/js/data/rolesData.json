@@ -22,6 +22,18 @@
         "product": "Graph Academy",
         "displayText": "Graph Academy"
     },
+    "cypher-5":{
+        "description": "Function available in Cypher 5",
+        "labelCategory": "product",
+        "product": "Cypher 5",
+        "displayText": "Cypher 5"
+    },
+    "cypher-25":{
+        "description": "Function available in Cypher 25",
+        "labelCategory": "product",
+        "product": "Cypher 25",
+        "displayText": "Cypher 25"
+    },
     "enterprise":{
         "description": "Function available in Enterprise Edition only",
         "labelCategory": "product",
@@ -122,18 +134,21 @@
         "description": "The feature or function was added in the version stated",
         "labelCategory": "version",
         "displayText": "Introduced",
-        "altDisplayText": "Added"
+        "altDisplayText": "Added",
+        "eventOrder": 1
     },
     "added":{
         "description": "The feature or function was added in the version stated",
         "labelCategory": "version",
         "displayText": "Introduced",
-        "altDisplayText": "Added"
+        "altDisplayText": "Added",
+        "eventOrder": 1
     },
     "changed":{
         "description": "The feature or function was changed in the version stated",
         "labelCategory": "version",
-        "displayText": "Changed"
+        "displayText": "Changed",
+        "eventOrder": 2
     },
     "default":{
         "description": "The value shown is the default value",
@@ -143,7 +158,8 @@
     "discontinued":{
         "description": "The feature is no longer available",
         "labelCategory": "version",
-        "displayText": "Discontinued"
+        "displayText": "Discontinued",
+        "eventOrder": 4        
     },
     "dynamic":{
         "labelCategory": "function",
@@ -152,34 +168,41 @@
     },
     "alpha":{
         "labelCategory": "version",
-        "displayText": "Alpha"
+        "displayText": "Alpha",
+        "eventOrder": 0        
     },
     "beta":{
         "labelCategory": "version",
-        "displayText": "Beta"
+        "displayText": "Beta",
+        "eventOrder": 0        
     },
     "beta-until":{
         "description": "The feature or function was in beta until the version specified",
         "labelCategory": "version",
         "displayText": "Beta",
-        "joinText": "until"
+        "joinText": "until",
+        "eventOrder": 0
     },
     "deprecated":{
         "labelCategory": "version",
-        "displayText": "Deprecated"
+        "displayText": "Deprecated",
+        "eventOrder": 3
     },
     "removed":{
         "labelCategory": "version",
-        "displayText": "Removed"
+        "displayText": "Removed",
+        "eventOrder": 4
     },
     "renamed":{
         "labelCategory": "version",
-        "displayText": "Renamed"
+        "displayText": "Renamed",
+        "eventOrder": 2        
     },
     "updated":{
         "description": "The feature or function was updated in the version stated",
         "labelCategory": "version",
-        "displayText": "Updated"
+        "displayText": "Updated",
+        "eventOrder": 2        
     },
     "fabric":{
         "labelCategory": "function",
