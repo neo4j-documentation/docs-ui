@@ -919,6 +919,10 @@ body {
   padding: 0.25rem 0;
 }
 
+.doc .colist.arabic div.ulist {
+  margin: 0;
+}
+
 .doc .conum[data-value] {
   border: 1px solid currentColor;
   border-radius: 100%;
