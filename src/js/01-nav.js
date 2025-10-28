@@ -57,14 +57,16 @@
     versionSelector.addEventListener('change', function (e) {
       const target = e.target
 
-      const current = target.dataset.current
-      const next = target.selectedOptions[0].dataset.version
+      // const current = target.dataset.current
+      // const next = target.selectedOptions[0].dataset.version
 
       const url = target.value
 
-      if (window.ga) {
-        window.ga('send', 'event', 'version-select', 'From: ' + current + ';To:' + next + ';')
-      }
+      // temporarily disable analytics for selector-versions
+      // because it is now broken
+      // if (window.ga) {
+      //   window.ga('send', 'event', 'version-select', 'From: ' + current + ';To:' + next + ';')
+      // }
 
       document.location.assign(url)
     })
