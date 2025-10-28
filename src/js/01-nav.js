@@ -62,9 +62,11 @@
 
       const url = target.value
 
-      if (window.ga) {
-        window.ga('send', 'event', 'version-select', 'From: ' + current + ';To:' + next + ';')
-      }
+      // temporarily disable analytics for selector-versions
+      // because it is broken after a recent preact bundle.js change
+      // if (window.ga) {
+      //   window.ga('send', 'event', 'version-select', 'From: ' + current + ';To:' + next + ';')
+      // }
 
       document.location.assign(url)
     })
