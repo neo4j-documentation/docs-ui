@@ -63,7 +63,7 @@
       const url = target.value
 
       // temporarily disable analytics for selector-versions
-      // because it is broken after a recent preact bundle.js change
+      // because it is now broken
       // if (window.ga) {
       //   window.ga('send', 'event', 'version-select', 'From: ' + current + ';To:' + next + ';')
       // }
