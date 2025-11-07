@@ -81,7 +81,7 @@
 }
 
 .docs-remix .nav-menu {
-  flex-grow: 0
+  flex-grow: 0;
 }
 
 .docs-remix .nav-menu > .nav-list {
