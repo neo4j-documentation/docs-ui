@@ -1,12 +1,9 @@
 <div class="category-tabs">
     <ul class="category-ul">
         {{!-- <li><a href=""><span>Fundamentals</span></a></li> --}}
-        <li{{#if (eq page.attributes.category-tab 'getting-started' ) }} class="is-active"{{/if}}><a href=""><span>Getting Started</span></a></li>
-        <li>{{#if (eq page.attributes.category-tab 'tools' ) }} class="is-active"{{/if}}<a href=""><span>Tools</span></a></li>
-        <li{{#if (eq page.attributes.category-tab 'query' ) }} class="is-active"{{/if}}><a href=""><span>Query</span></a></li>
-        <li{{#if (eq page.attributes.category-tab 'admin' ) }} class="is-active"{{/if}}><a href=""><span>Admin</span></a></li>
-        <li{{#if (eq page.attributes.category-tab 'developers' ) }} class="is-active"{{/if}}><a href=""><span>Developers</span></a></li>
-        <li{{#if (eq page.attributes.category-tab 'tutorials' ) }} class="is-active"{{/if}}><a href=""><span>Tutorials</span></a></li>
-        {{!-- <li{{#if (eq page.attributes.category-tab 'reference' ) }} class="is-active"{{/if}}><a href=""><span>Reference</span></a></li> --}}
+        <li{{#if (eq page.attributes.tabs 'getting-started' ) }} class="is-active"{{/if}}><a href=""><span>Getting Started</span></a></li>
+        <li{{#if (eq page.attributes.tabs 'administration' ) }} class="is-active"{{/if}}><a href=""><span>Administration</span></a></li>
+        <li{{#if (eq page.attributes.tabs 'reference' ) }} class="is-active"{{/if}}><a href=""><span>Reference</span></a></li>
+        <li{{#if (eq page.attributes.tabs 'tutorials' ) }} class="is-active"{{/if}}><a href=""><span>Tutorials</span></a></li>
     </ul>
 </div>

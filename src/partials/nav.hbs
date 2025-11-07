@@ -1,15 +1,7 @@
 <div class="nav-container"{{#if page.component}} data-component="{{page.component.name}}" data-version="{{page.version}}"{{/if}}>
   <aside class="nav">
     <div class="panels">
-
-      {{#unless (or @root.page.attributes.nav-hide-site-title (eq @root.page.attributes.theme 'cheat-sheet'))}}
-      <div class="component">
-        <div class="nav-product">
-          <span class="nav-product-name">{{#with @root.page.componentVersion}}{{{ ./title }}}{{/with}}</span>
-        </div>
-      </div>
-      {{/unless}}
-      
+      {{> nav-explore}}
       {{> nav-menu}}
     </div>
   </aside>

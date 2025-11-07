@@ -80,6 +80,10 @@
   padding-top: 2rem;
 }
 
+.docs-remix .nav-menu {
+  flex-grow: 0
+}
+
 .docs-remix .nav-menu > .nav-list {
   margin-top: 0;
 }

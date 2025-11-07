@@ -62,9 +62,9 @@
 
       const url = target.value
 
-      if (window.ga) {
-        window.ga('send', 'event', 'version-select', 'From: ' + current + ';To:' + next + ';')
-      }
+      // if (window.ga) {
+      //   window.ga('send', 'event', 'version-select', 'From: ' + current + ';To:' + next + ';')
+      // }
 
       document.location.assign(url)
     })
