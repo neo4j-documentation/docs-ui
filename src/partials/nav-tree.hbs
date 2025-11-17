@@ -6,8 +6,10 @@
   {{!-- <span>Show if this module: {{{../show}}}</span> --}}
   {{!-- <span>Show li?{{{(eq ../show (or this.module ../module))}}}</span> --}}
   {{!-- <span>Root Page module: {{{@root.page.module}}}</span> --}}
-    {{#if (or this.items.length (eq this.pageTabs @root.page.attributes.tabs))}}
-    <li class="nav-item{{#if (eq this.url @root.page.url)}} is-current-page{{/if}}" data-module="{{or ../module this.module}}" data-depth="{{or ../level 0}}"{{#with this.asciidoc}} data-slug="{{this.attributes.page-slug}}"{{/with}}>
+
+    {{#unless (and this.pageTabs (ne this.pageTabs @root.page.attributes.tabs))}}
+    {{!-- {{#if (or this.items.length (eq this.pageTabs @root.page.attributes.tabs))}} --}}
+    <li class="nav-item{{#if (eq this.url @root.page.url)}} is-current-page{{/if}}"{{#with this.pageTabs}} data-tabs="{{this}}"{{/with}} data-module="{{or ../module this.module}}" data-depth="{{or ../level 0}}"{{#with this.asciidoc}} data-slug="{{this.attributes.page-slug}}"{{/with}}>
       {{#if this.content}}
       {{#if this.url}}
       <a class="nav-link{{#if this.items.length}} nav-item-toggle{{/if}}" href="
@@ -25,7 +27,8 @@
       {{/if}}
         {{> nav-tree navigation=this.items level=(increment ../level) module=(or this.module ../module) show=../show}}
     </li>
-    {{/if}}
+    {{!-- {{/if}} --}}
+    {{/unless}}
   {{/each}}
 </ul>
 {{/if}}
