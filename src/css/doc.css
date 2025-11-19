@@ -1304,10 +1304,6 @@ body {
   background: var(--color-docs);
 }
 
-.doc .tabbed-container {
-  padding: 1rem;
-}
-
 .doc .tabbed-target {
   display: none;
   margin-bottom: 0;
@@ -1389,7 +1385,7 @@ body {
 
 .exampleblock {
   background: var(--body-background);
-  padding: 0;
+  padding: 1rem;
   margin: 0 -1rem 1.5rem;
   border: 1px solid var(--color-docs);
   border-radius: 8px;
