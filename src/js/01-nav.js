@@ -131,7 +131,7 @@
 
   function showNav (e) {
     if (navToggle.classList.contains('is-active')) return hideNav(e)
-    var html = document.documentElement
+    var html = document.documentElement.querySelector('main.article')
     html.classList.add('is-clipped--nav')
     navToggle.classList.add('is-active')
     navContainer.classList.add('is-active')
