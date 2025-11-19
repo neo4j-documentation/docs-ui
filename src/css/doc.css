@@ -1376,6 +1376,7 @@ body {
   display: inline-block;
   margin: 0 0.2rem;
   content: "→";
+  transform: rotate(-45deg);
   color: var(--link-font-color);
   transition: all 0.2s linear;
   top: 0;
