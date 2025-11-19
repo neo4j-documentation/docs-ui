@@ -334,8 +334,9 @@ body {
 
 .doc .admonitionblock {
   margin: 1.5rem 0 1.5rem;
-  /* border-left: 4px solid var(--doc-font-color); */
-  border-radius: 0.25rem;
+  border-radius: 0.5rem;
+  border-style: solid;
+  border-width: 1px;
 }
 
 .doc .admonitionblock p,
@@ -411,19 +412,19 @@ body {
 }
 
 .doc .admonitionblock td.icon i.icon-tip {
-  background-color: var(--tip-border-color);
+  background-color: var(--tip-color);
 }
 
 .doc .admonitionblock td.icon i.icon-important {
-  background-color: var(--important-border-color);
+  background-color: var(--important-color);
 }
 
 .doc .admonitionblock td.icon i.icon-caution {
-  background-color: var(--caution-border-color);
+  background-color: var(--caution-color);
 }
 
 .doc .admonitionblock td.icon i.icon-warning {
-  background-color: var(--warning-border-color);
+  background-color: var(--warning-color);
 }
 
 /* admonition icon contents */
@@ -472,8 +473,7 @@ body {
 
 .doc .admonitionblock.warning {
   background-color: var(--warning-background-color);
-  color: var(--warning-color);
-  /* border-left-color: var(--warning-border-color); */
+  border-color: var(--warning-border-color);
 }
 
 .doc .admonitionblock.warning a.btn {
@@ -481,22 +481,21 @@ body {
 }
 
 .doc .admonitionblock.warning a {
-  color: var(--color-red-500);
+  color: var(--warning-color);
 }
 
 .doc .admonitionblock.caution {
   background-color: var(--caution-background-color);
-  color: var(--caution-color);
-  /* border-left-color: var(--caution-border-color); */
+  border-color: var(--caution-border-color);
 }
 
 .doc .admonitionblock.caution a {
-  color: var(--color-orange-500);
+  color: var(--caution-color);
 }
 
-.doc .admonitionblock.caution a:hover {
+/* .doc .admonitionblock.caution a:hover {
   color: var(--color-orange-400);
-}
+} */
 
 .doc .admonitionblock.caution a.btn {
   background-color: var(--color-orange-600);
@@ -504,17 +503,17 @@ body {
 
 .doc .admonitionblock.tip {
   background-color: var(--tip-background-color);
-  color: var(--tip-color);
-  /* border-left-color: var(--tip-color); */
+  border-color: var(--tip-border-color);
 }
 
 .doc .admonitionblock.tip a {
   color: rgba(var(--colors-baltic-50));
+  color: var(--tip-color);
 }
 
-.doc .admonitionblock.tip a:hover {
+/* .doc .admonitionblock.tip a:hover {
   color: var(--color-blue-500);
-}
+} */
 
 .doc .admonitionblock.tip a.btn {
   background-color: rgba(var(--colors-baltic-50));
@@ -522,17 +521,16 @@ body {
 
 .doc .admonitionblock.note {
   background-color: var(--note-background-color);
-  color: var(--note-color);
-  /* border-left-color: var(--note-border-color); */
+  border-color: var(--note-border-color);
 }
 
 .doc .admonitionblock.note a {
-  color: rgba(var(--colors-neutral-60));
+  color: var(--note-color);
 }
 
-.doc .admonitionblock.note a:hover {
+/* .doc .admonitionblock.note a:hover {
   color: rgba(var(--colors-neutral-50));
-}
+} */
 
 .doc .admonitionblock.note a.btn {
   background-color: rgba(var(--colors-neutral-60));
@@ -540,17 +538,16 @@ body {
 
 .doc .admonitionblock.important {
   background-color: var(--important-background-color);
-  color: var(--important-color);
-  /* border-left-color: var(--important-border-color); */
+  border-color: var(--important-border-color);
 }
 
 .doc .admonitionblock.important a {
   color: var(--important-color);
 }
 
-.doc .admonitionblock.important a:hover {
+/* .doc .admonitionblock.important a:hover {
   color: var(--color-purple-500);
-}
+} */
 
 .doc .admonitionblock.important a.btn {
   background-color: var(--color-purple-600);
