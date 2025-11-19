@@ -56,7 +56,7 @@
   --colors-mint-60: #2aada5;
   --colors-mint-70: #116161;
   --colors-mint-default: #55f9e2;
-  --body-font-color: rgba(var(--colors-neutral-60));
+  --body-font-color: rgba(var(--colors-neutral-75));
 
   /* end: design system colors  */
 
@@ -174,7 +174,7 @@
   --body-font-size--desktop: 1em; /* 18px */
   --body-font-size--print: 0.9375em; /* 15px */
   --body-line-height: 1.5;
-  --body-font-color: rgba(var(--colors-neutral-70));
+  --body-font-color: rgba(var(--colors-neutral-75));
   --body-font-family: "Public Sans", "Nunito Sans", "Helvetica Neue", helvetica, roboto, arial, sans-serif;
   --body-font-weight-bold: var(--font-weight-semibold);
   --monospace-font-family: "Roboto Mono", monospace;
@@ -247,26 +247,48 @@
      NB: admonitions are dark text on light background
      to use the same colors on labels, reverse the
      background and color */
+
+  /* NOTE */
+  --note-color: rgba(var(--theme-light-palette-primary-bg-strong));
+  --note-border-color: rgba(var(--theme-light-palette-primary-border-weak));
+  --note-background-color: rgba(var(--theme-light-palette-primary-bg-weak));
+
+  /* TIP */
+  --tip-color: rgba(var(--theme-light-palette-success-bg-strong));
+  --tip-border-color: rgba(var(--theme-light-palette-success-border-weak));
+  --tip-background-color: rgba(var(--theme-light-palette-success-bg-weak));
+
+  /* IMPORTANT */
+  --important-color: rgba(var(--colors-lavender-70));
+  --important-border-color: rgba(var(--colors-lavender-20));
+  --important-background-color: rgba(var(--colors-lavender-10));
+
+  /* CAUTION */
+  --caution-color: rgba(var(--theme-light-palette-warning-bg-strong));
+  --caution-border-color: rgba(var(--theme-light-palette-warning-border-weak));
+  --caution-background-color: rgba(var(--theme-light-palette-warning-bg-weak));
+
+  /* WARNING */
+  --warning-color: rgba(var(--theme-light-palette-danger-bg-strong));
+  --warning-border-color: rgba(var(--theme-light-palette-danger-border-weak));
+  --warning-background-color: rgba(var(--theme-light-palette-danger-bg-weak));
+
+  /* FEATURED */
   --featured-color: rgba(var(--colors-hibiscus-70));
   --featured-border-color: rgba(var(--colors-lavender-50));
   --featured-background-color: rgba(var(--colors-hibiscus-10));
-  --caution-color: rgba(var(--colors-marigold-70));
-  --caution-border-color: rgba(var(--colors-marigold-50));
-  --caution-background-color: rgba(var(--colors-marigold-10));
-  --important-color: rgba(var(--colors-lavender-70));
-  --important-border-color: rgba(var(--colors-lavender-50));
-  --important-background-color: rgba(var(--colors-lavender-10));
-  --tip-color: rgba(var(--colors-forest-70));
-  --tip-border-color: rgba(var(--colors-forest-40));
-  --tip-background-color: rgba(var(--colors-forest-10));
-  --note-color: rgba(var(--theme-light-palette-primary-bg-strong));
-  --note-background-color: rgba(var(--theme-light-palette-primary-bg-weak));
-  --warning-color: rgba(var(--theme-light-palette-danger-bg-strong));
-  --warning-border-color: rgba(var(--theme-light-palette-danger-bg-strong));
-  --warning-background-color: rgba(var(--theme-light-palette-danger-bg-weak));
-  --mark-background: rgba(var(--theme-light-palette-primary-bg-weak));
+
+  /* EXAMPLE */
+  --example-color: rgba(var(--theme-light-palette-neutral-bg-strong));
+  --example-border-color: rgba(var(--theme-light-palette-neutral-border-weak));
+  --example-background-color: rgba(var(--theme-light-palette-neutral-bg-weak));
+
+  /* Tables in admonitions */
   --admonition-table-border-color: rgba(var(--colors-neutral-70));
   --admonition-table-header-color: rgba(var(--colors-neutral-20));
+
+  /* misc */
+  --mark-background: rgba(var(--theme-light-palette-primary-bg-weak));
 
   /* success */
   --success-color: rgba(var(--theme-light-palette-success-bg-strong));
