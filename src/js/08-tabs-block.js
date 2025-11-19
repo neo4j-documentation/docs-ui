@@ -164,7 +164,7 @@ document.addEventListener('DOMContentLoaded', function () {
       var tabs = elements.map(function (element) {
         var lang = element.getAttribute('data-lang')
         var tabText = casedLang(lang)
-        var tabElement = createElement('li', 'tabbed-tab', [document.createTextNode(tabText)])
+        var tabElement = createElement('div', 'tabbed-tab', [document.createTextNode(tabText)])
 
         element.dataset.title = tabText
         element.dataset.lang = lang
@@ -202,7 +202,13 @@ document.addEventListener('DOMContentLoaded', function () {
         })
       }
 
-      tabbedParent.insertBefore(createElement('ul', 'tabbed-tabs', tabs), tabbedContainer)
+      // insert a span into each tab, after the text content
+      tabs.forEach(function (tab) {
+        var span = createElement('span', 'ndl-tab-underline', [])
+        tab.appendChild(span)
+      })
+
+      tabbedParent.insertBefore(createElement('div', 'tabbed-tabs', tabs), tabbedContainer)
 
       parent.removeChild(originalTab)
     })

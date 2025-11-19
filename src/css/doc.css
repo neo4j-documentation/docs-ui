@@ -1265,54 +1265,50 @@ body {
 }
 
 .doc .tabbed {
-  padding: 13px 0 0;
+  background: var(--body-background);
+  padding: 0;
   margin: 0 -1rem 1.5rem;
-  background: rgba(var(--colors-neutral-15));
-  border: 1px solid rgba(var(--colors-neutral-20));
-  border-top-left-radius: 6px;
-  border-top-right-radius: 6px;
+  border: 1px solid var(--color-docs);
+  border-radius: 8px;
 }
 
 .doc .tabbed-tabs {
   display: flex;
+  flex-direction: row;
   margin: 0 1rem;
   padding: 0;
-  /* background: #edf2f7; */
-  /* border-bottom: 1px solid #e6f8ff; */
+  gap: 1rem;
+  border-bottom: 1px solid rgba(var(--theme-light-palette-neutral-border-weak));
 }
 
 .doc .tabbed-tabs .tabbed-tab {
   display: flex;
   flex-grow: 0;
-  list-style-type: none;
   font-size: 0.7rem;
   font-weight: 600;
-  padding: 0.4rem 0.6rem;
-  margin-right: 0.5rem;
-  background: rgba(var(--colors-neutral-20));
-  border: 1px solid rgba(var(--colors-neutral-20));
-  border-top: 3px solid rgba(var(--colors-neutral-30));
-  border-top-left-radius: 6px;
-  border-top-right-radius: 6px;
   border-bottom: none;
-  cursor: default;
+  cursor: pointer;
+  width: fit-content;
+  position: relative;
+  padding: 1rem;
 }
 
-.doc .tabbed-tabs .tabbed-tab--active {
-  margin-bottom: -1px;
-  background: var(--color-white);
-  color: var(--color-docs);
-  border: 1px solid var(--color-docs);
-  border-top: 3px solid var(--color-docs);
-  border-bottom: none;
+.doc .tabbed-tabs .tabbed-tab span.ndl-tab-underline {
+  height: 3px;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  border-top-left-radius: 9999px;
+  border-top-right-radius: 9999px;
+}
+
+.doc .tabbed-tabs .tabbed-tab--active span.ndl-tab-underline {
+  background: var(--color-docs);
 }
 
 .doc .tabbed-container {
   padding: 1rem;
-  background: #fff;
-  border: 1px solid var(--color-docs);
-  border-top-left-radius: 6px;
-  border-top-right-radius: 6px;
 }
 
 .doc .tabbed-target {
@@ -1395,8 +1391,11 @@ body {
 }
 
 .exampleblock {
-  margin-top: 0.75rem;
-  border: 1px solid var(--example-border-color);
+  background: var(--body-background);
+  padding: 0;
+  margin: 0 -1rem 1.5rem;
+  border: 1px solid var(--color-docs);
+  border-radius: 8px;
 }
 
 .doc .exampleblock > .title,
@@ -1404,14 +1403,11 @@ body {
   padding: 0.5rem 0.75rem;
 }
 
-.doc .exampleblock > .content {
-  border-top: 1px solid var(--example-border-color);
-}
-
 .doc .exampleblock > .title {
   color: var(--example-header-font-color);
-  background: var(--example-header-background);
-  margin-bottom: 0;
+  padding: 0.5rem 0;
+  margin: 0 1rem;
+  border-bottom: 1px solid var(--example-border-color);
 }
 
 .tabbed-container > .exampleblock {
