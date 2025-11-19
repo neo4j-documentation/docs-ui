@@ -738,7 +738,7 @@ For more information, see the link:/ops-manual[Operations Manual^]
 
 . Text link:#test-links[anchor to test links] text text.
 . Text link:https://www.example.com[www.example.com] text text. (note that link is marked as external because of `https://`)
-. Text link:www.example.com[`mono space`] text text. Note that links is not marked as external.
+. Text link:www.example.com[`mono space`] text text. Note that this link is not marked as external.
 . Text `link:www.example.com[mono space]` text text.
 
 
