@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+{{> head defaultPageTitle='Untitled'}}
+  </head>
+  <body class="article test-this docs-ndl{{#with (or page.attributes.role page.role)}} {{{this}}}{{/with}}{{#with asciidoc.attributes.role}} {{{this}}}{{/with}}{{#with (or page.attributes.theme "developer")}} {{{this}}}{{/with}}">
+{{> header}}
+
+<div class="body">
+    <a class="show-on-focus skip-link" href="#skip-to-content" title="Skip to content">Skip to content</a>
+    {{> tab-row }}
+    {{> nav}}
+    <main class="article">
+        {{#unless page.attributes.no-toolbar}}{{> toolbar}}{{/unless}}
+        <div class="content">
+            {{> article-ndl}}
+            {{> toc}}
+        </div>
+    </main>
+</div>
+
+{{> footer}}
+  </body>
+</html>

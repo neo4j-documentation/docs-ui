@@ -11,7 +11,7 @@
         
         {{#with page.navigation}}
         <div class="nav-module">
-        {{> nav-tree navigation=this show=@root.page.module}}
+        {{> nav-tree-ndl navigation=this show=@root.page.module}}
         </div>
         {{/with}}
 
@@ -21,7 +21,7 @@
                 
         {{#with page.navigation}}
         <div class="nav-root">
-        {{> nav-tree navigation=this show="ROOT"}}
+        {{> nav-tree-ndl navigation=this show="ROOT"}}
         </div>
         {{/with}}
         
