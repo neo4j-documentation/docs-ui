@@ -1,8 +1,7 @@
 'use strict'
 
 module.exports = (url, page, { data: { root } }) => {
- 
-  const urlParts = url.split('/').filter(e => e)
+  const urlParts = url.split('/').filter((e) => e)
 
   console.log(urlParts)
 
@@ -12,9 +11,8 @@ module.exports = (url, page, { data: { root } }) => {
   }
 
   const resolvedUrl = '/' + urlParts.join('/')
-  
+
   console.log(resolvedUrl)
-  
-  return resolvedUrl 
-  
+
+  return resolvedUrl
 }
