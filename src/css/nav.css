@@ -271,6 +271,10 @@ html.is-clipped--nav {
   max-height: calc(50% + var(--drawer-height));
 }
 
+.nav-panel-explore.is-active {
+  z-index: 1;
+}
+
 .nav-panel-explore .context {
   font-size: calc(15 / var(--rem-base) * 1rem);
   flex-shrink: 0;
