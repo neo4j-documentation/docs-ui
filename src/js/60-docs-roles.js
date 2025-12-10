@@ -70,6 +70,7 @@ document.addEventListener('DOMContentLoaded', function () {
     var labelDetails = {
       class: dataLabel,
       role: dataLabel,
+      eventOrder: rolesData[dataLabel].eventOrder || -1,
       text: rolesData[dataLabel].displayText || '',
       joinText: dataVersion ? rolesData[dataLabel].joinText || 'in' : '',
       data: {
@@ -133,7 +134,12 @@ document.addEventListener('DOMContentLoaded', function () {
 
       labelSpan.appendChild(document.createTextNode(labelDetails.text))
 
-      labels.push(labelSpan)
+      labels.push(
+        {
+          html: labelSpan,
+          eventOrder: labelDetails.eventOrder,
+        }
+      )
     })
 
     // we only generate labels from defined roles
@@ -143,18 +149,16 @@ document.addEventListener('DOMContentLoaded', function () {
     let labelsLocation = (roleDiv.firstElementChild && headings.includes(roleDiv.firstElementChild.nodeName)) ? roleDiv.firstElementChild : roleDiv
     const labelsDiv = createElement('div', 'labels')
 
-    for (const label of labels) {
+    for (const label of labels.sort((a, b) => a.eventOrder - b.eventOrder)) {
       if (roleDiv.nodeName === 'H1' || headings.includes(roleDiv.firstElementChild.nodeName)) {
-        label.classList.add('header-label')
+        label.html.classList.add('header-label')
       }
-      labelsDiv.append(label)
+      labelsDiv.append(label.html)
 
-      for (var d in label.dataset) {
-        roleDiv.dataset[d] = label.dataset[d]
+      for (var d in label.html.dataset) {
+        roleDiv.dataset[d] = label.html.dataset[d]
       }
     }
-
-    console.log(roleDiv.classList)
 
     if (roleDiv.classList.contains('admonitionblock')) {
       labelsLocation = roleDiv.querySelector('td.content')
