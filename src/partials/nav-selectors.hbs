@@ -6,7 +6,7 @@
   <div class="dropdown">
     <span class="dropdown-label">{{#with (or page.attributes.cheatsheet-product 'Product')}}{{this}}{{/with}} Version</span>
 
-    <select id="selector-version" data-current="{{@root.page.version}}" class="version-selector dropdown-styles">
+    <select aria-label="Version" id="selector-version" data-current="{{@root.page.version}}" class="version-selector dropdown-styles">
       {{#each page.versions}}
       {{#unless (and this.prerelease @root.page.attributes.nav-selectors-hide-prerelease)}}
       <option
@@ -32,7 +32,7 @@
 <div class="selectors">
 <div class="nav-panel-types{{#unless page.navigation}} is-active{{/unless}}" data-panel="explore" data-selector-type="products">
   <div class="dropdown">
-    <select id="cheat-sheet-selector-products" class="cs-selector dropdown-styles" data-label-type="products">
+    <select aria-label="Product" id="cheat-sheet-selector-products" class="cs-selector dropdown-styles" data-label-type="products">
       {{!-- <option value="all" data-label="all" data-class="all" data-label-type="products">All</option> --}}
       {{#each page.attributes.cheatsheet-products}}
       {{#if this.default}}
@@ -54,7 +54,7 @@
 <div class="nav-panel-types{{#unless page.navigation}} is-active{{/unless}}" data-panel="explore"  data-selector-type="categories">
   {{!-- categories - eg read, write, structure, general --}}
   <div class="dropdown">
-    <select id="cheat-sheet-selector-categories" class="cs-selector dropdown-styles" data-label-type="categories">
+    <select aria-label="Cypher category" id="cheat-sheet-selector-categories" class="cs-selector dropdown-styles" data-label-type="categories">
       <option value="all" data-label="all" data-class="all" data-label-type="categories">All</option>
       {{#each page.attributes.cheatsheet-categories}}
       {{#if this.default}}
