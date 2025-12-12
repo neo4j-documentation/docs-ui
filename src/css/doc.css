@@ -1398,9 +1398,14 @@ body {
 
 .doc .exampleblock > .title {
   color: var(--example-header-font-color);
-  padding: 0.5rem 0;
-  margin: 0 1rem;
-  border-bottom: 1px solid var(--example-border-color);
+  /* border-left: 1px solid var(--color-docs); */
+  /* border-right: 1px solid var(--color-docs); */
+  padding: 0 0.75rem;
+  margin: 0;
+  transform: translate(0, -1.5rem);
+  width: fit-content;
+  background: var(--body-background);
+  line-height: 1rem;
 }
 
 .tabbed-container > .exampleblock {
