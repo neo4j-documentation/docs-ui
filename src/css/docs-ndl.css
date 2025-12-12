@@ -59,11 +59,6 @@ body.docs-ndl .nav-menu .home-link.is-home a {
   color: rgba(var(--colors-baltic-50));
 }
 
-body.docs-ndl .nav-module {
-  /* background: rgba(var(--colors-neutral-15)); */
-  background: rgba(var(--colors-neutral-10));
-}
-
 body.docs-ndl .nav-list:first-child .nav-item:first-child .nav-section-header {
   border: none;
   padding-top: 1.5rem !important;
