@@ -22,15 +22,14 @@ body.docs-ndl.explainer .nav-panel-menu {
 }
 
 body.docs-ndl .nav-menu .docs-home-link a::before {
-  content: "";
-  width: 4px;
-  height: 100%;
-  position: absolute;
-  left: 0;
+  position: relative;
+  display: inline-block;
+  margin: 0;
+  content: "→";
+  transform: rotate(-180deg);
+  color: var(--link-font-color);
+  transition: all 0.2s linear;
   top: 0;
-  background-color: rgba(10 97 144 / 1);
-  background-color: var(--color-docs);
-  border-radius: 4px;
 }
 
 body.docs-ndl .nav-menu .docs-home-link {
@@ -46,16 +45,18 @@ body.docs-ndl .nav-menu .docs-home-link:focus {
 body.docs-ndl .nav-menu .home-link {
   width: auto;
   background: none;
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
   box-shadow: 0 1px 0 var(--toolbar-border-color);
 }
 
-body.docs-ndl .nav-menu .home-link.is-home {
-  box-shadow: none;
-}
-
-body.docs-ndl .nav-menu .home-link.is-home a {
+body.docs-ndl .nav-menu .home-link a {
   display: flex;
-  background-color: rgba(var(--colors-baltic-10));
+  flex: 1;
+  align-self: center;
+  padding: 0.75rem 0 0.75rem 1rem;
+  /* background-color: rgba(var(--colors-baltic-10)); */
   color: rgba(var(--colors-baltic-50));
 }
 
@@ -140,10 +141,6 @@ body.docs-ndl .nav-menu .nav-item > a > strong {
 body.docs-ndl.hub .toolbar {
   /* visibility: hidden; */
   display: none;
-}
-
-body.docs-ndl.explainer .toolbar {
-  background-color: rgba(var(--colors-neutral-10));
 }
 
 body.docs-ndl .doc a {

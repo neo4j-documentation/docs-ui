@@ -6,6 +6,19 @@
 
       <div class="nav-panel-menu is-active{{#unless page.attributes.disablefeedback}} has-feedback{{/unless}}" data-panel="menu">
         <nav class="nav-menu">
+
+          {{!-- add link back to home --}}
+          {{!-- {{#unless page.home}} --}}
+          {{#if page.attributes.show-home-link}}
+          <ul class="nav-list docs-home-link">
+            <li class="nav-item home-link{{#if page.home}} is-home{{/if}}" data-depth="1" aria-label="home-link">
+              {{#with site.homeUrl}}
+              <a href="{{{relativize this}}}" aria-label="Go to docs home page">Back to docs home</a>
+              {{/with}}
+            </li>
+          </ul>
+          {{/if}}
+          {{!-- {{/unless}} --}}
         
         {{#if (ne @root.page.module 'ROOT')}}
         
