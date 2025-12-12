@@ -334,8 +334,9 @@ body {
 
 .doc .admonitionblock {
   margin: 1.5rem 0 1.5rem;
-  /* border-left: 4px solid var(--doc-font-color); */
-  border-radius: 0.25rem;
+  border-radius: 0.5rem;
+  border-style: solid;
+  border-width: 1px;
 }
 
 .doc .admonitionblock p,
@@ -411,19 +412,19 @@ body {
 }
 
 .doc .admonitionblock td.icon i.icon-tip {
-  background-color: var(--tip-border-color);
+  background-color: var(--tip-color);
 }
 
 .doc .admonitionblock td.icon i.icon-important {
-  background-color: var(--important-border-color);
+  background-color: var(--important-color);
 }
 
 .doc .admonitionblock td.icon i.icon-caution {
-  background-color: var(--caution-border-color);
+  background-color: var(--caution-color);
 }
 
 .doc .admonitionblock td.icon i.icon-warning {
-  background-color: var(--warning-border-color);
+  background-color: var(--warning-color);
 }
 
 /* admonition icon contents */
@@ -472,8 +473,7 @@ body {
 
 .doc .admonitionblock.warning {
   background-color: var(--warning-background-color);
-  color: var(--warning-color);
-  /* border-left-color: var(--warning-border-color); */
+  border-color: var(--warning-border-color);
 }
 
 .doc .admonitionblock.warning a.btn {
@@ -481,22 +481,21 @@ body {
 }
 
 .doc .admonitionblock.warning a {
-  color: var(--color-red-500);
+  color: var(--warning-color);
 }
 
 .doc .admonitionblock.caution {
   background-color: var(--caution-background-color);
-  color: var(--caution-color);
-  /* border-left-color: var(--caution-border-color); */
+  border-color: var(--caution-border-color);
 }
 
 .doc .admonitionblock.caution a {
-  color: var(--color-orange-500);
+  color: var(--caution-color);
 }
 
-.doc .admonitionblock.caution a:hover {
+/* .doc .admonitionblock.caution a:hover {
   color: var(--color-orange-400);
-}
+} */
 
 .doc .admonitionblock.caution a.btn {
   background-color: var(--color-orange-600);
@@ -504,17 +503,17 @@ body {
 
 .doc .admonitionblock.tip {
   background-color: var(--tip-background-color);
-  color: var(--tip-color);
-  /* border-left-color: var(--tip-color); */
+  border-color: var(--tip-border-color);
 }
 
 .doc .admonitionblock.tip a {
   color: rgba(var(--colors-baltic-50));
+  color: var(--tip-color);
 }
 
-.doc .admonitionblock.tip a:hover {
+/* .doc .admonitionblock.tip a:hover {
   color: var(--color-blue-500);
-}
+} */
 
 .doc .admonitionblock.tip a.btn {
   background-color: rgba(var(--colors-baltic-50));
@@ -522,17 +521,16 @@ body {
 
 .doc .admonitionblock.note {
   background-color: var(--note-background-color);
-  color: var(--note-color);
-  /* border-left-color: var(--note-border-color); */
+  border-color: var(--note-border-color);
 }
 
 .doc .admonitionblock.note a {
-  color: rgba(var(--colors-neutral-60));
+  color: var(--note-color);
 }
 
-.doc .admonitionblock.note a:hover {
+/* .doc .admonitionblock.note a:hover {
   color: rgba(var(--colors-neutral-50));
-}
+} */
 
 .doc .admonitionblock.note a.btn {
   background-color: rgba(var(--colors-neutral-60));
@@ -540,17 +538,16 @@ body {
 
 .doc .admonitionblock.important {
   background-color: var(--important-background-color);
-  color: var(--important-color);
-  /* border-left-color: var(--important-border-color); */
+  border-color: var(--important-border-color);
 }
 
 .doc .admonitionblock.important a {
   color: var(--important-color);
 }
 
-.doc .admonitionblock.important a:hover {
+/* .doc .admonitionblock.important a:hover {
   color: var(--color-purple-500);
-}
+} */
 
 .doc .admonitionblock.important a.btn {
   background-color: var(--color-purple-600);
@@ -1265,54 +1262,46 @@ body {
 }
 
 .doc .tabbed {
-  padding: 13px 0 0;
+  background: var(--body-background);
+  padding: 0;
   margin: 0 -1rem 1.5rem;
-  background: rgba(var(--colors-neutral-15));
-  border: 1px solid rgba(var(--colors-neutral-20));
-  border-top-left-radius: 6px;
-  border-top-right-radius: 6px;
+  border: 1px solid var(--color-docs);
+  border-radius: 8px;
 }
 
 .doc .tabbed-tabs {
   display: flex;
+  flex-direction: row;
   margin: 0 1rem;
   padding: 0;
-  /* background: #edf2f7; */
-  /* border-bottom: 1px solid #e6f8ff; */
+  gap: 1rem;
+  border-bottom: 1px solid rgba(var(--theme-light-palette-neutral-border-weak));
 }
 
 .doc .tabbed-tabs .tabbed-tab {
   display: flex;
   flex-grow: 0;
-  list-style-type: none;
   font-size: 0.7rem;
   font-weight: 600;
-  padding: 0.4rem 0.6rem;
-  margin-right: 0.5rem;
-  background: rgba(var(--colors-neutral-20));
-  border: 1px solid rgba(var(--colors-neutral-20));
-  border-top: 3px solid rgba(var(--colors-neutral-30));
-  border-top-left-radius: 6px;
-  border-top-right-radius: 6px;
   border-bottom: none;
-  cursor: default;
-}
-
-.doc .tabbed-tabs .tabbed-tab--active {
-  margin-bottom: -1px;
-  background: var(--color-white);
-  color: var(--color-docs);
-  border: 1px solid var(--color-docs);
-  border-top: 3px solid var(--color-docs);
-  border-bottom: none;
-}
-
-.doc .tabbed-container {
+  cursor: pointer;
+  width: fit-content;
+  position: relative;
   padding: 1rem;
-  background: #fff;
-  border: 1px solid var(--color-docs);
-  border-top-left-radius: 6px;
-  border-top-right-radius: 6px;
+}
+
+.doc .tabbed-tabs .tabbed-tab span.ndl-tab-underline {
+  height: 3px;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  border-top-left-radius: 9999px;
+  border-top-right-radius: 9999px;
+}
+
+.doc .tabbed-tabs .tabbed-tab--active span.ndl-tab-underline {
+  background: var(--color-docs);
 }
 
 .doc .tabbed-target {
@@ -1396,8 +1385,11 @@ body {
 }
 
 .exampleblock {
-  margin-top: 0.75rem;
-  border: 1px solid var(--example-border-color);
+  background: var(--body-background);
+  padding: 1rem;
+  margin: 0 -1rem 1.5rem;
+  border: 1px solid var(--color-docs);
+  border-radius: 8px;
 }
 
 .doc .exampleblock > .title,
@@ -1405,14 +1397,16 @@ body {
   padding: 0.5rem 0.75rem;
 }
 
-.doc .exampleblock > .content {
-  border-top: 1px solid var(--example-border-color);
-}
-
 .doc .exampleblock > .title {
   color: var(--example-header-font-color);
-  background: var(--example-header-background);
-  margin-bottom: 0;
+  /* border-left: 1px solid var(--color-docs); */
+  /* border-right: 1px solid var(--color-docs); */
+  padding: 0 0.75rem;
+  margin: 0;
+  transform: translate(0, -1.5rem);
+  width: fit-content;
+  background: var(--body-background);
+  line-height: 1rem;
 }
 
 .tabbed-container > .exampleblock {

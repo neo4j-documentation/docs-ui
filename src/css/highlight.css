@@ -1,14 +1,14 @@
 /*! Adapted from the GitHub style by Vasily Polovnyov <vast@whiteants.net> */
 .hljs-comment,
 .hljs-quote {
-  color: rgba(var(--colors-neutral-50));
+  color: rgba(var(--colors-neutral-60));
   font-style: italic;
 }
 
 .hljs-keyword,
 .hljs-selector-tag,
 .hljs-subst {
-  color: rgba(var(--colors-neutral-50));
+  color: rgba(var(--colors-neutral-60));
   font-weight: var(--monospace-font-weight-bold);
 }
 
@@ -17,18 +17,18 @@
 .hljs-variable,
 .hljs-template-variable,
 .hljs-tag .hljs-attr {
-  color: rgba(var(--colors-baltic-50));
+  color: rgba(var(--colors-baltic-60));
 }
 
 .hljs-string,
 .hljs-doctag {
-  color: rgba(var(--colors-forest-40));
+  color: rgba(var(--colors-forest-50));
 }
 
 .hljs-title,
 .hljs-section,
 .hljs-selector-id {
-  color: rgba(var(--colors-lavender-50));
+  color: rgba(var(--colors-lavender-60));
   font-weight: var(--monospace-font-weight-bold);
 }
 
@@ -38,24 +38,24 @@
 
 .hljs-type,
 .hljs-class .hljs-title {
-  color: rgba(var(--colors-baltic-50));
+  color: rgba(var(--colors-baltic-60));
   font-weight: var(--monospace-font-weight-bold);
 }
 
 .hljs-tag,
 .hljs-name,
 .hljs-attribute {
-  color: rgba(var(--colors-lavender-40));
+  color: rgba(var(--colors-lavender-60));
   font-weight: normal;
 }
 
 .hljs-regexp,
 .hljs-link {
-  color: rgba(var(--colors-forest-40));
+  color: rgba(var(--colors-forest-50));
 }
 
 .hljs-operator {
-  color: rgba(var(--colors-neutral-50));
+  color: rgba(var(--colors-neutral-60));
 }
 
 .hljs-symbol,
@@ -65,11 +65,11 @@
 
 .hljs-built_in,
 .hljs-builtin-name {
-  color: rgba(var(--colors-baltic-50));
+  color: rgba(var(--colors-baltic-60));
 }
 
 .hljs-meta {
-  color: rgba(var(--colors-neutral-50));
+  color: rgba(var(--colors-neutral-60));
   /* font-weight: var(--monospace-font-weight-bold); */
 }
 
