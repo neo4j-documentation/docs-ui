@@ -1,0 +1,11 @@
+{{!-- {{#with ( tab-path page )}} --}}
+<div class="category-tabs">
+    <ul class="category-ul">
+        {{!-- <li><a href=""><span>Fundamentals</span></a></li> --}}
+        <li{{#if (eq page.attributes.tabs 'getting-started' ) }} class="is-active"{{/if}}><a href="{{{ relativize @root.site.url }}}/getting-started/"><span>Getting Started</span></a></li>
+        <li{{#if (eq page.attributes.tabs 'administration' ) }} class="is-active"{{/if}}><a href="{{{ relativize @root.site.url }}}/administration/"><span>Administration</span></a></li>
+        <li{{#if (eq page.attributes.tabs 'reference' ) }} class="is-active"{{/if}}><a href="{{{ relativize @root.site.url }}}/reference/"><span>Reference</span></a></li>
+        <li{{#if (eq page.attributes.tabs 'tutorials' ) }} class="is-active"{{/if}}><a href="{{{ relativize @root.site.url }}}/tutorials/"><span>Tutorials</span></a></li>
+    </ul>
+</div>
+{{!-- {{/with}} --}}

@@ -1,23 +1,26 @@
-{{#if page.versions.[1]}}
-<div class="nav-panel-versions{{#unless page.navigation}} is-active{{/unless}}" data-panel="explore">
-
-  <div class="dropdown">
-    <span class="dropdown-label">Neo4j Version</span>
-
-    <select aria-label="Version" data-current="{{@root.page.version}}" class="version-selector dropdown-styles">
-      {{#each page.versions}}
-      {{#unless (or this.prerelease (and (eq this.version @root.page.version) (eq @root.page.attributes.theme 'cheat-sheet') ))}}
-      <option
-        data-version="{{this.displayVersion}}"
-        value="{{{relativize this.url}}}"
-        {{#if (eq this.version @root.page.version)}} selected{{/if}}
-        {{~#if this.missing}} disabled{{/if}}
-      >
-        {{ this.displayVersion }}{{#if (and @root.page.attributes.nav-indicate-latest (eq this.version @root.page.latest.version)) }} (latest){{/if}}
-      </option>
-      {{/unless}}
-      {{/each}}
-    </select>
+<div class="nav-panel-explore{{#unless page.navigation}} is-active{{/unless}}" data-panel="explore">
+  {{#if page.component}}
+  <div class="context">
+    <span class="title">{{page.component.title}}</span>
+    <span class="version">{{#if (or page.componentVersion.version (ne page.componentVersion.displayVersion 'default'))}}{{page.componentVersion.displayVersion}}{{/if}}</span>
   </div>
+  {{/if}}
+  <ul class="components">
+    {{#each site.components}}
+    <li class="component{{#if (eq this @root.page.component)}} is-current{{/if}}">
+      <div class="title"><a href="{{{relativize ./url}}}">{{{./title}}}</a></div>
+      {{#if (or ./versions.[1] ./versions.[0].version (ne ./versions.[0].displayVersion 'default'))}}
+      <ul class="versions">
+        {{#each ./versions}}
+        <li class="version
+          {{~#if (and (eq .. @root.page.component) (eq this @root.page.componentVersion))}} is-current{{/if~}}
+          {{~#if (eq this ../latest)}} is-latest{{/if}}">
+          <a href="{{{relativize ./url}}}">{{./displayVersion}}</a>
+        </li>
+        {{/each}}
+      </ul>
+      {{/if}}
+    </li>
+    {{/each}}
+  </ul>
 </div>
-{{/if}}

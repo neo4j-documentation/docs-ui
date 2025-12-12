@@ -7,13 +7,13 @@
   {{!-- <span>Show li?{{{(eq ../show (or this.module ../module))}}}</span> --}}
   {{!-- <span>Root Page module: {{{@root.page.module}}}</span> --}}
 
-    {{#unless (and this.pageTabs (ne this.pageTabs @root.page.attributes.tabs))}}
+    {{#if (or (eq (or this.module ../module) ../show) (ne @root.page.attributes.nav-tree 'module-only'))}}
     {{!-- {{#if (or this.items.length (eq this.pageTabs @root.page.attributes.tabs))}} --}}
     <li class="nav-item{{#if (eq this.url @root.page.url)}} is-current-page{{/if}}"{{#with this.pageTabs}} data-tabs="{{this}}"{{/with}} data-module="{{or ../module this.module}}" data-depth="{{or ../level 0}}"{{#with this.asciidoc}} data-slug="{{this.attributes.page-slug}}"{{/with}}>
       {{#if this.content}}
       {{#if this.url}}
       <a class="nav-link{{#if this.items.length}} nav-item-toggle{{/if}}" href="
-        {{~#if (eq this.urlType 'internal')}}{{{fix-nav-path this.url @root.page}}}
+        {{~#if (eq this.urlType 'internal')}}{{{relativize this.url}}}
         {{~else}}{{{this.url}}}{{~/if}}">{{{this.content}}}</a>
       {{else if this.items.length }}
       <span class="nav-text nav-item-toggle">{{{this.content}}}</span>
@@ -25,10 +25,9 @@
         </span>
       {{/if}}
       {{/if}}
-        {{> nav-tree navigation=this.items level=(increment ../level) module=(or this.module ../module) show=../show}}
+        {{> nav-tree-ndl navigation=this.items level=(increment ../level) module=(or this.module ../module) show=../show}}
     </li>
-    {{!-- {{/if}} --}}
-    {{/unless}}
+    {{/if}}
   {{/each}}
 </ul>
 {{/if}}

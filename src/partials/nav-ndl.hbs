@@ -2,7 +2,7 @@
   <aside class="nav">
     <div class="panels">
 
-
+      {{> nav-explore}}
 
       <div class="nav-panel-menu is-active{{#unless page.attributes.disablefeedback}} has-feedback{{/unless}}" data-panel="menu">
         <nav class="nav-menu">
@@ -13,7 +13,7 @@
           <ul class="nav-list docs-home-link">
             <li class="nav-item home-link{{#if page.home}} is-home{{/if}}" data-depth="1" aria-label="home-link">
               {{#with site.homeUrl}}
-              <a href="{{{relativize this}}}" aria-label="Go to docs home page">Docs home</a>
+              <a href="{{{relativize this}}}" aria-label="Go to docs home page">Back to docs home</a>
               {{/with}}
             </li>
           </ul>
@@ -24,7 +24,7 @@
         
         {{#with page.navigation}}
         <div class="nav-module">
-        {{> nav-tree navigation=this show=@root.page.module}}
+        {{> nav-tree-ndl navigation=this show=@root.page.module}}
         </div>
         {{/with}}
 
@@ -34,7 +34,7 @@
                 
         {{#with page.navigation}}
         <div class="nav-root">
-        {{> nav-tree navigation=this show="ROOT"}}
+        {{> nav-tree-ndl navigation=this show="ROOT"}}
         </div>
         {{/with}}
         

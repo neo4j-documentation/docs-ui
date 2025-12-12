@@ -2,7 +2,7 @@ import { createElement } from './modules/dom'
 import rolesData from './data/rolesData.json'
 
 function checkWrapped () {
-  const labelContainers = document.querySelectorAll('body.docs .header-label-container')
+  const labelContainers = document.querySelectorAll('body.docs-remix .header-label-container')
   for (const container of labelContainers) {
     var child = container.querySelector('.labels')
     var lineHeight = parseInt(window.getComputedStyle(container).lineHeight, 10)
@@ -95,7 +95,7 @@ document.addEventListener('DOMContentLoaded', function () {
   // ignore inline labels
 
   const headings = ['H2', 'H3', 'H4', 'H5', 'H6', 'CAPTION']
-  const roleDivs = document.querySelectorAll('body.docs *[class*="label--"]')
+  const roleDivs = document.querySelectorAll('body.docs-remix *[class*="label--"]')
 
   roleDivs.forEach(function (roleDiv) {
     var roles = roleDiv.classList
@@ -140,7 +140,7 @@ document.addEventListener('DOMContentLoaded', function () {
     // no need to do anything if we found only undefined roles
     if (labels.length === 0) return
 
-    let labelsLocation = (roleDiv.firstElementChild && headings.includes(roleDiv.firstElementChild.nodeName)) ? roleDiv.firstElementChild : roleDiv
+    // let labelsLocation = (roleDiv.firstElementChild && headings.includes(roleDiv.firstElementChild.nodeName)) ? roleDiv.firstElementChild : roleDiv
     const labelsDiv = createElement('div', 'labels')
 
     for (const label of labels) {
@@ -156,15 +156,15 @@ document.addEventListener('DOMContentLoaded', function () {
 
     console.log(roleDiv.classList)
 
-    if (roleDiv.classList.contains('admonitionblock')) {
-      labelsLocation = roleDiv.querySelector('td.content')
-    }
+    // if (roleDiv.classList.contains('admonitionblock')) {
+    //   labelsLocation = roleDiv.querySelector('td.content')
+    // }
 
     if (roleDiv.nodeName === 'H1' || headings.includes(roleDiv.firstElementChild.nodeName)) {
-      labelsLocation.append(labelsDiv)
-      labelsLocation.classList.add('header-label-container')
+      // labelsLocation.append(labelsDiv)
+      // labelsLocation.classList.add('header-label-container')
     } else {
-      labelsLocation.prepend(labelsDiv)
+      // labelsLocation.prepend(labelsDiv)
       roleDiv.classList.add('has-label')
     }
   })

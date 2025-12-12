@@ -147,7 +147,7 @@ span.fabric::after {
 }
 
 .sect-header {
-  display: flex;
+  /* display: flex; */
   flex-wrap: wrap;
   align-items: baseline;
   margin-bottom: 1rem;
