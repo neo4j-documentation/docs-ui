@@ -18,6 +18,10 @@ div.labels {
   padding: 0.5rem 0 1rem;
 }
 
+.exampleblock div.labels {
+  padding: 0.5rem;
+}
+
 .header-label-container > div.labels {
   display: flex;
   align-self: center;

@@ -1401,8 +1401,8 @@ body {
   /* border-left: 1px solid var(--color-docs); */
   /* border-right: 1px solid var(--color-docs); */
   padding: 0 0.75rem;
-  margin: 0;
-  transform: translate(0, -1.5rem);
+  margin: -0.5rem 0 0;
+  transform: translate(0, -1rem);
   width: fit-content;
   background: var(--body-background);
   line-height: 1rem;
