@@ -1,7 +1,7 @@
 .toolbar {
-  color: var(--toolbar-font-color);
+  color: light-dark(var(--toolbar-font-color), var(--dark--toolbar-font-color));
   align-items: center;
-  background-color: var(--toolbar-background);
+  background-color: light-dark(var(--toolbar-background), var(--dark--toolbar-background));
   box-shadow: 0 1px 0 var(--toolbar-border-color);
   display: flex;
   font-size: calc(15 / var(--rem-base) * 1rem);
@@ -66,7 +66,7 @@ body.has-banner .toolbar {
 }
 
 .home-link a line {
-  stroke: rgba(var(--colors-baltic-50));
+  stroke: rgba(var(--palette-baltic-50));
 }
 
 .edit-this-page {
@@ -87,5 +87,5 @@ body.has-banner .toolbar {
 }
 
 .toolbar .edit-this-page a {
-  color: rgba(var(--colors-baltic-50));
+  color: rgba(var(--palette-baltic-50));
 }

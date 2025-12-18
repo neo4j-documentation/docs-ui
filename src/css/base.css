@@ -22,8 +22,8 @@ html {
 }
 
 body {
-  background: var(--body-background);
-  color: var(--body-font-color);
+  background: light-dark(var(--body-background-color), var(--dark--body-background-color));
+  color: light-dark(var(--body-font-color), var(--dark--body-font-color));
   font-family: var(--body-font-family);
   line-height: var(--body-line-height);
   margin: 0;

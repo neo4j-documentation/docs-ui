@@ -1,0 +1,4 @@
+.doc {
+  color: light-dark(var(--doc-font-color), var(--dark--doc-font-color));
+  background-color: light-dark(var(--body-background-color), var(--dark--body-background-color));
+}

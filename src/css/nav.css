@@ -30,7 +30,7 @@
 }
 
 .nav {
-  background: var(--nav-background);
+  background: light-dark(var(--nav-background), var(--dark--nav-background));
   position: relative;
   top: var(--toolbar-height);
   height: var(--nav-height);
@@ -93,12 +93,13 @@ html.is-clipped--nav {
 }
 
 .nav .nav-product .nav-product-name {
+  color: light-dark(var(--toc-item-font-color), var(--dark--toc-item-font-color));
   font-size: 1rem;
   font-weight: 500;
 }
 
 .nav .nav-product .nav-product-name a:visited {
-  color: var(--link-font-color);
+  color: light-dark(var(--link-font-color), var(--dark--link-font-color));
 }
 
 .nav .selectors {
@@ -136,7 +137,7 @@ html.is-clipped--nav {
 .nav-panel-menu,
 .nav-panel-explore .components {
   scrollbar-width: thin;
-  scrollbar-color: var(--scrollbar-thumb-color) transparent;
+  scrollbar-color: light-dark(var(--scrollbar-thumb-color), var(--dark--scrollbar-thumb-color)) transparent;
 }
 
 .nav-panel-menu::-webkit-scrollbar,
@@ -146,7 +147,7 @@ html.is-clipped--nav {
 
 .nav-panel-menu::-webkit-scrollbar-thumb,
 .nav-panel-explore .components::-webkit-scrollbar-thumb {
-  background-color: var(--scrollbar-thumb-color);
+  background-color: light-dark(var(--scrollbar-thumb-color), var(--dark--scrollbar-thumb-color));
 }
 
 .nav-menu {
@@ -167,13 +168,13 @@ html.is-clipped--nav {
 }
 
 .nav-menu .title {
-  color: var(--nav-heading-font-color);
+  color: light-dark(var(--nav-heading-font-color), var(--dark--nav-heading-font-color));
   font-weight: 300;
   letter-spacing: 1.5px;
   text-transform: uppercase;
   font-size: 0.75rem;
   line-height: 1.35;
-  border-bottom: 1px solid var(--colors-neutral-25);
+  border-bottom: 1px solid var(--palette-neutral-25);
   padding: 0.5rem 1.5rem;
   margin: 0;
   font-family: Nudista, "Helvetica Neue", helvetica, roboto, arial, sans-serif;
@@ -181,7 +182,7 @@ html.is-clipped--nav {
 
 .nav-menu a,
 .nav-text {
-  color: rgba(var(--colors-neutral-55));
+  color: light-dark(var(--toc-item-font-color), var(--dark--toc-item-font-color));
   font-weight: var(--nav-font-weight);
   display: block;
   padding: 0.25rem 0;
@@ -261,7 +262,7 @@ html.is-clipped--nav {
 }
 
 .nav-panel-explore {
-  background: var(--nav-background);
+  background: light-dark(var(--nav-background), var(--dark--nav-background));
   display: flex;
   flex-direction: column;
   position: absolute;
@@ -274,7 +275,7 @@ html.is-clipped--nav {
 .nav-panel-explore .context {
   font-size: calc(15 / var(--rem-base) * 1rem);
   flex-shrink: 0;
-  color: var(--nav-muted-color);
+  color: light-dark(var(--nav-muted-color), var(--dark--nav-muted-color));
   box-shadow: 0 -1px 0 var(--nav-panel-divider-color);
   padding: 0 0.25rem 0 0.5rem;
   display: flex;
@@ -297,7 +298,7 @@ html.is-clipped--nav {
   line-height: var(--doc-line-height);
   flex-grow: 1;
   box-shadow: inset 0 1px 5px var(--nav-panel-divider-color);
-  background: var(--nav-secondary-background);
+  background: light-dark(var(--nav-secondary-background), var(--dark--nav-secondary-background));
   padding: 0.5rem 0.75rem 0 0.75rem;
   margin: 0;
   overflow-y: scroll;
@@ -385,12 +386,12 @@ html.is-clipped--nav {
 
 .nav-item a:hover,
 .nav-item span:hover {
-  background-color: var(--toc_hover-background-color);
+  background-color: light-dark(var(--toc-hover-background-color), var(--dark--toc-hover-background-color));
 }
 
 .is-current-page.is-active > a {
-  background-color: rgba(var(--colors-baltic-10));
-  color: var(--color-docs);
+  background-color: light-dark(rgba(var(--palette-baltic-10)), rgba(var(--dark--palette-baltic-10)));
+  color: light-dark(var(--color-docs), var(--dark--color-docs));
 }
 
 .is-current-page.is-active > a::before {
@@ -448,7 +449,7 @@ html.is-clipped--nav {
 
 .nav-item[data-depth="1"] > span strong {
   font-size: 1rem;
-  color: var(--neutral-55);
+  color: light-dark(var(--neutral-55), var(--dark--neutral-55));
 }
 
 .nav-item > .nav-item-toggle::after {
@@ -520,8 +521,8 @@ html.is-clipped--nav {
   padding: 0.5rem;
   padding-right: 28px;
   border-radius: var(--border-radius-sm);
-  border: 1px solid rgba(var(--theme-light-palette-neutral-border-strong));
-  background-color: rgba(var(--theme-light-palette-neutral-bg-weak));
+  border: 1px solid light-dark(var(--dropdown-border-color), var(--dark--dropdown-border-color));
+  background-color: light-dark(var(--dropdown-background-color), var(--dark--dropdown-background-color));
   background-image: url("data:image/svg+xml,<svg width='20' height='20' xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke-width='1.5' stroke='%23535B66'><path stroke-linecap='round' stroke-linejoin='round' d='M19.5 8.25l-7.5 7.5-7.5-7.5' /></svg>");
   background-position: right 5px top 50%;
   background-repeat: no-repeat;
@@ -538,5 +539,5 @@ html.is-clipped--nav {
 
 .dropdown .dropdown-label {
   display: none;
-  color: rgb(var(--palette-light-neutral-text-weak));
+  color: light-dark(rgb(var(--palette-light-neutral-text-weak)), rgb(var(--dark--palette-light-neutral-text-weak)));
 }
