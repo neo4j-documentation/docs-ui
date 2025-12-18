@@ -23,7 +23,7 @@ code .glossary-term::after {
   font-size: 0.8rem;
   position: absolute;
   z-index: 5000;
-  background: rgba(var(--colors-neutral-10));
+  background: rgba(var(--palette-neutral-10));
   border-bottom: 3px solid var(--color-docs);
   border-radius: 0.25rem;
   width: 220px;
@@ -64,7 +64,7 @@ code .glossary-term::after {
   background: var(--color-docs);
   border-top-left-radius: 0.25rem;
   border-top-right-radius: 0.25rem;
-  color: rgba(var(--colors-neutral-10));
+  color: rgba(var(--palette-neutral-10));
   padding: 12px;
   padding: 0.5rem 1rem;
   font-weight: 600;
@@ -72,7 +72,7 @@ code .glossary-term::after {
 
 .tooltip .tooltip-body {
   padding: 0.5rem 1rem;
-  color: rgba(var(--colors-neutral-60));
+  color: rgba(var(--palette-neutral-60));
   font-size: 0.8rem;
 }
 
@@ -85,6 +85,6 @@ code .glossary-term::after {
 }
 
 .tooltip .tooltip-body a {
-  color: rgba(var(--colors-baltic-50));
+  color: rgba(var(--palette-baltic-50));
   font-weight: 600;
 }

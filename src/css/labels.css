@@ -68,7 +68,7 @@ h1 > .header-label {
 
 .paragraph.has-label {
   padding-left: 0.4rem;
-  border-left: 2px solid rgba(var(--colors-baltic-60));
+  border-left: 2px solid var(--palette-baltic-60);
 }
 
 .paragraph.has-label:has(> .labels > .label--new) {
@@ -94,8 +94,8 @@ h2 > .flex-label {
   /* align-items: center; */
   flex-shrink: 0;
   border-radius: 9999px;
-  background: rgba(var(--colors-baltic-50));
-  color: rgba(var(--colors-baltic-10));
+  background: var(--palette-baltic-50);
+  color: var(--palette-baltic-10);
   font-weight: 600;
   font-size: var(--label-title-font-size);
   font-style: normal;
@@ -108,14 +108,14 @@ h2 > .flex-label {
 
 span.label--core,
 span.label--apoc-core {
-  background: rgba(var(--colors-baltic-20));
-  color: rgba(var(--colors-baltic-70));
+  background: var(--palette-baltic-20);
+  color: var(--palette-baltic-70);
 }
 
 span.label--full,
 span.label--apoc-full {
-  background: rgba(var(--colors-forest-15));
-  color: rgba(var(--colors-forest-50));
+  background: var(--palette-forest-15);
+  color: var(--palette-forest-50);
 }
 
 span.label--procedure {
@@ -124,13 +124,13 @@ span.label--procedure {
 }
 
 span.label--function {
-  background: rgba(var(--colors-lavender-15));
-  color: rgba(var(--colors-lavender-50));
+  background: var(--palette-lavender-15);
+  color: var(--palette-lavender-50);
 }
 
 span.label--current {
-  background: rgba(var(--colors-baltic-50));
-  color: rgba(var(--colors-baltic-10));
+  background: var(--palette-baltic-50);
+  color: var(--palette-baltic-10);
 }
 
 span.label--free,
@@ -146,8 +146,8 @@ span.label--not-on-aura {
 
 span.label--aura-db-enterprise,
 span.label--aura-db-dedicated {
-  background: rgba(var(--colors-baltic-50));
-  color: rgba(var(--colors-baltic-10));
+  background: var(--palette-baltic-50);
+  color: var(--palette-baltic-10);
 }
 
 span.label--aura,
@@ -155,14 +155,14 @@ span.label--enterprise-only,
 span.label--professional,
 span.label--enterprise,
 span.label--enterprise-edition {
-  background: rgba(var(--colors-baltic-50));
-  color: rgba(var(--colors-baltic-10));
+  background: var(--palette-baltic-50);
+  color: var(--palette-baltic-10);
 }
 
 span.label--default,
 span.label--recommended {
-  background: rgba(var(--theme-light-palette-primary-bg-strong));
-  color: rgba(var(--theme-light-palette-primary-bg-weak));
+  background: var(--theme-light-color-primary-bg-strong);
+  color: var(--theme-light-color-primary-bg-weak);
 }
 
 span.label--added,
@@ -188,7 +188,7 @@ span.label--no,
 span.label.not-available,
 span.label--removed {
   background: var(--warning-color);
-  color: var(--warning-background-color);
+  color: light-dark(var(--warning-background-color), var(--dark--warning-background-color));
 }
 
 span.label--admin-only,
@@ -212,8 +212,8 @@ span.label--unix,
 span.label--mac-os,
 span.label--linux,
 span.label--windows {
-  background: rgba(var(--colors-baltic-70));
-  color: rgba(var(--colors-neutral-10));
+  background: var(--palette-baltic-70);
+  color: var(--palette-neutral-10);
 }
 
 span.label--syntax,
@@ -224,18 +224,18 @@ span.label--cypher {
 }
 
 span.label--cluster-member-core {
-  background: rgba(var(--colors-baltic-15));
-  color: rgba(var(--colors-baltic-50));
+  background: var(--palette-baltic-15);
+  color: var(--palette-baltic-50);
 }
 
 span.label--cluster-member-read-replica {
-  background: rgba(var(--colors-forest-15));
-  color: rgba(var(--colors-forest-50));
+  background: var(--palette-forest-15);
+  color: var(--palette-forest-50);
 }
 
 span.label--cluster-member-single {
-  background: rgba(var(--colors-lemon-10));
-  background: rgba(var(--colors-lemon-60));
+  background: var(--palette-lemon-10);
+  background: var(--palette-lemon-60);
 }
 
 span.label--labs {
@@ -244,7 +244,7 @@ span.label--labs {
 
 span.label--labs-label {
   background: var(--color-labs);
-  color: rgba(var(--colors-neutral-10));
+  color: var(--palette-neutral-10);
 }
 
 span.label--graph-academy {

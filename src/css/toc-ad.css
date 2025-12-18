@@ -43,7 +43,7 @@
 }
 
 .toc .toc-ad .toc-ad-title {
-  color: rgba(var(--colors-neutral-75));
+  color: rgba(var(--palette-neutral-75));
   font-size: 16px;
   margin: 12px 0 !important;
   padding: 0 !important;
@@ -51,20 +51,20 @@
 }
 
 .toc .toc-ad-description {
-  color: rgba(var(--colors-neutral-75));
+  color: rgba(var(--palette-neutral-75));
   margin: 12px 0 18px;
   font-size: 14px;
 }
 
 .toc .toc-ad-underline {
-  color: rgba(var(--colors-baltic-50));
+  color: rgba(var(--palette-baltic-50));
   font-weight: 600;
 }
 
 .toc .toc-ad-underline-button,
 .toc .toc-ad .button {
   border-radius: 0.25rem;
-  background-color: rgba(var(--colors-baltic-50));
+  background-color: rgba(var(--palette-baltic-50));
   color: var(--color-white);
   display: inline-block;
   padding: 8px 24px;
@@ -72,7 +72,7 @@
 }
 
 .doc .ad {
-  border: 1px solid rgba(var(--colors-neutral-30));
+  border: 1px solid rgba(var(--palette-neutral-30));
   border-radius: 0.5rem;
   background: var(--color-white);
   margin: 2rem -1rem 0;
@@ -82,14 +82,14 @@
 }
 
 .doc .ad h2 {
-  color: rgba(var(--colors-neutral-50));
+  color: rgba(var(--palette-neutral-50));
   font-size: 0.8rem !important;
   text-transform: uppercase;
   margin-top: 0;
 }
 
 .doc .ad h2 a {
-  color: rgba(var(--colors-neutral-50));
+  color: rgba(var(--palette-neutral-50));
 }
 
 .doc .ad .anchor {
