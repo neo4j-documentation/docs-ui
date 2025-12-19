@@ -94,13 +94,13 @@ body {
   width: 104px;
 }
 
-@media (prefers-color-scheme: dark) { 
+@media (prefers-color-scheme: dark) {
   .navbar-logo-light {
     display: none;
   }
 }
 
-@media (prefers-color-scheme: light) { 
+@media (prefers-color-scheme: light) {
   .navbar-logo-dark {
     display: none;
   }
