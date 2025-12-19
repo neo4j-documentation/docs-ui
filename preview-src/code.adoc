@@ -1,4 +1,5 @@
 = Code blocks
+:page-theme: docs
 
 
 == Code with title

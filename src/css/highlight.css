@@ -1,81 +1,113 @@
 /*! Adapted from the GitHub style by Vasily Polovnyov <vast@whiteants.net> */
 .hljs-comment,
-.hljs-quote {
-  color: rgba(var(--palette-neutral-60));
+.hljs .token.comment,
+.hljs-quote,
+.hljs .token.quote {
+  color: light-dark(var(--code-light-comment), var(--code-dark-comment));
   font-style: italic;
 }
 
 .hljs-keyword,
+.hljs .token.keyword,
 .hljs-selector-tag,
-.hljs-subst {
-  color: rgba(var(--palette-neutral-60));
+.hljs .token.selector-tag,
+.hljs-subst,
+.hljs .token.subst {
+  color: light-dark(var(--code-light-keyword), var(--code-dark-keyword));
   font-weight: var(--monospace-font-weight-bold);
 }
 
 .hljs-number,
+.hljs .token.number,
 .hljs-literal,
+.hljs .token.literal,
 .hljs-variable,
+.hljs .token.variable,
 .hljs-template-variable,
-.hljs-tag .hljs-attr {
-  color: rgba(var(--palette-baltic-60));
+.hljs .token.template-variable,
+.hljs-tag,
+.hljs .token.tag .hljs-attr,
+.hljs .token.attr {
+  color: light-dark(var(--code-light-number-literal), var(--code-dark-number-literal));
 }
 
 .hljs-string,
-.hljs-doctag {
-  color: rgba(var(--palette-forest-50));
+.hljs .token.string,
+.hljs-doctag,
+.hljs .token.doctag {
+  color: light-dark(var(--code-light-string-literal), var(--code-dark-string-literal));
 }
 
 .hljs-title,
+.hljs .token.title,
 .hljs-section,
-.hljs-selector-id {
-  color: rgba(var(--palette-lavender-60));
+.hljs .token.section,
+.hljs-selector-id,
+.hljs .token.selector-id {
+  color: light-dark(var(--code-light-title), var(--code-dark-title));
   font-weight: var(--monospace-font-weight-bold);
 }
 
-.hljs-subst {
+.hljs-subst,
+.hljs .token.subst {
   font-weight: normal;
 }
 
 .hljs-type,
-.hljs-class .hljs-title {
-  color: rgba(var(--palette-baltic-60));
+.hljs .token.type,
+.hljs-class,
+.hljs .token.class .hljs-title,
+.hljs .token.title {
+  color: light-dark(var(--code-light-keyword), var(--code-dark-keyword));
   font-weight: var(--monospace-font-weight-bold);
 }
 
 .hljs-tag,
+.hljs .token.tag,
 .hljs-name,
-.hljs-attribute {
-  color: rgba(var(--palette-lavender-60));
+.hljs .token.name,
+.hljs-attribute,
+.hljs .token.attribute {
+  color: light-dark(var(--code-light-property), var(--code-dark-property));
   font-weight: normal;
 }
 
 .hljs-regexp,
-.hljs-link {
-  color: rgba(var(--palette-forest-50));
+.hljs .token.regexp,
+.hljs-link,
+.hljs .token.link {
+  color: light-dark(var(--code-light-keyword), var(--code-dark-keyword));
 }
 
-.hljs-operator {
-  color: rgba(var(--palette-neutral-60));
+.hljs-operator,
+.hljs .token.operator {
+  color: light-dark(var(--code-light-operator), var(--code-dark-operator));
 }
 
 .hljs-symbol,
-.hljs-bullet {
-  color: var(--color-indigo-800);
+.hljs .token.symbol,
+.hljs-bullet,
+.hljs .token.bullet {
+  color: light-dark(var(--code-light-label), var(--code-dark-label));
 }
 
-.hljs-built_in,
-.hljs-builtin-name {
-  color: rgba(var(--palette-baltic-60));
+.hljs-built,
+.hljs .token.built_in,
+.hljs-builtin-name,
+.hljs .token.builtin-name {
+  color: light-dark(var(--theme-light-color-neutral-text-default), var(--theme-dark-color-neutral-text-default));
+  font-weight: var(--monospace-font-weight-bold);
 }
 
-.hljs-meta {
-  color: rgba(var(--palette-neutral-60));
+.hljs-meta,
+.hljs .token.meta {
+  color: light-dark(var(--theme-light-color-neutral-text-default), var(--theme-dark-color-neutral-text-default));
   /* font-weight: var(--monospace-font-weight-bold); */
 }
 
 .language-shell,
 .language-cypher-shell {
-  color: rgba(var(--palette-neutral-60));
+  color: light-dark(var(--theme-light-color-neutral-text-default), var(--theme-dark-color-neutral-text-default));
 }
 
 .language-shell > .bash,
@@ -84,27 +116,33 @@
 }
 
 .language-shell > .hljs-meta,
-.language-cypher-shell > .hljs-meta {
-  color: var(--color-indigo-800);
+.language-shell > .hljs .token.meta,
+.language-cypher-shell > .hljs-meta,
+.language-cypher-shell > .hljs .token.meta {
+  color: light-dark(var(--color-lavender-50), var(--dark--color-lavender-20));
   user-select: none;
 }
 
 .language-shell .bash {
-  color: rgba(var(--palette-neutral-80));
+  color: light-dark(var(--theme-light-color-neutral-text-default), var(--theme-dark-color-neutral-text-default));
 }
 
-.hljs-deletion {
-  background: rgba(var(--palette-neutral-20));
+.hljs-deletion,
+.hljs .token.deletion {
+  color: light-dark(var(--code-light-string-literal), var(--code-dark-string-literal));
 }
 
-.hljs-addition {
-  background: rgba(var(--palette-forest-30));
+.hljs-addition,
+.hljs .token.addition {
+  color: light-dark(var(--code-light-keyword), var(--code-dark-keyword));
 }
 
-.hljs-emphasis {
+.hljs-emphasis,
+.hljs .token.emphasis {
   font-style: italic;
 }
 
-.hljs-strong {
+.hljs-strong,
+.hljs .token.strong {
   font-weight: var(--monospace-font-weight-bold);
 }
