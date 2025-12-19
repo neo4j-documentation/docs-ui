@@ -28,7 +28,7 @@ body.docs .navbar-brand .navbar-item:first-child a {
 @media screen and (min-width: 1024px) {
   body.docs .navbar-end > .navbar-item,
   body.docs .navbar-end .navbar-link {
-    color: light-dark(var(--toc-heading-font-color), var(--dark--toc-heading-font-color));
+    color: light-dark(var(--navbar-font-color), var(--dark--navbar-font-color));
   }
 
   body.docs .navbar-end > a.navbar-item:hover,

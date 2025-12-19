@@ -172,13 +172,14 @@
   --dark--monospace-font-weight-bold: var(--font-weight-medium);
 
   /* base */
-  --dark--body-background-color: var(--theme-dark-color-neutral-bg-strong);
-  --dark--panel-background: var(--palette-neutral-70);
+  --dark--body-background: var(--theme-dark-color-neutral-bg-default);
+  --dark--panel-background: var(--theme-dark-color-neutral-bg-weak);
   --dark--panel-border-color: var(--palette-neutral-20);
-  --dark--scrollbar-thumb-color: var(--palette-neutral-15);
+  --dark--scrollbar-thumb-color: var(--theme-dark-color-neutral-bg-strong);
+
   /* navbar */
-  --dark--navbar-background: var(--palette-neutral-70);
-  --dark--navbar-font-color: var(--body-font-color);
+  --dark--navbar-background: var(--theme-dark-color-neutral-bg-weak);
+  --dark--navbar-font-color: var(--theme-dark-color-neutral-text-default);
   --dark--navbar-font-weight: 400;
   --dark--navbar_hover-background: transparent;
   --dark--navbar-button-background: var(--color-orange-600);
@@ -189,7 +190,7 @@
   --dark--navbar-menu-font-color: var(--body-font-color);
   --dark--navbar-menu_hover-background: transparent;
   --dark--navbar-top-border: var(--palette-neutral-20);
-  --dark--navbar-bottom-border: var(--palette-neutral-20);
+  --dark--navbar-bottom-border: var(--theme-dark-color-neutral-border-weak);
   --dark--navbar-dropdown-link: var(--palette-baltic-20);
   --dark--navbar-dropdown_hover-link: var(--palette-baltic-20);
   --dark--navbar-training-border: var(--color-developer);
@@ -198,51 +199,56 @@
   --dark--navbar-labs-border: var(--color-labs);
   --dark--navbar-kb-border: var(--color-kb);
 
+  /* banner */
+  --dark--warning-banner-color: var(var(--dark--body-font-color));
+
   /* nav */
-  --dark--nav-background: var(--palette-neutral-80);
-  --dark--nav-border-color: var(--palette-neutral-20);
+  --dark--nav-background: var(--theme-dark-color-neutral-bg-weak);
+  --dark--nav-border-color: var(--theme-dark-color-neutral-border-weak);
   --dark--nav-font-weight: 400;
   --dark--nav_active-font-weight: 400;
   --dark--nav-line-height: 1.2;
   --dark--nav-heading-font-color: var(--palette-neutral-55);
   --dark--nav-muted-color: var(--palette-neutral-40);
-  --dark--nav-panel-divider-color: var(--palette-neutral-20);
+  --dark--nav-panel-divider-color: var(--theme-dark-color-neutral-border-weak);
   --dark--nav-secondary-background: var(--palette-neutral-30);
   --dark--nav-bullet-color: var(--palette-neutral-40);
   --dark--dropdown-background-color: var(--theme-dark-color-neutral-bg-strong);
-  --dark--dropdown-border-color: var(--theme-dark-color-neutral-border-strong);
+  --dark--dropdown-border-color: var(--theme-dark-color-neutral-border-weak);
 
   /* toolbar */
   --dark--toolbar-background: var(--dark--panel-background);
-  --dark--toolbar-border-color: var(--palette-neutral-20);
-  --dark--toolbar-font-color: var(--palette-neutral-70);
+  --dark--toolbar-border-color: var(--theme-dark-color-neutral-border-weak);
+  --dark--toolbar-font-color: var(--theme-dark-color-neutral-bg-weak);
   --dark--toolbar-muted-color: var(--palette-neutral-50);
   --dark--page-version-menu-background: var(--palette-neutral-10);
   --dark--page-version-menu-border: var(--palette-neutral-30);
   --dark--page-version-missing-font-color: var(--palette-neutral-30);
 
   /* breadcrumbs */
-  --dark--breadcrumbs-color: var(--palette-baltic-20);
+  --dark--breadcrumbs-color: var(--theme-dark-color-neutral-text-default);
 
   /* toc */
   --dark--toc-font-color: var(--theme-dark-color-neutral-text-default);
-  --dark--toc-active-font-color: var(--palette-baltic-10);
+  --dark--toc-active-font-color: var(--palette-baltic-20);
   --dark--toc-active-background-color: var(--palette-baltic-10);
   --dark--toc-hover-background-color: var(--theme-dark-color-primary-hover-weak);
   --dark--toc-hover-color: var(--theme-dark-color-neutral-text-default);
   --dark--toc-heading-font-color: var(--palette-baltic-20);
-  --dark--toc-item-font-color: var(--palette-baltic-20);
-  --dark--toc-border-color: var(--palette-baltic-60);
+  --dark--toc-item-font-color: var(--theme-dark-color-neutral-text-default);
+  --dark--toc-border-color: var(--theme-dark-color-neutral-border-weak);
   --dark--toc-line-height: 1.4;
   --dark--toc-bullet-color: var(--palette-baltic-50);
 
   /* kb metadata */
-  --dark--kb-metadata-font-color: var(--palette-neutral-70);
+  --dark--kb-metadata-font-color: var(--theme-dark-color-neutral-bg-weak);
 
   /* admonitions
      NB: admonitions are dark text on light background
      to use the same colors on labels, reverse the
      background and color */
+
+  --dark--admonition-font-color: var(--theme-dark-color-neutral-text-inverse);
 
   /* NOTE */
   --dark--note-color: var(--theme-dark-color-primary-bg-strong);
@@ -300,7 +306,7 @@
   --dark--success-background-color: var(--theme-dark-color-success-bg-weak);
 
   /* doc */
-  --dark--doc-font-color: var(--theme-dark-color-neutral-text-weaker);
+  --dark--doc-font-color: var(--theme-dark-color-neutral-text-weak);
   --dark--doc-font-size: inherit;
   --dark--doc-font-size--desktop: var(--font-size-body-large);
   /* --doc-line-height: var(--space-7); */
@@ -328,7 +334,7 @@
 
   /* abstract */
   --dark--abstract-background: var(--palette-neutral-10);
-  --dark--abstract-font-color: var(--palette-neutral-70);
+  --dark--abstract-font-color: var(--theme-dark-color-neutral-bg-weak);
   --dark--abstract-border-color: var(--panel-border-color);
   --dark--admonition-background: var(--panel-background);
   --dark--admonition-label-font-weight: var(--body-font-weight-bold);
@@ -337,23 +343,26 @@
   --dark--caption-font-weight: var(--body-font-weight-bold);
 
   /* code */
-  --dark--code-border-color: var(--dark--body-font-color);
+  --dark--code-border-color: var(--theme-dark-color-neutral-border-weak);
   --dark--code-header-background: var(--theme-dark-color-neutral-bg-weak);
   --dark--code-header-font-color: var(--dark--body-font-color);
   --dark--code-header-font-size: var(--font-size-body-medium);
-  --dark--code-background: var(--theme-color-neutral-bg-on-bg-weak);
+  --dark--code-background: var(--theme-dark-color-neutral-bg-on-bg-weak);
   --dark--code-result-background: var(--theme-dark-color-neutral-bg-default);
   --dark--code-result-font-color: var(--theme-dark-color-neutral-text-default);
   --dark--code-font-color: var(--theme-dark-color-neutral-text-default);
-  --dark--code-button-background: var(--palette-neutral-70);
+  --dark--code-button-background: var(--theme-dark-color-neutral-bg-weak);
   --dark--code-button-active-background: var(--palette-neutral-60);
   --dark--code-button-disabled-background: var(--palette-neutral-80);
-  --dark--code-button-font-color: var(--palette-neutral-70);
+  --dark--code-button-font-color: var(--theme-dark-color-neutral-bg-weak);
   --dark--inline-code-background: var(--theme-dark-color-neutral-bg-strong);
   --dark--inline-code-font-color: var(--dark--body-font-color);
   --dark--pre-background: var(--panel-background);
   --dark--pre-border-color: var(--panel-border-color);
-  --dark--pre-annotation-font-color: var(--palette-neutral-70);
+  --dark--pre-annotation-font-color: var(--theme-dark-color-neutral-bg-weak);
+  --dark--code-copy-success-border: var(--theme-dark-color-success-border-strong);
+  --dark--code-copy-success-background: var(--theme-dark-color-success-bg-strong);
+  --dark--code-copy-success-color: var(--theme-dark-color-neutral-text-inverse);
 
   /* examples */
   --dark--example-header-background: var(--theme-dark-color-neutral-bg-default);
@@ -362,18 +371,30 @@
   --dark--example-border-color: var(--theme-dark-color-neutral-bg-strong);
 
   /* quotes */
-  --dark--quote-background: var(--theme-color-neutral-bg-on-bg-weak);
+  --dark--quote-background: var(--theme-dark-color-neutral-bg-on-bg-weak);
   --dark--quote-border-color: var(--theme-dark-color-neutral-bg-strong);
   --dark--quote-font-color: var(--theme-dark-color-neutral-text-default);
   --dark--quote-attribution-font-color: var(--theme-dark-color-neutral-text-default);
   --dark--sidebar-background: var(--theme-dark-color-neutral-bg-strong);
 
   /* tables */
-  --dark--table-border-color: var(--dark--panel-border-color);
-  --dark--table-header-color: var(--theme-dark-color-neutral-bg-on-bg-weak);
-  --dark--table-stripe-background: var(--theme-dark-color-neutral-bg-weak);
+  --dark--table-border-color: var(--theme-dark-color-neutral-bg-strong);
+  --dark--table-header-color: var(--theme-dark-color-neutral-bg-weak);
+  --dark--table-stripe-background: var(--theme-dark-color-neutral-bg-on-bg-weak);
   --dark--kbd-background: var(--panel-background);
   --dark--kbd-border-color: var(--palette-neutral-40);
+
+  /* tabbed sections */
+  --dark--tabbed-section-border-color: var(--color-docs);
+  --dark--tabbed-section-background: var(--theme-dark-color-neutral-bg-on-bg-weak);
+  --dark--tabbed-section-tabs-border-color: var(--theme-dark-color-neutral-border-strong);
+  /* --dark--tabbed-section-tab-font-color: var(--dark--body-font-color); */
+  --dark--tabbed-section-tab-hover-background: var(--theme-dark-color-neutral-border-strong);
+  --dark--tabbed-section-tab-active-background: var(--theme-dark-color-primary-bg-strong);
+  --dark--tabbed-section-tab-active-font-color: var(--theme-dark-color-primary-bg-strong);
+
+  /* images */
+  --dark--image-opacity: 0.9;
 
   /* roles */
   --dark--deprecated-color: var(--theme-dark-color-danger-bg-strong);

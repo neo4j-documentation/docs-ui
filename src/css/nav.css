@@ -21,7 +21,7 @@
     position: static;
     top: 0;
     visibility: visible;
-    border-right: 1px solid var(--nav-border-color);
+    border-right: 1px solid light-dark(var(--nav-border-color), var(--dark--nav-border-color));
   }
 }
 
@@ -390,8 +390,8 @@ html.is-clipped--nav {
 }
 
 .is-current-page.is-active > a {
-  background-color: light-dark(rgba(var(--palette-baltic-10)), rgba(var(--dark--palette-baltic-10)));
-  color: light-dark(var(--color-docs), var(--dark--color-docs));
+  background-color: light-dark(var(--toc-hover-background-color), var(--dark--toc-hover-background-color));
+  color: light-dark(var(--toc-active-font-color), var(--dark--toc-active-font-color));
 }
 
 .is-current-page.is-active > a::before {
@@ -401,7 +401,7 @@ html.is-clipped--nav {
   position: absolute;
   left: 0;
   top: 0;
-  background-color: var(--color-docs);
+  background-color: light-dark(var(--toc-active-font-color), var(--dark--toc-active-font-color));
   border-radius: 4px;
 }
 

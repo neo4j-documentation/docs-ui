@@ -4,6 +4,7 @@
   margin: var(--doc-margin);
   max-width: var(--doc-max-width);
   padding: 0 1rem 2rem;
+  color: light-dark(var(--doc-font-color), var(--dark--doc-font-color));
 }
 
 body {
@@ -296,14 +297,14 @@ body {
 }
 
 .doc table.tableblock thead th {
-  border-bottom: 2.5px solid var(--table-border-color);
+  border-bottom: 2.5px solid light-dark(var(--table-border-color), var(--dark--table-border-color));
   padding: 0.5rem;
 }
 
 .doc table.tableblock > tbody > tr > td,
 .doc table.tableblock > :not(thead) th {
-  border-top: 1px solid var(--table-border-color);
-  border-bottom: 1px solid var(--table-border-color);
+  border-top: 1px solid light-dark(var(--table-border-color), var(--dark--table-border-color));
+  border-bottom: 1px solid light-dark(var(--table-border-color), var(--dark--table-border-color));
   padding: 0.5rem;
 }
 
@@ -384,7 +385,7 @@ body {
 }
 
 .doc .admonitionblock td.icon i {
-  color: light-dark(rgba(var(--colors-neutral-15)), rgba(var(--dark--colors-neutral-70)));
+  color: light-dark(rgba(var(--admonition-font-color)), rgba(var(--dark--admonition-font-color)));
   align-items: center;
   border-radius: 9999px;
   display: inline-flex;
@@ -409,26 +410,31 @@ body {
 .doc .admonitionblock td.icon i.icon-note {
   background-color: light-dark(var(--note-color), var(--dark--note-background-color));
   border: 1px solid light-dark(var(--note-border-color), var(--dark--note-border-color));
+  color: light-dark(var(--admonition-font-color), var(--dark--note-color));
 }
 
 .doc .admonitionblock td.icon i.icon-tip {
   background-color: light-dark(var(--tip-color), var(--dark--tip-background-color));
   border: 1px solid light-dark(var(--tip-border-color), var(--dark--tip-border-color));
+  color: light-dark(var(--admonition-font-color), var(--dark--tip-color));
 }
 
 .doc .admonitionblock td.icon i.icon-important {
   background-color: light-dark(var(--important-color), var(--dark--important-background-color));
   border: 1px solid light-dark(var(--important-border-color), var(--dark--important-border-color));
+  color: light-dark(var(--admonition-font-color), var(--dark--important-color));
 }
 
 .doc .admonitionblock td.icon i.icon-caution {
   background-color: light-dark(var(--caution-color), var(--dark--caution-background-color));
   border: 1px solid light-dark(var(--caution-border-color), var(--dark--caution-border-color));
+  color: light-dark(var(--admonition-font-color), var(--dark--caution-color));
 }
 
 .doc .admonitionblock td.icon i.icon-warning {
   background-color: light-dark(var(--warning-color), var(--dark--warning-background-color));
   border: 1px solid light-dark(var(--warning-border-color), var(--dark--warning-border-color));
+  color: light-dark(var(--admonition-font-color), var(--dark--warning-color));
 }
 
 /* admonition icon contents */
@@ -605,6 +611,15 @@ body {
 .doc .image > img {
   height: auto;
   max-width: 100%;
+  /* opacity: light-dark(var(--image-opacity), var(--dark--image-opacity)); */
+  opacity: var(--image-opacity);
+}
+
+@media (prefers-color-scheme: dark) {
+  .doc .imageblock img,
+  .doc .image > img {
+    opacity: var(--dark--image-opacity);
+  }
 }
 
 #preamble .abstract blockquote {
@@ -756,6 +771,11 @@ body {
   font-weight: 600;
 }
 
+.doc .listingblock {
+  border: 1px solid light-dark(var(--code-border-color), var(--dark--code-border-color));
+  border-radius: 0.5rem;
+}
+
 .doc .listingblock .content {
   position: relative;
 }
@@ -856,13 +876,12 @@ body {
   /* width: 100%; */
   height: 100%;
   padding: 1.5rem 0.5rem;
-  border-bottom-left-radius: 0.5rem;
-  border-bottom-right-radius: 0.5rem;
+  border-radius: 0.5rem;
 }
 
-.doc .listingblock:not(.has-title) pre.highlight {
+/* .doc .listingblock:not(.has-title) pre.highlight {
   border: 1px solid light-dark(var(--code-border-color), var(--dark--code-border-color));
-}
+} */
 
 /* NOTE assume pre.highlight contains code[data-lang] */
 .doc pre.highlight {
@@ -1267,10 +1286,10 @@ body {
 }
 
 .doc .tabbed {
-  background: var(--body-background);
+  /* background: var(--body-background); */
   padding: 0;
   margin: 0 -1rem 1.5rem;
-  border: 1px solid var(--color-docs);
+  border: 1px solid light-dark(var(--tabbed-section-border-color), var(--dark--tabbed-section-border-color));
   border-radius: 8px;
 }
 
@@ -1280,7 +1299,9 @@ body {
   margin: 0 1rem;
   padding: 0;
   gap: 1rem;
-  border-bottom: 1px solid rgba(var(--theme-light-palette-neutral-border-weak));
+  border-bottom: 1px solid light-dark(var(--tabbed-section-tabs-border-color), var(--dark--tabbed-section-tabs-border-color));
+  /* background: light-dark(var(--tabbed-section-tabs-background), var(--dark--tabbed-section-tabs-background)); */
+  border-radius: 8px 8px 0 0;
 }
 
 .doc .tabbed-tabs .tabbed-tab {
@@ -1295,6 +1316,10 @@ body {
   padding: 1rem;
 }
 
+.doc .tabbed-tabs .tabbed-tab--active {
+  color: light-dark(var(--tabbed-section-tab-active-font-color), var(--dark--tabbed-section-tab-active-font-color)) !important;
+}
+
 .doc .tabbed-tabs .tabbed-tab span.ndl-tab-underline {
   height: 3px;
   position: absolute;
@@ -1305,8 +1330,12 @@ body {
   border-top-right-radius: 9999px;
 }
 
+.doc .tabbed-tabs .tabbed-tab:not(.tabbed-tab--active):hover span.ndl-tab-underline {
+  background: light-dark(var(--tabbed-section-tab-hover-background), var(--dark--tabbed-section-tab-hover-background));
+}
+
 .doc .tabbed-tabs .tabbed-tab--active span.ndl-tab-underline {
-  background: var(--color-docs);
+  background: light-dark(var(--tabbed-section-tab-active-background), var(--dark--tabbed-section-tab-active-background));
 }
 
 .doc .tabbed-target {
