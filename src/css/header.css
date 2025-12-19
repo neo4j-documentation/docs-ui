@@ -23,8 +23,12 @@ body {
 
 .header-banner.warning-banner {
   background: light-dark(var(--warning-background-color), var(--dark--warning-background-color));
-  color: light-dark(var(--warning-color), var(--dark--warning-color));
+  color: light-dark(var(--warning-banner-color), var(--dark--warning-banner-color));
   box-shadow: 0 0 1px var(--warning-border-color);
+}
+
+.header-banner.warning-banner a {
+  color: light-dark(var(--warning-color), var(--dark--warning-color));
 }
 
 .header-banner span {
@@ -41,7 +45,7 @@ body {
   width: 100%;
   word-wrap: break-word;
   border-top: 4px solid var(--navbar-top-border);
-  border-bottom: 1px solid var(--navbar-bottom-border);
+  border-bottom: 1px solid light-dark(var(--navbar-bottom-border), var(--dark--navbar-bottom-border));
   z-index: var(--z-index-navbar);
   display: flex;
 }
@@ -49,6 +53,7 @@ body {
 .navbar a {
   text-decoration: none;
   font-weight: var(--navbar-font-weight);
+  color: light-dark(var(--navbar-font-color), var(--dark--navbar-font-color));
 }
 
 .navbar a.page-name-white {
@@ -87,6 +92,18 @@ body {
 .navbar-logo {
   height: 34px;
   width: 104px;
+}
+
+@media (prefers-color-scheme: dark) { 
+  .navbar-logo-light {
+    display: none;
+  }
+}
+
+@media (prefers-color-scheme: light) { 
+  .navbar-logo-dark {
+    display: none;
+  }
 }
 
 .navbar-theme {
@@ -383,7 +400,7 @@ body {
   }
 
   .docs.navbar-item.has-dropdown:hover::before {
-    border-bottom-color: var(--navbar-docs-border);
+    border-bottom-color: light-dark(var(--navbar-menu-border-color), var(--dark--navbar-menu-border-color));
   }
 
   .navbar-item.labs.has-dropdown:hover::before {
@@ -455,7 +472,7 @@ body {
 }
 
 .navbar-item.docs .navbar-dropdown {
-  border-top-color: var(--navbar-docs-border);
+  border-top-color: light-dark(var(--navbar-menu-border-color), var(--dark--navbar-menu-border-color));
 }
 
 .navbar-item.labs .navbar-dropdown {
@@ -482,7 +499,7 @@ body {
 }
 
 .project .project-name {
-  color: light-dark(var(--doc-font-color), var(--navbar-font-color));
+  color: light-dark(var(--navbar-font-color), var(--dark--navbar-font-color));
   font-weight: 600;
   font-size: calc(16 / var(--rem-base) * 1rem);
 }

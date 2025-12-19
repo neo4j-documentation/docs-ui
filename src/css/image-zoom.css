@@ -1,4 +1,12 @@
 .medium-zoom-overlay,
 img.medium-zoom-image {
   z-index: 1000;
+  background-color: light-dark(var(--body-background), var(--dark--body-background));
+}
+
+@media (prefers-color-scheme: dark) {
+  .medium-zoom-overlay,
+  img.medium-zoom-image {
+    opacity: var(--dark--image-opacity);
+  }
 }

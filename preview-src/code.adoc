@@ -1,5 +1,19 @@
 = Code blocks
 
+
+== Code with title
+
+.Code with title
+[source,java]
+----
+public class HelloWorld {
+    public static void main(String[] args) {
+        System.out.println("Hello, World!");
+    }
+}
+----
+
+
 == Copy Button
 
 The **Copy To Clipboard** button will appear on all code blocks:

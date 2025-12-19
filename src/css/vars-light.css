@@ -186,11 +186,11 @@
   --body-background: var(--palette-neutral-10);
   --panel-background: var(--palette-neutral-15);
   --panel-border-color: var(--palette-neutral-20);
-  --scrollbar-thumb-color: var(--palette-neutral-15);
+  --scrollbar-thumb-color: var(--theme-light-color-neutral-bg-strong);
   /* navbar */
-  --navbar-background: var(--palette-neutral-80);
+  --navbar-background: var(--theme-light-color-neutral-bg-weak);
   --hero-fade: var(--palette-neutral-50);
-  --navbar-font-color: var(--palette-neutral-15);
+  --navbar-font-color: var(--theme-light-color-neutral-text-default);
   --navbar-font-weight: 400;
   --navbar_hover-background: transparent;
   --navbar-button-background: var(--color-docs);
@@ -209,6 +209,9 @@
   --navbar-docs-border: var(--color-docs);
   --navbar-labs-border: var(--color-labs);
   --navbar-kb-border: var(--color-kb);
+
+  /* banner */
+  --warning-banner-color: var(--body-font-color);
 
   /* nav */
   --nav-background: var(--palette-neutral-15);
@@ -255,6 +258,8 @@
      NB: admonitions are dark text on light background
      to use the same colors on labels, reverse the
      background and color */
+
+  --admonition-font-color: var(--theme-light-color-neutral-text-inverse);
 
   /* NOTE */
   --note-color: var(--theme-light-color-primary-bg-strong);
@@ -324,7 +329,7 @@
   --success-background-color: var(--theme-light-color-success-bg-weak);
 
   /* doc */
-  --doc-font-color: var(--theme-light-color-neutral-text-weaker);
+  --doc-font-color: var(--theme-light-color-neutral-text-default);
   --doc-font-size: inherit;
   --doc-font-size--desktop: var(--font-size-body-large);
   /* --doc-line-height: var(--space-7); */
@@ -377,6 +382,9 @@
   --pre-background: var(--panel-background);
   --pre-border-color: var(--panel-border-color);
   --pre-annotation-font-color: var(--palette-neutral-70);
+  --code-copy-success-border: var(--theme-light-color-success-border-strong);
+  --code-copy-success-background: var(--theme-light-color-success-bg-strong);
+  --code-copy-success-color: var(--theme-light-color-neutral-text-inverse);
 
   /* examples */
   --example-header-background: var(--theme-light-color-neutral-bg-default);
@@ -395,6 +403,20 @@
   --table-stripe-background: var(--palette-neutral-15);
   --kbd-background: var(--panel-background);
   --kbd-border-color: var(--palette-neutral-40);
+
+
+  /* tabbed sections */
+  --tabbed-section-border-color: var(--color-docs);
+  --tabbed-section-background: var(--theme-light-color-neutral-bg-on-bg-weak);
+  --tabbed-section-tabs-border-color: var(--theme-light-color-neutral-border-strong);
+  
+  /* --dark--tabbed-section-tab-font-color: var(--dark--body-font-color); */
+  --tabbed-section-tab-hover-background: var(--theme-light-color-neutral-border-strong);
+  --tabbed-section-tab-active-background: var(--theme-light-color-primary-bg-strong);
+  --tabbed-section-tab-active-font-color: var(--theme-light-color-primary-bg-strong);
+
+  /* images */
+  --image-opacity: 1;
 
   /* roles */
   --deprecated-color: var(--palette-lemon-80);
