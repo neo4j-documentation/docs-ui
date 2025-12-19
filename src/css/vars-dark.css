@@ -458,4 +458,14 @@
 
   /* Label colors */
   --dark--label-group-syntax: #e6e6e6;
+
+  /* docs home, hub etc */
+  --dark--hub-highlight-border: var(--palette-baltic-30);
+  --dark--hub-highlight-background: var(--palette-baltic-20);
+  --dark--hub-ga-card-background: var(--theme-dark-color-success-bg-weak);
+  --dark--hub-ga-border-color: var(--theme-dark-color-success-border-strong);
+
+  /* cheat sheet */
+  --dark--cheat-sheet-example-background: var(--theme-dark-color-neutral-bg-default);
+  --dark--cheat-sheet-example-border-color: var(--theme-dark-color-neutral-border-weak);
 }

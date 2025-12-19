@@ -192,7 +192,7 @@ span.label--no,
 span.label.not-available,
 span.label--removed {
   background: var(--warning-color);
-  color: light-dark(var(--warning-background-color), var(--dark--warning-background-color));
+  color: var(--warning-background-color);
 }
 
 span.label--admin-only,

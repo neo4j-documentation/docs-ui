@@ -369,7 +369,7 @@
   --code-header-background: var(--theme-light-color-neutral-bg-strong);
   --code-header-font-color: var(--theme-light-color-neutral-text-default);
   --code-header-font-size: var(--font-size-body-medium);
-  --code-background: var(--theme-light-color-neutral-bg-default);
+  --code-background: var(--theme-light-color-neutral-bg-on-bg-weak);
   --code-result-background: var(--theme-light-color-neutral-bg-strong);
   --code-result-font-color: var(--theme-light-color-neutral-text-default);
   --code-font-color: var(--theme-light-color-neutral-text-default);
@@ -486,4 +486,14 @@
 
   /* Label colors */
   --label-group-syntax: #e6e6e6;
+
+  /* docs home, hub etc */
+  --hub-highlight-border: var(--palette-baltic-50);
+  --hub-highlight-background: var(--palette-baltic-30);
+  --hub-ga-card-background: var(--theme-light-color-success-bg-weak);
+  --hub-ga-border-color: var(--theme-light-color-success-border-strong);
+
+  /* cheat sheet */
+  --cheat-sheet-example-background: var(--theme-light-color-neutral-bg-weak);
+  --cheat-sheet-example-border-color: var(--theme-light-color-neutral-border-weak);
 }
