@@ -404,12 +404,11 @@
   --kbd-background: var(--panel-background);
   --kbd-border-color: var(--palette-neutral-40);
 
-
   /* tabbed sections */
   --tabbed-section-border-color: var(--color-docs);
   --tabbed-section-background: var(--theme-light-color-neutral-bg-on-bg-weak);
   --tabbed-section-tabs-border-color: var(--theme-light-color-neutral-border-strong);
-  
+
   /* --dark--tabbed-section-tab-font-color: var(--dark--body-font-color); */
   --tabbed-section-tab-hover-background: var(--theme-light-color-neutral-border-strong);
   --tabbed-section-tab-active-background: var(--theme-light-color-primary-bg-strong);
