@@ -72,9 +72,9 @@
 }
 
 .doc .ad {
-  border: 1px solid rgba(var(--palette-neutral-30));
+  border: 1px solid light-dark(var(--toc-ad-border-color), var(--dark--toc-ad-border-color));
   border-radius: 0.5rem;
-  background: var(--color-white);
+  background: light-dark(var(--toc-ad-background), var(--dark--toc-ad-background));
   margin: 2rem -1rem 0;
   padding: 1rem;
   position: relative;
@@ -82,14 +82,14 @@
 }
 
 .doc .ad h2 {
-  color: rgba(var(--palette-neutral-50));
+  color: light-dark(var(--toc-ad-title-color), var(--dark--toc-ad-title-color));
   font-size: 0.8rem !important;
   text-transform: uppercase;
   margin-top: 0;
 }
 
 .doc .ad h2 a {
-  color: rgba(var(--palette-neutral-50));
+  color: light-dark(var(--toc-ad-link-color), var(--dark--toc-ad-link-color));
 }
 
 .doc .ad .anchor {

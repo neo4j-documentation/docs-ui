@@ -152,11 +152,11 @@
 
   /* theme accent colors */
   --dark--color-developer: var(--palette-forest-40);
-  --dark--color-labs: var(--palette-lavender-50);
-  --dark--color-docs: var(--palette-baltic-50);
-  --dark--color-kb: var(--palette-lavender-50);
-  --dark--color-training: var(--palette-hibiscus-50);
-  --dark--color-graphgists: var(--palette-lavender-50);
+  --dark--color-labs: var(--palette-lavender-20);
+  --dark--color-docs: var(--palette-baltic-20);
+  --dark--color-kb: var(--palette-lavender-20);
+  --dark--color-training: var(--palette-hibiscus-20);
+  --dark--color-graphgists: var(--palette-lavender-20);
 
   /* fonts */
   --dark--rem-base: 18; /* used to compute rem value from desired pixel value (e.g., calc(18 / var(--rem-base) * 1rem) = 18px) */
@@ -195,7 +195,7 @@
   --dark--navbar-dropdown_hover-link: var(--palette-baltic-20);
   --dark--navbar-training-border: var(--color-developer);
   --dark--navbar-developer-border: var(--color-developer);
-  --dark--navbar-docs-border: var(--color-docs);
+  --dark--navbar-docs-border: var(--dark--color-docs);
   --dark--navbar-labs-border: var(--color-labs);
   --dark--navbar-kb-border: var(--color-kb);
 
@@ -294,7 +294,7 @@
   --dark--neutral-background-color: var(--theme-dark-color-neutral-bg-default);
 
   /* feedback */
-  --dark--feedback-color: var(--color-docs);
+  --dark--feedback-color: var(--dark--color-docs);
   --dark--feedback-background-color: var(--theme-dark-color-primary-bg-weak);
   --dark--feedback-positive-color: var(--theme-dark-color-success-bg-weak);
   --dark--feedback-positive-background-color: var(--theme-dark-color-success-bg-strong);
@@ -333,18 +333,23 @@
   --dark--link_unresolved-font-color: var(--important-color);
 
   /* abstract */
-  --dark--abstract-background: var(--palette-neutral-10);
-  --dark--abstract-font-color: var(--theme-dark-color-neutral-bg-weak);
-  --dark--abstract-border-color: var(--panel-border-color);
-  --dark--admonition-background: var(--panel-background);
+  --dark--abstract-background: var(--theme-dark-color-neutral-bg-on-bg-weak);
+  --dark--abstract-font-color: var(--theme-dark-body-font-color);
+  --dark--abstract-border-color: var(--palette-baltic-20);
+  --dark--admonition-background: var(--dark--panel-background);
   --dark--admonition-label-font-weight: var(--body-font-weight-bold);
   --dark--caption-background: var(--theme-dark-color-neutral-bg-on-bg-weak);
   --dark--caption-font-color: var(--theme-dark-color-neutral-text-default);
   --dark--caption-font-weight: var(--body-font-weight-bold);
 
+  /* toc ad */
+  --dark--toc-ad-border-color: var(--palette-baltic-20);
+  --dark--toc-ad-background: var(--theme-dark-color-neutral-bg-on-bg-weak);
+  --dark--toc-ad-title-color: var(--palette-baltic-20);
+
   /* code */
   --dark--code-border-color: var(--theme-dark-color-neutral-border-weak);
-  --dark--code-header-background: var(--theme-dark-color-neutral-bg-weak);
+  --dark--code-header-background: var(--theme-dark-color-neutral-bg-on-bg-weak);
   --dark--code-header-font-color: var(--dark--body-font-color);
   --dark--code-header-font-size: var(--font-size-body-medium);
   --dark--code-background: var(--theme-dark-color-neutral-bg-on-bg-weak);
@@ -372,7 +377,7 @@
 
   /* quotes */
   --dark--quote-background: var(--theme-dark-color-neutral-bg-on-bg-weak);
-  --dark--quote-border-color: var(--theme-dark-color-neutral-bg-strong);
+  --dark--quote-border-color: var(--palette-baltic-20);
   --dark--quote-font-color: var(--theme-dark-color-neutral-text-default);
   --dark--quote-attribution-font-color: var(--theme-dark-color-neutral-text-default);
   --dark--sidebar-background: var(--theme-dark-color-neutral-bg-strong);
@@ -385,7 +390,7 @@
   --dark--kbd-border-color: var(--palette-neutral-40);
 
   /* tabbed sections */
-  --dark--tabbed-section-border-color: var(--color-docs);
+  --dark--tabbed-section-border-color: var(--dark--color-docs);
   --dark--tabbed-section-background: var(--theme-dark-color-neutral-bg-on-bg-weak);
   --dark--tabbed-section-tabs-border-color: var(--theme-dark-color-neutral-border-strong);
   /* --dark--tabbed-section-tab-font-color: var(--dark--body-font-color); */
@@ -411,6 +416,24 @@
   --dark--fabric-background-color: var(--palette-baltic-50);
   --dark--alpha-beta-color: var(--palette-marigold-10);
   --dark--alpha-beta-background-color: var(--palette-marigold-50);
+
+  /* feedback */
+  --dark--feedback-background: var(--theme-dark-color-primary-bg-weak);
+  --dark--feedback-color: var(--dark--color-docs);
+  --dark--feedback-border-color: var(--dark--color-docs);
+  --dark--feedback-negative-background: var(--theme-dark-color-primary-bg-weak);
+  --dark--feedback-negative-color: var(--dark--color-docs);
+  --dark--feedback-positive-background: var(--theme-dark-color-primary-bg-weak);
+  --dark--feedback-positive-color: var(--dark--color-docs);
+  --dark--feedback-textarea-background: var(--theme-dark-color-neutral-bg-on-bg-weak);
+  --dark--feedback-textarea-color: var(--dark--body-font-color);
+  --dark--feedback-primary-background: var(--theme-dark-color-neutral-bg-on-bg-weak);
+  --dark--feedback-primary-border-color: var(--theme-dark-color-neutral-border-weak);
+  --dark--feedback-primary-color: var(--dark--body-font-color);
+  --dark--feedback-secondary-background: var(--theme-dark-color-neutral-bg-strong);
+  --dark--feedback-secondary-border-color: var(--theme-dark-color-neutral-border-weak);
+  --dark--feedback-secondary-color: var(--dark--body-font-color);
+  --dark--feedback-input-background: var(--theme-dark-color-neutral-bg-strong);
 
   /* footer */
   --dark--footer-font-size: var(--font-size-body-medium);

@@ -97,8 +97,7 @@ body.docs .tooltip.tooltip--bottom::after {
 
 body.docs #preamble .abstract .title,
 body.docs #preamble .abstract blockquote {
-  border-left-color: var(--color-docs);
-  color: rgba(var(--palette-baltic-60));
+  border-left-color: light-dark(var(--abstract-border-color), var(--dark--abstract-border-color));
 }
 
 body.docs .tableblock .icon i:not(.fa) {

@@ -2,10 +2,12 @@
   position: fixed;
   bottom: 0;
   left: 1rem;
+  border: 1px solid light-dark(var(--feedback-border-color), var(--dark--feedback-border-color));
   border-top-left-radius: 0.25rem;
   border-top-right-radius: 0.25rem;
-  background: var(--feedback-background-color);
-  color: var(--feedback-color);
+  border-bottom: none;
+  background: light-dark(var(--feedback-background), var(--dark--feedback-background));
+  color: light-dark(var(--feedback-color), var(--dark--feedback-color));
   padding: 0.5rem 1rem;
   width: calc(var(--nav-width) - 2rem);
   font-size: 0.8rem;
@@ -14,21 +16,21 @@
 }
 
 .feedback.negative {
-  background: var(--feedback-negative-color);
-  color: var(--feedback-negative-background-color);
+  background: light-dark(var(--feedback-negative-background), var(--dark--feedback-negative-background));
+  color: light-dark(var(--feedback-negative-color), var(--dark--feedback-negative-color));
 }
 
 .feedback.negative line {
-  stroke: var(--feedback-negative-background-color);
+  stroke: light-dark(var(--feedback-negative-background), var(--dark--feedback-negative-background));
 }
 
 .feedback.negative a {
-  color: var(--feedback-negative-background-color);
+  color: light-dark(var(--feedback-negative-background), var(--dark--feedback-negative-background));
 }
 
 .feedback.positive {
-  background: var(--feedback-positive-color);
-  color: var(--feedback-positive-background-color);
+  background: light-dark(var(--feedback-positive-background), var(--dark--feedback-positive-background));
+  color: light-dark(var(--feedback-positive-color), var(--dark--feedback-positive-color));
 }
 
 .feedback .header {
@@ -62,12 +64,15 @@
   font-size: 0.9rem;
 }
 
-.feedback input {
+.feedback input.primary,
+.feedback input.secondary {
   margin-right: 0.5rem;
+  background: light-dark(var(--feedback-input-background), var(--dark--feedback-input-background));
 }
 
 .feedback .feedback-option {
   float: left;
+  margin-right: 0.5rem;
 }
 
 .feedback label {
@@ -81,12 +86,13 @@
 .feedback textarea {
   border-radius: 0.25rem;
   border: 1px solid var(--color-blue-300);
-  background: var(--color-white);
+  background: light-dark(var(--feedback-textarea-background), var(--dark--feedback-textarea-background));
   width: 100%;
   font-family: inherit;
   font-size: 0.7rem;
-  color: var(--color-blue-700);
+  color: light-dark(var(--feedback-textarea-color), var(--dark--feedback-textarea-color));
   padding: 0.5rem;
+  margin-top: 0.5rem;
 }
 
 .feedback path,
@@ -100,9 +106,9 @@
 .feedback .primary,
 .feedback .secondary {
   padding: 0.5rem 1rem;
-  background: var(--color-blue-100);
-  border: 1px solid var(--color-blue-700);
-  color: var(--color-blue-700);
+  background: light-dark(var(--feedback-primary-background), var(--dark--feedback-primary-background));
+  border: 1px solid light-dark(var(--feedback-primary-border-color), var(--dark--feedback-primary-border-color));
+  color: light-dark(var(--feedback-primary-color), var(--dark--feedback-primary-color));
   border-radius: 0.175rem;
   font-size: 0.8rem;
   font-family: inherit;
@@ -119,32 +125,9 @@
   outline: none;
 }
 
-.feedback .primary {
-  background: var(--color-blue-700);
-  color: var(--color-white);
-}
-
 .feedback.negative textarea:active,
 .feedback.negative textarea:focus {
   outline: none;
-}
-
-.feedback.negative .primary {
-  background: var(--color-red-700);
-  border-color: var(--color-red-700);
-  color: var(--color-white);
-}
-
-.feedback.negative .secondary {
-  background: var(--color-red-100);
-  border-color: var(--color-red-700);
-  color: var(--color-red-700);
-}
-
-.feedback.negative textarea {
-  background: var(--color-white);
-  border-color: var(--color-red-700);
-  color: var(--color-red-700);
 }
 
 .feedback .thank-you-positive,
