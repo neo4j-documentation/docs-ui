@@ -5,8 +5,8 @@
 
 .doc .listingblock .code-title,
 .doc .listingblock .code-inset {
-  padding: 0.5rem;
-  /* display: flex; */
+  /* padding: 0.5rem; */
+  display: flex;
 }
 
 .doc .listingblock .code-title {
@@ -16,7 +16,7 @@
 }
 
 .doc .code-header {
-  /* display: flex; */
+  display: flex;
 }
 
 .doc .code-header div {
@@ -30,13 +30,21 @@
 
 .doc .listingblock .code-title,
 .doc .listingblock .code-language {
+  display: flex;
+  flex-grow: 1;
   /* background: var(--code-header-background); */
   color: light-dark(var(--code-header-font-color), var(--dark--code-header-font-color));
   font-size: var(--code-header-font-size);
 }
 
-.doc .listingblock .code-header {
+.doc .listingblock.has-title .code-header {
   background: light-dark(var(--code-header-background), var(--dark--code-header-background));
+}
+
+.doc .listingblock .code-header {
+  display: flex;
+  padding: 0.5rem;
+  justify-content: flex-end;
   color: light-dark(var(--code-header-font-color), var(--dark--code-header-font-color));
   border-top-left-radius: 0.5rem;
   border-top-right-radius: 0.5rem;
@@ -97,13 +105,15 @@
   border-top-right-radius: 0.5rem;
   /* background: var(--pre-background); */
   color: light-dark(var(--code-header-font-color), var(--dark--code-header-font-color));
-  font-size: calc(12.5 / var(--rem-base) * 1rem);
-  position: absolute;
+  font-size: 12px;
+  /* position: absolute; */
   /* float: right; */
-  padding: 0.25rem 0.5rem;
+  /* padding: 0.5rem; */
   /* margin-left: -2rem; */
   z-index: 1;
-  right: 0;
+  display: flex;
+  align-self: center;
+  /* right: 0; */
 }
 
 .doc .code-inset .copy-success.hidden {
@@ -112,7 +122,8 @@
 
 .doc .code-inset .copy-success .btn {
   position: absolute;
-  right: -1rem;
+  right: 0;
+  top: 2.5rem;
   background: light-dark(var(--code-copy-success-background), var(--dark--code-copy-success-background));
   color: light-dark(var(--code-copy-success-color), var(--dark--code-copy-success-color)) !important;
   border: 1px solid light-dark(var(--code-copy-success-border), var(--dark--code-copy-success-border));
@@ -124,19 +135,9 @@
   z-index: 1;
 }
 
-.doc .code-inset .copy-success .btn::after {
-  width: 0;
-  height: 0;
-  position: absolute;
-  content: "";
-  display: block;
-  top: 0;
-  left: 50%;
-  margin-left: -0.25rem;
-  margin-top: -0.25rem;
-  border-left: 0.5rem solid transparent;
-  border-right: 0.5rem solid transparent;
-  border-bottom: 0.5rem solid light-dark(var(--code-copy-success-background), var(--dark--code-copy-success-background));
+.doc .listingblock.has-header:not(.has-title) pre {
+  margin-top: -2.25rem;
+  background: light-dark(var(--code-background), var(--dark--code-background));
 }
 
 .doc .code-footer {

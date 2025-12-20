@@ -364,6 +364,11 @@
   --caption-font-color: var(--palette-neutral-70);
   --caption-font-weight: var(--body-font-weight-bold);
 
+  /* toc ad */
+  --toc-ad-border-color: var(--palette-neutral-30);
+  --toc-ad-background: var(--color-white);
+  --toc-ad-title-color: var(--palette-neutral-50);
+
   /* code */
   --code-border-color: var(--body-font-color);
   --code-header-background: var(--theme-light-color-neutral-bg-strong);
@@ -439,6 +444,24 @@
 
   --label-title-font-size: calc(0.8 * var(--typography-label-font-size)); /* set label font size from ndl */
   --admonition-title-font-size: var(--typography-label-font-size); /* set admonitino font size from ndl */
+
+  /* feedback */
+  --feedback-background: var(--theme-light-color-primary-bg-weak);
+  --feedback-color: var(--color-docs);
+  --feedback-border-color: var(--color-docs);
+  --feedback-negative-background: var(--theme-light-color-primary-bg-weak);
+  --feedback-negative-color: var(--color-docs);
+  --feedback-positive-background: var(--theme-light-color-primary-bg-weak);
+  --feedback-positive-color: var(--color-docs);
+  --feedback-textarea-background: var(--color-white);
+  --feedback-textarea-color: var(--body-font-color);
+  --feedback-primary-background: var(--color-blue-100);
+  --feedback-primary-border-color: var(--color-blue-700);
+  --feedback-primary-color: var(--color-blue-700);
+  --feedback-secondary-background: var(--color-blue-100);
+  --feedback-secondary-border-color: var(--color-blue-700);
+  --feedback-secondary-color: var(--color-blue-700);
+  --feedback-input-background: var(--theme-light-color-neutral-bg-strong);
 
   /* footer */
   --footer-font-size: var(--font-size-body-medium);
