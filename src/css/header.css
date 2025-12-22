@@ -244,6 +244,33 @@ body {
   display: block;
 }
 
+.navbar-item.docs .navbar-dropdown.navbar-dropdown-narrow {
+  width: fit-content;
+}
+
+#theme-dropdown .navbar-item:hover {
+  cursor: pointer;
+  background: light-dark(var(--toc-hover-background-color), var(--dark--toc-hover-background-color));
+}
+
+#theme-dropdown .navbar-item {
+  margin: 0.25rem;
+  padding: 0.5rem 2.5rem;
+  border-radius: 0.5rem;
+  min-width: 200px;
+}
+
+#theme-dropdown .navbar-item.selected::before {
+  content: url("../img/ndl-icons/check.svg");
+  position: absolute;
+  left: 0.55rem;
+  font-size: 0.8rem;
+}
+
+html[style*="color-scheme: dark;"] #theme-dropdown .navbar-item.selected::before {
+  filter: invert(1) hue-rotate(180deg);
+}
+
 @media screen and (min-width: 1024px) {
   .navbar-dropdown {
     box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);

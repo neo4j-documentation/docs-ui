@@ -186,7 +186,7 @@
   --dark--navbar-button-border-color: var(--color-blue-800);
   --dark--navbar-button-font-color: var(--color-blue-100);
   --dark--navbar-menu-border-color: var(--theme-dark-color-neutral-border-strong);
-  --dark--navbar-menu-background: var(--theme-dark-color-neutral-bg-strong);
+  --dark--navbar-menu-background: var(--theme-dark-color-neutral-bg-weak);
   --dark--navbar-menu-font-color: var(--body-font-color);
   --dark--navbar-menu_hover-background: transparent;
   --dark--navbar-top-border: var(--palette-neutral-20);

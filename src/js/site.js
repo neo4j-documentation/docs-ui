@@ -1,3 +1,4 @@
+import './00-theme.js'
 import './01-nav'
 import './02-on-this-page'
 import './03-glossary'
