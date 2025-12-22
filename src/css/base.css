@@ -24,6 +24,7 @@ html {
 body {
   background: light-dark(var(--body-background), var(--dark--body-background));
   color: light-dark(var(--body-font-color), var(--dark--body-font-color));
+  transition: background 0.3s, color 0.3s;
   font-family: var(--body-font-family);
   line-height: var(--body-line-height);
   margin: 0;

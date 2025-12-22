@@ -122,7 +122,7 @@
 
 .doc .code-inset .copy-success .btn {
   position: absolute;
-  right: 0;
+  right: 0.25rem;
   top: 2.5rem;
   background: light-dark(var(--code-copy-success-background), var(--dark--code-copy-success-background));
   color: light-dark(var(--code-copy-success-color), var(--dark--code-copy-success-color)) !important;
@@ -135,9 +135,14 @@
   z-index: 1;
 }
 
+.doc .listingblock.has-header:not(.has-title) .code-inset .copy-success .btn {
+  top: 2rem;
+}
+
 .doc .listingblock.has-header:not(.has-title) pre {
-  margin-top: -2.25rem;
+  margin-top: calc(-2.25rem + 1px);
   background: light-dark(var(--code-background), var(--dark--code-background));
+  border-radius: 0.5rem;
 }
 
 .doc .code-footer {
