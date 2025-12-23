@@ -1,16 +1,17 @@
 .toc .toc-ad {
-  border: 1px solid #e2e3e5;
+  color: light-dark(var(--toc-ad-font-color), var(--dark--toc-ad-font-color));
+  border: 1px solid light-dark(var(--toc-ad-border-color), var(--dark--toc-ad-border-color));
   padding: 24px 24px 18px 18px;
   border-radius: 12px;
   margin: 2rem -0.5rem 0;
-  background: #fff url(../img/ad-blob.svg) no-repeat bottom right;
+  background: light-dark(var(--toc-ad-background), var(--dark--toc-ad-background)) url(../img/ad-blob.svg) no-repeat bottom right;
   background-size: cover;
 }
 
 .toc .toc-ad a {
   padding: 0 !important;
   border-left: 0 none !important;
-  color: #1a1b1d;
+  color: light-dark(var(--toc-ad-link-color), var(--dark--toc-ad-link-color)) !important;
 }
 
 .toc .toc-ad a:active,
@@ -43,7 +44,7 @@
 }
 
 .toc .toc-ad .toc-ad-title {
-  color: rgba(var(--palette-neutral-75));
+  color: light-dark(var(--toc-ad-font-color), var(--dark--toc-ad-font-color));
   font-size: 16px;
   margin: 12px 0 !important;
   padding: 0 !important;
@@ -51,21 +52,21 @@
 }
 
 .toc .toc-ad-description {
-  color: rgba(var(--palette-neutral-75));
+  color: light-dark(var(--toc-ad-font-color), var(--dark--toc-ad-font-color));
   margin: 12px 0 18px;
   font-size: 14px;
 }
 
 .toc .toc-ad-underline {
-  color: rgba(var(--palette-baltic-50));
+  color: light-dark(var(--toc-ad-font-color), var(--dark--toc-ad-font-color));
   font-weight: 600;
 }
 
 .toc .toc-ad-underline-button,
 .toc .toc-ad .button {
+  background: light-dark(var(--toc-ad-button-background), var(--dark--toc-ad-button-background));
+  color: light-dark(var(--toc-ad-button-font-color), var(--dark--toc-ad-button-font-color));
   border-radius: 0.25rem;
-  background-color: rgba(var(--palette-baltic-50));
-  color: var(--color-white);
   display: inline-block;
   padding: 8px 24px;
   font-weight: 600;
@@ -82,7 +83,7 @@
 }
 
 .doc .ad h2 {
-  color: light-dark(var(--toc-ad-title-color), var(--dark--toc-ad-title-color));
+  color: light-dark(var(--toc-ad-font-color), var(--dark--toc-ad-font-color));
   font-size: 0.8rem !important;
   text-transform: uppercase;
   margin-top: 0;

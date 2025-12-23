@@ -515,10 +515,10 @@ body.docs-ndl .banner .button a {
   /* margin-left: 24px; */
 }
 
-.banner .button:hover {
+/* .banner .button:hover {
   background: rgba(var(--banner-background-color));
   color: var(--palette-baltic-25);
-}
+} */
 
 .description2 {
   color: light-dark(var(--body-font-color), var(--dark--body-font-color));
@@ -560,11 +560,11 @@ body.docs-ndl .highlights .list a {
 body.docs-ndl .highlights .list a:hover,
 body.docs-ndl .highlights .list a:focus {
   text-decoration: none;
-  background-color: var(--toc-hover-background-color);
+  background-color: light-dark(var(--toc-hover-background-color), var(--dark--toc-hover-background-color));
 }
 
 body.docs-ndl .highlights .list ul li {
-  border-bottom: 1px solid rgba(var(--palette-neutral-20));
+  border-bottom: 1px solid light-dark(var(--hub-highlight-border), var(--dark--hub-highlight-border));
 }
 
 body.docs-ndl .widget.highlights .footer-link {

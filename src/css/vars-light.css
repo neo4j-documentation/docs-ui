@@ -7,155 +7,6 @@
   /* --palette-baltic-60: #014063; */
   /* --text-white: #F5F6F6; */
 
-  /* Picked from Neo4j Design System */
-  /* ToDo: use it directly from the Design System when avaiable instead of redefining here */
-  --colors-primary-10: #e6f8ff;
-  --colors-primary-20: #a3e2ff;
-  --colors-primary-30: #7ad1ff;
-  --colors-primary-40: #018bff;
-  --colors-primary-50: #0070d9;
-  --colors-primary-60: #0056b3;
-  --colors-primary-70: #002b66;
-  --colors-primary-default: #018bff;
-  --colors-secondary-10: #ffe6e9;
-  --colors-secondary-20: #ffb8c4;
-  --colors-secondary-30: #ff668a;
-  --colors-secondary-40: #ed1252;
-  --colors-secondary-50: #c70646;
-  --colors-secondary-60: #a1003b;
-  --colors-secondary-70: #7a0031;
-  --colors-secondary-default: #ed1252;
-  --colors-success-10: #e1faef;
-  --colors-success-20: #98edcb;
-  --colors-success-30: #44d4a4;
-  --colors-success-40: #00ba88;
-  --colors-success-50: #009471;
-  --colors-success-60: #006e58;
-  --colors-success-70: #00473b;
-  --colors-success-default: #00ba88;
-  --colors-warning-10: #fffbde;
-  --colors-warning-20: #fff4b5;
-  --colors-warning-30: #ffea8c;
-  --colors-warning-40: #ffde63;
-  --colors-warning-50: #d9b54a;
-  --colors-warning-60: #8c6a22;
-  --colors-warning-70: #664817;
-  --colors-warning-default: #ffde63;
-  --colors-blueberry-10: #e8ebf6;
-  --colors-blueberry-20: #c4cce9;
-  --colors-blueberry-30: #9dabd9;
-  --colors-blueberry-40: #768aca;
-  --colors-blueberry-50: #3557b4;
-  --colors-blueberry-60: #25459e;
-  --colors-blueberry-70: #0b297d;
-  --colors-blueberry-default: #0b297d;
-  --colors-mint-10: #f0fffa;
-  --colors-mint-20: #d1fff4;
-  --colors-mint-30: #a8ffee;
-  --colors-mint-40: #55f9e2;
-  --colors-mint-50: #3dd4c5;
-  --colors-mint-60: #2aada5;
-  --colors-mint-70: #116161;
-  --colors-mint-default: #55f9e2;
-  --body-font-color: var(--palette-neutral-75);
-
-  /* end: design system colors  */
-
-  --color-black: #000;
-  --color-white: var(--palette-neutral-10);
-  --color-grey-100: #f7fafc;
-  --color-grey-200: #edf2f7;
-  --color-grey-300: #e2e8f0;
-  --color-grey-400: #cbd5e0;
-  --color-grey-500: #a0aec0;
-  --color-grey-600: #718096;
-  --color-grey-700: #4a5568;
-  --color-grey-800: #2d3748;
-  --color-grey-900: #1a202c;
-  --color-red-100: #fff5f5;
-  --color-red-200: #fed7d7;
-  --color-red-300: #feb2b2;
-  --color-red-400: #fc8181;
-  --color-red-500: #f56565;
-  --color-red-600: #e53e3e;
-  --color-red-700: #c53030;
-  --color-red-800: #9b2c2c;
-  --color-red-900: #742a2a;
-  --color-orange-100: #fffaf0;
-  --color-orange-200: #feebc8;
-  --color-orange-300: #fbd38d;
-  --color-orange-400: #f6ad55;
-  --color-orange-500: #ed8936;
-  --color-orange-600: #dd6b20;
-  --color-orange-700: #c05621;
-  --color-orange-800: #9c4221;
-  --color-orange-900: #7b341e;
-  --color-yellow-100: #fffff0;
-  --color-yellow-200: #fefcbf;
-  --color-yellow-300: #faf089;
-  --color-yellow-400: #f6e05e;
-  --color-yellow-500: #ecc94b;
-  --color-yellow-600: #d69e2e;
-  --color-yellow-700: #b7791f;
-  --color-yellow-800: #975a16;
-  --color-yellow-900: #744210;
-  --color-green-100: #f0fff4;
-  --color-green-200: #c6f6d5;
-  --color-green-300: #9ae6b4;
-  --color-green-400: #68d391;
-  --color-green-500: #48bb78;
-  --color-green-600: #38a169;
-  --color-green-700: #2f855a;
-  --color-green-800: #276749;
-  --color-green-900: #22543d;
-  --color-teal-100: #e6fffa;
-  --color-teal-200: #b2f5ea;
-  --color-teal-300: #81e6d9;
-  --color-teal-400: #4fd1c5;
-  --color-teal-500: #38b2ac;
-  --color-teal-600: #319795;
-  --color-teal-700: #2c7a7b;
-  --color-teal-800: #285e61;
-  --color-teal-900: #234e52;
-  --color-blue-100: #ebf8ff;
-  --color-blue-200: #bee3f8;
-  --color-blue-300: #90cdf4;
-  --color-blue-400: #63b3ed;
-  --color-blue-500: #4299e1;
-  --color-blue-600: #3182ce;
-  --color-blue-700: #2b6cb0;
-  --color-blue-800: #2c5282;
-  --color-blue-900: #2a4365;
-  --color-indigo-100: #ebf4ff;
-  --color-indigo-200: #c3dafe;
-  --color-indigo-300: #a3bffa;
-  --color-indigo-400: #7f9cf5;
-  --color-indigo-500: #667eea;
-  --color-indigo-600: #5a67d8;
-  --color-indigo-700: #4c51bf;
-  --color-indigo-800: #434190;
-  --color-indigo-900: #3c366b;
-  --color-purple-100: #faf5ff;
-  --color-purple-200: #e9d8fd;
-  --color-purple-300: #d6bcfa;
-  --color-purple-400: #b794f4;
-  --color-purple-500: #9f7aea;
-  --color-purple-600: #805ad5;
-  --color-purple-700: #6b46c1;
-  --color-purple-800: #553c9a;
-  --color-purple-900: #44337a;
-  --color-pink-100: #fff5f7;
-  --color-pink-200: #fed7e2;
-  --color-pink-300: #fbb6ce;
-  --color-pink-400: #f687b3;
-  --color-pink-500: #ed64a6;
-  --color-pink-600: #d53f8c;
-  --color-pink-700: #b83280;
-  --color-pink-800: #97266d;
-  --color-pink-900: #702459;
-  --color-baltic-20: #8fe3e8;
-  --palette-baltic-30: #5db3bf;
-
   /* dark mode */
   --text-inverse: #1a1b1d;
 
@@ -163,6 +14,7 @@
   --color-developer: var(--palette-forest-45);
   --color-labs: var(--palette-lavender-45);
   --color-docs: var(--palette-baltic-50);
+  --color-docs-weak: var(--palette-baltic-55);
   --color-kb: var(--palette-lavender-45);
   --color-kb-weak: var(--palette-lavender-20);
   --color-training: var(--palette-hibiscus-50);
@@ -193,9 +45,13 @@
   --navbar-font-color: var(--theme-light-color-neutral-text-default);
   --navbar-font-weight: 400;
   --navbar_hover-background: transparent;
-  --navbar-button-background: var(--color-docs);
-  --navbar-button-border-color: var(--color-baltic-60);
-  --navbar-button-font-color: var(--color-white);
+  --button-background: var(--color-docs);
+  --button-border-color: var(--color-docs);
+  --button-font-color: var(--theme-light-color-neutral-text-inverse);
+  --hover-button-background: var(--color-docs-weak);
+  --hover-button-border-color: var(--color-docs);
+  --hover-button-font-color: var(--theme-light-color-neutral-text-inverse);
+  --navbar-menu-border-color: var(--theme-light-color-neutral-border-strong);
   --navbar-menu-border-color: var(--panel-border-color);
   --navbar-menu-background: var(--palette-neutral-10);
   --navbar-menu-font-color: var(--body-font-color);
@@ -365,9 +221,12 @@
   --caption-font-weight: var(--body-font-weight-bold);
 
   /* toc ad */
-  --toc-ad-border-color: var(--palette-neutral-30);
-  --toc-ad-background: var(--color-white);
-  --toc-ad-title-color: var(--palette-neutral-50);
+  --toc-ad-border-color: var(--theme-light-color-neutral-border-strong);
+  --toc-ad-background: var(--theme-light-color-neutral-bg-weak);
+  --toc-ad-font-color: var(--body-font-color);
+  --toc-ad-title-color: var(--body-font-color);
+  --toc-ad-button-background: var(--color-docs);
+  --toc-ad-button-font-color: var(--theme-light-color-neutral-text-inverse);
 
   /* code */
   --code-border-color: var(--body-font-color);
@@ -464,12 +323,13 @@
   --feedback-input-background: var(--theme-light-color-neutral-bg-strong);
 
   /* footer */
-  --footer-font-size: var(--font-size-body-medium);
+  --footer-background: var(--theme-dark-color-neutral-bg-default);
+  --footer-border-color: var(--theme-dark-color-neutral-bg-default);
+  --footer-font-color: var(--theme-light-color-neutral-text-inverse);
+  --footer-font-size: var(--typography-body-medium);
   --footer-line-height: var(--doc-line-height);
-  --footer-background: var(--color-black);
-  --footer-font-color: var(--palette-neutral-10);
-  --footer-link-font-color: var(--palette-neutral-10);
-  --footer-link_hover-font-color: var(--palette-neutral-20);
+  --footer-link-font-color: var(--theme-light-color-neutral-text-inverse);
+  --footer-link_hover-font-color: var(--theme-light-color-neutral-text-inverse);
 
   /* dimensions and positioning */
   --navbar-height: calc(68 / var(--rem-base) * 1rem);
@@ -505,7 +365,7 @@
   --z-index-navbar: 5000;
 
   /* landing page */
-  --landing-leading-background: var(--palette-neutral-20);
+  --landing-leading-background: var(--theme-light-color-neutral-bg-weak);
 
   /* Label colors */
   --label-group-syntax: #e6e6e6;

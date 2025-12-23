@@ -1076,8 +1076,9 @@ body {
 
 .doc .button {
   display: inline-block;
-  background: var(--color-docs);
-  color: light-dark(var(--color-white), var(--dark--color-white));
+  background: light-dark(var(--button-background), var(--dark--button-background));
+  color: light-dark(var(--button-font-color), var(--dark--button-font-color));
+  border: 1px solid light-dark(var(--button-border-color), var(--dark--button-border-color));
   padding: 0.5rem 2rem;
   border-radius: 0.25rem;
   margin-bottom: 2rem;
@@ -1085,8 +1086,12 @@ body {
 }
 
 .doc .button:hover {
-  background: rgba(var(--colors-baltic-60));
-  color: light-dark(var(--color-white), var(--dark--color-white));
+  background: light-dark(var(--hover-button-background), var(--dark--hover-button-background));
+  color: light-dark(var(--hover-button-font-color), var(--dark--hover-button-font-color));
+}
+
+.doc .button:hover a {
+  color: light-dark(var(--hover-button-font-color), var(--dark--hover-button-font-color));
 }
 
 .doc .button::after {
