@@ -101,27 +101,27 @@
   outline: none;
 }
 
-.toc .toc-menu a:hover {
+.toc .toc-menu ul a:hover {
   color: light-dark(var(--toc-hover-color), var(--dark--toc-hover-color));
   background: light-dark(var(--toc-hover-background-color), var(--dark--toc-hover-background-color));
 }
 
-.toc .toc-menu a.is-active {
+.toc .toc-menu ul a.is-active {
   border-left-color: light-dark(var(--link-font-color), var(--dark--link-font-color));
   color: light-dark(var(--link-font-color), var(--dark--link-font-color));
   /* color: var(--toc-active-font-color); */
 }
 
-.toc .toc-menu a.is-active::before {
+.toc .toc-menu ul a.is-active::before {
   background: light-dark(var(--toc-bullet-color), var(--dark--toc-bullet-color));
 }
 
-.toc .toc-menu a.is-active::before,
-.toc .toc-menu a:hover::before {
+.toc .toc-menu ul a.is-active::before,
+.toc .toc-menu ul a:hover::before {
   opacity: 1;
 }
 
-.sidebar.toc .toc-menu a:focus {
+.sidebar.toc .toc-menu ul a:focus {
   background: light-dark(var(--toc-hover-background-color), var(--dark--toc-hover-background-color));
 }
 

@@ -3,157 +3,11 @@
   /* --palette-baltic-50: #0A6190; */
   /* --palette-baltic-60: #014063; */
 
-  /* Picked from Neo4j Design System */
-  /* ToDo: use it directly from the Design System when avaiable instead of redefining here */
-  --dark--colors-primary-10: #e6f8ff;
-  --dark--colors-primary-20: #a3e2ff;
-  --dark--colors-primary-30: #7ad1ff;
-  --dark--colors-primary-40: #018bff;
-  --dark--colors-primary-50: #0070d9;
-  --dark--colors-primary-60: #0056b3;
-  --dark--colors-primary-70: #002b66;
-  --dark--colors-primary-default: #018bff;
-  --dark--colors-secondary-10: #ffe6e9;
-  --dark--colors-secondary-20: #ffb8c4;
-  --dark--colors-secondary-30: #ff668a;
-  --dark--colors-secondary-40: #ed1252;
-  --dark--colors-secondary-50: #c70646;
-  --dark--colors-secondary-60: #a1003b;
-  --dark--colors-secondary-70: #7a0031;
-  --dark--colors-secondary-default: #ed1252;
-  --dark--colors-success-10: #e1faef;
-  --dark--colors-success-20: #98edcb;
-  --dark--colors-success-30: #44d4a4;
-  --dark--colors-success-40: #00ba88;
-  --dark--colors-success-50: #009471;
-  --dark--colors-success-60: #006e58;
-  --dark--colors-success-70: #00473b;
-  --dark--colors-success-default: #00ba88;
-  --dark--colors-warning-10: #fffbde;
-  --dark--colors-warning-20: #fff4b5;
-  --dark--colors-warning-30: #ffea8c;
-  --dark--colors-warning-40: #ffde63;
-  --dark--colors-warning-50: #d9b54a;
-  --dark--colors-warning-60: #8c6a22;
-  --dark--colors-warning-70: #664817;
-  --dark--colors-warning-default: #ffde63;
-  --dark--colors-blueberry-10: #e8ebf6;
-  --dark--colors-blueberry-20: #c4cce9;
-  --dark--colors-blueberry-30: #9dabd9;
-  --dark--colors-blueberry-40: #768aca;
-  --dark--colors-blueberry-50: #3557b4;
-  --dark--colors-blueberry-60: #25459e;
-  --dark--colors-blueberry-70: #0b297d;
-  --dark--colors-blueberry-default: #0b297d;
-  --dark--colors-mint-10: #f0fffa;
-  --dark--colors-mint-20: #d1fff4;
-  --dark--colors-mint-30: #a8ffee;
-  --dark--colors-mint-40: #55f9e2;
-  --dark--colors-mint-50: #3dd4c5;
-  --dark--colors-mint-60: #2aada5;
-  --dark--colors-mint-70: #116161;
-  --dark--colors-mint-default: #55f9e2;
-  /* --dark--body-font-color: var(--palette-neutral-15); */
-
-  /* end: design system colors  */
-
-  --dark--color-black: #000;
-  --dark--color-white: var(--palette-neutral-10);
-  --dark--color-grey-100: #f7fafc;
-  --dark--color-grey-200: #edf2f7;
-  --dark--color-grey-300: #e2e8f0;
-  --dark--color-grey-400: #cbd5e0;
-  --dark--color-grey-500: #a0aec0;
-  --dark--color-grey-600: #718096;
-  --dark--color-grey-700: #4a5568;
-  --dark--color-grey-800: #2d3748;
-  --dark--color-grey-900: #1a202c;
-  --dark--color-red-100: #fff5f5;
-  --dark--color-red-200: #fed7d7;
-  --dark--color-red-300: #feb2b2;
-  --dark--color-red-400: #fc8181;
-  --dark--color-red-500: #f56565;
-  --dark--color-red-600: #e53e3e;
-  --dark--color-red-700: #c53030;
-  --dark--color-red-800: #9b2c2c;
-  --dark--color-red-900: #742a2a;
-  --dark--color-orange-100: #fffaf0;
-  --dark--color-orange-200: #feebc8;
-  --dark--color-orange-300: #fbd38d;
-  --dark--color-orange-400: #f6ad55;
-  --dark--color-orange-500: #ed8936;
-  --dark--color-orange-600: #dd6b20;
-  --dark--color-orange-700: #c05621;
-  --dark--color-orange-800: #9c4221;
-  --dark--color-orange-900: #7b341e;
-  --dark--color-yellow-100: #fffff0;
-  --dark--color-yellow-200: #fefcbf;
-  --dark--color-yellow-300: #faf089;
-  --dark--color-yellow-400: #f6e05e;
-  --dark--color-yellow-500: #ecc94b;
-  --dark--color-yellow-600: #d69e2e;
-  --dark--color-yellow-700: #b7791f;
-  --dark--color-yellow-800: #975a16;
-  --dark--color-yellow-900: #744210;
-  --dark--color-green-100: #f0fff4;
-  --dark--color-green-200: #c6f6d5;
-  --dark--color-green-300: #9ae6b4;
-  --dark--color-green-400: #68d391;
-  --dark--color-green-500: #48bb78;
-  --dark--color-green-600: #38a169;
-  --dark--color-green-700: #2f855a;
-  --dark--color-green-800: #276749;
-  --dark--color-green-900: #22543d;
-  --dark--color-teal-100: #e6fffa;
-  --dark--color-teal-200: #b2f5ea;
-  --dark--color-teal-300: #81e6d9;
-  --dark--color-teal-400: #4fd1c5;
-  --dark--color-teal-500: #38b2ac;
-  --dark--color-teal-600: #319795;
-  --dark--color-teal-700: #2c7a7b;
-  --dark--color-teal-800: #285e61;
-  --dark--color-teal-900: #234e52;
-  --dark--color-blue-100: #ebf8ff;
-  --dark--color-blue-200: #bee3f8;
-  --dark--color-blue-300: #90cdf4;
-  --dark--color-blue-400: #63b3ed;
-  --dark--color-blue-500: #4299e1;
-  --dark--color-blue-600: #3182ce;
-  --dark--color-blue-700: #2b6cb0;
-  --dark--color-blue-800: #2c5282;
-  --dark--color-blue-900: #2a4365;
-  --dark--color-indigo-100: #ebf4ff;
-  --dark--color-indigo-200: #c3dafe;
-  --dark--color-indigo-300: #a3bffa;
-  --dark--color-indigo-400: #7f9cf5;
-  --dark--color-indigo-500: #667eea;
-  --dark--color-indigo-600: #5a67d8;
-  --dark--color-indigo-700: #4c51bf;
-  --dark--color-indigo-800: #434190;
-  --dark--color-indigo-900: #3c366b;
-  --dark--color-purple-100: #faf5ff;
-  --dark--color-purple-200: #e9d8fd;
-  --dark--color-purple-300: #d6bcfa;
-  --dark--color-purple-400: #b794f4;
-  --dark--color-purple-500: #9f7aea;
-  --dark--color-purple-600: #805ad5;
-  --dark--color-purple-700: #6b46c1;
-  --dark--color-purple-800: #553c9a;
-  --dark--color-purple-900: #44337a;
-  --dark--color-pink-100: #fff5f7;
-  --dark--color-pink-200: #fed7e2;
-  --dark--color-pink-300: #fbb6ce;
-  --dark--color-pink-400: #f687b3;
-  --dark--color-pink-500: #ed64a6;
-  --dark--color-pink-600: #d53f8c;
-  --dark--color-pink-700: #b83280;
-  --dark--color-pink-800: #97266d;
-  --dark--color-pink-900: #702459;
-
   /* theme accent colors */
   --dark--color-developer: var(--palette-forest-40);
   --dark--color-labs: var(--palette-lavender-20);
   --dark--color-docs: var(--palette-baltic-20);
+  --dark--color-docs-weak: var(--palette-baltic-25);
   --dark--color-kb: var(--palette-lavender-20);
   --dark--color-training: var(--palette-hibiscus-20);
   --dark--color-graphgists: var(--palette-lavender-20);
@@ -182,22 +36,27 @@
   --dark--navbar-font-color: var(--theme-dark-color-neutral-text-default);
   --dark--navbar-font-weight: 400;
   --dark--navbar_hover-background: transparent;
-  --dark--navbar-button-background: var(--color-orange-600);
-  --dark--navbar-button-border-color: var(--color-blue-800);
-  --dark--navbar-button-font-color: var(--color-blue-100);
   --dark--navbar-menu-border-color: var(--theme-dark-color-neutral-border-strong);
   --dark--navbar-menu-background: var(--theme-dark-color-neutral-bg-weak);
   --dark--navbar-menu-font-color: var(--body-font-color);
   --dark--navbar-menu_hover-background: transparent;
   --dark--navbar-top-border: var(--palette-neutral-20);
   --dark--navbar-bottom-border: var(--theme-dark-color-neutral-border-weak);
-  --dark--navbar-dropdown-link: var(--palette-baltic-20);
-  --dark--navbar-dropdown_hover-link: var(--palette-baltic-20);
+  --dark--navbar-dropdown-link: var(--dark--color-docs);
+  --dark--navbar-dropdown_hover-link: var(--dark--color-docs);
   --dark--navbar-training-border: var(--color-developer);
   --dark--navbar-developer-border: var(--color-developer);
   --dark--navbar-docs-border: var(--dark--color-docs);
   --dark--navbar-labs-border: var(--color-labs);
   --dark--navbar-kb-border: var(--color-kb);
+
+  /* buttons */
+  --dark--button-background: var(--theme-dark-color-neutral-bg-on-bg-weak);
+  --dark--button-border-color: var(--dark--color-docs);
+  --dark--button-font-color: var(--theme-dark-color-neutral-text-weak);
+  --dark--hover-button-background: var(--dark--color-docs);
+  --dark--hover-button-border-color: var(--theme-dark-color-neutral-text-inverse);
+  --dark--hover-button-font-color: var(--theme-dark-color-neutral-text-inverse);
 
   /* banner */
   --dark--warning-banner-color: var(var(--dark--body-font-color));
@@ -230,11 +89,11 @@
 
   /* toc */
   --dark--toc-font-color: var(--theme-dark-color-neutral-text-default);
-  --dark--toc-active-font-color: var(--palette-baltic-20);
+  --dark--toc-active-font-color: var(--dark--color-docs);
   --dark--toc-active-background-color: var(--palette-baltic-10);
   --dark--toc-hover-background-color: var(--theme-dark-color-primary-hover-weak);
   --dark--toc-hover-color: var(--theme-dark-color-neutral-text-default);
-  --dark--toc-heading-font-color: var(--palette-baltic-20);
+  --dark--toc-heading-font-color: var(--dark--color-docs);
   --dark--toc-item-font-color: var(--theme-dark-color-neutral-text-default);
   --dark--toc-border-color: var(--theme-dark-color-neutral-border-weak);
   --dark--toc-line-height: 1.4;
@@ -327,7 +186,7 @@
   --dark--section-divider-color: var(--palette-neutral-20);
 
   /* links */
-  --dark--link-font-color: var(--palette-baltic-20);
+  --dark--link-font-color: var(--dark--color-docs);
   --dark--link_hover-font-color: var(--palette-baltic-30);
   --dark--link_visited-font-color: var(--palette-baltic-35);
   --dark--link_unresolved-font-color: var(--important-color);
@@ -335,7 +194,7 @@
   /* abstract */
   --dark--abstract-background: var(--theme-dark-color-neutral-bg-on-bg-weak);
   --dark--abstract-font-color: var(--theme-dark-body-font-color);
-  --dark--abstract-border-color: var(--palette-baltic-20);
+  --dark--abstract-border-color: var(--dark--color-docs);
   --dark--admonition-background: var(--dark--panel-background);
   --dark--admonition-label-font-weight: var(--body-font-weight-bold);
   --dark--caption-background: var(--theme-dark-color-neutral-bg-on-bg-weak);
@@ -343,9 +202,12 @@
   --dark--caption-font-weight: var(--body-font-weight-bold);
 
   /* toc ad */
-  --dark--toc-ad-border-color: var(--palette-baltic-20);
+  --dark--toc-ad-border-color: var(--dark--color-docs);
   --dark--toc-ad-background: var(--theme-dark-color-neutral-bg-on-bg-weak);
-  --dark--toc-ad-title-color: var(--palette-baltic-20);
+  --dark--toc-ad-font-color: var(--dark--color-docs);
+  --dark--toc-ad-title-color: var(--dark--color-docs);
+  --dark--toc-ad-button-background: var(--dark--color-docs);
+  --dark--toc-ad-button-font-color: var(--theme-dark-color-neutral-text-inverse);
 
   /* code */
   --dark--code-border-color: var(--theme-dark-color-neutral-border-weak);
@@ -365,9 +227,9 @@
   --dark--pre-background: var(--panel-background);
   --dark--pre-border-color: var(--panel-border-color);
   --dark--pre-annotation-font-color: var(--theme-dark-color-neutral-bg-weak);
-  --dark--code-copy-success-border: var(--theme-dark-color-success-border-strong);
-  --dark--code-copy-success-background: var(--theme-dark-color-success-bg-strong);
-  --dark--code-copy-success-color: var(--theme-dark-color-neutral-text-inverse);
+  --dark--code-copy-success-background: var(--theme-dark-color-neutral-bg-on-bg-weak);
+  --dark--code-copy-success-border: var(--dark--color-docs);
+  --dark--code-copy-success-color: var(--theme-dark-color-neutral-text-weak);
 
   /* examples */
   --dark--example-header-background: var(--theme-dark-color-neutral-bg-default);
@@ -377,7 +239,7 @@
 
   /* quotes */
   --dark--quote-background: var(--theme-dark-color-neutral-bg-on-bg-weak);
-  --dark--quote-border-color: var(--palette-baltic-20);
+  --dark--quote-border-color: var(--dark--color-docs);
   --dark--quote-font-color: var(--theme-dark-color-neutral-text-default);
   --dark--quote-attribution-font-color: var(--theme-dark-color-neutral-text-default);
   --dark--sidebar-background: var(--theme-dark-color-neutral-bg-strong);
@@ -436,7 +298,8 @@
   --dark--feedback-input-background: var(--theme-dark-color-neutral-bg-strong);
 
   /* footer */
-  --dark--footer-font-size: var(--font-size-body-medium);
+  --dark--footer-border-color: var(--theme-dark-color-neutral-border-weak);
+  --dark--footer-font-size: var(--typography-body-medium);
   --dark--footer-line-height: var(--doc-line-height);
   --dark--footer-background: var(--color-black);
   --dark--footer-font-color: var(--palette-neutral-10);
@@ -477,14 +340,14 @@
   --dark--z-index-navbar: 5000;
 
   /* landing page */
-  --dark--landing-leading-background: var(--palette-neutral-30);
+  --dark--landing-leading-background: var(--theme-dark-color-neutral-bg-default);
 
   /* Label colors */
   --dark--label-group-syntax: #e6e6e6;
 
   /* docs home, hub etc */
   --dark--hub-highlight-border: var(--palette-baltic-30);
-  --dark--hub-highlight-background: var(--palette-baltic-20);
+  --dark--hub-highlight-background: var(--dark--color-docs);
   --dark--hub-ga-card-background: var(--theme-dark-color-success-bg-weak);
   --dark--hub-ga-border-color: var(--theme-dark-color-success-border-strong);
 
