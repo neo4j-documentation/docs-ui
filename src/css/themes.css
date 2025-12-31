@@ -100,7 +100,6 @@ body.labs .tooltip.tooltip--bottom::after {
   border-top-color: light-dark(var(--color-labs), var(--dark--color-labs));
 }
 
-
 body.labs .tableblock .icon i {
   color: light-dark(var(--color-labs), var(--dark--color-labs));
 }
