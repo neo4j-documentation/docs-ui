@@ -1,3 +1,4 @@
+{{#unless page.attributes.no-dark-mode}}
 <div id="theme-dropdown" class="navbar-item has-dropdown is-hoverable docs">
     <span class="navbar-link">Theme</span>
     <div class="navbar-dropdown navbar-dropdown-narrow">
@@ -12,3 +13,6 @@
     </div>
     </div>
 </div>
+{{else}}
+<span id ="theme-dropdown" class="no-dark-mode hidden"></span>
+{{/unless}}

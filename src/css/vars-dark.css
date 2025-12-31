@@ -6,6 +6,7 @@
   /* theme accent colors */
   --dark--color-developer: var(--palette-forest-40);
   --dark--color-labs: var(--palette-lavender-20);
+  --dark--color-labs-weak: var(--palette-lavender-40);
   --dark--color-docs: var(--palette-baltic-20);
   --dark--color-docs-weak: var(--palette-baltic-25);
   --dark--color-kb: var(--palette-lavender-20);

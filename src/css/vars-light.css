@@ -13,6 +13,7 @@
   /* theme accent colors */
   --color-developer: var(--palette-forest-45);
   --color-labs: var(--palette-lavender-45);
+  --color-labs-weak: var(--palette-lavender-30);
   --color-docs: var(--palette-baltic-50);
   --color-docs-weak: var(--palette-baltic-55);
   --color-kb: var(--palette-lavender-45);
@@ -230,7 +231,7 @@
 
   /* code */
   --code-border-color: var(--body-font-color);
-  --code-header-background: var(--theme-light-color-neutral-bg-strong);
+  --code-header-background: var(--theme-light-color-neutral-bg-on-bg-weak);
   --code-header-font-color: var(--theme-light-color-neutral-text-default);
   --code-header-font-size: var(--font-size-body-medium);
   --code-background: var(--theme-light-color-neutral-bg-on-bg-weak);

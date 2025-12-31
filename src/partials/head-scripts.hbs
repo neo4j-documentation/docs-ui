@@ -1,1 +1,8 @@
-{{! add scripts here }}
+{{#unless page.attributes.no-dark-mode}}
+<script>
+    const userColorSchemeName = 'user-color-scheme-preference';
+    const userColorScheme = localStorage.getItem(userColorSchemeName) || 'system';
+    console.log('User color scheme preference:', userColorScheme);
+    document.documentElement.style.colorScheme = userColorScheme;
+</script>
+{{/unless}}
