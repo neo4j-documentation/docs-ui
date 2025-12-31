@@ -24,7 +24,7 @@ import { createElement } from './modules/dom'
         const themeDiv = createElement('div', 'navbar-item project', [themeSpan])
         themeDiv.setAttribute('data-theme', theme)
         return themeDiv
-      }))
+      })),
     ])
     themeMenu.setAttribute('id', 'theme-dropdown')
     themeMenuContainer.insertBefore(themeMenu, themeMenuContainer.firstChild)
