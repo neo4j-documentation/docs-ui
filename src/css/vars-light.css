@@ -39,6 +39,7 @@
   --body-background: var(--palette-neutral-10);
   --panel-background: var(--palette-neutral-15);
   --panel-border-color: var(--palette-neutral-20);
+  --panel_hover-border-color: var(--palette-neutral-50);
   --scrollbar-thumb-color: var(--theme-light-color-neutral-bg-strong);
   /* navbar */
   --navbar-background: var(--theme-light-color-neutral-bg-weak);

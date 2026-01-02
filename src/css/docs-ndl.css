@@ -571,12 +571,6 @@ body.docs-ndl .widget.highlights .footer-link {
   text-align: end;
 }
 
-body.docs-ndl .widget.highlights .footer-link a,
-body.docs-ndl .widget.highlights .footer-link a:visited,
-body.docs-ndl .widget.highlights .footer-link a::after {
-  color: var(--link-font-color);
-}
-
 body.docs-ndl .widget.highlights .icon img {
   max-width: 100%;
   height: auto;
@@ -620,13 +614,19 @@ body.docs-ndl .sect2 {
 
 body.docs-ndl .cards .sectionbody > div.sect2 {
   flex: 0 1 32%;
-  border: 1px solid var(--panel-border-color);
-  /* margin-right: 1rem; */
+  border: 1px solid light-dark(var(--panel-border-color), var(--dark--panel-border-color));
+  background: light-dark(var(--panel-background), var(--dark--panel-background));
+}
+
+body.docs-ndl .cards .sectionbody > div.sect2:hover {
+  transition: 0.1s linear;
+  border: 1px solid light-dark(var(--panel_hover-border-color), var(--dark--panel_hover-border-color));
+  box-shadow: 0 1px 2px 0 light-dark(var(--panel_hover-border-color), var(--dark--panel_hover-border-color));
+  cursor: default;
 }
 
 body.docs-ndl .cards.bottom-cards .sectionbody > div.sect2 {
   flex: 0 1 49%;
-  border: 0;
 }
 
 body.docs-ndl.explainer .sectionbody > div.sect2 {
@@ -646,16 +646,7 @@ body.docs-ndl .lists .sect2 {
   gap: 8px;
   /* min-width: 30%; */
   padding: 24px;
-  background: light-dark(var(--panel-background), var(--dark--panel-background));
   line-height: 2rem;
-}
-
-body.docs-ndl .cards.selectable .sect2:hover,
-body.docs-ndl .cards .sect2.selectable:hover {
-  transition: 0.1s linear;
-  border: 1px solid var(--page-version-missing-font-color);
-  box-shadow: 0 1px 2px 0 rgba(26, 27, 29, 0.18);
-  cursor: default;
 }
 
 /* styles for specific types of cards:
@@ -665,15 +656,13 @@ body.docs-ndl .cards .sect2.selectable:hover {
 */
 
 /* this would give a background image on cards marked with [.ga-promo] */
-body.docs-ndl .cards .sectionbody > div.sect2.graph-academy > a,
-body.docs-ndl .cards .sectionbody > div.sect2.graph-academy:not(.selectable) {
+body.docs-ndl .cards .sectionbody > div.sect2.graph-academy {
   background: light-dark(var(--hub-ga-card-background), var(--dark--hub-ga-card-background));
   border: 1px solid light-dark(var(--success-color), var(--dark--success-color));
   box-shadow: 0 2px 4px 0 rgba(63, 120, 36, 0.5), 0 1px 2px 0 rgba(63, 120, 36, 0.2);
 }
 
-body.docs-ndl .cards .sectionbody > div.sect2.labs > a,
-body.docs-ndl .cards .sectionbody > div.sect2.labs:not(.selectable) {
+body.docs-ndl .cards .sectionbody > div.sect2.labs {
   border: 1px solid var(--color-labs);
   box-shadow: 0 2px 4px 0 rgba(90, 52, 170, 0.5), 0 1px 2px 0 rgba(90, 52, 170, 0.2);
 }
@@ -684,12 +673,17 @@ body.docs-ndl .header-label-container > div.labels {
   margin-left: auto;
 }
 
-body.docs-ndl .cards .sect2 > a,
-body.docs-ndl .cards:not(.selectable) .sect2 > a,
 body.docs-ndl .widget:not(.video) {
   /* box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.1), 0 1px 2px -1px rgba(0, 0, 0, 0.06); */
-  border: none;
+  border: 1px solid light-dark(var(--panel-border-color), var(--dark--panel-border-color));
   border-radius: 1rem;
+}
+
+body.docs-ndl .widget:not(.video):hover {
+  transition: 0.1s linear;
+  /* border: 1px solid light-dark(var(--panel_hover-border-color), var(--dark--panel_hover-border-color)); */
+  box-shadow: 0 1px 2px 0 light-dark(rgba(26, 27, 29, 0.18), rgba(229, 228, 227, 0.18));
+  cursor: default;
 }
 
 body.docs-ndl .cards .sect2 > a {

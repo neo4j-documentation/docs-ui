@@ -30,6 +30,7 @@
   --dark--body-background: var(--theme-dark-color-neutral-bg-default);
   --dark--panel-background: var(--theme-dark-color-neutral-bg-weak);
   --dark--panel-border-color: var(--palette-neutral-20);
+  --dark--panel_hover-border-color: var(--dark--color-docs);
   --dark--scrollbar-thumb-color: var(--theme-dark-color-neutral-bg-strong);
 
   /* navbar */
