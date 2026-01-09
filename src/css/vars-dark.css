@@ -162,6 +162,13 @@
   --dark--feedback-negative-color: var(--theme-dark-color-danger-bg-weak);
   --dark--feedback-negative-background-color: var(--theme-dark-color-danger-bg-strong);
 
+  /* tooltip (glossary) */
+  --dark--tooltip-background: var(--theme-dark-color-neutral-bg-default);
+  --dark--tooltip-header-background: var(--theme-dark-color-neutral-bg-strong);
+  --dark--tooltip-border-color: var(--theme-dark-color-neutral-border-strong);
+  --dark--tooltip-font-color: var(--dark--body-font-color);
+  --dark--tooltip-header-font-color: var(--dark--body-font-color);
+
   /* tbc: success indicator for tutorials */
   --dark--success-color: var(--theme-dark-color-success-bg-strong);
   --dark--success-background-color: var(--theme-dark-color-success-bg-weak);
