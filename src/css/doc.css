@@ -1200,12 +1200,12 @@ body {
 
 .doc table.tableblock.frame-all > tbody > tr:last-child > td,
 .doc table.tableblock.frame-ends > tbody > tr:last-child > td {
-  border-bottom: 2.5px solid light-dark(var(--table-border-color), var(--dark--table-border-color));
+  border-bottom: 4px solid light-dark(var(--table-border-color), var(--dark--table-border-color));
 }
 
 .doc table.tableblock.frame-all > tbody > tr:first-child > td,
 .doc table.tableblock.frame-ends > tbody > tr:first-child > td {
-  border-top: 2.5px solid light-dark(var(--table-border-color), var(--dark--table-border-color));
+  border-top: 1px solid light-dark(var(--table-border-color), var(--dark--table-border-color));
 }
 
 .doc .tableblock thead {

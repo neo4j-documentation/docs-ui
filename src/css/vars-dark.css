@@ -255,7 +255,7 @@
 
   /* tables */
   --dark--table-border-color: var(--theme-dark-color-neutral-bg-strong);
-  --dark--table-header-color: var(--theme-dark-color-neutral-bg-weak);
+  --dark--table-header-color: var(--theme-dark-color-neutral-bg-strong);
   --dark--table-stripe-background: var(--theme-dark-color-neutral-bg-on-bg-weak);
   --dark--kbd-background: var(--panel-background);
   --dark--kbd-border-color: var(--palette-neutral-40);
