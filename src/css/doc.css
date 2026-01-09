@@ -609,20 +609,22 @@ body {
 
 .doc .imageblock img {
   display: block;
+  padding: 0.25rem;
 }
 
 .doc .imageblock img,
 .doc .image > img {
   height: auto;
   max-width: 100%;
-  /* opacity: light-dark(var(--image-opacity), var(--dark--image-opacity)); */
   opacity: var(--image-opacity);
+  background: light-dark(var(--theme-light-color-neutral-bg-weak), var(--theme-dark-color-neutral-bg-strongest));
 }
 
 @media (prefers-color-scheme: dark) {
-  .doc .imageblock img,
-  .doc .image > img {
+  .doc .imageblock:not(.screenshot) img,
+  .doc .image:not(.screenshot) > img {
     opacity: var(--dark--image-opacity);
+    filter: invert(1) hue-rotate(180deg);
   }
 }
 

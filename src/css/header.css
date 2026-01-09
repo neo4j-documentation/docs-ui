@@ -312,7 +312,7 @@ html[style*="color-scheme: dark;"] #theme-dropdown .navbar-item.selected::before
   }
 
   .navbar-menu {
-    background: var(--navbar-menu-background);
+    background: light-dark(var(--navbar-menu-background), var(--dark--navbar-menu-background));
     padding: 0.5rem 0;
   }
 
@@ -327,7 +327,7 @@ html[style*="color-scheme: dark;"] #theme-dropdown .navbar-item.selected::before
     bottom: 0;
     max-height: none;
     z-index: 500;
-    background: rgba(var(--palette-neutral-15));
+    background: light-dark(var(--navbar-menu-background), var(--dark--navbar-menu-background));
   }
 
   .navbar-menu a.navbar-item:hover,

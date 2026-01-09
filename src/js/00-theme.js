@@ -92,6 +92,17 @@ import { createElement } from './modules/dom'
         logo.classList.add('hidden')
       }
     })
+
+    // if dark mode, do some stuff
+
+    // remove background image from toc-ad
+    document.querySelectorAll('.toc-ad').forEach((ad) => {
+      if (theme === 'dark') {
+        ad.style.backgroundImage = 'none'
+      } else {
+        ad.removeAttribute('style')
+      }
+    })
   }
 
   function updateSelectedThemeItem (themeItems, theme) {

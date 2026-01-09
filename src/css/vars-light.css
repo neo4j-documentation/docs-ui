@@ -177,6 +177,13 @@
   --feedback-negative-color: var(--theme-light-color-danger-bg-weak);
   --feedback-negative-background-color: var(--theme-light-color-danger-bg-strong);
 
+  /* tooltip (glossary) */
+  --tooltip-background: var(--theme-light-color-neutral-bg-default);
+  --tooltip-header-background: var(--color-docs);
+  --tooltip-border-color: var(--theme-light-color-neutral-border-strong);
+  --tooltip-font-color: var(--body-font-color);
+  --tooltip-header-font-color: var(--theme-light-color-neutral-text-inverse);
+
   /* landing page banner */
   --banner-background-color: var(--palette-baltic-20);
   --banner-hover-color: var(--palette-baltic-25);
