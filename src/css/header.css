@@ -334,6 +334,23 @@ html[style*="color-scheme: dark;"] #theme-dropdown .navbar-item.selected::before
   .navbar-menu .navbar-link:hover {
     background-color: light-dark(var(--navbar-menu_hover-background), var(--dark--navbar-menu_hover-background));
   }
+
+  #theme-dropdown {
+    display: flex;
+    flex-flow: wrap;
+  }
+
+  #theme-dropdown .navbar-link {
+    flex: 1 1 100%;
+  }
+
+  #theme-dropdown .navbar-dropdown {
+    display: flex;
+  }
+
+  #theme-dropdown .navbar-item {
+    border: 1px solid light-dark(var(--color-docs), var(--dark--color-docs));
+  }
 }
 
 @media screen and (min-width: 1024px) {
