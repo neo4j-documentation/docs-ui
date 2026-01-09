@@ -88,6 +88,10 @@ body {
   width: 104px;
 }
 
+html[style*="color-scheme: dark;"] .navbar-logo:not(.navbar-logo-dark, .navbar-logo-light) {
+  filter: grayscale(1) brightness(0) invert(1);
+}
+
 html[style*="color-scheme: dark;"] .navbar-logo-light {
   display: none;
 }

@@ -86,6 +86,7 @@ import { createElement } from './modules/dom'
   function updateLogos (theme) {
     logos.forEach((logo) => {
       const logoTheme = logo.getAttribute('data-theme')
+      if (!logoTheme) return
       if (logoTheme === theme) {
         logo.classList.remove('hidden')
       } else {
