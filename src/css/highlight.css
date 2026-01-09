@@ -119,7 +119,7 @@
 .language-shell > .hljs .token.meta,
 .language-cypher-shell > .hljs-meta,
 .language-cypher-shell > .hljs .token.meta {
-  color: light-dark(var(--color-lavender-50), var(--dark--color-lavender-20));
+  color: light-dark(var(--theme-light-color-neutral-text-default), var(--theme-dark-color-neutral-text-default));
   user-select: none;
 }
 
