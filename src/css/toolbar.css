@@ -28,7 +28,7 @@ body.has-banner .toolbar {
 }
 
 .nav-toggle {
-  background: url(../img/menu.svg) no-repeat 50% 47.5%;
+  background: url(../img/ndl-icons/list-bullet.svg) no-repeat 50% 47.5%;
   background-size: 49%;
   border: none;
   outline: none;
@@ -37,6 +37,13 @@ body.has-banner .toolbar {
   padding: 0;
   width: 2.5rem;
   margin-right: -0.25rem;
+}
+
+@media (prefers-color-scheme: dark) {
+  .nav-toggle,
+  .home-link {
+    filter: invert(1) hue-rotate(180deg);
+  }
 }
 
 @media screen and (min-width: 1024px) {
@@ -51,7 +58,7 @@ body.has-banner .toolbar {
 }
 
 .home-link {
-  background: url(../img/home-o.svg) no-repeat 50% 45%;
+  background: url(../img/ndl-icons/home.svg) no-repeat 50% 45%;
   background-size: 50%;
   display: block;
   height: 2.5rem;
