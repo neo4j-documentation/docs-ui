@@ -6,6 +6,14 @@
 // :page-edit-url-title: Custom raise an issue title text
 :page-edit-url-uri: https://github.com/neo4j/docs-cypher/blob/dev/modules/ROOT/pages/queries/index.adoc
 :page-custom-canonical: https://neo4j.com/docs/cypher-manual/current/clauses/where/
+:page-ad-overlinelink: {aura_signup}
+:page-ad-overline: Neo4j Aura
+:page-ad-title: Follow Along and Learn While Doing
+:page-ad-description: Free forever, no credit card required.
+:page-ad-link: {aura_signup}
+:page-ad-underlinerole: button
+:page-ad-underline: Start on AuraDB
+:page-ad-image: _/img/Nodes-AI-Color.png
 
 .No striping
 // Alternative to stripes attributes is
