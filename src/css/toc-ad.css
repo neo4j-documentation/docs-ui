@@ -23,6 +23,13 @@
   width: 192px;
 }
 
+@media (prefers-color-scheme: dark) {
+  .toc .toc-ad .toc-ad-image {
+    opacity: var(--dark--image-opacity);
+    filter: invert(1) hue-rotate(180deg);
+  }
+}
+
 .toc .toc-ad .toc-ad-icon {
   display: block;
   content: "";

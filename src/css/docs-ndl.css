@@ -764,7 +764,11 @@ body.docs-ndl .widget.highlights:nth-of-type(odd) .icon {
   margin-right:40px;
 } */
 
-body.docs-ndl body.docs-ndl .cards .sect2 .icon img {
+body.docs-ndl .icon img {
+  background: transparent;
+}
+
+body.docs-ndl .cards .sect2 .icon img {
   width: 4rem;
   height: 4rem;
   padding: 0;

@@ -34,7 +34,7 @@ import { createElement } from './modules/dom'
   const logos = document.querySelectorAll('.navbar-logo')
 
   document.addEventListener('DOMContentLoaded', function () {
-    const userColorSchemeName = 'user-color-scheme-preference'
+    const userColorSchemeName = 'neo4j-docs-theme'
     const userColorScheme = localStorage.getItem(userColorSchemeName) || 'system'
 
     // find the themeItem with textContent matching userColorScheme
@@ -54,6 +54,13 @@ import { createElement } from './modules/dom'
     const isDark = darkMode.matches // true if system is dark, false if light
     document.documentElement.style.colorScheme = isDark ? 'dark' : 'light'
     updateLogos(isDark ? 'dark' : 'light')
+    updateChatbotTheme(isDark ? 'dark' : 'light')
+
+    const chatbotScript = document.querySelector('script[src="/docs/assets/chatbot/index.js"]')
+    chatbotScript.addEventListener('load', () => {
+      // console.log('chatbot script loaded, updating theme')
+      updateChatbotTheme(isDark ? 'dark' : 'light')
+    })
     // darkMode.addEventListener('change', handleThemeChange)
   })
 
@@ -63,7 +70,7 @@ import { createElement } from './modules/dom'
   }
 
   function updateThemePreference (theme) {
-    const userColorSchemeName = 'user-color-scheme-preference'
+    const userColorSchemeName = 'neo4j-docs-theme'
     localStorage.setItem(userColorSchemeName, theme)
 
     const lightOrDark = resolveLightOrDark(theme)
@@ -73,6 +80,7 @@ import { createElement } from './modules/dom'
     // add a selected class to the selected theme item
     updateSelectedThemeItem(themeItems, theme)
     updateLogos(lightOrDark)
+    updateChatbotTheme(lightOrDark)
   }
 
   function resolveLightOrDark (theme) {
@@ -81,6 +89,22 @@ import { createElement } from './modules/dom'
       theme = isDarkMode ? 'dark' : 'light'
     }
     return theme
+  }
+
+  function updateChatbotTheme (theme) {
+    // console.log('updating chatbot theme to', theme)
+    const chatbot = document.getElementById('docs_chatbot')
+    // console.log('chatbot element:', chatbot)
+    if (!chatbot) return
+    // console.log('chatbot found, updating theme classes')
+    const chatbotThemeClass = `ndl-theme-${theme}`
+    const chatbotClassToRemve = theme === 'dark' ? 'ndl-theme-light' : 'ndl-theme-dark'
+    chatbot.querySelectorAll(`.${chatbotClassToRemve}`).forEach((el) => {
+      // console.log('chatbot element found to update theme:', el)
+      el.classList.remove(chatbotClassToRemve)
+      el.classList.add(chatbotThemeClass)
+      console.log(el)
+    })
   }
 
   function updateLogos (theme) {
