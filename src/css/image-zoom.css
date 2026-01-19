@@ -3,11 +3,3 @@ img.medium-zoom-image {
   z-index: 1000;
   background: light-dark(var(--theme-light-color-neutral-bg-weak), var(--theme-dark-color-neutral-bg-strongest));
 }
-
-@media (prefers-color-scheme: dark) {
-  .doc .imageblock:not(.screenshot) .medium-zoom-overlay,
-  .doc .imageblock:not(.screenshot) img.medium-zoom-image {
-    opacity: var(--dark--image-opacity);
-    filter: invert(1) hue-rotate(180deg);
-  }
-}

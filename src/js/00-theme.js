@@ -55,6 +55,7 @@ import { createElement } from './modules/dom'
     document.documentElement.style.colorScheme = isDark ? 'dark' : 'light'
     updateLogos(isDark ? 'dark' : 'light')
     updateChatbotTheme(isDark ? 'dark' : 'light')
+    updateBodyClass(isDark ? 'dark' : 'light')
 
     const chatbotScript = document.querySelector('script[src="/docs/assets/chatbot/index.js"]')
     chatbotScript.addEventListener('load', () => {
@@ -81,6 +82,13 @@ import { createElement } from './modules/dom'
     updateSelectedThemeItem(themeItems, theme)
     updateLogos(lightOrDark)
     updateChatbotTheme(lightOrDark)
+    updateBodyClass(lightOrDark)
+  }
+
+  function updateBodyClass (theme) {
+    const body = document.body
+    body.classList.remove('ndl-theme-light', 'ndl-theme-dark')
+    body.classList.add(`ndl-theme-${theme}`)
   }
 
   function resolveLightOrDark (theme) {

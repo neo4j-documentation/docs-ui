@@ -620,14 +620,6 @@ body {
   background: light-dark(var(--theme-light-color-neutral-bg-weak), var(--theme-dark-color-neutral-bg-strongest));
 }
 
-@media (prefers-color-scheme: dark) {
-  .doc .imageblock:not(.screenshot) img,
-  .doc .image:not(.screenshot) > img {
-    opacity: var(--dark--image-opacity);
-    filter: invert(1) hue-rotate(180deg);
-  }
-}
-
 #preamble .abstract blockquote {
   background: light-dark(var(--abstract-background), var(--dark--abstract-background));
   border-left: 5px solid var(--abstract-border-color);
