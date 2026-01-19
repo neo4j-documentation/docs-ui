@@ -1,9 +1,10 @@
 #cookiebanner {
-  background: rgba(var(--palette-neutral-15));
+  background: light-dark(var(--body-background), var(--dark--body-background)) !important;
+  border-top: 1px solid light-dark(var(--button-border-color), var(--dark--button-border-color)) !important;
   box-shadow: 0 -5px 5px 1px rgba(0, 0, 0, 0.08) !important;
   padding: 1rem;
   font-size: 0.8rem;
-  color: light-dark(rgba(var(--palette-neutral-70)), rgba(var(--dark--palette-neutral-70)));
+  color: light-dark(var(--body-font-color), var(--dark--body-font-color));
 }
 
 #cookiebanner .row {
@@ -14,7 +15,11 @@
 #cookiebanner .c-header {
   font-size: 0.9rem;
   font-weight: 600;
-  color: light-dark(rgba(var(--palette-neutral-80)), rgba(var(--dark--palette-neutral-80)));
+  color: light-dark(var(--body-font-color), var(--dark--body-font-color));
+}
+
+#cookiebanner p {
+  color: light-dark(var(--body-font-color), var(--dark--body-font-color)) !important;
 }
 
 /* #cookiebanner .columns {
@@ -23,7 +28,7 @@
 } */
 
 #c-left a {
-  color: light-dark(rgba(var(--palette-baltic-50)), rgba(var(--dark--palette-baltic-50)));
+  color: light-dark(--link-font-color, var(--dark--link-font-color));
   font-weight: bold;
 }
 /* #c-right {
@@ -33,17 +38,19 @@
   display: inline-block;
   padding: 0.25rem 0.75rem;
   font-weight: 600;
-  border: 1px solid var(--color-blue-700);
+  background: light-dark(var(--button-background), var(--dark--button-background));
+  color: light-dark(var(--button-font-color), var(--dark--button-font-color));
   border-radius: 0.25rem;
   margin-right: 0.5rem;
 }
 
 #NeoCybotCookiebotDialogBodyButtonAccept {
-  background: var(--color-blue-700);
-  color: light-dark(var(--color-blue-100), var(--dark--color-blue-100));
+  background: light-dark(var(--button-background), var(--dark--button-background)) !important;
+  color: light-dark(var(--button-font-color), var(--dark--button-font-color)) !important;
+  border: 1px solid light-dark(var(--button-border-color), var(--dark--button-border-color)) !important;
 }
 
 #NeoCybotCookiebotDialogBodyButtonDecline {
-  background: var(--white);
-  color: light-dark(var(--color-blue-700), var(--dark--color-blue-700));
+  background: transparent !important;
+  color: light-dark(var(--link-font-color), var(--dark--link-font-color)) !important;
 }
