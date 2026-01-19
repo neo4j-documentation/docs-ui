@@ -39,13 +39,6 @@ body.has-banner .toolbar {
   margin-right: -0.25rem;
 }
 
-@media (prefers-color-scheme: dark) {
-  .nav-toggle,
-  .home-link {
-    filter: invert(1) hue-rotate(180deg);
-  }
-}
-
 @media screen and (min-width: 1024px) {
   .nav-toggle {
     display: none;
