@@ -274,7 +274,7 @@ docker container exec -u neo4j -it <containerName> /bin/bash
 
 [TIP]
 ====
-This is an admonition that contains a table.
+This is a TIP that contains a table.
 
 [options="header", cols="^,^,^,^"]
 |===
@@ -287,6 +287,71 @@ This is an admonition that contains a table.
 | `DURATION`      | `-`          | `-`          | `-`
 |===
 
+====
+
+[NOTE]
+====
+This is a NOTE that contains a table.
+
+[options="header", cols="^,^,^,^"]
+|===
+| Type            | Date support | Time support | Time zone support
+| `DATE`          | {check-mark} |              |
+| `LOCAL TIME`     |              | {check-mark} |
+| `ZONED TIME`          |              | {check-mark} | {check-mark}
+| `LOCAL DATETIME` | {check-mark} | {check-mark} |
+| `ZONED DATETIME`      | {check-mark} | {check-mark} | {check-mark}
+| `DURATION`      | `-`          | `-`          | `-`
+|===
+
+====
+
+
+[NOTE]
+====
+This is a NOTE that contains a table.
+THe table contains different content formats.
+
+[options="header", cols="^m,^,^,^a"]
+|===
+| Type            | Date support | Time support | Time zone support
+| `DATE`          | {check-mark} |              |
+| `LOCAL TIME`     |              | {check-mark} |
+| `ZONED TIME`          |              | {check-mark} | {check-mark}
+| `LOCAL DATETIME` | {check-mark} | {check-mark} | `inline code text`
+| `ZONED DATETIME`      | {check-mark} | {check-mark} | _italic text_
+| `DURATION`      | `-`          | `-`          | **bold text**
+|===
+
+====
+
+Finally, the example from a current PR
+
+[NOTE]
+====
+`MERGE` cannot be used for nodes with property values that are `null`.
+For example, the following query will throw an error:
+
+.Query
+[source, cypher, role=test-fail]
+----
+MERGE (martin:Person {name: 'Martin Sheen', age: null})
+RETURN martin
+----
+
+.GQL error chain
+[source, error]
+----
+22N31: error: data exception - invalid properties in merge pattern. 'MERGE' cannot be used with graph element property values that are null or NaN.
+  22G03: error: data exception - invalid value type
+----
+[role="queryresult",options="header",cols="1"]
+|===
+| GQL-status error chain
+| link:https://neo4j.com/docs/status-codes/current/errors/gql-errors/22N31/[22N31]: error: data exception - invalid properties in merge pattern. 'MERGE' cannot be used with graph element property values that are null or NaN.
+
+_caused by_: link:https://neo4j.com/docs/status-codes/current/errors/gql-errors/22G03/[22G03]: error: data exception - invalid value type
+|===
 ====
 
 == Admonition with a title

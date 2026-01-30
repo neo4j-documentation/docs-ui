@@ -1252,6 +1252,31 @@ body {
   background: var(--table-stripe-background);
 }
 
+/* queryresult tables */
+
+.doc .tableblock.queryresult {
+  border-top-left-radius: 0.5rem;
+  border-top-right-radius: 0.5rem;
+}
+
+.doc .tableblock.queryresult thead {
+  background: var(--code-header-background);
+  color: var(--code-header-font-color);
+  border-bottom: none;
+}
+
+.doc table.queryresult > thead th {
+  border-bottom: none;
+}
+
+.doc .tableblock.queryresult tbody {
+  background: var(--code-background);
+}
+
+.doc .tableblock.frame-all.queryresult > tbody > tr:last-child > td {
+  border-bottom: none;
+}
+
 .doc .emphasis,
 .doc .lead {
   font-weight: 400;

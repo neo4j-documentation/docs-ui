@@ -1,0 +1,136 @@
+= Queryresult
+
+
+== Queryresult code block in a paragraph
+
+`MERGE` cannot be used for nodes with property values that are `null`.
+For example, the following query will throw an error:
+
+.Query
+[source, cypher, role=test-fail]
+----
+MERGE (martin:Person {name: 'Martin Sheen', age: null})
+RETURN martin
+----
+
+.GQL error chain
+[source, error]
+----
+22N31: error: data exception - invalid properties in merge pattern. 'MERGE' cannot be used with graph element property values that are null or NaN.
+  22G03: error: data exception - invalid value type
+----
+
+== Queryresult table in a paragraph
+
+`MERGE` cannot be used for nodes with property values that are `null`.
+For example, the following query will throw an error:
+
+.Query
+[source, cypher, role=test-fail]
+----
+MERGE (martin:Person {name: 'Martin Sheen', age: null})
+RETURN martin
+----
+
+[role="queryresult",options="header"]
+|===
+| GQL-status error chain
+| link:https://neo4j.com/docs/status-codes/current/errors/gql-errors/22N31/[22N31]: error: data exception - invalid properties in merge pattern. 'MERGE' cannot be used with graph element property values that are null or NaN.
+
+_caused by_: link:https://neo4j.com/docs/status-codes/current/errors/gql-errors/22G03/[22G03]: error: data exception - invalid value type
+|===
+
+
+== Queryresult code block in an admonition
+
+[NOTE]
+====
+`MERGE` cannot be used for nodes with property values that are `null`.
+For example, the following query will throw an error:
+
+.Query
+[source, cypher, role=test-fail]
+----
+MERGE (martin:Person {name: 'Martin Sheen', age: null})
+RETURN martin
+----
+
+.GQL error chain
+[source, error]
+----
+22N31: error: data exception - invalid properties in merge pattern. 'MERGE' cannot be used with graph element property values that are null or NaN.
+  22G03: error: data exception - invalid value type
+----
+
+====
+
+== Queryresult table in a note admonition
+
+[NOTE]
+====
+`MERGE` cannot be used for nodes with property values that are `null`.
+For example, the following query will throw an error:
+
+.Query
+[source, cypher, role=test-fail]
+----
+MERGE (martin:Person {name: 'Martin Sheen', age: null})
+RETURN martin
+----
+
+[role="queryresult",options="header"]
+|===
+| GQL-status error chain
+| link:https://neo4j.com/docs/status-codes/current/errors/gql-errors/22N31/[22N31]: error: data exception - invalid properties in merge pattern. 'MERGE' cannot be used with graph element property values that are null or NaN.
+
+_caused by_: link:https://neo4j.com/docs/status-codes/current/errors/gql-errors/22G03/[22G03]: error: data exception - invalid value type
+|===
+====
+
+
+== Queryresult table in a warning admonition
+
+[WARNING]
+====
+`MERGE` cannot be used for nodes with property values that are `null`.
+For example, the following query will throw an error:
+
+.Query
+[source, cypher, role=test-fail]
+----
+MERGE (martin:Person {name: 'Martin Sheen', age: null})
+RETURN martin
+----
+
+[role="queryresult",options="header"]
+|===
+| GQL-status error chain
+| link:https://neo4j.com/docs/status-codes/current/errors/gql-errors/22N31/[22N31]: error: data exception - invalid properties in merge pattern. 'MERGE' cannot be used with graph element property values that are null or NaN.
+
+_caused by_: link:https://neo4j.com/docs/status-codes/current/errors/gql-errors/22G03/[22G03]: error: data exception - invalid value type
+|===
+====
+
+
+== Queryresult table in an important admonition
+
+[IMPORTANT]
+====
+`MERGE` cannot be used for nodes with property values that are `null`.
+For example, the following query will throw an error:
+
+.Query
+[source, cypher, role=test-fail]
+----
+MERGE (martin:Person {name: 'Martin Sheen', age: null})
+RETURN martin
+----
+
+[role="queryresult",options="header"]
+|===
+| GQL-status error chain
+| link:https://neo4j.com/docs/status-codes/current/errors/gql-errors/22N31/[22N31]: error: data exception - invalid properties in merge pattern. 'MERGE' cannot be used with graph element property values that are null or NaN.
+
+_caused by_: link:https://neo4j.com/docs/status-codes/current/errors/gql-errors/22G03/[22G03]: error: data exception - invalid value type
+|===
+====

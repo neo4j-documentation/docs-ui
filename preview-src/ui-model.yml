@@ -156,6 +156,9 @@ page:
     - content: Admonitions
       url: admonitions.html
       urlType: internal
+    - content: Queryresult
+      url: queryresult.html
+      urlType: internal      
     - content: Page Banners
       items:
       - content: note
