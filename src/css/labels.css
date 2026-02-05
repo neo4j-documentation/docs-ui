@@ -123,8 +123,8 @@ span.label--apoc-full {
 }
 
 span.label--procedure {
-  background: var(--color-indigo-200);
-  color: var(--color-indigo-700);
+  background: var(--palette-lavender-15);
+  color: var(--palette-lavender-50);
 }
 
 span.label--function {
@@ -139,8 +139,8 @@ span.label--current {
 
 span.label--free,
 span.label--beginner {
-  background: var(--colors-blueberry-70);
-  color: var(--color-white);
+  background: var(--palette-baltic-50);
+  color: var(--palette-baltic-10);
 }
 
 span.label--not-on-aura {
@@ -217,7 +217,7 @@ span.label--mac-os,
 span.label--linux,
 span.label--windows {
   background: var(--palette-baltic-70);
-  color: var(--palette-neutral-10);
+  color: var(--palette-baltic-10);
 }
 
 span.label--syntax,
@@ -248,7 +248,7 @@ span.label--labs {
 
 span.label--labs-label {
   background: var(--color-labs);
-  color: var(--palette-neutral-10);
+  color: var(--palette-baltic-10);
 }
 
 span.label--graph-academy {
