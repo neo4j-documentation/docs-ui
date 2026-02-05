@@ -35,6 +35,7 @@
 
   /* navbar */
   --dark--navbar-background: var(--theme-dark-color-neutral-bg-weak);
+  --dark--hero-fade: var(--theme-dark-color-neutral-bg-strong);
   --dark--navbar-font-color: var(--theme-dark-color-neutral-text-default);
   --dark--navbar-font-weight: 400;
   --dark--navbar_hover-background: transparent;

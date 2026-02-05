@@ -1061,7 +1061,7 @@ body {
  * We don't want to use a different text color when the link is visited/hover (see .doc a:visited).
 */
 .doc a.button {
-  color: light-dark(var(--color-white), var(--dark--color-white));
+  color: light-dark(var(--button-font-color), var(--dark--button-font-color));
 }
 
 .doc .button {
