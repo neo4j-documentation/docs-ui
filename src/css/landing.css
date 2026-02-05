@@ -1,10 +1,13 @@
 /* Hero */
 section.hero {
   padding: 8rem 0 0;
-  background: var(--navbar-background);
-  background: rgb(2, 0, 36);
-  background: linear-gradient(180deg, var(--navbar-background) 0%, var(--hero-fade) 80%);
+  background: linear-gradient(180deg, var(--navbar-background) 0%, var(--hero-fade) 100%);
   text-align: left;
+}
+
+body.ndl-theme-dark section.hero {
+  background: var(--dark--navbar-background);
+  background: linear-gradient(180deg, var(--dark--navbar-background) 0%, var(--dark--hero-fade) 100%);
 }
 
 body.landing .hero h1,
@@ -259,10 +262,15 @@ body.landing .ulist.buttons li a {
 /* Hero */
 .hero {
   padding: 8rem 0 0 !important;
-  background: rgba(var(--palette-neutral-80));
+  background: var(--palette-neutral-80);
   background: rgb(2, 0, 36);
   background: linear-gradient(180deg, var(--navbar-background) 0%, var(--hero-fade) 100%);
   text-align: left;
+}
+
+body.ndl-theme-dark .hero {
+  background: var(--dark--navbar-background);
+  background: linear-gradient(180deg, var(--dark--navbar-background) 0%, var(--dark--hero-fade) 100%);
 }
 
 .landing .doc .hero h2,
