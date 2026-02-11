@@ -1,4 +1,8 @@
 div.labels {
+  display: flex;
+  align-self: center;
+  gap: 0.25rem;
+  line-height: var(--doc-line-height);
   font-family: var(--body-font-family);
 }
 
@@ -14,6 +18,10 @@ div.labels {
   flex-wrap: wrap;
 }
 
+.tabbed > .labels {
+  margin: 1rem;
+}
+
 .admonitionblock div.labels {
   padding: 0.5rem 0 1rem;
 }
@@ -23,12 +31,8 @@ div.labels {
 }
 
 .header-label-container > div.labels {
-  display: flex;
-  align-self: center;
   justify-content: space-between;
-  gap: 0.25rem;
   margin-left: auto;
-  line-height: var(--doc-line-height);
 }
 
 .sect-header .header-label-container > div.labels {
