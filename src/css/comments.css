@@ -1,19 +1,19 @@
 
 .comments {
   margin: 1.5rem -1rem;
-  border: 1px solid rgba(var(--colors-neutral-20));
+  border: 1px solid rgba(var(--palette-neutral-20));
   border-top-width: 2px;
-  /* background: rgba(var(--colors-neutral-15)); */
+  /* background: rgba(var(--palette-neutral-15)); */
   border-radius: 0.5rem;
 }
 
 .comments-header {
-  background: rgba(var(--colors-neutral-20));
+  background: rgba(var(--palette-neutral-20));
   padding: 1rem;
 }
 
 .comments-header h2 {
-  color: rgba(var(--colors-neutral-60));
+  color: rgba(var(--palette-neutral-60));
   font-size: 0.8rem;
   font-weight: 600;
   line-height: 1;

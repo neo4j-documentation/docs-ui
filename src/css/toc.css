@@ -1,5 +1,5 @@
 .toc-menu {
-  color: var(--toc-font-color);
+  color: light-dark(var(--toc-font-color), var(--dark--toc-font-color));
   margin-bottom: 2rem;
   width: 220px !important;
 }
@@ -17,7 +17,7 @@
 }
 
 .toc .toc-menu h2 {
-  color: var(--toc-heading-font-color);
+  color: light-dark(var(--toc-heading-font-color), var(--dark--toc-heading-font-color));
   font-size: var(--doc-font-size-h5);
   font-weight: var(--body-font-weight-bold);
   line-height: 1.5;
@@ -89,8 +89,8 @@
 }
 
 .toc .toc-menu a {
-  color: inherit;
-  border-left: 1px solid rgba(var(--colors-neutral-20));
+  color: light-dark(var(--toc-font-color), var(--dark--toc-font-color));
+  border-left: 2px solid light-dark(var(--toc-hover-background-color), var(--dark--toc-hover-background-color));
   display: inline-block;
   padding: 0.25rem 0 0.25rem 0.5rem;
   text-decoration: none;
@@ -101,27 +101,28 @@
   outline: none;
 }
 
-.toc .toc-menu a:hover {
-  color: var(--toc-font-color);
+.toc .toc-menu ul a:hover {
+  color: light-dark(var(--toc-hover-color), var(--dark--toc-hover-color));
+  background: light-dark(var(--toc-hover-background-color), var(--dark--toc-hover-background-color));
 }
 
-.toc .toc-menu a.is-active {
-  border-left-color: var(--link-font-color);
-  color: var(--link-font-color);
-  /* color: var(--toc_active-font-color); */
+.toc .toc-menu ul a.is-active {
+  border-left-color: light-dark(var(--link-font-color), var(--dark--link-font-color));
+  color: light-dark(var(--link-font-color), var(--dark--link-font-color));
+  /* color: var(--toc-active-font-color); */
 }
 
-.toc .toc-menu a.is-active::before {
-  background: var(--toc-bullet-color);
+.toc .toc-menu ul a.is-active::before {
+  background: light-dark(var(--toc-bullet-color), var(--dark--toc-bullet-color));
 }
 
-.toc .toc-menu a.is-active::before,
-.toc .toc-menu a:hover::before {
+.toc .toc-menu ul a.is-active::before,
+.toc .toc-menu ul a:hover::before {
   opacity: 1;
 }
 
-.sidebar.toc .toc-menu a:focus {
-  background: var(--panel-background);
+.sidebar.toc .toc-menu ul a:focus {
+  background: light-dark(var(--toc-hover-background-color), var(--dark--toc-hover-background-color));
 }
 
 .toc .toc-menu .is-hidden-toc {

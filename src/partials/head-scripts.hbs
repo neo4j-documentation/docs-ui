@@ -1,1 +1,8 @@
-{{! add scripts here }}
+{{#unless page.attributes.no-dark-mode}}
+<script>
+    const userColorSchemeName = 'neo4j-docs-theme';
+    const userColorScheme = localStorage.getItem(userColorSchemeName) || 'system';
+    console.log('User color scheme preference:', userColorScheme);
+    document.documentElement.style.colorScheme = userColorScheme;
+</script>
+{{/unless}}

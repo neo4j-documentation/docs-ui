@@ -1,10 +1,10 @@
 .doc {
-  color: var(--doc-font-color);
   font-size: var(--doc-font-size);
   line-height: var(--doc-line-height);
   margin: var(--doc-margin);
   max-width: var(--doc-max-width);
   padding: 0 1rem 2rem;
+  color: light-dark(var(--doc-font-color), var(--dark--doc-font-color));
 }
 
 body {
@@ -34,7 +34,7 @@ body {
 .doc h4,
 .doc h5,
 .doc h6 {
-  color: var(--heading-font-color);
+  color: light-dark(var(--heading-font-color), var(--dark--heading-font-color));
   font-weight: var(--heading-font-weight);
   hyphens: none;
   line-height: calc((var(--doc-line-height) + 1) / 2);
@@ -75,7 +75,7 @@ body {
 .doc h5 code,
 .doc h6 code {
   padding: 0 0.25em;
-  background: var(--code-background);
+  background: light-dark(var(--code-background), var(--dark--code-background));
 }
 
 .doc > .sect-header > h1.page:first-child {
@@ -95,7 +95,7 @@ body {
 }
 
 .doc h1.sect0 {
-  background: var(--abstract-background);
+  background: light-dark(var(--abstract-background), var(--dark--abstract-background));
   font-size: 1.8em;
   margin: 1.5rem -1rem 0;
   padding: 0.5rem 1rem;
@@ -180,7 +180,7 @@ body {
 .doc a,
 .tooltip-body a {
   font-weight: 400;
-  color: var(--link-font-color);
+  color: light-dark(var(--link-font-color), var(--dark--link-font-color));
 }
 
 .doc a:not(.glossary-term),
@@ -192,11 +192,11 @@ body {
 .doc a:focus,
 .doc a:hover code:hover,
 .doc a:focus code:focus {
-  color: var(--link_hover-font-color);
+  color: light-dark(var(--link_hover-font-color), var(--dark--link_hover-font-color));
 }
 
 .doc a:visited {
-  color: var(--link-font-color);
+  color: light-dark(var(--link-font-color), var(--dark--link-font-color));
 }
 
 .doc code a {
@@ -220,15 +220,15 @@ body {
 .doc p code,
 .doc thead code,
 .doc td code {
-  color: var(--inline-code-font-color);
-  background: var(--inline-code-background);
+  color: light-dark(var(--inline-code-font-color), var(--dark--inline-code-font-color));
+  background: light-dark(var(--inline-code-background), var(--dark--inline-code-background));
   border-radius: 0.25em;
   font-size: 0.95em;
   padding: 0.125em 0.25em;
 }
 
 .doc pre {
-  color: var(--code-font-color);
+  color: light-dark(var(--code-font-color), var(--dark--code-font-color));
   font-size: calc(16 / var(--rem-base) * 1rem);
   line-height: 1.5;
   margin: 0;
@@ -297,14 +297,14 @@ body {
 }
 
 .doc table.tableblock thead th {
-  border-bottom: 2.5px solid var(--table-border-color);
+  border-bottom: 2.5px solid light-dark(var(--table-border-color), var(--dark--table-border-color));
   padding: 0.5rem;
 }
 
 .doc table.tableblock > tbody > tr > td,
 .doc table.tableblock > :not(thead) th {
-  border-top: 1px solid var(--table-border-color);
-  border-bottom: 1px solid var(--table-border-color);
+  border-top: 1px solid light-dark(var(--table-border-color), var(--dark--table-border-color));
+  border-bottom: 1px solid light-dark(var(--table-border-color), var(--dark--table-border-color));
   padding: 0.5rem;
 }
 
@@ -385,7 +385,7 @@ body {
 }
 
 .doc .admonitionblock td.icon i {
-  color: rgba(var(--colors-neutral-15));
+  color: light-dark(rgba(var(--admonition-font-color)), rgba(var(--dark--admonition-font-color)));
   align-items: center;
   border-radius: 9999px;
   display: inline-flex;
@@ -408,23 +408,33 @@ body {
 /* admonition icon and text backgrounds */
 
 .doc .admonitionblock td.icon i.icon-note {
-  background-color: var(--note-color);
+  background-color: light-dark(var(--note-color), var(--dark--note-background-color));
+  border: 1px solid light-dark(var(--note-border-color), var(--dark--note-border-color));
+  color: light-dark(var(--admonition-font-color), var(--dark--note-color));
 }
 
 .doc .admonitionblock td.icon i.icon-tip {
-  background-color: var(--tip-color);
+  background-color: light-dark(var(--tip-color), var(--dark--tip-background-color));
+  border: 1px solid light-dark(var(--tip-border-color), var(--dark--tip-border-color));
+  color: light-dark(var(--admonition-font-color), var(--dark--tip-color));
 }
 
 .doc .admonitionblock td.icon i.icon-important {
-  background-color: var(--important-color);
+  background-color: light-dark(var(--important-color), var(--dark--important-background-color));
+  border: 1px solid light-dark(var(--important-border-color), var(--dark--important-border-color));
+  color: light-dark(var(--admonition-font-color), var(--dark--important-color));
 }
 
 .doc .admonitionblock td.icon i.icon-caution {
-  background-color: var(--caution-color);
+  background-color: light-dark(var(--caution-color), var(--dark--caution-background-color));
+  border: 1px solid light-dark(var(--caution-border-color), var(--dark--caution-border-color));
+  color: light-dark(var(--admonition-font-color), var(--dark--caution-color));
 }
 
 .doc .admonitionblock td.icon i.icon-warning {
-  background-color: var(--warning-color);
+  background-color: light-dark(var(--warning-color), var(--dark--warning-background-color));
+  border: 1px solid light-dark(var(--warning-border-color), var(--dark--warning-border-color));
+  color: light-dark(var(--admonition-font-color), var(--dark--warning-color));
 }
 
 /* admonition icon contents */
@@ -472,8 +482,8 @@ body {
 }
 
 .doc .admonitionblock.warning {
-  background-color: var(--warning-background-color);
-  border-color: var(--warning-border-color);
+  background-color: light-dark(var(--warning-background-color), var(--dark--warning-background-color));
+  border-color: light-dark(var(--warning-border-color), var(--dark--warning-border-color));
 }
 
 .doc .admonitionblock.warning a.btn {
@@ -481,16 +491,16 @@ body {
 }
 
 .doc .admonitionblock.warning a {
-  color: var(--warning-color);
+  color: light-dark(var(--warning-color), var(--dark--warning-color));
 }
 
 .doc .admonitionblock.caution {
-  background-color: var(--caution-background-color);
-  border-color: var(--caution-border-color);
+  background-color: light-dark(var(--caution-background-color), var(--dark--caution-background-color));
+  border-color: light-dark(var(--caution-border-color), var(--dark--caution-border-color));
 }
 
 .doc .admonitionblock.caution a {
-  color: var(--caution-color);
+  color: light-dark(var(--caution-color), var(--dark--caution-color));
 }
 
 /* .doc .admonitionblock.caution a:hover {
@@ -498,17 +508,16 @@ body {
 } */
 
 .doc .admonitionblock.caution a.btn {
-  background-color: var(--color-orange-600);
+  background-color: light-dark(var(--caution-background-color), var(--dark--caution-background-color));
 }
 
 .doc .admonitionblock.tip {
-  background-color: var(--tip-background-color);
-  border-color: var(--tip-border-color);
+  background-color: light-dark(var(--tip-background-color), var(--dark--tip-background-color));
+  border-color: light-dark(var(--tip-border-color), var(--dark--tip-border-color));
 }
 
 .doc .admonitionblock.tip a {
-  color: rgba(var(--colors-baltic-50));
-  color: var(--tip-color);
+  color: light-dark(var(--tip-color), var(--dark--tip-color));
 }
 
 /* .doc .admonitionblock.tip a:hover {
@@ -520,12 +529,12 @@ body {
 }
 
 .doc .admonitionblock.note {
-  background-color: var(--note-background-color);
-  border-color: var(--note-border-color);
+  background-color: light-dark(var(--note-background-color), var(--dark--note-background-color));
+  border-color: light-dark(var(--note-border-color), var(--dark--note-border-color));
 }
 
 .doc .admonitionblock.note a {
-  color: var(--note-color);
+  color: light-dark(var(--note-color), var(--dark--note-color));
 }
 
 /* .doc .admonitionblock.note a:hover {
@@ -533,16 +542,16 @@ body {
 } */
 
 .doc .admonitionblock.note a.btn {
-  background-color: rgba(var(--colors-neutral-60));
+  background-color: light-dark(var(--note-background-color), var(--dark--note-background-color));
 }
 
 .doc .admonitionblock.important {
-  background-color: var(--important-background-color);
-  border-color: var(--important-border-color);
+  background-color: light-dark(var(--important-background-color), var(--dark--important-background-color));
+  border-color: light-dark(var(--important-border-color), var(--dark--important-border-color));
 }
 
 .doc .admonitionblock.important a {
-  color: var(--important-color);
+  color: light-dark(var(--important-color), var(--dark--important-color));
 }
 
 /* .doc .admonitionblock.important a:hover {
@@ -550,7 +559,7 @@ body {
 } */
 
 .doc .admonitionblock.important a.btn {
-  background-color: var(--color-purple-600);
+  background-color: light-dark(var(--important-background-color), var(--dark--important-background-color));
 }
 
 /* .doc .admonitionblock.caution .icon {
@@ -596,18 +605,21 @@ body {
 
 .doc .imageblock img {
   display: block;
+  padding: 0.25rem;
 }
 
 .doc .imageblock img,
 .doc .image > img {
   height: auto;
   max-width: 100%;
+  opacity: var(--image-opacity);
+  background: light-dark(var(--theme-light-color-neutral-bg-weak), var(--theme-dark-color-neutral-bg-strongest));
 }
 
 #preamble .abstract blockquote {
-  background: var(--abstract-background);
+  background: light-dark(var(--abstract-background), var(--dark--abstract-background));
   border-left: 5px solid var(--abstract-border-color);
-  color: var(--abstract-font-color);
+  color: light-dark(var(--abstract-font-color), var(--dark--abstract-font-color));
   font-size: calc(16 / var(--rem-base) * 1rem);
   padding: 0.75em 1em;
 }
@@ -615,22 +627,22 @@ body {
 #preamble .abstract .title {
   margin-bottom: 0;
   font-weight: 600;
-  background: var(--abstract-background);
-  border-left: 5px solid var(--abstract-border-color);
-  color: var(--abstract-font-color);
+  background: light-dark(var(--abstract-background), var(--dark--abstract-background));
+  border-left: 5px solid light-dark(var(--abstract-border-color), var(--dark--abstract-border-color));
+  color: light-dark(var(--abstract-font-color), var(--dark--abstract-font-color));
   font-size: calc(16 / var(--rem-base) * 1rem);
   padding: 0.2em 1em;
 }
 
 .doc .quoteblock blockquote {
-  background: var(--quote-background);
-  border-left: 5px solid var(--quote-border-color);
-  color: var(--quote-font-color);
+  background: light-dark(var(--quote-background), var(--dark--quote-background));
+  border-left: 5px solid light-dark(var(--quote-border-color), var(--dark--quote-border-color));
+  color: light-dark(var(--quote-font-color), var(--dark--quote-font-color));
   padding: 0.25rem 2rem 0.25rem;
 }
 
 .doc .quoteblock .attribution {
-  color: var(--quote-attribution-font-color);
+  color: light-dark(var(--quote-attribution-font-color), var(--dark--quote-attribution-font-color));
   font-size: calc(15 / var(--rem-base) * 1rem);
   margin-top: 0.75rem;
 }
@@ -753,6 +765,11 @@ body {
   font-weight: 600;
 }
 
+.doc .listingblock {
+  border: 1px solid light-dark(var(--code-border-color), var(--dark--code-border-color));
+  border-radius: 0.5rem;
+}
+
 .doc .listingblock .content {
   position: relative;
 }
@@ -764,7 +781,8 @@ body {
 .doc .listingblock .title,
 .doc .openblock .title,
 .doc .tableblock caption {
-  color: var(--caption-font-color);
+  color: light-dark(var(--caption-font-color), var(--dark--caption-font-color));
+  background: light-dark(var(--caption-background), var(--dark--caption-background));
   font-size: calc(16 / var(--rem-base) * 1rem);
   font-weight: var(--caption-font-weight);
   font-style: italic;
@@ -844,20 +862,20 @@ body {
 
 .doc pre:not(.highlight),
 .doc pre.highlight code {
-  background: var(--code-background);
-  color: var(--code-font-color);
+  background: light-dark(var(--code-background), var(--dark--code-background));
+  color: light-dark(var(--code-font-color), var(--dark--code-font-color));
+  /* border: 1px solid light-dark(var(--code-border-color), var(--dark--code-border-color)); */
   display: block;
   overflow-x: auto;
   /* width: 100%; */
   height: 100%;
-  padding: 1.5rem 0.5rem;
-  border-bottom-left-radius: 0.5rem;
-  border-bottom-right-radius: 0.5rem;
-}
-
-.doc .listingblock:not(.has-title) pre.highlight {
+  padding: 0.5rem 0.5rem 1rem;
   border-radius: 0.5rem;
 }
+
+/* .doc .listingblock:not(.has-title) pre.highlight {
+  border: 1px solid light-dark(var(--code-border-color), var(--dark--code-border-color));
+} */
 
 /* NOTE assume pre.highlight contains code[data-lang] */
 .doc pre.highlight {
@@ -875,19 +893,19 @@ body {
   letter-spacing: 0.05em;
   line-height: 1;
   text-transform: uppercase;
-  position: absolute;
-  top: 0.5rem;
-  right: 1.5rem;
-  margin-right: 0.25rem;
+  /* position: absolute; */
+  /* top: 0.5rem; */
+  /* right: 1.5rem; */
+  margin-right: 0.5rem;
 }
 
-.doc .listingblock .code-inset {
+/* .doc .listingblock .code-inset {
   display: none;
 }
 
 .doc .listingblock:hover .code-inset {
   display: block;
-}
+} */
 
 .doc .listingblock.noheader code.copied::before {
   display: none;
@@ -1043,13 +1061,14 @@ body {
  * We don't want to use a different text color when the link is visited/hover (see .doc a:visited).
 */
 .doc a.button {
-  color: var(--color-white);
+  color: light-dark(var(--button-font-color), var(--dark--button-font-color));
 }
 
 .doc .button {
   display: inline-block;
-  background: var(--color-docs);
-  color: var(--color-white);
+  background: light-dark(var(--button-background), var(--dark--button-background));
+  color: light-dark(var(--button-font-color), var(--dark--button-font-color));
+  border: 1px solid light-dark(var(--button-border-color), var(--dark--button-border-color));
   padding: 0.5rem 2rem;
   border-radius: 0.25rem;
   margin-bottom: 2rem;
@@ -1057,8 +1076,12 @@ body {
 }
 
 .doc .button:hover {
-  background: rgba(var(--colors-baltic-60));
-  color: var(--color-white);
+  background: light-dark(var(--hover-button-background), var(--dark--hover-button-background));
+  color: light-dark(var(--hover-button-font-color), var(--dark--hover-button-font-color));
+}
+
+.doc .button:hover a {
+  color: light-dark(var(--hover-button-font-color), var(--dark--hover-button-font-color));
 }
 
 .doc .button::after {
@@ -1070,39 +1093,39 @@ body {
   padding: 0.2rem 0.8rem;
   border-radius: 0.25rem;
   background: var(--color-blue-200);
-  color: var(--color-blue-700);
+  color: light-dark(var(--color-blue-700), var(--dark--color-blue-700));
   font-weight: 600;
   font-size: 0.7rem;
 }
 
 .doc .paragraph.expertise.Intermediate p {
   background: var(--color-orange-200);
-  color: var(--color-orange-700);
+  color: light-dark(var(--color-orange-700), var(--dark--color-orange-700));
 }
 
 .doc .paragraph.expertise.Advanced p {
   background: var(--color-green-200);
-  color: var(--color-green-700);
+  color: light-dark(var(--color-green-700), var(--dark--color-green-700));
 }
 
 .doc .paragraph.release p {
   display: inline-block;
   padding: 0.2rem 0.8rem;
   border-radius: 0.25rem;
-  background: var(--color-blue-200);
-  color: var(--color-blue-700);
+  background: light-dark(var(--color-blue-200), var(--dark--color-blue-200));
+  color: light-dark(var(--color-blue-700), var(--dark--color-blue-700));
   font-weight: 600;
   font-size: 0.7rem;
 }
 
 .doc .paragraph.release.core p {
   background: var(--color-orange-200);
-  color: var(--color-orange-700);
+  color: light-dark(var(--color-orange-700), var(--dark--color-orange-700));
 }
 
 .doc .paragraph.release.full p {
   background: var(--color-green-200);
-  color: var(--color-green-700);
+  color: light-dark(var(--color-green-700), var(--dark--color-green-700));
 }
 
 .doc .paragraph.type p {
@@ -1110,19 +1133,19 @@ body {
   padding: 0.2rem 0.8rem;
   border-radius: 0.25rem;
   background: var(--color-blue-200);
-  color: var(--color-blue-700);
+  color: light-dark(var(--color-blue-700), var(--dark--color-blue-700));
   font-weight: 600;
   font-size: 0.7rem;
 }
 
 .doc .paragraph.type.function p {
   background: var(--color-red-200);
-  color: var(--color-red-700);
+  color: light-dark(var(--color-red-700), var(--dark--color-red-700));
 }
 
 .doc .paragraph.type.procedure p {
   background: var(--color-blue-200);
-  color: var(--color-blue-700);
+  color: light-dark(var(--color-blue-700), var(--dark--color-blue-700));
 }
 
 .doc .responsive-embed,
@@ -1169,22 +1192,22 @@ body {
 
 .doc table.tableblock.frame-all > tbody > tr:last-child > td,
 .doc table.tableblock.frame-ends > tbody > tr:last-child > td {
-  border-bottom: 2.5px solid var(--table-border-color);
+  border-bottom: 4px solid light-dark(var(--table-border-color), var(--dark--table-border-color));
 }
 
 .doc table.tableblock.frame-all > tbody > tr:first-child > td,
 .doc table.tableblock.frame-ends > tbody > tr:first-child > td {
-  border-top: 2.5px solid var(--table-border-color);
+  border-top: 1px solid light-dark(var(--table-border-color), var(--dark--table-border-color));
 }
 
 .doc .tableblock thead {
-  background: var(--table-header-color);
-  border-bottom: var(--table-border-color);
+  background: light-dark(var(--table-header-color), var(--dark--table-header-color));
+  border-bottom: light-dark(var(--table-border-color), var(--dark--table-border-color));
 }
 
 .doc table.tableblock,
 .doc table.tableblock > * > tr > * {
-  border: 0 solid var(--table-border-color);
+  border: 0 solid light-dark(var(--table-border-color), var(--dark--table-border-color));
 }
 
 .doc .admonitionblock .tableblock thead {
@@ -1193,7 +1216,7 @@ body {
 
 .doc .admonitionblock table.tableblock,
 .doc .admonitionblock table.tableblock > * > tr > * {
-  border-color: var(--admonition-table-border-color);
+  border-color: light-dark(var(--admonition-table-border-color), var(--dark--admonition-table-border-color));
 }
 
 .doc table.grid-all > * > tr > * {
@@ -1249,7 +1272,7 @@ body {
 .doc table.stripes-odd > tbody > tr:nth-of-type(odd),
 .doc table.stripes-even > tbody > tr:nth-of-type(even),
 .doc table.stripes-hover > tbody > tr:hover {
-  background: var(--table-stripe-background);
+  background: light-dark(var(--table-stripe-background), var(--dark--table-stripe-background));
 }
 
 .doc .emphasis,
@@ -1262,10 +1285,10 @@ body {
 }
 
 .doc .tabbed {
-  background: var(--body-background);
+  /* background: var(--body-background); */
   padding: 0;
   margin: 0 -1rem 1.5rem;
-  border: 1px solid var(--color-docs);
+  border: 1px solid light-dark(var(--tabbed-section-border-color), var(--dark--tabbed-section-border-color));
   border-radius: 8px;
 }
 
@@ -1275,7 +1298,9 @@ body {
   margin: 0 1rem;
   padding: 0;
   gap: 1rem;
-  border-bottom: 1px solid rgba(var(--theme-light-palette-neutral-border-weak));
+  border-bottom: 1px solid light-dark(var(--tabbed-section-tabs-border-color), var(--dark--tabbed-section-tabs-border-color));
+  /* background: light-dark(var(--tabbed-section-tabs-background), var(--dark--tabbed-section-tabs-background)); */
+  border-radius: 8px 8px 0 0;
 }
 
 .doc .tabbed-tabs .tabbed-tab {
@@ -1290,6 +1315,10 @@ body {
   padding: 1rem;
 }
 
+.doc .tabbed-tabs .tabbed-tab--active {
+  color: light-dark(var(--tabbed-section-tab-active-font-color), var(--dark--tabbed-section-tab-active-font-color)) !important;
+}
+
 .doc .tabbed-tabs .tabbed-tab span.ndl-tab-underline {
   height: 3px;
   position: absolute;
@@ -1300,8 +1329,12 @@ body {
   border-top-right-radius: 9999px;
 }
 
+.doc .tabbed-tabs .tabbed-tab:not(.tabbed-tab--active):hover span.ndl-tab-underline {
+  background: light-dark(var(--tabbed-section-tab-hover-background), var(--dark--tabbed-section-tab-hover-background));
+}
+
 .doc .tabbed-tabs .tabbed-tab--active span.ndl-tab-underline {
-  background: var(--color-docs);
+  background: light-dark(var(--tabbed-section-tab-active-background), var(--dark--tabbed-section-tab-active-background));
 }
 
 .doc .tabbed-target {
@@ -1366,7 +1399,7 @@ body {
   margin: 0 0.2rem;
   content: "→";
   transform: rotate(-45deg);
-  color: var(--link-font-color);
+  color: light-dark(var(--link-font-color), var(--dark--link-font-color));
   transition: all 0.2s linear;
   top: 0;
 }
@@ -1385,7 +1418,7 @@ body {
 }
 
 .exampleblock {
-  background: var(--body-background);
+  background: light-dark(var(--body-background), var(--dark--body-background));
   padding: 1rem;
   margin: 0 -1rem 1.5rem;
   border: 1px solid var(--color-docs);
@@ -1398,14 +1431,14 @@ body {
 }
 
 .doc .exampleblock > .title {
-  color: var(--example-header-font-color);
+  color: light-dark(var(--example-header-font-color), var(--dark--example-header-font-color));
   /* border-left: 1px solid var(--color-docs); */
   /* border-right: 1px solid var(--color-docs); */
   padding: 0 0.75rem;
   margin: -0.5rem 0 0;
   transform: translate(0, -1rem);
   width: fit-content;
-  background: var(--body-background);
+  background: light-dark(var(--body-background), var(--dark--body-background));
   line-height: 1rem;
 }
 

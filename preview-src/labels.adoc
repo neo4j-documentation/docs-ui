@@ -1,6 +1,13 @@
 = Labels
 :page-selector-label: Custom version label
 // :page-selector-hide-label: true
+:page-ad-overlinelink: {aura_signup}
+:page-ad-overline: Neo4j Aura
+:page-ad-title: Follow Along and Learn While Doing
+:page-ad-description: Free forever, no credit card required.
+:page-ad-link: {aura_signup}
+:page-ad-underlinerole: button
+:page-ad-underline: Start on AuraDB
 
 
 == All the labels

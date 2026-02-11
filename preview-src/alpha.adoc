@@ -1,5 +1,7 @@
 = Alpha Content
 :page-role: alpha
+:page-no-dark-mode: true
+
 
 [abstract]
 --

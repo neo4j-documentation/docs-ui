@@ -233,6 +233,8 @@ Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
 Admonition should be given normal margin if it is not the first element in an example block.
 ====
 
+======
+
 =====
 
 == Icons in tables

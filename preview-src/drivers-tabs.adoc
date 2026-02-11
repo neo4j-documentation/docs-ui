@@ -1,4 +1,6 @@
 = Tabbed sections in Neo4j Manuals
+:page-theme: docs
+
 
 Up to Neo4j 4.1 the Drivers Manual includes tabs to allow users to choose with driver language sections to display.
 From 4.2 on, the Drivers Manual is split into a separate manual per language.

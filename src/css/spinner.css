@@ -10,7 +10,7 @@
   width: 100%;
   height: 100%;
   border-radius: 50%;
-  background-color: rgba(var(--colors-neutral-30));
+  background-color: rgba(var(--palette-neutral-30));
   opacity: 0.6;
   position: absolute;
   top: 0;

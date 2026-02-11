@@ -2,7 +2,7 @@
 .docs .ndl-drawer.ndl-drawer-overlay {
   position: fixed;
   top: 4px;
-  box-shadow: -2px 1px 2px 1px rgba(var(--colors-neutral-20));
+  box-shadow: -2px 1px 2px 1px var(--colors-neutral-20);
 }
 
 .doc .paragraph .title {
@@ -25,10 +25,10 @@
 .docs.image-shadow article img,
 .docs article .shadow img {
   box-shadow:
-    2px 2px 4px 0 rgba(var(--colors-neutral-50)),
-    0 4px 4px 2px rgba(var(--colors-neutral-30)),
-    0 4px 6px 4px rgba(var(--colors-neutral-20)),
-    4px 4px 4px 4px rgba(var(--colors-neutral-10));
+    2px 2px 4px 0 var(--colors-neutral-50),
+    0 4px 4px 2px var(--colors-neutral-30),
+    0 4px 6px 4px var(--colors-neutral-20),
+    4px 4px 4px 4px var(--colors-neutral-10);
 }
 
 .docs article .rounded-corners img,
@@ -275,8 +275,8 @@ span.fabric::after {
 .doc .paragraph.erroronlyqueryresult {
   font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
   font-size: calc(14 / var(--rem-base) * 1rem);
-  background-color: var(--code-result-background);
-  color: var(--code-result-font-color);
+  background-color: light-dark(var(--code-result-background), var(--dark--code-result-background));
+  color: light-dark(var(--code-result-font-color), var(--dark--code-result-font-color));
   margin: 0;
   margin-top: -1.5rem;
   margin-right: 30%;
@@ -295,8 +295,8 @@ span.fabric::after {
 .sect2.beta h3::after,
 span.alpha::after,
 span.beta::after {
-  background: var(--alpha-beta-background-color);
-  color: var(--alpha-beta-color);
+  background: light-dark(var(--alpha-beta-background-color), var(--dark--alpha-beta-background-color));
+  color: light-dark(var(--alpha-beta-color), var(--dark--alpha-beta-color));
 }
 
 .sect1.alpha h2::after,
@@ -326,7 +326,7 @@ div.tier-note p::before {
   margin-right: 10px;
   font-family: fantasy;
   font-size: 2rem;
-  color: var(--alpha-beta-background-color);
+  color: light-dark(var(--alpha-beta-background-color), var(--dark--alpha-beta-background-color));
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
 }
 
@@ -349,7 +349,7 @@ div.beta-symbol p::before {
 }
 
 .graph-variants > .title {
-  color: #4a5568 !important;
+  color: light-dark(var(--caption-font-color), var(--dark--caption-font-color)) !important;
   font-style: normal !important;
   font-size: calc(20 / var(--rem-base) * 1rem) !important;
 }
@@ -357,6 +357,9 @@ div.beta-symbol p::before {
 .graph-variants > .content {
   display: flex;
   flex-flow: row wrap;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1rem;
 }
 
 @media screen and (max-width: 1244px) {
@@ -383,44 +386,57 @@ div.beta-symbol p::before {
   flex-wrap: nowrap;
   justify-content: center;
   white-space: nowrap;
-  padding: 0.2rem 0.3rem;
-  margin: 0.5em 1em 0 0;
+  padding: 0.4rem 0.4rem;
+  margin: 0;
   line-height: 1em;
-  border-radius: 0.2rem;
+  /* border-radius: 0.2rem; */
 }
 
 .graph-variants > .content > .supported {
-  background-color: var(--success-background-color);
-  color: var(--success-color);
+  background-color: light-dark(var(--tip-background-color), var(--dark--tip-background-color));
+  border: 1px solid light-dark(var(--tip-border-color), var(--dark--tip-border-color));
+  border-radius: 0.5rem;
+}
+
+.graph-variants > .content > .supported a {
+  color: light-dark(var(--tip-color), var(--dark--tip-color));
 }
 
 .graph-variants > .content > .supported::before {
   content: '\2714';
   margin-right: 0.5em;
-  color: var(--success-color);
 }
 
 .graph-variants > .content > .allowed {
-  background-color: var(--neutral-background-color);
-  color: var(--neutral-color);
+  background-color: light-dark(var(--caution-background-color), var(--dark--caution-background-color));
+  border: 1px solid light-dark(var(--caution-border-color), var(--dark--caution-border-color));
+  border-radius: 0.5rem;
+}
+
+.graph-variants > .content > .allowed a {
+  color: light-dark(var(--caution-color), var(--dark--caution-color));
 }
 
 .graph-variants > .content > .allowed::before {
   content: '(\2714)';
   margin-right: 0.5em;
-  color: var(--neutral-color);
+  /* color: light-dark(var(--admonition-font-color), var(--dark--admonition-font-color)); */
 }
 
 .graph-variants > .content > .not-supported {
-  background-color: var(--warning-background-color);
-  color: var(--warning-color);
+  background-color: light-dark(var(--warning-background-color), var(--dark--warning-background-color));
+  border: 1px solid light-dark(var(--warning-border-color), var(--dark--warning-border-color));
+  border-radius: 0.5rem;
+}
+
+.graph-variants > .content > .not-supported a {
+  color: light-dark(var(--warning-color), var(--dark--warning-color));
 }
 
 .graph-variants > .content > .not-supported::before {
   content: '\2716';
   margin-right: 0.5em;
-  background-color: var(--warning-background-color);
-  color: var(--warning-color);
+  /* color: light-dark(var(--admonition-font-color), var(--dark--admonition-font-color)); */
 }
 
 ul.bibliography {
