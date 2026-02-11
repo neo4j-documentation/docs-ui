@@ -155,6 +155,12 @@ document.addEventListener('DOMContentLoaded', function () {
       var tabbedContainer = createElement('div', 'tabbed-container', [])
       var tabbedParent = createElement('div', 'tabbed', [tabbedContainer])
 
+      // if there's a labels div inside tab, add it before tabbedContainer
+      const labelsDiv = tab.querySelector('.labels')
+      if (labelsDiv) {
+        tabbedParent.insertBefore(labelsDiv, tabbedContainer)
+      }
+
       if (tabsTitle) {
         parent.insertBefore(tabsTitle, originalTab)
       }
