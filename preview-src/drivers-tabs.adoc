@@ -556,3 +556,74 @@ YIELD
 |===
 ======
 ====
+
+
+== Tabbed example where the tabbed section has a label
+
+[.tabbed-example.label--new-2025.12]
+====
+[.include-with-macos]
+======
+Tab for macOS
+======
+[.include-with-linux]
+======
+Tab for Linux
+======
+[.include-with-windows]
+======
+Tab for Linux
+======
+[.include-with-whatever]
+======
+Tab for whatever
+======
+====
+
+
+== Tabbed example where tabs each have a label assigned
+
+[.tabbed-example]
+====
+[.include-with-macos.label--macos]
+======
+Tab for macOS
+======
+[.include-with-linux.label--linux]
+======
+Tab for Linux
+======
+[.include-with-windows.label--windows]
+======
+Tab for Windows
+======
+[.include-with-whatever.label--whatever]
+======
+Tab for whatever
+======
+====
+
+
+
+== Tabbed example where one tab has a label assigned
+
+[.tabbed-example]
+====
+[.include-with-macos]
+======
+Tab for macOS
+======
+[.include-with-linux.label--linux]
+======
+Tab for Linux
+======
+[.include-with-windows]
+======
+Tab for Linux
+======
+[.include-with-whatever]
+======
+Tab for whatever
+======
+====
+
