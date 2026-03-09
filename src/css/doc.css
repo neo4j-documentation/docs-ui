@@ -101,11 +101,21 @@ body {
   padding: 0.5rem 1rem;
 }
 
-.doc h2:not(.discrete) {
-  border-bottom: 1px solid var(--section-divider-color);
-  /* margin-left: -1rem;
-  margin-right: -1rem; */
+.doc h2 {
   padding: 0.4rem 0 0.5rem;
+  border-bottom: 1px solid var(--section-divider-color);
+}
+
+.doc h3,
+.doc h4 {
+  padding: 0.3rem 0 0.4rem;
+  border-bottom: 1px solid var(--section-divider-color);
+}
+
+.doc h5,
+.doc h6 {
+  padding: 0.2rem 0 0.3rem;
+  border-bottom: 1px solid var(--section-divider-color);
 }
 
 .doc h3:not(.discrete) {
