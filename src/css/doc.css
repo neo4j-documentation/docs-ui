@@ -11,6 +11,10 @@ body {
   font-weight: var(--body-font-weight);
 }
 
+#qualified-multimodal-host {
+  display:none !important;
+}
+
 @media screen and (min-width: 1024px) {
   .doc.research {
     max-width: 2000px;
