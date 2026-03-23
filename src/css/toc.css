@@ -16,7 +16,12 @@
   top: calc(var(--toc-top) + 1rem);
 }
 
-.toc .toc-menu h2 {
+.toc .theme-selector select {
+  min-width: 150px;
+}
+
+.toc .toc-menu h2,
+.toc .theme-selector h2 {
   color: var(--toc-heading-font-color);
   font-size: var(--doc-font-size-h5);
   font-weight: var(--body-font-weight-bold);

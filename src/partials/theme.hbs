@@ -1,6 +1,13 @@
 {{#unless page.attributes.no-dark-mode}}
-<div id="theme-dropdown" class="navbar-item has-dropdown is-hoverable docs">
+<div id="theme-selector">
     <span class="navbar-link">Theme</span>
+    <div class="theme-selector-placeholder"></div>
+
+
+</div>
+
+<div>
+    
     <div class="navbar-dropdown navbar-dropdown-narrow">
     <div class="navbar-item project" data-theme="light">
         <span class="project-name">Light</span>
@@ -8,11 +15,11 @@
     <div class="navbar-item project" data-theme="dark">
         <span class="project-name">Dark</span>
     </div>
-    <div class="navbar-item project" data-theme="system">
+    {{!-- <div class="navbar-item project" data-theme="system">
         <span class="project-name">System</span>
-    </div>
+    </div> --}}
     </div>
 </div>
 {{else}}
-<span id ="theme-dropdown" class="no-dark-mode hidden"></span>
+<span id ="theme-selector" class="no-dark-mode hidden"></span>
 {{/unless}}
