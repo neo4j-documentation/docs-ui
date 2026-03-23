@@ -2,12 +2,12 @@
   position: fixed;
   bottom: 0;
   left: 1rem;
-  border: 1px solid light-dark(var(--feedback-border-color), var(--dark--feedback-border-color));
+  border: 1px solid var(--feedback-border-color);
   border-top-left-radius: 0.25rem;
   border-top-right-radius: 0.25rem;
   border-bottom: none;
-  background: light-dark(var(--feedback-background), var(--dark--feedback-background));
-  color: light-dark(var(--feedback-color), var(--dark--feedback-color));
+  background: var(--feedback-background);
+  color: var(--feedback-color);
   padding: 0.5rem 1rem;
   width: calc(var(--nav-width) - 2rem);
   font-size: 0.8rem;
@@ -16,21 +16,21 @@
 }
 
 .feedback.negative {
-  background: light-dark(var(--feedback-negative-background), var(--dark--feedback-negative-background));
-  color: light-dark(var(--feedback-negative-color), var(--dark--feedback-negative-color));
+  background: var(--feedback-negative-background);
+  color: var(--feedback-negative-color);
 }
 
 .feedback.negative line {
-  stroke: light-dark(var(--feedback-negative-background), var(--dark--feedback-negative-background));
+  stroke: var(--feedback-negative-background);
 }
 
 .feedback.negative a {
-  color: light-dark(var(--feedback-negative-background), var(--dark--feedback-negative-background));
+  color: var(--feedback-negative-background);
 }
 
 .feedback.positive {
-  background: light-dark(var(--feedback-positive-background), var(--dark--feedback-positive-background));
-  color: light-dark(var(--feedback-positive-color), var(--dark--feedback-positive-color));
+  background: var(--feedback-positive-background);
+  color: var(--feedback-positive-color);
 }
 
 .feedback .header {
@@ -67,7 +67,7 @@
 .feedback input.primary,
 .feedback input.secondary {
   margin-right: 0.5rem;
-  background: light-dark(var(--feedback-input-background), var(--dark--feedback-input-background));
+  background: var(--feedback-input-background);
 }
 
 .feedback .feedback-option {
@@ -86,11 +86,11 @@
 .feedback textarea {
   border-radius: 0.25rem;
   border: 1px solid var(--color-blue-300);
-  background: light-dark(var(--feedback-textarea-background), var(--dark--feedback-textarea-background));
+  background: var(--feedback-textarea-background);
   width: 100%;
   font-family: inherit;
   font-size: 0.7rem;
-  color: light-dark(var(--feedback-textarea-color), var(--dark--feedback-textarea-color));
+  color: var(--feedback-textarea-color);
   padding: 0.5rem;
   margin-top: 0.5rem;
 }
@@ -106,9 +106,9 @@
 .feedback .primary,
 .feedback .secondary {
   padding: 0.5rem 1rem;
-  background: light-dark(var(--feedback-primary-background), var(--dark--feedback-primary-background));
-  border: 1px solid light-dark(var(--feedback-primary-border-color), var(--dark--feedback-primary-border-color));
-  color: light-dark(var(--feedback-primary-color), var(--dark--feedback-primary-color));
+  background: var(--feedback-primary-background);
+  border: 1px solid var(--feedback-primary-border-color);
+  color: var(--feedback-primary-color);
   border-radius: 0.175rem;
   font-size: 0.8rem;
   font-family: inherit;

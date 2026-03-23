@@ -1,8 +1,8 @@
 .toolbar {
-  color: light-dark(var(--toolbar-font-color), var(--dark--toolbar-font-color));
+  color: var(--toolbar-font-color);
   align-items: center;
-  background-color: light-dark(var(--toolbar-background), var(--dark--toolbar-background));
-  box-shadow: 0 1px 0 light-dark(var(--toolbar-border-color), var(--dark--toolbar-border-color));
+  background-color: var(--toolbar-background);
+  box-shadow: 0 1px 0 var(--toolbar-border-color);
   display: flex;
   font-size: calc(15 / var(--rem-base) * 1rem);
   height: var(--toolbar-height);

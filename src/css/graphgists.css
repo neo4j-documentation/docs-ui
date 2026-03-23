@@ -72,7 +72,7 @@ ul.graphgists > li > a {
   display: grid;
   grid-template-rows: 250px 1fr;
   grid-template-columns: minmax(min-content, 400px);
-  background-color: light-dark(var(--body-background), var(--dark--body-background));
+  background-color: var(--body-background);
 }
 
 body.ndl-theme-dark .graphgist-card {
@@ -167,7 +167,7 @@ body.graphgist .doc > .sect1 > .sectionbody {
 }
 
 .graphgist-metadata {
-  background: light-dark(var(--panel-background), var(--dark--panel-background));
+  background: var(--panel-background);
   float: right;
   margin-left: 1rem;
   margin-bottom: 1rem;

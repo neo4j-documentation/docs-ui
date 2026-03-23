@@ -173,7 +173,7 @@ body.landing .ulist.buttons li a {
   display: inline-block;
   margin: 0 0.25rem;
   background: rgba(var(--palette-neutral-80));
-  color: white;
+  color: var(--color-white);
   font-weight: 600;
   padding: 1rem 2rem;
   border-radius: 0.25rem;

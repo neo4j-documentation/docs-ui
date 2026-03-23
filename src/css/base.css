@@ -26,8 +26,8 @@ body .hidden {
 }
 
 body {
-  background: light-dark(var(--body-background), var(--dark--body-background));
-  color: light-dark(var(--body-font-color), var(--dark--body-font-color));
+  background: var(--body-background);
+  color: var(--body-font-color);
   transition: background 0.2s, color 0.2s;
   font-family: var(--body-font-family);
   line-height: var(--body-line-height);
