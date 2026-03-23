@@ -147,6 +147,9 @@ html[style*="color-scheme: light;"] .navbar-logo-dark {
   align-items: stretch;
   display: flex;
   flex-shrink: 0;
+  justify-content: space-around;
+  column-gap: 1.5rem;
+  margin: 1rem;
   /* height: var(--navbar-height); */
 }
 
@@ -220,7 +223,7 @@ html[style*="color-scheme: light;"] .navbar-logo-dark {
   color: var(--navbar-font-color);
   display: block;
   line-height: var(--doc-line-height);
-  padding: 0.5rem 1rem;
+  /* padding: 0.5rem 1rem; */
   position: relative;
 }
 
@@ -242,6 +245,19 @@ html[style*="color-scheme: light;"] .navbar-logo-dark {
   width: fit-content;
 }
 
+#theme-dropdown.navbar-item {
+  padding: 0;
+}
+
+#theme-dropdown .navbar-link {
+  padding: 0.5rem 0.25rem;
+}
+
+#theme-dropdown .navbar-dropdown {
+  left: 50%;
+  transform: translateX(-50%);
+}
+
 #theme-dropdown .navbar-item:hover {
   cursor: pointer;
   background: var(--toc-hover-background-color);
@@ -249,20 +265,30 @@ html[style*="color-scheme: light;"] .navbar-logo-dark {
 
 #theme-dropdown .navbar-item {
   margin: 0.25rem;
-  padding: 0.5rem 2.5rem;
+  padding: 0.5rem 1rem;
+  border: 1px solid transparent;
   border-radius: 0.5rem;
-  min-width: 200px;
+  min-width: 120px;
 }
 
-#theme-dropdown .navbar-item.selected::before {
-  content: url("../img/ndl-icons/check.svg");
-  position: absolute;
-  left: 0.55rem;
-  font-size: 0.8rem;
+#theme-dropdown .navbar-item.project {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.5rem;
 }
 
-html[style*="color-scheme: dark;"] #theme-dropdown .navbar-item.selected::before {
-  filter: invert(1) hue-rotate(180deg);
+#theme-dropdown .navbar-item .theme-icon {
+  display: block;
+  flex-shrink: 0;
+}
+
+#theme-dropdown .theme-icon-dark { display: none; }
+html[style*="color-scheme: dark"] #theme-dropdown .theme-icon-dark { display: block; }
+html[style*="color-scheme: dark"] #theme-dropdown .theme-icon-light { display: none; }
+
+#theme-dropdown .navbar-item.selected {
+  border: 2px solid var(--color-docs) !important;
 }
 
 @media screen and (min-width: 1024px) {
@@ -417,6 +443,10 @@ html[style*="color-scheme: dark;"] #theme-dropdown .navbar-item.selected::before
     top: 50%;
   }
 
+  #theme-dropdown.navbar-item.has-dropdown::after {
+    display: none;
+  }
+
   .navbar-item.has-dropdown::before {
     position: absolute;
     content: "";
@@ -433,12 +463,18 @@ html[style*="color-scheme: dark;"] #theme-dropdown .navbar-item.selected::before
     border-bottom: 0.4rem solid transparent;
   }
 
-  .developer.navbar-item.has-dropdown:hover::before {
-    border-bottom-color: var(--navbar-developer-border);
+  #theme-dropdown.navbar-item.has-dropdown::before {
+    left: 50%;
+    transform: translateX(-50%);
+    margin-left: 0;
   }
 
   .docs.navbar-item.has-dropdown:hover::before {
-    border-bottom-color: var(--navbar-menu-border-color);
+    border-bottom-color: var(--color-docs);
+  }
+
+  .developer.navbar-item.has-dropdown:hover::before {
+    border-bottom-color: var(--navbar-developer-border);
   }
 
   .navbar-item.labs.has-dropdown:hover::before {
@@ -452,12 +488,14 @@ html[style*="color-scheme: dark;"] #theme-dropdown .navbar-item.selected::before
   .navbar-end {
     justify-content: flex-end;
     margin-left: auto;
+    margin-right: 1rem;
+    column-gap: 1.5rem;
   }
 
   .navbar-dropdown {
     background-color: var(--navbar-menu-background);
     border: 1px solid var(--navbar-menu-border-color);
-    border-top: none;
+    border-top-width: 2px;
     border-radius: 0 0 0.25rem 0.25rem;
     display: none;
     top: 100%;
@@ -502,28 +540,27 @@ html[style*="color-scheme: dark;"] #theme-dropdown .navbar-item.selected::before
 }
 
 .navbar-item.training .navbar-dropdown {
-  border-top-color: var(--navbar-training-border);
+  border-color: var(--navbar-training-border);
 }
 
 .navbar-item.developer .navbar-dropdown {
-  border-top-color: var(--navbar-developer-border);
+  border-color: var(--navbar-developer-border);
 }
 
 .navbar-item.docs .navbar-dropdown {
-  border-top-color: var(--navbar-menu-border-color);
+  border-color: var(--color-docs);
 }
 
 .navbar-item.labs .navbar-dropdown {
-  border-top-color: var(--navbar-labs-border);
+  border-color: var(--navbar-labs-border);
 }
 
 .navbar-item.kb .navbar-dropdown {
-  border-top-color: var(--navbar-kb-border);
+  border-color: var(--navbar-kb-border);
 }
 
 @media screen and (min-width: 1024px) {
   .navbar-dropdown {
-    border-top: 4px solid;
     margin-top: 0;
     border-radius: 4px;
     max-width: 480px;

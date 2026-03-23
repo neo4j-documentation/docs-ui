@@ -39,7 +39,7 @@
   --body-background: light-dark(var(--palette-neutral-10), var(--theme-dark-color-neutral-bg-default));
   --panel-background: light-dark(var(--palette-neutral-15), var(--theme-dark-color-neutral-bg-weak));
   --panel-border-color: var(--palette-neutral-20);
-  --panel_hover-border-color: light-dark(var(--palette-neutral-50), var(--dark--color-docs));
+  --panel_hover-border-color: light-dark(var(--palette-neutral-50), var(--color-docs));
   --scrollbar-thumb-color: light-dark(var(--theme-light-color-neutral-bg-strong), var(--theme-dark-color-neutral-bg-strong));
   /* navbar */
   --navbar-background: light-dark(var(--theme-light-color-neutral-bg-weak), var(--theme-dark-color-neutral-bg-weak));
@@ -48,9 +48,9 @@
   --navbar-font-weight: 400;
   --navbar_hover-background: transparent;
   --button-background: light-dark(var(--color-docs), var(--theme-dark-color-neutral-bg-on-bg-weak));
-  --button-border-color: light-dark(var(--color-docs), var(--dark--color-docs));
+  --button-border-color: var(--color-docs);
   --button-font-color: light-dark(var(--theme-light-color-neutral-text-inverse), var(--theme-dark-color-neutral-text-weak));
-  --hover-button-background: light-dark(var(--color-docs-weak), var(--dark--color-docs));
+  --hover-button-background: light-dark(var(--color-docs-weak), var(--color-docs));
   --hover-button-border-color: light-dark(var(--color-docs), var(--theme-dark-color-neutral-text-inverse));
   --hover-button-font-color: light-dark(var(--theme-light-color-neutral-text-inverse), var(--theme-dark-color-neutral-text-inverse));
   --navbar-menu-border-color: light-dark(var(--panel-border-color), var(--theme-dark-color-neutral-border-strong));
@@ -60,11 +60,11 @@
   --navbar-menu_hover-background: transparent;
   --navbar-top-border: var(--palette-neutral-20);
   --navbar-bottom-border: light-dark(var(--palette-neutral-20), var(--theme-dark-color-neutral-border-weak));
-  --navbar-dropdown-link: light-dark(var(--palette-baltic-50), var(--dark--color-docs));
-  --navbar-dropdown_hover-link: light-dark(var(--color-blue-800), var(--dark--color-docs));
+  --navbar-dropdown-link: light-dark(var(--palette-baltic-50), var(--color-docs));
+  --navbar-dropdown_hover-link: light-dark(var(--color-blue-800), var(--color-docs));
   --navbar-training-border: var(--color-developer);
   --navbar-developer-border: var(--color-developer);
-  --navbar-docs-border: light-dark(var(--color-docs), var(--dark--color-docs));
+  --navbar-docs-border: var(--color-docs);
   --navbar-labs-border: var(--color-labs);
   --navbar-kb-border: var(--color-kb);
 
@@ -99,11 +99,11 @@
 
   /* toc */
   --toc-font-color: light-dark(var(--palette-neutral-70), var(--theme-dark-color-neutral-text-default));
-  --toc-active-font-color: light-dark(var(--palette-baltic-70), var(--dark--color-docs));
+  --toc-active-font-color: light-dark(var(--palette-baltic-70), var(--color-docs));
   --toc-active-background-color: var(--palette-baltic-10);
   --toc-hover-background-color: light-dark(var(--theme-light-color-neutral-hover), var(--theme-dark-color-primary-hover-weak));
   --toc-hover-color: light-dark(var(--theme-light-color-primary-text), var(--theme-dark-color-neutral-text-default));
-  --toc-heading-font-color: light-dark(var(--palette-neutral-70), var(--dark--color-docs));
+  --toc-heading-font-color: light-dark(var(--palette-neutral-70), var(--color-docs));
   --toc-item-font-color: light-dark(var(--palette-neutral-70), var(--theme-dark-color-neutral-text-default));
   --toc-border-color: light-dark(var(--palette-neutral-30), var(--theme-dark-color-neutral-border-weak));
   --toc-line-height: 1.4;
@@ -175,11 +175,11 @@
   --neutral-background-color: light-dark(var(--theme-light-color-neutral-bg-default), var(--theme-dark-color-neutral-bg-default));
 
   /* feedback */
-  --feedback-color: light-dark(var(--color-docs), var(--dark--color-docs));
+  --feedback-color: var(--color-docs);
   --feedback-background-color: light-dark(var(--theme-light-color-primary-bg-weak), var(--theme-dark-color-primary-bg-weak));
-  --feedback-positive-color: light-dark(var(--color-docs), var(--dark--color-docs));
+  --feedback-positive-color: var(--color-docs);
   --feedback-positive-background-color: light-dark(var(--theme-light-color-success-bg-strong), var(--theme-dark-color-success-bg-strong));
-  --feedback-negative-color: light-dark(var(--color-docs), var(--dark--color-docs));
+  --feedback-negative-color: var(--color-docs);
   --feedback-negative-background-color: light-dark(var(--theme-light-color-danger-bg-strong), var(--theme-dark-color-danger-bg-strong));
 
   /* tooltip (glossary) */
@@ -209,11 +209,11 @@
   --docs-ndl-spacer: 1.5rem;
 
   /* headers */
-  --doc-font-size-h1: light-dark(var(--typography-title-1-font-size), var(--typography-title-2-font-size));
-  --doc-font-size-h2: light-dark(var(--typography-title-2-font-size), var(--typography-title-3-font-size));
-  --doc-font-size-h3: light-dark(var(--typography-title-3-font-size), var(--typography-title-4-font-size));
-  --doc-font-size-h4: light-dark(var(--typography-title-4-font-size), var(--typography-title-5-font-size));
-  --doc-font-size-h5: light-dark(var(--typography-title-5-font-size), var(--typography-title-6-font-size));
+  --doc-font-size-h1: var(--typography-title-1-font-size);
+  --doc-font-size-h2: var(--typography-title-2-font-size);
+  --doc-font-size-h3: var(--typography-title-3-font-size);
+  --doc-font-size-h4: var(--typography-title-4-font-size);
+  --doc-font-size-h5: var(--typography-title-5-font-size);
   --doc-font-size-h6: calc(var(--typography-title-6-font-size) * 0.75);
   --heading-font-color: light-dark(var(--theme-light-color-neutral-text-default), var(--theme-dark-color-neutral-text-default));
   --heading-font-weight: var(--font-weight-normal);
@@ -221,25 +221,25 @@
   --section-divider-color: var(--palette-neutral-20);
 
   /* links */
-  --link-font-color: light-dark(var(--palette-baltic-50), var(--dark--color-docs));
+  --link-font-color: light-dark(var(--palette-baltic-50), var(--color-docs));
   --link_hover-font-color: light-dark(var(--palette-baltic-55), var(--palette-baltic-30));
   --link_unresolved-font-color: var(--important-color);
 
   /* abstract */
   --abstract-background: light-dark(var(--palette-neutral-10), var(--theme-dark-color-neutral-bg-on-bg-weak));
   --abstract-font-color: light-dark(var(--palette-neutral-70), var(--theme-dark-body-font-color));
-  --abstract-border-color: light-dark(var(--panel-border-color), var(--dark--color-docs));
+  --abstract-border-color: light-dark(var(--panel-border-color), var(--color-docs));
   --admonition-background: light-dark(var(--panel-background), var(--dark--panel-background));
   --admonition-label-font-weight: var(--body-font-weight-bold);
   --caption-font-color: light-dark(var(--palette-neutral-70), var(--theme-dark-color-neutral-text-default));
   --caption-font-weight: var(--body-font-weight-bold);
 
   /* toc ad */
-  --toc-ad-border-color: light-dark(var(--theme-light-color-neutral-border-strong), var(--dark--color-docs));
+  --toc-ad-border-color: light-dark(var(--theme-light-color-neutral-border-strong), var(--color-docs));
   --toc-ad-background: light-dark(var(--theme-light-color-neutral-bg-weak), var(--theme-dark-color-neutral-bg-on-bg-weak));
-  --toc-ad-font-color: light-dark(var(--body-font-color), var(--dark--color-docs));
-  --toc-ad-title-color: light-dark(var(--body-font-color), var(--dark--color-docs));
-  --toc-ad-button-background: light-dark(var(--color-docs), var(--dark--color-docs));
+  --toc-ad-font-color: light-dark(var(--body-font-color), var(--color-docs));
+  --toc-ad-title-color: light-dark(var(--body-font-color), var(--color-docs));
+  --toc-ad-button-background: var(--color-docs);
   --toc-ad-button-font-color: light-dark(var(--theme-light-color-neutral-text-inverse), var(--theme-dark-color-neutral-text-inverse));
 
   /* code */
@@ -261,7 +261,7 @@
   --pre-background: var(--panel-background);
   --pre-border-color: var(--panel-border-color);
   --pre-annotation-font-color: light-dark(var(--palette-neutral-70), var(--theme-dark-color-neutral-bg-weak));
-  --code-copy-success-border: light-dark(var(--theme-light-color-success-border-strong), var(--dark--color-docs));
+  --code-copy-success-border: light-dark(var(--theme-light-color-success-border-strong), var(--color-docs));
   --code-copy-success-background: light-dark(var(--theme-light-color-success-bg-strong), var(--theme-dark-color-neutral-bg-on-bg-weak));
   --code-copy-success-color: light-dark(var(--theme-light-color-neutral-text-inverse), var(--theme-dark-color-neutral-text-weak));
 
@@ -273,7 +273,7 @@
 
   /* quotes */
   --quote-background: light-dark(var(--palette-baltic-10), var(--theme-dark-color-neutral-bg-on-bg-weak));
-  --quote-border-color: light-dark(var(--palette-baltic-70), var(--dark--color-docs));
+  --quote-border-color: light-dark(var(--palette-baltic-70), var(--color-docs));
   --quote-font-color: light-dark(var(--palette-baltic-50), var(--theme-dark-color-neutral-text-default));
   --quote-attribution-font-color: light-dark(var(--palette-baltic-50), var(--theme-dark-color-neutral-text-default));
   --sidebar-background: light-dark(var(--theme-light-color-neutral-bg-strong), var(--theme-dark-color-neutral-bg-strong));
@@ -284,7 +284,7 @@
   --kbd-border-color: var(--palette-neutral-40);
 
   /* tabbed sections */
-  --tabbed-section-border-color: light-dark(var(--color-docs), var(--dark--color-docs));
+  --tabbed-section-border-color: var(--color-docs);
   --tabbed-section-background: light-dark(var(--theme-light-color-neutral-bg-on-bg-weak), var(--theme-dark-color-neutral-bg-on-bg-weak));
   --tabbed-section-tabs-border-color: light-dark(var(--theme-light-color-neutral-border-strong), var(--theme-dark-color-neutral-border-strong));
 
@@ -322,7 +322,7 @@
   /* feedback */
   --feedback-background: light-dark(var(--theme-light-color-primary-bg-weak), var(--theme-dark-color-primary-bg-weak));
   --feedback-color: var(--color-docs);
-  --feedback-border-color: light-dark(var(--color-docs), var(--dark--color-docs));
+  --feedback-border-color: var(--color-docs);
   --feedback-negative-background: light-dark(var(--theme-light-color-primary-bg-weak), var(--theme-dark-color-primary-bg-weak));
   --feedback-negative-color: var(--color-docs);
   --feedback-positive-background: light-dark(var(--theme-light-color-primary-bg-weak), var(--theme-dark-color-primary-bg-weak));
@@ -387,7 +387,7 @@
 
   /* docs home, hub etc */
   --hub-highlight-border: light-dark(var(--palette-baltic-50), var(--palette-baltic-30));
-  --hub-highlight-background: light-dark(var(--palette-baltic-30), var(--dark--color-docs));
+  --hub-highlight-background: light-dark(var(--palette-baltic-30), var(--color-docs));
   --hub-ga-card-background: light-dark(var(--theme-light-color-success-bg-weak), var(--theme-dark-color-success-bg-weak));
   --hub-ga-border-color: light-dark(var(--theme-light-color-success-border-strong), var(--theme-dark-color-success-border-strong));
 
