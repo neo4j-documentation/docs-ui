@@ -7,8 +7,8 @@ body {
 }
 
 .header-banner {
-  background: light-dark(var(--note-background-color), var(--dark--note-background-color));
-  color: light-dark(var(--note-color), var(--dark--note-color));
+  background: var(--note-background-color);
+  color: var(--note-color);
   box-shadow: 0 0 1px var(--note-border-color);
   font-size: calc(16 / var(--rem-base) * 1rem);
   height: var(--banner-height);
@@ -22,13 +22,13 @@ body {
 }
 
 .header-banner.warning-banner {
-  background: light-dark(var(--warning-background-color), var(--dark--warning-background-color));
-  color: light-dark(var(--warning-banner-color), var(--dark--warning-banner-color));
+  background: var(--warning-background-color);
+  color: var(--warning-banner-color);
   box-shadow: 0 0 1px var(--warning-border-color);
 }
 
 .header-banner.warning-banner a {
-  color: light-dark(var(--warning-color), var(--dark--warning-color));
+  color: var(--warning-color);
 }
 
 .header-banner span {
@@ -36,16 +36,16 @@ body {
 }
 
 .navbar {
-  background: light-dark(var(--navbar-background), var(--dark--navbar-background));
-  color: light-dark(var(--navbar-font-color), var(--dark--navbar-font-color));
+  background: var(--navbar-background);
+  color: var(--navbar-font-color);
   font-size: calc(16 / var(--rem-base) * 1rem);
   height: var(--navbar-height);
   position: fixed;
   top: 0;
   width: 100%;
   word-wrap: break-word;
-  border-top: 4px solid light-dark(var(--navbar-top-border), var(--dark--navbar-top-border));
-  border-bottom: 1px solid light-dark(var(--navbar-bottom-border), var(--dark--navbar-bottom-border));
+  border-top: 4px solid var(--navbar-top-border);
+  border-bottom: 1px solid var(--navbar-bottom-border);
   z-index: var(--z-index-navbar);
   display: flex;
 }
@@ -53,11 +53,11 @@ body {
 .navbar a {
   text-decoration: none;
   font-weight: var(--navbar-font-weight);
-  color: light-dark(var(--navbar-font-color), var(--dark--navbar-font-color));
+  color: var(--navbar-font-color);
 }
 
 .navbar a.page-name-white {
-  color: #fff;
+  color: var(--color-white);
 }
 
 .navbar a.no-left-padding {
@@ -120,22 +120,22 @@ html[style*="color-scheme: light;"] .navbar-logo-dark {
 @media screen and (min-width: 1024px) {
   .navbar-end > .navbar-item,
   .navbar-end .navbar-link {
-    color: light-dark(var(--navbar-font-color), var(--dark--navbar-font-color));
+    color: var(--navbar-font-color);
   }
 
   .navbar-end > a.navbar-item:hover,
   .navbar-end .navbar-link:hover {
-    background: light-dark(var(--navbar_hover-background), var(--dark--navbar_hover-background));
-    color: light-dark(var(--navbar-font-color), var(--dark--navbar-font-color));
+    background: var(--navbar_hover-background);
+    color: var(--navbar-font-color);
   }
 
   .navbar-end .navbar-link::after {
-    border-color: light-dark(var(--navbar-font-color), var(--dark--navbar-font-color));
+    border-color: var(--navbar-font-color);
   }
 
   .navbar-item.has-dropdown:hover .navbar-link {
-    background: light-dark(var(--navbar_hover-background), var(--dark--navbar_hover-background));
-    color: light-dark(var(--navbar-font-color), var(--dark--navbar-font-color));
+    background: var(--navbar_hover-background);
+    color: var(--navbar-font-color);
   }
 
   .navbar .navbar-brand .navbar-end {
@@ -152,7 +152,7 @@ html[style*="color-scheme: light;"] .navbar-logo-dark {
 
 .navbar-burger,
 .navbar-search {
-  color: light-dark(var(--navbar-font-color), var(--dark--navbar-font-color));
+  color: var(--navbar-font-color);
   background: none;
   border: none;
   outline: none;
@@ -173,7 +173,7 @@ html[style*="color-scheme: light;"] .navbar-logo-dark {
 }
 
 .navbar-burger span {
-  background: light-dark(var(--navbar-font-color), var(--dark--navbar-font-color));
+  background: var(--navbar-font-color);
   display: block;
   height: 1px;
   left: 50%;
@@ -217,7 +217,7 @@ html[style*="color-scheme: light;"] .navbar-logo-dark {
 
 .navbar-item,
 .navbar-link {
-  color: light-dark(var(--navbar-font-color), var(--dark--navbar-font-color));
+  color: var(--navbar-font-color);
   display: block;
   line-height: var(--doc-line-height);
   padding: 0.5rem 1rem;
@@ -244,7 +244,7 @@ html[style*="color-scheme: light;"] .navbar-logo-dark {
 
 #theme-dropdown .navbar-item:hover {
   cursor: pointer;
-  background: light-dark(var(--toc-hover-background-color), var(--dark--toc-hover-background-color));
+  background: var(--toc-hover-background-color);
 }
 
 #theme-dropdown .navbar-item {
@@ -288,11 +288,11 @@ html[style*="color-scheme: dark;"] #theme-dropdown .navbar-item.selected::before
 }
 
 .navbar-dropdown a {
-  color: light-dark(var(--navbar-dropdown-link), var(--dark--navbar-dropdown-link));
+  color: var(--navbar-dropdown-link);
 }
 
 .navbar-dropdown a:hover {
-  color: light-dark(var(--navbar-dropdown_hover-link), var(--dark--navbar-dropdown_hover-link));
+  color: var(--navbar-dropdown_hover-link);
 }
 
 @media screen and (min-width: 1024px) {
@@ -303,7 +303,7 @@ html[style*="color-scheme: dark;"] #theme-dropdown .navbar-item.selected::before
 }
 
 .navbar-divider {
-  background-color: light-dark(var(--navbar-menu-border-color), var(--dark--navbar-menu-border-color));
+  background-color: var(--navbar-menu-border-color);
   border: none;
   height: 1px;
   margin: 0.25rem 0;
@@ -316,7 +316,7 @@ html[style*="color-scheme: dark;"] #theme-dropdown .navbar-item.selected::before
   }
 
   .navbar-menu {
-    background: light-dark(var(--navbar-menu-background), var(--dark--navbar-menu-background));
+    background: var(--navbar-menu-background);
     padding: 0.5rem 0;
   }
 
@@ -331,12 +331,12 @@ html[style*="color-scheme: dark;"] #theme-dropdown .navbar-item.selected::before
     bottom: 0;
     max-height: none;
     z-index: 500;
-    background: light-dark(var(--navbar-menu-background), var(--dark--navbar-menu-background));
+    background: var(--navbar-menu-background);
   }
 
   .navbar-menu a.navbar-item:hover,
   .navbar-menu .navbar-link:hover {
-    background-color: light-dark(var(--navbar-menu_hover-background), var(--dark--navbar-menu_hover-background));
+    background-color: var(--navbar-menu_hover-background);
   }
 
   #theme-dropdown {
@@ -353,7 +353,7 @@ html[style*="color-scheme: dark;"] #theme-dropdown .navbar-item.selected::before
   }
 
   #theme-dropdown .navbar-item {
-    border: 1px solid light-dark(var(--color-docs), var(--dark--color-docs));
+    border: 1px solid var(--color-docs);
   }
 }
 
@@ -434,15 +434,15 @@ html[style*="color-scheme: dark;"] #theme-dropdown .navbar-item.selected::before
   }
 
   .developer.navbar-item.has-dropdown:hover::before {
-    border-bottom-color: light-dark(var(--navbar-developer-border), var(--dark--navbar-developer-border));
+    border-bottom-color: var(--navbar-developer-border);
   }
 
   .docs.navbar-item.has-dropdown:hover::before {
-    border-bottom-color: light-dark(var(--navbar-menu-border-color), var(--dark--navbar-menu-border-color));
+    border-bottom-color: var(--navbar-menu-border-color);
   }
 
   .navbar-item.labs.has-dropdown:hover::before {
-    border-bottom-color: light-dark(var(--navbar-labs-border), var(--dark--navbar-labs-border));
+    border-bottom-color: var(--navbar-labs-border);
   }
 
   .navbar-menu {
@@ -455,8 +455,8 @@ html[style*="color-scheme: dark;"] #theme-dropdown .navbar-item.selected::before
   }
 
   .navbar-dropdown {
-    background-color: light-dark(var(--navbar-menu-background), var(--dark--navbar-menu-background));
-    border: 1px solid light-dark(var(--navbar-menu-border-color), var(--dark--navbar-menu-border-color));
+    background-color: var(--navbar-menu-background);
+    border: 1px solid var(--navbar-menu-border-color);
     border-top: none;
     border-radius: 0 0 0.25rem 0.25rem;
     display: none;
@@ -485,40 +485,40 @@ html[style*="color-scheme: dark;"] #theme-dropdown .navbar-item.selected::before
   }
 
   .navbar-dropdown a.navbar-item:hover {
-    background-color: light-dark(var(--navbar-menu_hover-background), var(--dark--navbar-menu_hover-background));
+    background-color: var(--navbar-menu_hover-background);
   }
 }
 
 .navbar .button {
   display: inline-flex;
   align-items: center;
-  background: light-dark(var(--button-background), var(--dark--button-background));
-  border: 1px solid light-dark(var(--button-border-color), var(--dark--button-border-color));
+  background: var(--button-background);
+  border: 1px solid var(--button-border-color);
   border-radius: 0.15rem;
   height: 1.75rem;
-  color: light-dark(var(--button-font-color), var(--dark--button-font-color));
+  color: var(--button-font-color);
   padding: 0 0.75em;
   white-space: nowrap;
 }
 
 .navbar-item.training .navbar-dropdown {
-  border-top-color: light-dark(var(--navbar-training-border), var(--dark--navbar-training-border));
+  border-top-color: var(--navbar-training-border);
 }
 
 .navbar-item.developer .navbar-dropdown {
-  border-top-color: light-dark(var(--navbar-developer-border), var(--dark--navbar-developer-border));
+  border-top-color: var(--navbar-developer-border);
 }
 
 .navbar-item.docs .navbar-dropdown {
-  border-top-color: light-dark(var(--navbar-menu-border-color), var(--dark--navbar-menu-border-color));
+  border-top-color: var(--navbar-menu-border-color);
 }
 
 .navbar-item.labs .navbar-dropdown {
-  border-top-color: light-dark(var(--navbar-labs-border), var(--dark--navbar-labs-border));
+  border-top-color: var(--navbar-labs-border);
 }
 
 .navbar-item.kb .navbar-dropdown {
-  border-top-color: light-dark(var(--navbar-kb-border), var(--dark--navbar-kb-border));
+  border-top-color: var(--navbar-kb-border);
 }
 
 @media screen and (min-width: 1024px) {
@@ -537,7 +537,7 @@ html[style*="color-scheme: dark;"] #theme-dropdown .navbar-item.selected::before
 }
 
 .project .project-name {
-  color: light-dark(var(--navbar-font-color), var(--dark--navbar-font-color));
+  color: var(--navbar-font-color);
   font-weight: 600;
   font-size: calc(16 / var(--rem-base) * 1rem);
 }
@@ -622,7 +622,7 @@ html[style*="color-scheme: dark;"] #theme-dropdown .navbar-item.selected::before
 .getting-started-cta .aura-ticker {
   font-size: 0.8rem;
   border: 1px solid var(--colors-primary-50);
-  color: light-dark(var(--colors-primary-default), var(--dark--colors-primary-default));
+  color: var(--colors-primary-default);
   border-radius: 9999px;
   padding: 0 8px;
   margin-left: 4px;
@@ -633,7 +633,7 @@ html[style*="color-scheme: dark;"] #theme-dropdown .navbar-item.selected::before
 }
 
 .navbar-item.has-dropdown.getting-started-cta:hover::before {
-  border-bottom-color: light-dark(var(--palette-neutral-60), var(--dark--palette-neutral-60));
+  border-bottom-color: var(--palette-neutral-60);
 }
 
 .navbar-item.has-dropdown.getting-started-cta::after {

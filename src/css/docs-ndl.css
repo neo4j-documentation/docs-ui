@@ -237,7 +237,7 @@ body.docs-ndl.explainer .sectionbody {
 }
 
 body.docs-ndl .widget .sectionbody {
-  background: light-dark(var(--panel-background), var(--dark--panel-background));
+  background: var(--panel-background);
   border-radius: 1rem;
   border: none;
   padding: 1rem;
@@ -316,7 +316,7 @@ body.docs-ndl .next-steps .sectionbody ol {
 }
 
 body.docs-ndl .next-steps .sectionbody ol li {
-  border-left: 1px solid light-dark(var(--hub-highlight-border), var(--dark--hub-highlight-border));
+  border-left: 1px solid var(--hub-highlight-border);
   margin-left: 1rem;
   counter-increment: step-counter;
   margin-bottom: 0;
@@ -351,9 +351,9 @@ body.docs-ndl .next-steps .sectionbody ol li::before {
   margin-left: -1rem;
   margin-right: 1rem;
   font-style: normal;
-  background: light-dark(var(--hub-highlight-background), var(--dark--hub-highlight-background));
-  color: light-dark(var(--hub-highlight-border), var(--dark--hub-highlight-border));
-  border: 1px solid light-dark(var(--hub-highlight-border), var(--dark--hub-highlight-border));
+  background: var(--hub-highlight-background);
+  color: var(--hub-highlight-border);
+  border: 1px solid var(--hub-highlight-border);
   border-radius: 50%;
   width: 2rem;
   height: 2rem;
@@ -466,7 +466,7 @@ body.docs-ndl .banner .paragraph.description {
 /* selectable cards */
 
 body.docs-ndl .cards .sect2.selectable .description {
-  color: light-dark(var(--body-font-color), var(--dark--body-font-color));
+  color: var(--body-font-color);
   font-weight: 200;
 }
 
@@ -521,7 +521,7 @@ body.docs-ndl .banner .button a {
 } */
 
 .description2 {
-  color: light-dark(var(--body-font-color), var(--dark--body-font-color));
+  color: var(--body-font-color);
   font-size: var(--doc-font-size--desktop);
   line-height: var(--doc-line-height);
   margin: var(--doc-margin);
@@ -532,7 +532,7 @@ body.docs-ndl .banner .button a {
 /* highlights */
 
 body.docs-ndl .highlights {
-  background: light-dark(var(--panel-background), var(--dark--panel-background));
+  background: var(--panel-background);
 }
 
 body.docs-ndl .highlights .sectionbody > div {
@@ -560,11 +560,11 @@ body.docs-ndl .highlights .list a {
 body.docs-ndl .highlights .list a:hover,
 body.docs-ndl .highlights .list a:focus {
   text-decoration: none;
-  background-color: light-dark(var(--toc-hover-background-color), var(--dark--toc-hover-background-color));
+  background-color: var(--toc-hover-background-color);
 }
 
 body.docs-ndl .highlights .list ul li {
-  border-bottom: 1px solid light-dark(var(--hub-highlight-border), var(--dark--hub-highlight-border));
+  border-bottom: 1px solid var(--hub-highlight-border);
 }
 
 body.docs-ndl .widget.highlights .footer-link {
@@ -614,14 +614,14 @@ body.docs-ndl .sect2 {
 
 body.docs-ndl .cards .sectionbody > div.sect2 {
   flex: 0 1 32%;
-  border: 1px solid light-dark(var(--panel-border-color), var(--dark--panel-border-color));
-  background: light-dark(var(--panel-background), var(--dark--panel-background));
+  border: 1px solid var(--panel-border-color);
+  background: var(--panel-background);
 }
 
 body.docs-ndl .cards .sectionbody > div.sect2:hover {
   transition: 0.1s linear;
-  border: 1px solid light-dark(var(--panel_hover-border-color), var(--dark--panel_hover-border-color));
-  box-shadow: 0 1px 2px 0 light-dark(var(--panel_hover-border-color), var(--dark--panel_hover-border-color));
+  border: 1px solid var(--panel_hover-border-color);
+  box-shadow: 0 1px 2px 0 var(--panel_hover-border-color);
   cursor: default;
 }
 
@@ -657,8 +657,8 @@ body.docs-ndl .lists .sect2 {
 
 /* this would give a background image on cards marked with [.ga-promo] */
 body.docs-ndl .cards .sectionbody > div.sect2.graph-academy {
-  background: light-dark(var(--hub-ga-card-background), var(--dark--hub-ga-card-background));
-  border: 1px solid light-dark(var(--success-color), var(--dark--success-color));
+  background: var(--hub-ga-card-background);
+  border: 1px solid var(--success-color);
   box-shadow: 0 2px 4px 0 rgba(63, 120, 36, 0.5), 0 1px 2px 0 rgba(63, 120, 36, 0.2);
 }
 
@@ -675,13 +675,13 @@ body.docs-ndl .header-label-container > div.labels {
 
 body.docs-ndl .widget:not(.video) {
   /* box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.1), 0 1px 2px -1px rgba(0, 0, 0, 0.06); */
-  border: 1px solid light-dark(var(--panel-border-color), var(--dark--panel-border-color));
+  border: 1px solid var(--panel-border-color);
   border-radius: 1rem;
 }
 
 body.docs-ndl .widget:not(.video):hover {
   transition: 0.1s linear;
-  /* border: 1px solid light-dark(var(--panel_hover-border-color), var(--dark--panel_hover-border-color)); */
+  /* border: 1px solid var(--panel_hover-border-color); */
   box-shadow: 0 1px 2px 0 light-dark(rgba(26, 27, 29, 0.18), rgba(229, 228, 227, 0.18));
   cursor: default;
 }
@@ -699,7 +699,7 @@ body.docs-ndl.color-docs .sect2 {
 
 body.docs-ndl.color-docs .cards .sect2 h3,
 body.docs-ndl.color-docs .cards .sect2 .description {
-  color: light-dark(var(--body-font-color), var(--dark--body-font-color));
+  color: var(--body-font-color);
 }
 
 body.docs-ndl .cards .sect2 .paragraph {
@@ -856,7 +856,7 @@ body.docs-ndl .plain-links a.external::after {
 body.docs-ndl .highlights a {
   display: flex;
   justify-content: space-between;
-  color: light-dark(var(--body-font-color), var(--dark--body-font-color));
+  color: var(--body-font-color);
   font-weight: var(--font-weight-normal);
   text-decoration: none;
 }
@@ -867,14 +867,14 @@ body.docs-ndl .cards .link a::after {
   margin-right: 0.5rem;
   content: "→";
   font-weight: 600;
-  color: light-dark(var(--body-font-color), var(--dark--body-font-color));
+  color: var(--body-font-color);
   transition: margin 0.2s linear;
 }
 
 body.docs-ndl .highlights a::after {
   display: flex;
   margin-left: 1.5rem;
-  color: light-dark(var(--body-font-color), var(--dark--body-font-color));
+  color: var(--body-font-color);
   float: right;
 }
 

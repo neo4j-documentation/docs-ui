@@ -22,8 +22,8 @@ body.cheat-sheet .article > .content {
 /*  navbar */
 body.cheat-sheet .navbar,
 body.cheat-sheet .search .search-container .search-form {
-  background: light-dark(var(--navbar-background), var(--dark--navbar-background));
-  border-top-color: light-dark(var(--color-docs), var(--dark--color-docs));
+  background: var(--navbar-background);
+  border-top-color: var(--color-docs);
 }
 
 body.cheat-sheet .navbar,
@@ -365,8 +365,8 @@ body.cheat-sheet .article h3 {
 body.cheat-sheet .exampleblock {
   width: 100%;
   margin-bottom: 0;
-  background: light-dark(var(--cheat-sheet-example-background), var(--dark--cheat-sheet-example-background));
-  border: 1px solid light-dark(var(--cheat-sheet-example-border-color), var(--dark--cheat-sheet-example-border-color));
+  background: var(--cheat-sheet-example-background);
+  border: 1px solid var(--cheat-sheet-example-border-color);
 }
 
 body.cheat-sheet .exampleblock > .content {

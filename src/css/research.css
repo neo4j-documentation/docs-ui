@@ -40,12 +40,12 @@ body.research .navbar {
 
 .faq-item {
   padding: 10px 0;
-  color: black;
+  color: var(--color-black);
 }
 
 .faq-question {
   display: flex;
-  color: black;
+  color: var(--color-black);
 }
 
 .faq-answer {
@@ -222,7 +222,7 @@ body.research .next-steps .sectionbody ol li:last-of-type {
 }
 
 body.research .next-steps .sectionbody ol li p > strong {
-  color: black;
+  color: var(--color-black);
 }
 
 body.research .next-steps .sectionbody ol li p {
@@ -243,7 +243,7 @@ body.research .next-steps .sectionbody ol li::before {
   margin-right: 1rem;
   font-style: normal;
   background: var(--palette-baltic-50);
-  color: white;
+  color: var(--color-white);
   border: 1px solid var(--palette-baltic-50);
   border-radius: 50%;
   width: 2rem;

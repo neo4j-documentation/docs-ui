@@ -6,7 +6,7 @@ body.kb .navbar {
 
 body.kb section.hero {
   padding: 8rem 0 0;
-  background: light-dark(var(--navbar-background), var(--dark--navbar-background));
+  background: var(--navbar-background);
   background: linear-gradient(180deg, var(--navbar-background) 0%, var(--hero-fade) 100%);
   text-align: left;
 }

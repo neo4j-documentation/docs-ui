@@ -1,10 +1,10 @@
 #cookiebanner {
-  background: light-dark(var(--body-background), var(--dark--body-background)) !important;
-  border-top: 1px solid light-dark(var(--button-border-color), var(--dark--button-border-color)) !important;
+  background: var(--body-background) !important;
+  border-top: 1px solid var(--button-border-color) !important;
   box-shadow: 0 -5px 5px 1px rgba(0, 0, 0, 0.08) !important;
   padding: 1rem;
   font-size: 0.8rem;
-  color: light-dark(var(--body-font-color), var(--dark--body-font-color));
+  color: var(--body-font-color);
 }
 
 #cookiebanner .row {
@@ -15,11 +15,11 @@
 #cookiebanner .c-header {
   font-size: 0.9rem;
   font-weight: 600;
-  color: light-dark(var(--body-font-color), var(--dark--body-font-color));
+  color: var(--body-font-color);
 }
 
 #cookiebanner p {
-  color: light-dark(var(--body-font-color), var(--dark--body-font-color)) !important;
+  color: var(--body-font-color) !important;
 }
 
 /* #cookiebanner .columns {
@@ -38,19 +38,19 @@
   display: inline-block;
   padding: 0.25rem 0.75rem;
   font-weight: 600;
-  background: light-dark(var(--button-background), var(--dark--button-background));
-  color: light-dark(var(--button-font-color), var(--dark--button-font-color));
+  background: var(--button-background);
+  color: var(--button-font-color);
   border-radius: 0.25rem;
   margin-right: 0.5rem;
 }
 
 #NeoCybotCookiebotDialogBodyButtonAccept {
-  background: light-dark(var(--button-background), var(--dark--button-background)) !important;
-  color: light-dark(var(--button-font-color), var(--dark--button-font-color)) !important;
-  border: 1px solid light-dark(var(--button-border-color), var(--dark--button-border-color)) !important;
+  background: var(--button-background) !important;
+  color: var(--button-font-color) !important;
+  border: 1px solid var(--button-border-color) !important;
 }
 
 #NeoCybotCookiebotDialogBodyButtonDecline {
   background: transparent !important;
-  color: light-dark(var(--link-font-color), var(--dark--link-font-color)) !important;
+  color: var(--link-font-color) !important;
 }
