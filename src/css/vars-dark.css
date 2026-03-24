@@ -276,8 +276,8 @@
   /* roles */
   --dark--deprecated-color: var(--theme-dark-color-danger-bg-strong);
   --dark--deprecated-background-color: var(--theme-dark-color-danger-bg-weak);
-  --dark--not-on-aura-color: var(--warning-background-color);
-  --dark--not-on-aura-background-color: var(--warning-color);
+  --dark--label-warning-color: var(--warning-background-color);
+  --dark--label-warning-background-color: var(--warning-color);
   --dark--aura-db-enterprise-color: var(--palette-baltic-10);
   --dark--aura-db-enterprise-background-color: var(--palette-baltic-50);
   --dark--aura-db-dedicated-color: var(--palette-baltic-10);

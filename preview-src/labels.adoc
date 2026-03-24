@@ -18,6 +18,14 @@
 </div>
 
 <div class="box">
+  <span class="label label--beginner">Beginner</span>
+</div>
+
+<div class="box">
+  <span class="label label--free">Free</span>
+</div>
+
+<div class="box">
   <span class="label label--current">Current</span>
 </div>
 
@@ -143,14 +151,6 @@
 
 <div class="box">
   <span class="label label--procedure">Procedure</span>
-</div>
-
-<div class="box">
-  <span class="label label--beginner">Beginner</span>
-</div>
-
-<div class="box">
-  <span class="label label--free">Free</span>
 </div>
 
 <div class="box">

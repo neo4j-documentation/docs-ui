@@ -295,8 +295,8 @@
   --deprecated-background-color: var(--palette-lemon-30);
   --discontinued-color: var(--theme-light-color-danger-bg-strong);
   --discontinued-background-color: var(--theme-light-color-danger-bg-weak);
-  --not-on-aura-color: var(--warning-background-color);
-  --not-on-aura-background-color: var(--warning-color);
+  --label-warning-color: var(--warning-background-color);
+  --label-warning-background-color: var(--warning-color);
   --aura-db-enterprise-color: var(--palette-baltic-10);
   --aura-db-enterprise-background-color: var(--palette-baltic-50);
   --aura-db-dedicated-color: var(--palette-baltic-10);
