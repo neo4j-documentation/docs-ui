@@ -28,7 +28,7 @@ body.has-banner .toolbar {
 }
 
 .nav-toggle {
-  background: url(../img/menu.svg) no-repeat 50% 47.5%;
+  background: url(../img/ndl-icons/list-bullet.svg) no-repeat 50% 47.5%;
   background-size: 49%;
   border: none;
   outline: none;
@@ -51,7 +51,7 @@ body.has-banner .toolbar {
 }
 
 .home-link {
-  background: url(../img/home-o.svg) no-repeat 50% 45%;
+  background: url(../img/ndl-icons/home.svg) no-repeat 50% 45%;
   background-size: 50%;
   display: block;
   height: 2.5rem;
@@ -66,7 +66,7 @@ body.has-banner .toolbar {
 }
 
 .home-link a line {
-  stroke: rgba(var(--colors-baltic-50));
+  stroke: rgba(var(--palette-baltic-50));
 }
 
 .edit-this-page {
@@ -87,5 +87,5 @@ body.has-banner .toolbar {
 }
 
 .toolbar .edit-this-page a {
-  color: rgba(var(--colors-baltic-50));
+  color: rgba(var(--palette-baltic-50));
 }

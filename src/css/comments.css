@@ -1,19 +1,19 @@
 
 .comments {
   margin: 1.5rem -1rem;
-  border: 1px solid rgba(var(--colors-neutral-20));
+  border: 1px solid rgba(var(--palette-neutral-20));
   border-top-width: 2px;
-  /* background: rgba(var(--colors-neutral-15)); */
+  /* background: rgba(var(--palette-neutral-15)); */
   border-radius: 0.5rem;
 }
 
 .comments-header {
-  background: rgba(var(--colors-neutral-20));
+  background: rgba(var(--palette-neutral-20));
   padding: 1rem;
 }
 
 .comments-header h2 {
-  color: rgba(var(--colors-neutral-60));
+  color: rgba(var(--palette-neutral-60));
   font-size: 0.8rem;
   font-weight: 600;
   line-height: 1;
@@ -41,7 +41,7 @@ html {
     font-size: 12;
     font-weight: 200;
     font-size: 16px;
-    color: #2d3748;
+    color: var(--comments-font-color);
 }
 
 header.discourse {
@@ -58,11 +58,11 @@ header.discourse .replies {
     border-radius: .25rem;
     font-weight: 600;
     background: #3182ce;
-    color: #fff !important;
+    color: var(--color-white) !important;
 }
 .button:hover {
     background: #4299e1;
-    color: #fff;
+    color: var(--color-white);
 }
 
 article.post {
@@ -70,19 +70,19 @@ article.post {
 }
 
 .username {
-    color: #718096;
+    color: var(--comments-username-color);
     font-size: .9rem;
 }
 .username .title {
     display: block;
     font-size: .75rem;
-    color: #cbd5e0;
+    color: var(--comments-title-color);
 }
 article.post {
     border-bottom: 0px none;
 }
 article.post .post-date {
-    color: #a0aec0;
+    color: var(--comments-date-color);
 }
 .username a.staff {
     background: transparent;
@@ -105,7 +105,7 @@ article.post a {
 
 article.post p {
     font-size: .9rem;
-    color: #4a5568;
+    color: var(--comments-post-font-color);
 }
 
 footer {

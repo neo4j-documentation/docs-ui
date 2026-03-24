@@ -5,18 +5,19 @@
 
 .doc .listingblock .code-title,
 .doc .listingblock .code-inset {
-  padding: 0.5rem;
-  /* display: flex; */
+  /* padding: 0.5rem; */
+  display: flex;
 }
 
 .doc .listingblock .code-title {
   /* flex-grow: 1; */
   border-top-left-radius: 0.5rem;
   border-top-right-radius: 0.5rem;
+  border-bottom: 1px solid var(--code-header-font-color);
 }
 
 .doc .code-header {
-  /* display: flex; */
+  display: flex;
 }
 
 .doc .code-header div {
@@ -30,16 +31,22 @@
 
 .doc .listingblock .code-title,
 .doc .listingblock .code-language {
-  /* background: var(--code-header-background); */
+  display: flex;
   color: var(--code-header-font-color);
   font-size: var(--code-header-font-size);
 }
 
-.doc .listingblock .code-header {
+.doc .listingblock.has-title .code-header {
   background: var(--code-header-background);
+}
+
+.doc .listingblock .code-header {
+  display: flex;
+  padding: 0.5rem;
+  justify-content: flex-end;
   color: var(--code-header-font-color);
-  border-top-left-radius: 0.5rem;
-  border-top-right-radius: 0.5rem;
+  border-top-left-radius: calc(0.5rem - 1px);
+  border-top-right-radius: calc(0.5rem - 1px);
 }
 
 .doc .listingblock .code-language {
@@ -82,7 +89,7 @@
 }
 
 .doc .listingblock .code-inset .btn-copy.fa-check {
-  background: rgba(var(--colors-neutral-60));
+  background: var(--palette-neutral-60);
   margin: 0.2rem;
   padding: 0.4rem;
 }
@@ -97,13 +104,16 @@
   border-top-right-radius: 0.5rem;
   /* background: var(--pre-background); */
   color: var(--code-header-font-color);
-  font-size: calc(12.5 / var(--rem-base) * 1rem);
-  position: absolute;
+  font-size: 12px;
+  /* position: absolute; */
   /* float: right; */
-  padding: 0.25rem 0.5rem;
+  /* padding: 0.5rem; */
   /* margin-left: -2rem; */
   z-index: 1;
-  right: 0;
+  display: flex;
+  align-self: center;
+  flex-grow: 1;
+  justify-content: flex-end;
 }
 
 .doc .code-inset .copy-success.hidden {
@@ -112,9 +122,11 @@
 
 .doc .code-inset .copy-success .btn {
   position: absolute;
-  right: -1rem;
-  background: rgba(var(--colors-forest-50));
-  color: var(--color-white) !important;
+  right: 0.25rem;
+  top: 2.5rem;
+  background: var(--code-copy-success-background);
+  color: var(--code-copy-success-color) !important;
+  border: 1px solid var(--code-copy-success-border);
   padding: 0.4rem;
   margin: 0;
   line-height: 1;
@@ -123,23 +135,18 @@
   z-index: 1;
 }
 
-.doc .code-inset .copy-success .btn::after {
-  width: 0;
-  height: 0;
-  position: absolute;
-  content: "";
-  display: block;
-  top: 0;
-  left: 50%;
-  margin-left: -0.25rem;
-  margin-top: -0.25rem;
-  border-left: 0.5rem solid transparent;
-  border-right: 0.5rem solid transparent;
-  border-bottom: 0.5rem solid rgba(var(--colors-forest-50));
+.doc .listingblock.has-header:not(.has-title) .code-inset .copy-success .btn {
+  top: 2rem;
+}
+
+.doc .listingblock.has-header:not(.has-title) pre {
+  margin-top: calc(-2.25rem + 1px);
+  background: var(--code-background);
+  border-radius: 0.5rem;
 }
 
 .doc .code-footer {
-  background: rgba(var(--colors-neutral-50));
+  background: var(--palette-neutral-50);
   color: var(--color-white);
   padding: 0.3rem 12px 0.3rem 0;
   font-size: 0.8em;
@@ -179,14 +186,14 @@
   flex-direction: column;
   justify-content: center;
   padding: 0 0.6rem;
-  color: rgba(var(--colors-neutral-20));
+  color: var(--palette-neutral-20);
   font-size: 0.7rem;
 }
 
 .doc .code-results {
-  background: rgba(var(--colors-neutral-20));
-  color: rgba(var(--colors-neutral-60));
-  border: 1px solid rgba(var(--colors-neutral-50));
+  background: var(--palette-neutral-20);
+  color: var(--palette-neutral-60);
+  border: 1px solid var(--palette-neutral-50);
   border-bottom-width: 2px;
   border-bottom-left-radius: 0.25rem;
   border-bottom-right-radius: 0.25rem;
@@ -197,7 +204,7 @@
 .doc .code-results .code-result-options {
   display: flex;
   justify-content: space-between;
-  border-bottom: 1px solid rgba(var(--colors-neutral-40));
+  border-bottom: 1px solid var(--palette-neutral-40);
   margin: 0 12px 4px;
 }
 
@@ -211,7 +218,7 @@
   padding: 0;
   font-weight: 600;
   border: 0 none;
-  color: rgba(var(--colors-neutral-60));
+  color: var(--palette-neutral-60);
   background: transparent;
 }
 
@@ -236,19 +243,19 @@
   text-align: left;
   font-size: 0.7rem;
   padding: 0 0.25rem 6px;
-  color: #718096;
+  color: var(--code-result-table-header-color);
   border-bottom: 1px solid #cbd5e0;
 }
 
 .doc .code-results .code-result-table td {
   vertical-align: top;
   padding: 0.25rem;
-  color: rgba(var(--colors-neutral-60));
+  color: var(--palette-neutral-60);
 }
 
 .doc .code-results .code-result-table tbody td {
-  border-right: 1px solid rgba(var(--colors-neutral-30));
-  border-bottom: 1px solid rgba(var(--colors-neutral-30));
+  border-right: 1px solid var(--palette-neutral-30);
+  border-bottom: 1px solid var(--palette-neutral-30);
 }
 
 .doc .code-results .code-result-table tbody tr td:last-child {
@@ -257,16 +264,16 @@
 
 /*
 .doc .code-results .code-result-table tbody tr:nth-child(even) {
-  background: rgba(var(--colors-neutral-15));
+  background: var(--palette-neutral-15);
 }
 
 .doc .code-results .code-result-table tbody tr:hover {
-  background: rgba(var(--colors-neutral-15));
+  background: var(--palette-neutral-15);
 }
 */
 
 .doc .code-results .code-result-table tbody tr:hover {
-  background: rgba(var(--colors-neutral-15));
+  background: var(--palette-neutral-15);
 }
 
 .doc .code-results pre {
@@ -296,12 +303,12 @@
   padding: 0.5rem 0 0.5rem;
   margin-left: 0.4rem;
   border-bottom: 2px solid transparent;
-  color: rgba(var(--colors-neutral-50));
+  color: var(--palette-neutral-50);
 }
 
 .doc .code-result-toggle button.code-result-toggle--current {
-  color: rgba(var(--colors-neutral-60));
-  border-bottom-color: rgba(var(--colors-neutral-60));
+  color: var(--palette-neutral-60);
+  border-bottom-color: var(--palette-neutral-60);
 }
 
 @media all and (min-width: 760px) {
@@ -327,7 +334,7 @@
     bottom: -2rem;
     right: 0;
     width: 48%;
-    background: rgba(var(--colors-neutral-15));
+    background: var(--palette-neutral-15);
     z-index: 1;
   }
 

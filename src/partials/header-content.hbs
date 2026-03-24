@@ -1,54 +1,34 @@
 <header class="header">
   <nav class="navbar">
     <div class="navbar-brand">
-      {{!-- <a class="navbar-item" href="{{{or site.url (or siteRootUrl siteRootPath)}}}"> --}}
       <a class="navbar-item" href="/">
-        {{!-- <link rel="icon" href="{{{uiRootPath}}}/img/favicon.ico" type="image/x-icon"> --}}
-        {{!-- <img class="navbar-logo" src="{{{uiRootPath}}}/img/logo.svg" alt="{{ site.title }}" /> --}}
-
-        {{#if (eq page.attributes.theme "docs") }}
         <img class="navbar-logo" src="https://dist.neo4j.com/wp-content/uploads/20230926084108/Logo_FullColor_RGB_TransBG.svg" alt="{{ site.title }}" />
       </a>
+      {{#if (eq page.attributes.theme "docs") }}
       <a href="/docs/" class="navbar-item no-left-padding" aria-label="Docs">
         Docs
       </a>
-        {{else if (eq page.attributes.theme "cheat-sheet")}}
-        <img class="navbar-logo" src="https://dist.neo4j.com/wp-content/uploads/20230926084108/Logo_FullColor_RGB_TransBG.svg" alt="{{ site.title }}" />
-      </a>
+      {{else if (eq page.attributes.theme "cheat-sheet")}}
       <a href="/docs/cypher-cheat-sheet/" class="navbar-item no-left-padding" aria-label="Labs">
         Cypher Cheat Sheet
       </a>
-        {{else if (eq page.attributes.theme "labs")}}
-        <img class="navbar-logo" src="https://dist.neo4j.com/wp-content/uploads/20230926084108/Logo_FullColor_RGB_TransBG.svg" alt="{{ site.title }}" />
-      </a>
+      {{else if (eq page.attributes.theme "labs")}}
       <a href="/labs/" class="navbar-item no-left-padding" aria-label="Labs">
         Labs
       </a>
-        {{else if (eq page.attributes.theme "kb")}}
-        <img class="navbar-logo" src="https://dist.neo4j.com/wp-content/uploads/20231023102534/neo4j-logo.svg" alt="{{ site.title }}" />
-        {{!-- <img class="navbar-logo" src="https://dist.neo4j.com/wp-content/uploads/20230926084108/Logo_FullColor_RGB_TransBG.svg" alt="{{ site.title }}" /> --}}
-      </a>
+      {{else if (eq page.attributes.theme "kb")}}
       <a href="/developer/kb/" class="navbar-item no-left-padding page-name-white" aria-label="Knowledge Base">
         Knowledge Base
       </a>
-        {{else if (eq page.attributes.theme "training")}}
-        <img class="navbar-logo" src="https://dist.neo4j.com/wp-content/uploads/20231023102534/neo4j-logo.svg" alt="{{ site.title }}" />
-        {{!-- <img class="navbar-logo" src="https://dist.neo4j.com/wp-content/uploads/20230926084108/Logo_FullColor_RGB_TransBG.svg" alt="{{ site.title }}" /> --}}
-      </a>
+      {{else if (eq page.attributes.theme "training")}}
       <a href="/graphacademy/online-training/" class="navbar-item no-left-padding page-name-white" aria-label="GraphAcademy">
         GraphAcademy
       </a>
-        {{else if (eq page.attributes.theme "graphgists")}}
-        <img class="navbar-logo" src="https://dist.neo4j.com/wp-content/uploads/20231023102534/neo4j-logo.svg" alt="{{ site.title }}" />
-        {{!-- <img class="navbar-logo" src="https://dist.neo4j.com/wp-content/uploads/20230926084108/Logo_FullColor_RGB_TransBG.svg" alt="{{ site.title }}" /> --}}
-      </a>
+      {{else if (eq page.attributes.theme "graphgists")}}
       <a href="/graphgists/" class="navbar-item no-left-padding page-name-white" aria-label="GraphGists">
         GraphGists
       </a>
-        {{else}}
-        <img class="navbar-logo" src="https://dist.neo4j.com/wp-content/uploads/20231023102534/neo4j-logo.svg" alt="{{ site.title }}" />
-        {{!-- <img class="navbar-logo" src="https://dist.neo4j.com/wp-content/uploads/20230926084108/Logo_FullColor_RGB_TransBG.svg" alt="{{ site.title }}" /> --}}
-      </a>
+      {{else}}
       <a href="/developer/" class="navbar-item no-left-padding page-name-white" aria-label="Developer Guides">
         Developer
       </a>
@@ -113,6 +93,7 @@
           <a href="https://graphacademy.neo4j.com/?ref=cypher-cheat-sheet" target="_blank" class="project-link external">Hands-on training with Neo4j GraphAcademy</a>
         </span>
       </div>
+      {{> theme-selector}}
       {{else}}
       {{> navbar-end}}
       {{/if}}
