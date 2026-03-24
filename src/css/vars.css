@@ -37,9 +37,9 @@
 
   /* base */
   --body-background: light-dark(var(--palette-neutral-10), var(--theme-dark-color-neutral-bg-default));
-  --panel-background: light-dark(var(--palette-neutral-15), var(--theme-dark-color-neutral-bg-weak));
+  --panel-background: light-dark(var(--palette-neutral-15), var(--theme-dark-color-neutral-bg-default));
   --panel-border-color: var(--palette-neutral-20);
-  --panel_hover-border-color: light-dark(var(--palette-neutral-50), var(--color-docs));
+  --panel_hover-border-color: light-dark(var(--palette-neutral-50), var(--palette-baltic-50));
   --scrollbar-thumb-color: light-dark(var(--theme-light-color-neutral-bg-strong), var(--theme-dark-color-neutral-bg-strong));
   /* navbar */
   --navbar-background: light-dark(var(--theme-light-color-neutral-bg-weak), var(--theme-dark-color-neutral-bg-weak));
@@ -47,11 +47,11 @@
   --navbar-font-color: light-dark(var(--theme-light-color-neutral-text-default), var(--theme-dark-color-neutral-text-default));
   --navbar-font-weight: 400;
   --navbar_hover-background: transparent;
-  --button-background: light-dark(var(--color-docs), var(--theme-dark-color-neutral-bg-on-bg-weak));
+  --button-background: light-dark(var(--palette-baltic-50), var(--theme-dark-color-neutral-bg-on-bg-weak));
   --button-border-color: var(--color-docs);
   --button-font-color: light-dark(var(--theme-light-color-neutral-text-inverse), var(--theme-dark-color-neutral-text-weak));
-  --hover-button-background: light-dark(var(--color-docs-weak), var(--color-docs));
-  --hover-button-border-color: light-dark(var(--color-docs), var(--theme-dark-color-neutral-text-inverse));
+  --hover-button-background: var(--color-docs-weak);
+  --hover-button-border-color: light-dark(var(--palette-baltic-50), var(--theme-dark-color-neutral-text-inverse));
   --hover-button-font-color: light-dark(var(--theme-light-color-neutral-text-inverse), var(--theme-dark-color-neutral-text-inverse));
   --navbar-menu-border-color: light-dark(var(--panel-border-color), var(--theme-dark-color-neutral-border-strong));
   --navbar-menu-border-color: var(--panel-border-color);
@@ -60,8 +60,7 @@
   --navbar-menu_hover-background: transparent;
   --navbar-top-border: var(--palette-neutral-20);
   --navbar-bottom-border: light-dark(var(--palette-neutral-20), var(--theme-dark-color-neutral-border-weak));
-  --navbar-dropdown-link: light-dark(var(--palette-baltic-50), var(--color-docs));
-  --navbar-dropdown_hover-link: light-dark(var(--color-blue-800), var(--color-docs));
+  --navbar-dropdown-link: var(--palette-baltic-50);
   --navbar-training-border: var(--color-developer);
   --navbar-developer-border: var(--color-developer);
   --navbar-docs-border: var(--color-docs);
@@ -69,7 +68,7 @@
   --navbar-kb-border: var(--color-kb);
 
   /* banner */
-  --warning-banner-color: light-dark(var(--body-font-color), var(var(--dark--body-font-color)));
+  --warning-banner-color: var(--body-font-color);
 
   /* nav */
   --nav-background: light-dark(var(--palette-neutral-15), var(--theme-dark-color-neutral-bg-weak));
@@ -86,7 +85,7 @@
   --dropdown-border-color: light-dark(var(--theme-light-color-neutral-border-strong), var(--theme-dark-color-neutral-border-weak));
 
   /* toolbar */
-  --toolbar-background: light-dark(var(--panel-background), var(--dark--panel-background));
+  --toolbar-background: var(--panel-background);
   --toolbar-border-color: light-dark(var(--palette-neutral-20), var(--theme-dark-color-neutral-border-weak));
   --toolbar-font-color: light-dark(var(--palette-neutral-70), var(--theme-dark-color-neutral-bg-weak));
   --toolbar-muted-color: var(--palette-neutral-50);
@@ -99,11 +98,11 @@
 
   /* toc */
   --toc-font-color: light-dark(var(--palette-neutral-70), var(--theme-dark-color-neutral-text-default));
-  --toc-active-font-color: light-dark(var(--palette-baltic-70), var(--color-docs));
+  --toc-active-font-color: light-dark(var(--palette-baltic-70), var(--palette-baltic-50));
   --toc-active-background-color: var(--palette-baltic-10);
   --toc-hover-background-color: light-dark(var(--theme-light-color-neutral-hover), var(--theme-dark-color-primary-hover-weak));
   --toc-hover-color: light-dark(var(--theme-light-color-primary-text), var(--theme-dark-color-neutral-text-default));
-  --toc-heading-font-color: light-dark(var(--palette-neutral-70), var(--color-docs));
+  --toc-heading-font-color: light-dark(var(--palette-neutral-70), var(--palette-baltic-50));
   --toc-item-font-color: light-dark(var(--palette-neutral-70), var(--theme-dark-color-neutral-text-default));
   --toc-border-color: light-dark(var(--palette-neutral-30), var(--theme-dark-color-neutral-border-weak));
   --toc-line-height: 1.4;
@@ -184,10 +183,10 @@
 
   /* tooltip (glossary) */
   --tooltip-background: light-dark(var(--theme-light-color-neutral-bg-default), var(--theme-dark-color-neutral-bg-default));
-  --tooltip-header-background: light-dark(var(--color-docs), var(--theme-dark-color-neutral-bg-strong));
+  --tooltip-header-background: light-dark(var(--palette-baltic-50), var(--theme-dark-color-neutral-bg-strong));
   --tooltip-border-color: light-dark(var(--theme-light-color-neutral-border-strong), var(--theme-dark-color-neutral-border-strong));
-  --tooltip-font-color: light-dark(var(--body-font-color), var(--dark--body-font-color));
-  --tooltip-header-font-color: light-dark(var(--theme-light-color-neutral-text-inverse), var(--dark--body-font-color));
+  --tooltip-font-color: var(--body-font-color);
+  --tooltip-header-font-color: var(--body-font-color);
 
   /* landing page banner */
   --banner-background-color: var(--palette-baltic-20);
@@ -221,31 +220,31 @@
   --section-divider-color: var(--palette-neutral-20);
 
   /* links */
-  --link-font-color: light-dark(var(--palette-baltic-50), var(--color-docs));
+  --link-font-color: light-dark(var(--palette-baltic-50), var(--palette-baltic-50));
   --link_hover-font-color: light-dark(var(--palette-baltic-55), var(--palette-baltic-30));
   --link_unresolved-font-color: var(--important-color);
 
   /* abstract */
   --abstract-background: light-dark(var(--palette-neutral-10), var(--theme-dark-color-neutral-bg-on-bg-weak));
-  --abstract-font-color: light-dark(var(--palette-neutral-70), var(--theme-dark-body-font-color));
-  --abstract-border-color: light-dark(var(--panel-border-color), var(--color-docs));
-  --admonition-background: light-dark(var(--panel-background), var(--dark--panel-background));
+  --abstract-font-color: var(--body-font-color);
+  --abstract-border-color: light-dark(var(--panel-border-color), var(--palette-baltic-50));
+  --admonition-background: var(--panel-background);
   --admonition-label-font-weight: var(--body-font-weight-bold);
-  --caption-font-color: light-dark(var(--palette-neutral-70), var(--theme-dark-color-neutral-text-default));
+  --caption-font-color: var(--body-font-color);
   --caption-font-weight: var(--body-font-weight-bold);
 
   /* toc ad */
-  --toc-ad-border-color: light-dark(var(--theme-light-color-neutral-border-strong), var(--color-docs));
+  --toc-ad-border-color: light-dark(var(--theme-light-color-neutral-border-strong), var(--palette-baltic-50));
   --toc-ad-background: light-dark(var(--theme-light-color-neutral-bg-weak), var(--theme-dark-color-neutral-bg-on-bg-weak));
-  --toc-ad-font-color: light-dark(var(--body-font-color), var(--color-docs));
-  --toc-ad-title-color: light-dark(var(--body-font-color), var(--color-docs));
+  --toc-ad-font-color: var(--body-font-color);
+  --toc-ad-title-color: var(--body-font-color);
   --toc-ad-button-background: var(--color-docs);
   --toc-ad-button-font-color: light-dark(var(--theme-light-color-neutral-text-inverse), var(--theme-dark-color-neutral-text-inverse));
 
   /* code */
-  --code-border-color: light-dark(var(--body-font-color), var(--theme-dark-color-neutral-border-weak));
+  --code-border-color: var(--body-font-color);
   --code-header-background: light-dark(var(--theme-light-color-neutral-bg-on-bg-weak), var(--theme-dark-color-neutral-bg-on-bg-weak));
-  --code-header-font-color: light-dark(var(--theme-light-color-neutral-text-default), var(--dark--body-font-color));
+  --code-header-font-color: var(--body-font-color);
   --code-header-font-size: var(--font-size-body-medium);
   --code-background: light-dark(var(--theme-light-color-neutral-bg-on-bg-weak), var(--theme-dark-color-neutral-bg-on-bg-weak));
   --code-result-background: light-dark(var(--theme-light-color-neutral-bg-strong), var(--theme-dark-color-neutral-bg-default));
@@ -257,11 +256,11 @@
   --code-button-disabled-background: var(--palette-neutral-80);
   --code-button-font-color: light-dark(var(--palette-neutral-70), var(--theme-dark-color-neutral-bg-weak));
   --inline-code-background: light-dark(var(--theme-light-color-neutral-bg-default), var(--theme-dark-color-neutral-bg-strong));
-  --inline-code-font-color: light-dark(var(--body-font-color), var(--dark--body-font-color));
+  --inline-code-font-color: var(--body-font-color);
   --pre-background: var(--panel-background);
   --pre-border-color: var(--panel-border-color);
   --pre-annotation-font-color: light-dark(var(--palette-neutral-70), var(--theme-dark-color-neutral-bg-weak));
-  --code-copy-success-border: light-dark(var(--theme-light-color-success-border-strong), var(--color-docs));
+  --code-copy-success-border: light-dark(var(--theme-light-color-success-border-strong), var(--palette-baltic-50));
   --code-copy-success-background: light-dark(var(--theme-light-color-success-bg-strong), var(--theme-dark-color-neutral-bg-on-bg-weak));
   --code-copy-success-color: light-dark(var(--theme-light-color-neutral-text-inverse), var(--theme-dark-color-neutral-text-weak));
 
@@ -273,7 +272,7 @@
 
   /* quotes */
   --quote-background: light-dark(var(--palette-baltic-10), var(--theme-dark-color-neutral-bg-on-bg-weak));
-  --quote-border-color: light-dark(var(--palette-baltic-70), var(--color-docs));
+  --quote-border-color: light-dark(var(--palette-baltic-70), var(--palette-baltic-50));
   --quote-font-color: light-dark(var(--palette-baltic-50), var(--theme-dark-color-neutral-text-default));
   --quote-attribution-font-color: light-dark(var(--palette-baltic-50), var(--theme-dark-color-neutral-text-default));
   --sidebar-background: light-dark(var(--theme-light-color-neutral-bg-strong), var(--theme-dark-color-neutral-bg-strong));
@@ -288,7 +287,7 @@
   --tabbed-section-background: light-dark(var(--theme-light-color-neutral-bg-on-bg-weak), var(--theme-dark-color-neutral-bg-on-bg-weak));
   --tabbed-section-tabs-border-color: light-dark(var(--theme-light-color-neutral-border-strong), var(--theme-dark-color-neutral-border-strong));
 
-  /* --dark--tabbed-section-tab-font-color: var(--dark--body-font-color); */
+  /* --dark--tabbed-section-tab-font-color: var(--palette-neutral-15); */
   --tabbed-section-tab-hover-background: light-dark(var(--theme-light-color-neutral-border-strong), var(--theme-dark-color-neutral-border-strong));
   --tabbed-section-tab-active-background: light-dark(var(--theme-light-color-primary-bg-strong), var(--theme-dark-color-primary-bg-strong));
   --tabbed-section-tab-active-font-color: light-dark(var(--theme-light-color-primary-bg-strong), var(--theme-dark-color-primary-bg-strong));
@@ -297,12 +296,10 @@
   --image-opacity: light-dark(1, 0.9);
 
   /* roles */
-  --deprecated-color: light-dark(var(--palette-lemon-80), var(--theme-dark-color-danger-bg-strong));
-  --deprecated-background-color: light-dark(var(--palette-lemon-30), var(--theme-dark-color-danger-bg-weak));
+  --deprecated-color: var(--palette-lemon-80);
+  --deprecated-background-color: var(--palette-lemon-30);
   --discontinued-color: var(--theme-light-color-danger-bg-strong);
   --discontinued-background-color: var(--theme-light-color-danger-bg-weak);
-  --not-on-aura-color: var(--warning-background-color);
-  --not-on-aura-background-color: var(--warning-color);
   --aura-db-enterprise-color: var(--palette-baltic-10);
   --aura-db-enterprise-background-color: var(--palette-baltic-50);
   --aura-db-dedicated-color: var(--palette-baltic-10);
@@ -311,11 +308,21 @@
   --enterprise-edition-background-color: var(--palette-baltic-50);
   --fabric-color: var(--palette-baltic-10);
   --fabric-background-color: var(--palette-baltic-50);
-  --alpha-beta-color: light-dark(var(--color-black), var(--palette-marigold-10));
-  --alpha-beta-background-color: light-dark(var(--palette-marigold-40), var(--palette-marigold-50));
+  --alpha-beta-color: var(--palette-marigold-10);
+  --alpha-beta-background-color: var(--palette-marigold-50);
 
   /* labels and admonitions */
 
+  --label-default-color: var(--palette-baltic-10);
+  --label-default-background-color: var(--palette-baltic-50);
+  --label-warning-color: var(--theme-light-color-danger-bg-weak);
+  --label-warning-background-color: var(--theme-light-color-danger-bg-strong);
+  --label-success-color: var(--theme-light-color-success-bg-strong);
+  --label-success-background-color: var(--theme-light-color-success-bg-weak);
+  --label-os-color: var(--palette-baltic-70);
+  --label-os-background-color: var(--palette-baltic-20);
+  --label-labs-color: var(--palette-baltic-10);
+  --label-labs-background-color: var(--palette-lavender-45);
   --label-title-font-size: calc(0.8 * var(--typography-label-font-size)); /* set label font size from ndl */
   --admonition-title-font-size: var(--typography-label-font-size); /* set admonitino font size from ndl */
 
@@ -328,13 +335,13 @@
   --feedback-positive-background: light-dark(var(--theme-light-color-primary-bg-weak), var(--theme-dark-color-primary-bg-weak));
   --feedback-positive-color: var(--color-docs);
   --feedback-textarea-background: light-dark(var(--color-white), var(--theme-dark-color-neutral-bg-on-bg-weak));
-  --feedback-textarea-color: light-dark(var(--body-font-color), var(--dark--body-font-color));
+  --feedback-textarea-color: var(--body-font-color);
   --feedback-primary-background: light-dark(var(--color-blue-100), var(--theme-dark-color-neutral-bg-on-bg-weak));
   --feedback-primary-border-color: light-dark(var(--color-blue-700), var(--theme-dark-color-neutral-border-weak));
-  --feedback-primary-color: light-dark(var(--color-blue-700), var(--dark--body-font-color));
+  --feedback-primary-color: light-dark(var(--color-blue-700), var(--palette-neutral-15));
   --feedback-secondary-background: light-dark(var(--color-blue-100), var(--theme-dark-color-neutral-bg-strong));
   --feedback-secondary-border-color: light-dark(var(--color-blue-700), var(--theme-dark-color-neutral-border-weak));
-  --feedback-secondary-color: light-dark(var(--color-blue-700), var(--dark--body-font-color));
+  --feedback-secondary-color: light-dark(var(--color-blue-700), var(--palette-neutral-15));
   --feedback-input-background: light-dark(var(--theme-light-color-neutral-bg-strong), var(--theme-dark-color-neutral-bg-strong));
 
   /* footer */
@@ -361,9 +368,9 @@
   --toc-top: calc(var(--body-top) + var(--toolbar-height));
   --kb-metadata-top: calc(var(--body-top) + var(--toolbar-height));
   --toc-height: calc(100vh - var(--toc-top) - 8.5rem);
-  --toc-width: light-dark(calc(162 / var(--rem-base) * 1rem), 274px);
+  --toc-width: calc(162 / var(--rem-base) * 1rem);
   --kb-metadata-width: calc(216 / var(--rem-base) * 1rem);
-  --toc-width--widescreen: light-dark(calc(216 / var(--rem-base) * 1rem), 274px);
+  --toc-width--widescreen: calc(216 / var(--rem-base) * 1rem);
   --kb-metadata-width--widescreen: calc(244 / var(--rem-base) * 1rem);
   --toolbar-wrapper-width: 69rem;
   --doc-max-width: calc(720 / var(--rem-base) * 1rem);
@@ -387,7 +394,7 @@
 
   /* docs home, hub etc */
   --hub-highlight-border: light-dark(var(--palette-baltic-50), var(--palette-baltic-30));
-  --hub-highlight-background: light-dark(var(--palette-baltic-30), var(--color-docs));
+  --hub-highlight-background: light-dark(var(--palette-baltic-30), var(--palette-baltic-50));
   --hub-ga-card-background: light-dark(var(--theme-light-color-success-bg-weak), var(--theme-dark-color-success-bg-weak));
   --hub-ga-border-color: light-dark(var(--theme-light-color-success-border-strong), var(--theme-dark-color-success-border-strong));
 
@@ -410,13 +417,12 @@
 
   /* dark-specific vars (used outside light-dark() context) */
   --dark--color-labs: var(--palette-lavender-20);
-  --dark--body-font-color: var(--palette-neutral-15);
   --dark--navbar-background: var(--theme-dark-color-neutral-bg-weak);
   --dark--navbar-menu-border-color: var(--theme-dark-color-neutral-border-strong);
   --dark--admonition-font-color: var(--theme-dark-color-neutral-text-default);
   --dark--doc-font-color: var(--theme-dark-color-neutral-text-weak);
   --dark--link_visited-font-color: var(--palette-baltic-35);
   --dark--caption-background: var(--theme-dark-color-neutral-bg-on-bg-weak);
-  --dark--tabbed-section-tab-font-color: var(--dark--body-font-color);
+  --dark--tabbed-section-tab-font-color: var(--palette-neutral-15);
   --dark--image-opacity: 0.9;
 }

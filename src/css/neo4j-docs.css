@@ -189,9 +189,9 @@ p.not-on-aura::before,
 section.not-on-aura .title::after,
 span.not-on-aura::after {
   content: "Not available on Aura";
-  background-color: var(--not-on-aura-background-color);
-  border-color: var(--not-on-aura-background-color);
-  color: var(--not-on-aura-color);
+  background-color: var(--label-warning-background-color);
+  border-color: var(--label-warning-background-color);
+  color: var(--label-warning-color);
 }
 
 div.aura-db-enterprise > h2::after,
