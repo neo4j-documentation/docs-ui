@@ -342,13 +342,13 @@
   --feedback-input-background: light-dark(var(--theme-light-color-neutral-bg-strong), var(--theme-dark-color-neutral-bg-strong));
 
   /* footer */
-  --footer-background: light-dark(var(--theme-dark-color-neutral-bg-default), var(--color-black));
-  --footer-border-color: light-dark(var(--theme-dark-color-neutral-bg-default), var(--theme-dark-color-neutral-border-weak));
-  --footer-font-color: light-dark(var(--theme-light-color-neutral-text-inverse), var(--palette-neutral-10));
+  --footer-background: var(--theme-dark-color-neutral-bg-default);
+  --footer-border-color: var(--theme-dark-color-neutral-border-weak);
+  --footer-font-color: var(--palette-neutral-10);
   --footer-font-size: var(--typography-body-medium);
   --footer-line-height: var(--doc-line-height);
-  --footer-link-font-color: light-dark(var(--theme-light-color-neutral-text-inverse), var(--palette-neutral-10));
-  --footer-link_hover-font-color: light-dark(var(--theme-light-color-neutral-text-inverse), var(--palette-neutral-20));
+  --footer-link-font-color: var(--palette-neutral-10);
+  --footer-link_hover-font-color: var(--palette-neutral-20);
 
   /* dimensions and positioning */
   --navbar-height: calc(68 / var(--rem-base) * 1rem);
