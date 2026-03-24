@@ -616,7 +616,6 @@ body {
 .doc .image > img {
   height: auto;
   max-width: 100%;
-  opacity: var(--image-opacity);
   background: light-dark(var(--theme-light-color-neutral-bg-weak), var(--theme-dark-color-neutral-bg-strongest));
 }
 
