@@ -102,7 +102,8 @@
   --toc-active-background-color: var(--palette-baltic-10);
   --toc-hover-background-color: light-dark(var(--theme-light-color-neutral-hover), var(--theme-dark-color-primary-hover-weak));
   --toc-hover-color: light-dark(var(--theme-light-color-primary-text), var(--theme-dark-color-neutral-text-default));
-  --toc-heading-font-color: light-dark(var(--palette-neutral-70), var(--palette-baltic-50));
+  --toc-heading-font-color: var(--color-docs);
+  --toc-active-font-color: var(--color-docs);
   --toc-item-font-color: light-dark(var(--palette-neutral-70), var(--theme-dark-color-neutral-text-default));
   --toc-border-color: light-dark(var(--palette-neutral-30), var(--theme-dark-color-neutral-border-weak));
   --toc-line-height: 1.4;
@@ -163,8 +164,7 @@
   --admonition-table-header-color: var(--palette-neutral-20);
 
   /* misc */
-  --mark-background: var(--theme-light-color-primary-bg-weak);
-
+  --mark-background: light-dark(var(--theme-light-color-neutral-bg-strong), var(--theme-dark-color-neutral-bg-stronger));
   /* success */
   --success-color: light-dark(var(--theme-light-color-success-bg-strong), var(--theme-dark-color-success-bg-strong));
   --success-background-color: light-dark(var(--theme-light-color-success-bg-weak), var(--theme-dark-color-success-bg-weak));
@@ -220,7 +220,7 @@
   --section-divider-color: var(--palette-neutral-20);
 
   /* links */
-  --link-font-color: light-dark(var(--palette-baltic-50), var(--palette-baltic-50));
+  --link-font-color: var(--color-docs);
   --link_hover-font-color: light-dark(var(--palette-baltic-55), var(--palette-baltic-30));
   --link_unresolved-font-color: var(--important-color);
 

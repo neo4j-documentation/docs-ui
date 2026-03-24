@@ -113,8 +113,7 @@
 
 .toc .toc-menu ul a.is-active {
   border-left-color: var(--link-font-color);
-  color: var(--link-font-color);
-  /* color: var(--toc-active-font-color); */
+  color: var(--toc-active-font-color);
 }
 
 .toc .toc-menu ul a.is-active::before {
