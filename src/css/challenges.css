@@ -25,5 +25,5 @@
 }
 
 .arrange pre code span {
-  background: var(--color-white);
+  background: var(--palette-neutral-10);
 }

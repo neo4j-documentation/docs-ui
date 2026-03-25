@@ -90,6 +90,6 @@ code .glossary-term::after {
 }
 
 .tooltip .tooltip-body a {
-  /* color: rgba(var(--palette-baltic-50)); */
+  /* color: rgba(var(--theme-light-color-primary-text)); */
   font-weight: 600;
 }

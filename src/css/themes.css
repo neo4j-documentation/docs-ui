@@ -163,13 +163,14 @@ body.landing.labs .buttons li a:active {
 /* body.developer {
     --nav-bullet-color: rgba(var(--palette-neutral-50));
 } */
+
 body.developer .navbar,
 body.developer .search .search-container .search-form {
   border-top-color: var(--color-developer);
 }
 
 .developer .navbar-brand #neo4j-group {
-  fill: var(--color-white);
+  fill: var(--palette-neutral-10);
 }
 
 .developer .navbar-brand #developer {
@@ -240,7 +241,7 @@ body.landing.developer .sect1 .buttons > * {
 
 body.landing.developer .buttons li a {
   background: var(--palette-neutral-80);
-  color: var(--color-white);
+  color: var(--palette-neutral-10);
 }
 
 body.landing.developer .buttons li a:hover {
@@ -266,12 +267,12 @@ body.kb .search .search-container .search-form {
 }
 
 .kb .navbar-brand #neo4j-group {
-  fill: var(--color-white);
+  fill: var(--palette-neutral-10);
 }
 
 body.kb .navbar .navbar-item.getting-started-cta .navbar-link {
   background: var(--color-labs);
-  color: var(--color-white);
+  color: var(--palette-neutral-10);
 }
 
 body.kb .navbar .navbar-item.getting-started-cta .navbar-link:hover {
@@ -284,7 +285,7 @@ body.kb .navbar .navbar-item.getting-started-cta .navbar-link:active {
 
 body.kb .banner .banner-item.button-cta .banner-link {
   background: var(--color-labs);
-  color: var(--color-white);
+  color: var(--palette-neutral-10);
 }
 
 body.kb .banner .banner-item.button-cta .banner-link:hover {
@@ -306,7 +307,7 @@ body.training .search .search-container .search-form {
 }
 
 .training .navbar-brand #neo4j-group {
-  fill: var(--color-white);
+  fill: var(--palette-neutral-10);
 }
 
 /* Graphgists */
@@ -329,10 +330,15 @@ body.graphgists .search .search-container .search-form {
 }
 
 .graphgists .navbar-brand #neo4j-group {
-  fill: var(--color-white);
+  fill: var(--palette-neutral-10);
 }
 
 body.graphgists .navbar .navbar-item.getting-started-cta .navbar-link {
   background: var(--color-labs);
-  color: var(--color-white);
+  color: var(--color-labs-font);
+}
+
+body.graphgists .navbar .navbar-item.getting-started-cta .navbar-link:hover {
+  background: var(--color-labs-weak);
+  color: var(--theme-dark-color-neutral-text-inverse);
 }

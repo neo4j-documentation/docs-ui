@@ -61,13 +61,13 @@ body.cheat-sheet .navbar-burger span {
 }
 
 body.cheat-sheet .doc .button {
-  /* background: rgba(var(--palette-baltic-50)); */
-  /* color: var(--color-white); */
+  /* background: rgba(var(--theme-light-color-primary-text)); */
+  /* color: var(--palette-neutral-10); */
 }
 
 body.cheat-sheet .doc .button:hover {
   /* background: rgba(var(--palette-baltic-60)); */
-  /* color: var(--color-white); */
+  /* color: var(--palette-neutral-10); */
 }
 
 body.cheat-sheet .nav-item .nav-item::before,
@@ -94,16 +94,16 @@ body.cheat-sheet #preamble .abstract blockquote {
 }
 
 body.cheat-sheet .tableblock .icon i {
-  /* color: rgba(var(--palette-baltic-50)); */
+  /* color: rgba(var(--theme-light-color-primary-text)); */
 }
 
 body.cheat-sheet .navbar .navbar-item.getting-started-cta .navbar-link {
   /* background: var(--colors-primary-default); */
-  /* color: var(--color-white); */
+  /* color: var(--palette-neutral-10); */
 }
 
 body.cheat-sheet .navbar .navbar-item.getting-started-cta .navbar-link:hover {
-  /* background: rgba(var(--palette-baltic-50)); */
+  /* background: rgba(var(--theme-light-color-primary-text)); */
 }
 
 body.cheat-sheet .navbar .navbar-item.getting-started-cta .navbar-link:active {
@@ -214,7 +214,7 @@ body.cheat-sheet .nav-container {
 }
 
 body.cheat-sheet aside.nav {
-  /* background: var(--color-white); */
+  /* background: var(--palette-neutral-10); */
 }
 
 body.cheat-sheet aside.nav .nav-panel-versions {
@@ -345,7 +345,7 @@ body.cheat-sheet .sect2 {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  /* background: var(--color-white); */
+  /* background: var(--palette-neutral-10); */
   padding: 0.5rem;
   margin: 3.5rem 0;
   gap: 1rem;

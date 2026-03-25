@@ -203,7 +203,7 @@ body.research .next-steps .sectionbody ol {
 }
 
 body.research .next-steps .sectionbody ol li {
-  border-left: 1px solid var(--palette-baltic-50);
+  border-left: 1px solid var(--theme-light-color-primary-text);
   margin-left: 1rem;
   counter-increment: step-counter;
   margin-bottom: 0;
@@ -242,9 +242,9 @@ body.research .next-steps .sectionbody ol li::before {
   margin-left: -1rem;
   margin-right: 1rem;
   font-style: normal;
-  background: var(--palette-baltic-50);
-  color: var(--color-white);
-  border: 1px solid var(--palette-baltic-50);
+  background: var(--theme-light-color-primary-text);
+  color: var(--palette-neutral-10);
+  border: 1px solid var(--theme-light-color-primary-text);
   border-radius: 50%;
   width: 2rem;
   height: 2rem;
@@ -267,8 +267,8 @@ body.research .next-steps .sectionbody ul li div.paragraph {
 
 /* body.research .next-steps .sectionbody ol li:last-of-type:after {
   content: "";
-  background: rgba(var(--palette-neutral-10));
-  border: 1px solid rgba(var(--palette-baltic-50));
+  background: var(--palette-neutral-10);
+  border: 1px solid var(--theme-light-color-primary-text);
   border-radius: 50%;
   width: 2.5rem;
   height: 2.5rem;
@@ -325,7 +325,7 @@ body.research .banner .paragraph {
   padding: 0;
   margin-right: 25rem;
   margin-bottom: 2rem;
-  color: var(--color-white);
+  color: var(--palette-neutral-10);
 }
 
 body.research .banner .paragraph.description {
@@ -398,7 +398,7 @@ body.research .banner .button:hover {
 }
 
 .description2 {
-  color: var(--color-white);
+  color: var(--palette-neutral-10);
   font-size: var(--doc-font-size--desktop);
   line-height: var(--doc-line-height);
   margin: var(--doc-margin);
@@ -519,7 +519,7 @@ body.research .lists .sect2 {
   gap: 8px;
   /* min-width: 30%; */
   padding: 24px;
-  background: var(--color-white);
+  background: var(--palette-neutral-10);
   line-height: 2rem;
 }
 
