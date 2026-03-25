@@ -146,8 +146,8 @@
 }
 
 .doc .code-footer {
-  background: var(--palette-neutral-50);
-  color: var(--color-white);
+  background: var(--code-footer-background);
+  color: var(--code-footer-font-color);
   padding: 0.3rem 12px 0.3rem 0;
   font-size: 0.8em;
   display: flex;

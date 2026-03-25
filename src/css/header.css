@@ -57,7 +57,7 @@ body {
 }
 
 .navbar a.page-name-white {
-  color: var(--color-white);
+  color: var(--palette-neutral-10);
 }
 
 .navbar a.no-left-padding {
@@ -272,6 +272,18 @@ html[style*="color-scheme: light;"] .navbar-logo-dark {
   background: var(--toc-hover-background-color);
 }
 
+#theme-dropdown .navbar-item[data-theme="light"]:hover,
+#theme-dropdown .navbar-item[data-theme="light"]:hover .project-name {
+  background: var(--theme-light-color-neutral-bg-weak);
+  color: var(--theme-light-color-neutral-text-default);
+}
+
+#theme-dropdown .navbar-item[data-theme="dark"]:hover,
+#theme-dropdown .navbar-item[data-theme="dark"]:hover .project-name {
+  background: var(--theme-dark-color-neutral-bg-weak);
+  color: var(--theme-dark-color-primary-text);
+}
+
 #theme-dropdown .navbar-item {
   position: relative;
   margin: 0.25rem;
@@ -306,10 +318,12 @@ html[style*="color-scheme: dark"] #theme-dropdown .theme-icon-light { display: n
   content: '';
   position: absolute;
   bottom: 0;
-  left: 0;
-  right: 0;
+  left: 10%;
+  right: 10%;
   height: 3px;
   background: transparent;
+  border-top-left-radius: 9999px;
+  border-top-right-radius: 9999px;
 }
 
 #theme-dropdown .navbar-item.selected::after {
@@ -638,7 +652,7 @@ html[style*="color-scheme: dark"] #theme-dropdown .theme-icon-light { display: n
 .project {
   flex-direction: column;
   align-items: flex-start;
-  border-bottom: 1px solid rgba(var(--palette-neutral-20));
+  border-bottom: 1px solid var(--palette-neutral-20);
 }
 
 .project .project-name {
@@ -650,7 +664,7 @@ html[style*="color-scheme: dark"] #theme-dropdown .theme-icon-light { display: n
 .project-description {
   margin: 0.2rem 0;
   font-size: 0.8rem;
-  color: rgba(var(--palette-neutral-60));
+  color: var(--palette-neutral-60);
   white-space: normal;
 }
 
@@ -668,7 +682,7 @@ html[style*="color-scheme: dark"] #theme-dropdown .theme-icon-light { display: n
 }
 
 .project-links li::after {
-  color: rgba(var(--palette-neutral-40));
+  color: var(--palette-neutral-40);
   content: "|";
 }
 
@@ -715,11 +729,11 @@ html[style*="color-scheme: dark"] #theme-dropdown .theme-icon-light { display: n
 }
 
 .getting-started-cta .project:hover {
-  background: rgba(var(--palette-neutral-20));
+  background: var(--palette-neutral-20);
 }
 
 .getting-started-cta .project-subtitle {
-  color: rgba(var(--palette-neutral-60));
+  color: var(--palette-neutral-60);
   font-size: 13px;
   font-weight: 400;
 }

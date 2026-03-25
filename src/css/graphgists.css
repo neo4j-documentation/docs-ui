@@ -169,10 +169,12 @@ body.graphgist .doc > .sect1 > .sectionbody {
 .graphgist-metadata {
   background: var(--panel-background);
   float: right;
+  position: relative;
+  z-index: 1;
   margin-left: 1rem;
   margin-bottom: 1rem;
-  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
   padding: 1rem;
+  border: 1px solid var(--panel-border-color);
   border-radius: 0.5rem;
   width: 320px;
 }
@@ -280,6 +282,10 @@ body.graphgist .graphgist-metadata .control {
   text-align: inherit;
 }
 
+body.graphgist .listingblock {
+  border: none;
+}
+
 /* make sure that <pre> elements won't overlap with the metadata block (float) */
 body.graphgist .listingblock pre {
   z-index: -1;
@@ -287,7 +293,6 @@ body.graphgist .listingblock pre {
 
 .graphgist-metadata-menu {
   padding-top: 1rem;
-  border-top: 1px solid rgba(var(--palette-neutral-30));
 }
 
 .graphgist-metadata-menu ul {
@@ -295,22 +300,18 @@ body.graphgist .listingblock pre {
   list-style: none;
 }
 
-.graphgist-metadata .button {
+.graphgist-metadata a.button {
   display: block;
   width: 100%;
   margin: 0 0 0.5rem;
-  background: var(--color-graphgists);
-  border: 1px solid light-dark(var(--palette-neutral-40), var(--theme-dark-color-neutral-text-default));
+  background: var(--color-labs);
+  border: 1px solid var(--button-border-color);
+  color: var(--color-labs-font);
   padding: 0.5rem 1rem;
   font-size: 0.9rem;
 }
 
-.graphgist-metadata .button.secondary {
-  border: 1px solid light-dark(var(--palette-neutral-40), var(--theme-dark-color-neutral-text-default)) !important;
-  background: var(--color-white) !important;
-  color: var(--color-purple-600) !important;
-}
-
-.graphgist-metadata .button.secondary:hover {
-  background: var(--color-purple-100) !important;
+.graphgist-metadata a.button:hover {
+  background: var(--color-labs-weak);
+  color: var(--theme-dark-color-neutral-text-inverse);
 }

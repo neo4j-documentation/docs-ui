@@ -28,7 +28,7 @@ section.hero h2 {
   font-size: 1.2rem;
   font-weight: 300;
   display: block;
-  color: rgba(var(--palette-neutral-15));
+  color: var(--palette-neutral-15);
   margin-bottom: 1rem;
 }
 
@@ -48,7 +48,7 @@ section.hero h2::after {
 .landing .hero p,
 section.hero p {
   font-size: 1.8rem;
-  color: rgba(var(--palette-neutral-15));
+  color: var(--palette-neutral-15);
   font-weight: 300;
 }
 
@@ -83,12 +83,12 @@ section.hero p {
 }
 
 .landing .doc .secondary {
-  background: rgba(var(--palette-neutral-15));
+  background: var(--palette-neutral-15);
 }
 
 .landing .doc .secondary.leading {
   margin-top: 0;
-  background: linear-gradient(180deg, rgba(var(--palette-neutral-20)) 0%, rgba(var(--palette-neutral-15)) 35%, var(--color-white) 100%);
+  background: linear-gradient(180deg, var(--palette-neutral-20) 0%, var(--palette-neutral-15) 35%, var(--palette-neutral-10) 100%);
   padding-top: 4rem;
 }
 
@@ -172,8 +172,8 @@ body.landing .ulist.buttons li {
 body.landing .ulist.buttons li a {
   display: inline-block;
   margin: 0 0.25rem;
-  background: rgba(var(--palette-neutral-80));
-  color: var(--color-white);
+  background: var(--palette-neutral-80);
+  color: var(--palette-neutral-10);
   font-weight: 600;
   padding: 1rem 2rem;
   border-radius: 0.25rem;
@@ -291,14 +291,14 @@ body.ndl-theme-dark .hero {
   font-size: 1.2rem;
   font-weight: 300;
   display: block;
-  color: var(--color-white);
+  color: var(--palette-neutral-10);
   margin-bottom: 1rem;
 }
 
 .hero h1::after,
 .hero h2::after {
   display: block;
-  background-color: rgba(var(--palette-forest-50));
+  background-color: var(--palette-forest-50);
   height: 3px;
   width: 80px;
   margin-top: 1rem;
@@ -308,7 +308,7 @@ body.ndl-theme-dark .hero {
 
 .hero p {
   font-size: 1.8rem;
-  color: rgba(var(--palette-neutral-30));
+  color: var(--palette-neutral-30);
   font-weight: 300;
 }
 
@@ -334,7 +334,7 @@ body.ndl-theme-dark .hero {
 }
 
 .hero svg.to-white {
-  fill: var(--color-white);
+  fill: var(--palette-neutral-10);
   margin-bottom: -1em;
 }
 

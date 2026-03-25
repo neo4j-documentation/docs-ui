@@ -2,8 +2,8 @@
   color-scheme: light dark;
 
   /* --palette-baltic-25: #5CC3C9; */
-  /* --palette-baltic-20: #8FE3E8; */
-  /* --palette-baltic-50: #0A6190; */
+  /* --theme-dark-color-primary-text: #8FE3E8; */
+  /* --theme-light-color-primary-text: #0A6190; */
   /* --palette-baltic-60: #014063; */
   /* --text-white: #F5F6F6; */
 
@@ -13,8 +13,9 @@
   /* theme accent colors */
   --color-developer: light-dark(var(--palette-forest-45), var(--palette-forest-40));
   --color-labs: light-dark(var(--palette-lavender-45), var(--palette-lavender-20));
+  --color-labs-font: light-dark(var(--palette-lavender-20), var(--palette-lavender-45)); /* font on labs buttons */
   --color-labs-weak: light-dark(var(--palette-lavender-30), var(--palette-lavender-40));
-  --color-docs: light-dark(var(--palette-baltic-50), var(--palette-baltic-20));
+  --color-docs: light-dark(var(--theme-light-color-primary-text), var(--theme-dark-color-primary-text));
   --color-docs-weak: light-dark(var(--palette-baltic-55), var(--palette-baltic-25));
   --color-kb: light-dark(var(--palette-lavender-45), var(--palette-lavender-20));
   --color-kb-weak: var(--palette-lavender-20);
@@ -28,7 +29,7 @@
   --body-font-size--desktop: 1em; /* 18px */
   --body-font-size--print: 0.9375em; /* 15px */
   --body-line-height: 1.5;
-  --body-font-color: light-dark(var(--palette-neutral-75), var(--palette-neutral-15));
+  --body-font-color: light-dark(var(--theme-light-color-neutral-text-default), var(--palette-neutral-15));
   --body-font-family: "Public Sans", "Nunito Sans", "Helvetica Neue", helvetica, roboto, arial, sans-serif;
   --body-font-weight-bold: var(--font-weight-semibold);
   --monospace-font-family: "Roboto Mono", monospace;
@@ -39,7 +40,7 @@
   --body-background: light-dark(var(--palette-neutral-10), var(--theme-dark-color-neutral-bg-default));
   --panel-background: light-dark(var(--palette-neutral-15), var(--theme-dark-color-neutral-bg-default));
   --panel-border-color: var(--palette-neutral-20);
-  --panel_hover-border-color: light-dark(var(--palette-neutral-50), var(--palette-baltic-50));
+  --panel_hover-border-color: light-dark(var(--palette-neutral-50), var(--theme-light-color-primary-text));
   --scrollbar-thumb-color: light-dark(var(--theme-light-color-neutral-bg-strong), var(--theme-dark-color-neutral-bg-strong));
   /* navbar */
   --navbar-background: light-dark(var(--theme-light-color-neutral-bg-weak), var(--theme-dark-color-neutral-bg-weak));
@@ -47,11 +48,11 @@
   --navbar-font-color: light-dark(var(--theme-light-color-neutral-text-default), var(--theme-dark-color-neutral-text-default));
   --navbar-font-weight: 400;
   --navbar_hover-background: transparent;
-  --button-background: light-dark(var(--palette-baltic-50), var(--theme-dark-color-neutral-bg-on-bg-weak));
+  --button-background: light-dark(var(--theme-light-color-primary-text), var(--theme-dark-color-neutral-bg-on-bg-weak));
   --button-border-color: var(--color-docs);
   --button-font-color: light-dark(var(--theme-light-color-neutral-text-inverse), var(--theme-dark-color-neutral-text-weak));
   --hover-button-background: var(--color-docs-weak);
-  --hover-button-border-color: light-dark(var(--palette-baltic-50), var(--theme-dark-color-neutral-text-inverse));
+  --hover-button-border-color: light-dark(var(--theme-light-color-primary-text), var(--theme-dark-color-neutral-text-inverse));
   --hover-button-font-color: light-dark(var(--theme-light-color-neutral-text-inverse), var(--theme-dark-color-neutral-text-inverse));
   --navbar-menu-border-color: light-dark(var(--panel-border-color), var(--theme-dark-color-neutral-border-strong));
   --navbar-menu-border-color: var(--panel-border-color);
@@ -60,7 +61,7 @@
   --navbar-menu_hover-background: transparent;
   --navbar-top-border: var(--palette-neutral-20);
   --navbar-bottom-border: light-dark(var(--palette-neutral-20), var(--theme-dark-color-neutral-border-weak));
-  --navbar-dropdown-link: light-dark(var(--palette-baltic-50), var(--color-docs));
+  --navbar-dropdown-link: light-dark(var(--theme-light-color-primary-text), var(--color-docs));
   --navbar-training-border: var(--color-developer);
   --navbar-developer-border: var(--color-developer);
   --navbar-docs-border: var(--color-docs);
@@ -94,11 +95,11 @@
   --page-version-missing-font-color: var(--palette-neutral-30);
 
   /* breadcrumbs */
-  --breadcrumbs-color: light-dark(var(--palette-baltic-50), var(--theme-dark-color-neutral-text-default));
+  --breadcrumbs-color: light-dark(var(--theme-light-color-primary-text), var(--theme-dark-color-neutral-text-default));
 
   /* toc */
   --toc-font-color: light-dark(var(--palette-neutral-70), var(--theme-dark-color-neutral-text-default));
-  --toc-active-font-color: light-dark(var(--palette-baltic-70), var(--palette-baltic-50));
+  --toc-active-font-color: light-dark(var(--palette-baltic-70), var(--theme-light-color-primary-text));
   --toc-active-background-color: var(--palette-baltic-10);
   --toc-hover-background-color: light-dark(var(--theme-light-color-neutral-hover), var(--theme-dark-color-primary-hover-weak));
   --toc-hover-color: light-dark(var(--theme-light-color-primary-text), var(--theme-dark-color-neutral-text-default));
@@ -107,7 +108,7 @@
   --toc-item-font-color: light-dark(var(--palette-neutral-70), var(--theme-dark-color-neutral-text-default));
   --toc-border-color: light-dark(var(--palette-neutral-30), var(--theme-dark-color-neutral-border-weak));
   --toc-line-height: 1.4;
-  --toc-bullet-color: var(--palette-baltic-50);
+  --toc-bullet-color: var(--theme-light-color-primary-text);
 
   /* kb metadata */
   --kb-metadata-font-color: light-dark(var(--palette-neutral-70), var(--theme-dark-color-neutral-bg-weak));
@@ -183,13 +184,13 @@
 
   /* tooltip (glossary) */
   --tooltip-background: light-dark(var(--theme-light-color-neutral-bg-default), var(--theme-dark-color-neutral-bg-default));
-  --tooltip-header-background: light-dark(var(--palette-baltic-50), var(--theme-dark-color-neutral-bg-strong));
+  --tooltip-header-background: light-dark(var(--theme-light-color-primary-text), var(--theme-dark-color-neutral-bg-strong));
   --tooltip-border-color: light-dark(var(--theme-light-color-neutral-border-strong), var(--theme-dark-color-neutral-border-strong));
   --tooltip-font-color: var(--body-font-color);
   --tooltip-header-font-color: var(--body-font-color);
 
   /* landing page banner */
-  --banner-background-color: var(--palette-baltic-20);
+  --banner-background-color: var(--theme-dark-color-primary-text);
   --banner-hover-color: var(--palette-baltic-25);
   --banner-text-color: var(--text-inverse);
 
@@ -227,14 +228,14 @@
   /* abstract */
   --abstract-background: light-dark(var(--palette-neutral-10), var(--theme-dark-color-neutral-bg-on-bg-weak));
   --abstract-font-color: var(--body-font-color);
-  --abstract-border-color: light-dark(var(--panel-border-color), var(--palette-baltic-50));
+  --abstract-border-color: light-dark(var(--panel-border-color), var(--theme-light-color-primary-text));
   --admonition-background: var(--panel-background);
   --admonition-label-font-weight: var(--body-font-weight-bold);
   --caption-font-color: var(--body-font-color);
   --caption-font-weight: var(--body-font-weight-bold);
 
   /* toc ad */
-  --toc-ad-border-color: light-dark(var(--theme-light-color-neutral-border-strong), var(--palette-baltic-50));
+  --toc-ad-border-color: light-dark(var(--theme-light-color-neutral-border-strong), var(--theme-light-color-primary-text));
   --toc-ad-background: light-dark(var(--theme-light-color-neutral-bg-weak), var(--theme-dark-color-neutral-bg-on-bg-weak));
   --toc-ad-font-color: var(--body-font-color);
   --toc-ad-title-color: var(--body-font-color);
@@ -246,8 +247,10 @@
   --code-header-background: light-dark(var(--theme-light-color-neutral-bg-on-bg-weak), var(--theme-dark-color-neutral-bg-on-bg-weak));
   --code-header-font-color: var(--body-font-color);
   --code-header-font-size: var(--font-size-body-medium);
+  --code-footer-background: var(--palette-neutral-50);
+  --code-footer-font-color: var(--palette-neutral-10);
   --code-background: light-dark(var(--theme-light-color-neutral-bg-on-bg-weak), var(--theme-dark-color-neutral-bg-on-bg-weak));
-  --code-result-background: light-dark(var(--theme-light-color-neutral-bg-strong), var(--theme-dark-color-neutral-bg-default));
+  --code-result-background: light-dark(var(--theme-light-color-neutral-bg-strong), var(--theme-dark-color-neutral-bg-strong));
   --code-result-font-color: light-dark(var(--theme-light-color-neutral-text-default), var(--theme-dark-color-neutral-text-default));
   --code-result-table-header-color: light-dark(#718096, #a0aec0);
   --code-font-color: light-dark(var(--theme-light-color-neutral-text-default), var(--theme-dark-color-neutral-text-default));
@@ -260,9 +263,9 @@
   --pre-background: var(--panel-background);
   --pre-border-color: var(--panel-border-color);
   --pre-annotation-font-color: light-dark(var(--palette-neutral-70), var(--theme-dark-color-neutral-bg-weak));
-  --code-copy-success-border: light-dark(var(--theme-light-color-success-border-strong), var(--palette-baltic-50));
-  --code-copy-success-background: light-dark(var(--theme-light-color-success-bg-strong), var(--theme-dark-color-neutral-bg-on-bg-weak));
-  --code-copy-success-color: light-dark(var(--theme-light-color-neutral-text-inverse), var(--theme-dark-color-neutral-text-weak));
+  --code-copy-success-border: light-dark(var(--theme-light-color-success-border-weak), var(--theme-dark-color-success-border-weak));
+  --code-copy-success-background: light-dark(var(--theme-light-color-success-bg-weak), var(--theme-dark-color-success-bg-weak));
+  --code-copy-success-color: light-dark(var(--theme-light-color-success-text), var(--theme-dark-color-success-text));
 
   /* examples */
   --example-header-background: light-dark(var(--theme-light-color-neutral-bg-default), var(--theme-dark-color-neutral-bg-default));
@@ -272,9 +275,9 @@
 
   /* quotes */
   --quote-background: light-dark(var(--palette-baltic-10), var(--theme-dark-color-neutral-bg-on-bg-weak));
-  --quote-border-color: light-dark(var(--palette-baltic-70), var(--palette-baltic-50));
-  --quote-font-color: light-dark(var(--palette-baltic-50), var(--theme-dark-color-neutral-text-default));
-  --quote-attribution-font-color: light-dark(var(--palette-baltic-50), var(--theme-dark-color-neutral-text-default));
+  --quote-border-color: light-dark(var(--palette-baltic-70), var(--theme-light-color-primary-text));
+  --quote-font-color: light-dark(var(--theme-light-color-primary-text), var(--theme-dark-color-neutral-text-default));
+  --quote-attribution-font-color: light-dark(var(--theme-light-color-primary-text), var(--theme-dark-color-neutral-text-default));
   --sidebar-background: light-dark(var(--theme-light-color-neutral-bg-strong), var(--theme-dark-color-neutral-bg-strong));
   --table-border-color: light-dark(var(--panel-border-color), var(--theme-dark-color-neutral-bg-strong));
   --table-header-color: light-dark(var(--palette-neutral-20), var(--theme-dark-color-neutral-bg-strong));
@@ -298,26 +301,26 @@
   --discontinued-color: var(--theme-light-color-danger-bg-strong);
   --discontinued-background-color: var(--theme-light-color-danger-bg-weak);
   --aura-db-enterprise-color: var(--palette-baltic-10);
-  --aura-db-enterprise-background-color: var(--palette-baltic-50);
+  --aura-db-enterprise-background-color: var(--theme-light-color-primary-text);
   --aura-db-dedicated-color: var(--palette-baltic-10);
-  --aura-db-dedicated-background-color: var(--palette-baltic-50);
+  --aura-db-dedicated-background-color: var(--theme-light-color-primary-text);
   --enterprise-edition-color: var(--palette-baltic-10);
-  --enterprise-edition-background-color: var(--palette-baltic-50);
+  --enterprise-edition-background-color: var(--theme-light-color-primary-text);
   --fabric-color: var(--palette-baltic-10);
-  --fabric-background-color: var(--palette-baltic-50);
+  --fabric-background-color: var(--theme-light-color-primary-text);
   --alpha-beta-color: var(--palette-marigold-10);
   --alpha-beta-background-color: var(--palette-marigold-50);
 
   /* labels and admonitions */
 
   --label-default-color: var(--palette-baltic-10);
-  --label-default-background-color: var(--palette-baltic-50);
+  --label-default-background-color: var(--theme-light-color-primary-text);
   --label-warning-color: var(--theme-light-color-danger-bg-weak);
   --label-warning-background-color: var(--theme-light-color-danger-bg-strong);
   --label-success-color: var(--theme-light-color-success-bg-strong);
   --label-success-background-color: var(--theme-light-color-success-bg-weak);
   --label-os-color: var(--palette-baltic-70);
-  --label-os-background-color: var(--palette-baltic-20);
+  --label-os-background-color: var(--theme-dark-color-primary-text);
   --label-labs-color: var(--palette-baltic-10);
   --label-labs-background-color: var(--palette-lavender-45);
   --label-title-font-size: calc(0.8 * var(--typography-label-font-size)); /* set label font size from ndl */
@@ -331,7 +334,7 @@
   --feedback-negative-color: var(--color-docs);
   --feedback-positive-background: light-dark(var(--theme-light-color-primary-bg-weak), var(--theme-dark-color-primary-bg-weak));
   --feedback-positive-color: var(--color-docs);
-  --feedback-textarea-background: light-dark(var(--color-white), var(--theme-dark-color-neutral-bg-on-bg-weak));
+  --feedback-textarea-background: light-dark(var(--palette-neutral-10), var(--theme-dark-color-neutral-bg-on-bg-weak));
   --feedback-textarea-color: var(--body-font-color);
   --feedback-primary-background: light-dark(var(--color-blue-100), var(--theme-dark-color-neutral-bg-on-bg-weak));
   --feedback-primary-border-color: light-dark(var(--color-blue-700), var(--theme-dark-color-neutral-border-weak));
@@ -390,8 +393,8 @@
   --label-group-syntax: #e6e6e6;
 
   /* docs home, hub etc */
-  --hub-highlight-border: light-dark(var(--palette-baltic-50), var(--palette-baltic-30));
-  --hub-highlight-background: light-dark(var(--palette-baltic-30), var(--palette-baltic-50));
+  --hub-highlight-border: light-dark(var(--theme-light-color-primary-text), var(--palette-baltic-30));
+  --hub-highlight-background: light-dark(var(--palette-baltic-30), var(--theme-light-color-primary-text));
   --hub-ga-card-background: light-dark(var(--theme-light-color-success-bg-weak), var(--theme-dark-color-success-bg-weak));
   --hub-ga-border-color: light-dark(var(--theme-light-color-success-border-strong), var(--theme-dark-color-success-border-strong));
 

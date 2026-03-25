@@ -254,7 +254,7 @@ body {
 .doc .image.rounded {
   padding: 12px;
   box-shadow: 0 0 5px 1px var(--color-blue-200) !important;
-  background: var(--color-white);
+  background: var(--palette-neutral-10);
   border-radius: 50%;
   line-height: 1;
   display: inline-block;
@@ -476,7 +476,7 @@ body {
 .doc .admonitionblock a.btn {
   display: inline-block;
   background: black;
-  color: var(--color-white) !important;
+  color: var(--palette-neutral-10) !important;
   padding: 0.5rem 2rem;
   border-radius: 0.5rem;
 }
@@ -1357,7 +1357,7 @@ body {
   padding: .4rem .6rem;
   margin-right: .5rem;
   margin-bottom: calc(var(--tabbed-border) * -1);
-  /* background: var(--color-white);
+  /* background: var(--palette-neutral-10);
   color: rgba(var(--colors-neutral-60));
   border: 1px solid rgba(var(--colors-neutral-20));
   border-top-left-radius: .25rem;
@@ -1370,14 +1370,14 @@ body {
 }
 
 /* .doc .tabbed-container {
-  background: var(--color-white);
+  background: var(--palette-neutral-10);
   /* border-top: var(--tabbed-border) solid rgba(var(--colors-neutral-20));
 
 } */
 
 .page.unresolved {
   background: var(--color-red-800);
-  color: var(--color-white) !important;
+  color: var(--palette-neutral-10) !important;
 }
 
 .doc .graph-app {
@@ -1467,6 +1467,6 @@ body {
 
 .doc details > div.content {
   margin: 0.5rem 0 0 0.25rem;
-  border-left: 1px dashed rgba(var(--colors-neutral-30));
+  border-left: 1px dashed var(--colors-neutral-30);
   padding-left: 1rem;
 }

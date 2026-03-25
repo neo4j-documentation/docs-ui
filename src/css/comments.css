@@ -58,11 +58,11 @@ header.discourse .replies {
     border-radius: .25rem;
     font-weight: 600;
     background: #3182ce;
-    color: var(--color-white) !important;
+    color: var(--palette-neutral-10) !important;
 }
 .button:hover {
     background: #4299e1;
-    color: var(--color-white);
+    color: var(--palette-neutral-10);
 }
 
 article.post {
