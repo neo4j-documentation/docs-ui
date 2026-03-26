@@ -39,7 +39,7 @@
   /* base */
   --body-background: light-dark(var(--palette-neutral-10), var(--theme-dark-color-neutral-bg-default));
   --panel-background: light-dark(var(--palette-neutral-15), var(--theme-dark-color-neutral-bg-default));
-  --panel-border-color: var(--palette-neutral-20);
+  --panel-border-color: var(--theme-light-color-neutral-border-weak);
   --panel_hover-border-color: light-dark(var(--palette-neutral-50), var(--theme-light-color-primary-text));
   --scrollbar-thumb-color: light-dark(var(--theme-light-color-neutral-bg-strong), var(--theme-dark-color-neutral-bg-strong));
   /* navbar */
@@ -54,13 +54,12 @@
   --hover-button-background: var(--color-docs-weak);
   --hover-button-border-color: light-dark(var(--theme-light-color-primary-text), var(--theme-dark-color-neutral-text-inverse));
   --hover-button-font-color: light-dark(var(--theme-light-color-neutral-text-inverse), var(--theme-dark-color-neutral-text-inverse));
-  --navbar-menu-border-color: light-dark(var(--panel-border-color), var(--theme-dark-color-neutral-border-strong));
-  --navbar-menu-border-color: var(--panel-border-color);
+  --navbar-menu-border-color: light-dark(var(--palette-neutral-20), var(--theme-dark-color-neutral-border-strong));
   --navbar-menu-background: light-dark(var(--palette-neutral-10), var(--theme-dark-color-neutral-bg-weak));
   --navbar-menu-font-color: var(--body-font-color);
   --navbar-menu_hover-background: transparent;
-  --navbar-top-border: var(--palette-neutral-20);
-  --navbar-bottom-border: light-dark(var(--palette-neutral-20), var(--theme-dark-color-neutral-border-weak));
+  --navbar-top-border: var(--theme-light-color-neutral-border-weak);
+  --navbar-bottom-border: light-dark(var(--theme-light-color-neutral-border-weak), var(--theme-dark-color-neutral-border-weak));
   --navbar-dropdown-link: light-dark(var(--theme-light-color-primary-text), var(--color-docs));
   --navbar-training-border: var(--color-developer);
   --navbar-developer-border: var(--color-developer);
@@ -73,13 +72,13 @@
 
   /* nav */
   --nav-background: light-dark(var(--palette-neutral-15), var(--theme-dark-color-neutral-bg-weak));
-  --nav-border-color: light-dark(var(--palette-neutral-20), var(--theme-dark-color-neutral-border-weak));
+  --nav-border-color: light-dark(var(--theme-light-color-neutral-border-weak), var(--theme-dark-color-neutral-border-weak));
   --nav-font-weight: 400;
   --nav_active-font-weight: 400;
   --nav-line-height: 1.2;
   --nav-heading-font-color: var(--palette-neutral-55);
   --nav-muted-color: var(--palette-neutral-40);
-  --nav-panel-divider-color: light-dark(var(--palette-neutral-20), var(--theme-dark-color-neutral-border-weak));
+  --nav-panel-divider-color: light-dark(var(--theme-light-color-neutral-border-weak), var(--theme-dark-color-neutral-border-weak));
   --nav-secondary-background: var(--palette-neutral-30);
   --nav-bullet-color: var(--palette-neutral-40);
   --dropdown-background-color: light-dark(var(--theme-light-color-neutral-bg-strong), var(--theme-dark-color-neutral-bg-strong));
@@ -87,7 +86,7 @@
 
   /* toolbar */
   --toolbar-background: var(--panel-background);
-  --toolbar-border-color: light-dark(var(--palette-neutral-20), var(--theme-dark-color-neutral-border-weak));
+  --toolbar-border-color: light-dark(var(--theme-light-color-neutral-border-weak), var(--theme-dark-color-neutral-border-weak));
   --toolbar-font-color: light-dark(var(--palette-neutral-70), var(--theme-dark-color-neutral-bg-weak));
   --toolbar-muted-color: var(--palette-neutral-50);
   --page-version-menu-background: var(--palette-neutral-10);
