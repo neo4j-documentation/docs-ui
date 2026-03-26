@@ -116,6 +116,10 @@
   justify-content: flex-end;
 }
 
+.doc .listingblock.has-title .code-inset {
+  padding-top: 1rem;
+}
+
 .doc .code-inset .copy-success.hidden {
   display: none;
 }
