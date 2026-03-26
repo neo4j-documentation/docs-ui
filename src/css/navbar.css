@@ -28,6 +28,10 @@
   .navbar-item.has-dropdown:hover .navbar-link {
     color: var(--toc-heading-font-color);
   }
+
+  .navbar .navbar-brand .navbar-end {
+    display: flex;
+  }
 }
 
 .navbar-burger {
