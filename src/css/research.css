@@ -496,7 +496,7 @@ body.research .sect2 {
 
 body.research .cards .sectionbody > div.sect2 {
   flex: 0 1 32%;
-  border: 1px solid var(--panel-border-color);
+  border: 1px solid var(--default-border-color);
   /* margin-right: 1rem; */
 }
 

@@ -38,8 +38,8 @@
 
   /* base */
   --body-background: light-dark(var(--palette-neutral-10), var(--theme-dark-color-neutral-bg-default));
+  --default-border-color: light-dark(var(--theme-light-color-neutral-border-strong), var(--theme-dark-color-neutral-border-strong));
   --panel-background: light-dark(var(--palette-neutral-15), var(--theme-dark-color-neutral-bg-default));
-  --panel-border-color: var(--theme-light-color-neutral-border-weak);
   --panel_hover-border-color: light-dark(var(--palette-neutral-50), var(--theme-light-color-primary-text));
   --scrollbar-thumb-color: light-dark(var(--theme-light-color-neutral-bg-strong), var(--theme-dark-color-neutral-bg-strong));
   /* navbar */
@@ -151,13 +151,14 @@
 
   /* FEATURED */
   --featured-color: light-dark(var(--palette-hibiscus-70), var(--palette-hibiscus-10));
-  --featured-border-color: var(--palette-lavender-50);
+  --featured-border-color: light-dark(var(--palette-lavender-50), var(--palette-lavender-50));
   --featured-background-color: light-dark(var(--palette-hibiscus-10), var(--palette-hibiscus-70));
 
   /* EXAMPLE */
-  --example-color: light-dark(var(--theme-light-color-neutral-bg-strong), var(--theme-dark-color-neutral-bg-strong));
-  --example-border-color: light-dark(var(--theme-light-color-neutral-bg-strong), var(--theme-dark-color-neutral-bg-strong));
+  --example-border-color: light-dark(var(--theme-light-color-neutral-border-strong), var(--theme-dark-color-neutral-border-strong));
   --example-background-color: light-dark(var(--theme-light-color-neutral-bg-weak), var(--theme-dark-color-neutral-bg-weak));
+  --example-header-background: light-dark(var(--theme-light-color-neutral-bg-default), var(--theme-dark-color-neutral-bg-default));
+  --example-header-font-color: light-dark(var(--theme-light-color-neutral-text-default), var(--theme-dark-color-neutral-text-default));
 
   /* Tables in admonitions */
   --admonition-table-border-color: var(--palette-neutral-70);
@@ -227,7 +228,7 @@
   /* abstract */
   --abstract-background: light-dark(var(--palette-neutral-10), var(--theme-dark-color-neutral-bg-on-bg-weak));
   --abstract-font-color: var(--body-font-color);
-  --abstract-border-color: light-dark(var(--panel-border-color), var(--theme-light-color-primary-text));
+  --abstract-border-color: light-dark(var(--default-border-color), var(--theme-light-color-primary-text));
   --admonition-background: var(--panel-background);
   --admonition-label-font-weight: var(--body-font-weight-bold);
   --caption-font-color: var(--body-font-color);
@@ -242,7 +243,7 @@
   --toc-ad-button-font-color: light-dark(var(--theme-light-color-neutral-text-inverse), var(--theme-dark-color-neutral-text-inverse));
 
   /* code */
-  --code-border-color: var(--body-font-color);
+  --code-border-color: light-dark(var(--theme-light-color-neutral-border-strongest), var(--theme-dark-color-neutral-border-strongest));
   --code-header-background: light-dark(var(--theme-light-color-neutral-bg-on-bg-weak), var(--theme-dark-color-neutral-bg-on-bg-weak));
   --code-header-font-color: var(--body-font-color);
   --code-header-font-size: var(--font-size-body-medium);
@@ -260,17 +261,11 @@
   --inline-code-background: light-dark(var(--theme-light-color-neutral-bg-default), var(--theme-dark-color-neutral-bg-strong));
   --inline-code-font-color: var(--body-font-color);
   --pre-background: var(--panel-background);
-  --pre-border-color: var(--panel-border-color);
+  --pre-border-color: var(--default-border-color);
   --pre-annotation-font-color: light-dark(var(--palette-neutral-70), var(--theme-dark-color-neutral-bg-weak));
   --code-copy-success-border: light-dark(var(--theme-light-color-success-border-weak), var(--theme-dark-color-success-border-weak));
   --code-copy-success-background: light-dark(var(--theme-light-color-success-bg-weak), var(--theme-dark-color-success-bg-weak));
   --code-copy-success-color: light-dark(var(--theme-light-color-success-text), var(--theme-dark-color-success-text));
-
-  /* examples */
-  --example-header-background: light-dark(var(--theme-light-color-neutral-bg-default), var(--theme-dark-color-neutral-bg-default));
-  --example-header-font-color: light-dark(var(--theme-light-color-neutral-text-default), var(--theme-dark-color-neutral-text-default));
-  --example-background: var(--palette-neutral-10);
-  --example-border-color: var(--theme-light-color-neutral-bg-strong);
 
   /* quotes */
   --quote-background: light-dark(var(--palette-baltic-10), var(--theme-dark-color-neutral-bg-on-bg-weak));
@@ -278,7 +273,7 @@
   --quote-font-color: light-dark(var(--theme-light-color-primary-text), var(--theme-dark-color-neutral-text-default));
   --quote-attribution-font-color: light-dark(var(--theme-light-color-primary-text), var(--theme-dark-color-neutral-text-default));
   --sidebar-background: light-dark(var(--theme-light-color-neutral-bg-strong), var(--theme-dark-color-neutral-bg-strong));
-  --table-border-color: light-dark(var(--panel-border-color), var(--theme-dark-color-neutral-bg-strong));
+  --table-border-color: light-dark(var(--default-border-color), var(--theme-dark-color-neutral-bg-strong));
   --table-header-color: light-dark(var(--palette-neutral-20), var(--theme-dark-color-neutral-bg-strong));
   --table-stripe-background: light-dark(var(--palette-neutral-15), var(--theme-dark-color-neutral-bg-on-bg-weak));
   --kbd-background: var(--panel-background);

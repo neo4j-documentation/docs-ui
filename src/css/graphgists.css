@@ -174,7 +174,7 @@ body.graphgist .doc > .sect1 > .sectionbody {
   margin-left: 1rem;
   margin-bottom: 1rem;
   padding: 1rem;
-  border: 1px solid var(--panel-border-color);
+  border: 1px solid var(--default-border-color);
   border-radius: 0.5rem;
   width: 320px;
 }

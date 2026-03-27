@@ -68,11 +68,6 @@ body.docs-ndl .nav-menu .home-link.is-home a {
   /* color: rgba(var(--theme-light-color-primary-text)); */
 }
 
-body.docs-ndl .nav-module {
-  /* background: rgba(var(--palette-neutral-15)); */
-  background: var(--palette-neutral-10);
-}
-
 body.docs-ndl .nav-list:first-child .nav-item:first-child .nav-section-header {
   border: none;
   padding-top: 1.5rem !important;
@@ -353,7 +348,7 @@ body.docs-ndl .next-steps .sectionbody ol li::before {
   font-style: normal;
   background: var(--hub-highlight-background);
   color: var(--hub-highlight-border);
-  border: 1px solid var(--hub-highlight-border);
+  border: 1px solid var(--default-border-color);
   border-radius: 50%;
   width: 2rem;
   height: 2rem;
@@ -614,7 +609,7 @@ body.docs-ndl .sect2 {
 
 body.docs-ndl .cards .sectionbody > div.sect2 {
   flex: 0 1 32%;
-  border: 1px solid var(--panel-border-color);
+  border: 1px solid var(--default-border-color);
   background: var(--panel-background);
 }
 
@@ -631,7 +626,7 @@ body.docs-ndl .cards.bottom-cards .sectionbody > div.sect2 {
 
 body.docs-ndl.explainer .sectionbody > div.sect2 {
   flex: 0 1 49%;
-  border: 1px solid var(--panel-border-color);
+  border: 1px solid var(--default-border-color);
 }
 
 body.docs-ndl .cards .sect2.selectable > a,
@@ -675,7 +670,7 @@ body.docs-ndl .header-label-container > div.labels {
 
 body.docs-ndl .widget:not(.video) {
   /* box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.1), 0 1px 2px -1px rgba(0, 0, 0, 0.06); */
-  border: 1px solid var(--panel-border-color);
+  border: 1px solid var(--default-border-color);
   border-radius: 1rem;
 }
 
@@ -785,11 +780,6 @@ body.docs-ndl .icon-s .sect2 .icon img {
   width: 3rem;
   height: 3rem;
   padding: 0;
-}
-
-body.docs-ndl .lists .sect2 .icon img path {
-  color: var(--palette-baltic-30);
-  fill: var(--palette-baltic-30);
 }
 
 body.docs-ndl .cards .sect2 h3,
