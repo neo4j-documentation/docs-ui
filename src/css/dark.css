@@ -28,6 +28,6 @@
 }
 
 .ndl-theme-dark .nav-toggle,
-.ndl-theme-dark .home-link {
+.ndl-theme-dark .toolbar .home-link {
   filter: invert(1) hue-rotate(180deg);
 }
