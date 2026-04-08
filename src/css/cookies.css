@@ -28,7 +28,7 @@
 } */
 
 #c-left a {
-  color: light-dark(--link-font-color, var(--dark--link-font-color));
+  color: var(--link-font-color);
   font-weight: bold;
 }
 /* #c-right {

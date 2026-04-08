@@ -38,6 +38,7 @@
 
   /* base */
   --body-background: light-dark(var(--palette-neutral-10), var(--theme-dark-color-neutral-bg-default));
+  --image-background: light-dark(var(--theme-light-color-neutral-bg-weak), var(--theme-dark-color-neutral-bg-strongest));
   --default-border-color: light-dark(var(--theme-light-color-neutral-border-strong), var(--theme-dark-color-neutral-border-strong));
   --panel-background: light-dark(var(--palette-neutral-15), var(--theme-dark-color-neutral-bg-default));
   --panel_hover-border-color: light-dark(var(--palette-neutral-50), var(--theme-light-color-primary-text));

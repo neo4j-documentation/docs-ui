@@ -539,5 +539,5 @@ html.is-clipped--nav {
 
 .dropdown .dropdown-label {
   display: none;
-  color: light-dark(rgb(var(--palette-light-neutral-text-weak)), rgb(var(--dark--palette-light-neutral-text-weak)));
+  color: var(--navbar-font-color);
 }
