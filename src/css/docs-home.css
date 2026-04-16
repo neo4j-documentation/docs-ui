@@ -1,5 +1,5 @@
 body.docshome {
-  background: rgba(var(--colors-neutral-15));
+  background: var(--palette-neutral-15);
 }
 
 /* nav */
@@ -56,7 +56,7 @@ body.docshome .doc {
 
 body.docshome .doc h2::after {
   display: block;
-  background-color: rgba(var(--colors-baltic-50));
+  background-color: var(--theme-light-color-primary-text);
   height: 3px;
   width: 80px;
   margin-top: 1rem;
@@ -93,7 +93,7 @@ body.docshome .sect1 .sectionbody > div.sect2 {
 body.docshome .sect2 {
   overflow: hidden;
   position: relative;
-  background: var(--color-white);
+  background: var(--palette-neutral-10);
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -127,7 +127,7 @@ body.docshome .sect2 .icon img {
 }
 
 body.docshome:not(.create-applications) .sect2 .icon img {
-  background: rgba(var(--colors-baltic-10));
+  background: var(--palette-baltic-10);
 }
 
 @media all and (max-width: 820px) {
@@ -212,8 +212,8 @@ body.docshome .sect2 ul li {
 
 body.docshome .sect2 ul li a {
   display: inline-block;
-  color: rgba(var(--colors-baltic-50));
-  border: 1px solid rgba(var(--colors-neutral-20));
+  color: var(--theme-light-color-primary-text);
+  border: 1px solid var(--palette-neutral-20);
   padding: 0.1rem 0.7rem;
   border-radius: 0.2rem;
   font-size: 0.7rem;

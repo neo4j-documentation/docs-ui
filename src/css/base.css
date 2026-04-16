@@ -15,6 +15,10 @@ html {
   -webkit-text-size-adjust: 100%;
 }
 
+body .hidden {
+  display: none;
+}
+
 @media screen and (min-width: 1024px) {
   html {
     font-size: var(--body-font-size--desktop);
@@ -24,6 +28,7 @@ html {
 body {
   background: var(--body-background);
   color: var(--body-font-color);
+  transition: background 0.2s, color 0.2s;
   font-family: var(--body-font-family);
   line-height: var(--body-line-height);
   margin: 0;

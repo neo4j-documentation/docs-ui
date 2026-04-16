@@ -22,7 +22,7 @@
 .breadcrumbs li {
   display: inline;
   margin: 0;
-  color: rgba(var(--colors-baltic-50));
+  color: var(--breadcrumbs-color);
 }
 
 .breadcrumbs li::after {

@@ -1,21 +1,22 @@
 /* @import "typeface-roboto.css"; */
+/* @import "../../node_modules/@neo4j-ndl/base/lib/neo4j-ds-styles.css"; */
 @import "../../node_modules/@neo4j-ndl/base/lib/tokens/css/tokens.css";
 @import "typeface-roboto-mono.css";
 @import "vars.css";
-/* @import "vars-dark.css"; */
 @import "base.css";
 @import "body.css";
-@import "nav.css";
-@import "main.css";
+@import "header.css";
+/* @import "navbar.css"; */
 @import "toolbar.css";
 @import "breadcrumbs.css";
+@import "nav.css";
+@import "main.css";
 @import "page-versions.css";
 @import "toc.css";
 @import "toc-ad.css";
 @import "doc.css";
 @import "cheat-sheet.css";
 @import "pagination.css";
-@import "header.css";
 @import "footer.css";
 @import "highlight.css";
 /* @import "highlight-dark.css"; */
@@ -48,3 +49,4 @@
 @import "challenges.css";
 @import "promo.css";
 @import "research.css";
+@import "dark.css";

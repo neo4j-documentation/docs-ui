@@ -25,18 +25,18 @@
 }
 
 .hljs-keyword {
-  color: rgba(var(--colors-hibiscus-30));
+  color: var(--palette-hibiscus-30);
 }
 
 .hljs,
 .hljs-subst {
-  color: rgba(var(--colors-neutral-30));
+  color: var(--palette-neutral-30);
 }
 
 .hljs-title,
 .hljs-attr,
 .hljs-meta-keyword {
-  color: rgba(var(--colors-forest-30));
+  color: var(--palette-forest-30);
 }
 
 .hljs-string,
@@ -49,13 +49,13 @@
 .hljs-variable,
 .hljs-template-tag,
 .hljs-template-variable {
-  color: rgba(var(--colors-lemon-30));
+  color: var(--palette-lemon-30);
 }
 
 .hljs-comment,
 .hljs-quote,
 .hljs-deletion {
-  color: rgba(var(--colors-neutral-30));
+  color: var(--palette-neutral-30);
   font-style: italic;
 }
 
@@ -73,7 +73,7 @@
 
 .hljs-literal,
 .hljs-number {
-  color: rgba(var(--colors-lavender-30));
+  color: var(--palette-lavender-30);
 }
 
 .hljs-emphasis {

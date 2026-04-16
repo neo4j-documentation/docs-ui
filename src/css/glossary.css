@@ -15,6 +15,10 @@
   margin-top: -4px;
 }
 
+html[style*="color-scheme: dark;"] .glossary-term::after {
+  filter: invert(1) hue-rotate(180deg);
+}
+
 code .glossary-term::after {
   display: none;
 }
@@ -23,7 +27,8 @@ code .glossary-term::after {
   font-size: 0.8rem;
   position: absolute;
   z-index: 5000;
-  background: rgba(var(--colors-neutral-10));
+  background: var(--tooltip-background);
+  border: 1px solid var(--tooltip-border-color);
   border-bottom: 3px solid var(--color-docs);
   border-radius: 0.25rem;
   width: 220px;
@@ -47,7 +52,7 @@ code .glossary-term::after {
   margin-top: -0.25rem;
   border-left: 0.5rem solid transparent;
   border-right: 0.5rem solid transparent;
-  border-bottom: 0.5rem solid var(--code-header-background);
+  /* border-bottom: 0.5rem solid var(--tooltip-header-background); */
 }
 
 .tooltip.tooltip--bottom::after {
@@ -57,14 +62,14 @@ code .glossary-term::after {
   margin-bottom: -0.5rem;
   border-left: 0.5rem solid transparent;
   border-right: 0.5rem solid transparent;
-  border-top: 0.5rem solid var(--code-header-background);
+  border-top: 0.5rem solid var(--color-docs);
 }
 
 .tooltip .tooltip-header {
-  background: var(--color-docs);
+  background: var(--tooltip-header-background);
   border-top-left-radius: 0.25rem;
   border-top-right-radius: 0.25rem;
-  color: rgba(var(--colors-neutral-10));
+  color: var(--tooltip-header-font-color);
   padding: 12px;
   padding: 0.5rem 1rem;
   font-weight: 600;
@@ -72,7 +77,7 @@ code .glossary-term::after {
 
 .tooltip .tooltip-body {
   padding: 0.5rem 1rem;
-  color: rgba(var(--colors-neutral-60));
+  /* color: rgba(var(--palette-neutral-60)); */
   font-size: 0.8rem;
 }
 
@@ -85,6 +90,6 @@ code .glossary-term::after {
 }
 
 .tooltip .tooltip-body a {
-  color: rgba(var(--colors-baltic-50));
+  /* color: rgba(var(--theme-light-color-primary-text)); */
   font-weight: 600;
 }

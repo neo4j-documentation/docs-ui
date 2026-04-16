@@ -1,4 +1,5 @@
 .medium-zoom-overlay,
 img.medium-zoom-image {
   z-index: 1000;
+  background: light-dark(var(--theme-light-color-neutral-bg-weak), var(--theme-dark-color-neutral-bg-strongest));
 }

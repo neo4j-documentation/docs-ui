@@ -200,6 +200,21 @@ Vestibulum consectetur nec urna a luctus.
 Quisque pharetra tristique arcu fringilla dapibus.
 Curabitur ut massa aliquam, cursus enim et, accumsan lectus.
 
+
+== something 
+
+Vestibulum consectetur nec urna a luctus.
+Quisque pharetra tristique arcu fringilla dapibus.
+Curabitur ut massa aliquam, cursus enim et, accumsan lectus.
+
+[source,cypher]
+----
+CALL n10s.rdf.preview.fetch(
+  'https://raw.githubusercontent.com/neo4j-labs/neosemantics/3.5/docs/rdf/nsmntx.ttl',
+  'Turtle'
+)
+----
+
 == Tabs
 // tag::tabs[]
 [.tabs]
@@ -279,6 +294,14 @@ SHOW ALIASES FOR DATABASE YIELD * RETURN count(*) as count
 1+d|Rows: 1
 |===
 
+
+== noheader
+
+.Syntax
+[source, syntax, role=noheader]
+----
+ENABLE SERVER 'serverId' [OPTIONS "{" option: value[,...] "}"]
+----
 
 == statsonlyqueryresult
 
