@@ -57,8 +57,13 @@ import { createElement } from './modules/dom'
       })),
     ])
     themeMenu.setAttribute('id', 'theme-dropdown')
-    const searchItem = themeMenuContainer.querySelector('#search_open')?.closest('.navbar-item')
-    themeMenuContainer.insertBefore(themeMenu, searchItem || themeMenuContainer.lastChild)
+    if (themeMenuContainer) {
+      const searchItem = themeMenuContainer.querySelector('#search_open')?.closest('.navbar-item')
+      themeMenuContainer.insertBefore(themeMenu, searchItem || themeMenuContainer.lastChild)
+    } else {
+      const navbarMenu = document.querySelector('.navbar-menu')
+      if (navbarMenu) navbarMenu.appendChild(themeMenu)
+    }
   }
 
   const themeItems = themeMenu.querySelectorAll('.navbar-item')
