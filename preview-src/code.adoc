@@ -22,6 +22,21 @@ public class HelloWorld {
 ----
 
 
+== Code with title containing monospace
+
+Verify spacing between text and monospace
+
+.Code with title and `monospace`
+[source,java]
+----
+public class HelloWorld {
+    public static void main(String[] args) {
+        System.out.println("Hello, World!");
+    }
+}
+----
+
+
 == Copy Button
 
 The **Copy To Clipboard** button will appear on all code blocks:

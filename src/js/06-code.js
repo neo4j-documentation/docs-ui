@@ -135,7 +135,9 @@ document.addEventListener('DOMContentLoaded', function () {
       listingBlock.classList.add('has-title')
       var titleDiv = document.createElement('div')
       titleDiv.className = 'code-title'
-      titleDiv.innerHTML = originalTitle.innerHTML
+      var titleParagraph = createElement('p')
+      titleParagraph.innerHTML = originalTitle.innerHTML
+      titleDiv.appendChild(titleParagraph)
       originalTitle.style.display = 'none'
       headerDivs.push(titleDiv)
     }
