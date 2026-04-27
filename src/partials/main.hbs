@@ -1,4 +1,4 @@
-<main class="article">
+<main class="article"{{#if page.attributes.tabs}} data-tabs="{{page.attributes.tabs}}"{{/if}}>
   <div class="content">
     {{> article}}
     {{> toc}}

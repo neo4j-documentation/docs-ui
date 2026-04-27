@@ -196,6 +196,21 @@ html.is-clipped--nav {
   margin-top: 0.5rem;
 }
 
+.nav-list.docset-list {
+  border-bottom: 1px solid var(--nav-panel-divider-color);
+  padding-bottom: 0.5rem;
+  padding-top: 0.5rem;
+}
+
+.nav-list.docset-list.hidden {
+  display: none;
+}
+
+.nav-list.docset-list > .docset-title > span {
+  font-weight: var(--body-font-weight-bold);
+  font-size: 1rem;
+}
+
 /* .nav-menu > .nav-list {
   margin-bottom: 0.5rem;
 } */
@@ -217,7 +232,6 @@ html.is-clipped--nav {
 
 /* matches list without a title */
 .nav-item[data-depth="0"] > .nav-list:first-child {
-  display: block;
   margin: 0;
 }
 
@@ -432,22 +446,22 @@ html.is-clipped--nav {
 
 .nav-item[data-depth="2"] > a,
 .nav-item[data-depth="2"] > span {
-  padding-left: 2.5rem;
+  padding-left: 1.5rem;
 }
 
 .nav-item[data-depth="3"] > a,
 .nav-item[data-depth="3"] > span {
-  padding-left: 3.5rem;
+  padding-left: 2.5rem;
 }
 
 .nav-item[data-depth="4"] > a,
 .nav-item[data-depth="4"] > span {
-  padding-left: 4.5rem;
+  padding-left: 3.5rem;
 }
 
 .nav-item[data-depth="5"] > a,
 .nav-item[data-depth="5"] > span {
-  padding-left: 5.5rem;
+  padding-left: 4.5rem;
 }
 
 .nav-item[data-depth="1"] > span strong {
@@ -493,6 +507,7 @@ html.is-clipped--nav {
   margin-bottom: 0;
   padding-top: 1.5rem !important;
   border-top: 1px solid var(--colors-netural-25);
+  display: none;
 }
 
 .nav-item .nav-section-header:hover {

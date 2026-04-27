@@ -1,14 +1,14 @@
-.docs-remix .body {
+.docs .body {
   flex-wrap: wrap;
 }
 
-.docs-remix .navbar a {
+.docs .navbar a {
   text-transform: uppercase;
   font-weight: var(--body-font-weight-bold);
   font-size: var(--toolbar-font-size);
 }
 
-.docs-remix div.category-tabs {
+.docs div.category-tabs {
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
@@ -23,7 +23,7 @@
   z-index: 30;
 }
 
-.docs-remix div.category-tabs ul {
+.docs div.category-tabs ul {
   margin: 0;
   padding: 0;
   display: flex;
@@ -31,32 +31,32 @@
   font-size: var(--toolbar-font-size);
 }
 
-.docs-remix div.category-tabs ul li {
+.docs div.category-tabs ul li {
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
 
-.docs-remix div.category-tabs ul li.is-active {
+.docs div.category-tabs ul li.is-active {
   border-bottom: 2px solid var(--color-docs);
   padding-top: 2px;
 }
 
-.docs-remix div.category-tabs ul li a {
+.docs div.category-tabs ul li a {
   padding: 0.5rem;
   border-radius: 0.5rem;
   color: var(--color-docs);
 }
 
-.docs-remix div.category-tabs ul li a:hover {
+.docs div.category-tabs ul li a:hover {
   background-color: var(--toc_hover-background-color);
 }
 
-.docs-remix .doc {
+.docs .doc {
   padding-top: 2rem;
 }
 
-.docs-remix .toolbar {
+.docs .toolbar {
   position: relative;
   top: unset;
   background: var(--toolbar-background);
@@ -68,61 +68,61 @@
   height: auto;
 }
 
-.docs-remix .toolbar-wrapper {
+.docs .toolbar-wrapper {
   display: block;
 }
 
-.docs-remix .nav {
+.docs .nav {
   top: calc(var(--navbar-height) + var(--category-tabs-height));
 }
 
-.docs-remix .nav-container {
-  padding-top: 2rem;
+.docs .nav-container {
+  padding-top: 1.5rem;
 }
 
-.docs-remix .nav-menu {
+.docs .nav-menu {
   flex-grow: 0;
 }
 
-.docs-remix .nav-menu > .nav-list {
+.docs .nav-menu > .nav-list {
   margin-top: 0;
 }
 
-.docs-remix .page-header {
+.docs .page-header {
   margin-bottom: 2rem;
 }
 
-.docs-remix .breadcrumbs {
+.docs .breadcrumbs {
   padding: 0;
 }
 
-.docs-remix .breadcrumbs ul {
+.docs .breadcrumbs ul {
   margin: 0;
   padding: 0;
 }
 
-.docs-remix .breadcrumbs ul a {
+.docs .breadcrumbs ul a {
   text-decoration: none;
 }
 
-.docs-remix h1 {
+.docs h1 {
   margin: 0.5rem 0;
   /* flex: 0 0 100%; */
 }
 
-body.docs-remix .header-label-container > div.labels.wrapped {
+body.docs .header-label-container > div.labels.wrapped {
   margin-bottom: 1rem;
 }
 
-body.docs-remix main > .content {
+body.docs main > .content {
   margin-top: 0;
 }
 
-.docs-remix .page-header > div {
+.docs .page-header > div {
   margin: 0.5rem  0;
 }
 
-.docs-remix .page-header > div.labels {
+.docs .page-header > div.labels {
   margin: 1rem  0;
   display: flex;
   gap: 0.25rem;
@@ -130,7 +130,7 @@ body.docs-remix main > .content {
   line-height: var(--doc-line-height);
 }
 
-.docs-remix .nav-panel-versions {
+.docs .nav-panel-versions {
   padding: 0;
   margin: 0;
 }
