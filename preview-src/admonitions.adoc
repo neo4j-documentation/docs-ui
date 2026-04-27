@@ -1,5 +1,7 @@
 = Admonitions
 :check-mark: icon:check[]
+:page-theme: docs
+:page-tabs: administration@
 // :page-disablefeedback: true
 
 

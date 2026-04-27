@@ -539,7 +539,7 @@ body.docs .highlights .list a {
 body.docs .highlights .list a:hover,
 body.docs .highlights .list a:focus {
   text-decoration: none;
-  background-color: var(--toc_hover-background-color);
+  background-color: var(--toc-hover-background-color);
 }
 
 body.docs .highlights .list ul li {

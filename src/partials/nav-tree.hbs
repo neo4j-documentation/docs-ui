@@ -15,6 +15,7 @@
     </ul>
     {{/if}}
     {{#unless this.componentHeader}}
+    {{#unless (eq this.showInToc 'false')}}
     <ul class="nav-list"{{#with this.component}} data-component="{{this}}"{{/with}}{{#with this.componentVersion}} data-version="{{this}}"{{/with}}>
       <li class="nav-item{{#if (eq this.url @root.page.url)}} is-current-page{{/if}}{{#if this.componentHeader}} docset-divider{{/if}}"{{#with this.pageTabs}} data-tabs="{{this}}"{{/with}} data-module="{{or ../module this.module}}" data-depth="{{or ../level 0}}"{{#with this.asciidoc}} data-slug="{{this.attributes.page-slug}}"{{/with}}>
         {{#if this.content}}
@@ -35,6 +36,7 @@
           {{> nav-tree navigation=this.items level=(increment ../level) module=(or this.module ../module) show=../show}}
       </li>
     </ul>
+    {{/unless}}
     {{/unless}}
 
   {{/each}}

@@ -13,7 +13,7 @@ body.graphgists .leading .sectionbody .imageblock.left {
 
 body.graphgists .breadcrumbs {
   padding: 0;
-  font-size: 0.9rem;
+  font-size: var(--typography-body-medium-font-size);
 }
 
 body.graphgists .breadcrumbs ul {
@@ -32,7 +32,7 @@ body.graphgists ul.use-cases > li,
 body.graphgists ul.industries > li {
   display: flex;
   align-items: center;
-  font-size: 1rem;
+  font-size: var(--typography-body-large-font-size);
   padding-right: 0.5rem;
   padding-bottom: 0.5rem;
 }
@@ -98,7 +98,7 @@ body.ndl-theme-dark .graphgist-card {
 .graphgist-card .graphgist-content h3 {
   margin: 0;
   padding: 0;
-  font-size: 1rem;
+  font-size: var(--typography-body-large-font-size);
   height: 4rem;
   line-height: 1.5rem;
 }
@@ -112,7 +112,7 @@ body.ndl-theme-dark .graphgist-card {
 .graphgist-card dl.graphgist-info > dt {
   color: light-dark(var(--palette-neutral-50), var(--theme-dark-color-neutral-text-default));
   text-transform: uppercase;
-  font-size: 0.8rem;
+  font-size: var(--typography-body-medium-font-size);
 }
 
 .graphgist-card dl.graphgist-info > dt::after {
@@ -191,7 +191,7 @@ body.graphgist .doc > .sect1 > .sectionbody {
 .graphgist-metadata dt {
   color: light-dark(var(--palette-neutral-50), var(--theme-dark-color-neutral-text-default));
   text-transform: uppercase;
-  font-size: 0.8rem;
+  font-size: var(--typography-body-medium-font-size);
 }
 
 body.graphgist .graphgist-metadata dd,
@@ -218,7 +218,7 @@ body.graphgist .graphgist-metadata fieldset > legend {
 
 body.graphgist .graphgist-metadata label {
   color: light-dark(var(--palette-neutral-70), var(--theme-dark-color-neutral-text-default));
-  font-size: 0.9em;
+  font-size: var(--typography-body-medium-font-size);
 }
 
 body.graphgist .graphgist-metadata .field.has-addons {
@@ -308,7 +308,7 @@ body.graphgist .listingblock pre {
   border: 1px solid var(--button-border-color);
   color: var(--color-labs-font);
   padding: 0.5rem 1rem;
-  font-size: 0.9rem;
+  font-size: var(--typography-body-medium-font-size);
 }
 
 .graphgist-metadata a.button:hover {

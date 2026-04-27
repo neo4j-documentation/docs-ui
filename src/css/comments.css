@@ -14,7 +14,7 @@
 
 .comments-header h2 {
   color: rgba(var(--palette-neutral-60));
-  font-size: 0.8rem;
+  font-size: var(--typography-body-medium-font-size);
   font-weight: 600;
   line-height: 1;
   margin: 0;

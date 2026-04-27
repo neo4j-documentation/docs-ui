@@ -302,7 +302,7 @@ body.research .paragraph.caption {
   color: var(--neutral-color);
   font-feature-settings: 'liga' off, 'clig' off;
   font-family: var(--font-font-family-h1);
-  font-size: 32px;
+  font-size: var(--typography-title-1-font-size);
   font-style: normal;
   font-weight: 500;
   line-height: 32px; /* 100% */
@@ -330,7 +330,7 @@ body.research .banner .paragraph {
 
 body.research .banner .paragraph.description {
   font-family: var(--font-family-h2);
-  font-size: 16px;
+  font-size: var(--typography-body-large-font-size);
   font-weight: 100;
   line-height: 24px;
   letter-spacing: 0;
@@ -476,7 +476,7 @@ body.research .widget ul {
 }
 
 body.research .lists ul li {
-  font-size: var(--font-size-body-medium);
+  font-size: var(--typography-body-medium-font-size);
 }
 
 body.research .lists ul li a {
@@ -680,7 +680,7 @@ body.research .cards .sect2 h3 .anchor::before {
 }
 
 body.research .cards .sect2 .paragraph:not(.icon) {
-  font-size: var(--font-size-body-medium);
+  font-size: var(--typography-body-medium-font-size);
   line-height: 1.5;
   text-align: left;
   display: -webkit-box;
@@ -715,7 +715,7 @@ body.research .bottom-cards .sect2 h3 {
   padding-bottom: 8px;
   order: 0;
   font-family: var(--header-font-family);
-  font-size: xx-large;
+  font-size: var(--typography-display-font-size);
 }
 
 body.research .bottom-cards:not(.selectable) .sect2 .paragraph.link {
@@ -761,7 +761,7 @@ body.research .cards .sect2 .ulist {
   display: inline-flex;
   order: 4;
   margin: 0;
-  font-size: var(--font-size-body-medium);
+  font-size: var(--typography-body-medium-font-size);
   line-height: 1.5;
   text-align: left;
 }

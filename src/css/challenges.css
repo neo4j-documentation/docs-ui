@@ -5,7 +5,7 @@
 }
 
 .arrange-options .arrange-message {
-  font-size: 0.75rem;
+  font-size: var(--typography-body-small-font-size);
   color: rgba(var(--palette-neutral-60));
   border-bottom: 1px solid rgba(var(--palette-neutral-30));
   margin: 0 0 0.25rem 0;
