@@ -28,36 +28,22 @@ import { createElement } from './modules/dom'
     return `<svg class="theme-icon ${extraClass}" ${svgAttrs}>${inner}</svg>`
   }
 
-  // set the initial color scheme based on user preference
   const themeMenuContainer = document.querySelector('.navbar-menu .navbar-end')
   let themeMenu = document.getElementById('theme-dropdown')
-  const themeChoices = ['light', 'dark']
 
-  // remove the theme menu if it lacks the new icon structure (old published pages)
-  if (themeMenu && !themeMenu.querySelector('.theme-icon')) {
+  // remove old dropdown-style menus (old published pages without toggle structure)
+  if (themeMenu && (!themeMenu.querySelector('.theme-icon') || themeMenu.querySelector('.navbar-dropdown'))) {
     themeMenu.remove()
     themeMenu = null
   }
 
-  // create the theme menu if it doesn't exist
-  // it will be missing for docs that have not been built yet with the latest ui
   if (!themeMenu) {
-    const navLink = createElement('span', 'navbar-link')
-    navLink.setAttribute('aria-label', 'Theme')
-    navLink.innerHTML = makeSvg('theme-icon-light', sunPath) + makeSvg('theme-icon-dark', moonPath)
-
-    themeMenu = createElement('div', 'navbar-item has-dropdown is-hoverable docs', [
-      navLink,
-      createElement('div', 'navbar-dropdown navbar-dropdown-narrow', themeChoices.map(function (theme) {
-        const themeLabel = theme.charAt(0).toUpperCase() + theme.slice(1)
-        const itemDiv = createElement('div', 'navbar-item project')
-        itemDiv.setAttribute('data-theme', theme)
-        const icon = theme === 'light' ? makeSvg('', sunPath) : makeSvg('', moonPath)
-        itemDiv.innerHTML = `${icon}<span class="project-name">${themeLabel}</span>`
-        return itemDiv
-      })),
-    ])
+    themeMenu = createElement('div', 'navbar-item docs')
     themeMenu.setAttribute('id', 'theme-dropdown')
+    themeMenu.setAttribute('role', 'button')
+    themeMenu.setAttribute('tabindex', '0')
+    themeMenu.setAttribute('aria-label', 'Toggle colour theme')
+    themeMenu.innerHTML = makeSvg('theme-icon-light', sunPath) + makeSvg('theme-icon-dark', moonPath)
     if (themeMenuContainer) {
       const searchOpenEl = themeMenuContainer.querySelector('#search_open')
       const searchItem = searchOpenEl && searchOpenEl.closest('.navbar-item')
@@ -68,7 +54,6 @@ import { createElement } from './modules/dom'
     }
   }
 
-  const themeItems = themeMenu.querySelectorAll('.navbar-item')
   const logos = document.querySelectorAll('.navbar-logo')
   let chatbotObserver = null
 
@@ -76,28 +61,26 @@ import { createElement } from './modules/dom'
     const userColorSchemeName = 'neo4j-docs-theme'
     const userColorScheme = localStorage.getItem(userColorSchemeName) || 'light'
 
-    updateSelectedThemeItem(themeItems, userColorScheme)
+    const lightOrDark = userColorScheme === 'dark' ? 'dark' : 'light'
 
-    themeItems.forEach(function (theme) {
-      const parent = theme.parentElement
-      theme.addEventListener('click', updateThemePreference.bind(parent, theme.getAttribute('data-theme')))
-      // don't let toggle clicks propagate
-      theme.addEventListener('click', concealEvent)
+    updateToggleA11y(lightOrDark)
+
+    themeMenu.addEventListener('click', function () {
+      const current = localStorage.getItem(userColorSchemeName) || 'light'
+      updateThemePreference(current === 'dark' ? 'light' : 'dark')
     })
 
-    const isDark = userColorScheme === 'dark'
-    const lightOrDark = isDark ? 'dark' : 'light'
+    themeMenu.addEventListener('keydown', function (e) {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault()
+        themeMenu.click()
+      }
+    })
     document.documentElement.style.colorScheme = lightOrDark
     updateLogos(lightOrDark)
     updateBodyClass(lightOrDark)
-
     updateChatbotObserver(lightOrDark)
   })
-
-  // NOTE don't let event get picked up by window click listener
-  function concealEvent (e) {
-    e.stopPropagation()
-  }
 
   function updateThemePreference (theme) {
     const userColorSchemeName = 'neo4j-docs-theme'
@@ -105,11 +88,16 @@ import { createElement } from './modules/dom'
 
     const lightOrDark = resolveLightOrDark(theme)
     document.documentElement.style.colorScheme = lightOrDark
-    updateSelectedThemeItem(themeItems, theme)
     updateLogos(lightOrDark)
     updateChatbotTheme(lightOrDark)
     updateBodyClass(lightOrDark)
     updateChatbotObserver(lightOrDark)
+    updateToggleA11y(lightOrDark)
+  }
+
+  function updateToggleA11y (theme) {
+    themeMenu.setAttribute('aria-pressed', theme === 'dark' ? 'true' : 'false')
+    themeMenu.setAttribute('aria-label', theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode')
   }
 
   function updateBodyClass (theme) {
@@ -169,15 +157,6 @@ import { createElement } from './modules/dom'
         ad.style.backgroundImage = 'none'
       } else {
         ad.removeAttribute('style')
-      }
-    })
-  }
-
-  function updateSelectedThemeItem (themeItems, theme) {
-    themeItems.forEach((item) => {
-      item.classList.remove('selected')
-      if (item.getAttribute('data-theme') === theme) {
-        item.classList.add('selected')
       }
     })
   }
