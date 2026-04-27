@@ -1,5 +1,7 @@
       <div class="navbar-end">
 
+
+
         {{!-- <div class="navbar-item has-dropdown is-hoverable developer">
           <a class="navbar-link" href="/developer/">Developer Guides</a>
           <div class="navbar-dropdown">
@@ -70,11 +72,6 @@
 
             <div class="navbar-item project">
               <a class="project-name" href="/docs/aura/">Neo4j Aura</a>
-              <ul class="project-links">
-                <li><a class="project-link" href="/docs/aura">Neo4j Aura</a></li>
-                <li><a class="project-link" href="/docs/aura/auradb/">Neo4j AuraDB</a></li>
-                <li><a class="project-link" href="/docs/aura/aurads/">Neo4j AuraDS</a></li>
-              </ul>
             </div>
 
             <div class="navbar-item project">
@@ -94,6 +91,7 @@
               <ul class="project-links">
                 <li><a href="/docs/graph-data-science/current/" class="project-link">Neo4j Graph Data Science Library</a></li>
                 <li><a href="/docs/graph-data-science-client/current/" class="project-link">Neo4j Graph Data Science Client</a></li>
+                <li><a href="/docs/snowflake-graph-analytics/current/" class="project-link">Neo4j Graph Analytics for Snowflake</a></li>
               </ul>
             </div>
 
@@ -111,16 +109,16 @@
               <span class="project-name" href="/docs/genai">Generative AI</span>
               <ul class="project-links">
                 <li><a href="/docs/neo4j-graphrag-python/current/" class="project-link">Neo4j GraphRAG for Python</a></li>
-                <li><a href="/docs/genai/tutorials/embeddings-vector-indexes/" class="project-link">Embeddings and vector indexes tutorial</a></li>
-                <li><a href="/docs/cypher-manual/current/genai-integrations/" class="project-link">GenAI integrations</a></li>
+                <li><a href="/docs/genai/tutorials/current/embeddings-vector-indexes/" class="project-link">Embeddings and vector indexes tutorial</a></li>
+                <li><a href="/docs/genai/plugin/current/" class="project-link">GenAI plugin</a></li>
                 <li><a href="/docs/cypher-manual/current/indexes/semantic-indexes/vector-indexes/" class="project-link">Vector search indexes</a></li>
                 <li><a href="/docs/cypher-manual/current/functions/vector/" class="project-link">Vector search functions</a></li>
-                <li><a href="/docs/graphql/5/directives/indexes-and-constraints/#_vector_index_search" class="project-link">GraphQL vector index search documentation</a></li>
+                <li><a href="/docs/graphql/current/directives/indexes-and-constraints/#_vector_index_search" class="project-link">GraphQL vector index search documentation</a></li>
               </ul>
             </div>
 
             <div class="navbar-item project">
-              <span class="project-name" href="/docs/create-applications">Create applications</span>
+              <span class="project-name" href="/docs/create-applications/">Create applications</span>
               <ul class="project-links">
                 <li><a href="{{#with (docs-driver-manual-url page 'python-manual')}}{{{this}}}{{/with}}" class="project-link">Python Driver</a></li>
                 <li><a href="{{#with (docs-driver-manual-url page 'go-manual')}}{{{this}}}{{/with}}" class="project-link">Go Driver</a></li>
@@ -200,13 +198,6 @@
                 <li><a href="/labs/neosemantics/" class="project-link">Neosemantics (Java)</a></li>
                 <li><a href="/labs/rdflib-neo4j/" class="project-link">RDFLib-Neo4j (Python)</a></li>
               </ul>
-            </div>
-            <div class="navbar-item project">
-              {{!-- <p class="project-description">A library of procedures and functions for interacting with Neo4j</p> --}}
-              {{!-- <ul class="project-links">
-                <li><a href="/labs/neodash/" class="project-link">Details</a></li>
-                <li><a href="/labs/neodash/2.1/" class="project-link">Documentation</a></li>
-              </ul> --}}
             </div>
           </div>
         </div>
@@ -295,6 +286,9 @@
         {{!-- <div class="navbar-item" id="auth">
           <a class="navbar-link" href="javascript:;" id="login">Login</a>
         </div> --}}
+
+        {{> theme-selector}}
+
         <div class="navbar-item">
           <a class="navbar-link search-button" href="#search" id="search_open"><svg width="23px" height="23px" viewBox="0 0 23 23"
               version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"

@@ -1,9 +1,10 @@
 #cookiebanner {
-  background: rgba(var(--colors-neutral-15));
+  background: var(--body-background) !important;
+  border-top: 1px solid var(--button-border-color) !important;
   box-shadow: 0 -5px 5px 1px rgba(0, 0, 0, 0.08) !important;
   padding: 1rem;
   font-size: 0.8rem;
-  color: rgba(var(--colors-neutral-70));
+  color: var(--body-font-color);
 }
 
 #cookiebanner .row {
@@ -14,7 +15,11 @@
 #cookiebanner .c-header {
   font-size: 0.9rem;
   font-weight: 600;
-  color: rgba(var(--colors-neutral-80));
+  color: var(--body-font-color);
+}
+
+#cookiebanner p {
+  color: var(--body-font-color) !important;
 }
 
 /* #cookiebanner .columns {
@@ -23,7 +28,7 @@
 } */
 
 #c-left a {
-  color: rgba(var(--colors-baltic-50));
+  color: var(--link-font-color);
   font-weight: bold;
 }
 /* #c-right {
@@ -33,17 +38,19 @@
   display: inline-block;
   padding: 0.25rem 0.75rem;
   font-weight: 600;
-  border: 1px solid var(--color-blue-700);
+  background: var(--button-background);
+  color: var(--button-font-color);
   border-radius: 0.25rem;
   margin-right: 0.5rem;
 }
 
 #NeoCybotCookiebotDialogBodyButtonAccept {
-  background: var(--color-blue-700);
-  color: var(--color-blue-100);
+  background: var(--button-background) !important;
+  color: var(--button-font-color) !important;
+  border: 1px solid var(--button-border-color) !important;
 }
 
 #NeoCybotCookiebotDialogBodyButtonDecline {
-  background: var(--white);
-  color: var(--color-blue-700);
+  background: transparent !important;
+  color: var(--link-font-color) !important;
 }

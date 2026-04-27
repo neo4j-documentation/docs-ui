@@ -51,7 +51,7 @@
   font-size: 12px;
   padding: 2px 8px;
   border-radius: 5px;
-  color: #fff;
+  color: var(--palette-neutral-10);
   font-weight: 700;
 }
 
@@ -76,12 +76,12 @@
 }
 
 .training.landing a.button.course-action:hover {
-  color: var(--color-white);
+  color: var(--palette-neutral-10);
   background-color: var(--color-pink-500);
 }
 
 .training.landing a.button.course-action:visited {
-  color: var(--color-white);
+  color: var(--palette-neutral-10);
 }
 
 /* Home */
@@ -110,7 +110,7 @@
   content: '';
   display: block;
   position: absolute;
-  background: rgba(var(--colors-neutral-20));
+  background: rgba(var(--palette-neutral-20));
   height: 2px;
   top: 1.25rem;
 }
@@ -138,18 +138,18 @@
 .training-certification .hero,
 .training-enrollment .hero,
 .training-home .hero {
-  color: white;
+  color: var(--palette-neutral-10);
   padding: 8rem 0 2rem !important;
-  background: rgba(var(--colors-neutral-80));
+  background: rgba(var(--palette-neutral-80));
   background: rgb(2, 0, 36);
-  background: linear-gradient(180deg, rgba(var(--colors-neutral-80)) 0%, rgba(var(--colors-neutral-70)) 45%, rgba(var(--colors-neutral-70)) 100%);
+  background: linear-gradient(180deg, rgba(var(--palette-neutral-80)) 0%, rgba(var(--palette-neutral-70)) 45%, rgba(var(--palette-neutral-70)) 100%);
   text-align: left;
 }
 
 .training-certification .hero h1,
 .training-enrollment .hero h1,
 .training-home .hero h1 {
-  color: white;
+  color: var(--palette-neutral-10);
 }
 
 .training-certification .hero h1::after,
@@ -193,7 +193,7 @@
 }
 
 .training-courses ul > li > a:hover {
-  color: white;
+  color: var(--palette-neutral-10);
   font-weight: 800;
 }
 
@@ -218,7 +218,7 @@
   font-size: 12px;
   padding: 2px 8px;
   border-radius: 5px;
-  color: white;
+  color: var(--palette-neutral-10);
   font-weight: 700;
 }
 
@@ -235,7 +235,7 @@
 }
 
 .training-courses .course-content .course-duration {
-  color: rgba(var(--colors-neutral-60));
+  color: rgba(var(--palette-neutral-60));
   display: flex;
   align-items: center;
   margin-top: 0.1rem;
@@ -260,12 +260,12 @@
 }
 
 .course-actions a.button:hover {
-  color: var(--color-white);
+  color: var(--palette-neutral-10);
   background-color: var(--color-pink-500);
 }
 
 .course-actions a.button:visited {
-  color: var(--color-white);
+  color: var(--palette-neutral-10);
 }
 
 .course-actions .course-state.is-hidden {
@@ -358,14 +358,14 @@
 .training-enrollment .course-actions .panel {
   display: grid;
   padding: 1rem;
-  background-color: rgba(var(--colors-neutral-15));
+  background-color: rgba(var(--palette-neutral-15));
   border-top: 5px solid var(--color-training);
 }
 
 .training-certification .course-actions a.button-logout,
 .training-enrollment .course-actions a.button-logout {
   background: none;
-  color: rgba(var(--colors-neutral-60));
+  color: rgba(var(--palette-neutral-60));
   text-decoration: underline;
   text-align: end;
   display: block;
@@ -389,7 +389,7 @@
 /* Form */
 .training-certification .course-actions form label,
 .training-enrollment .course-actions form label {
-  color: rgba(var(--colors-neutral-80));
+  color: rgba(var(--palette-neutral-80));
   display: block;
   font-size: 1rem;
   margin-bottom: 0.5rem;
@@ -427,12 +427,12 @@
 
 .training-certification .course-actions form input:hover,
 .training-enrollment .course-actions form input:hover {
-  border-color: rgba(var(--colors-neutral-50));
+  border-color: rgba(var(--palette-neutral-50));
 }
 
 .training-certification .course-actions form select:hover,
 .training-enrollment .course-actions form select:hover {
-  border-color: rgba(var(--colors-neutral-50));
+  border-color: rgba(var(--palette-neutral-50));
 }
 
 .training-certification .course-actions form select,
@@ -441,12 +441,12 @@
   display: block;
   max-width: 100%;
   outline: 0;
-  background-color: white;
+  background-color: var(--palette-neutral-10);
   border-radius: 4px;
-  color: rgba(var(--colors-neutral-80));
+  color: rgba(var(--palette-neutral-80));
   -webkit-appearance: none;
   align-items: center;
-  border: 1px solid rgba(var(--colors-neutral-40));
+  border: 1px solid rgba(var(--palette-neutral-40));
   box-shadow: none;
   font-size: 1rem;
   height: 2.5em;
@@ -463,13 +463,13 @@
 .training-enrollment .course-actions form input[type="email"] {
   max-width: 100%;
   width: 100%;
-  background-color: white;
+  background-color: var(--palette-neutral-10);
   border-radius: 4px;
-  color: rgba(var(--colors-neutral-80));
+  color: rgba(var(--palette-neutral-80));
   -moz-appearance: none;
   -webkit-appearance: none;
   align-items: center;
-  border: 1px solid rgba(var(--colors-neutral-30));
+  border: 1px solid rgba(var(--palette-neutral-30));
   box-shadow: none;
   display: inline-flex;
   font-size: 1rem;
@@ -550,7 +550,7 @@
 
 .training-certification .mktoForm button.mktoButton,
 .training-enrollment .mktoForm button.mktoButton {
-  color: #fff;
+  color: var(--palette-neutral-10);
   cursor: pointer;
   background-color: var(--color-pink-600);
   display: inline-block;
@@ -727,7 +727,7 @@ body.training .nav-item .nav-item.is-completed::before {
   opacity: 1;
   background-color: var(--color-green-500);
   z-index: 1000;
-  color: white;
+  color: var(--palette-neutral-10);
   text-align: center;
   font-weight: bold;
   transition: all 0.2s linear;
@@ -746,10 +746,10 @@ body.training .nav-item .nav-item.is-pending::before {
   content: "";
   opacity: 1;
   z-index: 1000;
-  color: white;
+  color: var(--palette-neutral-10);
   text-align: center;
   font-weight: bold;
-  border: 1px solid rgba(var(--colors-neutral-50));
+  border: 1px solid rgba(var(--palette-neutral-50));
   background-color: var(--navbar-font-color);
   transition: all 0.2s linear;
 }
@@ -762,7 +762,7 @@ body.training .nav-item .nav-item.is-completed:hover::before {
 body.training .nav-item .nav-item.is-current-page::before,
 body.training .nav-item .nav-item:hover::before {
   opacity: 1;
-  background-color: rgba(var(--colors-neutral-50));
+  background-color: rgba(var(--palette-neutral-50));
   z-index: 1000;
 }
 
@@ -893,7 +893,7 @@ body.training .button {
 
 #yelp-dataset-agreement {
   padding: 0.75em;
-  border: 1px solid rgba(var(--colors-neutral-30));
+  border: 1px solid rgba(var(--palette-neutral-30));
   margin-bottom: 1em;
   margin-right: 1em;
 }

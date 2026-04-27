@@ -2,7 +2,7 @@
 .docs .ndl-drawer.ndl-drawer-overlay {
   position: fixed;
   top: 4px;
-  box-shadow: -2px 1px 2px 1px rgba(var(--colors-neutral-20));
+  box-shadow: -2px 1px 2px 1px var(--colors-neutral-20);
 }
 
 .doc .paragraph .title {
@@ -25,10 +25,10 @@
 .docs.image-shadow article img,
 .docs article .shadow img {
   box-shadow:
-    2px 2px 4px 0 rgba(var(--colors-neutral-50)),
-    0 4px 4px 2px rgba(var(--colors-neutral-30)),
-    0 4px 6px 4px rgba(var(--colors-neutral-20)),
-    4px 4px 4px 4px rgba(var(--colors-neutral-10));
+    2px 2px 4px 0 var(--colors-neutral-50),
+    0 4px 4px 2px var(--colors-neutral-30),
+    0 4px 6px 4px var(--colors-neutral-20),
+    4px 4px 4px 4px var(--colors-neutral-10);
 }
 
 .docs article .rounded-corners img,
@@ -189,9 +189,9 @@ p.not-on-aura::before,
 section.not-on-aura .title::after,
 span.not-on-aura::after {
   content: "Not available on Aura";
-  background-color: var(--not-on-aura-background-color);
-  border-color: var(--not-on-aura-background-color);
-  color: var(--not-on-aura-color);
+  background-color: var(--label-warning-background-color);
+  border-color: var(--label-warning-background-color);
+  color: var(--label-warning-color);
 }
 
 div.aura-db-enterprise > h2::after,
@@ -244,7 +244,7 @@ span.fabric::after {
 
 .admonitionblock td.icon .icon-::before {
   content: "\f088";
-  color: #f58220;
+  color: var(--admonition-icon-color);
 }
 
 .doc .admonitionblock.deprecated .icon {
@@ -349,7 +349,7 @@ div.beta-symbol p::before {
 }
 
 .graph-variants > .title {
-  color: #4a5568 !important;
+  color: var(--caption-font-color) !important;
   font-style: normal !important;
   font-size: calc(20 / var(--rem-base) * 1rem) !important;
 }
@@ -357,6 +357,9 @@ div.beta-symbol p::before {
 .graph-variants > .content {
   display: flex;
   flex-flow: row wrap;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1rem;
 }
 
 @media screen and (max-width: 1244px) {
@@ -383,44 +386,57 @@ div.beta-symbol p::before {
   flex-wrap: nowrap;
   justify-content: center;
   white-space: nowrap;
-  padding: 0.2rem 0.3rem;
-  margin: 0.5em 1em 0 0;
+  padding: 0.4rem 0.4rem;
+  margin: 0;
   line-height: 1em;
-  border-radius: 0.2rem;
+  /* border-radius: 0.2rem; */
 }
 
 .graph-variants > .content > .supported {
-  background-color: var(--success-background-color);
-  color: var(--success-color);
+  background-color: var(--tip-background-color);
+  border: 1px solid var(--tip-border-color);
+  border-radius: 0.5rem;
+}
+
+.graph-variants > .content > .supported a {
+  color: var(--tip-color);
 }
 
 .graph-variants > .content > .supported::before {
   content: '\2714';
   margin-right: 0.5em;
-  color: var(--success-color);
 }
 
 .graph-variants > .content > .allowed {
-  background-color: var(--neutral-background-color);
-  color: var(--neutral-color);
+  background-color: var(--caution-background-color);
+  border: 1px solid var(--caution-border-color);
+  border-radius: 0.5rem;
+}
+
+.graph-variants > .content > .allowed a {
+  color: var(--caution-color);
 }
 
 .graph-variants > .content > .allowed::before {
   content: '(\2714)';
   margin-right: 0.5em;
-  color: var(--neutral-color);
+  /* color: var(--admonition-font-color); */
 }
 
 .graph-variants > .content > .not-supported {
   background-color: var(--warning-background-color);
+  border: 1px solid var(--warning-border-color);
+  border-radius: 0.5rem;
+}
+
+.graph-variants > .content > .not-supported a {
   color: var(--warning-color);
 }
 
 .graph-variants > .content > .not-supported::before {
   content: '\2716';
   margin-right: 0.5em;
-  background-color: var(--warning-background-color);
-  color: var(--warning-color);
+  /* color: var(--admonition-font-color); */
 }
 
 ul.bibliography {

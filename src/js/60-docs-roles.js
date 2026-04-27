@@ -154,7 +154,7 @@ document.addEventListener('DOMContentLoaded', function () {
       }
     }
 
-    console.log(roleDiv.classList)
+    // console.log(roleDiv.classList)
 
     // if (roleDiv.classList.contains('admonitionblock')) {
     //   labelsLocation = roleDiv.querySelector('td.content')
@@ -166,6 +166,17 @@ document.addEventListener('DOMContentLoaded', function () {
     } else {
       // labelsLocation.prepend(labelsDiv)
       roleDiv.classList.add('has-label')
+    }
+  })
+
+  // for compatibility with @neo4j-antora/roles-labels < 0.1.5
+  // get all the exampleblocks where there is a child title and labels div
+  // for every block, if it has a title and labels div, move the title div to be the first child of the exampleblock
+  const labeledExamples = document.querySelectorAll('div.exampleblock.has-label')
+  labeledExamples.forEach(function (example) {
+    const titleDiv = example.querySelector('div.title')
+    if (titleDiv) {
+      example.prepend(titleDiv)
     }
   })
 
