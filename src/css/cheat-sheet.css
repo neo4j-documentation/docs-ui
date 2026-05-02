@@ -2,15 +2,11 @@
   body.cheat-sheet .doc {
     flex: auto;
     font-size: var(--doc-font-size--desktop);
-    margin: var(--doc-margin--desktop);
+    margin: 1.25rem;
     max-width: var(--cheat-sheet-max-width--desktop);
     min-width: 0;
     padding-bottom: 4rem;
   }
-}
-
-body.cheat-sheet {
-  opacity: 0;
 }
 
 body.cheat-sheet .article > .content {
@@ -147,91 +143,10 @@ body.cheat-sheet .navbar-link a.external::after line {
   stroke: var(--link-font-color);
 }
 
-body.cheat-sheet .selectors {
-  display: flex;
-  flex-direction: column;
-}
-
-body.cheat-sheet .selectors div[data-selector-type="labels"] {
-  display: none;
-}
-
-body.cheat-sheet .dropdown .dropdown-label {
-  display: inline;
-  padding: 0.5rem 2rem 0.5rem 0.5rem;
-}
-
-body.cheat-sheet .nav-panel-versions {
-  height: auto;
-  padding: 0;
-  display: flex;
-  width: auto;
-}
-
-body.cheat-sheet .selectors .dropdown {
-  width: 100%;
-  display: flex;
-  align-items: center;
-}
-
-body.cheat-sheet .nav-panel-types .dropdown .dropdown-label,
-body.cheat-sheet .nav-panel-versions .dropdown .dropdown-label {
-  display: flex;
-  white-space: nowrap;
-  /* width: 300px; */
-  /* padding: 0.5rem 1.5rem; */
-}
-
-body.cheat-sheet .nav-panel-versions .dropdown .dropdown-styles {
-  width: 50%;
-  display: inline-block;
-  /* background-color: var(--palette-neutral-10); */
-}
-
-body.cheat-sheet .selectors > div {
-  align-items: center;
-  display: flex;
-  /* flex-wrap: wrap; */
-  box-shadow: none;
-  margin: 0.25rem;
-  /* padding: 0.25rem 0; */
-}
-
-body.cheat-sheet .selectors .dropdown .dropdown-styles {
-  display: inline-block;
-  width: 100%;
-  /* background-color: var(--palette-neutral-10); */
-}
-
 /* toc */
 
 body.cheat-sheet .content aside.toc.sidebar {
   display: none;
-}
-
-body.cheat-sheet .nav-container {
-  border-right: none;
-}
-
-body.cheat-sheet aside.nav {
-  /* background: var(--palette-neutral-10); */
-}
-
-body.cheat-sheet aside.nav .nav-panel-versions {
-  top: var(--navbar-height);
-}
-
-body.cheat-sheet aside.nav .selectors {
-  position: sticky;
-  top: var(--navbar-height);
-  z-index: var(--z-index-toolbar);
-  /* background-color: var(--toolbar-background); */
-  padding: 0.5rem;
-  gap: 0.5rem;
-}
-
-body.cheat-sheet aside.nav .selectors .dropdown-label {
-  font-weight: var(--body-font-weight-bold);
 }
 
 body.cheat-sheet .toc-menu-placeholder h2 {
@@ -253,7 +168,7 @@ body.cheat-sheet .toc .toc-menu li {
 
 body.cheat-sheet .toc .toc-menu li a {
   border: none;
-  padding: 1rem;
+  padding: 1rem 1.5rem;
   margin: 0;
 }
 
@@ -264,18 +179,6 @@ body.cheat-sheet .toc .toc-menu li[data-level="1"] a {
 body.cheat-sheet .toc .toc-menu li[data-level="2"] a {
   padding: 0.25rem 1rem 0.25rem 2rem;
   margin: 0;
-}
-
-body.cheat-sheet .toc .toc-menu a:hover {
-  /* background-color: var(--toc-hover-background-color); */
-  /* color: var(--toc-active-font-color); */
-  /* border-radius: 0.5rem; */
-}
-
-body.cheat-sheet .toc .toc-menu a.is-active {
-  /* background-color: rgba(var(--palette-baltic-10)); */
-  /* color: var(--color-docs); */
-  /* border-radius: 0.5rem; */
 }
 
 body.cheat-sheet .toc .toc-menu a.is-active::before {
