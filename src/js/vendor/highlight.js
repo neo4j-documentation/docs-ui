@@ -2,7 +2,7 @@
 ;(function () {
   'use strict'
 
-  var hljs = require('highlight.js')
+  var hljs = require('highlight.js/lib/core')
   window.hljs = hljs
   hljs.registerLanguage('asciidoc', require('highlight.js/lib/languages/asciidoc'))
   hljs.registerLanguage('bash', require('highlight.js/lib/languages/bash'))
