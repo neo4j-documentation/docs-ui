@@ -1,40 +1,9 @@
 <header class="header">
   <nav class="navbar">
-    <div class="navbar-brand">
-      <a class="navbar-item" href="/">
-      <img class="navbar-logo" src="https://dist.neo4j.com/wp-content/uploads/20230926084108/Logo_FullColor_RGB_TransBG.svg" alt="{{ site.title }}" />
-      <a href="/docs/" class="navbar-item no-left-padding" aria-label="Docs">
-        Documentation
-      </a>
-
-    </div>
-
-      <button class="navbar-search search-button" data-target="topbar-nav" id="search_open_mobile" aria-label="Open Search">
-        <svg width="23px" height="23px" viewBox="0 0 23 23" version="1.1" class="fill-current float-right" id="searchx" role="button" title="Search Website">
-          <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round"
-            stroke-linejoin="round">
-            <g transform="translate(-2.000000, -2.000000)" stroke="#a0aec0" stroke-width="1.5">
-              {{!-- <g id="Group"> --}}
-              {{!-- <g id="search"> --}}
-              <circle
-                transform="translate(11.389364, 11.388564) rotate(-23.025000) translate(-11.389364, -11.388564) "
-                cx="11.3893642" cy="11.3885639" r="8.056"></circle>
-              <path d="M17.0853333,17.0844444 L23.3333333,23.3333333" ></path>
-              {{!-- </g> --}}
-              {{!-- </g> --}}
-            </g>
-          </g>
-        </svg>
-      </button>
-      <button class="navbar-burger" data-target="topbar-nav" aria-label="Mobile Navigation Button">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
-    </div>
-    <div id="topbar-nav" class="navbar-menu">
-      {{> tab-row}}
-      {{> header-end}}
-    </div>
+    {{> navbar-brand}}
+    {{> header-responsive}}
+    {{> navbar-tabs}}
+    {{> search}}
+    {{> theme-selector}}
   </nav>
 </header>

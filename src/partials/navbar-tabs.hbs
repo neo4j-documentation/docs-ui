@@ -1,0 +1,13 @@
+<div id="navbar-tabs" class="navbar-tabs">
+  <div class="category-tabs">
+    <ul class="category-ul">
+      {{#each (tabs)}}
+      {{#if (or (not this.debug) @root.site.attributes.[debug-mode])}}
+      <li{{#if (eq @root.page.attributes.tabs this.id)}} class="is-active"{{/if}}>
+        <a href="{{{ relativize @root.site.url }}}{{this.path}}"><span>{{this.title}}</span></a>
+      </li>
+      {{/if}}
+      {{/each}}
+    </ul>
+  </div>
+</div>

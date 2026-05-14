@@ -4,7 +4,7 @@ import { createElement } from './modules/dom'
   'use strict'
 
   // return if no-dark-mode found
-  const themeDropdown = document.getElementById('theme-dropdown')
+  const themeDropdown = document.getElementById('theme-icon')
   if (themeDropdown && themeDropdown.classList.contains('no-dark-mode')) {
     return
   }
@@ -28,8 +28,9 @@ import { createElement } from './modules/dom'
     return `<svg class="theme-icon ${extraClass}" ${svgAttrs}>${inner}</svg>`
   }
 
-  const themeMenuContainer = document.querySelector('.navbar-menu .navbar-end')
-  let themeMenu = document.getElementById('theme-dropdown')
+  const themeMenuContainer = document.querySelector('.navbar-tabs .navbar-end')
+  let themeMenu = document.getElementById('theme-icon')
+  if (themeMenu) console.log('there is already a theme menu')
 
   // remove old dropdown-style menus (old published pages without toggle structure)
   if (themeMenu && (!themeMenu.querySelector('.theme-icon') || themeMenu.querySelector('.navbar-dropdown'))) {
@@ -39,7 +40,7 @@ import { createElement } from './modules/dom'
 
   if (!themeMenu) {
     themeMenu = createElement('div', 'navbar-item docs')
-    themeMenu.setAttribute('id', 'theme-dropdown')
+    themeMenu.setAttribute('id', 'theme-icon')
     themeMenu.setAttribute('role', 'button')
     themeMenu.setAttribute('tabindex', '0')
     themeMenu.setAttribute('aria-label', 'Toggle colour theme')
@@ -49,8 +50,8 @@ import { createElement } from './modules/dom'
       const searchItem = searchOpenEl && searchOpenEl.closest('.navbar-item')
       themeMenuContainer.insertBefore(themeMenu, searchItem || themeMenuContainer.lastChild)
     } else {
-      const navbarMenu = document.querySelector('.navbar-menu')
-      if (navbarMenu) navbarMenu.appendChild(themeMenu)
+      const toolbarSidebar = document.querySelector('.toolbar .sidebar')
+      if (toolbarSidebar) toolbarSidebar.appendChild(themeMenu)
     }
   }
 

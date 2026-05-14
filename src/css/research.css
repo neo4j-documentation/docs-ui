@@ -671,7 +671,7 @@ body.research .lists .sect2 h3 {
   /* flex-grow: 1; */
   order: 2;
   margin: 0;
-  font-weight: var(--font-weight-semibold);
+  font-weight: var(--body-font-weight-bold);
   width: -webkit-fill-available;
 }
 

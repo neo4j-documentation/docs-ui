@@ -24,14 +24,14 @@
 
   /* fonts */
   --rem-base: 18; /* used to compute rem value from desired pixel value (e.g., calc(18 / var(--rem-base) * 1rem) = 18px) */
-  --body-font-weight: var(--font-weight-light);
+  --body-font-weight: 400;
+  --body-font-weight-bold: 600;
   --body-font-size: 1.0625em; /* 17px */
   --body-font-size--desktop: 1em; /* 18px */
   --body-font-size--print: 0.9375em; /* 15px */
   --body-line-height: 1.5;
   --body-font-color: light-dark(var(--theme-light-color-neutral-text-default), var(--palette-neutral-15));
   --body-font-family: "Public Sans", "Nunito Sans", "Helvetica Neue", helvetica, roboto, arial, sans-serif;
-  --body-font-weight-bold: var(--font-weight-semibold);
   --monospace-font-family: "Roboto Mono", monospace;
   --monospace-font-weight-bold: var(--font-weight-medium);
   --header-font-family: "Public Sans", "Nunito Sans", "Helvetica Neue", helvetica, roboto, arial, sans-serif;
@@ -55,10 +55,10 @@
   --hover-button-background: var(--color-docs-weak);
   --hover-button-border-color: light-dark(var(--theme-light-color-primary-text), var(--theme-dark-color-neutral-text-inverse));
   --hover-button-font-color: light-dark(var(--theme-light-color-neutral-text-inverse), var(--theme-dark-color-neutral-text-inverse));
-  --navbar-menu-border-color: light-dark(var(--palette-neutral-20), var(--theme-dark-color-neutral-border-strong));
-  --navbar-menu-background: light-dark(var(--palette-neutral-10), var(--theme-dark-color-neutral-bg-weak));
-  --navbar-menu-font-color: var(--body-font-color);
-  --navbar-menu_hover-background: transparent;
+  --navbar-tabs-border-color: light-dark(var(--palette-neutral-20), var(--theme-dark-color-neutral-border-strong));
+  --navbar-tabs-background: light-dark(var(--palette-neutral-10), var(--theme-dark-color-neutral-bg-weak));
+  --navbar-tabs-font-color: var(--body-font-color);
+  --navbar-tabs_hover-background: transparent;
   --navbar-top-border: var(--theme-light-color-neutral-border-weak);
   --navbar-bottom-border: light-dark(var(--theme-light-color-neutral-border-weak), var(--theme-dark-color-neutral-border-weak));
   --navbar-dropdown-link: light-dark(var(--theme-light-color-primary-text), var(--color-docs));
@@ -79,7 +79,7 @@
   --nav-line-height: 1.2;
   --nav-heading-font-color: var(--palette-neutral-55);
   --nav-muted-color: var(--palette-neutral-40);
-  --nav-panel-divider-color: light-dark(var(--theme-light-color-neutral-border-weak), var(--theme-dark-color-neutral-border-weak));
+  --nav-panel-divider-color: light-dark(var(--theme-light-color-neutral-border-weak), var(--theme-dark-color-neutral-border-strong));
   --nav-secondary-background: var(--palette-neutral-30);
   --nav-bullet-color: var(--palette-neutral-40);
   --dropdown-background-color: light-dark(var(--theme-light-color-neutral-bg-default), var(--theme-dark-color-neutral-bg-strong));
@@ -389,6 +389,9 @@
   --label-group-syntax: #e6e6e6;
 
   /* docs home, hub etc */
+  --card-border-color: light-dark(var(--theme-light-color-neutral-border-strong), var(--theme-dark-color-neutral-border-strong));
+  --card-hover-border-color: var(--color-docs);
+  --card-box-shadow-color: light-dark(var(--palette-neutral-50), var(--theme-light-color-primary-text));
   --hub-highlight-border: light-dark(var(--theme-light-color-primary-text), var(--palette-baltic-30));
   --hub-highlight-background: light-dark(var(--palette-baltic-30), var(--theme-light-color-primary-text));
   --hub-ga-card-background: light-dark(var(--theme-light-color-success-bg-weak), var(--theme-dark-color-success-bg-weak));
@@ -414,7 +417,7 @@
   /* dark-specific vars (used outside light-dark() context) */
   --dark--color-labs: var(--palette-lavender-20);
   --dark--navbar-background: var(--theme-dark-color-neutral-bg-weak);
-  --dark--navbar-menu-border-color: var(--theme-dark-color-neutral-border-strong);
+  --dark--navbar-tabs-border-color: var(--theme-dark-color-neutral-border-strong);
   --dark--admonition-font-color: var(--theme-dark-color-neutral-text-default);
   --dark--doc-font-color: var(--theme-dark-color-neutral-text-weak);
   --dark--link_visited-font-color: var(--palette-baltic-35);

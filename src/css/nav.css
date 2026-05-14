@@ -199,8 +199,8 @@ html.is-clipped--nav {
 
 .nav-list.docset-list {
   border-bottom: 1px solid var(--nav-panel-divider-color);
-  padding-bottom: 0.5rem;
-  padding-top: 0.5rem;
+  /* padding-bottom: 0.5rem; */
+  /* padding-top: 0.5rem; */
 }
 
 .nav-list.docset-list.hidden {
@@ -211,13 +211,17 @@ html.is-clipped--nav {
   display: none;
 }
 
+.nav-item.docset-title:not(:has(a.nav-link)) {
+  display: none;
+}
+
 .nav-item:has(> .nav-text.nav-section-header):not(:has(a.nav-link)) {
   display: none;
 }
 
 .nav-list.docset-list > .docset-title > span {
   font-weight: var(--body-font-weight-bold);
-  font-size: 1rem;
+  font-size: var(--typography-body-medium-font-size);
 }
 
 /* .nav-menu > .nav-list {
@@ -236,12 +240,13 @@ html.is-clipped--nav {
 
 /* adds some breathing room below a nested list */
 .nav-item-toggle ~ .nav-list {
-  padding-bottom: 0.125rem;
+  /* padding-bottom: 0.125rem; */
 }
 
 /* matches list without a title */
 .nav-item[data-depth="0"] > .nav-list:first-child {
   margin: 0;
+  padding: 1rem 0;
 }
 
 .nav-item:not(.is-active) > .nav-list {
@@ -437,6 +442,11 @@ html.is-clipped--nav {
   padding-bottom: 0.5rem;
 }
 
+.nav-menu .docset-title > span {
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+}
+
 .nav-item > a,
 .nav-item > span {
   position: relative;
@@ -482,10 +492,12 @@ html.is-clipped--nav {
   content: "";
   position: absolute;
   right: 0.5rem;
-  top: 0.5rem;
-  background: url(../img/chevron.svg) no-repeat;
-  background-position: center;
-  background-size: auto 0.75em;
+  top: 0.75rem;
+  background-color: currentColor;
+  -webkit-mask: url(../img/chevron.svg) no-repeat center;
+  mask: url(../img/chevron.svg) no-repeat center;
+  -webkit-mask-size: auto 0.75em;
+  mask-size: auto 0.75em;
   width: 1.5rem;
   height: 50%;
 }

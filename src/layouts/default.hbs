@@ -3,7 +3,13 @@
   <head>
 {{> head defaultPageTitle='Untitled'}}
   </head>
-  <body class="light-mode dark-mode article{{#if page.attributes.banner}} has-banner{{/if}}{{#with (or page.attributes.role page.role)}} {{{this}}}{{/with}}{{#with asciidoc.attributes.role}} {{{this}}}{{/with}}{{#with (or page.attributes.theme "developer")}} {{{this}}}{{/with}}{{#with (or page.attributes.styles page.styles)}} {{{this}}}{{/with}}{{#if (or page.attributes.show-labels page.show-labels)}} show-labels{{/if}}">
+  <body class="light-mode dark-mode article{{#if page.attributes.banner}} has-banner{{/if}}{{#with (or page.attributes.role page.role)}} {{{this}}}{{/with}}{{#with asciidoc.attributes.role}} {{{this}}}{{/with}}{{#with (or page.attributes.theme "developer")}} {{{this}}}{{/with}}{{#with (or page.attributes.styles page.styles)}} {{{this}}}{{/with}}{{#if (or page.attributes.show-labels page.show-labels)}} show-labels{{/if}}"
+    data-page-url="{{page.url}}"
+    data-page-component="{{page.component.name}}"
+    data-page-version="{{page.version}}"
+    data-page-tabs="{{lookup page.attributes 'tabs'}}"
+    data-page-tabs-group="{{lookup page.attributes 'tabs-group'}}">
+<script type="application/json" id="page-nav-data">{{{json-stringify-script page.navigation}}}</script>
 {{> header}}
 {{> body}}
 {{> footer}}

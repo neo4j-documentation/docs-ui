@@ -10,8 +10,8 @@
 
 <div class="nav-panel-menu is-active" data-panel="menu">
   {{#with page.navigation}}
-    {{#with (nav-aggregate this @root.page.attributes.tabNav)}}
-      <nav class="nav-menu nav-menu-aggregated">
+    {{#with (nav-aggregate this @root.page.attributes.tabNav (lookup @root.page.attributes 'tabs-group') @root.page.version)}}
+      <nav id="nav-root" class="nav-menu nav-menu-aggregated">
         {{> nav-tree navigation=this }}
       </nav>
     {{/with}}

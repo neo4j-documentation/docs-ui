@@ -5,34 +5,25 @@
 
   var navContainer = document.querySelector('.nav-container')
   var navToggle = document.querySelector('.nav-toggle')
+  var menuPanel
+  var nav
+  var currentPageItem
+  var originalPageItem
 
   if (navContainer && navToggle) {
     navToggle && navToggle.addEventListener('click', showNav)
 
-    var menuPanel = navContainer.querySelector('[data-panel=menu]')
+    menuPanel = navContainer.querySelector('[data-panel=menu]')
     if (!menuPanel) return
-    var nav = navContainer.querySelector('.nav')
+    nav = navContainer.querySelector('.nav')
 
-    var currentPageItem = menuPanel.querySelector('.is-current-page')
-    var originalPageItem = currentPageItem
-    if (currentPageItem) {
-      activateCurrentPath(currentPageItem)
-      scrollItemToMidpoint(menuPanel, currentPageItem.querySelector('.nav-link'))
-    } else {
-      menuPanel.scrollTop = 0
-    }
+    initNavTree()
 
-    find(menuPanel, '.nav-item-toggle:not(a)').forEach(function (btn) {
-      var li = btn.parentElement
-      btn.addEventListener('click', toggleActive.bind(li))
-      // don't let toggle clicks propagate
-      btn.addEventListener('click', concealEvent)
-      var navItemSpan = findNextElement(btn, '.nav-text')
-      if (navItemSpan) {
-        navItemSpan.style.cursor = 'pointer'
-        navItemSpan.addEventListener('click', toggleActive.bind(li))
-      }
-    })
+    // The runtime nav fetcher (09-nav-fetch.js) replaces #nav-root's contents
+    // and dispatches this event. Re-run the init against the new DOM so the
+    // current-page highlight, ancestor-active classes, and toggle handlers
+    // get applied to the new nodes.
+    document.addEventListener('nav:replaced', initNavTree)
 
     nav.querySelector('.context') && nav.querySelector('.context').addEventListener('click', function () {
       var currentPanel = nav.querySelector('.is-active[data-panel]')
@@ -107,6 +98,29 @@
     currentPageItem = navItem
     activateCurrentPath(navItem)
     scrollItemToMidpoint(menuPanel, navLink)
+  }
+
+  function initNavTree () {
+    currentPageItem = menuPanel.querySelector('.is-current-page')
+    originalPageItem = currentPageItem
+    if (currentPageItem) {
+      activateCurrentPath(currentPageItem)
+      scrollItemToMidpoint(menuPanel, currentPageItem.querySelector('.nav-link'))
+    } else {
+      menuPanel.scrollTop = 0
+    }
+
+    find(menuPanel, '.nav-item-toggle:not(a)').forEach(function (btn) {
+      var li = btn.parentElement
+      btn.addEventListener('click', toggleActive.bind(li))
+      // don't let toggle clicks propagate
+      btn.addEventListener('click', concealEvent)
+      var navItemSpan = findNextElement(btn, '.nav-text')
+      if (navItemSpan) {
+        navItemSpan.style.cursor = 'pointer'
+        navItemSpan.addEventListener('click', toggleActive.bind(li))
+      }
+    })
   }
 
   function activateCurrentPath (navItem) {

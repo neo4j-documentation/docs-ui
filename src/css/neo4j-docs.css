@@ -106,7 +106,7 @@ span.fabric::after {
   display: inline-block;
   text-align: center;
   font-family: var(--body-font-family);
-  font-weight: var(--font-weight-semibold);
+  font-weight: var(--body-font-weight-bold);
   font-style: normal;
   font-size: 0.7rem;
   line-height: var(--doc-line-height);

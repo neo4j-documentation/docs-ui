@@ -76,7 +76,7 @@ ul.graphgists > li > a {
 }
 
 body.ndl-theme-dark .graphgist-card {
-  border: 1px solid var(--dark--navbar-menu-border-color);
+  border: 1px solid var(--dark--navbar-tabs-border-color);
 }
 
 .graphgist-card .graphgist-illustration {
@@ -91,7 +91,7 @@ body.ndl-theme-dark .graphgist-card {
 .graphgist-card > .graphgist-content {
   display: grid;
   grid-template-rows: min-content min-content 1fr;
-  border-top: 1px var(--dark--navbar-menu-border-color) solid;
+  border-top: 1px var(--dark--navbar-tabs-border-color) solid;
   padding: 1.5rem 1rem 1rem;
 }
 

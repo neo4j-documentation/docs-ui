@@ -1,6 +1,6 @@
 
 .docs .navbar a {
-  font-weight: var(--body-font-weight-bold);
+  font-weight: var(--body-font-weight);
   font-size: var(--toolbar-font-size);
 }
 
@@ -8,6 +8,7 @@
   display: flex;
   flex: 1;
   align-items: stretch;
+  height: stretch;
   padding: 0 0 0 1rem;
 }
 
@@ -53,22 +54,26 @@
   margin: 0;
   padding: 0;
   font-size: var(--toolbar-font-size);
-  display: block;
+  display: flex;
   height: auto;
 }
 
 .docs .toolbar-wrapper {
-  display: block;
+  display: flex;
+  padding: 2rem 3rem;
 }
 
 .docs .breadcrumbs {
   font-size: var(--breadcrumbs-font-size);
-  padding: 0;
+  margin: var(--doc-margin--desktop);
+  padding: 1rem;
+  max-width: 54.44444rem;
+  max-width: var(--doc-max-width--desktop);
 }
 
 .docs .nav {
   top: var(--navbar-height);
-  margin-top: 1rem;
+  margin-top: 0;
 }
 
 .docs .nav-menu {
@@ -80,13 +85,12 @@
 }
 
 .docs .page-header {
-  padding: 1rem 0;
-  margin-bottom: 1rem;
+  padding: 0;
 }
 
 .docs .breadcrumbs ul {
   margin: 0;
-  padding: 0;
+  padding: 0.5rem 0;
 }
 
 .docs .breadcrumbs ul a {
@@ -94,7 +98,7 @@
 }
 
 .docs h1 {
-  margin: 0.5rem 0;
+  margin: 0;
   /* flex: 0 0 100%; */
 }
 
@@ -107,7 +111,7 @@ body.docs main > .content {
 }
 
 .docs .page-header > div {
-  margin: 1rem  0;
+  margin: 0;
 }
 
 .docs .page-header > div.labels {
@@ -118,7 +122,16 @@ body.docs main > .content {
   line-height: var(--doc-line-height);
 }
 
-.docs .nav-panel-versions {
+.docs .page-header > div.selectors {
+  padding: 1rem 0;
+}
+
+.docs .page-header .nav-panel-versions {
   padding: 0;
   margin: 0;
+}
+
+.docs .nav-panel-versions .dropdown-styles {
+  font-size: var(--typography-body-small-font-size);
+  padding: 0.25rem 1.5rem 0.25rem 0.5rem;
 }
