@@ -62,13 +62,26 @@
       return
     }
 
-    // Fetched data: every component except the current one (the page provides that).
-    var fetchedHeaders = buildHeadersFromTabData(tabData, pageContext.component)
+    // If the current component+version is present in the fetched data, that data
+    // is already correctly tab-filtered — use it directly. Only fall back to
+    // page-nav-data when the component+version isn't in the fetched data (e.g. a
+    // non-current page of an ungrouped docset). For docs-home pages this matters:
+    // page.navigation contains every module's content-nav mixed together, but
+    // tabData['docs'][version] is correctly scoped to the current tab.
+    var currentInTabData = !!(
+      tabData[pageContext.component] &&
+      tabData[pageContext.component][pageContext.version]
+    )
 
-    // Page-supplied: synthesise componentHeaders for the current component+version
-    // from the inlined page.navigation data.
-    var pageNav = readPageNav()
-    var pageHeaders = buildHeadersFromPageNav(pageNav)
+    var fetchedHeaders
+    var pageHeaders
+    if (currentInTabData) {
+      fetchedHeaders = buildHeadersFromTabData(tabData, null)
+      pageHeaders = []
+    } else {
+      fetchedHeaders = buildHeadersFromTabData(tabData, pageContext.component)
+      pageHeaders = buildHeadersFromPageNav(readPageNav())
+    }
 
     var allHeaders = fetchedHeaders.concat(pageHeaders)
     if (!allHeaders.length) {
