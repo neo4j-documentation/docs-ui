@@ -35,7 +35,7 @@
     return match ? match[1] : ''
   })()
 
-  var NAV_URL = sitePath + '/nav/tabNavExtra.json'
+  var NAV_URL = sitePath + '/nav/tabs.json'
 
   // ---------------------------------------------------------------------------
   // Fetch
