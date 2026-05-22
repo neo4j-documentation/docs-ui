@@ -26,8 +26,31 @@ document.addEventListener('DOMContentLoaded', function () {
       case 'macos':
         cased = 'macOS'
         break
-      default:
-        cased = capitalizeFirstLetter(lang.replaceAll('-', ' '))
+      default: {
+        var parts = lang.split('-')
+        var isNum = function (p) { return /^\d+$/.test(p) }
+        // find the first contiguous numeric run and treat it as a version number
+        var numStart = parts.length
+        var numEnd = parts.length
+        for (var i = 0; i < parts.length; i++) {
+          if (isNum(parts[i])) {
+            numStart = i
+            numEnd = i
+            while (numEnd < parts.length && isNum(parts[numEnd])) numEnd++
+            break
+          }
+        }
+        if (numStart < parts.length) {
+          var before = parts.slice(0, numStart)
+          var after = parts.slice(numEnd)
+          var versionStr = parts.slice(numStart, numEnd).join('.')
+          cased = (before.length ? capitalizeFirstLetter(before.join(' ')) + ' ' : '') +
+            versionStr +
+            (after.length ? ' ' + after.join(' ') : '')
+        } else {
+          cased = capitalizeFirstLetter(lang.replaceAll('-', ' '))
+        }
+      }
     }
     return cased
   }
@@ -139,7 +162,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
       // add sections for each language from driver manual html output format
       tabsList.forEach(function (lang) {
-        tab.querySelectorAll('.include-with-' + lang).forEach(function (block) {
+        tab.querySelectorAll('[class~="include-with-' + lang + '"]').forEach(function (block) {
           block.setAttribute('data-title', lang)
           block.setAttribute('data-lang', lang)
           elements.push(block)
