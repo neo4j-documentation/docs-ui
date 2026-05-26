@@ -29,24 +29,25 @@ document.addEventListener('DOMContentLoaded', function () {
       default: {
         var parts = lang.split('-')
         var isNum = function (p) { return /^\d+$/.test(p) }
-        // find the first contiguous numeric run and treat it as a version number
-        var numStart = parts.length
-        var numEnd = parts.length
-        for (var i = 0; i < parts.length; i++) {
-          if (isNum(parts[i])) {
-            numStart = i
-            numEnd = i
-            while (numEnd < parts.length && isNum(parts[numEnd])) numEnd++
-            break
+        var hasNum = parts.some(isNum)
+        if (hasNum) {
+          var result = []
+          var i = 0
+          var firstWordGroup = true
+          while (i < parts.length) {
+            if (isNum(parts[i])) {
+              var runStart = i
+              while (i < parts.length && isNum(parts[i])) i++
+              result.push(parts.slice(runStart, i).join('.'))
+            } else {
+              var wordStart = i
+              while (i < parts.length && !isNum(parts[i])) i++
+              var words = parts.slice(wordStart, i).join(' ')
+              result.push(firstWordGroup ? capitalizeFirstLetter(words) : words)
+              firstWordGroup = false
+            }
           }
-        }
-        if (numStart < parts.length) {
-          var before = parts.slice(0, numStart)
-          var after = parts.slice(numEnd)
-          var versionStr = parts.slice(numStart, numEnd).join('.')
-          cased = (before.length ? capitalizeFirstLetter(before.join(' ')) + ' ' : '') +
-            versionStr +
-            (after.length ? ' ' + after.join(' ') : '')
+          cased = result.join(' ')
         } else {
           cased = capitalizeFirstLetter(lang.replaceAll('-', ' '))
         }

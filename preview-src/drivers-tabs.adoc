@@ -31,6 +31,10 @@ Numeric prefix + word suffix (6-1-and-later → "6.1 and later")
 ======
 Word + numeric + word (Version-6-1-and-later → "Version 6.1 and later")
 ======
+[.include-with-Version-6-2-and-6-3]
+======
+Multiple version occurrences (Version-6-2-and-6-3 → "Version 6.2 and 6.3")
+======
 ====
 
 == Version number tab titles — role= notation
@@ -56,6 +60,10 @@ Version + word suffix (role=include-with-6.1-and-later → "6.1 and later")
 [role=include-with-Version-6.1-and-later]
 ======
 Word + version + word (role=include-with-Version-6.1-and-later → "Version 6.1 and later")
+======
+[role=include-with-Version-6.2-and-6.3]
+======
+Multiple version occurrences (role=include-with-Version-6.2-and-6.3 → "Version 6.2 and 6.3")
 ======
 ====
 
