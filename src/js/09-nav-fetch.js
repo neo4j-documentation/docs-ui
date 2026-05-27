@@ -30,10 +30,10 @@
     return
   }
 
-  var sitePath = (function () {
-    var match = window.location.pathname.match(/^(\/[^/]+)\//)
-    return match ? match[1] : ''
-  })()
+  // Site path comes from the playbook's site.url via data-site-path on <body>.
+  // Falls back to '' (root) if not set — handles the case where the page was
+  // rendered without site-path being stamped.
+  var sitePath = body.dataset.sitePath || ''
 
   var NAV_URL = sitePath + '/nav/tabs.json'
 
