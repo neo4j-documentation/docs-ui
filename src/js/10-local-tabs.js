@@ -23,7 +23,7 @@
 
   fetchJson(MANIFEST_URL)
     .then(function (manifest) {
-      if (!manifest || !manifest.components || !manifest.components.length) return null
+      if (!manifest || !manifest.components || !Object.keys(manifest.components).length) return null
       return fetchJson(NAV_URL).then(function (tabs) {
         if (tabs) decorate(manifest.components, tabs)
       })
@@ -50,15 +50,18 @@
 
   // For a single tab, walk its components in tabIndex order (the order
   // Object.keys returns matches the order the consume stage sorted them in).
-  // Return the URL of the first item in the first locally-built component.
-  function firstLocalUrlForTab (tabData, localSet) {
+  // Return the URL of the first item in the first locally-built (component,
+  // version) pair. localComponents is the manifest map { component: [versions...] }.
+  function firstLocalUrlForTab (tabData, localComponents) {
     if (!tabData) return null
     var components = Object.keys(tabData)
     for (var i = 0; i < components.length; i++) {
-      if (!localSet[components[i]]) continue
+      var localVersions = localComponents[components[i]]
+      if (!localVersions) continue
       var versions = tabData[components[i]]
       var versionKeys = Object.keys(versions)
       for (var v = 0; v < versionKeys.length; v++) {
+        if (localVersions.indexOf(versionKeys[v]) === -1) continue
         var url = findFirstUrl(versions[versionKeys[v]].items)
         if (url) return url
       }
@@ -83,13 +86,10 @@
   }
 
   function decorate (localComponents, allTabs) {
-    var localSet = {}
-    for (var i = 0; i < localComponents.length; i++) localSet[localComponents[i]] = true
-
     var lis = document.querySelectorAll('.category-tabs li[data-tab-id]')
     Array.prototype.forEach.call(lis, function (li) {
       var tabId = li.getAttribute('data-tab-id')
-      var url = firstLocalUrlForTab(allTabs[tabId], localSet)
+      var url = firstLocalUrlForTab(allTabs[tabId], localComponents)
       if (!url) return
       li.classList.add('has-local-content')
       var a = li.querySelector('a')
