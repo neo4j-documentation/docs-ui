@@ -6,7 +6,7 @@
 }
 
 .doc .paragraph .title {
-  font-weight: var(--body-font-weight-bold);
+  font-weight: var(--body-font-weight-semibold);
 }
 
 .doc .listingblock.dot {
@@ -113,7 +113,7 @@ span.fabric::after {
   display: inline-block;
   text-align: center;
   font-family: var(--body-font-family);
-  font-weight: var(--font-weight-semibold);
+  font-weight: var(--weight-semibold);
   font-style: normal;
   font-size: 0.7rem;
   line-height: var(--doc-line-height);
@@ -264,7 +264,7 @@ span.fabric::after {
 }
 
 .doc .admonitionblock.deprecated a {
-  color: var(--color-red-600);
+  color: var(--palette-hibiscus-35);
 }
 
 .doc pre {
@@ -342,8 +342,8 @@ div.beta-symbol p::before {
   content: '\2A0D';
   margin-left: 0.5em;
   padding: 0 0.5em;
-  background-color: var(--color-purple-200);
-  color: var(--color-purple-700);
+  background-color: var(--palette-lavender-15);
+  color: var(--palette-lavender-45);
   display: inline-flex;
   border-radius: 25%;
 }

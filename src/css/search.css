@@ -208,8 +208,8 @@ body.search--active {
 }
 
 .search-results .search-result-item em {
-  background: var(--color-yellow-100);
-  color: var(--color-orange-700);
+  background: var(--palette-lemon-10);
+  color: var(--palette-marigold-50);
   font-style: normal;
   font-weight: 600;
   padding: 0.2rem;
@@ -252,7 +252,7 @@ body.search--active {
 }
 
 .search-results .label--knowledge-base {
-  background: var(--color-orange-600);
+  background: var(--palette-marigold-45);
   color: var(--palette-neutral-10);
 }
 

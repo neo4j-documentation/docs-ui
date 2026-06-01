@@ -243,7 +243,7 @@ html.is-clipped--nav {
 } */
 
 /* .nav-item.is-active .nav-link {
-  font-weight: var(--body-font-weight-bold);
+  font-weight: var(--body-font-weight-semibold);
 } */
 
 /* .nav-item.is-active > .nav-item-toggle {
@@ -323,7 +323,7 @@ html.is-clipped--nav {
 }
 
 .nav-panel-explore .component .title {
-  font-weight: var(--body-font-weight-bold);
+  font-weight: var(--body-font-weight-semibold);
 }
 
 .nav-panel-explore .versions {
@@ -353,7 +353,7 @@ html.is-clipped--nav {
 .nav-panel-explore .component .is-current a {
   border-color: currentColor;
   opacity: 0.9;
-  font-weight: var(--body-font-weight-bold);
+  font-weight: var(--body-font-weight-semibold);
 }
 
 .nav .label {
@@ -489,7 +489,7 @@ html.is-clipped--nav {
   margin-top: 1rem;
   margin-bottom: 0;
   padding-top: 1.5rem !important;
-  border-top: 1px solid var(--colors-netural-25);
+  border-top: 1px solid var(--colors-neutral-25);
 }
 
 .nav-item .nav-section-header:hover {

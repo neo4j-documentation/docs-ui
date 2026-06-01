@@ -231,7 +231,7 @@ body.cheat-sheet aside.nav .selectors {
 }
 
 body.cheat-sheet aside.nav .selectors .dropdown-label {
-  font-weight: var(--body-font-weight-bold);
+  font-weight: var(--body-font-weight-semibold);
 }
 
 body.cheat-sheet .toc-menu-placeholder h2 {
@@ -258,7 +258,7 @@ body.cheat-sheet .toc .toc-menu li a {
 }
 
 body.cheat-sheet .toc .toc-menu li[data-level="1"] a {
-  font-weight: var(--body-font-weight-bold);
+  font-weight: var(--body-font-weight-semibold);
 }
 
 body.cheat-sheet .toc .toc-menu li[data-level="2"] a {
@@ -523,7 +523,7 @@ body.cheat-sheet span.label.hidden,
   }
 
   body.cheat-sheet .toc-menu-placeholder li[data-level="1"] {
-    border-bottom: 1px dotted rgba(var(--color-baltic-30));
+    border-bottom: 1px dotted var(--palette-baltic-30);
     /* background-color: rgba(var(--palette-neutral-20)); */
     /* margin-left: 0; */
     width: 100%;
@@ -539,7 +539,7 @@ body.cheat-sheet span.label.hidden,
     display: block;
     padding: 0 0.5rem;
 
-    /* border: 1px dotted var(--color-blue-300); */
+    /* border: 1px dotted var(--palette-baltic-20); */
   }
 
   /* body.cheat-sheet .toc-menu-placeholder li[data-level="2"]::after {

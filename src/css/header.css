@@ -347,7 +347,7 @@ html[style*="color-scheme: dark"] #theme-dropdown .theme-icon-light { display: n
   }
 
   .navbar-end .navbar-link {
-    font-weight: var(--body-font-weight-bold);
+    font-weight: var(--body-font-weight-semibold);
     font-size: calc(12 / var(--rem-base) * 1.25rem);
     text-transform: uppercase;
     letter-spacing: 0.08em;
@@ -657,7 +657,7 @@ html[style*="color-scheme: dark"] #theme-dropdown .theme-icon-light { display: n
   font-size: 0.7rem;
   background-size: cover;
   background-position: center;
-  border: 2px solid var(--color-green-600);
+  border: 2px solid var(--palette-forest-30);
 }
 
 .getting-started-cta .project:hover {
