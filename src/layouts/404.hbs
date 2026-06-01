@@ -6,16 +6,20 @@
   <body class="light-mode dark-mode article docs status-404"
     data-site-path="{{site-path site.url}}">
 {{> header}}
-    <main class="article">
-      <div class="content">
-        <article class="doc">
-          <h1>Page not part of this preview build</h1>
-          <p>The page <code id="preview-req-path"></code> isn't part of this preview build. Preview builds typically include only one or a few docsets; pages from other docsets appear in the nav (which is aggregated across the site) but aren't generated in this preview.</p>
-          <p id="preview-docs-link-wrapper"></p>
-          <p><a href="#" onclick="history.back(); return false;">Go back</a></p>
-        </article>
-      </div>
-    </main>
+<div class="body">
+  <a class="show-on-focus skip-link" href="#skip-to-content" title="Skip to content">Skip to content</a>
+  {{> nav}}
+  <main class="article">
+    <div class="content">
+      <article class="doc">
+        <h1>Page not part of this preview build</h1>
+        <p>The page <code id="preview-req-path"></code> isn't part of this preview build. Preview builds typically include only one or a few docsets; pages from other docsets appear in the nav (which is aggregated across the site) but aren't generated in this preview.</p>
+        <p id="preview-docs-link-wrapper"></p>
+        <p><a href="#" onclick="history.back(); return false;">Go back</a></p>
+      </article>
+    </div>
+  </main>
+</div>
 {{> footer}}
     <script>
     (function () {
