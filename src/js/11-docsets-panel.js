@@ -1,18 +1,40 @@
 ;(function () {
   'use strict'
 
-  // Populates the docsets nav panel (#docsets-panel-root) from the aggregated
-  // tabs.json. The panel lists every component+version that's in the
+  // Populates the docsets modal (#docsets-modal-root) from the aggregated
+  // tabs.json. The modal lists every component+version that's in the
   // cross-docset nav — not just the ones built in this Antora run — so a
   // single-docset preview shows links to every other docset on the fleet.
   //
   // Each component renders as a row with the component title on top and a
   // chip per version below (alphabetical by component title; latest version
   // first within each component). The current page's component+version is
-  // marked is-current so the panel can highlight it.
+  // marked is-current so the modal can highlight it.
+  //
+  // Also wires the header toggle (#docsets-toggle) to open the <dialog> and
+  // the close button to dismiss it.
 
-  var root = document.getElementById('docsets-panel-root')
-  if (!root) return
+  var root = document.getElementById('docsets-modal-root')
+  var modal = document.getElementById('docsets-modal')
+  var toggle = document.getElementById('docsets-toggle')
+  var closeBtn = document.getElementById('docsets-modal-close')
+  if (!root || !modal || !toggle) return
+
+  toggle.addEventListener('click', function () {
+    if (typeof modal.showModal === 'function') modal.showModal()
+    else modal.setAttribute('open', '')
+  })
+  if (closeBtn) {
+    closeBtn.addEventListener('click', function () {
+      if (typeof modal.close === 'function') modal.close()
+      else modal.removeAttribute('open')
+    })
+  }
+  // Click on the backdrop closes the modal (clicks land on the <dialog>
+  // itself when they're outside the modal's content box).
+  modal.addEventListener('click', function (event) {
+    if (event.target === modal && typeof modal.close === 'function') modal.close()
+  })
 
   var body = document.body
   var sitePath = body.dataset.sitePath || ''
@@ -35,12 +57,13 @@
     var names = Object.keys(components).sort(function (a, b) {
       return components[a].title.toLowerCase().localeCompare(components[b].title.toLowerCase())
     })
-    var fragment = document.createDocumentFragment()
+    var ul = document.createElement('ul')
+    ul.className = 'components'
     names.forEach(function (name) {
-      fragment.appendChild(renderComponent(name, components[name]))
+      ul.appendChild(renderComponent(name, components[name]))
     })
     root.innerHTML = ''
-    root.appendChild(fragment)
+    root.appendChild(ul)
   }
 
   // Walks every tab → component → version slot in tabs.json and folds them
