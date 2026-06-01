@@ -135,18 +135,18 @@ html.is-clipped--nav {
 }
 
 .nav-panel-menu,
-.nav-panel-explore .components {
+.nav-panel-docsets .components {
   scrollbar-width: thin;
   scrollbar-color: var(--scrollbar-thumb-color) transparent;
 }
 
 .nav-panel-menu::-webkit-scrollbar,
-.nav-panel-explore .components::-webkit-scrollbar {
+.nav-panel-docsets .components::-webkit-scrollbar {
   width: 0.25rem;
 }
 
 .nav-panel-menu::-webkit-scrollbar-thumb,
-.nav-panel-explore .components::-webkit-scrollbar-thumb {
+.nav-panel-docsets .components::-webkit-scrollbar-thumb {
   background-color: var(--scrollbar-thumb-color);
 }
 
@@ -288,7 +288,7 @@ html.is-clipped--nav {
   opacity: 1;
 }
 
-.nav-panel-explore {
+.nav-panel-docsets {
   background: var(--nav-background);
   display: flex;
   flex-direction: column;
@@ -299,15 +299,15 @@ html.is-clipped--nav {
   max-height: calc(50% + var(--drawer-height));
 }
 
-.nav-panel-explore.is-active {
+.nav-panel-docsets.is-active {
   z-index: 1;
 }
 
-.nav-panel-explore .context {
+.nav-panel-docsets .context {
   font-size: calc(15 / var(--rem-base) * 1rem);
   flex-shrink: 0;
-  color: var(--nav-muted-color);
-  box-shadow: 0 -1px 0 var(--nav-panel-divider-color);
+  color: var(--nav-heading-font-color);
+  border-bottom: 1px solid var(--palette-neutral-25);
   padding: 0 0.25rem 0 0.5rem;
   display: flex;
   align-items: center;
@@ -317,7 +317,7 @@ html.is-clipped--nav {
   height: var(--drawer-height);
 }
 
-.nav-panel-explore .context .version {
+.nav-panel-docsets .context .version {
   background-image: url(../img/chevron.svg);
   background-repeat: no-repeat;
   background-position: right 0.5rem top 50%;
@@ -325,39 +325,42 @@ html.is-clipped--nav {
   padding: 0 1.5rem 0 0;
 }
 
-.nav-panel-explore .components {
+.nav-panel-docsets .components {
   line-height: var(--doc-line-height);
   flex-grow: 1;
-  box-shadow: inset 0 1px 5px var(--nav-panel-divider-color);
-  background: var(--nav-secondary-background);
   padding: 0.5rem 0.75rem 0 0.75rem;
   margin: 0;
   overflow-y: scroll;
   max-height: 100%;
   display: block;
+  color: var(--toc-item-font-color);
 }
 
-.nav-panel-explore:not(.is-active) .components {
+.nav-panel-docsets .component .title a {
+  color: var(--toc-item-font-color);
+}
+
+.nav-panel-docsets:not(.is-active) .components {
   display: none;
 }
 
-.nav-panel-explore .component {
+.nav-panel-docsets .component {
   display: block;
 }
 
-.nav-panel-explore .component + .component {
+.nav-panel-docsets .component + .component {
   margin-top: 0.5rem;
 }
 
-.nav-panel-explore .component:last-child {
+.nav-panel-docsets .component:last-child {
   margin-bottom: 0.75rem;
 }
 
-.nav-panel-explore .component .title {
+.nav-panel-docsets .component .title {
   font-weight: var(--body-font-weight-bold);
 }
 
-.nav-panel-explore .versions {
+.nav-panel-docsets .versions {
   display: flex;
   flex-wrap: wrap;
   list-style: none;
@@ -366,24 +369,19 @@ html.is-clipped--nav {
   line-height: 1;
 }
 
-.nav-panel-explore .component .version {
+.nav-panel-docsets .component .version {
   display: block;
   margin: 0.375rem 0.375rem 0 0;
 }
 
-.nav-panel-explore .component .version a {
-  border: 1px solid var(--nav-border-color);
-  border-radius: 0.25rem;
-  color: inherit;
-  opacity: 0.75;
+.nav-panel-docsets .component .version a {
+  color: var(--toc-item-font-color);
   white-space: nowrap;
   padding: 0.125em 0.25em;
   display: inherit;
 }
 
-.nav-panel-explore .component .is-current a {
-  border-color: currentColor;
-  opacity: 0.9;
+.nav-panel-docsets .component .is-current a {
   font-weight: var(--body-font-weight-bold);
 }
 

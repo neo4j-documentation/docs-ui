@@ -27,7 +27,7 @@
 
     nav.querySelector('.context') && nav.querySelector('.context').addEventListener('click', function () {
       var currentPanel = nav.querySelector('.is-active[data-panel]')
-      var activatePanel = currentPanel.dataset.panel === 'menu' ? 'explore' : 'menu'
+      var activatePanel = currentPanel.dataset.panel === 'menu' ? 'docsets' : 'menu'
       currentPanel.classList.toggle('is-active')
       nav.querySelector('[data-panel=' + activatePanel + ']').classList.toggle('is-active')
     })
