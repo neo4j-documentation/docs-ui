@@ -6,6 +6,16 @@
   // cross-docset nav — not just the ones built in this Antora run — so a
   // single-docset preview shows links to every other docset on the fleet.
   //
+  // Per-chip URL resolution:
+  //   - Component IS in the local manifest → use the local URL (works in one
+  //     click against this build).
+  //   - Component is NOT in the local manifest → use DOCS_URL + path so the
+  //     click goes straight to the published version rather than bouncing
+  //     through the not-built-here fallback.
+  //   - No manifest available (typical on production publishes where the flag
+  //     isn't set) → use the local URL for everything; on prod that IS the
+  //     published location, so this works out.
+  //
   // Each component renders as a row with the component title on top and a
   // chip per version below (alphabetical by component title; latest version
   // first within each component). The current page's component+version is
@@ -30,8 +40,6 @@
       else modal.removeAttribute('open')
     })
   }
-  // Click on the backdrop closes the modal (clicks land on the <dialog>
-  // itself when they're outside the modal's content box).
   modal.addEventListener('click', function (event) {
     if (event.target === modal && typeof modal.close === 'function') modal.close()
   })
@@ -39,18 +47,39 @@
   var body = document.body
   var sitePath = body.dataset.sitePath || ''
   var NAV_URL = sitePath + '/nav/tabs.json'
+  var MANIFEST_URL = sitePath + '/local-manifest.json'
   var currentComponent = body.dataset.pageComponent || ''
   var currentVersion = body.dataset.pageVersion || ''
+  var docsUrl = readDocsUrl()
+  var localComponents = null // populated from manifest if available
 
-  fetch(NAV_URL, { credentials: 'same-origin' })
-    .then(function (res) {
+  // Fetch tabs.json + local-manifest.json in parallel; manifest is optional
+  // (404 on prod) so its failure just means "treat everything as local."
+  Promise.all([
+    fetchJson(NAV_URL).catch(function (err) {
+      console.warn('[docsets-panel] tabs.json fetch failed:', err.message)
+      return null
+    }),
+    fetchJson(MANIFEST_URL).catch(function () { return null }),
+  ]).then(function (results) {
+    var tabs = results[0]
+    var manifest = results[1]
+    if (manifest && manifest.components) localComponents = manifest.components
+    if (tabs) render(tabs)
+  })
+
+  function fetchJson (url) {
+    return fetch(url, { credentials: 'same-origin' }).then(function (res) {
       if (!res.ok) throw new Error('HTTP ' + res.status)
       return res.json()
     })
-    .then(render)
-    .catch(function (err) {
-      console.warn('[docsets-panel] fetch failed; panel will stay empty:', err.message)
-    })
+  }
+
+  function readDocsUrl () {
+    var meta = document.querySelector('meta[name="docs-url"]')
+    var raw = meta ? meta.getAttribute('content') : null
+    return raw ? raw.replace(/\/+$/, '') : null
+  }
 
   function render (tabs) {
     var components = collectComponents(tabs)
@@ -115,6 +144,21 @@
     return sitePath + url
   }
 
+  // Resolve a (component, version, rawUrl) tuple to the right href:
+  //   - Locally built → local URL (with sitePath prefix).
+  //   - Not locally built, DOCS_URL set → docs URL + raw path.
+  //   - Otherwise → local URL (covers prod, where local == published).
+  function resolveHref (component, version, rawUrl) {
+    if (!rawUrl) return '#'
+    var isLocal = !localComponents
+      ? true
+      : !!(localComponents[component] &&
+           localComponents[component].indexOf(version) !== -1)
+    if (isLocal) return prefixSitePath(rawUrl)
+    if (docsUrl) return docsUrl + rawUrl
+    return prefixSitePath(rawUrl)
+  }
+
   function renderComponent (name, entry) {
     var li = document.createElement('li')
     li.className = 'component'
@@ -122,11 +166,7 @@
 
     var titleDiv = document.createElement('div')
     titleDiv.className = 'title'
-    var titleText = document.createTextNode(entry.title)
-    // No URL on the title itself — the version chips are the navigable
-    // entries. (Antora's stock panel links the title to the docset's start
-    // page, but we don't have that URL distinctly from version URLs here.)
-    titleDiv.appendChild(titleText)
+    titleDiv.appendChild(document.createTextNode(entry.title))
     li.appendChild(titleDiv)
 
     var versionKeys = Object.keys(entry.versions).sort(function (a, b) {
@@ -144,7 +184,7 @@
         if (entry.versions[v].latest) versionLi.classList.add('is-latest')
         if (name === currentComponent && v === currentVersion) versionLi.classList.add('is-current')
         var a = document.createElement('a')
-        a.href = prefixSitePath(entry.versions[v].url || '#')
+        a.href = resolveHref(name, v, entry.versions[v].url)
         a.textContent = v || entry.title
         versionLi.appendChild(a)
         versionsUl.appendChild(versionLi)
