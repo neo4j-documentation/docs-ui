@@ -2,3 +2,4 @@
 /public/
 build/
 yarn.lock
+.claude

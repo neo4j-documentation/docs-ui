@@ -7,27 +7,66 @@ From 4.2 on, the Drivers Manual is split into a separate manual per language.
 
 GDS also uses tabs, but they have a different list of tab separators. Rather than tab on languages, they tab on modes (mutate, stats, stream, train, write) and output tab text as _<mode> mode_ eg _Stream mode_.
 
+== Version number tab titles — dot notation
+
 [.tabbed-example]
 ====
-[.include-with-macos]
-[[mac-os-bit]]
+[.include-with-6-1]
 ======
-Tab for macOS
+Pure major.minor (6-1 → "6.1")
 ======
-[.include-with-linux]
-[[linux-bit]]
+[.include-with-6-1-2]
 ======
-Tab for Linux
+Patch release (6-1-2 → "6.1.2")
 ======
-[.include-with-windows]
+[.include-with-windows-8-1]
 ======
-Tab for Linux
+Word prefix + numeric suffix (windows-8-1 → "Windows 8.1")
 ======
-[.include-with-whatever]
+[.include-with-6-1-and-later]
 ======
-Tab for whatever
+Numeric prefix + word suffix (6-1-and-later → "6.1 and later")
+======
+[.include-with-Version-6-1-and-later]
+======
+Word + numeric + word (Version-6-1-and-later → "Version 6.1 and later")
+======
+[.include-with-Version-6-2-and-6-3]
+======
+Multiple version occurrences (Version-6-2-and-6-3 → "Version 6.2 and 6.3")
 ======
 ====
+
+== Version number tab titles — role= notation
+
+[.tabbed-example]
+====
+[role=include-with-6.1]
+======
+Pure major.minor (role=include-with-6.1 → "6.1")
+======
+[role=include-with-6.1.2]
+======
+Patch release (role=include-with-6.1.2 → "6.1.2")
+======
+[role=include-with-windows-8.1]
+======
+Word prefix + version (role=include-with-windows-8.1 → "Windows 8.1")
+======
+[role=include-with-6.1-and-later]
+======
+Version + word suffix (role=include-with-6.1-and-later → "6.1 and later")
+======
+[role=include-with-Version-6.1-and-later]
+======
+Word + version + word (role=include-with-Version-6.1-and-later → "Version 6.1 and later")
+======
+[role=include-with-Version-6.2-and-6.3]
+======
+Multiple version occurrences (role=include-with-Version-6.2-and-6.3 → "Version 6.2 and 6.3")
+======
+====
+
 
 == Example drivers manual content
 
@@ -587,7 +626,7 @@ Tab for whatever
 
 [.tabbed-example]
 ====
-[.include-with-macos.label--macos]
+[.include-with-macos.label--mac-os]
 ======
 Tab for macOS
 ======
@@ -621,7 +660,7 @@ Tab for Linux
 ======
 [.include-with-windows]
 ======
-Tab for Linux
+Tab for W
 ======
 [.include-with-whatever]
 ======

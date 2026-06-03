@@ -24,7 +24,7 @@
 .toc .theme-selector h2 {
   color: var(--toc-heading-font-color);
   font-size: var(--doc-font-size-h5);
-  font-weight: var(--body-font-weight-bold);
+  font-weight: var(--body-font-weight-semibold);
   line-height: 1.5;
   margin: 1rem -0.5px 0;
   padding: 1.5rem 0 1.25rem;

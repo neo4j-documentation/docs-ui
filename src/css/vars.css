@@ -24,16 +24,20 @@
 
   /* fonts */
   --rem-base: 18; /* used to compute rem value from desired pixel value (e.g., calc(18 / var(--rem-base) * 1rem) = 18px) */
-  --body-font-weight: var(--font-weight-light);
+  --body-font-weight: var(--body-font-weight-light);
   --body-font-size: 1.0625em; /* 17px */
   --body-font-size--desktop: 1em; /* 18px */
   --body-font-size--print: 0.9375em; /* 15px */
   --body-line-height: 1.5;
   --body-font-color: light-dark(var(--theme-light-color-neutral-text-default), var(--palette-neutral-15));
   --body-font-family: "Public Sans", "Nunito Sans", "Helvetica Neue", helvetica, roboto, arial, sans-serif;
-  --body-font-weight-bold: var(--font-weight-semibold);
+  --body-font-weight-bold: var(--weight-bold); /* 700 */
+  --body-font-weight-semibold: var(--weight-semibold); /* 600 */
+  --body-font-weight-medium: var(--weight-medium); /* 500 */
+  --body-font-weight-normal: var(--weight-normal); /* 400 */
+  --body-font-weight-light: var(--weight-light); /* 300 */
   --monospace-font-family: "Roboto Mono", monospace;
-  --monospace-font-weight-bold: var(--font-weight-medium);
+  --monospace-font-weight-bold: var(--body-font-weight-medium);
   --header-font-family: "Syne Neo", "Public Sans", "Nunito Sans", "Helvetica Neue", helvetica, roboto, arial, sans-serif;
 
   /* base */
@@ -217,8 +221,8 @@
   --doc-font-size-h5: var(--typography-title-5-font-size);
   --doc-font-size-h6: calc(var(--typography-title-6-font-size) * 0.75);
   --heading-font-color: light-dark(var(--theme-light-color-neutral-text-default), var(--theme-dark-color-neutral-text-default));
-  --heading-font-weight: var(--font-weight-normal);
-  --alt-heading-font-weight: var(--body-font-weight-bold);
+  --heading-font-weight: var(--body-font-weight-normal);
+  --alt-heading-font-weight: var(--body-font-weight-semibold);
   --section-divider-color: var(--palette-neutral-20);
 
   /* links */
@@ -331,12 +335,12 @@
   --feedback-positive-color: var(--color-docs);
   --feedback-textarea-background: light-dark(var(--palette-neutral-10), var(--theme-dark-color-neutral-bg-on-bg-weak));
   --feedback-textarea-color: var(--body-font-color);
-  --feedback-primary-background: light-dark(var(--color-blue-100), var(--theme-dark-color-neutral-bg-on-bg-weak));
-  --feedback-primary-border-color: light-dark(var(--color-blue-700), var(--theme-dark-color-neutral-border-weak));
-  --feedback-primary-color: light-dark(var(--color-blue-700), var(--palette-neutral-15));
-  --feedback-secondary-background: light-dark(var(--color-blue-100), var(--theme-dark-color-neutral-bg-strong));
-  --feedback-secondary-border-color: light-dark(var(--color-blue-700), var(--theme-dark-color-neutral-border-weak));
-  --feedback-secondary-color: light-dark(var(--color-blue-700), var(--palette-neutral-15));
+  --feedback-primary-background: light-dark(var(--palette-baltic-10), var(--theme-dark-color-neutral-bg-on-bg-weak));
+  --feedback-primary-border-color: light-dark(var(--palette-baltic-50), var(--theme-dark-color-neutral-border-weak));
+  --feedback-primary-color: light-dark(var(--palette-baltic-50), var(--palette-neutral-15));
+  --feedback-secondary-background: light-dark(var(--palette-baltic-10), var(--theme-dark-color-neutral-bg-strong));
+  --feedback-secondary-border-color: light-dark(var(--palette-baltic-50), var(--theme-dark-color-neutral-border-weak));
+  --feedback-secondary-color: light-dark(var(--palette-baltic-50), var(--palette-neutral-15));
   --feedback-input-background: light-dark(var(--theme-light-color-neutral-bg-strong), var(--theme-dark-color-neutral-bg-strong));
 
   /* footer */
