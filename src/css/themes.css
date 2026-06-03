@@ -157,7 +157,7 @@ body.landing.labs .buttons li a:hover {
 }
 
 body.landing.labs .buttons li a:active {
-  /* background: var(--color-blue-600); */
+  /* background: var(--palette-baltic-45); */
 }
 
 /* body.developer {
@@ -178,7 +178,7 @@ body.developer .search .search-container .search-form {
 }
 
 body.developer .tableblock .icon i:not(.fa) {
-  color: var(--color-green-600);
+  color: var(--palette-forest-30);
 }
 
 body.developer .navbar .navbar-item.getting-started-cta .navbar-link {
@@ -249,7 +249,7 @@ body.landing.developer .buttons li a:hover {
 }
 
 body.landing.developer .buttons li a:active {
-  background: var(--color-green-600);
+  background: var(--palette-forest-30);
 }
 
 /* KB */
@@ -322,7 +322,7 @@ body.graphgists svg.graphgists {
 body.graphgists .navbar,
 body.graphgists .search .search-container .search-form {
   border-top-color: var(--color-graphgists);
-  border-bottom-color: var(--color-black);
+  border-bottom-color: var(--palette-neutral-80);
 }
 
 .graphgists .navbar-brand #developer {

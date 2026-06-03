@@ -36,20 +36,36 @@
   var sitePath = body.dataset.sitePath || ''
 
   var NAV_URL = sitePath + '/nav/tabs.json'
+  var MANIFEST_URL = sitePath + '/local-manifest.json'
+
+  // local-manifest.json (optional). If `localNavOnly: true` is set there, the
+  // fetched nav is filtered to only show components present in
+  // manifest.components — declutters single-docset previews.
+  var localComponents = null
+  var localNavOnlyMode = false
 
   // ---------------------------------------------------------------------------
   // Fetch
   // ---------------------------------------------------------------------------
 
-  fetch(NAV_URL, { credentials: 'same-origin' })
-    .then(function (res) {
+  Promise.all([
+    fetch(NAV_URL, { credentials: 'same-origin' }).then(function (res) {
       if (!res.ok) throw new Error('HTTP ' + res.status)
       return res.json()
-    })
-    .then(replaceNav)
-    .catch(function (err) {
-      console.warn('[nav-fetch] fetch failed; keeping build-time nav:', err.message)
-    })
+    }),
+    fetch(MANIFEST_URL, { credentials: 'same-origin' })
+      .then(function (res) { return res.ok ? res.json() : null })
+      .catch(function () { return null }),
+  ]).then(function (results) {
+    var manifest = results[1]
+    if (manifest) {
+      if (manifest.components) localComponents = manifest.components
+      if (manifest.localNavOnly) localNavOnlyMode = true
+    }
+    replaceNav(results[0])
+  }).catch(function (err) {
+    console.warn('[nav-fetch] fetch failed; keeping build-time nav:', err.message)
+  })
 
   // ---------------------------------------------------------------------------
   // Orchestration
@@ -164,8 +180,13 @@
     var headers = []
     Object.keys(tabData).forEach(function (component) {
       if (excludeComponent && component === excludeComponent) return
+      // In local-nav-only mode, skip any component not present in the local
+      // manifest. Keeps the rendered nav scoped to the writer's own content.
+      if (localNavOnlyMode && localComponents && !localComponents[component]) return
       var versions = tabData[component]
       Object.keys(versions).forEach(function (version) {
+        if (localNavOnlyMode && localComponents && localComponents[component] &&
+            localComponents[component].indexOf(version) === -1) return
         var subHeaders = buildHeadersForVersion(component, version, versions[version])
         subHeaders.forEach(function (h) { headers.push(h) })
       })

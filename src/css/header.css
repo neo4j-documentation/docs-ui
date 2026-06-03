@@ -259,6 +259,7 @@ html[style*="color-scheme: light;"] .navbar-logo-dark {
 html[style*="color-scheme: dark"] #theme-icon .theme-icon-dark { display: block; }
 html[style*="color-scheme: dark"] #theme-icon .theme-icon-light { display: none; }
 
+
 @media screen and (min-width: 1024px) {
   .navbar-dropdown {
     box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
@@ -386,7 +387,7 @@ html[style*="color-scheme: dark"] #theme-icon .theme-icon-light { display: none;
   }
 
   .navbar-end .navbar-link {
-    font-weight: var(--body-font-weight-bold);
+    font-weight: var(--body-font-weight-semibold);
     font-size: calc(12 / var(--rem-base) * 1.25rem);
     text-transform: uppercase;
     letter-spacing: 0.08em;
@@ -685,7 +686,7 @@ html[style*="color-scheme: dark"] #theme-icon .theme-icon-light { display: none;
   font-size: 0.7rem;
   background-size: cover;
   background-position: center;
-  border: 2px solid var(--color-green-600);
+  border: 2px solid var(--palette-forest-30);
 }
 
 .getting-started-cta .project:hover {

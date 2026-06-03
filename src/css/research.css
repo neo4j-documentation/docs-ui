@@ -40,12 +40,12 @@ body.research .navbar {
 
 .faq-item {
   padding: 10px 0;
-  color: var(--color-black);
+  color: var(--palette-neutral-80);
 }
 
 .faq-question {
   display: flex;
-  color: var(--color-black);
+  color: var(--palette-neutral-80);
 }
 
 .faq-answer {
@@ -222,7 +222,7 @@ body.research .next-steps .sectionbody ol li:last-of-type {
 }
 
 body.research .next-steps .sectionbody ol li p > strong {
-  color: var(--color-black);
+  color: var(--palette-neutral-80);
 }
 
 body.research .next-steps .sectionbody ol li p {
@@ -303,6 +303,9 @@ body.research .paragraph.caption {
   font-feature-settings: 'liga' off, 'clig' off;
   font-family: var(--font-font-family-h1);
   font-size: var(--typography-title-1-font-size);
+  font-family: var(--font-family-h1);
+  font-size: 32px;
+>>>>>>> origin/master
   font-style: normal;
   font-weight: 500;
   line-height: 32px; /* 100% */
@@ -672,6 +675,8 @@ body.research .lists .sect2 h3 {
   order: 2;
   margin: 0;
   font-weight: var(--body-font-weight-bold);
+  font-weight: var(--weight-semibold);
+>>>>>>> origin/master
   width: -webkit-fill-available;
 }
 

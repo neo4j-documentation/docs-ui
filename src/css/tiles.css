@@ -86,7 +86,7 @@ body.tiles .sect2 {
 
 body.tiles .sect2 h3 {
   font-size: 1rem;
-  color: var(--color-blue-800);
+  color: var(--palette-baltic-55);
   margin-bottom: 0;
 }
 
@@ -111,7 +111,7 @@ body.tiles .sect2 ul li {
 
 body.tiles .sect2 ul li a {
   display: inline-block;
-  color: var(--color-blue-600);
+  color: var(--palette-baltic-45);
   border: 1px solid rgba(var(--palette-neutral-20));
   padding: 0.1rem 0.7rem;
   border-radius: 0.2rem;

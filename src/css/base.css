@@ -61,7 +61,7 @@ b,
 dt,
 strong,
 th {
-  font-weight: var(--body-font-weight-bold);
+  font-weight: var(--body-font-weight-semibold);
 }
 
 em em { /* stylelint-disable-line */

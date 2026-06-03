@@ -30,7 +30,6 @@ import { createElement } from './modules/dom'
 
   const themeMenuContainer = document.querySelector('.navbar-tabs .navbar-end')
   let themeMenu = document.getElementById('theme-icon')
-  if (themeMenu) console.log('there is already a theme menu')
 
   // remove old dropdown-style menus (old published pages without toggle structure)
   if (themeMenu && (!themeMenu.querySelector('.theme-icon') || themeMenu.querySelector('.navbar-dropdown'))) {

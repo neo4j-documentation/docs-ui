@@ -103,6 +103,9 @@ body.docs .nav-menu .nav-index {
 
 body.docs .nav-menu .nav-index a {
   font-weight: var(--body-font-weight-bold);
+body.docs-ndl .nav-menu .nav-index a {
+  font-weight: var(--body-font-weight-semibold);
+>>>>>>> origin/master
 }
 
 /* body.docs .nav-item[data-depth="0"] {
@@ -113,7 +116,7 @@ body.docs .nav-item .nav-section-header {
   margin-top: 0;
   margin-bottom: 0;
   padding-top: 1.5rem !important;
-  border-top: 1px solid var(--colors-netural-25);
+  border-top: 1px solid var(--colors-neutral-25);
 }
 
 body.docs .nav-menu .nav-list:first-child .nav-item:first-child .nav-section-header {
@@ -411,7 +414,7 @@ body.docs .paragraph.caption {
   margin: 0;
   color: var(--neutral-color);
   font-feature-settings: 'liga' off, 'clig' off;
-  font-family: var(--font-font-family-h1);
+  font-family: var(--font-family-h1);
   font-size: 32px;
   font-style: normal;
   font-weight: 500;
@@ -769,6 +772,8 @@ body.docs .lists .sect2 h3 {
   order: 2;
   margin: 0;
   font-weight: var(--body-font-weight-bold);
+  font-weight: var(--weight-semibold);
+>>>>>>> origin/master
   width: -webkit-fill-available;
 }
 
