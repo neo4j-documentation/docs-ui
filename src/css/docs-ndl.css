@@ -103,9 +103,10 @@ body.docs .nav-menu .nav-index {
 
 body.docs .nav-menu .nav-index a {
   font-weight: var(--body-font-weight-bold);
+}
+
 body.docs-ndl .nav-menu .nav-index a {
   font-weight: var(--body-font-weight-semibold);
->>>>>>> origin/master
 }
 
 /* body.docs .nav-item[data-depth="0"] {
@@ -773,7 +774,6 @@ body.docs .lists .sect2 h3 {
   margin: 0;
   font-weight: var(--body-font-weight-bold);
   font-weight: var(--weight-semibold);
->>>>>>> origin/master
   width: -webkit-fill-available;
 }
 
