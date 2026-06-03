@@ -1,16 +1,7 @@
-{{#unless (or @root.page.attributes.nav-hide-site-title (eq @root.page.attributes.theme 'cheat-sheet'))}}
-<div class="component">
-  <div class="nav-product">
-    <span class="nav-product-name">{{#with @root.page.componentVersion}}{{{ ./title }}}{{/with}}</span>
-  </div>
-</div>
-{{/unless}}
-      
-{{!-- {{#unless (eq page.attributes.theme 'cheat-sheet') }} --}}
 
 {{#if page.versions.[1]}}
 <div class="selectors">
-<div class="nav-panel-versions{{#unless page.navigation}} is-active{{/unless}}" data-panel="explore">
+<div class="nav-panel-versions{{#unless page.navigation}} is-active{{/unless}}" data-panel="docsets">
 
   <div class="dropdown">
     <span class="dropdown-label">{{#with (or page.attributes.cheatsheet-product 'Product')}}{{this}}{{/with}} Version</span>
@@ -39,7 +30,7 @@
 
 {{#if (eq page.attributes.theme 'cheat-sheet') }}
 <div class="selectors">
-<div class="nav-panel-types{{#unless page.navigation}} is-active{{/unless}}" data-panel="explore" data-selector-type="products">
+<div class="nav-panel-types{{#unless page.navigation}} is-active{{/unless}}" data-panel="docsets" data-selector-type="products">
   <div class="dropdown">
     <select aria-label="Product" id="cheat-sheet-selector-products" class="cs-selector dropdown-styles" data-label-type="products">
       {{!-- <option value="all" data-label="all" data-class="all" data-label-type="products">All</option> --}}
@@ -60,7 +51,7 @@
 </div>
 
 {{#if page.attributes.cheatsheet-categories}}
-<div class="nav-panel-types{{#unless page.navigation}} is-active{{/unless}}" data-panel="explore"  data-selector-type="categories">
+<div class="nav-panel-types{{#unless page.navigation}} is-active{{/unless}}" data-panel="docsets"  data-selector-type="categories">
   {{!-- categories - eg read, write, structure, general --}}
   <div class="dropdown">
     <select aria-label="Cypher category" id="cheat-sheet-selector-categories" class="cs-selector dropdown-styles" data-label-type="categories">
@@ -84,7 +75,7 @@
 {{/if}}
 
 {{!-- {{#if page.attributes.cheatsheet-labels}}
-<div class="nav-panel-types{{#unless page.navigation}} is-active{{/unless}}" data-panel="explore" data-selector-type="labels">
+<div class="nav-panel-types{{#unless page.navigation}} is-active{{/unless}}" data-panel="docsets" data-selector-type="labels">
   <div class="dropdown">
     <select id="cheat-sheet-selector-labels" class="cs-selector dropdown-styles" data-label-type="labels">
       <option value="all" data-label="all" data-class="all" data-label-type="labels">All</option>

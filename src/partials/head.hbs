@@ -1,5 +1,5 @@
 {{> head-prelude}}
-{{> head-gtm}}
+{{#if (is-ci)}}{{> head-gtm}}{{/if}}
 {{> head-title}}
 {{> head-info}}
 {{> head-styles}}

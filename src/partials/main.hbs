@@ -1,10 +1,8 @@
-<main class="article">
-{{#unless page.attributes.no-toolbar}}{{> toolbar}}{{/unless}}
-  
+<main class="article"{{#if page.attributes.tabs}} data-tabs="{{page.attributes.tabs}}"{{/if}}>
+  {{> toolbar}}
   <div class="content">
     {{> article}}
     {{!-- {{> theme}} --}}
     {{> toc}}
   </div>
-  
 </main>

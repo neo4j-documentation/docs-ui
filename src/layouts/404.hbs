@@ -1,11 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-{{> head defaultPageTitle='Page Not Found'}}
+{{> head defaultPageTitle='Page not part of this preview build'}}
   </head>
-  <body class="status-404">
+  <body class="light-mode dark-mode article docs status-404"
+    data-site-path="{{site-path site.url}}">
 {{> header}}
-{{> body}}
+<div class="body">
+  <a class="show-on-focus skip-link" href="#skip-to-content" title="Skip to content">Skip to content</a>
+  {{> nav}}
+  <main class="article">
+    {{> toolbar}}
+    <div class="content">
+      <article class="doc">
+        <h1>Page not part of this preview build</h1>
+        <p>The page <code id="preview-req-path"></code> isn't part of this preview build. Preview builds typically include only one or a few docsets; pages from other docsets appear in the nav (which is aggregated across the site) but aren't generated in this preview.</p>
+        <p id="preview-docs-link-wrapper"></p>
+        <p><a href="#" onclick="history.back(); return false;">Go back</a></p>
+      </article>
+    </div>
+  </main>
+</div>
 {{> footer}}
+    <script>
+    (function () {
+      var meta = document.querySelector('meta[name="docs-url"]');
+      var docsUrl = meta ? meta.getAttribute('content') : null;
+      var here = window.location.pathname;
+      var elPath = document.getElementById('preview-req-path');
+      if (elPath) elPath.textContent = here;
+      if (docsUrl) {
+        var docsPath;
+        try { docsPath = new URL(docsUrl).pathname.replace(/\/+$/, ''); } catch (e) { docsPath = ''; }
+        var rel = (docsPath && here.indexOf(docsPath + '/') === 0) ? here.slice(docsPath.length) : here;
+        var a = document.createElement('a');
+        a.href = docsUrl.replace(/\/+$/, '') + rel;
+        a.textContent = 'View on the published docs';
+        var wrap = document.getElementById('preview-docs-link-wrapper');
+        if (wrap) wrap.appendChild(a);
+      }
+    })();
+    </script>
   </body>
 </html>

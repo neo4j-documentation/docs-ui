@@ -1,5 +1,5 @@
 = Tell us what we could do better
-:page-layout: docs-ndl
+:page-layout: default
 :page-theme: research
 :!toc:
 :page-toclevels: -1

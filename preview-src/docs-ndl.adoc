@@ -1,5 +1,5 @@
 = Neo4j documentation
-:page-layout: docs-ndl
+:page-layout: default
 :page-role: hub
 :page-theme: docs
 :page-hide-nav-title: true

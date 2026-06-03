@@ -616,7 +616,7 @@ body.cheat-sheet span.label.hidden,
 
 @media print {
   body.cheat-sheet aside.toc.embedded,
-  body.cheat-sheet .navbar-menu,
+  body.cheat-sheet .navbar-tabs,
   body.cheat-sheet .navbar-search,
   body.cheat-sheet .navbar-burger,
   body.cheat-sheet .feedback,

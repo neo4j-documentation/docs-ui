@@ -1,8 +1,0 @@
-= Page with subheadings but no ad
-
-
-== Section 1
-This page has subheadings, so page contents is displayed.
-
-== Section 2
-There is no ad for this page.

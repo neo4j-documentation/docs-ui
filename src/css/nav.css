@@ -135,18 +135,18 @@ html.is-clipped--nav {
 }
 
 .nav-panel-menu,
-.nav-panel-explore .components {
+.nav-panel-docsets .components {
   scrollbar-width: thin;
   scrollbar-color: var(--scrollbar-thumb-color) transparent;
 }
 
 .nav-panel-menu::-webkit-scrollbar,
-.nav-panel-explore .components::-webkit-scrollbar {
+.nav-panel-docsets .components::-webkit-scrollbar {
   width: 0.25rem;
 }
 
 .nav-panel-menu::-webkit-scrollbar-thumb,
-.nav-panel-explore .components::-webkit-scrollbar-thumb {
+.nav-panel-docsets .components::-webkit-scrollbar-thumb {
   background-color: var(--scrollbar-thumb-color);
 }
 
@@ -197,6 +197,33 @@ html.is-clipped--nav {
   margin-top: 0.5rem;
 }
 
+.nav-list.docset-list {
+  border-bottom: 1px solid var(--nav-panel-divider-color);
+  /* padding-bottom: 0.5rem; */
+  /* padding-top: 0.5rem; */
+}
+
+.nav-list.docset-list.hidden {
+  display: none;
+}
+
+.nav-list.docset-list:not(:has(a.nav-link)) {
+  display: none;
+}
+
+.nav-item.docset-title:not(:has(a.nav-link)) {
+  display: none;
+}
+
+.nav-item:has(> .nav-text.nav-section-header):not(:has(a.nav-link)) {
+  display: none;
+}
+
+.nav-list.docset-list > .docset-title > span {
+  font-weight: var(--body-font-weight-bold);
+  font-size: var(--typography-body-medium-font-size);
+}
+
 /* .nav-menu > .nav-list {
   margin-bottom: 0.5rem;
 } */
@@ -213,13 +240,13 @@ html.is-clipped--nav {
 
 /* adds some breathing room below a nested list */
 .nav-item-toggle ~ .nav-list {
-  padding-bottom: 0.125rem;
+  /* padding-bottom: 0.125rem; */
 }
 
 /* matches list without a title */
 .nav-item[data-depth="0"] > .nav-list:first-child {
-  display: block;
   margin: 0;
+  padding: 1rem 0;
 }
 
 .nav-item:not(.is-active) > .nav-list {
@@ -261,7 +288,7 @@ html.is-clipped--nav {
   opacity: 1;
 }
 
-.nav-panel-explore {
+.nav-panel-docsets {
   background: var(--nav-background);
   display: flex;
   flex-direction: column;
@@ -272,11 +299,15 @@ html.is-clipped--nav {
   max-height: calc(50% + var(--drawer-height));
 }
 
-.nav-panel-explore .context {
+.nav-panel-docsets.is-active {
+  z-index: 1;
+}
+
+.nav-panel-docsets .context {
   font-size: calc(15 / var(--rem-base) * 1rem);
   flex-shrink: 0;
-  color: var(--nav-muted-color);
-  box-shadow: 0 -1px 0 var(--nav-panel-divider-color);
+  color: var(--nav-heading-font-color);
+  border-bottom: 1px solid var(--palette-neutral-25);
   padding: 0 0.25rem 0 0.5rem;
   display: flex;
   align-items: center;
@@ -286,7 +317,7 @@ html.is-clipped--nav {
   height: var(--drawer-height);
 }
 
-.nav-panel-explore .context .version {
+.nav-panel-docsets .context .version {
   background-image: url(../img/chevron.svg);
   background-repeat: no-repeat;
   background-position: right 0.5rem top 50%;
@@ -294,39 +325,42 @@ html.is-clipped--nav {
   padding: 0 1.5rem 0 0;
 }
 
-.nav-panel-explore .components {
+.nav-panel-docsets .components {
   line-height: var(--doc-line-height);
   flex-grow: 1;
-  box-shadow: inset 0 1px 5px var(--nav-panel-divider-color);
-  background: var(--nav-secondary-background);
   padding: 0.5rem 0.75rem 0 0.75rem;
   margin: 0;
   overflow-y: scroll;
   max-height: 100%;
   display: block;
+  color: var(--toc-item-font-color);
 }
 
-.nav-panel-explore:not(.is-active) .components {
+.nav-panel-docsets .component .title a {
+  color: var(--toc-item-font-color);
+}
+
+.nav-panel-docsets:not(.is-active) .components {
   display: none;
 }
 
-.nav-panel-explore .component {
+.nav-panel-docsets .component {
   display: block;
 }
 
-.nav-panel-explore .component + .component {
+.nav-panel-docsets .component + .component {
   margin-top: 0.5rem;
 }
 
-.nav-panel-explore .component:last-child {
+.nav-panel-docsets .component:last-child {
   margin-bottom: 0.75rem;
 }
 
-.nav-panel-explore .component .title {
-  font-weight: var(--body-font-weight-semibold);
+.nav-panel-docsets .component .title {
+  font-weight: var(--body-font-weight-bold);
 }
 
-.nav-panel-explore .versions {
+.nav-panel-docsets .versions {
   display: flex;
   flex-wrap: wrap;
   list-style: none;
@@ -335,25 +369,20 @@ html.is-clipped--nav {
   line-height: 1;
 }
 
-.nav-panel-explore .component .version {
+.nav-panel-docsets .component .version {
   display: block;
   margin: 0.375rem 0.375rem 0 0;
 }
 
-.nav-panel-explore .component .version a {
-  border: 1px solid var(--nav-border-color);
-  border-radius: 0.25rem;
-  color: inherit;
-  opacity: 0.75;
+.nav-panel-docsets .component .version a {
+  color: var(--toc-item-font-color);
   white-space: nowrap;
   padding: 0.125em 0.25em;
   display: inherit;
 }
 
-.nav-panel-explore .component .is-current a {
-  border-color: currentColor;
-  opacity: 0.9;
-  font-weight: var(--body-font-weight-semibold);
+.nav-panel-docsets .component .is-current a {
+  font-weight: var(--body-font-weight-bold);
 }
 
 .nav .label {
@@ -411,6 +440,11 @@ html.is-clipped--nav {
   padding-bottom: 0.5rem;
 }
 
+.nav-menu .docset-title > span {
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+}
+
 .nav-item > a,
 .nav-item > span {
   position: relative;
@@ -429,22 +463,22 @@ html.is-clipped--nav {
 
 .nav-item[data-depth="2"] > a,
 .nav-item[data-depth="2"] > span {
-  padding-left: 2.5rem;
+  padding-left: 1.5rem;
 }
 
 .nav-item[data-depth="3"] > a,
 .nav-item[data-depth="3"] > span {
-  padding-left: 3.5rem;
+  padding-left: 2.5rem;
 }
 
 .nav-item[data-depth="4"] > a,
 .nav-item[data-depth="4"] > span {
-  padding-left: 4.5rem;
+  padding-left: 3.5rem;
 }
 
 .nav-item[data-depth="5"] > a,
 .nav-item[data-depth="5"] > span {
-  padding-left: 5.5rem;
+  padding-left: 4.5rem;
 }
 
 .nav-item[data-depth="1"] > span strong {
@@ -456,10 +490,12 @@ html.is-clipped--nav {
   content: "";
   position: absolute;
   right: 0.5rem;
-  top: 0.5rem;
-  background: url(../img/chevron.svg) no-repeat;
-  background-position: center;
-  background-size: auto 0.75em;
+  top: 0.75rem;
+  background-color: currentColor;
+  -webkit-mask: url(../img/chevron.svg) no-repeat center;
+  mask: url(../img/chevron.svg) no-repeat center;
+  -webkit-mask-size: auto 0.75em;
+  mask-size: auto 0.75em;
   width: 1.5rem;
   height: 50%;
 }
@@ -490,6 +526,7 @@ html.is-clipped--nav {
   margin-bottom: 0;
   padding-top: 1.5rem !important;
   border-top: 1px solid var(--colors-neutral-25);
+  display: none;
 }
 
 .nav-item .nav-section-header:hover {

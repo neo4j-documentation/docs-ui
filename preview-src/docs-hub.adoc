@@ -1,7 +1,6 @@
 = Neo4j Tools
 :page-theme: docs
 :page-role: hub
-:page-layout: docs-ndl
 :page-show-home-link: true
 :page-hide-nav-title: true
 // :page-disablefeedback: true

@@ -53,7 +53,7 @@ document.addEventListener('DOMContentLoaded', function () {
   // Remove <a> anchor tags from h3 elements on selectable cards in docs-ndl pages
   // the card is already wrapped in an anchor tag so we don't need an anchor inside the h3
   // and it introduces an unwanted ::after pseudo-element
-  document.querySelectorAll('body.docs-ndl h3 a').forEach(function (a) {
+  document.querySelectorAll('body.docs .cards h3 a').forEach(function (a) {
     a.remove()
   })
 
