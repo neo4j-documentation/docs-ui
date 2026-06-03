@@ -19,7 +19,7 @@ body.docshome .nav-item .nav-section-header {
   margin-top: 0;
   margin-bottom: 0;
   padding-top: 1.5rem !important;
-  border-top: 1px solid var(--colors-netural-25);
+  border-top: 1px solid var(--colors-neutral-25);
 }
 
 body.docshome .nav-menu .nav-list:first-child .nav-item:first-child .nav-section-header {
@@ -139,7 +139,7 @@ body.docshome:not(.create-applications) .sect2 .icon img {
 body.docshome .sect2 h3 {
   /* z-index: 20; */
   font-size: 1.1rem;
-  color: var(--color-blue-800);
+  color: var(--palette-baltic-55);
   order: 2;
   line-height: 1.5;
   margin: 0.5rem 2rem 0 6rem;

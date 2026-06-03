@@ -47,7 +47,7 @@
 }
 
 .training.landing .course-label {
-  background: linear-gradient(45deg, var(--color-blue-400), var(--color-purple-400));
+  background: linear-gradient(45deg, var(--palette-baltic-25), var(--palette-lavender-20));
   font-size: 12px;
   padding: 2px 8px;
   border-radius: 5px;
@@ -72,12 +72,12 @@
 }
 
 .training.landing a.button.course-action {
-  background-color: var(--color-pink-600);
+  background-color: var(--palette-hibiscus-35);
 }
 
 .training.landing a.button.course-action:hover {
   color: var(--palette-neutral-10);
-  background-color: var(--color-pink-500);
+  background-color: var(--palette-hibiscus-25);
 }
 
 .training.landing a.button.course-action:visited {
@@ -214,7 +214,7 @@
 }
 
 .training-courses .course-card .course-label {
-  background: linear-gradient(45deg, var(--color-blue-400), var(--color-purple-400));
+  background: linear-gradient(45deg, var(--palette-baltic-25), var(--palette-lavender-20));
   font-size: 12px;
   padding: 2px 8px;
   border-radius: 5px;
@@ -256,12 +256,12 @@
 }
 
 .course-actions a.button {
-  background-color: var(--color-pink-600);
+  background-color: var(--palette-hibiscus-35);
 }
 
 .course-actions a.button:hover {
   color: var(--palette-neutral-10);
-  background-color: var(--color-pink-500);
+  background-color: var(--palette-hibiscus-25);
 }
 
 .course-actions a.button:visited {
@@ -282,7 +282,7 @@
 }
 
 .training-courses ul > li a:hover {
-  color: var(--color-pink-600);
+  color: var(--palette-hibiscus-35);
 }
 
 /* Enrollment */
@@ -520,7 +520,7 @@
 
 .training-certification .mktoForm .mktoAsterix,
 .training-enrollment .mktoForm .mktoAsterix {
-  color: var(--color-red-800);
+  color: var(--palette-hibiscus-45);
   display: none;
 }
 
@@ -535,14 +535,14 @@
   text-shadow: none;
   outline: 0;
   user-select: none;
-  background-color: var(--color-red-200);
-  color: var(--color-red-900);
+  background-color: var(--palette-hibiscus-15);
+  color: var(--palette-hibiscus-50);
   padding: 0.65rem;
 }
 
 .training-certification .mktoForm .mktoError .mktoErrorArrow,
 .training-enrollment .mktoForm .mktoError .mktoErrorArrow {
-  background-color: var(--color-red-200);
+  background-color: var(--palette-hibiscus-15);
   border: none;
   outline: 0;
   user-select: none;
@@ -552,7 +552,7 @@
 .training-enrollment .mktoForm button.mktoButton {
   color: var(--palette-neutral-10);
   cursor: pointer;
-  background-color: var(--color-pink-600);
+  background-color: var(--palette-hibiscus-35);
   display: inline-block;
   border-radius: 0.25rem;
   margin: auto;
@@ -563,7 +563,7 @@
 
 .training-certification button.mktoButton:hover,
 .training-enrollment button.mktoButton:hover {
-  background-color: var(--color-pink-500);
+  background-color: var(--palette-hibiscus-25);
 }
 
 .training-certification .mktoForm div,
@@ -646,10 +646,10 @@
 
 .training-certification .course-actions .error,
 .training-enrollment .course-actions .error {
-  background-color: var(--color-red-200);
-  color: var(--color-red-900);
+  background-color: var(--palette-hibiscus-15);
+  color: var(--palette-hibiscus-50);
   padding: 1rem;
-  border-left: 4px solid var(--color-red-600);
+  border-left: 4px solid var(--palette-hibiscus-35);
   border-radius: 0.25rem;
   display: flex;
   width: fit-content;
@@ -657,10 +657,10 @@
 }
 
 .training-certification .course-actions .info {
-  background-color: var(--color-blue-200);
-  color: var(--color-blue-900);
+  background-color: var(--palette-baltic-15);
+  color: var(--palette-baltic-60);
   padding: 1rem;
-  border-left: 4px solid var(--color-blue-600);
+  border-left: 4px solid var(--palette-baltic-45);
   border-radius: 0.25rem;
   display: flex;
   width: fit-content;
@@ -725,7 +725,7 @@ body.training .nav-item .nav-item.is-completed::before {
   margin-left: -1.3rem;
   content: "✓";
   opacity: 1;
-  background-color: var(--color-green-500);
+  background-color: var(--palette-forest-25);
   z-index: 1000;
   color: var(--palette-neutral-10);
   text-align: center;
@@ -756,7 +756,7 @@ body.training .nav-item .nav-item.is-pending::before {
 
 body.training .nav-item .nav-item.is-completed.is-current-page::before,
 body.training .nav-item .nav-item.is-completed:hover::before {
-  background-color: var(--color-green-700);
+  background-color: var(--palette-forest-45);
 }
 
 body.training .nav-item .nav-item.is-current-page::before,
@@ -776,15 +776,15 @@ body.training .button {
 }
 
 #quiz-result.is-success {
-  background-color: var(--color-green-200);
-  color: var(--color-green-900);
-  border-left: 4px solid var(--color-green-600);
+  background-color: var(--palette-forest-10);
+  color: var(--palette-forest-55);
+  border-left: 4px solid var(--palette-forest-30);
 }
 
 #quiz-result.is-error {
-  background-color: var(--color-red-200);
-  color: var(--color-red-900);
-  border-left: 4px solid var(--color-red-600);
+  background-color: var(--palette-hibiscus-15);
+  color: var(--palette-hibiscus-50);
+  border-left: 4px solid var(--palette-hibiscus-35);
 }
 
 #quiz-result > p.paragraph {
@@ -803,29 +803,29 @@ body.training .button {
 
 .training .download-certificate .error {
   position: absolute;
-  background-color: var(--color-blue-200);
-  color: var(--color-blue-900);
-  border-left: 4px solid var(--color-blue-600);
+  background-color: var(--palette-baltic-15);
+  color: var(--palette-baltic-60);
+  border-left: 4px solid var(--palette-baltic-45);
   padding: 1rem;
   border-radius: 0.25rem;
 }
 
 .training .download-certificate .success {
   position: absolute;
-  background-color: var(--color-green-200);
-  color: var(--color-green-900);
-  border-left: 4px solid var(--color-green-600);
+  background-color: var(--palette-forest-10);
+  color: var(--palette-forest-55);
+  border-left: 4px solid var(--palette-forest-30);
   padding: 1rem;
   border-radius: 0.25rem;
 }
 
 .training .download-certificate .success a {
   text-decoration: underline;
-  color: var(--color-green-600);
+  color: var(--palette-forest-30);
 }
 
 .training .download-certificate .success a:hover {
-  color: var(--color-green-500);
+  color: var(--palette-forest-25);
 }
 
 /* ready */
@@ -878,8 +878,8 @@ body.training .button {
   right: 2rem;
   border-top-left-radius: 0.25rem;
   border-top-right-radius: 0.25rem;
-  background: var(--color-blue-100);
-  color: var(--color-blue-800);
+  background: var(--palette-baltic-10);
+  color: var(--palette-baltic-55);
   padding: 0.5rem 1rem;
   width: 320px;
   font-size: 0.8rem;

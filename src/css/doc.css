@@ -70,6 +70,7 @@ body {
 
 .doc h6 {
   font-size: var(--doc-font-size-h5);
+  font-weight: 600;
 }
 
 .doc h1 code,
@@ -254,7 +255,7 @@ body {
 
 .doc .image.rounded {
   padding: 12px;
-  box-shadow: 0 0 5px 1px var(--color-blue-200) !important;
+  box-shadow: 0 0 5px 1px var(--palette-baltic-15) !important;
   background: var(--palette-neutral-10);
   border-radius: 50%;
   line-height: 1;
@@ -502,7 +503,7 @@ body {
 }
 
 .doc .admonitionblock.warning a.btn {
-  background-color: var(--color-red-600);
+  background-color: var(--palette-hibiscus-35);
 }
 
 .doc .admonitionblock.warning a {
@@ -519,7 +520,7 @@ body {
 }
 
 /* .doc .admonitionblock.caution a:hover {
-  color: var(--color-orange-400);
+  color: var(--palette-marigold-25);
 } */
 
 .doc .admonitionblock.caution a.btn {
@@ -536,7 +537,7 @@ body {
 }
 
 /* .doc .admonitionblock.tip a:hover {
-  color: var(--color-blue-500);
+  color: var(--palette-baltic-30);
 } */
 
 .doc .admonitionblock.tip a.btn {
@@ -570,7 +571,7 @@ body {
 }
 
 /* .doc .admonitionblock.important a:hover {
-  color: var(--color-purple-500);
+  color: var(--palette-lavender-30);
 } */
 
 .doc .admonitionblock.important a.btn {
@@ -1033,7 +1034,7 @@ body {
 .doc .menuseq i.caret::before {
   content: "\203a";
   font-size: 1.1em;
-  font-weight: var(--body-font-weight-bold);
+  font-weight: var(--body-font-weight-semibold);
   line-height: calc(1 / 1.1);
 }
 
@@ -1111,60 +1112,60 @@ body {
   display: inline-block;
   padding: 0.2rem 0.8rem;
   border-radius: 0.25rem;
-  background: var(--color-blue-200);
-  color: var(--color-blue-700);
+  background: var(--palette-baltic-15);
+  color: var(--palette-baltic-50);
   font-weight: 600;
   font-size: 0.7rem;
 }
 
 .doc .paragraph.expertise.Intermediate p {
-  background: var(--color-orange-200);
-  color: var(--color-orange-700);
+  background: var(--palette-marigold-15);
+  color: var(--palette-marigold-50);
 }
 
 .doc .paragraph.expertise.Advanced p {
-  background: var(--color-green-200);
-  color: var(--color-green-700);
+  background: var(--palette-forest-10);
+  color: var(--palette-forest-45);
 }
 
 .doc .paragraph.release p {
   display: inline-block;
   padding: 0.2rem 0.8rem;
   border-radius: 0.25rem;
-  background: var(--color-blue-200);
-  color: var(--color-blue-700);
+  background: var(--palette-baltic-15);
+  color: var(--palette-baltic-50);
   font-weight: 600;
   font-size: 0.7rem;
 }
 
 .doc .paragraph.release.core p {
-  background: var(--color-orange-200);
-  color: var(--color-orange-700);
+  background: var(--palette-marigold-15);
+  color: var(--palette-marigold-50);
 }
 
 .doc .paragraph.release.full p {
-  background: var(--color-green-200);
-  color: var(--color-green-700);
+  background: var(--palette-forest-10);
+  color: var(--palette-forest-45);
 }
 
 .doc .paragraph.type p {
   display: inline-block;
   padding: 0.2rem 0.8rem;
   border-radius: 0.25rem;
-  background: var(--color-blue-200);
-  color: var(--color-blue-700);
+  background: var(--palette-baltic-15);
+  color: var(--palette-baltic-50);
   font-weight: 600;
   font-size: 0.7rem;
 }
 
 .doc .paragraph.type.function p {
-  background: var(--color-red-200);
-  color: var(--color-red-700);
+  background: var(--palette-hibiscus-15);
+  color: var(--palette-hibiscus-40);
 }
 
 .doc .paragraph.type.procedure p {
-  background: var(--color-blue-200);
-  color: var(--color-blue-700);
+  background: var(--palette-baltic-15);
+  color: var(--palette-baltic-50);
 }
 
 .doc .responsive-embed,
@@ -1392,7 +1393,7 @@ body {
 } */
 
 .page.unresolved {
-  background: var(--color-red-800);
+  background: var(--palette-hibiscus-45);
   color: var(--palette-neutral-10) !important;
 }
 

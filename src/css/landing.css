@@ -37,7 +37,7 @@ section.hero h2 {
 section.hero h1::after,
 section.hero h2::after {
   display: block;
-  background-color: var(--color-green-600);
+  background-color: var(--palette-forest-30);
   height: 3px;
   width: 80px;
   margin-top: 1rem;
@@ -227,7 +227,7 @@ body.landing .ulist.buttons li a {
 
   .landing .flex-container .column h3::after {
     display: block;
-    background-color: var(--color-blue-400);
+    background-color: var(--palette-baltic-25);
     height: 2px;
     width: 40px;
     margin-top: 12px;

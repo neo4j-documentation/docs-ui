@@ -37,7 +37,7 @@ nav.pagination .next::before {
 }
 
 nav.pagination a {
-  font-weight: var(--body-font-weight-bold);
+  font-weight: var(--body-font-weight-semibold);
   line-height: 1.3;
   position: relative;
 }
