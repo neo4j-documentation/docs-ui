@@ -70,7 +70,7 @@ function rewriteLabels () {
 
 function cleanToc () {
   document.querySelectorAll('.toc-menu a').forEach((li) => {
-    if (document.querySelector(li.hash) === null) li.remove()
+    if (!li.hash || document.querySelector(li.hash) === null) li.remove()
   })
 }
 
