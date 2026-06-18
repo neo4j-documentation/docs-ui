@@ -214,6 +214,8 @@ body.cheat-sheet .article h3:not(.discrete) {
   display: flex;
   flex: 0 0 60%;
   flex-grow: 1;
+  justify-content: space-between;
+  gap: 0.5rem;
   padding-right: 0;
 }
 
