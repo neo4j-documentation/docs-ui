@@ -2,9 +2,10 @@ import { createElement } from './modules/dom'
 import rolesData from './data/rolesData.json'
 
 function checkWrapped () {
-  const labelContainers = document.querySelectorAll('body.docs .header-label-container')
+  const labelContainers = document.querySelectorAll('body.docs .header-label-container, body.cheat-sheet .header-label-container')
   for (const container of labelContainers) {
     var child = container.querySelector('.labels')
+    if (!child) continue
     var lineHeight = parseInt(window.getComputedStyle(container).lineHeight, 10)
     if (child.offsetTop - container.offsetTop >= lineHeight) {
       child.classList.add('wrapped')
