@@ -39,7 +39,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 const allLabels = {
   'aura-db-business-critical': 'AuraDB Business Critical',
-  'aura-db-dedicated': 'AuraDB Virtual Dedicated Cloud',
+  'aura-db-enterprise': 'AuraDB Virtual Dedicated Cloud',
   'aura-db-free': 'AuraDB Free',
   'aura-db-professional': 'AuraDB Professional',
   'aura-ds-enterprise': 'AuraDS Enterprise',
@@ -48,11 +48,18 @@ const allLabels = {
   'community-edition': 'Neo4j Community Edition',
 }
 
+// some labels are emitted under more than one role class for the same product;
+// normalise those aliases to the canonical key used in allLabels
+const labelAliases = {
+  'aura-db-dedicated': 'aura-db-enterprise',
+}
+
 function rewriteLabels () {
   document.querySelectorAll('.labels').forEach((labelsDiv) => {
     const present = [...labelsDiv.querySelectorAll('.label')]
       .map((span) => [...span.classList].find((c) => c.startsWith('label--'))?.replace('label--', ''))
       .filter(Boolean)
+      .map((key) => labelAliases[key] || key)
 
     const missing = Object.keys(allLabels).filter((key) => !present.includes(key))
 
