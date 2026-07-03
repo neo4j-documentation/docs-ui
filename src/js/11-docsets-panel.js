@@ -164,33 +164,47 @@
     li.className = 'component'
     if (name === currentComponent) li.classList.add('is-current')
 
-    var titleDiv = document.createElement('div')
-    titleDiv.className = 'title'
-    titleDiv.appendChild(document.createTextNode(entry.title))
-    li.appendChild(titleDiv)
-
     var versionKeys = Object.keys(entry.versions).sort(function (a, b) {
       if (entry.versions[a].latest && !entry.versions[b].latest) return -1
       if (!entry.versions[a].latest && entry.versions[b].latest) return 1
       return b.localeCompare(a)
     })
     var hasShowableVersion = versionKeys.some(function (v) { return v })
-    if (versionKeys.length > 1 || hasShowableVersion) {
-      var versionsUl = document.createElement('ul')
-      versionsUl.className = 'versions'
-      versionKeys.forEach(function (v) {
-        var versionLi = document.createElement('li')
-        versionLi.className = 'version'
-        if (entry.versions[v].latest) versionLi.classList.add('is-latest')
-        if (name === currentComponent && v === currentVersion) versionLi.classList.add('is-current')
-        var a = document.createElement('a')
-        a.href = resolveHref(name, v, entry.versions[v].url)
-        a.textContent = v || entry.title
-        versionLi.appendChild(a)
-        versionsUl.appendChild(versionLi)
-      })
-      li.appendChild(versionsUl)
+
+    var titleDiv = document.createElement('div')
+    titleDiv.className = 'title'
+    li.appendChild(titleDiv)
+
+    // Unversioned docset (single empty-string version, e.g. aura): there are
+    // no version chips to click, so make the title itself the link to the
+    // docset's first page.
+    if (!hasShowableVersion) {
+      var uv = versionKeys[0] || ''
+      var slot = entry.versions[uv]
+      if (name === currentComponent) titleDiv.classList.add('is-current')
+      var titleLink = document.createElement('a')
+      titleLink.href = resolveHref(name, uv, slot && slot.url)
+      titleLink.textContent = entry.title
+      titleDiv.appendChild(titleLink)
+      return li
     }
+
+    titleDiv.appendChild(document.createTextNode(entry.title))
+
+    var versionsUl = document.createElement('ul')
+    versionsUl.className = 'versions'
+    versionKeys.forEach(function (v) {
+      var versionLi = document.createElement('li')
+      versionLi.className = 'version'
+      if (entry.versions[v].latest) versionLi.classList.add('is-latest')
+      if (name === currentComponent && v === currentVersion) versionLi.classList.add('is-current')
+      var a = document.createElement('a')
+      a.href = resolveHref(name, v, entry.versions[v].url)
+      a.textContent = v || entry.title
+      versionLi.appendChild(a)
+      versionsUl.appendChild(versionLi)
+    })
+    li.appendChild(versionsUl)
     return li
   }
 })()
