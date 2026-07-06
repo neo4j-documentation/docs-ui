@@ -246,7 +246,7 @@ html.is-clipped--nav {
 /* matches list without a title */
 .nav-item[data-depth="0"] > .nav-list:first-child {
   margin: 0;
-  padding: 1rem 0;
+  padding: 0.5rem 0;
 }
 
 .nav-item:not(.is-active) > .nav-list {

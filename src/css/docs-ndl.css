@@ -17,10 +17,6 @@
 
 /* nav */
 
-body.docs.explainer .nav-panel-menu {
-  scrollbar-width: none;
-}
-
 body.docs .nav-menu .docs-home-link a::before {
   position: relative;
   display: inline-block;

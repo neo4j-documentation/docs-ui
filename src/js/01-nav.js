@@ -107,7 +107,30 @@
       activateCurrentPath(currentPageItem)
       scrollItemToMidpoint(menuPanel, currentPageItem.querySelector('.nav-link'))
     } else {
-      menuPanel.scrollTop = 0
+      // No current-page item — e.g. a tab overview page, whose own nav entry is
+      // hidden. Open the current component's docset block (marked is-active by
+      // component+version match) so all its section headers are visible. If that
+      // component has no block here (its only content was the overview, now
+      // suppressed), just open the outer wrapper so the remaining docset headers
+      // are still visible. Without this the wrapper stays collapsed and the nav
+      // disappears.
+      var activeDocset = menuPanel.querySelector('.docset-title.is-active')
+      if (activeDocset) {
+        activateCurrentPath(activeDocset)
+      } else {
+        // If the tab has exactly one top-level section (docset block), open it by
+        // default — helpful in local single-docset previews. (Overview-only blocks
+        // are already suppressed, so they don't count.) Otherwise just open the
+        // outer wrapper so all section headers show with nothing expanded.
+        var docsets = find(menuPanel, '.docset-title')
+        if (docsets.length === 1) {
+          activateCurrentPath(docsets[0])
+        } else {
+          var navWrapper = menuPanel.querySelector('.nav-menu > .nav-list > .nav-item')
+          if (navWrapper) navWrapper.classList.add('is-active')
+          else menuPanel.scrollTop = 0
+        }
+      }
     }
 
     find(menuPanel, '.nav-item-toggle:not(a)').forEach(function (btn) {

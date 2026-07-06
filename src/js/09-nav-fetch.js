@@ -139,8 +139,10 @@
     var headers = []
     var items = versionData.items || []
     var promoted = items.filter(function (item) { return item.navPromote })
+    // Exclude tab-overview items: they're never rendered, so a component whose
+    // only content is its overview must not produce an (empty) header block.
     var normal = items.filter(function (item) {
-      return !item.navPromote && (item.url || (item.items && item.items.length))
+      return !item.navPromote && !item.tabOverview && (item.url || (item.items && item.items.length))
     })
 
     promoted.forEach(function (item) {
@@ -350,7 +352,15 @@
     // nav — the tab itself already links to that URL. Mirrors nav-tree.hbs.
     var inner = (item.items || []).filter(function (ci) { return !ci.tabOverview })
     var titleClass = 'nav-item docset-title'
-    if (containsUrl(inner, pageContext.url)) titleClass += ' is-active'
+    // A docset block is active (expanded) when it belongs to the current page's
+    // component+version. That's what makes the right section visible — including on
+    // the overview page, whose own nav entry is hidden so a URL match alone would
+    // fail. URL-containment is kept only as a fallback for cross-component promoted
+    // blocks (a page that lives inside another component's promoted section).
+    var isActiveDocset =
+      (item.component === pageContext.component && item.componentVersion === pageContext.version) ||
+      containsUrl(item.items || [], pageContext.url)
+    if (isActiveDocset) titleClass += ' is-active'
 
     var titleSpan = el('span', { className: 'nav-text nav-item-toggle' })
     titleSpan.innerHTML = item.componentTitle || ''
