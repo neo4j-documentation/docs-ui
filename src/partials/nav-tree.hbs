@@ -4,17 +4,10 @@
 
     {{#if this.componentHeader}}
     <ul class="nav-list docset-list{{#if (eq this.component @root.page.component.name)}}{{#unless (eq this.componentVersion @root.page.version)}} hidden{{/unless}}{{/if}}" data-component="{{this.component}}" data-version="{{this.componentVersion}}">
-      {{#each this.items}}
-        {{#if this.tabOverview}}
-        <li class="nav-item tab-overview{{#if (eq this.url @root.page.url)}} is-current-page{{/if}}"{{#with this.pageTabs}} data-tabs="{{this}}"{{/with}} data-depth="2">
-          {{#if this.url}}
-          <a class="nav-link" href="
-            {{~#if (eq this.urlType 'internal')}}{{{fix-nav-path this.url @root.page}}}
-            {{~else}}{{{this.url}}}{{~/if}}">Overview</a>
-          {{/if}}
-        </li>
-        {{/if}}
-      {{/each}}
+      {{!-- Overview (page-tab-overview) pages are intentionally not rendered in the
+           left nav: the tab already links to that URL. The tabOverview items stay in
+           this.items but are skipped here and by the {{#unless this.tabOverview}} guard
+           below, so they never appear as a nav entry. --}}
       <li class="nav-item docset-title{{#if (or (contains-url this.items @root.page.url) @root.page.attributes.navOpenDocsets)}} is-active{{/if}}"{{#with this.pageTabs}} data-tabs="{{this}}"{{/with}} data-depth="{{or ../level 0}}">
         <span class="nav-text nav-item-toggle">
           {{{this.componentTitle}}}

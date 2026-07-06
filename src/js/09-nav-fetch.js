@@ -346,22 +346,8 @@
 
     var children = []
 
-    var overviews = (item.items || []).filter(function (ci) { return ci.tabOverview })
-    overviews.forEach(function (ov) {
-      var overviewClass = 'nav-item tab-overview'
-      if (ov.url === pageContext.url) overviewClass += ' is-current-page'
-      var overviewChildren = []
-      if (ov.url) {
-        var href = ov.urlType === 'internal' ? fixNavPath(ov.url) : ov.url
-        overviewChildren.push(el('a', { className: 'nav-link', href: href }, 'Overview'))
-      }
-      children.push(el('li', {
-        className: overviewClass,
-        'data-tabs': ov.pageTabs,
-        'data-depth': '2',
-      }, overviewChildren))
-    })
-
+    // Overview (page-tab-overview) pages are intentionally not rendered in the left
+    // nav — the tab itself already links to that URL. Mirrors nav-tree.hbs.
     var inner = (item.items || []).filter(function (ci) { return !ci.tabOverview })
     var titleClass = 'nav-item docset-title'
     if (containsUrl(inner, pageContext.url)) titleClass += ' is-active'
