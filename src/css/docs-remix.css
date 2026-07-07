@@ -89,6 +89,7 @@
 
 .docs .nav-menu {
   flex-grow: 0;
+  padding: 1rem 0;
 }
 
 .docs .nav-menu > .nav-list {
@@ -101,7 +102,7 @@
 
 .docs .breadcrumbs ul {
   margin: 0;
-  padding: 0.5rem 0;
+  padding: 1rem 0;
 }
 
 .docs .breadcrumbs ul a {
