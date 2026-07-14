@@ -1,5 +1,5 @@
 const { getCookie } = require('./modules/cookies')
-const URL = 'https://uglfznxroe.execute-api.us-east-1.amazonaws.com/dev/Feedback'
+const backendUrl = 'https://uglfznxroe.execute-api.us-east-1.amazonaws.com/dev/Feedback'
 
 /* global fetch */
 ;(function () {
@@ -61,7 +61,7 @@ const URL = 'https://uglfznxroe.execute-api.us-east-1.amazonaws.com/dev/Feedback
     }
 
     //console.log(body)
-    fetch(URL, {
+    fetch(backendUrl, {
       method: 'post',
       headers: {
         'Content-Type': 'application/x-www-form-urlencoded',
