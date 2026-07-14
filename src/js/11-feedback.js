@@ -36,7 +36,7 @@ const URL = 'https://uglfznxroe.execute-api.us-east-1.amazonaws.com/dev/Feedback
     const identity = getCookie('neo_identity')
     const gid = getCookie('_gid')
     const uetsid = getCookie('_uetsid')
-    const project = 'docs'
+    const project = URL.parse(window.location).pathname.split('/')[1] // docs or labs
 
     var body = 'project=' + encodeURIComponent(project)
     body += '&url=' + encodeURIComponent(window.location.href)
