@@ -95,7 +95,7 @@ body.search--active {
   flex: 1;
   padding: 1rem;
   overflow: auto;
-  font-size: 0.9rem;
+  font-size: var(--typography-body-medium-font-size);
 }
 
 .search .search-container .search-results.loading {
@@ -131,7 +131,7 @@ body.search--active {
 }
 
 .search .search-container .search-results p {
-  font-size: 0.75rem;
+  font-size: var(--typography-body-small-font-size);
   margin-top: 0;
 }
 
@@ -146,7 +146,7 @@ body.search--active {
 .search .search-container .search-filters h2 {
   color: rgba(var(--palette-neutral-60));
   font-weight: 400;
-  font-size: 0.8rem;
+  font-size: var(--typography-body-medium-font-size);
   margin: 0;
 }
 
@@ -181,7 +181,7 @@ body.search--active {
 
 .search .search-filter-checkbox {
   margin-bottom: 0.2rem;
-  font-size: 0.8rem;
+  font-size: var(--typography-body-medium-font-size);
 }
 
 .search .search-filter-checkbox input {
@@ -198,7 +198,7 @@ body.search--active {
 }
 
 .search-results .search-result-item h3 {
-  font-size: 0.85rem;
+  font-size: var(--typography-body-medium-font-size);
   font-weight: 600;
   margin-bottom: 0;
 }
@@ -218,21 +218,21 @@ body.search--active {
 
 .search-results .search-result-item .search-result-url {
   display: block;
-  font-size: 0.7rem;
+  font-size: var(--typography-body-small-font-size);
   font-weight: 400;
   color: rgba(var(--theme-light-color-primary-text));
   margin-bottom: 0.5rem;
 }
 
 .search-results .search-result-item .search-result-body {
-  font-size: 0.8rem;
+  font-size: var(--typography-body-medium-font-size);
   margin-bottom: 0.5rem;
   color: rgba(var(--palette-neutral-60));
 }
 
 .search-results .search-result-label {
   line-height: 1;
-  font-size: 0.7rem;
+  font-size: var(--typography-body-small-font-size);
   background: rgba(var(--palette-neutral-20));
   color: rgba(var(--palette-neutral-60));
   font-style: normal;
@@ -260,7 +260,7 @@ body.search--active {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  font-size: 0.75rem;
+  font-size: var(--typography-body-small-font-size);
   border-top: 1px solid var(--navbar-bottom-border);
   padding-top: 0.5rem;
 }

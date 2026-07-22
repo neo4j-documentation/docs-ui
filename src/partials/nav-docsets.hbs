@@ -1,0 +1,12 @@
+<div class="nav-panel-docsets{{#unless page.navigation}} is-active{{/unless}}" data-panel="docsets">
+  {{#if page.component}}
+  <div class="context">
+    <span class="title">{{page.component.title}}</span>
+    <span class="version">{{#if (or page.componentVersion.version (ne page.componentVersion.displayVersion 'default'))}}{{page.componentVersion.displayVersion}}{{/if}}</span>
+  </div>
+  {{/if}}
+  {{!-- Populated at runtime by 11-docsets-panel.js from the aggregated tabs.json.
+       Lists every component+version that's in the cross-docset nav, not just
+       the ones built in this Antora run. --}}
+  <ul class="components" id="docsets-panel-root"></ul>
+</div>

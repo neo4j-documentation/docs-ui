@@ -19,6 +19,13 @@ footer.footer {
   width: 100%;
 }
 
+/* Slot holding the runtime-injected link columns. display:contents removes the
+   wrapper from the box tree so its .column children lay out as direct flex
+   children of .wrapper — layout is identical to having no wrapper at all. */
+.footer .footer-links-slot {
+  display: contents;
+}
+
 .footer .column {
   display: flex;
   flex-direction: column;

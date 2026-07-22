@@ -5,38 +5,29 @@
 
   var navContainer = document.querySelector('.nav-container')
   var navToggle = document.querySelector('.nav-toggle')
+  var menuPanel
+  var nav
+  var currentPageItem
+  var originalPageItem
 
   if (navContainer && navToggle) {
     navToggle && navToggle.addEventListener('click', showNav)
 
-    var menuPanel = navContainer.querySelector('[data-panel=menu]')
+    menuPanel = navContainer.querySelector('[data-panel=menu]')
     if (!menuPanel) return
-    var nav = navContainer.querySelector('.nav')
+    nav = navContainer.querySelector('.nav')
 
-    var currentPageItem = menuPanel.querySelector('.is-current-page')
-    var originalPageItem = currentPageItem
-    if (currentPageItem) {
-      activateCurrentPath(currentPageItem)
-      scrollItemToMidpoint(menuPanel, currentPageItem.querySelector('.nav-link'))
-    } else {
-      menuPanel.scrollTop = 0
-    }
+    initNavTree()
 
-    find(menuPanel, '.nav-item-toggle:not(a)').forEach(function (btn) {
-      var li = btn.parentElement
-      btn.addEventListener('click', toggleActive.bind(li))
-      // don't let toggle clicks propagate
-      btn.addEventListener('click', concealEvent)
-      var navItemSpan = findNextElement(btn, '.nav-text')
-      if (navItemSpan) {
-        navItemSpan.style.cursor = 'pointer'
-        navItemSpan.addEventListener('click', toggleActive.bind(li))
-      }
-    })
+    // The runtime nav fetcher (09-nav-fetch.js) replaces #nav-root's contents
+    // and dispatches this event. Re-run the init against the new DOM so the
+    // current-page highlight, ancestor-active classes, and toggle handlers
+    // get applied to the new nodes.
+    document.addEventListener('nav:replaced', initNavTree)
 
     nav.querySelector('.context') && nav.querySelector('.context').addEventListener('click', function () {
       var currentPanel = nav.querySelector('.is-active[data-panel]')
-      var activatePanel = currentPanel.dataset.panel === 'menu' ? 'explore' : 'menu'
+      var activatePanel = currentPanel.dataset.panel === 'menu' ? 'docsets' : 'menu'
       currentPanel.classList.toggle('is-active')
       nav.querySelector('[data-panel=' + activatePanel + ']').classList.toggle('is-active')
     })
@@ -62,8 +53,6 @@
 
       const url = target.value
 
-      // temporarily disable analytics for selector-versions
-      // because it is now broken
       // if (window.ga) {
       //   window.ga('send', 'event', 'version-select', 'From: ' + current + ';To:' + next + ';')
       // }
@@ -109,6 +98,52 @@
     currentPageItem = navItem
     activateCurrentPath(navItem)
     scrollItemToMidpoint(menuPanel, navLink)
+  }
+
+  function initNavTree () {
+    currentPageItem = menuPanel.querySelector('.is-current-page')
+    originalPageItem = currentPageItem
+    if (currentPageItem) {
+      activateCurrentPath(currentPageItem)
+      scrollItemToMidpoint(menuPanel, currentPageItem.querySelector('.nav-link'))
+    } else {
+      // No current-page item — e.g. a tab overview page, whose own nav entry is
+      // hidden. Open the current component's docset block (marked is-active by
+      // component+version match) so all its section headers are visible. If that
+      // component has no block here (its only content was the overview, now
+      // suppressed), just open the outer wrapper so the remaining docset headers
+      // are still visible. Without this the wrapper stays collapsed and the nav
+      // disappears.
+      var activeDocset = menuPanel.querySelector('.docset-title.is-active')
+      if (activeDocset) {
+        activateCurrentPath(activeDocset)
+      } else {
+        // If the tab has exactly one top-level section (docset block), open it by
+        // default — helpful in local single-docset previews. (Overview-only blocks
+        // are already suppressed, so they don't count.) Otherwise just open the
+        // outer wrapper so all section headers show with nothing expanded.
+        var docsets = find(menuPanel, '.docset-title')
+        if (docsets.length === 1) {
+          activateCurrentPath(docsets[0])
+        } else {
+          var navWrapper = menuPanel.querySelector('.nav-menu > .nav-list > .nav-item')
+          if (navWrapper) navWrapper.classList.add('is-active')
+          else menuPanel.scrollTop = 0
+        }
+      }
+    }
+
+    find(menuPanel, '.nav-item-toggle:not(a)').forEach(function (btn) {
+      var li = btn.parentElement
+      btn.addEventListener('click', toggleActive.bind(li))
+      // don't let toggle clicks propagate
+      btn.addEventListener('click', concealEvent)
+      var navItemSpan = findNextElement(btn, '.nav-text')
+      if (navItemSpan) {
+        navItemSpan.style.cursor = 'pointer'
+        navItemSpan.addEventListener('click', toggleActive.bind(li))
+      }
+    })
   }
 
   function activateCurrentPath (navItem) {

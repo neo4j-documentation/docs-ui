@@ -41,7 +41,7 @@ body {
   color: var(--heading-font-color);
   font-weight: var(--heading-font-weight);
   hyphens: none;
-  line-height: calc((var(--doc-line-height) + 1) / 2);
+  line-height: inherit;
   margin: 2rem 0 1rem;
 }
 

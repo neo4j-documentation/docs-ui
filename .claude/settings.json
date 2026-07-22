@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git fetch *)",
+      "Bash(xargs ls *)",
+      "Bash(sed -i *)",
+      "Bash(sed -i '' '/^=======$/,/^>>>>>>> origin\\\\/master$/{ /^=======$/d; /^>>>>>>> origin\\\\/master$/d; }' src/css/docs-ndl.css src/css/neo4j-docs.css src/css/research.css)"
+    ]
+  }
+}
