@@ -116,8 +116,14 @@
               latest: !!vd.latest,
               url: findFirstUrl(vd.items),
             }
-          } else if (vd.latest) {
-            entry.versions[v].latest = true
+          } else {
+            if (vd.latest) entry.versions[v].latest = true
+            // A component can appear in several tabs (e.g. a driver shows up in
+            // both drivers-apis and the provisional-tab). The first occurrence may
+            // have no linkable item — provisional entries often don't — which would
+            // leave the chip pointing at '#'. Backfill the URL from any later tab
+            // that does have one.
+            if (!entry.versions[v].url) entry.versions[v].url = findFirstUrl(vd.items)
           }
         })
       })
