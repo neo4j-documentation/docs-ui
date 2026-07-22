@@ -114,6 +114,10 @@
 </div>
 
 <div class="box">
+  <span class="label label--breaking">Breaking change</span>
+</div>
+
+<div class="box">
   <span class="label label--discontinued">Discontinued</span>
 </div>
 

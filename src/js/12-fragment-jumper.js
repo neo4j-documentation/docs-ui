@@ -2,7 +2,6 @@
   'use strict'
 
   var article = document.querySelector('article.doc')
-  var cheatSheet = document.querySelector('body.cheat-sheet')
   var toolbar = document.querySelector('.toolbar')
   var headerNavigationBar = document.querySelector('header > .navbar')
 
@@ -29,14 +28,7 @@
     if ((tabs = target.closest('.tabbed'))) {
       target = tabs
     }
-    if (cheatSheet) {
-      var scrollTarget = this.closest('div')
-      var selectorsTop = document.querySelector('.nav-container .selectors').querySelector('div').getBoundingClientRect().top
-      if (this.tagName === 'H3') topOffset = selectorsTop
-      window.scrollTo(0, computePosition(scrollTarget, 0) - (topOffset + 20))
-    } else {
-      window.scrollTo(0, computePosition(target, 0) - (topOffset + 20))
-    }
+    window.scrollTo(0, computePosition(target, 0) - (topOffset + 20))
   }
 
   window.addEventListener('load', function jumpOnLoad (e) {

@@ -1,5 +1,5 @@
 const { getCookie } = require('./modules/cookies')
-const URL = 'https://uglfznxroe.execute-api.us-east-1.amazonaws.com/dev/Feedback'
+const backendUrl = 'https://uglfznxroe.execute-api.us-east-1.amazonaws.com/dev/Feedback'
 
 /* global fetch */
 ;(function () {
@@ -36,12 +36,7 @@ const URL = 'https://uglfznxroe.execute-api.us-east-1.amazonaws.com/dev/Feedback
     const identity = getCookie('neo_identity')
     const gid = getCookie('_gid')
     const uetsid = getCookie('_uetsid')
-
-    // Get Project
-    var productTag = document.querySelector('meta[property="neo:product"]')
-    var project = productTag
-      ? productTag.getAttribute('content').toLowerCase().replace(/[^a-z0-9]+/g, '-')
-      : document.querySelector('body').className.replace('article ', '').split(' ')[0]
+    const project = URL.parse(window.location).pathname.split('/')[1] // docs or labs
 
     var body = 'project=' + encodeURIComponent(project)
     body += '&url=' + encodeURIComponent(window.location.href)
@@ -66,7 +61,7 @@ const URL = 'https://uglfznxroe.execute-api.us-east-1.amazonaws.com/dev/Feedback
     }
 
     //console.log(body)
-    fetch(URL, {
+    fetch(backendUrl, {
       method: 'post',
       headers: {
         'Content-Type': 'application/x-www-form-urlencoded',

@@ -129,7 +129,8 @@ span.label--no,
 span.label--not-on-aura,
 span.label.not-available,
 span.label--removed,
-span.label--warning {
+span.label--warning,
+span.label--breaking {
   background: var(--label-warning-background-color);
   color: var(--label-warning-color);
 }
