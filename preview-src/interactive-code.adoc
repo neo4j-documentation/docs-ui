@@ -1,0 +1,50 @@
+= Interactive code blocks
+:page-theme: docs
+
+An interactive code block turns placeholders in a code sample into a small form.
+Fill in the fields and your values are substituted into the code below, ready to
+copy. Nothing is sent anywhere; the code is assembled in your browser.
+
+== Import a CSV into the graph
+
+.Generated Cypher
+[source,cypher,role=interactive,id=graph-import]
+----
+// Create a uniqueness constraint for :{{label}} nodes
+CREATE CONSTRAINT {{constraintName}} IF NOT EXISTS
+FOR (n:{{label}})
+REQUIRE n.{{keyProperty}} IS UNIQUE;
+
+// Import nodes from a CSV file
+LOAD CSV WITH HEADERS FROM '{{csvUrl}}' AS row
+MERGE (n:{{label}})
+  SET n.{{keyProperty}} = row.id, n.name = row.name;
+----
+[source,json,role=interactive-config]
+----
+{
+  "groups": [
+    { "legend": "Schema", "fields": ["label", "constraintName", "keyProperty"] },
+    { "legend": "Data source", "fields": ["csvUrl"] }
+  ],
+  "fields": {
+    "label":          { "label": "Node label", "description": "The label to apply to each imported node.", "default": "Person", "pattern": "[A-Za-z0-9_]" },
+    "constraintName": { "label": "Constraint name", "description": "A name for the uniqueness constraint.", "default": "person_id", "pattern": "[A-Za-z0-9_]" },
+    "keyProperty":    { "label": "Key property", "description": "The property that uniquely identifies each node.", "default": "id", "pattern": "[A-Za-z0-9_]" },
+    "csvUrl":         { "label": "CSV URL", "description": "The location of the CSV file to import.", "placeholder": "https://example.com/data.csv" }
+  }
+}
+----
+
+Empty fields keep their placeholder (or default) until you type. The copy button
+copies whatever the code block currently shows.
+
+== Field reference
+
+This section renders independently from the form above, straight from the same
+configuration:
+
+[role=interactive-reference]
+----
+graph-import
+----
