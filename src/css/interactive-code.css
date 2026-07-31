@@ -1,0 +1,86 @@
+/* Interactive code blocks (see src/js/09-interactive-code.js) */
+
+/* The config block is data, never shown. */
+.doc .listingblock.interactive-config {
+  display: none;
+}
+
+/* Avoid a flash of the raw code/markers before the JS builds the form.
+   Gated on html.js so no-JS users still see (and can copy) the raw code; the
+   JS adds .interactive-ready once a widget is built (or reveals it as-is if
+   it can't be enhanced). visibility (not display) keeps the block laid out so
+   the shared code-block logic can still measure it. */
+html.js .doc .listingblock.interactive {
+  visibility: hidden;
+}
+
+html.js .doc .listingblock.interactive.interactive-ready {
+  visibility: visible;
+}
+
+html.js .doc .listingblock.interactive-reference {
+  display: none;
+}
+
+html.js .doc .listingblock.interactive-reference.interactive-ready {
+  display: block;
+}
+
+.doc .interactive-form {
+  margin: 0 0 1.5rem;
+}
+
+.doc .interactive-form .interactive-fieldset {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(16rem, 1fr));
+  gap: 0.5rem 1.25rem;
+  border: 1px solid var(--code-border-color);
+  border-radius: 0.5rem;
+  padding: 0.5rem 1rem 0.75rem;
+  margin: 0 0 0.75rem;
+}
+
+.doc .interactive-form legend {
+  padding: 0 0.35rem;
+  font-weight: var(--body-font-weight-semibold);
+  font-size: var(--typography-body-medium-font-size);
+  color: var(--body-font-color);
+}
+
+.doc .interactive-form .interactive-field {
+  display: flex;
+  flex-direction: column;
+  font-size: var(--typography-body-medium-font-size);
+}
+
+.doc .interactive-form .interactive-field-label {
+  font-weight: var(--body-font-weight-semibold);
+  margin-bottom: 0.2rem;
+}
+
+.doc .interactive-form .interactive-field-input {
+  padding: 0.35rem 0.5rem;
+  border: 1px solid var(--code-border-color);
+  border-radius: 0.25rem;
+  background: var(--code-background);
+  color: var(--code-font-color);
+  font-family: var(--monospace-font-family, monospace);
+  font-size: var(--typography-body-medium-font-size);
+}
+
+.doc .interactive-form .interactive-field-input:focus {
+  outline: 2px solid var(--color-docs);
+  outline-offset: -1px;
+}
+
+.doc .interactive-form .interactive-field-desc {
+  margin-top: 0.25rem;
+  font-size: var(--typography-body-small-font-size);
+  color: var(--neutral-color);
+}
+
+/* Standalone read-only field reference. The list is wrapped in .dlist so it
+   inherits the bundle's description-list styling. */
+.doc .listingblock.interactive-reference {
+  border: 0 none;
+}

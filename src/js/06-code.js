@@ -109,7 +109,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
   var addCodeHeader = function (pre) {
     var block = pre.querySelector('code')
-    var code = block.innerText
 
     var div = pre.parentNode
     var listingBlock = div.parentNode
@@ -152,7 +151,9 @@ document.addEventListener('DOMContentLoaded', function () {
 
       copyButton.addEventListener('click', function (e) {
         e.preventDefault()
-        copyToClipboard(code, language)
+        // Re-read live text so interactive/editable blocks copy their current
+        // (substituted or edited) content, not the value captured at load.
+        copyToClipboard(block.innerText, language)
 
         var button = e.target
         var text = button.innerHTML
