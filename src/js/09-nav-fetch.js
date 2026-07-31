@@ -65,6 +65,13 @@
     replaceNav(results[0])
   }).catch(function (err) {
     console.warn('[nav-fetch] fetch failed; keeping build-time nav:', err.message)
+  }).finally(function () {
+    // Reveal #nav-root (hidden by default via CSS for tabbed pages) now that
+    // this has settled, however it settled - success, fetch failure, or one
+    // of replaceNav's internal "keeping build-time nav" early-returns. Any of
+    // those leaves a nav worth showing; only the CSS's default-hidden state
+    // was ever wrong.
+    navRoot.classList.add('nav-ready')
   })
 
   // ---------------------------------------------------------------------------

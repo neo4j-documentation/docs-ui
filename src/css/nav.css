@@ -29,6 +29,18 @@
   visibility: visible;
 }
 
+/* Tabbed pages replace #nav-root's build-time nav with a client-side fetched,
+   fully-aggregated one (see 09-nav-fetch.js). Hide it until that finishes so
+   the swap doesn't flash the build-time version first. Scoped to tabbed pages
+   only - other pages never run that fetch, so their nav should show immediately. */
+body[data-page-tabs] #nav-root {
+  visibility: hidden;
+}
+
+body[data-page-tabs] #nav-root.nav-ready {
+  visibility: visible;
+}
+
 .nav {
   background: var(--nav-background);
   position: relative;
