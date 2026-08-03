@@ -38,7 +38,10 @@ body[data-page-tabs] #nav-root {
 }
 
 body[data-page-tabs] #nav-root.nav-ready {
-  visibility: visible;
+  /* inherit, not visible - an explicit "visible" here would override the
+     mobile nav-toggle's collapsed state on .nav-container, an ancestor,
+     forcing the nav open regardless of whether the toggle was clicked */
+  visibility: inherit;
 }
 
 .nav {
