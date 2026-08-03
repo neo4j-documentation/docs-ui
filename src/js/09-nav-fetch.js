@@ -137,6 +137,18 @@
     }
   }
 
+  // A single-pass tag strip can be bypassed by a crafted string like
+  // "<scrip<script>t>", which reassembles into "<script>" after one replace.
+  // Loop until a pass makes no further change.
+  function stripTags (str) {
+    var previous
+    do {
+      previous = str
+      str = str.replace(/<[^>]+>/g, '')
+    } while (str !== previous)
+    return str
+  }
+
   // ---------------------------------------------------------------------------
   // ComponentHeader construction. Mirrors the consume-mode logic in nav.js,
   // including the promoted/normal split.
@@ -158,7 +170,7 @@
 
     promoted.forEach(function (item) {
       var sectionTitle = item.content
-        ? item.content.replace(/<[^>]+>/g, '').trim()
+        ? stripTags(item.content).trim()
         : versionData.title
       headers.push({
         content: sectionTitle,
