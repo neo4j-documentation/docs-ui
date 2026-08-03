@@ -148,8 +148,12 @@
     var promoted = items.filter(function (item) { return item.navPromote })
     // Exclude tab-overview items: they're never rendered, so a component whose
     // only content is its overview must not produce an (empty) header block.
+    // Keep text-only section titles too (e.g. "* *Regular workflow*" written as
+    // a flat sibling, not a parent with nested items) - they have neither a url
+    // nor child items, but do have content, and renderRegularItem already knows
+    // how to render that shape as a .nav-section-header.
     var normal = items.filter(function (item) {
-      return !item.navPromote && !item.tabOverview && (item.url || (item.items && item.items.length))
+      return !item.navPromote && !item.tabOverview && (item.url || item.content || (item.items && item.items.length))
     })
 
     promoted.forEach(function (item) {

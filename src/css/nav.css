@@ -230,10 +230,6 @@ html.is-clipped--nav {
   display: none;
 }
 
-.nav-item:has(> .nav-text.nav-section-header):not(:has(a.nav-link)) {
-  display: none;
-}
-
 .nav-list.docset-list > .docset-title > span {
   font-weight: var(--body-font-weight-bold);
   font-size: var(--typography-body-medium-font-size);
@@ -541,7 +537,6 @@ html.is-clipped--nav {
   margin-bottom: 0;
   padding-top: 1.5rem !important;
   border-top: 1px solid var(--colors-neutral-25);
-  display: none;
 }
 
 .nav-item .nav-section-header:hover {
