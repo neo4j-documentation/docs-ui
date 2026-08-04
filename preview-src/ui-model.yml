@@ -105,6 +105,10 @@ page:
       - content: Cu Solet
         url: '/xyz/4.1/index.html#cu-solet'
         urlType: internal
+    - content: Interactive code blocks
+      url: interactive-code.html
+      urlType: internal
+      module: ROOT
     - content: Docs Needle Home
       url: docs-ndl.html
       urlType: internal
