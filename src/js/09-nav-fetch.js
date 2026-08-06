@@ -411,7 +411,7 @@
     var liChildren = []
     if (item.content) {
       if (item.url) {
-        var anchorClass = 'nav-link'
+        var anchorClass = 'sidebar-link nav-link'
         if (item.items && item.items.length) anchorClass += ' nav-item-toggle'
         var href = item.urlType === 'internal' ? fixNavPath(item.url) : item.url
         var a = el('a', {
