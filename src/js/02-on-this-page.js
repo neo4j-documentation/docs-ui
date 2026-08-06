@@ -29,6 +29,7 @@
   var links = {}
   var list = headings.reduce(function (accum, heading) {
     var link = document.createElement('a')
+    link.className = 'contents-link'
     var headingClone = heading.cloneNode(true)
     // console.log(headingClone)
     headingClone.querySelectorAll('div, a.anchor').forEach(function (el) { el.remove() })
