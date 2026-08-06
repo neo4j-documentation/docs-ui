@@ -268,6 +268,13 @@ html.is-clipped--nav {
   cursor: pointer;
 }
 
+/* A section heading promoted from a flat `* *Heading*` bullet renders bold
+   (`<strong>`) inline markup - it already gets its own heading treatment as a
+   toggle, so drop the redundant bold. */
+.nav-item-toggle strong {
+  font-weight: inherit;
+}
+
 /* .nav-item-toggle {
   background: transparent url(../img/caret.svg) no-repeat center / 50%;
   border: none;
