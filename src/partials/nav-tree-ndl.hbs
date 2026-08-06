@@ -12,7 +12,7 @@
     <li class="nav-item{{#if (eq this.url @root.page.url)}} is-current-page{{/if}}"{{#with this.pageTabs}} data-tabs="{{this}}"{{/with}} data-module="{{or ../module this.module}}" data-depth="{{or ../level 0}}"{{#with this.asciidoc}} data-slug="{{this.attributes.page-slug}}"{{/with}}>
       {{#if this.content}}
       {{#if this.url}}
-      <a class="nav-link{{#if this.items.length}} nav-item-toggle{{/if}}" href="
+      <a class="sidebar-link{{#if this.items.length}} nav-item-toggle{{/if}}" href="
         {{~#if (eq this.urlType 'internal')}}{{{relativize this.url}}}
         {{~else}}{{{this.url}}}{{~/if}}">{{{this.content}}}</a>
       {{else if this.items.length }}

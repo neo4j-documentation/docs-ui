@@ -37,7 +37,7 @@
       if (e.detail > 1) e.preventDefault()
     })
 
-    if (menuPanel && menuPanel.querySelector('.nav-link[href^="#"]')) {
+    if (menuPanel && menuPanel.querySelector('.sidebar-link[href^="#"]')) {
       if (window.location.hash) onHashChange()
       window.addEventListener('hashchange', onHashChange)
     }
@@ -66,7 +66,7 @@
     var hash = window.location.hash
     if (hash) {
       if (hash.indexOf('%')) hash = decodeURIComponent(hash)
-      navLink = menuPanel.querySelector('.nav-link[href="' + hash + '"]')
+      navLink = menuPanel.querySelector('.sidebar-link[href="' + hash + '"]')
       if (!navLink) {
         var targetNode = document.getElementById(hash.slice(1))
         if (targetNode) {
@@ -77,7 +77,7 @@
             // NOTE: look for section heading
 
             if (!id && (id = current.className && current.className.match(SECT_CLASS_RX))) id = (current.firstElementChild || {}).id
-            if (id && (navLink = menuPanel.querySelector('.nav-link[href="#' + id + '"]'))) break
+            if (id && (navLink = menuPanel.querySelector('.sidebar-link[href="#' + id + '"]'))) break
           }
         }
       }
@@ -86,7 +86,7 @@
     if (navLink) {
       navItem = navLink.parentNode
     } else if (originalPageItem) {
-      navLink = (navItem = originalPageItem).querySelector('.nav-link')
+      navLink = (navItem = originalPageItem).querySelector('.sidebar-link')
     } else {
       return
     }
@@ -105,7 +105,7 @@
     originalPageItem = currentPageItem
     if (currentPageItem) {
       activateCurrentPath(currentPageItem)
-      scrollItemToMidpoint(menuPanel, currentPageItem.querySelector('.nav-link'))
+      scrollItemToMidpoint(menuPanel, currentPageItem.querySelector('.sidebar-link'))
     } else {
       // No current-page item — e.g. a tab overview page, whose own nav entry is
       // hidden. Open the current component's docset block (marked is-active by
