@@ -434,22 +434,24 @@ html.is-clipped--nav {
 .nav-item a:hover,
 .nav-item span:hover {
   background-color: var(--toc-hover-background-color);
+  border-radius: 0.5rem;
 }
 
 .is-current-page.is-active > a {
   background-color: var(--toc-hover-background-color);
   color: var(--toc-active-font-color);
+  border-radius: 0.5rem;
 }
 
 .is-current-page.is-active > a::before {
   content: "";
-  width: 4px;
+  width: 0.25rem;
   height: 100%;
   position: absolute;
-  left: 0;
+  left: -0.5rem;
   top: 0;
   background-color: var(--toc-active-font-color);
-  border-radius: 4px;
+  border-radius: 0 0.5rem 0.5rem 0;
 }
 
 .nav-menu .nav-item > a,
