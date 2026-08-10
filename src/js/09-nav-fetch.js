@@ -44,6 +44,12 @@
   var localComponents = null
   var localNavOnlyMode = false
 
+  // Set at build time (page-no-local-manifest) for deploys - staging, prod -
+  // that never serve this file, so skip the request rather than let it 404.
+  // A failed fetch's console noise isn't suppressible from JS once issued,
+  // so the only real fix is to not issue it.
+  var skipLocalManifest = body.dataset.noLocalManifest === 'true'
+
   // ---------------------------------------------------------------------------
   // Fetch
   // ---------------------------------------------------------------------------
@@ -53,9 +59,11 @@
       if (!res.ok) throw new Error('HTTP ' + res.status)
       return res.json()
     }),
-    fetch(MANIFEST_URL, { credentials: 'same-origin' })
-      .then(function (res) { return res.ok ? res.json() : null })
-      .catch(function () { return null }),
+    skipLocalManifest
+      ? Promise.resolve(null)
+      : fetch(MANIFEST_URL, { credentials: 'same-origin' })
+        .then(function (res) { return res.ok ? res.json() : null })
+        .catch(function () { return null }),
   ]).then(function (results) {
     var manifest = results[1]
     if (manifest) {

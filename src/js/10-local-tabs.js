@@ -17,6 +17,11 @@
   var body = document.body
   if (!body) return
 
+  // Set at build time (page-no-local-manifest) for deploys - staging, prod -
+  // that never serve this file. Skip the request rather than let it 404: a
+  // failed fetch's console noise isn't suppressible from JS once issued.
+  if (body.dataset.noLocalManifest === 'true') return
+
   var sitePath = body.dataset.sitePath || ''
   var MANIFEST_URL = sitePath + '/local-manifest.json'
   var NAV_URL = sitePath + '/nav/tabs.json'

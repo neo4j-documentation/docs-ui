@@ -53,6 +53,11 @@
   var docsUrl = readDocsUrl()
   var localComponents = null // populated from manifest if available
 
+  // Set at build time (page-no-local-manifest) for deploys - staging, prod -
+  // that never serve this file. Skip the request rather than let it 404: a
+  // failed fetch's console noise isn't suppressible from JS once issued.
+  var skipLocalManifest = body.dataset.noLocalManifest === 'true'
+
   // Fetch tabs.json + local-manifest.json in parallel; manifest is optional
   // (404 on prod) so its failure just means "treat everything as local."
   Promise.all([
@@ -60,7 +65,7 @@
       console.warn('[docsets-panel] tabs.json fetch failed:', err.message)
       return null
     }),
-    fetchJson(MANIFEST_URL).catch(function () { return null }),
+    skipLocalManifest ? Promise.resolve(null) : fetchJson(MANIFEST_URL).catch(function () { return null }),
   ]).then(function (results) {
     var tabs = results[0]
     var manifest = results[1]
