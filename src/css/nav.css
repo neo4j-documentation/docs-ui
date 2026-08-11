@@ -212,7 +212,7 @@ html.is-clipped--nav {
   margin-top: 0.5rem;
 }
 
-.nav-menu > .nav-list:last-child {
+.nav-item.docset-title > .nav-list {
   padding-bottom: 0.5rem;
 }
 
