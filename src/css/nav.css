@@ -212,6 +212,10 @@ html.is-clipped--nav {
   margin-top: 0.5rem;
 }
 
+.nav-menu > .nav-list:last-child {
+  padding-bottom: 0.5rem;
+}
+
 .nav-list.docset-list {
   border-bottom: 1px solid var(--nav-panel-divider-color);
   /* padding-bottom: 0.5rem; */
@@ -461,8 +465,10 @@ html.is-clipped--nav {
 }
 
 .nav-menu .docset-title > span {
-  padding-top: 1rem;
-  padding-bottom: 1rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
 }
 
 .nav-item > a,
@@ -510,7 +516,7 @@ html.is-clipped--nav {
   content: "";
   position: absolute;
   right: 0.5rem;
-  top: 0.75rem;
+  top: 0.625rem;
   background-color: currentColor;
   -webkit-mask: url(../img/chevron.svg) no-repeat center;
   mask: url(../img/chevron.svg) no-repeat center;
