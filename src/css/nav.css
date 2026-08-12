@@ -214,26 +214,31 @@ html.is-clipped--nav {
 
 .nav-item.docset-title > .nav-list {
   padding-bottom: 0.5rem;
+  padding-top: 0.5rem;
 }
 
+/* .nav-list.docset-list selectors below target pages built before the nav-tree.hbs
+   restructure (one <ul> per docset instead of one shared <ul> with the docset-title
+   as a sibling <li>). Their HTML is baked at Antora build time, so a UI bundle
+   update alone won't give them the .nav-item.docset-title markup - remove the old
+   selectors once every docset has been rebuilt at least once on the new template. */
+.nav-item.docset-title,
 .nav-list.docset-list {
   border-bottom: 1px solid var(--nav-panel-divider-color);
-  /* padding-bottom: 0.5rem; */
-  /* padding-top: 0.5rem; */
+  margin: 0 0.5rem;
 }
 
+.nav-item.docset-title.hidden,
 .nav-list.docset-list.hidden {
   display: none;
 }
 
+.nav-item.docset-title:not(:has(a.sidebar-link)),
 .nav-list.docset-list:not(:has(a.sidebar-link)) {
   display: none;
 }
 
-.nav-item.docset-title:not(:has(a.sidebar-link)) {
-  display: none;
-}
-
+.nav-item.docset-title > span,
 .nav-list.docset-list > .docset-title > span {
   font-weight: var(--body-font-weight-bold);
   font-size: var(--typography-body-medium-font-size);
@@ -256,12 +261,6 @@ html.is-clipped--nav {
 /* adds some breathing room below a nested list */
 .nav-item-toggle ~ .nav-list {
   /* padding-bottom: 0.125rem; */
-}
-
-/* matches list without a title */
-.nav-item[data-depth="0"] > .nav-list:first-child {
-  margin: 0;
-  padding: 0;
 }
 
 .nav-item:not(.is-active) > .nav-list {

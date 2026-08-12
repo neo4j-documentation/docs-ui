@@ -75,8 +75,6 @@ body.docs .nav-menu .nav-module > ul:not(ul:has(li)) {
 body.docs .nav-menu a,
 body.docs .nav-text {
   color: var(--neutral-color);
-  margin-left: 0.5rem;
-  margin-right: 0.5rem;
 }
 
 body.docs .nav-menu .home-link a::before {

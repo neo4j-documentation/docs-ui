@@ -126,9 +126,13 @@
       return
     }
 
-    var fragment = renderNavigation(combinedNav, 0)
+    var navList = renderNavigation(combinedNav, 0)
+    if (!navList) {
+      console.warn('[nav-fetch] aggregation produced no renderable items; keeping build-time nav')
+      return
+    }
     navRoot.innerHTML = ''
-    navRoot.appendChild(fragment)
+    navRoot.appendChild(navList)
 
     navRoot.dispatchEvent(new CustomEvent('nav:replaced', { bubbles: true }))
     console.debug('[nav-fetch] nav replaced')
@@ -356,12 +360,13 @@
   }
 
   function renderNavigation (navigation, level) {
-    var fragment = document.createDocumentFragment()
+    var items = []
     navigation.forEach(function (item) {
       var rendered = renderItem(item, level)
-      if (rendered) fragment.appendChild(rendered)
+      if (rendered) items.push(rendered)
     })
-    return fragment
+    if (!items.length) return null
+    return el('ul', { className: 'nav-list' }, items)
   }
 
   function renderItem (item, level) {
@@ -371,17 +376,12 @@
   }
 
   function renderComponentHeader (item, level) {
-    var docsetListClass = 'nav-list docset-list'
-    var isCurrentComponent = item.component === pageContext.component
-    if (isCurrentComponent && item.componentVersion !== pageContext.version) {
-      docsetListClass += ' hidden'
-    }
-
-    var children = []
-
     // Overview (page-tab-overview) pages are intentionally not rendered in the left
     // nav — the tab itself already links to that URL. Mirrors nav-tree.hbs.
     var inner = (item.items || []).filter(function (ci) { return !ci.tabOverview })
+    var childList = renderNavigation(inner, (level || 0) + 1)
+    if (!childList) return null
+
     var titleClass = 'nav-item docset-title'
     // A docset block is active (expanded) when it belongs to the current page's
     // component+version. That's what makes the right section visible — including on
@@ -393,23 +393,21 @@
       containsUrl(item.items || [], pageContext.url)
     if (isActiveDocset) titleClass += ' is-active'
 
+    var isCurrentComponent = item.component === pageContext.component
+    if (isCurrentComponent && item.componentVersion !== pageContext.version) {
+      titleClass += ' hidden'
+    }
+
     var titleSpan = el('span', { className: 'nav-text nav-item-toggle' })
     titleSpan.innerHTML = item.componentTitle || ''
-    var titleChildren = [
-      titleSpan,
-      el('ul', { className: 'nav-list' }, [renderNavigation(inner, (level || 0) + 1)]),
-    ]
-    children.push(el('li', {
-      className: titleClass,
-      'data-tabs': item.pageTabs,
-      'data-depth': String(level || 0),
-    }, titleChildren))
 
-    return el('ul', {
-      className: docsetListClass,
+    return el('li', {
+      className: titleClass,
       'data-component': item.component,
       'data-version': item.componentVersion,
-    }, children)
+      'data-tabs': item.pageTabs,
+      'data-depth': String(level || 0),
+    }, [titleSpan, childList])
   }
 
   function renderRegularItem (item, level) {
@@ -445,18 +443,17 @@
     }
 
     if (item.items && item.items.length) {
-      liChildren.push(renderNavigation(item.items, (level || 0) + 1))
+      var childList = renderNavigation(item.items, (level || 0) + 1)
+      if (childList) liChildren.push(childList)
     }
 
-    return el('ul', {
-      className: 'nav-list',
+    return el('li', {
+      className: liClass,
       'data-component': item.component,
       'data-version': item.componentVersion,
-    }, [el('li', {
-      className: liClass,
       'data-tabs': item.pageTabs,
       'data-module': item.module,
       'data-depth': String(level || 0),
-    }, liChildren)])
+    }, liChildren)
   }
 })()
