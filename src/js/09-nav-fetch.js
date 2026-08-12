@@ -180,6 +180,10 @@
       return !item.navPromote && !item.tabOverview && (item.url || item.content || (item.items && item.items.length))
     })
 
+    // How many top-level blocks this component+version contributes - see the matching
+    // comment in index.js's consumeNav stage, which this function mirrors client-side.
+    var soleBlock = (promoted.length + (normal.length > 0 ? 1 : 0)) === 1
+
     promoted.forEach(function (item) {
       var sectionTitle = item.content
         ? stripTags(item.content).trim()
@@ -191,6 +195,7 @@
         componentVersion: version,
         componentTitle: sectionTitle,
         componentHeader: true,
+        soleBlock: soleBlock,
         latest: versionData.latest,
         docsetGroup: versionData.docsetGroup,
         items: item.items || [],
@@ -205,6 +210,7 @@
         componentVersion: version,
         componentTitle: versionData.title,
         componentHeader: true,
+        soleBlock: soleBlock,
         latest: versionData.latest,
         docsetGroup: versionData.docsetGroup,
         items: normal,
@@ -388,8 +394,13 @@
     // the overview page, whose own nav entry is hidden so a URL match alone would
     // fail. URL-containment is kept only as a fallback for cross-component promoted
     // blocks (a page that lives inside another component's promoted section).
+    // The component+version match only counts when this is the sole top-level block
+    // for that component+version (item.soleBlock) - page-tabs-promote-sections can
+    // split one docset into several sibling blocks sharing the same component+version,
+    // and matching on that alone would mark all of them active instead of just the
+    // one actually containing the current page. Mirrors nav-tree.hbs.
     var isActiveDocset =
-      (item.component === pageContext.component && item.componentVersion === pageContext.version) ||
+      (item.soleBlock && item.component === pageContext.component && item.componentVersion === pageContext.version) ||
       containsUrl(item.items || [], pageContext.url)
     if (isActiveDocset) titleClass += ' is-active'
 
