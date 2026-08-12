@@ -180,11 +180,21 @@
       return !item.navPromote && !item.tabOverview && (item.url || item.content || (item.items && item.items.length))
     })
 
+    // A promoted item with no children (a flat standalone page) has nothing to wrap
+    // into a docset block - it's pushed through as-is below, already carrying its own
+    // url/content/pageTabs etc. Only promoted sections (real parent items with
+    // children) become their own componentHeader block. Mirrors index.js.
+    var promotedSectionCount = promoted.filter(function (item) { return item.items && item.items.length }).length
+
     // How many top-level blocks this component+version contributes - see the matching
     // comment in index.js's consumeNav stage, which this function mirrors client-side.
-    var soleBlock = (promoted.length + (normal.length > 0 ? 1 : 0)) === 1
+    var soleBlock = (promotedSectionCount + (normal.length > 0 ? 1 : 0)) === 1
 
     promoted.forEach(function (item) {
+      if (!(item.items && item.items.length)) {
+        headers.push(item)
+        return
+      }
       var sectionTitle = item.content
         ? stripTags(item.content).trim()
         : versionData.title
@@ -198,7 +208,7 @@
         soleBlock: soleBlock,
         latest: versionData.latest,
         docsetGroup: versionData.docsetGroup,
-        items: item.items || [],
+        items: item.items,
       })
     })
 
