@@ -35,10 +35,12 @@
     // (e.g. a flex-heavy layout with several unpositioned wrapper divs in a
     // row), overshooting the scroll target.
     var absoluteTop = target.getBoundingClientRect().top + window.pageYOffset
-    // 12 instead of the original 20 - a small tweak so the target lines up with
-    // the cheat-sheet nav title (02-on-this-page.js), which the plain
-    // navbar/toolbar offset alone slightly undershoots.
-    window.scrollTo(0, absoluteTop - (topOffset + 8))
+
+    // Eyeballed/measured (getBoundingClientRect diffs against a reference nav
+    // element), not derived from any layout constant - cheat-sheet lines up
+    // against .cheat-sheet-nav-title, normal pages against a docset-title span.
+    const offsetCorrect = document.body.classList.contains('cheat-sheet') ? 8 : 12.84
+    window.scrollTo(0, absoluteTop - (topOffset + offsetCorrect))
   }
 
   window.addEventListener('load', function jumpOnLoad (e) {
