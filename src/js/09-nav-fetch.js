@@ -16,6 +16,12 @@
   var navRoot = document.getElementById('nav-root')
   if (!navRoot) return
 
+  // Cheat-sheet pages replace #nav-root with a heading-derived nav synchronously
+  // (02-on-this-page.js's buildCheatSheetNav) - there's no real cross-docset nav
+  // to aggregate for a single scrollable reference page, and this fetch's async
+  // resolution would otherwise land after that replacement and clobber it.
+  if (document.body.classList.contains('cheat-sheet')) return
+
   var body = document.body
   var pageContext = {
     url: body.dataset.pageUrl || '',

@@ -10,6 +10,7 @@
     data-page-tabs="{{lookup page.attributes 'tabs'}}"
     data-page-tabs-group="{{lookup page.attributes 'tabs-group'}}"
     data-no-local-manifest="{{lookup page.attributes 'no-local-manifest'}}"
+    data-page-toc-levels="{{{or page.attributes.toclevels 2}}}"
     data-ui-root-path="{{{uiRootPath}}}"
     data-site-path="{{site-path site.url}}">
 <script type="application/json" id="page-nav-data">{{{json-stringify-script page.navigation}}}</script>

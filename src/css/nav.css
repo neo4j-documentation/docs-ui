@@ -223,6 +223,7 @@ html.is-clipped--nav {
    update alone won't give them the .nav-item.docset-title markup - remove the old
    selectors once every docset has been rebuilt at least once on the new template. */
 .nav-item.docset-title,
+.nav-item[data-depth="1"],
 .nav-list.docset-list {
   border-bottom: 1px solid var(--nav-panel-divider-color);
   margin: 0 0.5rem;
@@ -239,7 +240,8 @@ html.is-clipped--nav {
 }
 
 .nav-item.docset-title > span,
-.nav-list.docset-list > .docset-title > span {
+.nav-list.docset-list > .docset-title > span,
+.nav-item[data-depth="1"] > a {
   font-weight: var(--body-font-weight-bold);
   font-size: var(--typography-body-medium-font-size);
 }
@@ -463,7 +465,9 @@ html.is-clipped--nav {
   padding-bottom: 0.5rem;
 }
 
-.nav-menu .docset-title > span {
+.nav-menu .docset-title > span,
+.nav-menu .nav-item[data-depth="1"] > a,
+.nav-menu .nav-item[data-depth="1"] > span.nav-item-toggle {
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
   margin-top: 0.5rem;
