@@ -198,6 +198,21 @@
       var sectionTitle = item.content
         ? stripTags(item.content).trim()
         : versionData.title
+      // A promoted item that is also its own linked page would otherwise vanish once
+      // wrapped into a section block below - keep it as the section's own first
+      // child instead. Mirrors index.js.
+      var sectionItems = item.url
+        ? [{
+          content: item.content,
+          url: item.url,
+          urlType: item.urlType,
+          pageTabs: item.pageTabs,
+          tabIndex: item.tabIndex,
+          component: item.component,
+          componentTitle: item.componentTitle,
+          componentVersion: item.componentVersion,
+        }].concat(item.items)
+        : item.items
       headers.push({
         content: sectionTitle,
         tabIndex: item.tabIndex || versionData.tabIndex || 99999,
@@ -208,7 +223,7 @@
         soleBlock: soleBlock,
         latest: versionData.latest,
         docsetGroup: versionData.docsetGroup,
-        items: item.items,
+        items: sectionItems,
       })
     })
 
