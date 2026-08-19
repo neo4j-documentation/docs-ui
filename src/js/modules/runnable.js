@@ -2,6 +2,7 @@ import { cleanCode, convert } from './code'
 import { createElement } from './dom'
 import { forcedGraph } from './graph'
 import { executeQuery, initSession } from './graphgist'
+import { canTrackWithMixpanel } from './tracking'
 
 let graphGistSessionId
 
@@ -291,7 +292,7 @@ export function runnable (row, runText = 'Run Query', successCallback, errorCall
       loading.innerHTML = 'Initialising Driver&hellip;'
       runButton.disabled = true
 
-      if (window.mixpanel) {
+      if (canTrackWithMixpanel()) {
         window.mixpanel.track('DOCS_CODE_RUN_EXAMPLE', {
           pathname: window.location.origin + window.location.pathname,
           search: window.location.search,
@@ -349,7 +350,7 @@ export function runnable (row, runText = 'Run Query', successCallback, errorCall
             errorCallback({ cypher: input, error: err })
           }
 
-          if (window.mixpanel) {
+          if (canTrackWithMixpanel()) {
             window.mixpanel.track('DOCS_CODE_RUN_ERROR', {
               pathname: window.location.origin + window.location.pathname,
               search: window.location.search,

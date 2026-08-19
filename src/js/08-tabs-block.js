@@ -1,5 +1,6 @@
 // Code functions
 import { createElement } from './modules/dom'
+import { canTrackWithMixpanel } from './modules/tracking'
 
 document.addEventListener('DOMContentLoaded', function () {
   function capitalizeFirstLetter (string) {
@@ -109,7 +110,7 @@ document.addEventListener('DOMContentLoaded', function () {
       window.sessionStorage.setItem('code_example_language', lang)
     }
 
-    if (window.mixpanel) {
+    if (canTrackWithMixpanel()) {
       window.mixpanel.track('DOCS_TAB_CHANGE', {
         pathname: window.location.origin + window.location.pathname,
         search: window.location.search,

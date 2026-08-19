@@ -2,6 +2,7 @@
 import { cleanCode } from './modules/code'
 import { createElement } from './modules/dom'
 import { runnable } from './modules/runnable'
+import { canTrackWithMixpanel } from './modules/tracking'
 
 document.addEventListener('DOMContentLoaded', function () {
   // TODO: Solve race conditions with hljs, 07-runnable-code
@@ -31,7 +32,7 @@ document.addEventListener('DOMContentLoaded', function () {
         cloned.addEventListener('click', handleCodeSegmentClick)
 
         // Log in Mixpanel
-        if (window.mixpanel && log) {
+        if (canTrackWithMixpanel() && log) {
           window.mixpanel.track('DOCS_ARRANGE_CODE_ADD', {
             pathname: window.location.origin + window.location.pathname,
             search: window.location.search,
@@ -61,7 +62,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }
 
         // Log in Mixpanel
-        if (window.mixpanel && log) {
+        if (canTrackWithMixpanel() && log) {
           window.mixpanel.track('DOCS_ARRANGE_CODE_REMOVE', {
             pathname: window.location.origin + window.location.pathname,
             search: window.location.search,
@@ -107,7 +108,7 @@ document.addEventListener('DOMContentLoaded', function () {
       children.map((child) => addSegmentToOptionList(child))
 
       const successCallback = ({ cypher, results }) => {
-        if (window.mixpanel) {
+        if (canTrackWithMixpanel()) {
           window.mixpanel.track('DOCS_ARRANGE_CODE_COMPLETED', {
             pathname: window.location.origin + window.location.pathname,
             search: window.location.search,
@@ -118,7 +119,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }
       }
       const errorCallback = ({ cypher, error }) => {
-        if (window.mixpanel) {
+        if (canTrackWithMixpanel()) {
           window.mixpanel.track('DOCS_ARRANGE_CODE_ERROR', {
             pathname: window.location.origin + window.location.pathname,
             search: window.location.search,
