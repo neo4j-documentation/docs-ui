@@ -1,4 +1,5 @@
 const { getCookie } = require('./modules/cookies')
+const { canTrackWithMixpanel } = require('./modules/tracking')
 const backendUrl = 'https://uglfznxroe.execute-api.us-east-1.amazonaws.com/dev/Feedback'
 
 /* global fetch */
@@ -98,7 +99,7 @@ const backendUrl = 'https://uglfznxroe.execute-api.us-east-1.amazonaws.com/dev/F
       sendRequest({ helpful: true }) // get positive feedback even if thet bail out before completion
       setTimeout(() => { fadeOut(feedback, 50) }, 0)
 
-      if (window.mixpanel) {
+      if (canTrackWithMixpanel()) {
         window.mixpanel.track('DOCS_FEEDBACK_POSITIVE', {
           pathname: window.location.origin + window.location.pathname,
           search: window.location.search,
@@ -119,7 +120,7 @@ const backendUrl = 'https://uglfznxroe.execute-api.us-east-1.amazonaws.com/dev/F
       feedback.innerHTML = '<div class="header thank-you-positive"><p><strong>Thank you for your feedback!</strong></p></div>'
       setTimeout(() => { fadeOut(feedback, 50) }, 2000)
 
-      if (window.mixpanel) {
+      if (canTrackWithMixpanel()) {
         window.mixpanel.track('DOCS_FEEDBACK_POSITIVE', {
           pathname: window.location.origin + window.location.pathname,
           search: window.location.search,
@@ -174,7 +175,7 @@ const backendUrl = 'https://uglfznxroe.execute-api.us-east-1.amazonaws.com/dev/F
     feedback.querySelector('.cancel').addEventListener('click', function (e) {
       e.preventDefault()
 
-      if (window.mixpanel) {
+      if (canTrackWithMixpanel()) {
         window.mixpanel.track('DOCS_FEEDBACK_NEGATIVE', {
           pathname: window.location.origin + window.location.pathname,
           search: window.location.search,
@@ -213,7 +214,7 @@ const backendUrl = 'https://uglfznxroe.execute-api.us-east-1.amazonaws.com/dev/F
       feedback.classList.add('positive')
       setTimeout(() => { fadeOut(feedback, 50) }, 2000)
 
-      if (window.mixpanel) {
+      if (canTrackWithMixpanel()) {
         window.mixpanel.track('DOCS_FEEDBACK_POSITIVE', {
           pathname: window.location.origin + window.location.pathname,
           search: window.location.search,

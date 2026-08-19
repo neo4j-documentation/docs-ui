@@ -1,5 +1,7 @@
+import { canTrackWithMixpanel } from './modules/tracking'
+
 document.addEventListener('DOMContentLoaded', function () {
-  if (!window.mixpanel) return
+  if (!canTrackWithMixpanel()) return
 
   const loaded = new Date()
 

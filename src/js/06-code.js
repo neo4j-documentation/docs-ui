@@ -1,5 +1,6 @@
 // Code functions
 import { createElement } from './modules/dom'
+import { canTrackWithMixpanel } from './modules/tracking'
 
 ;(function () {
   var commandContinuationRx = /\\\s*$/
@@ -66,7 +67,7 @@ document.addEventListener('DOMContentLoaded', function () {
     document.execCommand('copy')
     document.body.removeChild(textarea)
 
-    if (window.mixpanel) {
+    if (canTrackWithMixpanel()) {
       window.mixpanel.track('DOCS_CODE_COPY', {
         pathname: window.location.origin + window.location.pathname,
         search: window.location.search,
