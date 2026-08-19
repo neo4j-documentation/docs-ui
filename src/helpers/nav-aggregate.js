@@ -45,8 +45,13 @@ module.exports = (nav, tabNav, pageGroup, pageVersion) => {
     })
 
     headerItems.forEach((item) => {
-      // For grouped items, only show the selected version.
-      if (item.docsetGroup && selectedGroupVersions.get(item.component) !== item) return
+      // For grouped items, only show the selected version - compared by componentVersion,
+      // not object identity. page-tabs-promote-all can split one component+version into
+      // several sibling componentHeader items (Installation, Docker, ...), all carrying the
+      // same docsetGroup - comparing by identity kept only the single item object that won
+      // the selection above and silently dropped every other section of that same version.
+      const selected = item.docsetGroup && selectedGroupVersions.get(item.component)
+      if (selected && selected.componentVersion !== item.componentVersion) return
 
       if (item.componentHeader && overviewsByComponent.has(`${item.component}::${item.componentVersion}`)) {
         item.items = [...overviewsByComponent.get(`${item.component}::${item.componentVersion}`), ...(item.items || [])]
