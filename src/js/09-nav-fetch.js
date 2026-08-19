@@ -316,7 +316,11 @@
 
     var byTabIndex = new Map()
     trueHeaders.forEach(function (item) {
-      if (item.docsetGroup && selectedGroupVersions.get(item.component) !== item) return
+      // Compared by componentVersion, not object identity - see nav-aggregate.js's
+      // matching fix for why identity comparison silently dropped every sibling
+      // section a page-tabs-promote-all component produces for its winning version.
+      var selected = item.docsetGroup && selectedGroupVersions.get(item.component)
+      if (selected && selected.componentVersion !== item.componentVersion) return
 
       var key = item.component + '::' + item.componentVersion
       if (item.componentHeader && overviewsByComponent.has(key)) {
