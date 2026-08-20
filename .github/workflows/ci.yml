@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - master
+      - docs-restructure
   pull_request:
     branches:
       - '*'
@@ -41,3 +42,13 @@ jobs:
       if: ${{ env.AWS_S3_BUCKET != '' && github.ref == 'refs/heads/master' }}
       run: |
         aws s3 sync --follow-symlinks --include '*.zip' --no-progress build s3://${{ secrets.STATIC_CONTENT_BUCKET }}/build
+
+    - name: Publish branch UI bundle (docs-restructure)
+      env:
+        AWS_S3_BUCKET: ${{ secrets.STATIC_CONTENT_BUCKET }}
+      # Publishes a branch-named bundle alongside the canonical one so docs-combined
+      # can point at it during testing without disturbing ui-bundle-latest.zip.
+      if: ${{ env.AWS_S3_BUCKET != '' && github.ref == 'refs/heads/docs-restructure' }}
+      run: |
+        aws s3 cp build/ui-bundle.zip s3://${{ secrets.STATIC_CONTENT_BUCKET }}/build/ui-bundle-docs-restructure.zip
+        aws cloudfront create-invalidation --distribution-id ${{ vars.CDN_ID }} --paths "/build/ui-bundle-docs-restructure.zip"

@@ -54,3 +54,6 @@
     {{/with}}
     {{/with}}
     <link rel="shortcut icon" href="https://neo4j.com/wp-content/themes/neo4jweb/favicon.ico" />
+    {{#with (lookup page.attributes 'docs-url')}}
+    <meta name="docs-url" content="{{this}}" />
+    {{/with}}

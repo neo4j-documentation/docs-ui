@@ -45,7 +45,7 @@
 
 .toc .toc-ad .toc-ad-title {
   color: var(--toc-ad-font-color);
-  font-size: 16px;
+  font-size: var(--typography-body-large-font-size);
   margin: 12px 0 !important;
   padding: 0 !important;
   font-weight: 600;
@@ -54,7 +54,7 @@
 .toc .toc-ad-description {
   color: var(--toc-ad-font-color);
   margin: 12px 0 18px;
-  font-size: 14px;
+  font-size: var(--typography-body-medium-font-size);
 }
 
 .toc .toc-ad-underline {
@@ -84,7 +84,7 @@
 
 .doc .ad h2 {
   color: var(--toc-ad-font-color);
-  font-size: 0.8rem !important;
+  font-size: var(--typography-body-medium-font-size) !important;
   text-transform: uppercase;
   margin-top: 0;
 }
@@ -114,7 +114,7 @@
 }
 
 .doc .ad .paragraph a.button {
-  font-size: 0.8rem;
+  font-size: var(--typography-body-medium-font-size);
   margin: 0 1rem 0.2rem 0;
   padding: 0.25rem 1rem;
 }

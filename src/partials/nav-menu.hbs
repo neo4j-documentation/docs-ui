@@ -1,14 +1,14 @@
-{{#if (eq page.attributes.theme 'cheat-sheet') }}
-<aside class="toc sidebar" data-title="{{or page.attributes.toctitle ''}}"
-  data-levels="{{{or page.attributes.toclevels 2}}}">
-  <div class="toc-menu">
-    <div class="toc-menu-placeholder"></div>
-  </div>
-</aside>
-{{else}}
-<div class="nav-panel-menu is-active{{#unless page.attributes.disablefeedback}} has-feedback{{/unless}}" data-panel="menu">
-    <nav class="nav-menu">
-    {{#with page.navigation}}{{> nav-tree navigation=this module=@root.page.module}}{{/with}}
-  </nav>
+{{!-- Cheat-sheet pages replace this server-rendered nav with a heading-derived
+     one at runtime (02-on-this-page.js's buildCheatSheetNav) - there's no
+     separate cheat-sheet branch here any more, so #nav-root reliably exists
+     for that script to mount into, same as every other page. --}}
+<div class="nav-panel-menu is-active" data-panel="menu">
+  {{#with page.navigation}}
+    {{#with (nav-aggregate this @root.page.attributes.tabNav (lookup @root.page.attributes 'tabs-group') @root.page.version)}}
+      <nav id="nav-root" class="nav-menu nav-menu-aggregated">
+        {{> nav-tree navigation=this }}
+      </nav>
+    {{/with}}
+  {{/with}}
+
 </div>
-{{/if}}

@@ -1,5 +1,0 @@
-= Feedback disabled
-:page-disablefeedback: true
-
-This page has the header attribute `:page-disablefeedback: true` set to disable the feedback popup.
-

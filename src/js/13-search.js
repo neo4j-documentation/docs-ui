@@ -34,7 +34,7 @@ window.neo4jSearch = (function () {
     container.classList.add(activeClass)
     container.classList.add('search-context--' + searchContext)
     document.getElementsByTagName('html')[0].classList.remove('is-clipped--navbar')
-    document.getElementById('topbar-nav').classList.remove('is-active')
+    document.getElementById('navbar-tabs').classList.remove('is-active')
     document.getElementsByClassName('navbar-burger')[0].classList.remove('is-active')
     input.focus()
   }

@@ -38,7 +38,7 @@ body.kb .kb-search {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  font-size: 0.9rem;
+  font-size: var(--typography-body-medium-font-size);
   cursor: pointer;
 }
 
@@ -56,7 +56,7 @@ body.kb .kb-search .search-shortcut {
   background: var(--palette-neutral-50);
   padding: 0.5rem 1rem;
   border-radius: 0.25rem;
-  font-size: 0.8rem;
+  font-size: var(--typography-body-medium-font-size);
   /* font-family: monospace; */
   font-weight: 400;
 }
@@ -148,7 +148,7 @@ body.landing.kb.kb-home ul.category-tags span.count {
   color: var(--palette-neutral-80);
   align-items: center;
   display: inline-flex;
-  font-size: 0.75em;
+  font-size: var(--typography-body-small-font-size);
   height: 2em;
   justify-content: center;
   line-height: 1.25;
@@ -192,7 +192,7 @@ body.kb-tag .breadcrumbs ul,
 body.kb-article .breadcrumbs ul {
   padding: 0 !important;
   margin-bottom: 0.2rem;
-  font-size: 0.8rem;
+  font-size: var(--typography-body-medium-font-size);
 }
 
 .kb-category .breadcrumbs a,
@@ -212,7 +212,7 @@ body.kb-article .breadcrumbs ul {
 .kb .kb-metadata {
   display: flex;
   flex-direction: column;
-  font-size: 0.875rem;
+  font-size: var(--typography-body-medium-font-size);
   margin-bottom: 0;
 }
 
