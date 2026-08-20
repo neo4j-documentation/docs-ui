@@ -198,6 +198,13 @@
 
     promoted.forEach(function (item) {
       if (!(item.items && item.items.length)) {
+        // Unlike every other branch here, this item is pushed through unwrapped - so
+        // it also needs docsetGroup attached directly, or it never enters aggregateNav's
+        // docsetGroup version-selection (which skips any item with no docsetGroup
+        // entirely) and every version's copy of a flat promoted page (e.g. a
+        // promoteAll'd component index or introduction page with no children) shows
+        // up simultaneously instead of only the selected version's. Mirrors index.js.
+        if (versionData.docsetGroup) item.docsetGroup = versionData.docsetGroup
         headers.push(item)
         return
       }
