@@ -219,7 +219,7 @@ body.docshome .sect2 ul li a {
   font-size: 0.7rem;
 }
 
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 64rem) {
   body.docshome .toolbar {
     display: none;
   }

@@ -3,7 +3,7 @@
   src: url('https://storage.googleapis.com/neo4j-fonts/Syne%20Neo%20Medium%20Font.otf') format('opentype');
 }
 
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 64rem) {
   body.research main > .content {
     margin-top: 0;
   }

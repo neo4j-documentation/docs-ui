@@ -8,7 +8,7 @@
   }
 }
 
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 64rem) {
   main {
     flex: auto;
     /* min-width: 0 required for flexbox to constrain overflowing elements */

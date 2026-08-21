@@ -14,7 +14,7 @@
   }
 }
 
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 64rem) {
   .nav-container {
     font-size: 0.875rem;
     flex: none;
@@ -43,7 +43,7 @@
   }
 }
 
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 64rem) {
   .nav {
     top: var(--navbar-height);
     box-shadow: none;
@@ -113,7 +113,7 @@ html.is-clipped--nav {
   height: var(--nav-panel-height);
 }
 
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 64rem) {
   .nav-panel-menu {
     height: var(--nav-panel-height--desktop);
   }
@@ -367,7 +367,7 @@ html.is-clipped--nav {
   text-align: center;
 }
 
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 64rem) {
   .navbar .navbar-item.getting-started-cta {
     padding-right: 0;
   }

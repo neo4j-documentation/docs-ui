@@ -15,13 +15,13 @@ body {
   display: none !important;
 }
 
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 64rem) {
   .doc.research {
     max-width: 2000px;
   }
 }
 
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 64rem) {
   .doc {
     flex: auto;
     font-size: var(--doc-font-size--desktop);

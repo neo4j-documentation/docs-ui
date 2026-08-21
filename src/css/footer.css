@@ -61,7 +61,7 @@ footer.footer {
   text-decoration: none;
 }
 
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 64rem) {
   .footer .wrapper {
     flex: auto;
     max-width: 1280px;

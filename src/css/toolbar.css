@@ -39,7 +39,7 @@ body.has-banner .toolbar {
   margin-right: -0.25rem;
 }
 
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 64rem) {
   .nav-toggle {
     display: none;
   }
@@ -80,7 +80,7 @@ body.has-banner .toolbar {
   }
 }
 
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 64rem) {
   .edit-this-page {
     display: block;
   }
