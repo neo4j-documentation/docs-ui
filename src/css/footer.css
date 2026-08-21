@@ -61,7 +61,7 @@ footer.footer {
   text-decoration: none;
 }
 
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 64rem) {
   .footer .wrapper {
     flex: auto;
     max-width: 1280px;
@@ -83,7 +83,7 @@ footer.footer {
   }
 }
 
-@media screen and (max-width: 1023px) {
+@media screen and (max-width: 63.9375rem) {
   .footer .column.links {
     padding-top: 0;
     padding-bottom: 0;

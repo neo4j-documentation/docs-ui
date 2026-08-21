@@ -4,7 +4,7 @@
   padding-right: 0;
 }
 
-@media all and (max-width: 1024px) {
+@media all and (max-width: 64rem) {
   #search_open svg {
     margin-right: 1rem;
   }

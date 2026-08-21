@@ -10,7 +10,7 @@
   color: var(--palette-neutral-60);
 }
 
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 64rem) {
   .navbar-end > .navbar-item,
   .navbar-end .navbar-link {
     color: var(--navbar-font-color);

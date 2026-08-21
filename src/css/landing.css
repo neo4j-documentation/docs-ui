@@ -180,7 +180,7 @@ body.landing .ulist.buttons li a {
   transition: all 0.1s linear;
 }
 
-@media all and (min-width: 760px) {
+@media all and (min-width: 47.5rem) {
   body.landing .ulist.buttons li {
     display: inline-block;
   }
@@ -201,7 +201,7 @@ body.landing .ulist.buttons li a {
 }
 
 /* Flex Columns */
-@media all and (min-width: 760px) {
+@media all and (min-width: 47.5rem) {
   .landing .flex-container .sectionbody {
     display: flex;
   }

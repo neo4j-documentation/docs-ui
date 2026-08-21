@@ -58,7 +58,7 @@ div.roles > span.role {
   line-height: 1.3;
 }
 
-@media screen and (max-width: 1023px) {
+@media screen and (max-width: 63.9375rem) {
   div.roles,
   div.roles > span.role::after {
     margin-left: 0;
@@ -362,19 +362,19 @@ div.beta-symbol p::before {
   margin-bottom: 1rem;
 }
 
-@media screen and (max-width: 1244px) {
+@media screen and (max-width: 77.75rem) {
   .graph-variants > .content > .paragraph {
     flex: 0 0 30%;
   }
 }
 
-@media screen and (max-width: 582px) {
+@media screen and (max-width: 36.375rem) {
   .graph-variants > .content > .paragraph {
     flex: 1 1 20%;
   }
 }
 
-@media screen and (min-width: 1245px) {
+@media screen and (min-width: 77.8125rem) {
   .graph-variants > .content > .paragraph {
     flex: 1 1 auto;
   }

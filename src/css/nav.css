@@ -8,13 +8,13 @@
   visibility: hidden;
 }
 
-@media screen and (min-width: 769px) {
+@media screen and (min-width: 48.0625rem) {
   .nav-container {
     width: var(--nav-width);
   }
 }
 
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 64rem) {
   .nav-container {
     font-size: 0.875rem;
     flex: none;
@@ -37,13 +37,13 @@
   font-weight: var(--navbar-font-weight);
 }
 
-@media screen and (min-width: 769px) {
+@media screen and (min-width: 48.0625rem) {
   .nav {
     box-shadow: 0.5px 0 3px var(--nav-border-color);
   }
 }
 
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 64rem) {
   .nav {
     top: var(--navbar-height);
     box-shadow: none;
@@ -66,7 +66,7 @@ html.is-clipped--nav {
   overflow-y: hidden;
 }
 
-@media screen and (max-width: 1023px) {
+@media screen and (max-width: 63.9375rem) {
   html.is-clipped--nav .toolbar {
     position: fixed;
     width: 100%;
@@ -113,7 +113,7 @@ html.is-clipped--nav {
   height: var(--nav-panel-height);
 }
 
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 64rem) {
   .nav-panel-menu {
     height: var(--nav-panel-height--desktop);
   }
@@ -367,7 +367,7 @@ html.is-clipped--nav {
   text-align: center;
 }
 
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 64rem) {
   .navbar .navbar-item.getting-started-cta {
     padding-right: 0;
   }

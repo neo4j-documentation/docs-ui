@@ -1,4 +1,4 @@
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 64rem) {
   body.cheat-sheet .doc {
     flex: auto;
     font-size: var(--doc-font-size--desktop);
@@ -28,7 +28,7 @@ body.cheat-sheet .navbar-brand .navbar-item:first-child a {
   /* color: rgba(var(--palette-neutral-60)); */
 }
 
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 64rem) {
   body.cheat-sheet .navbar-end > .navbar-item,
   body.cheat-sheet .navbar-end .navbar-link {
     /* color: rgba(var(--palette-neutral-60)); */
@@ -405,7 +405,7 @@ body.cheat-sheet span.label.hidden,
   display: none;
 }
 
-@media screen and (max-width: 1023px) {
+@media screen and (max-width: 63.9375rem) {
   body.cheat-sheet .toc-menu-placeholder h2 {
     display: block;
     margin: 0 1.5rem;

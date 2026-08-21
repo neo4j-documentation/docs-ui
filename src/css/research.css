@@ -3,13 +3,13 @@
   src: url('https://storage.googleapis.com/neo4j-fonts/Syne%20Neo%20Medium%20Font.otf') format('opentype');
 }
 
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 64rem) {
   body.research main > .content {
     margin-top: 0;
   }
 }
 
-@media screen and (min-width: 769px) {
+@media screen and (min-width: 48.0625rem) {
   body.research .doc .content {
     margin-top: 0;
   }
@@ -775,7 +775,7 @@ body.research .cards .sect2 .ulist ul li {
   margin: 0.5rem 0 0;
 }
 
-@media screen and (max-width: 1439px) {
+@media screen and (max-width: 89.9375rem) {
   body.research .toolbar {
     top: 0;
   }
@@ -808,7 +808,7 @@ body.research .highlights .sectionbody > div.icon {
   margin: auto;
 }
 
-@media all and (max-width: 1157px) {
+@media all and (max-width: 72.3125rem) {
   body.research .doc > .sect-header > h1.page:first-child {
     text-align: center;
     margin: 1rem auto;

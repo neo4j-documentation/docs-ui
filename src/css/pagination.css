@@ -62,7 +62,7 @@ nav.pagination .next a::after {
   content: "\203a";
 }
 
-@media all and (max-width: 1024px) {
+@media all and (max-width: 64rem) {
   nav.pagination {
     margin: 2rem 0 0;
   }

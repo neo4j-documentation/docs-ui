@@ -315,7 +315,7 @@
   border-bottom-color: var(--palette-neutral-60);
 }
 
-@media all and (min-width: 760px) {
+@media all and (min-width: 47.5rem) {
   .code-walkthrough .doc #preamble .paragraph {
     font-size: 1.1rem;
   }
