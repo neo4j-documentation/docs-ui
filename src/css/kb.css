@@ -119,7 +119,7 @@ body.landing.kb.kb-home .flex-container .sectionbody .column {
   min-width: 13rem;
 }
 
-@media (min-width: 760px) {
+@media (min-width: 47.5rem) {
   body.landing.kb.kb-home .flex-container .sectionbody .column {
     padding-left: 0;
     padding-right: 2rem;

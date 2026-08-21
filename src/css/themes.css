@@ -199,7 +199,7 @@ body.landing.developer .hero {
   background: linear-gradient(180deg, var(--palette-neutral-80) 0%, var(--palette-neutral-70) 45%, var(--palette-neutral-70) 100%);
 }
 
-@media all and (min-width: 760px) {
+@media all and (min-width: 47.5rem) {
   /* .landing.developer .languages {
     padding: 1em 0 4em;
   } */
