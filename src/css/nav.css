@@ -8,7 +8,7 @@
   visibility: hidden;
 }
 
-@media screen and (min-width: 769px) {
+@media screen and (min-width: 48.0625rem) {
   .nav-container {
     width: var(--nav-width);
   }
@@ -37,7 +37,7 @@
   font-weight: var(--navbar-font-weight);
 }
 
-@media screen and (min-width: 769px) {
+@media screen and (min-width: 48.0625rem) {
   .nav {
     box-shadow: 0.5px 0 3px var(--nav-border-color);
   }
@@ -66,7 +66,7 @@ html.is-clipped--nav {
   overflow-y: hidden;
 }
 
-@media screen and (max-width: 1023px) {
+@media screen and (max-width: 63.9375rem) {
   html.is-clipped--nav .toolbar {
     position: fixed;
     width: 100%;

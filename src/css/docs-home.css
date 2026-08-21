@@ -130,7 +130,7 @@ body.docshome:not(.create-applications) .sect2 .icon img {
   background: var(--palette-baltic-10);
 }
 
-@media all and (max-width: 820px) {
+@media all and (max-width: 51.25rem) {
   body.docshome .sect2 {
     min-width: 90%;
   }
@@ -225,7 +225,7 @@ body.docshome .sect2 ul li a {
   }
 }
 
-@media screen and (max-width: 1023px) {
+@media screen and (max-width: 63.9375rem) {
   body.docshome .doc {
     padding: 1rem;
   }

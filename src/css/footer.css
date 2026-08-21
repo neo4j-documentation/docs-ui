@@ -83,7 +83,7 @@ footer.footer {
   }
 }
 
-@media screen and (max-width: 1023px) {
+@media screen and (max-width: 63.9375rem) {
   .footer .column.links {
     padding-top: 0;
     padding-bottom: 0;

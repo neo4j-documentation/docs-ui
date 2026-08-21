@@ -405,7 +405,7 @@ body.cheat-sheet span.label.hidden,
   display: none;
 }
 
-@media screen and (max-width: 1023px) {
+@media screen and (max-width: 63.9375rem) {
   body.cheat-sheet .toc-menu-placeholder h2 {
     display: block;
     margin: 0 1.5rem;

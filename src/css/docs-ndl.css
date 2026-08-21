@@ -9,7 +9,7 @@
   }
 }
 
-@media screen and (min-width: 769px) {
+@media screen and (min-width: 48.0625rem) {
   body.docs-ndl .doc > .sect-header > h1.page:first-child {
     margin-top: 0;
   }
@@ -879,7 +879,7 @@ body.docs-ndl .cards .sect2 .ulist ul li {
   margin: 0.5rem 0 0;
 }
 
-@media screen and (max-width: 1439px) {
+@media screen and (max-width: 89.9375rem) {
   body.docs-ndl .toolbar {
     top: 0;
   }
@@ -933,7 +933,7 @@ body.docs-ndl .cards .sect2 .ulist ul li {
   }
 }
 
-@media all and (max-width: 620px) {
+@media all and (max-width: 38.75rem) {
   body.docs-ndl .doc > .sect-header > h1.page:first-child {
     text-align: center;
     margin: 1rem auto;
