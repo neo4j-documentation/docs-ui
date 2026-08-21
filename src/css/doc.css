@@ -943,10 +943,17 @@ body {
   font-size: calc(16 / var(--rem-base) * 1rem);
 }
 
+.doc .colist > table {
+  table-layout: fixed;
+  width: 100%;
+}
+
 .doc .colist > table > tr > :first-child,
 .doc .colist > table > tbody > tr > :first-child {
+  width: 2rem;
   padding: 0.25em 0.5rem 0;
   vertical-align: top;
+  white-space: nowrap;
 }
 
 .doc .colist > table > tr > :last-child,
