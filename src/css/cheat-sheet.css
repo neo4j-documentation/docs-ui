@@ -217,6 +217,7 @@ body.cheat-sheet .article h3:not(.discrete) {
   justify-content: space-between;
   gap: 0.5rem;
   padding-right: 0;
+  border: none;
 }
 
 body.cheat-sheet .article h3:not(.discrete) a {
