@@ -1,11 +1,13 @@
-/* Header toggle button (navbar-end). Inherits navbar typography from
-   theme-selector's neighbour styling. */
-
+/* Header toggle button (navbar-end). Gets its icon color from the shared
+   .navbar-item rule (--navbar-font-color) via its own navbar-item class - not set
+   here, and deliberately not `color: inherit` either. .navbar itself carries a
+   separate, non-dark-mode-aware color (--palette-neutral-60, for the logo/brand
+   text) that `inherit` would otherwise pick up, making this icon a dim, fixed grey
+   in dark mode instead of matching the other header icons (e.g. the theme toggle). */
 .docsets-toggle {
   background: transparent;
   border: none;
   cursor: pointer;
-  color: inherit;
   padding: 0 0.75rem;
   display: inline-flex;
   align-items: center;
