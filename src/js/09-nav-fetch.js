@@ -477,16 +477,30 @@
     var liChildren = []
     if (item.content) {
       if (item.url) {
-        var anchorClass = 'sidebar-link'
-        if (item.items && item.items.length) anchorClass += ' nav-item-toggle'
         var href = item.urlType === 'internal' ? fixNavPath(item.url) : item.url
         var a = el('a', {
-          className: anchorClass,
+          className: 'sidebar-link',
           'data-depth': String(level || 0),
           href: href,
         })
         a.innerHTML = item.content
-        liChildren.push(a)
+        if (item.items && item.items.length) {
+          // This item is both a linked page and a section with children (e.g. a
+          // docset landing page). Render the toggle as its own sibling button inside
+          // a row wrapper, not folded into the anchor, so the link navigates and the
+          // toggle expands/collapses on its own - mirrors nav-tree.hbs. The row wrapper
+          // (rather than making both direct children of the li) keeps the toggle
+          // scoped to this one row instead of the li's full (possibly expanded) box,
+          // which also contains the nested child list.
+          var toggleBtn = el('button', {
+            type: 'button',
+            className: 'nav-item-toggle nav-item-link-toggle',
+            'aria-label': 'Toggle section',
+          })
+          liChildren.push(el('span', { className: 'nav-item-row' }, [a, toggleBtn]))
+        } else {
+          liChildren.push(a)
+        }
       } else if (item.items && item.items.length) {
         var span = el('span', { className: 'nav-text nav-item-toggle' })
         span.innerHTML = item.content

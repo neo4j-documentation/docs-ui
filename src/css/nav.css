@@ -460,14 +460,16 @@ html.is-clipped--nav {
 }
 
 .nav-menu .nav-item > a,
-.nav-menu .nav-item > span {
+.nav-menu .nav-item > span,
+.nav-menu .nav-item > .nav-item-row {
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
 }
 
 .nav-menu .docset-title > span,
 .nav-menu .nav-item[data-depth="1"] > a,
-.nav-menu .nav-item[data-depth="1"] > span.nav-item-toggle {
+.nav-menu .nav-item[data-depth="1"] > span.nav-item-toggle,
+.nav-menu .nav-item[data-depth="1"] > .nav-item-row {
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
   margin-top: 0.5rem;
@@ -485,28 +487,37 @@ html.is-clipped--nav {
   padding: 0.5rem 2rem 0.5rem 1rem;
 }
 
+.nav-item[data-depth="0"] > .nav-item-row {
+  padding: 0.5rem 0 0.5rem 1rem;
+}
+
 .nav-item[data-depth="1"] > a,
-.nav-item[data-depth="1"] > span {
+.nav-item[data-depth="1"] > span,
+.nav-item[data-depth="1"] > .nav-item-row {
   padding-left: 1.5rem;
 }
 
 .nav-item[data-depth="2"] > a,
-.nav-item[data-depth="2"] > span {
+.nav-item[data-depth="2"] > span,
+.nav-item[data-depth="2"] > .nav-item-row {
   padding-left: 1.5rem;
 }
 
 .nav-item[data-depth="3"] > a,
-.nav-item[data-depth="3"] > span {
+.nav-item[data-depth="3"] > span,
+.nav-item[data-depth="3"] > .nav-item-row {
   padding-left: 2.5rem;
 }
 
 .nav-item[data-depth="4"] > a,
-.nav-item[data-depth="4"] > span {
+.nav-item[data-depth="4"] > span,
+.nav-item[data-depth="4"] > .nav-item-row {
   padding-left: 3.5rem;
 }
 
 .nav-item[data-depth="5"] > a,
-.nav-item[data-depth="5"] > span {
+.nav-item[data-depth="5"] > span,
+.nav-item[data-depth="5"] > .nav-item-row {
   padding-left: 4.5rem;
 }
 
@@ -533,8 +544,55 @@ html.is-clipped--nav {
   -webkit-transform: scaleY(-1);
 }
 
-.nav-item.is-active > a.nav-item-toggle::after {
+/* A link that also has children (e.g. a docset landing page) gets its toggle as a
+   separate sibling button rather than folded into the anchor, so the link can be
+   clicked to navigate while the toggle expands/collapses independently. Both sit in
+   their own row wrapper, rather than as direct children of .nav-item like every other
+   toggle shape - the li itself also contains the (possibly expanded) nested child
+   list, so a toggle positioned/sized relative to .nav-item directly would stretch or
+   shift with that list instead of staying pinned to this one row. */
+.nav-item-row {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.nav-item-row > .sidebar-link {
+  flex: 1;
+  min-width: 0;
+  padding-right: 0;
+}
+
+.nav-item-row > .nav-item-link-toggle {
+  position: relative;
+  flex: none;
+  align-self: stretch;
+  width: 2rem;
   background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+}
+
+.nav-item-row > .nav-item-link-toggle::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  background-color: currentColor;
+  -webkit-mask: url(../img/chevron.svg) no-repeat center;
+  mask: url(../img/chevron.svg) no-repeat center;
+  -webkit-mask-size: contain;
+  mask-size: contain;
+  width: 0.75em;
+  height: 0.75em;
+}
+
+.nav-item.is-active > .nav-item-row > .nav-item-link-toggle::after {
+  -webkit-transform: translate(-50%, -50%) scaleY(-1);
+  transform: translate(-50%, -50%) scaleY(-1);
 }
 
 .nav-item a[target="_blank"]:hover::after {

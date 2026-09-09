@@ -134,7 +134,10 @@
     }
 
     find(menuPanel, '.nav-item-toggle:not(a)').forEach(function (btn) {
-      var li = btn.parentElement
+      // Usually the immediate parent, but a toggle that sits alongside its own link
+      // (.nav-item-link-toggle) is nested one level deeper, inside a .nav-item-row -
+      // closest() finds the actual .nav-item li either way.
+      var li = btn.closest('.nav-item')
       btn.addEventListener('click', toggleActive.bind(li))
       // don't let toggle clicks propagate
       btn.addEventListener('click', concealEvent)
