@@ -191,10 +191,17 @@
     // url/content/pageTabs etc. Only promoted sections (real parent items with
     // children) become their own componentHeader block. Mirrors index.js.
     var promotedSectionCount = promoted.filter(function (item) { return item.items && item.items.length }).length
+    // Flat promoted pages are pushed as their own sibling top-level entries too (see
+    // the promoted.forEach loop below) - they count toward "how many top-level blocks
+    // does this component+version contribute" just as much as a promoted section does.
+    var flatPromotedCount = promoted.length - promotedSectionCount
 
     // How many top-level blocks this component+version contributes - see the matching
     // comment in index.js's consumeNav stage, which this function mirrors client-side.
-    var soleBlock = (promotedSectionCount + (normal.length > 0 ? 1 : 0)) === 1
+    // Flat promoted pages must be counted here too, or a promoted section sharing a
+    // docset with a flat promoted page wrongly looks sole and auto-expands when the
+    // current page is actually the flat page, not inside the section.
+    var soleBlock = (promotedSectionCount + flatPromotedCount + (normal.length > 0 ? 1 : 0)) === 1
 
     promoted.forEach(function (item) {
       if (!(item.items && item.items.length)) {
