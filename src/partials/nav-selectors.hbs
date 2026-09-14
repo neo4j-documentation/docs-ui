@@ -3,24 +3,42 @@
 <div class="selectors">
 <div class="nav-panel-versions{{#unless page.navigation}} is-active{{/unless}}" data-panel="docsets">
 
-  <div class="dropdown">
+  <div class="dropdown version-dropdown">
     <span class="dropdown-label">{{#with (or page.attributes.cheatsheet-product 'Product')}}{{this}}{{/with}} Version</span>
 
-    <select aria-label="Version" id="selector-version" data-current="{{@root.page.version}}" class="version-selector dropdown-styles">
+    {{!-- The trigger's own label is filled in from the current version's link
+         text by JS on load (see 01-nav.js / 50-cheat-sheet-toggle.js) - that
+         label is built from several optional page attributes below, and
+         copying the already-rendered text is simpler than duplicating that
+         logic here just for the closed/collapsed state. --}}
+    <button type="button" aria-label="Version" id="selector-version" data-current="{{@root.page.version}}" class="version-dropdown-trigger dropdown-styles" aria-haspopup="true" aria-expanded="false">
+      <span class="version-dropdown-trigger-label">{{@root.page.componentVersion.displayVersion}}</span>
+    </button>
+    <ul class="version-dropdown-list">
       {{#each page.versions}}
       {{#unless (and this.prerelease @root.page.attributes.nav-selectors-hide-prerelease)}}
-      <option
-        data-version="{{this.displayVersion}}"
-        {{#if this.prerelease }}data-prerelease="{{this.prerelease}}"{{/if}}
-        value="{{{relativize this.url}}}"
-        {{#if (eq this.version @root.page.version)}} selected{{/if}}
-        {{~#if this.missing}} disabled{{/if}}
-      >
-        {{#unless @root.page.attributes.selector-hide-label }}{{#with (or @root.page.attributes.selector-label 'Version') }}{{{this}}} {{/with}}{{/unless}}{{ this.displayVersion }}{{#if (and @root.page.attributes.nav-indicate-latest (eq this.version @root.page.latest.version)) }} (Latest){{else}}{{#with this.selectorText }} {{{this}}}{{/with}}{{/if}}
-      </option>
+      <li{{#if (eq this.version @root.page.version)}} class="is-current"{{/if}}>
+        {{#if this.missing}}
+        {{!-- Not a real link - this version doesn't have this page, so there's
+             nowhere for it to navigate to (mirrors the <option disabled> this
+             replaces, which was likewise unselectable). --}}
+        <span class="version-selector is-missing" data-version="{{this.displayVersion}}" aria-disabled="true">
+          {{#unless @root.page.attributes.selector-hide-label }}{{#with (or @root.page.attributes.selector-label 'Version') }}{{{this}}} {{/with}}{{/unless}}{{ this.displayVersion }}{{#if (and @root.page.attributes.nav-indicate-latest (eq this.version @root.page.latest.version)) }} (Latest){{else}}{{#with this.selectorText }} {{{this}}}{{/with}}{{/if}}
+        </span>
+        {{else}}
+        <a
+          class="version-selector"
+          href="{{{relativize this.url}}}"
+          data-version="{{this.displayVersion}}"
+          {{#if this.prerelease }}data-prerelease="{{this.prerelease}}"{{/if}}
+        >
+          {{#unless @root.page.attributes.selector-hide-label }}{{#with (or @root.page.attributes.selector-label 'Version') }}{{{this}}} {{/with}}{{/unless}}{{ this.displayVersion }}{{#if (and @root.page.attributes.nav-indicate-latest (eq this.version @root.page.latest.version)) }} (Latest){{else}}{{#with this.selectorText }} {{{this}}}{{/with}}{{/if}}
+        </a>
+        {{/if}}
+      </li>
       {{/unless}}
       {{/each}}
-    </select>
+    </ul>
   </div>
 </div>
 </div>

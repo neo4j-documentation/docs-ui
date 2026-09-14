@@ -634,6 +634,97 @@ html.is-clipped--nav {
   width: 100%;
 }
 
+/* The version selector was a native <select>/<option> - refactored to a real
+   <ul>/<li>/<a> list so each version link is a genuine anchor (class
+   "version-selector") that existing <a>-click tracking can observe, which a
+   native select's <option> clicks can't be. .dropdown-styles (shared with
+   other real <select> elements elsewhere) still supplies the chevron/border/
+   background chrome for the trigger button; only the open/close and list
+   presentation are new here. */
+.version-dropdown {
+  position: relative;
+}
+
+.version-dropdown-trigger {
+  width: 100%;
+  text-align: left;
+  cursor: pointer;
+}
+
+/* .doc ul (doc.css) sets padding: 0 0 0 2rem at specificity (0,1,1), one class
+   ahead of a plain .version-dropdown-list - inside an article this list needs
+   the extra class to actually win and not be indented 2rem further in. */
+.version-dropdown .version-dropdown-list {
+  display: none;
+  position: absolute;
+  top: calc(100% + 1px);
+  left: 0;
+  z-index: 20;
+  margin: 0.25rem 0 0;
+  /* No padding here - .version-selector's own padding (0.5rem left) matches
+     the trigger's own left padding exactly, so list items line up flush with
+     the trigger's text instead of sitting indented further in. */
+  padding: 0;
+  /* .nav-panel-versions is width: max-content, so the closed trigger is often
+     only as wide as a short version label like "5.26" - the list still needs
+     to fit longer entries (e.g. "Version 2026.08 (Latest)"), so it grows to
+     its own content width rather than being clamped to the trigger's. */
+  min-width: 100%;
+  width: max-content;
+  max-width: 20rem;
+  list-style: none;
+  background: var(--dropdown-background-color);
+  border: 1px solid var(--dropdown-border-color);
+  border-radius: var(--border-radius-sm);
+  box-shadow: 0 8px 16px rgba(10, 10, 10, 0.15);
+  max-height: 16rem;
+  overflow-y: auto;
+  /* overflow-y: auto alone makes overflow-x resolve to auto too (per spec) -
+     without pinning it to hidden, any label the max-width above didn't leave
+     room for scrolls horizontally inside the box instead of wrapping. */
+  overflow-x: hidden;
+}
+
+.version-dropdown.is-active .version-dropdown-list {
+  display: block;
+}
+
+.version-dropdown-list li {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.version-selector {
+  display: block;
+  padding: 0.375rem 0.5rem;
+  border-radius: var(--border-radius-sm);
+  color: var(--toc-item-font-color);
+  text-decoration: none;
+  /* Matches the trigger's own font-size (docs-remix.css's
+     .docs .nav-panel-versions .dropdown-styles) so the list reads the same
+     size as the closed button, not the surrounding page's default size. */
+  font-size: var(--typography-body-small-font-size);
+  /* Content can still exceed max-width above (e.g. a very long selector-label
+     attribute) - wrap rather than let it overflow now that overflow-x is
+     hidden, so it's still fully readable instead of silently clipped. */
+  white-space: normal;
+  overflow-wrap: break-word;
+}
+
+/* body.docs .doc a:hover (docs-ndl.css, loaded after this file) outweighs a
+   plain a.version-selector:hover and re-underlines it despite the rule above -
+   needs to out-specificity that, not just out-order it. */
+.version-dropdown .version-dropdown-list a.version-selector:hover {
+  background: var(--toc-hover-background-color);
+  text-decoration: none;
+}
+
+.version-selector.is-missing {
+  color: var(--nav-muted-color);
+  cursor: not-allowed;
+}
+
 /* All styles are from design system tokens */
 .dropdown-styles {
   display: grid;

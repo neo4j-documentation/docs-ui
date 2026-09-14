@@ -196,6 +196,7 @@
       var titleLink = document.createElement('a')
       titleLink.href = resolveHref(name, uv, slot && slot.url)
       titleLink.textContent = entry.title
+      titleLink.classList.add('docset-link')
       titleDiv.appendChild(titleLink)
       return li
     }
@@ -212,7 +213,7 @@
       var a = document.createElement('a')
       a.href = resolveHref(name, v, entry.versions[v].url)
       a.textContent = v || entry.title
-      a.classList.add('version-link')
+      a.classList.add('docset-link')
       versionLi.appendChild(a)
       versionsUl.appendChild(versionLi)
     })

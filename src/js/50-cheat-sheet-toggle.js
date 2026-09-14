@@ -15,17 +15,41 @@ document.addEventListener('DOMContentLoaded', function () {
   rewriteLabels()
   cleanToc()
 
-  const versionSelector = document.querySelector('body.cheat-sheet .version-selector')
-  if (versionSelector) {
-    versionSelector.addEventListener('change', function (e) {
-      const current = e.target.dataset.current
-      const next = e.target.selectedOptions[0].dataset.version
-      const re = new RegExp(`/${current}/`)
-      const newUrl = document.URL.replace(re, `/${next}/`)
-      if (window.ga) {
-        window.ga('send', 'event', 'version-select', 'From: ' + current + ';To:' + next + ';')
+  // Navigation is a plain <a href> now (each version link's own href, set
+  // server-side, replaces the URL regex-rewrite this used to do from the
+  // selected <option>'s value) - only the open/close toggle is needed here,
+  // since this replaces a native <select>'s built-in dropdown behavior. The
+  // version links carry class="version-selector" so they're picked up by
+  // whatever already tracks <a> clicks elsewhere on the page, rather than the
+  // bespoke window.ga(...) call this used to make.
+  const versionDropdownTrigger = document.querySelector('body.cheat-sheet .version-dropdown-trigger')
+  if (versionDropdownTrigger) {
+    const dropdown = versionDropdownTrigger.closest('.version-dropdown')
+    const label = versionDropdownTrigger.querySelector('.version-dropdown-trigger-label')
+    const current = dropdown.querySelector('.is-current .version-selector')
+    if (label && current) label.textContent = current.textContent.trim()
+
+    const close = () => {
+      dropdown.classList.remove('is-active')
+      versionDropdownTrigger.setAttribute('aria-expanded', 'false')
+    }
+
+    versionDropdownTrigger.addEventListener('click', (e) => {
+      e.stopPropagation()
+      if (dropdown.classList.contains('is-active')) {
+        close()
+      } else {
+        dropdown.classList.add('is-active')
+        versionDropdownTrigger.setAttribute('aria-expanded', 'true')
       }
-      document.location.replace(newUrl)
+    })
+
+    document.addEventListener('click', (e) => {
+      if (dropdown.classList.contains('is-active') && !dropdown.contains(e.target)) close()
+    })
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && dropdown.classList.contains('is-active')) close()
     })
   }
 

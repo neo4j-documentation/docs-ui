@@ -43,21 +43,40 @@
     }
   }
 
-  var versionSelector = document.querySelector('body:not(.cheat-sheet) .version-selector')
-  if (versionSelector) {
-    versionSelector.addEventListener('change', function (e) {
-      const target = e.target
+  initVersionDropdown(document.querySelector('body:not(.cheat-sheet) .version-dropdown-trigger'))
 
-      // const current = target.dataset.current
-      // const next = target.selectedOptions[0].dataset.version
+  // Navigation is just a plain <a href> now, so no click handling is needed for
+  // that - only the open/close toggle, since this replaces a native <select>'s
+  // built-in dropdown. The version links themselves carry class="version-selector"
+  // so they get picked up by whatever already tracks <a> clicks elsewhere on the
+  // page - a native <select>'s <option> clicks couldn't be observed that way.
+  function initVersionDropdown (trigger) {
+    if (!trigger) return
+    var dropdown = trigger.closest('.version-dropdown')
+    var label = trigger.querySelector('.version-dropdown-trigger-label')
+    var current = dropdown.querySelector('.is-current .version-selector')
+    if (label && current) label.textContent = current.textContent.trim()
 
-      const url = target.value
+    function close () {
+      dropdown.classList.remove('is-active')
+      trigger.setAttribute('aria-expanded', 'false')
+    }
 
-      // if (window.ga) {
-      //   window.ga('send', 'event', 'version-select', 'From: ' + current + ';To:' + next + ';')
-      // }
+    trigger.addEventListener('click', function (e) {
+      e.stopPropagation()
+      if (dropdown.classList.contains('is-active')) close()
+      else {
+        dropdown.classList.add('is-active')
+        trigger.setAttribute('aria-expanded', 'true')
+      }
+    })
 
-      document.location.assign(url)
+    document.addEventListener('click', function (e) {
+      if (dropdown.classList.contains('is-active') && !dropdown.contains(e.target)) close()
+    })
+
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && dropdown.classList.contains('is-active')) close()
     })
   }
 
