@@ -438,7 +438,6 @@ body.cheat-sheet span.label.hidden,
   body.cheat-sheet aside.toc.embedded,
   body.cheat-sheet .navbar-tabs,
   body.cheat-sheet .navbar-search,
-  body.cheat-sheet .navbar-burger,
   body.cheat-sheet .feedback,
   body.cheat-sheet footer {
     display: none;

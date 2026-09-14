@@ -1,7 +1,3 @@
-html.is-clipped--navbar {
-  overflow-y: hidden;
-}
-
 body {
   padding-top: var(--navbar-height);
 }
@@ -78,8 +74,13 @@ body {
     padding-right: 0.75rem;
   }
 
+  /* Below the tabs-row breakpoint the header also has to fit the tab-dropdown
+     trigger, search, docsets-toggle and the theme toggle in one un-wrapped row
+     (see the max-width: 1239px block below) - drop the "Documentation" text
+     label at phone widths and keep just the logo mark, freeing up the room
+     those icons need to stay visible without overlapping or overflowing. */
   .navbar-brand .header-home:last-child {
-    padding-right: 0;
+    display: none;
   }
 }
 
@@ -126,75 +127,21 @@ html[style*="color-scheme: light;"] .navbar-logo-dark {
   /* height: var(--navbar-height); */
 }
 
-.navbar-responsive {
-  margin-left: auto;
-  display: flex;
-}
-
-.navbar-burger,
 .navbar-search {
   color: var(--navbar-font-color);
   background: none;
   border: none;
   outline: none;
   line-height: 1;
-  height: var(--navbar-height);
   position: relative;
-  /* width: var(--navbar-height); */
   width: 2.75rem;
   padding: 0;
-}
-
-.navbar-search {
   margin-left: auto;
   height: auto;
 }
 
 .navbar-brand .navbar-search svg {
   margin-right: 0;
-}
-
-.navbar-burger {
-  color: var(--color-docs);
-}
-
-.navbar-burger span {
-  background: var(--navbar-font-color);
-  display: block;
-  height: 1px;
-  left: 50%;
-  margin-left: -7px;
-  position: absolute;
-  top: 50%;
-  width: 15px;
-}
-
-.navbar-burger span:nth-child(1) {
-  margin-top: -6px;
-}
-
-.navbar-burger span:nth-child(2) {
-  margin-top: -1px;
-}
-
-.navbar-burger span:nth-child(3) {
-  margin-top: 4px;
-}
-
-.navbar-burger.is-active span:nth-child(1) {
-  margin-left: -5px;
-  transform: rotate(45deg);
-  transform-origin: left top;
-}
-
-.navbar-burger.is-active span:nth-child(2) {
-  opacity: 0;
-}
-
-.navbar-burger.is-active span:nth-child(3) {
-  margin-left: -5px;
-  transform: rotate(-45deg);
-  transform-origin: left bottom;
 }
 
 .navbar-tabs {
@@ -259,7 +206,7 @@ html[style*="color-scheme: light;"] .navbar-logo-dark {
 html[style*="color-scheme: dark"] #theme-icon .theme-icon-dark { display: block; }
 html[style*="color-scheme: dark"] #theme-icon .theme-icon-light { display: none; }
 
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 1240px) {
   .navbar-dropdown {
     box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
   }
@@ -270,7 +217,7 @@ html[style*="color-scheme: dark"] #theme-icon .theme-icon-light { display: none;
   }
 }
 
-@media screen and (max-width: 1023px) {
+@media screen and (max-width: 1239px) {
   .navbar-item .navbar-link {
     font-weight: bold;
     padding-left: 0;
@@ -289,7 +236,7 @@ html[style*="color-scheme: dark"] #theme-icon .theme-icon-light { display: none;
   color: var(--navbar-dropdown_hover-link);
 }
 
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 1240px) {
   .navbar-dropdown .navbar-item {
     padding-left: 1.5rem;
     padding-right: 1.5rem;
@@ -303,103 +250,173 @@ html[style*="color-scheme: dark"] #theme-icon .theme-icon-light { display: none;
   margin: 0.25rem 0;
 }
 
-@media screen and (max-width: 1023px) {
-  .navbar-brand .header-home {
-    align-items: center;
+/* Unconditional (not scoped to any breakpoint) - previously this only applied
+   below the old mobile breakpoint, so .header-home rendered two different ways
+   depending on viewport width: flex-centered below it, and relying on
+   .navbar-brand's padding alone above it. The logo (34px tall) centers to a
+   different offset than that padding gives, while the "Documentation" text
+   (23.4375px tall) happens to land at the same offset either way - masking the
+   inconsistency there while the logo visibly jumped a few px at the boundary. */
+.navbar-brand .header-home {
+  align-items: center;
+  display: flex;
+}
+
+@media screen and (max-width: 1239px) {
+  #navbar-tabs.navbar-tabs {
     display: flex;
+    align-items: stretch;
+    position: relative;
+    flex: 1 1 auto;
+    /* A flex container's automatic min-width (plain min-width: 0 would remove this
+       floor entirely) is based on its content's min-content size, which for text
+       ignores text-overflow: ellipsis - so without a floor here the label refuses
+       to shrink at all and the whole trigger overflows past the viewport instead.
+       This caps it at "just the chevron and its padding, no label" - small enough
+       to always fit, and the reserved amount the label actually ellipses into. */
+    min-width: 2.5rem;
+    margin-right: 0.5rem;
   }
 
-  .navbar-tabs {
-    background: var(--navbar-tabs-background);
-    padding: 0.5rem 0;
-  }
-
-  .navbar-tabs.is-active {
+  .navbar-tabs-trigger {
     display: flex;
-    flex-direction: column;
     align-items: center;
-    box-shadow: 0 8px 16px rgba(10, 10, 10, 0.1);
-    overflow-y: auto;
-    position: fixed;
-    top: 3.5rem;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    max-height: none;
-    z-index: 500;
-    background: var(--navbar-tabs-background);
-    padding-top: 2rem;
+    gap: 0.375rem;
+    /* Flex items default to min-width: auto, which refuses to shrink below content
+       size - without overriding it here, this button (as the flex child that fills
+       #navbar-tabs's own shrunk width) would overflow its already-shrunk parent
+       and render on top of whatever icon follows it, rather than the label
+       actually ellipsing down. */
+    min-width: 0;
+    max-width: 100%;
+    /* Matches the first tab's own left inset exactly (.category-tabs's 1rem
+       padding-left + the tab <a>'s own 0.25rem padding, in docs-remix.css) so the
+       label lands in precisely the same spot "Get Started" occupies in the full
+       tab row - crossing the breakpoint doesn't visually shift anything. */
+    padding: 0 1rem 0 1.25rem;
+    background: none;
+    border: none;
+    /* Matches the tab links' own color (docs-remix.css) rather than the generic
+       navbar text color, so the label reads the same on both sides of the
+       breakpoint - not just in the same position but the same color too. */
+    color: var(--color-docs);
+    font-weight: var(--body-font-weight-semibold);
+    cursor: pointer;
   }
 
-  .navbar-tabs.is-active .category-tabs {
-    width: 100%;
+  .navbar-tabs-trigger-label {
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .navbar-tabs-trigger::after {
+    content: "";
     flex: none;
+    width: 0.5em;
+    height: 0.5em;
+    border-style: solid;
+    border-width: 0 0 1px 1px;
+    border-color: currentColor;
+    transform: rotate(-45deg);
+  }
+
+  #navbar-tabs.is-active .navbar-tabs-trigger::after {
+    transform: rotate(135deg);
+  }
+
+  /* Closed by default - the trigger above is the only always-visible part.
+     Overrides docs-remix.css's unscoped display:flex on this same element. */
+  #navbar-tabs .category-tabs {
+    display: none;
+  }
+
+  #navbar-tabs.is-active .category-tabs {
+    display: block;
+    /* docs-remix.css sets height: stretch unscoped, which (once this is
+       position: absolute) resolves against its now-tiny containing block
+       (#navbar-tabs, just the trigger's own row height) instead of sizing to
+       the dropdown's actual list content - override back to auto. */
     height: auto;
-    padding: 1rem;
-    border-bottom: 1px solid var(--navbar-tabs-border-color);
+    position: absolute;
+    /* #navbar-tabs is stretched (align-items: stretch) to .navbar's content-box
+       height, which - since .navbar is border-box with a 1px border-bottom -
+       is 1px short of .navbar's true (border-inclusive) bottom edge. Plain
+       top: 100% therefore lands the panel 1px too high, so the header's own
+       bottom border cuts across its top edge instead of sitting flush above
+       it - the "disconnected" look. */
+    top: calc(100% + 1px);
+    left: 0;
+    min-width: 12rem;
+    max-width: calc(100vw - 2rem);
+    max-height: calc(100vh - var(--navbar-height) - 1rem);
+    overflow-y: auto;
+    background: var(--navbar-tabs-background);
+    border: 1px solid var(--navbar-tabs-border-color);
+    /* Square top corners read as an extension dropping straight from the header
+       (which the flush top edge, above, now sits directly against) rather than
+       a separate floating box - only the bottom corners round off. */
+    border-radius: 0 0 0.5rem 0.5rem;
+    box-shadow: 0 8px 16px rgba(10, 10, 10, 0.15);
+    padding: 0.5rem;
+    z-index: 500;
   }
 
-  .navbar-tabs.is-active .category-ul {
+  #navbar-tabs .category-ul {
     flex-direction: column;
-    align-items: center;
-    width: 100%;
     height: auto;
+    gap: 0;
   }
 
-  .navbar-tabs.is-active .category-ul li a {
-    width: fit-content;
+  /* The trigger already shows the current tab - no need to repeat it as a
+     (non-clickable-looking) entry in the dropdown of other tabs. */
+  #navbar-tabs .category-ul li.is-active {
+    display: none;
   }
 
-  .navbar-tabs.is-active .navbar-end {
-    display: flex;
-    width: 100%;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .navbar-tabs.is-active .navbar-end > .navbar-item,
-  .navbar-tabs.is-active .navbar-end > .navbar-item a {
-    width: fit-content;
+  #navbar-tabs .category-ul li a {
+    width: auto;
+    display: block;
   }
 
   .navbar-tabs a.navbar-item:hover,
   .navbar-tabs .navbar-link:hover {
     background-color: var(--navbar-tabs_hover-background);
   }
+}
 
-  .navbar-end {
-    padding: 1rem;
-  }
-
-  .navbar-end > .navbar-item {
-    border-top: 1px solid var(--navbar-tabs-border-color);
-    padding: 0.5rem;
-  }
-
-  .navbar-end > .navbar-item.getting-started-cta,
-  .navbar-end > #theme-icon {
-    border: none;
-  }
-
-  .navbar-end > .navbar-item:last-child {
-    border: none;
-  }
-
-  .navbar-end .navbar-link {
-    font-weight: var(--body-font-weight-semibold);
-    font-size: calc(12 / var(--rem-base) * 1.25rem);
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-    color: var(--toc-heading-font-color);
-    padding: 0.75rem 0;
-  }
-
-  .navbar-end .navbar-item:has(#search_open) {
-    display: none;
+/* Deliberately a separate, narrower breakpoint from the 1239px one above: the
+   fixed sidebar-alignment width (--nav-width) only matters where that sidebar
+   exists (>=1240px) - below it, collapsing the tabs into the dropdown trigger
+   already frees up plenty of room, and there's no need to shrink the brand too
+   until space is genuinely tight again. Keeping it fixed all the way down to
+   here means the trigger lands in exactly the same spot "Get Started" occupied
+   in the full tab row right at the 1239/1240px boundary - shrinking it there
+   too would shift everything after it and undo that seamless handoff. */
+@media screen and (max-width: 599px) {
+  .navbar-brand {
+    width: auto;
   }
 }
 
-@media screen and (min-width: 1024px) {
+@media screen and (max-width: 359px) {
+  /* The dropdown normally hangs from the trigger's own left edge (position:
+     absolute, positioned against #navbar-tabs) - fine when there's room to its
+     right, but #navbar-tabs sits left-of-center in the header, not flush with
+     the viewport edge, so on the narrowest phones that anchoring runs the panel
+     past the right edge. Anchor to the viewport itself instead. */
+  #navbar-tabs.is-active .category-tabs {
+    position: fixed;
+    top: var(--navbar-height);
+    left: 1rem;
+    right: 1rem;
+    min-width: 0;
+    max-width: none;
+  }
+}
+
+@media screen and (min-width: 1240px) {
   .navbar,
   .navbar-tabs,
   .navbar-end {
@@ -408,8 +425,7 @@ html[style*="color-scheme: dark"] #theme-icon .theme-icon-light { display: none;
     flex-grow: 1;
   }
 
-  .navbar-responsive .navbar-burger,
-  .navbar-responsive .navbar-search {
+  .navbar-tabs-trigger {
     display: none;
   }
 
@@ -565,7 +581,7 @@ html[style*="color-scheme: dark"] #theme-icon .theme-icon-light { display: none;
   border-color: var(--navbar-kb-border);
 }
 
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 1240px) {
   .navbar-dropdown {
     margin-top: 0;
     border-radius: 4px;
@@ -585,7 +601,7 @@ html[style*="color-scheme: dark"] #theme-icon .theme-icon-light { display: none;
   color: var(--palette-neutral-60);
 }
 
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 1240px) {
   .navbar-end > .navbar-item,
   .navbar-end .navbar-link {
     color: var(--navbar-font-color);

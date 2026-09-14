@@ -4,7 +4,6 @@ window.neo4jSearch = (function () {
   var activeClass = 'search--active'
 
   var searchIcon = document.getElementById('search_open')
-  var searchIconMobile = document.getElementById('search_open_mobile')
 
   var body = document.querySelector('body')
   var container = document.getElementsByClassName('search')[0]
@@ -33,9 +32,7 @@ window.neo4jSearch = (function () {
     body.classList.add(activeClass)
     container.classList.add(activeClass)
     container.classList.add('search-context--' + searchContext)
-    document.getElementsByTagName('html')[0].classList.remove('is-clipped--navbar')
     document.getElementById('navbar-tabs').classList.remove('is-active')
-    document.getElementsByClassName('navbar-burger')[0].classList.remove('is-active')
     input.focus()
   }
 
@@ -62,12 +59,6 @@ window.neo4jSearch = (function () {
   })
 
   searchIcon.addEventListener('click', function (e) {
-    e.preventDefault()
-
-    openSearch()
-  })
-
-  searchIconMobile.addEventListener('click', function (e) {
     e.preventDefault()
 
     openSearch()

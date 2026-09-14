@@ -1,4 +1,11 @@
 <div id="navbar-tabs" class="navbar-tabs">
+  {{!-- Below the tabs-row breakpoint, the tab list collapses into this trigger +
+       dropdown instead of a hamburger menu - the trigger shows the current tab
+       (label filled in by 05-mobile-navbar.js from the .is-active tab below) and
+       opens a small dropdown of the other tabs, rather than a full-screen panel. --}}
+  <button type="button" class="navbar-tabs-trigger" aria-haspopup="true" aria-expanded="false">
+    <span class="navbar-tabs-trigger-label">Menu</span>
+  </button>
   <div class="category-tabs">
     <ul class="category-ul">
       {{#each (tabs)}}
