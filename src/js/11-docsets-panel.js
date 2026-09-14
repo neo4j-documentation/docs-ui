@@ -212,6 +212,7 @@
       var a = document.createElement('a')
       a.href = resolveHref(name, v, entry.versions[v].url)
       a.textContent = v || entry.title
+      a.classList.add('version-link')
       versionLi.appendChild(a)
       versionsUl.appendChild(versionLi)
     })
