@@ -3,13 +3,13 @@
   <ul>
     {{#if (and @root.page.attributes.breadcrumb-title @root.page.attributes.breadcrumb-path)}}
     {{#with @root.site.url}}
-    <li><a href="{{{relativize this}}}/{{{@root.page.attributes.breadcrumb-path}}}">{{{@root.page.attributes.breadcrumb-title}}}</a></li>
+    <li><a class="breadcrumbs-link" href="{{{relativize this}}}/{{{@root.page.attributes.breadcrumb-path}}}">{{{@root.page.attributes.breadcrumb-title}}}</a></li>
     {{/with}}
     {{/if}}
     {{#each (or asciidoc.attributes.breadcrumbs page.attributes.breadcrumbs)}}
     <li>
       {{#if this.url}}
-      <a href="{{this.url}}">
+      <a class="breadcrumbs-link" href="{{this.url}}">
       {{/if}}
       {{ this.name }}
       {{#if this.url}}
@@ -22,7 +22,7 @@
     {{#unless (eq page.attributes.layout 'docs-ndl') }}
     {{#with page.componentVersion}}
     {{#if (and ./title (not (or ./root (eq ./title @root.page.breadcrumbs.0.content))))}}
-    <li><a href="{{{relativize ./url}}}">{{{./title}}}</a></li>
+    <li><a class="breadcrumbs-link" href="{{{relativize ./url}}}">{{{./title}}}</a></li>
     {{/if}}
     {{/with}}
     {{/unless}}
@@ -30,7 +30,7 @@
     {{#each page.breadcrumbs}}
     <li>
     {{~#if (and ./url (eq ./urlType 'internal'))~}}
-    <a href="{{{relativize ./url}}}">
+    <a class="breadcrumbs-link" href="{{{relativize ./url}}}">
       {{#if @root.page.attributes.breadcrumb}}
         {{@root.page.attributes.breadcrumb}}
       {{else}}
