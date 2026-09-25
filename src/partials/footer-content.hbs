@@ -16,9 +16,19 @@
     <div class="column copyright">
     <p>© <span id="footer-copyright-year">{{year}}</span> Neo4j, Inc.
       <a href="https://neo4j.com/terms/">Terms</a> | <a href="https://neo4j.com/privacy-policy/">Privacy Policy</a> | <a href="https://neo4j.com/docs/sitemap_index.xml">Sitemap</a></p>
+    {{!-- The trademark list dates fast (products get renamed/added/dropped)
+          and was previously baked here, meaning a change needed a full
+          docs-ui release plus every docset rebuilding before it reached any
+          published page. Fetched + injected at runtime by 17-footer.js from
+          the published fragment (<uiRootPath>/fragments/footer-trademarks.html),
+          same as the link columns above, so it can be updated by republishing
+          just that asset. This baked copy is the fallback for no-JS/fetch
+          failure - keep it in sync with the fragment when either changes. --}}
+    <div id="footer-trademarks">
     <p>Neo Technology<sup>®</sup>, Neo4j<sup>®</sup>, Cypher<sup>®</sup>, Neo4j Bloom<sup>™</sup>, Neo4j Graph Data Science Library<sup>™</sup>, Neo4j<sup>®</sup> Aura<sup>™</sup>, and
       Neo4j<sup>®</sup> AuraDB<sup>™</sup> are registered trademarks
       of Neo4j, Inc. All other marks are owned by their respective companies.</p>
+    </div>
   </div>
 
 

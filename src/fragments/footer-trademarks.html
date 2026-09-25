@@ -1,0 +1,13 @@
+<!-- Footer trademark notice. Published as a bundle asset (served at
+     <uiRootPath>/fragments/footer-trademarks.html) and fetched at runtime by
+     17-footer.js, which injects it into the #footer-trademarks slot. Update
+     this file and republish just the assets to change the trademark list
+     everywhere — no page rebuild, no docs-ui release. Keep it to plain
+     markup so it can be served and injected as-is (no Handlebars - this is
+     served as a static asset, not run through the template engine, so the
+     year here can't use the {{year}} helper the baked copyright line does).
+     Keep footer-content.hbs's own baked copy of this paragraph (the no-JS/
+     fetch-failure fallback) in sync when this changes. -->
+<p>Neo Technology<sup>®</sup>, Neo4j<sup>®</sup>, Cypher<sup>®</sup>, Neo4j Bloom<sup>™</sup>, Neo4j Graph Data Science Library<sup>™</sup>, Neo4j<sup>®</sup> Aura<sup>™</sup>, and
+  Neo4j<sup>®</sup> AuraDB<sup>™</sup> are registered trademarks
+  of Neo4j, Inc. All other marks are owned by their respective companies.</p>
