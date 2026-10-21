@@ -120,10 +120,6 @@
   font-size: 0.95rem;
 }
 
-.docsets-modal__body .component.is-current .title {
-  color: var(--color-docs, currentColor);
-}
-
 .docsets-modal__body .controls {
   display: flex;
   align-items: center;

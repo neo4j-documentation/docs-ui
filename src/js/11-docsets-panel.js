@@ -218,7 +218,6 @@
     var titleDiv = document.createElement('div')
     titleDiv.className = 'title'
     titleDiv.textContent = entry.title
-    if (name === currentComponent) titleDiv.classList.add('is-current')
     li.appendChild(titleDiv)
 
     var controls = document.createElement('div')
