@@ -180,13 +180,13 @@
     return prefixSitePath(rawUrl)
   }
 
-  // A version's PDF lives at <component>[/<version>]/_exports/neo4j-<component>[-<version>].pdf
+  // A version's PDF lives at <component>[/<version>]/neo4j-<component>[-<version>].pdf
   // - the version segment is omitted for unversioned docsets. Same base-URL rules
   // as resolveHref. Every docset is assumed to build a PDF, so the link is always
   // shown.
   function pdfUrl (component, version) {
     var path = '/' + component + (version ? '/' + version : '') +
-      '/_exports/neo4j-' + component + (version ? '-' + version : '') + '.pdf'
+      '/neo4j-' + component + (version ? '-' + version : '') + '.pdf'
     var isLocal = !localComponents ||
       !!(localComponents[component] && localComponents[component].indexOf(version) !== -1)
     if (!isLocal && docsUrl) return docsUrl + path
