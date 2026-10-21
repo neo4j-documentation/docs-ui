@@ -166,6 +166,8 @@
 
 .docsets-modal__body .version-entry a {
   display: inline;
+  /* .version-selector (nav.css) rounds its corners, which would curve the divider border */
+  border-radius: 0;
   padding: 0 0 0 0.5rem;
   color: var(--color-docs, currentColor);
   text-decoration: none;
