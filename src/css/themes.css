@@ -106,12 +106,12 @@ body.labs .tableblock .icon i {
 
 body.labs .navbar .navbar-item.getting-started-cta .navbar-link {
   background: var(--color-labs);
-  color: light-dark(var(--dark--body-font-color), var(--body-font-color));
+  color: var(--color-labs-font);
 }
 
 body.labs .navbar .navbar-item.getting-started-cta .navbar-link:hover {
   background: var(--color-labs);
-  color: light-dark(var(--dark--color-labs), var(--color-labs));
+  color: var(--color-labs-font);
 }
 
 /* Labs Home Page */
@@ -149,7 +149,7 @@ body.landing.labs .buttons > * {
 
 body.landing.labs .buttons li a {
   background: var(--color-labs);
-  color: light-dark(var(--dark--body-font-color), var(--body-font-color));
+  color: var(--color-labs-font);
 }
 
 body.landing.labs .buttons li a:hover {
