@@ -568,7 +568,40 @@ html.is-clipped--nav {
 .nav-item-row > .sidebar-link {
   flex: 1;
   min-width: 0;
-  padding-right: 0;
+  padding-right: 0.5rem;
+}
+
+/* The row carries no padding of its own: the link takes the same vertical and
+   per-depth left padding as a plain nav link, so its hover/active background is
+   the same full-height rounded block (stopping short of the chevron button). */
+.nav-menu .nav-item[data-depth] > .nav-item-row {
+  padding: 0;
+}
+
+.nav-menu .nav-item > .nav-item-row > .sidebar-link {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+
+.nav-menu .nav-item[data-depth="0"] > .nav-item-row > .sidebar-link {
+  padding-left: 1rem;
+}
+
+.nav-menu .nav-item[data-depth="1"] > .nav-item-row > .sidebar-link,
+.nav-menu .nav-item[data-depth="2"] > .nav-item-row > .sidebar-link {
+  padding-left: 1.5rem;
+}
+
+.nav-menu .nav-item[data-depth="3"] > .nav-item-row > .sidebar-link {
+  padding-left: 2.5rem;
+}
+
+.nav-menu .nav-item[data-depth="4"] > .nav-item-row > .sidebar-link {
+  padding-left: 3.5rem;
+}
+
+.nav-menu .nav-item[data-depth="5"] > .nav-item-row > .sidebar-link {
+  padding-left: 4.5rem;
 }
 
 .nav-item-row > .nav-item-link-toggle {
