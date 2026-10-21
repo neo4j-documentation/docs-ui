@@ -437,7 +437,8 @@ html.is-clipped--nav {
 }
 
 .nav-item a:hover,
-.nav-item span:hover {
+.nav-item span:not(.nav-item-row):hover,
+.nav-item-row > .nav-item-link-toggle:hover {
   background-color: var(--toc-hover-background-color);
   border-radius: 0.5rem;
 }
