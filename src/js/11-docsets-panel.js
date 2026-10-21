@@ -195,7 +195,7 @@
 
   function createPdfLink (component, version) {
     var a = document.createElement('a')
-    a.className = 'pdf-link'
+    a.className = 'pdf-link docset-link'
     a.textContent = 'PDF'
     a.href = pdfUrl(component, version)
     return a
@@ -211,75 +211,97 @@
       if (!entry.versions[a].latest && entry.versions[b].latest) return 1
       return b.localeCompare(a)
     })
-    var hasShowableVersion = versionKeys.some(function (v) { return v })
-
+    // The title is plain text. Every way into a docset lives in the version
+    // entries: `<version> | HTML | PDF`. With several versions they sit in a
+    // dropdown (same markup/classes as the page's version dropdown); with one
+    // version, or none, the single entry is shown inline.
     var titleDiv = document.createElement('div')
     titleDiv.className = 'title'
+    titleDiv.textContent = entry.title
+    if (name === currentComponent) titleDiv.classList.add('is-current')
     li.appendChild(titleDiv)
-
-    // Unversioned docset (single empty-string version, e.g. aura): there are
-    // no version chips to click, so make the title itself the link to the
-    // docset's first page.
-    if (!hasShowableVersion) {
-      var uv = versionKeys[0] || ''
-      var slot = entry.versions[uv]
-      if (name === currentComponent) titleDiv.classList.add('is-current')
-      var titleLink = document.createElement('a')
-      titleLink.href = resolveHref(name, uv, slot && slot.url)
-      titleLink.textContent = entry.title
-      titleLink.classList.add('docset-link')
-      titleDiv.appendChild(titleLink)
-      var uControls = document.createElement('div')
-      uControls.className = 'controls'
-      var uPdf = createPdfLink(name, uv)
-      uControls.appendChild(uPdf)
-      li.appendChild(uControls)
-      return li
-    }
-
-    // Title link, version picker and PDF link share one row. Picking a version
-    // retargets the title and PDF links in place rather than navigating, so the
-    // reader can still choose between the page and the PDF afterwards.
-    var titleLink2 = document.createElement('a')
-    titleLink2.classList.add('docset-link')
-    titleLink2.textContent = entry.title
-    titleDiv.appendChild(titleLink2)
 
     var controls = document.createElement('div')
     controls.className = 'controls'
     li.appendChild(controls)
 
-    var pdfLink = createPdfLink(name, versionKeys[0])
-
-    var select = null
-    if (versionKeys.length > 1) {
-      select = document.createElement('select')
-      select.className = 'version-select'
-      select.setAttribute('aria-label', entry.title + ' version')
-      versionKeys.forEach(function (v) {
-        var option = document.createElement('option')
-        option.value = v
-        option.textContent = v + (entry.versions[v].latest ? ' (latest)' : '')
-        select.appendChild(option)
-      })
-      select.value = (name === currentComponent && entry.versions[currentVersion]) ? currentVersion : versionKeys[0]
-      controls.appendChild(select)
-    } else {
-      var only = document.createElement('span')
-      only.className = 'version-label'
-      only.textContent = versionKeys[0]
-      controls.appendChild(only)
+    if (versionKeys.length === 1) {
+      var inline = renderVersionEntry(name, entry, versionKeys[0], false)
+      inline.classList.add('is-inline')
+      controls.appendChild(inline)
+      return li
     }
-    controls.appendChild(pdfLink)
 
-    function update () {
-      var v = select ? select.value : versionKeys[0]
-      var slot = entry.versions[v]
-      titleLink2.href = resolveHref(name, v, slot.url)
-      pdfLink.href = pdfUrl(name, v)
-    }
-    if (select) select.addEventListener('change', update)
-    update()
+    var defaultVersion = (name === currentComponent && entry.versions[currentVersion]) ? currentVersion : versionKeys[0]
+    var dropdown = document.createElement('div')
+    dropdown.className = 'dropdown version-dropdown'
+    var trigger = document.createElement('button')
+    trigger.type = 'button'
+    trigger.className = 'version-dropdown-trigger dropdown-styles'
+    trigger.setAttribute('aria-haspopup', 'true')
+    trigger.setAttribute('aria-expanded', 'false')
+    trigger.setAttribute('aria-label', entry.title + ' versions')
+    var triggerLabel = document.createElement('span')
+    triggerLabel.className = 'version-dropdown-trigger-label'
+    triggerLabel.textContent = defaultVersion + (entry.versions[defaultVersion].latest ? ' (latest)' : '')
+    trigger.appendChild(triggerLabel)
+    dropdown.appendChild(trigger)
+
+    var list = document.createElement('ul')
+    list.className = 'version-dropdown-list'
+    versionKeys.forEach(function (v) {
+      var item = document.createElement('li')
+      if (name === currentComponent && v === currentVersion) item.classList.add('is-current')
+      item.appendChild(renderVersionEntry(name, entry, v, true))
+      list.appendChild(item)
+    })
+    dropdown.appendChild(list)
+    controls.appendChild(dropdown)
+
+    trigger.addEventListener('click', function (e) {
+      e.stopPropagation()
+      var wasActive = dropdown.classList.contains('is-active')
+      closeDropdowns()
+      if (!wasActive) {
+        dropdown.classList.add('is-active')
+        trigger.setAttribute('aria-expanded', 'true')
+      }
+    })
     return li
   }
+
+  // `<version> | HTML | PDF` - the version name is plain text, HTML and PDF are
+  // the two links. An unversioned docset has no version name to show.
+  function renderVersionEntry (name, entry, v, showLatest) {
+    var row = document.createElement('div')
+    row.className = 'version-entry'
+    var label = document.createElement('span')
+    label.className = 'version-name'
+    label.textContent = v ? v + (showLatest && entry.versions[v].latest ? ' (latest)' : '') : ''
+    if (v) row.appendChild(label)
+    var html = document.createElement('a')
+    html.className = 'version-selector docset-link'
+    html.textContent = 'HTML'
+    html.href = resolveHref(name, v, entry.versions[v].url)
+    row.appendChild(html)
+    row.appendChild(createPdfLink(name, v))
+    return row
+  }
+
+  function closeDropdowns () {
+    root.querySelectorAll('.version-dropdown.is-active').forEach(function (d) {
+      d.classList.remove('is-active')
+      d.querySelector('.version-dropdown-trigger').setAttribute('aria-expanded', 'false')
+    })
+  }
+
+  document.addEventListener('click', closeDropdowns)
+  modal.addEventListener('close', closeDropdowns)
+  modal.addEventListener('keydown', function (e) {
+    // Escape closes an open version list first; only a second Escape closes the dialog.
+    if (e.key === 'Escape' && root.querySelector('.version-dropdown.is-active')) {
+      e.preventDefault()
+      closeDropdowns()
+    }
+  })
 })()
