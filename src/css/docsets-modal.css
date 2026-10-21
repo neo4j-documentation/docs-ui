@@ -44,7 +44,10 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 1rem 1.5rem;
+  /* left: body padding (1.5rem) + row padding (0.5rem), so the heading lines up
+     with the docset titles; right: the close button's own 0.5rem padding puts its
+     glyph level with the row dropdowns */
+  padding: 1rem 1.5rem 1rem 2rem;
   border-bottom: 1px solid var(--palette-neutral-25);
 }
 
