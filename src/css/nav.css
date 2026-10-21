@@ -557,6 +557,13 @@ html.is-clipped--nav {
   align-items: center;
 }
 
+/* .nav-item > span (above) gives every direct span 2rem of right padding to clear
+   the absolutely-positioned chevron. The row's chevron is an in-flow flex child, so
+   that padding just pushed it 2rem left at depths 1+ (depth 0 already zeroes it). */
+.nav-item > .nav-item-row {
+  padding-right: 0;
+}
+
 .nav-item-row > .sidebar-link {
   flex: 1;
   min-width: 0;
@@ -567,7 +574,9 @@ html.is-clipped--nav {
   position: relative;
   flex: none;
   align-self: stretch;
-  width: 2rem;
+  /* 2.5rem centres the chevron 1.25rem from the right edge, matching the
+     absolutely-positioned chevron of plain toggles (right: 0.5rem; width: 1.5rem) */
+  width: 2.5rem;
   background: none;
   border: none;
   padding: 0;
