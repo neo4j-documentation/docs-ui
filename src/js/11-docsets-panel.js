@@ -16,10 +16,12 @@
   //     isn't set) → use the local URL for everything; on prod that IS the
   //     published location, so this works out.
   //
-  // Each component renders as a row with the component title on top and a
-  // chip per version below (alphabetical by component title; latest version
-  // first within each component). The current page's component+version is
-  // marked is-current so the modal can highlight it.
+  // Each component renders as one row in a single-column list (alphabetical by
+  // component title): the title links to the selected version's first page, a
+  // <select> picks the version (latest first, preselected; a plain label when
+  // there's only one) and a PDF link follows the selected version when tabs.json
+  // gives that version a `pdf` URL. The current page's component is marked
+  // is-current.
   //
   // Also wires the header toggle (#docsets-toggle) to open the <dialog> and
   // the close button to dismiss it.
@@ -120,9 +122,11 @@
             entry.versions[v] = {
               latest: !!vd.latest,
               url: findFirstUrl(vd.items),
+              pdf: vd.pdf || null,
             }
           } else {
             if (vd.latest) entry.versions[v].latest = true
+            if (!entry.versions[v].pdf && vd.pdf) entry.versions[v].pdf = vd.pdf
             // A component can appear in several tabs (e.g. a driver shows up in
             // both drivers-apis and the provisional-tab). The first occurrence may
             // have no linkable item — provisional entries often don't — which would
@@ -201,23 +205,56 @@
       return li
     }
 
-    titleDiv.appendChild(document.createTextNode(entry.title))
+    // Title link, version picker and PDF link share one row. Picking a version
+    // retargets the title and PDF links in place rather than navigating, so the
+    // reader can still choose between the page and the PDF afterwards.
+    var titleLink2 = document.createElement('a')
+    titleLink2.classList.add('docset-link')
+    titleLink2.textContent = entry.title
+    titleDiv.appendChild(titleLink2)
 
-    var versionsUl = document.createElement('ul')
-    versionsUl.className = 'versions'
-    versionKeys.forEach(function (v) {
-      var versionLi = document.createElement('li')
-      versionLi.className = 'version'
-      if (entry.versions[v].latest) versionLi.classList.add('is-latest')
-      if (name === currentComponent && v === currentVersion) versionLi.classList.add('is-current')
-      var a = document.createElement('a')
-      a.href = resolveHref(name, v, entry.versions[v].url)
-      a.textContent = v || entry.title
-      a.classList.add('docset-link')
-      versionLi.appendChild(a)
-      versionsUl.appendChild(versionLi)
-    })
-    li.appendChild(versionsUl)
+    var controls = document.createElement('div')
+    controls.className = 'controls'
+    li.appendChild(controls)
+
+    var pdfLink = document.createElement('a')
+    pdfLink.className = 'pdf-link'
+    pdfLink.textContent = 'PDF'
+
+    var select = null
+    if (versionKeys.length > 1) {
+      select = document.createElement('select')
+      select.className = 'version-select'
+      select.setAttribute('aria-label', entry.title + ' version')
+      versionKeys.forEach(function (v) {
+        var option = document.createElement('option')
+        option.value = v
+        option.textContent = v + (entry.versions[v].latest ? ' (latest)' : '')
+        select.appendChild(option)
+      })
+      select.value = (name === currentComponent && entry.versions[currentVersion]) ? currentVersion : versionKeys[0]
+      controls.appendChild(select)
+    } else {
+      var only = document.createElement('span')
+      only.className = 'version-label'
+      only.textContent = versionKeys[0]
+      controls.appendChild(only)
+    }
+    controls.appendChild(pdfLink)
+
+    function update () {
+      var v = select ? select.value : versionKeys[0]
+      var slot = entry.versions[v]
+      titleLink2.href = resolveHref(name, v, slot.url)
+      if (slot.pdf) {
+        pdfLink.href = slot.pdf
+        pdfLink.hidden = false
+      } else {
+        pdfLink.hidden = true
+      }
+    }
+    if (select) select.addEventListener('change', update)
+    update()
     return li
   }
 })()
