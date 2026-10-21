@@ -19,8 +19,7 @@
   // Each component renders as one row in a single-column list (alphabetical by
   // component title): the title links to the selected version's first page, a
   // <select> picks the version (latest first, preselected; a plain label when
-  // there's only one) and a PDF link follows the selected version when tabs.json
-  // gives that version a `pdf` URL. The current page's component is marked
+  // there's only one) and a PDF link follows the selected version (see pdfUrl). The current page's component is marked
   // is-current.
   //
   // Also wires the header toggle (#docsets-toggle) to open the <dialog> and
@@ -122,11 +121,9 @@
             entry.versions[v] = {
               latest: !!vd.latest,
               url: findFirstUrl(vd.items),
-              pdf: vd.pdf || null,
             }
           } else {
             if (vd.latest) entry.versions[v].latest = true
-            if (!entry.versions[v].pdf && vd.pdf) entry.versions[v].pdf = vd.pdf
             // A component can appear in several tabs (e.g. a driver shows up in
             // both drivers-apis and the provisional-tab). The first occurrence may
             // have no linkable item — provisional entries often don't — which would
@@ -174,6 +171,27 @@
     return prefixSitePath(rawUrl)
   }
 
+  // A version's PDF lives at <component>[/<version>]/_exports/neo4j-<component>[-<version>].pdf
+  // - the version segment is omitted for unversioned docsets. Same base-URL rules
+  // as resolveHref. Every docset is assumed to build a PDF, so the link is always
+  // shown.
+  function pdfUrl (component, version) {
+    var path = '/' + component + (version ? '/' + version : '') +
+      '/_exports/neo4j-' + component + (version ? '-' + version : '') + '.pdf'
+    var isLocal = !localComponents ||
+      !!(localComponents[component] && localComponents[component].indexOf(version) !== -1)
+    if (!isLocal && docsUrl) return docsUrl + path
+    return prefixSitePath(path)
+  }
+
+  function createPdfLink (component, version) {
+    var a = document.createElement('a')
+    a.className = 'pdf-link'
+    a.textContent = 'PDF'
+    a.href = pdfUrl(component, version)
+    return a
+  }
+
   function renderComponent (name, entry) {
     var li = document.createElement('li')
     li.className = 'component'
@@ -202,6 +220,11 @@
       titleLink.textContent = entry.title
       titleLink.classList.add('docset-link')
       titleDiv.appendChild(titleLink)
+      var uControls = document.createElement('div')
+      uControls.className = 'controls'
+      var uPdf = createPdfLink(name, uv)
+      uControls.appendChild(uPdf)
+      li.appendChild(uControls)
       return li
     }
 
@@ -217,9 +240,7 @@
     controls.className = 'controls'
     li.appendChild(controls)
 
-    var pdfLink = document.createElement('a')
-    pdfLink.className = 'pdf-link'
-    pdfLink.textContent = 'PDF'
+    var pdfLink = createPdfLink(name, versionKeys[0])
 
     var select = null
     if (versionKeys.length > 1) {
@@ -246,12 +267,7 @@
       var v = select ? select.value : versionKeys[0]
       var slot = entry.versions[v]
       titleLink2.href = resolveHref(name, v, slot.url)
-      if (slot.pdf) {
-        pdfLink.href = slot.pdf
-        pdfLink.hidden = false
-      } else {
-        pdfLink.hidden = true
-      }
+      pdfLink.href = pdfUrl(name, v)
     }
     if (select) select.addEventListener('change', update)
     update()
