@@ -1,7 +1,7 @@
 ;(function () {
   'use strict'
 
-  // Populates the docsets modal (#docsets-modal-root) from the aggregated
+  // Populates the docsets modal (#docsets-modal-root), on first open, from the aggregated
   // tabs.json. The modal lists every component+version that's in the
   // cross-docset nav — not just the ones built in this Antora run — so a
   // single-docset preview shows links to every other docset on the fleet.
@@ -32,6 +32,7 @@
   if (!root || !modal || !toggle) return
 
   toggle.addEventListener('click', function () {
+    load()
     if (typeof modal.showModal === 'function') modal.showModal()
     else modal.setAttribute('open', '')
   })
@@ -59,20 +60,28 @@
   // failed fetch's console noise isn't suppressible from JS once issued.
   var skipLocalManifest = body.dataset.noLocalManifest === 'true'
 
-  // Fetch tabs.json + local-manifest.json in parallel; manifest is optional
-  // (404 on prod) so its failure just means "treat everything as local."
-  Promise.all([
-    fetchJson(NAV_URL).catch(function (err) {
-      console.warn('[docsets-panel] tabs.json fetch failed:', err.message)
-      return null
-    }),
-    skipLocalManifest ? Promise.resolve(null) : fetchJson(MANIFEST_URL).catch(function () { return null }),
-  ]).then(function (results) {
-    var tabs = results[0]
-    var manifest = results[1]
-    if (manifest && manifest.components) localComponents = manifest.components
-    if (tabs) render(tabs)
-  })
+  // Fetch tabs.json + local-manifest.json in parallel, once, the first time the
+  // modal is opened - readers who never open it don't pay for the requests.
+  // The manifest is optional (404 on prod) so its failure just means "treat
+  // everything as local."
+  var loaded = false
+
+  function load () {
+    if (loaded) return
+    loaded = true
+    Promise.all([
+      fetchJson(NAV_URL).catch(function (err) {
+        console.warn('[docsets-panel] tabs.json fetch failed:', err.message)
+        return null
+      }),
+      skipLocalManifest ? Promise.resolve(null) : fetchJson(MANIFEST_URL).catch(function () { return null }),
+    ]).then(function (results) {
+      var tabs = results[0]
+      var manifest = results[1]
+      if (manifest && manifest.components) localComponents = manifest.components
+      if (tabs) render(tabs)
+    })
+  }
 
   function fetchJson (url) {
     return fetch(url, { credentials: 'same-origin' }).then(function (res) {
