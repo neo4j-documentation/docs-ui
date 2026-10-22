@@ -9,6 +9,25 @@
   var nav
   var currentPageItem
   var originalPageItem
+  // Set once the reader scrolls the nav themselves, so a later automatic scroll (the tree
+  // being rebuilt, fonts loading) doesn't pull it out from under them.
+  var userScrolledNav = false
+
+  // Where in the panel the reader clicked a nav link just before this page loaded. A click
+  // is a full page load, so the panel would otherwise start again from the top; keeping the
+  // clicked link where it was means the nav doesn't move when you use it. Expires quickly
+  // so a later visit to the same page isn't affected.
+  var CLICK_ANCHOR_KEY = 'nav-click-anchor'
+  var clickAnchor = readClickAnchor()
+
+  // The nav sections that were open when the reader left the previous page, kept for the
+  // browser tab and only brought back within the top-level block they are reading. Every page load rebuilds the nav with only the current path open, so
+  // without this the section holding the page you came from collapses as soon as you click
+  // a link in another one, and getting back means finding and reopening it. What was open
+  // on screen is what comes back.
+  var OPEN_SECTIONS_KEY = 'nav-open-sections'
+  // Whether to bring those back on this page load (see arrivedByLink).
+  var restoreSections = arrivedByLink()
 
   if (navContainer && navToggle) {
     navToggle && navToggle.addEventListener('click', showNav)
@@ -35,6 +54,24 @@
     // NOTE prevent text from being selected by double click
     menuPanel.addEventListener('mousedown', function (e) {
       if (e.detail > 1) e.preventDefault()
+    })
+
+    window.addEventListener('pagehide', rememberOpenSections)
+
+    menuPanel.addEventListener('click', function (e) {
+      var link = e.target.closest && e.target.closest('a.sidebar-link')
+      if (!link || !link.pathname) return
+      try {
+        window.sessionStorage.setItem(CLICK_ANCHOR_KEY, JSON.stringify({
+          path: link.pathname,
+          offset: link.getBoundingClientRect().top - menuPanel.getBoundingClientRect().top,
+          time: Date.now(),
+        }))
+      } catch (err) {}
+    })
+
+    ;['wheel', 'touchstart', 'keydown'].forEach(function (type) {
+      menuPanel.addEventListener(type, function () { userScrolledNav = true }, { passive: true })
     })
 
     if (menuPanel && menuPanel.querySelector('.sidebar-link[href^="#"]')) {
@@ -116,15 +153,29 @@
     navItem.classList.add('is-current-page')
     currentPageItem = navItem
     activateCurrentPath(navItem)
-    scrollItemToMidpoint(menuPanel, navLink)
+    scrollItemIntoContext(menuPanel, navLink)
   }
 
   function initNavTree () {
     currentPageItem = menuPanel.querySelector('.is-current-page')
     originalPageItem = currentPageItem
+    restoreOpenSections()
     if (currentPageItem) {
       activateCurrentPath(currentPageItem)
-      scrollItemToMidpoint(menuPanel, currentPageItem.querySelector('.sidebar-link'))
+      var currentLink = currentPageItem.querySelector('.sidebar-link')
+      // Skipped when the reader has already scrolled the nav (this also runs again when
+      // the fetched nav replaces the baked one). Run once more when fonts have loaded,
+      // since they change line heights and so the positions measured here.
+      var scrollToCurrent = function () {
+        if (userScrolledNav) return
+        if (clickAnchor && currentLink && currentLink.pathname === clickAnchor.path) {
+          anchorLinkAt(menuPanel, currentLink, clickAnchor.offset)
+        } else {
+          scrollItemIntoContext(menuPanel, currentLink)
+        }
+      }
+      scrollToCurrent()
+      if (document.fonts && document.fonts.ready) document.fonts.ready.then(scrollToCurrent)
     } else {
       // No current-page item — e.g. a tab overview page, whose own nav entry is
       // hidden. Open the current component's docset block (marked is-active by
@@ -212,12 +263,151 @@
     e.stopPropagation()
   }
 
-  function scrollItemToMidpoint (panel, el) {
-    var rect = panel.getBoundingClientRect()
-    var effectiveHeight = rect.height
+  // The outermost item in the tree containing li: the top-level block of the tab. That is
+  // a whole docset, or one promoted section of it (a docset can be split into many).
+  function topLevelItem (li) {
+    var top = null
+    for (var node = li; node && node !== menuPanel; node = node.parentNode) {
+      if (node.tagName === 'LI' && node.classList.contains('nav-item')) top = node
+    }
+    return top
+  }
+
+  function itemLabel (li) {
+    var label = li.querySelector(':scope > .nav-text, :scope > .nav-item-row > a, :scope > a')
+    return label ? label.textContent.trim() : ''
+  }
+
+  // Identifies a top-level block across page loads: its component and version plus its label.
+  function blockKey (top) {
+    return (top.dataset.component || '') + '@' + (top.dataset.version || '') + '|' + itemLabel(top)
+  }
+
+  // Identifies a section across page loads: its top-level block plus the labels of the
+  // sections between that and it. The tree has no ids of its own.
+  function sectionKey (li) {
+    var labels = []
+    for (var node = li; node && node !== menuPanel; node = node.parentNode) {
+      if (node.tagName === 'LI' && node.classList.contains('nav-item')) labels.unshift(itemLabel(node))
+    }
+    var top = topLevelItem(li)
+    return (top.dataset.component || '') + '@' + (top.dataset.version || '') + '|' + labels.join('>')
+  }
+
+  // Called as the page is left. Replaces the remembered set with what is open now, so the
+  // current path (open by default, not toggled by hand) is kept too.
+  function rememberOpenSections () {
+    try {
+      var open = find(menuPanel, '.nav-item.is-active')
+        .filter(function (li) { return li.querySelector(':scope > .nav-list') })
+        .map(sectionKey)
+      window.sessionStorage.setItem(OPEN_SECTIONS_KEY, JSON.stringify(open.slice(-500)))
+    } catch (err) {}
+  }
+
+  // Reloading the page, or opening it directly (typed URL, bookmark, a link from another
+  // site), starts the nav clean with only the current path open, which is also how a reader
+  // closes everything. Following a link on this site, or going back and forward, keeps the
+  // open sections.
+  function arrivedByLink () {
+    var entry = window.performance && window.performance.getEntriesByType &&
+      window.performance.getEntriesByType('navigation')[0]
+    var type = entry ? entry.type : 'navigate'
+    if (type === 'reload') return false
+    if (type === 'back_forward') return true
+    try {
+      return !!document.referrer && new URL(document.referrer).origin === window.location.origin
+    } catch (err) {
+      return false
+    }
+  }
+
+  function restoreOpenSections () {
+    if (!restoreSections) return
+    // Only inside the top-level block the reader is in: sections opened in other blocks
+    // collapse again when they leave them, so the nav can't grow into one huge tree across a
+    // tab (where, say, a whole promoted docset is dozens of top-level blocks).
+    var here = currentPageItem || menuPanel.querySelector('.docset-title.is-active')
+    var block = here && topLevelItem(here)
+    if (!block) return
+    var blockId = blockKey(block)
+    var open
+    try {
+      open = JSON.parse(window.sessionStorage.getItem(OPEN_SECTIONS_KEY))
+    } catch (err) {}
+    if (!open || !open.length) return
+    var wanted = {}
+    open.forEach(function (key) {
+      if (key === blockId || key.indexOf(blockId + '>') === 0) wanted[key] = true
+    })
+    find(menuPanel, '.nav-item').forEach(function (li) {
+      if (li.querySelector(':scope > .nav-list') && wanted[sectionKey(li)]) li.classList.add('is-active')
+    })
+  }
+
+  function readClickAnchor () {
+    try {
+      var saved = JSON.parse(window.sessionStorage.getItem(CLICK_ANCHOR_KEY))
+      window.sessionStorage.removeItem(CLICK_ANCHOR_KEY)
+      if (saved && Date.now() - saved.time < 10000) return saved
+    } catch (err) {}
+    return null
+  }
+
+  // Scrolls the panel so the link sits `offset` px below the panel's top, where it was
+  // when it was clicked on the previous page.
+  function anchorLinkAt (panel, el, offset) {
+    var top = el.getBoundingClientRect().top - panel.getBoundingClientRect().top + panel.scrollTop
+    panel.scrollTop = Math.max(0, Math.min(top - offset, panel.scrollHeight - panel.clientHeight))
+    // If the link still isn't fully in view (the tree came out a different height, or the
+    // position was clamped), fall back to putting it in context.
+    var panelRect = panel.getBoundingClientRect()
+    var rect = el.getBoundingClientRect()
+    var visible = rect.top >= panelRect.top && rect.bottom <= panelRect.bottom
+    console.debug('[nav-scroll]', {
+      rule: visible ? 'clicked in the nav: link kept where it was' : 'clicked in the nav, but not in view: using context rule',
+      offset: Math.round(offset),
+      scrollTop: Math.round(panel.scrollTop),
+    })
+    if (!visible) scrollItemIntoContext(panel, el)
+  }
+
+  // Scrolls the nav panel so the current page's link is visible with its context.
+  // Positions are measured against the panel's own rectangle, not offsetTop, which is
+  // relative to the nearest positioned ancestor (every .nav-item is position: relative)
+  // and so says nothing useful about where a nested link is in the scrolled content.
+  //   - If a whole section containing the page fits in the panel, show the largest such
+  //     section from its top, so its heading, the page and its siblings are all in view.
+  //   - Otherwise put the link about 38% down the panel, with siblings above and below.
+  function scrollItemIntoContext (panel, el) {
+    var panelRect = panel.getBoundingClientRect()
+    var viewHeight = panel.clientHeight
     var navStyle = window.getComputedStyle(nav)
-    if (navStyle.position === 'sticky') effectiveHeight -= rect.top - parseFloat(navStyle.top)
-    panel.scrollTop = Math.max(0, (el.getBoundingClientRect().height - effectiveHeight) * 0.5 + el.offsetTop)
+    // a sticky nav that hasn't reached its stuck position is partly below the header
+    if (navStyle.position === 'sticky') viewHeight -= Math.max(0, panelRect.top - parseFloat(navStyle.top))
+    var pad = 8
+    var contentTop = function (node) {
+      return node.getBoundingClientRect().top - panelRect.top + panel.scrollTop
+    }
+    var elTop = contentTop(el)
+    var target = elTop - viewHeight * 0.38
+    var section = null
+    // walking outwards, sections only get taller, so the last one that fits is the largest
+    for (var node = el.parentNode; node && node !== panel; node = node.parentNode) {
+      if (node.tagName === 'LI' && node.classList.contains('nav-item') &&
+        node.getBoundingClientRect().height <= viewHeight - pad * 2) section = node
+    }
+    if (section) target = contentTop(section) - pad
+    panel.scrollTop = Math.max(0, Math.min(target, panel.scrollHeight - panel.clientHeight))
+    // Visible in the browser console at the Verbose level: which rule applied and why.
+    console.debug('[nav-scroll]', {
+      rule: section ? 'section fits: shown from its top' : 'no section fits: link placed 38% down',
+      section: section ? (section.querySelector('.nav-text, .sidebar-link') || section).textContent.trim().slice(0, 60) : null,
+      sectionHeight: section ? Math.round(section.getBoundingClientRect().height) : null,
+      panelHeight: Math.round(viewHeight),
+      linkTop: Math.round(elTop),
+      scrollTop: Math.round(panel.scrollTop),
+    })
   }
 
   function find (from, selector) {
