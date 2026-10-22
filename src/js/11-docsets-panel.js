@@ -2,7 +2,8 @@
   'use strict'
 
   // Populates the docsets modal (#docsets-modal-root), on first open, from the aggregated
-  // tabs.json. The modal lists every component+version that's in the
+  // docsets.json (a flat per-docset listing the tabbed-nav extension generates alongside
+  // tabs.json). The modal lists every component+version that's in the
   // cross-docset nav — not just the ones built in this Antora run — so a
   // single-docset preview shows links to every other docset on the fleet.
   //
@@ -19,7 +20,7 @@
   // Each component renders as one row in a single-column list (alphabetical by
   // component title): the title links to the selected version's first page, a
   // <select> picks the version (latest first, preselected; a plain label when
-  // there's only one) and a PDF link follows the selected version (see pdfUrl). The current page's component is marked
+  // there's only one) and a PDF link (only when docsets.json lists one) follows the selected version. The current page's component is marked
   // is-current.
   //
   // Also wires the header toggle (#docsets-toggle) to open the <dialog> and
@@ -48,7 +49,7 @@
 
   var body = document.body
   var sitePath = body.dataset.sitePath || ''
-  var NAV_URL = sitePath + '/nav/tabs.json'
+  var NAV_URL = sitePath + '/nav/docsets.json'
   var MANIFEST_URL = sitePath + '/local-manifest.json'
   var currentComponent = body.dataset.pageComponent || ''
   var currentVersion = body.dataset.pageVersion || ''
@@ -60,7 +61,7 @@
   // failed fetch's console noise isn't suppressible from JS once issued.
   var skipLocalManifest = body.dataset.noLocalManifest === 'true'
 
-  // Fetch tabs.json + local-manifest.json in parallel, once, the first time the
+  // Fetch docsets.json + local-manifest.json in parallel, once, the first time the
   // modal is opened - readers who never open it don't pay for the requests.
   // The manifest is optional (404 on prod) so its failure just means "treat
   // everything as local."
@@ -71,15 +72,15 @@
     loaded = true
     Promise.all([
       fetchJson(NAV_URL).catch(function (err) {
-        console.warn('[docsets-panel] tabs.json fetch failed:', err.message)
+        console.warn('[docsets-panel] docsets.json fetch failed:', err.message)
         return null
       }),
       skipLocalManifest ? Promise.resolve(null) : fetchJson(MANIFEST_URL).catch(function () { return null }),
     ]).then(function (results) {
-      var tabs = results[0]
+      var docsets = results[0]
       var manifest = results[1]
       if (manifest && manifest.components) localComponents = manifest.components
-      if (tabs) render(tabs)
+      if (Array.isArray(docsets)) render(docsets)
     })
   }
 
@@ -100,8 +101,8 @@
   // title). Toggling reorders the existing rows rather than rebuilding them, so
   // open dropdowns and focus survive. The toolbar is where a future "view by
   // group" switch would go too.
-  function render (tabs) {
-    var components = collectComponents(tabs)
+  function render (docsets) {
+    var components = collectComponents(docsets)
     var names = Object.keys(components).sort(function (a, b) {
       return components[a].title.toLowerCase().localeCompare(components[b].title.toLowerCase())
     })
@@ -145,53 +146,21 @@
     root.appendChild(ul)
   }
 
-  // Walks every tab → component → version slot in tabs.json and folds them
-  // into a flat { component: { title, versions: { v: { latest, url } } } }
-  // map. A component can appear in multiple tabs; the first occurrence wins
-  // for the title (they should agree). A version's URL is derived from the
-  // first item in versionData.items that has a url, recursing into children
-  // if necessary.
-  function collectComponents (tabs) {
+  // Folds docsets.json ([{ name, title, versions: [{ version, latest, url, pdf }] }])
+  // into a { component: { title, versions: { v: { latest, url, pdf } } } } map.
+  function collectComponents (docsets) {
     var components = {}
-    Object.keys(tabs).forEach(function (tabId) {
-      var compMap = tabs[tabId]
-      Object.keys(compMap).forEach(function (compName) {
-        var entry = components[compName] || (components[compName] = { title: compName, versions: {} })
-        var versions = compMap[compName]
-        Object.keys(versions).forEach(function (v) {
-          var vd = versions[v]
-          if (entry.title === compName && vd.title) entry.title = vd.title
-          if (!entry.versions[v]) {
-            entry.versions[v] = {
-              latest: !!vd.latest,
-              url: findFirstUrl(vd.items),
-            }
-          } else {
-            if (vd.latest) entry.versions[v].latest = true
-            // A component can appear in several tabs (e.g. a driver shows up in
-            // both drivers-apis and the provisional-tab). The first occurrence may
-            // have no linkable item — provisional entries often don't — which would
-            // leave the chip pointing at '#'. Backfill the URL from any later tab
-            // that does have one.
-            if (!entry.versions[v].url) entry.versions[v].url = findFirstUrl(vd.items)
-          }
-        })
+    docsets.forEach(function (docset) {
+      var versions = {}
+      ;(docset.versions || []).forEach(function (v) {
+        versions[v.version || ''] = { latest: !!v.latest, url: v.url || null, pdf: v.pdf || null }
       })
+      components[docset.name] = { title: docset.title || docset.name, versions: versions }
     })
     return components
   }
 
-  function findFirstUrl (items) {
-    if (!items || !items.length) return null
-    for (var i = 0; i < items.length; i++) {
-      if (items[i].url) return items[i].url
-      var deeper = findFirstUrl(items[i].items)
-      if (deeper) return deeper
-    }
-    return null
-  }
-
-  // tabs.json item URLs are publication URLs without the site-path prefix,
+  // docsets.json URLs are publication URLs without the site-path prefix,
   // e.g. "/cypher-manual/25/foo.html". Prefix sitePath if not already there.
   function prefixSitePath (url) {
     if (!url) return ''
@@ -215,24 +184,20 @@
     return prefixSitePath(rawUrl)
   }
 
-  // A version's PDF lives at <component>[/<version>]/neo4j-<component>[-<version>].pdf
-  // - the version segment is omitted for unversioned docsets. Same base-URL rules
-  // as resolveHref. Every docset is assumed to build a PDF, so the link is always
-  // shown.
-  function pdfUrl (component, version) {
-    var path = '/' + component + (version ? '/' + version : '') +
-      '/neo4j-' + component + (version ? '-' + version : '') + '.pdf'
+  // docsets.json only sets `pdf` when the file exists, so the link is only shown
+  // then. Same base-URL rules as resolveHref.
+  function pdfUrl (component, version, rawPdf) {
     var isLocal = !localComponents ||
       !!(localComponents[component] && localComponents[component].indexOf(version) !== -1)
-    if (!isLocal && docsUrl) return docsUrl + path
-    return prefixSitePath(path)
+    if (!isLocal && docsUrl) return docsUrl + rawPdf
+    return prefixSitePath(rawPdf)
   }
 
-  function createPdfLink (component, version) {
+  function createPdfLink (component, version, rawPdf) {
     var a = document.createElement('a')
     a.className = 'pdf-link docset-link'
     a.textContent = 'PDF'
-    a.href = pdfUrl(component, version)
+    a.href = pdfUrl(component, version, rawPdf)
     return a
   }
 
@@ -318,7 +283,7 @@
     html.textContent = 'HTML'
     html.href = resolveHref(name, v, entry.versions[v].url)
     row.appendChild(html)
-    row.appendChild(createPdfLink(name, v))
+    if (entry.versions[v].pdf) row.appendChild(createPdfLink(name, v, entry.versions[v].pdf))
     return row
   }
 
