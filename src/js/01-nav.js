@@ -263,14 +263,20 @@
     e.stopPropagation()
   }
 
-  // The outermost item in the tree containing li: the top-level block of the tab. That is
-  // a whole docset, or one promoted section of it (a docset can be split into many).
+  // The top-level block of the tab that contains li: the outermost li.docset-title, which is
+  // a whole docset or one promoted section of it (a docset can be split into many). The tree
+  // is rendered inside an unlabelled root item that holds every block, so "the outermost
+  // item" would be that root; a flat promoted page that isn't in a docset-title block falls
+  // back to the outermost item that has a label of its own.
   function topLevelItem (li) {
-    var top = null
+    var block = null
+    var labelled = null
     for (var node = li; node && node !== menuPanel; node = node.parentNode) {
-      if (node.tagName === 'LI' && node.classList.contains('nav-item')) top = node
+      if (node.tagName !== 'LI' || !node.classList.contains('nav-item')) continue
+      if (node.classList.contains('docset-title')) block = node
+      if (itemLabel(node)) labelled = node
     }
-    return top
+    return block || labelled
   }
 
   function itemLabel (li) {
@@ -287,10 +293,11 @@
   // sections between that and it. The tree has no ids of its own.
   function sectionKey (li) {
     var labels = []
-    for (var node = li; node && node !== menuPanel; node = node.parentNode) {
+    var top = topLevelItem(li)
+    if (!top) return null
+    for (var node = li; node && node !== top.parentNode; node = node.parentNode) {
       if (node.tagName === 'LI' && node.classList.contains('nav-item')) labels.unshift(itemLabel(node))
     }
-    var top = topLevelItem(li)
     return (top.dataset.component || '') + '@' + (top.dataset.version || '') + '|' + labels.join('>')
   }
 
@@ -299,7 +306,7 @@
   function rememberOpenSections () {
     try {
       var open = find(menuPanel, '.nav-item.is-active')
-        .filter(function (li) { return li.querySelector(':scope > .nav-list') })
+        .filter(function (li) { return li.querySelector(':scope > .nav-list') && topLevelItem(li) })
         .map(sectionKey)
       window.sessionStorage.setItem(OPEN_SECTIONS_KEY, JSON.stringify(open.slice(-500)))
     } catch (err) {}
