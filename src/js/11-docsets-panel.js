@@ -96,6 +96,10 @@
     return raw ? raw.replace(/\/+$/, '') : null
   }
 
+  // The list sits under a toolbar holding the sort toggle (A-Z / Z-A by docset
+  // title). Toggling reorders the existing rows rather than rebuilding them, so
+  // open dropdowns and focus survive. The toolbar is where a future "view by
+  // group" switch would go too.
   function render (tabs) {
     var components = collectComponents(tabs)
     var names = Object.keys(components).sort(function (a, b) {
@@ -103,10 +107,41 @@
     })
     var ul = document.createElement('ul')
     ul.className = 'components'
-    names.forEach(function (name) {
-      ul.appendChild(renderComponent(name, components[name]))
+    var rows = names.map(function (name) {
+      var row = renderComponent(name, components[name])
+      ul.appendChild(row)
+      return row
     })
+
+    var toolbar = document.createElement('div')
+    toolbar.className = 'docsets-toolbar'
+    var sortBtn = document.createElement('button')
+    sortBtn.type = 'button'
+    sortBtn.className = 'sort-toggle'
+    var sortLabel = document.createElement('span')
+    sortLabel.textContent = 'Docset'
+    var sortIcon = document.createElement('span')
+    sortIcon.className = 'sort-icon'
+    sortIcon.setAttribute('aria-hidden', 'true')
+    sortBtn.appendChild(sortLabel)
+    sortBtn.appendChild(sortIcon)
+    toolbar.appendChild(sortBtn)
+
+    var descending = false
+    function applySort () {
+      sortBtn.classList.toggle('is-desc', descending)
+      sortBtn.setAttribute('aria-label', 'Sort by docset title, currently ' + (descending ? 'Z to A' : 'A to Z'))
+      var ordered = descending ? rows.slice().reverse() : rows
+      ordered.forEach(function (row) { ul.appendChild(row) })
+    }
+    sortBtn.addEventListener('click', function () {
+      descending = !descending
+      applySort()
+    })
+    applySort()
+
     root.innerHTML = ''
+    root.appendChild(toolbar)
     root.appendChild(ul)
   }
 
