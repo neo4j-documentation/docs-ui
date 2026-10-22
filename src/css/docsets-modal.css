@@ -35,6 +35,14 @@
   overflow: hidden;
 }
 
+/* Laid out as a column once open (not on the base rule, which would override the
+   closed dialog's display: none), so the header and toolbar stay fixed and only the
+   body scrolls. */
+.docsets-modal[open] {
+  display: flex;
+  flex-direction: column;
+}
+
 .docsets-modal::backdrop {
   background: rgba(0, 0, 0, 0.45);
   backdrop-filter: blur(2px);
@@ -80,30 +88,66 @@
 }
 
 .docsets-modal__body {
-  padding: 1.5rem;
+  flex: 1;
+  min-height: 0;
+  padding: 1.25rem 1.5rem 1.5rem;
   overflow-y: auto;
-  max-height: calc(82vh - 70px);
 }
 
-/* Toolbar above the list: the sort toggle now, room for view options later.
-   Its left padding matches the rows' so "Docset" lines up with the titles. */
-.docsets-modal__body .docsets-toolbar {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  padding: 0 0.5rem 0.5rem;
-  margin-bottom: 0.5rem;
+/* Toolbar strip under the title, outside the scrolling body: the sort and group
+   toggles. Its left padding matches the header's so it lines up with the titles. */
+.docsets-modal__toolbar {
+  flex: none;
   border-bottom: 1px solid var(--palette-neutral-25);
 }
 
-.docsets-modal__body .sort-toggle {
+.docsets-modal__toolbar .docsets-toolbar {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.875rem 1.5rem 0.875rem 2rem;
+}
+
+.docsets-modal__toolbar .sort-toggle {
   display: inline-flex;
   align-items: center;
   gap: 0.375rem;
-  margin-left: -0.375rem;
-  padding: 0.25rem 0.375rem;
+}
+
+/* Shows the current order, as Needle's sort icons do: up for ascending (A-Z), down for
+   descending (Z-A). chevron.svg points down, so ascending flips it. Same mask as the nav. */
+.docsets-modal__toolbar .sort-icon {
+  width: 0.75em;
+  height: 0.75em;
+  background-color: currentColor;
+  -webkit-mask: url(../img/chevron.svg) no-repeat center / contain;
+  mask: url(../img/chevron.svg) no-repeat center / contain;
+  transform: scaleY(-1);
+  transition: transform 0.15s;
+}
+
+.docsets-modal__toolbar .sort-toggle.is-desc .sort-icon {
+  transform: none;
+}
+
+/* A-Z and Group: two joined buttons, the active mode filled */
+.docsets-modal__toolbar .view-switch {
+  display: inline-flex;
+}
+
+.docsets-modal__toolbar .view-switch .view-toggle:first-child {
+  border-radius: 0.375rem 0 0 0.375rem;
+}
+
+.docsets-modal__toolbar .view-switch .view-toggle:last-child {
+  margin-left: -1px;
+  border-radius: 0 0.375rem 0.375rem 0;
+}
+
+.docsets-modal__toolbar .view-toggle {
+  padding: 0.25rem 0.5rem;
   background: none;
-  border: none;
+  border: 1px solid var(--palette-neutral-25);
   border-radius: 0.375rem;
   color: var(--toc-item-font-color);
   font: inherit;
@@ -112,24 +156,38 @@
   cursor: pointer;
 }
 
-.docsets-modal__body .sort-toggle:hover,
-.docsets-modal__body .sort-toggle:focus-visible {
+.docsets-modal__toolbar .view-toggle:hover,
+.docsets-modal__toolbar .view-toggle:focus-visible,
+.docsets-modal__toolbar .view-toggle.is-active {
   background: var(--toc-hover-background-color, rgba(0, 0, 0, 0.04));
   outline: none;
 }
 
-/* Arrow points down for A-Z, flips for Z-A - same chevron mask as the nav */
-.docsets-modal__body .sort-icon {
-  width: 0.75em;
-  height: 0.75em;
-  background-color: currentColor;
-  -webkit-mask: url(../img/chevron.svg) no-repeat center / contain;
-  mask: url(../img/chevron.svg) no-repeat center / contain;
-  transition: transform 0.15s;
+/* Grouped view: a heading above each group's list of rows. Uses Needle's
+   subheading type scale and primary text colour (with its dark counterpart), plus a
+   weak bottom border, so the headings read as section titles against the bold
+   neutral docset titles. */
+.docsets-modal__body .docsets-group-title {
+  margin: 1.5rem 0 0.25rem;
+  padding: 0 0.5rem 0.375rem;
+  border-bottom: 1px solid var(--theme-light-color-neutral-border-weak, var(--palette-neutral-25));
+  font-family: var(--typography-subheading-large-font-family, inherit);
+  font-size: var(--typography-subheading-large-font-size, 1rem);
+  font-weight: var(--typography-subheading-large-font-weight, 600);
+  line-height: var(--typography-subheading-large-line-height, 1.5);
+  letter-spacing: var(--typography-subheading-large-letter-spacing, normal);
+  color: var(--theme-light-color-primary-text);
 }
 
-.docsets-modal__body .sort-toggle.is-desc .sort-icon {
-  transform: scaleY(-1);
+.ndl-theme-dark .docsets-modal__body .docsets-group-title {
+  border-bottom-color: var(--theme-dark-color-neutral-border-weak);
+  color: var(--theme-dark-color-primary-text);
+}
+
+/* The first group heading sits at the same level as the first row in the flat list:
+   a row's own top padding (0.375rem) is what offsets its title from the list's top. */
+.docsets-modal__body .docsets-group:first-child .docsets-group-title {
+  margin-top: 0.375rem;
 }
 
 /* Components list - a single column, one row per docset: title on the left,

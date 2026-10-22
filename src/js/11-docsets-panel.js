@@ -23,6 +23,10 @@
   // there's only one) and a PDF link (only when docsets.json lists one) follows the selected version. The current page's component is marked
   // is-current.
   //
+  // The toolbar's A-Z button and Group button switch between that flat list and a grouped view: one
+  // headed section per group (docsets.json `group`, sections and rows both A-Z),
+  // with docsets that have no group under "Other".
+  //
   // Also wires the header toggle (#docsets-toggle) to open the <dialog> and
   // the close button to dismiss it.
 
@@ -97,10 +101,33 @@
     return raw ? raw.replace(/\/+$/, '') : null
   }
 
-  // The list sits under a toolbar holding the sort toggle (A-Z / Z-A by docset
+  // The list sits under a toolbar (pinned below the modal title) holding the sort toggle (A-Z / Z-A by docset
   // title). Toggling reorders the existing rows rather than rebuilding them, so
   // open dropdowns and focus survive. The toolbar is where a future "view by
   // group" switch would go too.
+  // TEMPORARY: until docsets set page-docset-group themselves, a docset whose
+  // docsets.json `group` is empty is placed here by name. Delete once real groups arrive.
+  var PLACEHOLDER_GROUPS = {
+    'Get started': ['getting-started', 'aura', 'tutorials', 'desktop', 'browser', 'bloom-user-guide', 'data-importer'],
+    'Query and develop': ['cypher-manual', 'cypher-builder', 'query-api', 'http-api', 'bolt', 'status-codes', 'neo4j-glossary'],
+    'Drivers and APIs': ['java-manual', 'python-manual', 'javascript-manual', 'go-manual', 'dotnet-manual', 'java-reference'],
+    Operations: ['operations-manual', 'ops-manager', 'upgrade-migration-guide', 'kerberos-add-on', 'cdc', 'plugin', 'apoc',
+      'enterprise-studio'],
+    'Graph analytics': ['graph-data-science', 'graph-data-science-client',
+      'graph-intelligence-microsoft-fabric', 'snowflake-graph-analytics', 'gds-bigquery', 'virtual-graph'],
+    Integrations: ['kafka', 'kafka-streams', 'spark', 'data-ingestion-guide', 'dataflow-bigquery', 'dataflow-google-cloud', 'neo4j-aws-glue', 'mcp'],
+  }
+
+  function placeholderGroup (name) {
+    var found = ''
+    Object.keys(PLACEHOLDER_GROUPS).forEach(function (g) {
+      if (PLACEHOLDER_GROUPS[g].indexOf(name) !== -1) found = g
+    })
+    return found
+  }
+
+  var OTHER_GROUP = 'Other'
+
   function render (docsets) {
     var components = collectComponents(docsets)
     var names = Object.keys(components).sort(function (a, b) {
@@ -108,46 +135,110 @@
     })
     var ul = document.createElement('ul')
     ul.className = 'components'
+    var groupOf = {}
     var rows = names.map(function (name) {
       var row = renderComponent(name, components[name])
-      ul.appendChild(row)
+      groupOf[name] = components[name].group || placeholderGroup(name) || OTHER_GROUP
+      row.dataset.name = name
       return row
     })
+    // The container the list or the grouped sections go in; rebuilt on every change
+    // by moving the same row elements, so open dropdowns and focus survive.
+    var list = document.createElement('div')
+    list.className = 'docsets-list'
 
     var toolbar = document.createElement('div')
     toolbar.className = 'docsets-toolbar'
+    // Two joined buttons that are really two modes of one control: the A-Z / Z-A button
+    // is the flat list, "Group" is the grouped view. Clicking Group enters the grouped
+    // view; clicking the sort button while grouped returns to the flat list, and clicking
+    // it again reverses the order.
+    var modeSwitch = document.createElement('div')
+    modeSwitch.className = 'view-switch'
+    modeSwitch.setAttribute('role', 'group')
+    modeSwitch.setAttribute('aria-label', 'Order docsets')
     var sortBtn = document.createElement('button')
     sortBtn.type = 'button'
-    sortBtn.className = 'sort-toggle'
+    sortBtn.className = 'view-toggle sort-toggle'
     var sortLabel = document.createElement('span')
-    sortLabel.textContent = 'Docset'
     var sortIcon = document.createElement('span')
     sortIcon.className = 'sort-icon'
     sortIcon.setAttribute('aria-hidden', 'true')
     sortBtn.appendChild(sortLabel)
     sortBtn.appendChild(sortIcon)
-    toolbar.appendChild(sortBtn)
+    var groupBtn = document.createElement('button')
+    groupBtn.type = 'button'
+    groupBtn.className = 'view-toggle'
+    groupBtn.textContent = 'Group'
+    modeSwitch.appendChild(sortBtn)
+    modeSwitch.appendChild(groupBtn)
+    toolbar.appendChild(modeSwitch)
 
     var descending = false
-    function applySort () {
+    var grouped = false
+    function applyView () {
       sortBtn.classList.toggle('is-desc', descending)
-      sortBtn.setAttribute('aria-label', 'Sort by docset title, currently ' + (descending ? 'Z to A' : 'A to Z'))
+      sortLabel.textContent = descending ? 'Sort Z-A' : 'Sort A-Z'
+      sortBtn.setAttribute('aria-label', 'Sort docsets by title, currently ' + (descending ? 'Z to A' : 'A to Z'))
+      groupBtn.setAttribute('aria-pressed', String(grouped))
+      groupBtn.classList.toggle('is-active', grouped)
+      sortBtn.setAttribute('aria-pressed', String(!grouped))
+      sortBtn.classList.toggle('is-active', !grouped)
       var ordered = descending ? rows.slice().reverse() : rows
-      ordered.forEach(function (row) { ul.appendChild(row) })
+      list.innerHTML = ''
+      if (!grouped) {
+        ordered.forEach(function (row) { ul.appendChild(row) })
+        list.appendChild(ul)
+        return
+      }
+      var byGroup = {}
+      ordered.forEach(function (row) {
+        var g = groupOf[row.dataset.name]
+        ;(byGroup[g] || (byGroup[g] = [])).push(row)
+      })
+      // The sort direction applies to the docsets inside each group; the group headings
+      // themselves stay A-Z, with "Other" last.
+      var groupNames = Object.keys(byGroup).filter(function (g) { return g !== OTHER_GROUP }).sort(function (a, b) {
+        return a.toLowerCase().localeCompare(b.toLowerCase())
+      })
+      if (byGroup[OTHER_GROUP]) groupNames.push(OTHER_GROUP)
+      groupNames.forEach(function (g) {
+        var section = document.createElement('section')
+        section.className = 'docsets-group'
+        var heading = document.createElement('h3')
+        heading.className = 'docsets-group-title'
+        heading.textContent = g
+        var groupUl = document.createElement('ul')
+        groupUl.className = 'components'
+        byGroup[g].forEach(function (row) { groupUl.appendChild(row) })
+        section.appendChild(heading)
+        section.appendChild(groupUl)
+        list.appendChild(section)
+      })
     }
     sortBtn.addEventListener('click', function () {
-      descending = !descending
-      applySort()
+      // From the grouped view this only leaves it; the order flips on the next click.
+      if (grouped) grouped = false
+      else descending = !descending
+      applyView()
     })
-    applySort()
+    groupBtn.addEventListener('click', function () {
+      grouped = true
+      applyView()
+    })
+    applyView()
 
+    // The toolbar lives in its own strip under the modal title, outside the scrolling
+    // body, so it stays put while the list scrolls.
+    var toolbarRoot = document.getElementById('docsets-modal-toolbar') || root
+    toolbarRoot.innerHTML = ''
+    toolbarRoot.appendChild(toolbar)
     root.innerHTML = ''
-    root.appendChild(toolbar)
-    root.appendChild(ul)
+    root.appendChild(list)
   }
 
   // Folds docsets.json ([{ name, title, versions: [{ version, latest, url, pdf }] }])
-  // into a { component: { title, versions: { v: { latest, url, pdf } } } } map.
+  // into a { component: { title, group, versions: { v: { latest, url, pdf } } } } map.
   function collectComponents (docsets) {
     var components = {}
     docsets.forEach(function (docset) {
@@ -155,7 +246,7 @@
       ;(docset.versions || []).forEach(function (v) {
         versions[v.version || ''] = { latest: !!v.latest, url: v.url || null, pdf: v.pdf || null }
       })
-      components[docset.name] = { title: docset.title || docset.name, versions: versions }
+      components[docset.name] = { title: docset.title || docset.name, group: docset.group || '', versions: versions }
     })
     return components
   }
