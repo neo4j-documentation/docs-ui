@@ -229,8 +229,15 @@
     applyView()
 
     // The toolbar lives in its own strip under the modal title, outside the scrolling
-    // body, so it stays put while the list scrolls.
-    var toolbarRoot = document.getElementById('docsets-modal-toolbar') || root
+    // body, so it stays put while the list scrolls. Created here rather than in the page
+    // template so pages built before this existed still get it.
+    var toolbarRoot = document.getElementById('docsets-modal-toolbar')
+    if (!toolbarRoot) {
+      toolbarRoot = document.createElement('div')
+      toolbarRoot.id = 'docsets-modal-toolbar'
+      toolbarRoot.className = 'docsets-modal__toolbar'
+      root.parentNode.insertBefore(toolbarRoot, root)
+    }
     toolbarRoot.innerHTML = ''
     toolbarRoot.appendChild(toolbar)
     root.innerHTML = ''
