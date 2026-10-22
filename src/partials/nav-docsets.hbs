@@ -5,7 +5,7 @@
     <span class="version">{{#if (or page.componentVersion.version (ne page.componentVersion.displayVersion 'default'))}}{{page.componentVersion.displayVersion}}{{/if}}</span>
   </div>
   {{/if}}
-  {{!-- Populated at runtime by 11-docsets-panel.js from the aggregated tabs.json.
+  {{!-- Populated at runtime by 11-docsets-panel.js from the aggregated docsets.json.
        Lists every component+version that's in the cross-docset nav, not just
        the ones built in this Antora run. --}}
   <ul class="components" id="docsets-panel-root"></ul>
