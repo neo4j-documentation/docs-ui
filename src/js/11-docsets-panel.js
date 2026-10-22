@@ -27,14 +27,51 @@
   // headed section per group (docsets.json `group`, sections and rows both A-Z),
   // with docsets that have no group under "Other".
   //
-  // Also wires the header toggle (#docsets-toggle) to open the <dialog> and
-  // the close button to dismiss it.
+  // The modal itself (dialog, title, close button, toolbar strip and list container) is
+  // built here, not in the page template, so its markup and wording change for every page
+  // at once instead of depending on when the page was built. The page only carries the
+  // header toggle (#docsets-toggle); any modal an older template baked in is replaced.
+  // This wires that toggle to open the <dialog> and the close button to dismiss it.
 
-  var root = document.getElementById('docsets-modal-root')
-  var modal = document.getElementById('docsets-modal')
   var toggle = document.getElementById('docsets-toggle')
-  var closeBtn = document.getElementById('docsets-modal-close')
-  if (!root || !modal || !toggle) return
+  if (!toggle) return
+
+  var oldModal = document.getElementById('docsets-modal')
+  if (oldModal) oldModal.remove()
+
+  var modal = document.createElement('dialog')
+  modal.id = 'docsets-modal'
+  modal.className = 'docsets-modal'
+  modal.setAttribute('aria-labelledby', 'docsets-modal-title')
+
+  var modalHeader = document.createElement('header')
+  modalHeader.className = 'docsets-modal__header'
+  var modalTitle = document.createElement('h2')
+  modalTitle.id = 'docsets-modal-title'
+  modalTitle.textContent = 'All Neo4j documentation'
+  var closeBtn = document.createElement('button')
+  closeBtn.id = 'docsets-modal-close'
+  closeBtn.className = 'docsets-modal__close'
+  closeBtn.type = 'button'
+  closeBtn.setAttribute('aria-label', 'Close')
+  closeBtn.textContent = '\u00d7'
+  modalHeader.appendChild(modalTitle)
+  modalHeader.appendChild(closeBtn)
+
+  // The toolbar strip (sort / group buttons) sits outside the scrolling body so it stays
+  // put while the list scrolls.
+  var toolbarRoot = document.createElement('div')
+  toolbarRoot.id = 'docsets-modal-toolbar'
+  toolbarRoot.className = 'docsets-modal__toolbar'
+  var root = document.createElement('div')
+  root.id = 'docsets-modal-root'
+  root.className = 'docsets-modal__body'
+
+  modal.appendChild(modalHeader)
+  modal.appendChild(toolbarRoot)
+  modal.appendChild(root)
+  // Right after the toggle, where the template used to put it, so it inherits the same styles.
+  toggle.insertAdjacentElement('afterend', modal)
 
   toggle.addEventListener('click', function () {
     load()
@@ -228,16 +265,6 @@
     })
     applyView()
 
-    // The toolbar lives in its own strip under the modal title, outside the scrolling
-    // body, so it stays put while the list scrolls. Created here rather than in the page
-    // template so pages built before this existed still get it.
-    var toolbarRoot = document.getElementById('docsets-modal-toolbar')
-    if (!toolbarRoot) {
-      toolbarRoot = document.createElement('div')
-      toolbarRoot.id = 'docsets-modal-toolbar'
-      toolbarRoot.className = 'docsets-modal__toolbar'
-      root.parentNode.insertBefore(toolbarRoot, root)
-    }
     toolbarRoot.innerHTML = ''
     toolbarRoot.appendChild(toolbar)
     root.innerHTML = ''
