@@ -24,6 +24,18 @@
    backdrop via ::backdrop. */
 
 .docsets-modal {
+  /* The width of the version controls: the select box. Wide enough for
+     `2026.11 (Current) (LTS)` beside HTML, PDF and the chevron. */
+  --docsets-versions-width: 20rem;
+
+  /* The sizes that put the divider between the version and HTML a known distance from the
+     right edge: the links are at least this wide (a little more than their text and padding),
+     so the "Versions" heading can be centred on it by calculation, not by eye. */
+  --docsets-gap: 0.5rem;
+  --docsets-slot-width: 1.5rem;
+  --docsets-html-width: 3.1rem;
+  --docsets-pdf-width: 2.5rem;
+
   /* wide enough that docset titles rarely wrap beside the version controls */
   width: min(760px, 94vw);
   max-height: 82vh;
@@ -37,8 +49,7 @@
 }
 
 /* Laid out as a column once open (not on the base rule, which would override the
-   closed dialog's display: none), so the header and toolbar stay fixed and only the
-   body scrolls. */
+   closed dialog's display: none), so the title stays fixed and only the body scrolls. */
 .docsets-modal[open] {
   display: flex;
   flex-direction: column;
@@ -91,30 +102,35 @@
 .docsets-modal__body {
   flex: 1;
   min-height: 0;
-  padding: 1.25rem 1.5rem 1.5rem;
+  padding: 0 1.5rem 1.5rem;
   overflow-y: auto;
 }
 
-/* Column headings under the title, outside the scrolling body: "Docset" (the sort) over the
-   titles and "Versions" over the version controls. The side padding matches the body's plus a
-   row's, so they line up with the rows. */
-.docsets-modal__toolbar {
-  flex: none;
-  border-bottom: 1px solid var(--palette-neutral-25);
-}
-
-.docsets-modal__toolbar .docsets-columns {
+/* Column headings: the first row of the body, stuck to its top as the list scrolls. They are
+   inside the scrolling body, not above it, so they are the same width as the rows (the body's
+   scrollbar takes the same space from both) and "Docset" and "Versions" line up with them. */
+.docsets-modal__body .docsets-columns {
+  position: sticky;
+  top: 0;
+  /* above an open version list that has scrolled up under it */
+  z-index: 30;
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 1rem;
-  padding: 0.5rem 2rem;
+  padding: 0.5rem;
+  background: var(--body-background, var(--nav-background));
+  border-bottom: 1px solid var(--palette-neutral-25);
   font-size: 0.8125rem;
   font-weight: var(--body-font-weight-semibold, 600);
   color: var(--toc-item-font-color);
 }
 
-.docsets-modal__toolbar .sort-head {
+.ndl-theme-dark .docsets-modal__body .docsets-columns {
+  border-bottom-color: var(--theme-dark-color-neutral-border-weak);
+}
+
+.docsets-modal__body .sort-head {
   display: inline-flex;
   align-items: center;
   gap: 0.375rem;
@@ -127,23 +143,25 @@
   cursor: pointer;
 }
 
-.docsets-modal__toolbar .sort-head:hover,
-.docsets-modal__toolbar .sort-head:focus-visible {
+.docsets-modal__body .sort-head:hover,
+.docsets-modal__body .sort-head:focus-visible {
   background: var(--toc-hover-background-color, rgba(0, 0, 0, 0.04));
   outline: none;
 }
 
-.docsets-modal__toolbar .sort-head svg {
+.docsets-modal__body .sort-head svg {
   width: 1.125rem;
   height: 1.125rem;
 }
 
-/* The same width as the version select box, with its inset, so the heading starts where the
-   box does: the box's border is the one visible edge to line it up with */
-.docsets-modal__toolbar .docsets-columns-versions {
-  width: 20rem;
-  max-width: 60%;
-  padding-left: calc(0.5rem + 1px);
+/* "Versions" centred on the divider between the version labels and HTML. The divider is a known
+   distance from the right edge, worked out from the same sizes the rows use (the box's border and
+   padding, the chevron slot, the PDF and HTML links, and the gaps between them), so the heading is
+   shifted left by that distance and then half its own width back, which centres it on the line. */
+.docsets-modal__body .docsets-columns-versions {
+  position: relative;
+  right: calc(0.5rem + 1px + var(--docsets-slot-width) + var(--docsets-gap) + var(--docsets-pdf-width) + var(--docsets-gap) + var(--docsets-html-width) + var(--docsets-gap) / 2);
+  transform: translateX(50%);
 }
 
 /* The Group toggle in the title bar, beside the close button */
@@ -266,9 +284,9 @@
 /* The version dropdown's visible entry looks like a single-version row, so all rows
    share one layout. The list (nav.css) opens under the entry, right-aligned. */
 .docsets-modal__body .version-dropdown {
-  /* the select box has one width for every row, wide enough for `2026.11 (Current) (LTS)`
-     beside HTML, PDF and the chevron: a narrower box makes the label spill over its padding */
-  width: 20rem;
+  /* the select box has one width for every row; a narrower box makes the label spill over its
+     padding */
+  width: var(--docsets-versions-width);
   max-width: 100%;
 }
 
@@ -367,15 +385,15 @@
 .docsets-modal__body .version-entry {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: var(--docsets-gap);
   padding: 0.375rem 0.5rem;
   white-space: nowrap;
 }
 
 .docsets-modal__body .version-slot {
   flex: none;
-  width: 1.5rem;
-  height: 1.5rem;
+  width: var(--docsets-slot-width);
+  height: var(--docsets-slot-width);
 }
 
 /* "(Current)", "(LTS)": the page selector's text after the version, smaller. The same colour as
@@ -413,9 +431,19 @@
 .docsets-modal__body .version-entry .is-placeholder {
   position: relative;
   flex: none;
+  box-sizing: border-box;
   padding: 0.125rem 0.375rem;
+  text-align: center;
   color: var(--color-docs, currentColor);
   text-decoration: none;
+}
+
+.docsets-modal__body .version-entry a.version-selector {
+  min-width: var(--docsets-html-width);
+}
+
+.docsets-modal__body .version-entry .pdf-link {
+  min-width: var(--docsets-pdf-width);
 }
 
 .docsets-modal__body .version-entry .is-placeholder {
@@ -437,7 +465,7 @@
   position: absolute;
   top: 0;
   bottom: 0;
-  left: -0.25rem;
+  left: calc(var(--docsets-gap) / -2);
   border-left: 1px solid var(--palette-neutral-25, currentColor);
 }
 

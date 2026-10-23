@@ -27,7 +27,7 @@
   // headed section per group (docsets.json `group`, sections and rows both A-Z),
   // with docsets that have no group under "Other".
   //
-  // The modal itself (dialog, title, close button, toolbar strip and list container) is
+  // The modal itself (dialog, title, close button and list container) is
   // built here, not in the page template, so its markup and wording change for every page
   // at once instead of depending on when the page was built. The page only carries the
   // header toggle (#docsets-toggle); any modal an older template baked in is replaced.
@@ -70,17 +70,11 @@
   modalHeader.appendChild(modalTitle)
   modalHeader.appendChild(modalActions)
 
-  // The column headings (Docset, with the sort, and Versions) sit outside the scrolling body
-  // so they stay put while the list scrolls.
-  var toolbarRoot = document.createElement('div')
-  toolbarRoot.id = 'docsets-modal-toolbar'
-  toolbarRoot.className = 'docsets-modal__toolbar'
   var root = document.createElement('div')
   root.id = 'docsets-modal-root'
   root.className = 'docsets-modal__body'
 
   modal.appendChild(modalHeader)
-  modal.appendChild(toolbarRoot)
   modal.appendChild(root)
   // Right after the toggle, where the template used to put it, so it inherits the same styles.
   toggle.insertAdjacentElement('afterend', modal)
@@ -150,10 +144,9 @@
     return raw ? raw.replace(/\/+$/, '') : null
   }
 
-  // The list sits under a toolbar (pinned below the modal title) holding the sort toggle (A-Z / Z-A by docset
-  // title). Toggling reorders the existing rows rather than rebuilding them, so
-  // open dropdowns and focus survive. The toolbar is where a future "view by
-  // group" switch would go too.
+  // The list sits under a header row (Docset, which sorts it A-Z / Z-A, and Versions), stuck to
+  // the top of the scrolling body. Sorting and grouping reorder the existing rows rather than
+  // rebuilding them, so open dropdowns and focus survive.
   // TEMPORARY: until docsets set page-docset-group themselves, a docset whose
   // docsets.json `group` is empty is placed here by name. Delete once real groups arrive.
   var PLACEHOLDER_GROUPS = {
@@ -276,9 +269,10 @@
     groupToggle.disabled = false
     applyView()
 
-    toolbarRoot.innerHTML = ''
-    toolbarRoot.appendChild(columns)
+    // The column headings are the first row of the scrolling body, stuck to its top (see the
+    // CSS), so they are exactly as wide as the rows below, scrollbar and all.
     root.innerHTML = ''
+    root.appendChild(columns)
     root.appendChild(list)
   }
 
