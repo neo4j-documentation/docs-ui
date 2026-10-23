@@ -23,7 +23,7 @@
   // there's only one) and a PDF link (only when docsets.json lists one) follows the selected version. The current page's component is marked
   // is-current.
   //
-  // The toolbar's A-Z button and Group button switch between that flat list and a grouped view: one
+  // The Group button in the title bar switches between that flat list and a grouped view: one
   // headed section per group (docsets.json `group`, sections and rows both A-Z),
   // with docsets that have no group under "Other".
   //
@@ -55,11 +55,23 @@
   closeBtn.type = 'button'
   closeBtn.setAttribute('aria-label', 'Close')
   closeBtn.textContent = '\u00d7'
+  // View option for the whole dialog, so it sits in the title bar; wired up once the list is
+  // rendered (render() below)
+  var groupToggle = document.createElement('button')
+  groupToggle.className = 'docsets-modal__group'
+  groupToggle.type = 'button'
+  groupToggle.textContent = 'Group'
+  groupToggle.setAttribute('aria-pressed', 'false')
+  groupToggle.disabled = true
+  var modalActions = document.createElement('div')
+  modalActions.className = 'docsets-modal__actions'
+  modalActions.appendChild(groupToggle)
+  modalActions.appendChild(closeBtn)
   modalHeader.appendChild(modalTitle)
-  modalHeader.appendChild(closeBtn)
+  modalHeader.appendChild(modalActions)
 
-  // The toolbar strip (sort / group buttons) sits outside the scrolling body so it stays
-  // put while the list scrolls.
+  // The column headings (Docset, with the sort, and Versions) sit outside the scrolling body
+  // so they stay put while the list scrolls.
   var toolbarRoot = document.createElement('div')
   toolbarRoot.id = 'docsets-modal-toolbar'
   toolbarRoot.className = 'docsets-modal__toolbar'
@@ -184,43 +196,43 @@
     var list = document.createElement('div')
     list.className = 'docsets-list'
 
-    var toolbar = document.createElement('div')
-    toolbar.className = 'docsets-toolbar'
-    // Two joined buttons that are really two modes of one control: the A-Z / Z-A button
-    // is the flat list, "Group" is the grouped view. Clicking Group enters the grouped
-    // view; clicking the sort button while grouped returns to the flat list, and clicking
-    // it again reverses the order.
-    var modeSwitch = document.createElement('div')
-    modeSwitch.className = 'view-switch'
-    modeSwitch.setAttribute('role', 'group')
-    modeSwitch.setAttribute('aria-label', 'Order docsets')
+    // Column headings: "Docset" sorts the list (the same sort arrows as Needle's tables) and
+    // "Versions" sits over the version controls.
+    var columns = document.createElement('div')
+    columns.className = 'docsets-columns'
     var sortBtn = document.createElement('button')
     sortBtn.type = 'button'
-    sortBtn.className = 'view-toggle sort-toggle'
+    sortBtn.className = 'sort-head'
     var sortLabel = document.createElement('span')
-    var sortIcon = document.createElement('span')
-    sortIcon.className = 'sort-icon'
+    sortLabel.textContent = 'Docset'
+    var sortIcon = document.createElementNS('http://www.w3.org/2000/svg', 'svg')
+    sortIcon.setAttribute('viewBox', '0 0 24 24')
+    sortIcon.setAttribute('fill', 'none')
+    sortIcon.setAttribute('stroke', 'currentColor')
+    sortIcon.setAttribute('stroke-width', '1.5')
+    sortIcon.setAttribute('stroke-linecap', 'round')
+    sortIcon.setAttribute('stroke-linejoin', 'round')
     sortIcon.setAttribute('aria-hidden', 'true')
+    var sortPath = document.createElementNS('http://www.w3.org/2000/svg', 'path')
+    sortIcon.appendChild(sortPath)
     sortBtn.appendChild(sortLabel)
     sortBtn.appendChild(sortIcon)
-    var groupBtn = document.createElement('button')
-    groupBtn.type = 'button'
-    groupBtn.className = 'view-toggle'
-    groupBtn.textContent = 'Group'
-    modeSwitch.appendChild(sortBtn)
-    modeSwitch.appendChild(groupBtn)
-    toolbar.appendChild(modeSwitch)
+    var versionsHead = document.createElement('span')
+    versionsHead.className = 'docsets-columns-versions'
+    versionsHead.textContent = 'Versions'
+    columns.appendChild(sortBtn)
+    columns.appendChild(versionsHead)
 
     var descending = false
     var grouped = false
     function applyView () {
-      sortBtn.classList.toggle('is-desc', descending)
-      sortLabel.textContent = descending ? 'Sort Z-A' : 'Sort A-Z'
+      // Needle's table icons: bars with an up arrow for ascending, a down arrow for descending
+      sortPath.setAttribute('d', descending
+        ? 'M3 4.5h14.25M3 9h9.75M3 13.5h9.75m4.5-4.5v12m0 0l-3.75-3.75M17.25 21L21 17.25'
+        : 'M3 4.5h14.25M3 9h9.75M3 13.5h5.25m5.25-.75L17.25 9m0 0L21 12.75M17.25 9v12')
       sortBtn.setAttribute('aria-label', 'Sort docsets by title, currently ' + (descending ? 'Z to A' : 'A to Z'))
-      groupBtn.setAttribute('aria-pressed', String(grouped))
-      groupBtn.classList.toggle('is-active', grouped)
-      sortBtn.setAttribute('aria-pressed', String(!grouped))
-      sortBtn.classList.toggle('is-active', !grouped)
+      groupToggle.setAttribute('aria-pressed', String(grouped))
+      groupToggle.classList.toggle('is-active', grouped)
       var ordered = descending ? rows.slice().reverse() : rows
       list.innerHTML = ''
       if (!grouped) {
@@ -254,31 +266,30 @@
       })
     }
     sortBtn.addEventListener('click', function () {
-      // From the grouped view this only leaves it; the order flips on the next click.
-      if (grouped) grouped = false
-      else descending = !descending
+      descending = !descending
       applyView()
     })
-    groupBtn.addEventListener('click', function () {
-      grouped = true
+    groupToggle.addEventListener('click', function () {
+      grouped = !grouped
       applyView()
     })
+    groupToggle.disabled = false
     applyView()
 
     toolbarRoot.innerHTML = ''
-    toolbarRoot.appendChild(toolbar)
+    toolbarRoot.appendChild(columns)
     root.innerHTML = ''
     root.appendChild(list)
   }
 
-  // Folds docsets.json ([{ name, title, versions: [{ version, latest, url, pdf }] }])
-  // into a { component: { title, group, versions: { v: { latest, url, pdf } } } } map.
+  // Folds docsets.json ([{ name, title, versions: [{ version, latest, selectorText, url, pdf }] }])
+  // into a { component: { title, group, versions: { v: { latest, selectorText, url, pdf } } } } map.
   function collectComponents (docsets) {
     var components = {}
     docsets.forEach(function (docset) {
       var versions = {}
       ;(docset.versions || []).forEach(function (v) {
-        versions[v.version || ''] = { latest: !!v.latest, url: v.url || null, pdf: v.pdf || null }
+        versions[v.version || ''] = { latest: !!v.latest, selectorText: v.selectorText, url: v.url || null, pdf: v.pdf || null }
       })
       components[docset.name] = { title: docset.title || docset.name, group: docset.group || '', versions: versions }
     })
@@ -337,9 +348,11 @@
       return b.localeCompare(a)
     })
     // The title is plain text. Every way into a docset lives in the version
-    // entries: `<version> | HTML | PDF`. With several versions they sit in a
-    // dropdown (same markup/classes as the page's version dropdown); with one
-    // version, or none, the single entry is shown inline.
+    // entries: `<version> | HTML | PDF`. With one version, or none, that entry is shown
+    // inline. With several, the same entry is shown for the default version (the page's
+    // own, otherwise the latest), the whole of it styled as one select box with a chevron at
+    // the end that opens the rest, so HTML and PDF are one click away. A single-version
+    // row is the same entry without the box and chevron, in the same columns.
     var titleDiv = document.createElement('div')
     titleDiv.className = 'title'
     titleDiv.textContent = entry.title
@@ -359,17 +372,31 @@
     var defaultVersion = (name === currentComponent && entry.versions[currentVersion]) ? currentVersion : versionKeys[0]
     var dropdown = document.createElement('div')
     dropdown.className = 'dropdown version-dropdown'
+    // The default version's entry, styled as one select box (see docsets-modal.css), with the
+    // chevron button that opens the list at its end. Clicking anywhere in the box that is
+    // not a link opens it too.
+    var head = renderVersionEntry(name, entry, defaultVersion, true)
+    head.classList.add('version-dropdown-head')
     var trigger = document.createElement('button')
     trigger.type = 'button'
-    trigger.className = 'version-dropdown-trigger dropdown-styles'
+    trigger.className = 'version-dropdown-trigger'
     trigger.setAttribute('aria-haspopup', 'true')
     trigger.setAttribute('aria-expanded', 'false')
-    trigger.setAttribute('aria-label', entry.title + ' versions')
-    var triggerLabel = document.createElement('span')
-    triggerLabel.className = 'version-dropdown-trigger-label'
-    triggerLabel.textContent = defaultVersion + (entry.versions[defaultVersion].latest ? ' (latest)' : '')
-    trigger.appendChild(triggerLabel)
-    dropdown.appendChild(trigger)
+    trigger.setAttribute('aria-label', entry.title + ': ' + versionKeys.length + ' versions')
+    trigger.title = versionKeys.length + ' versions'
+    var chevron = document.createElement('span')
+    chevron.className = 'version-dropdown-chevron'
+    chevron.setAttribute('aria-hidden', 'true')
+    trigger.appendChild(chevron)
+    // takes the place of the chevron's stand-in at the end of the entry
+    head.replaceChild(trigger, head.querySelector('.version-slot'))
+    head.addEventListener('click', function (e) {
+      if (e.target.closest('a')) return
+      // Stop the click reaching the document, which closes any open list
+      e.stopPropagation()
+      trigger.click()
+    })
+    dropdown.appendChild(head)
 
     var list = document.createElement('ul')
     list.className = 'version-dropdown-list'
@@ -396,19 +423,52 @@
 
   // `<version> | HTML | PDF` - the version name is plain text, HTML and PDF are
   // the two links. An unversioned docset has no version name to show.
-  function renderVersionEntry (name, entry, v, showLatest) {
+  // The text after the version, as in the page's version selector: "(Current)", "(LTS)" or
+  // both, from docsets.json's selectorText. Falls back to "(Current)" for the latest version of
+  // a docset that has not been built since selectorText existed.
+  function versionMarker (versionData) {
+    if (versionData.selectorText !== undefined) return versionData.selectorText
+    return versionData.latest ? '(Current)' : ''
+  }
+
+  function renderVersionEntry (name, entry, v, showMarkers) {
     var row = document.createElement('div')
     row.className = 'version-entry'
     var label = document.createElement('span')
     label.className = 'version-name'
-    label.textContent = v ? v + (showLatest && entry.versions[v].latest ? ' (latest)' : '') : ''
-    if (v) row.appendChild(label)
+    label.textContent = v
+    var marker = showMarkers ? versionMarker(entry.versions[v]) : ''
+    if (v && marker) {
+      // the same text the page's version selector shows after the version, e.g. (Current), (LTS)
+      var tag = document.createElement('span')
+      tag.className = 'version-tag'
+      tag.textContent = marker
+      label.appendChild(document.createTextNode(' '))
+      label.appendChild(tag)
+    }
+    row.appendChild(label)
     var html = document.createElement('a')
     html.className = 'version-selector docset-link'
     html.textContent = 'HTML'
     html.href = resolveHref(name, v, entry.versions[v].url)
     row.appendChild(html)
-    if (entry.versions[v].pdf) row.appendChild(createPdfLink(name, v, entry.versions[v].pdf))
+    if (entry.versions[v].pdf) {
+      row.appendChild(createPdfLink(name, v, entry.versions[v].pdf))
+    } else {
+      // An invisible copy of the PDF link where there is none, so HTML sits in the same place
+      // as in rows that have one, with no widths to keep in step with the text
+      var noPdf = document.createElement('span')
+      noPdf.className = 'pdf-link docset-link is-placeholder'
+      noPdf.setAttribute('aria-hidden', 'true')
+      noPdf.textContent = 'PDF'
+      row.appendChild(noPdf)
+    }
+    // The chevron's place at the end of the entry: empty here, the button in the one that
+    // has several versions to choose from
+    var slot = document.createElement('span')
+    slot.className = 'version-slot'
+    slot.setAttribute('aria-hidden', 'true')
+    row.appendChild(slot)
     return row
   }
 

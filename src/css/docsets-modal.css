@@ -24,7 +24,8 @@
    backdrop via ::backdrop. */
 
 .docsets-modal {
-  width: min(560px, 92vw);
+  /* wide enough that docset titles rarely wrap beside the version controls */
+  width: min(760px, 94vw);
   max-height: 82vh;
   padding: 0;
   border: 1px solid var(--palette-neutral-25);
@@ -94,61 +95,68 @@
   overflow-y: auto;
 }
 
-/* Toolbar strip under the title, outside the scrolling body: the sort and group
-   toggles. Its left padding matches the header's so it lines up with the titles. */
+/* Column headings under the title, outside the scrolling body: "Docset" (the sort) over the
+   titles and "Versions" over the version controls. The side padding matches the body's plus a
+   row's, so they line up with the rows. */
 .docsets-modal__toolbar {
   flex: none;
   border-bottom: 1px solid var(--palette-neutral-25);
 }
 
-.docsets-modal__toolbar .docsets-toolbar {
+.docsets-modal__toolbar .docsets-columns {
   display: flex;
   align-items: center;
+  justify-content: space-between;
   gap: 1rem;
-  padding: 0.875rem 1.5rem 0.875rem 2rem;
+  padding: 0.5rem 2rem;
+  font-size: 0.8125rem;
+  font-weight: var(--body-font-weight-semibold, 600);
+  color: var(--toc-item-font-color);
 }
 
-.docsets-modal__toolbar .sort-toggle {
+.docsets-modal__toolbar .sort-head {
   display: inline-flex;
   align-items: center;
   gap: 0.375rem;
+  margin-left: -0.375rem;
+  padding: 0.25rem 0.375rem;
+  background: none;
+  border: none;
+  color: inherit;
+  font: inherit;
+  cursor: pointer;
 }
 
-/* Shows the current order, as Needle's sort icons do: up for ascending (A-Z), down for
-   descending (Z-A). chevron.svg points down, so ascending flips it. Same mask as the nav. */
-.docsets-modal__toolbar .sort-icon {
-  width: 0.75em;
-  height: 0.75em;
-  background-color: currentColor;
-  -webkit-mask: url(../img/chevron.svg) no-repeat center / contain;
-  mask: url(../img/chevron.svg) no-repeat center / contain;
-  transform: scaleY(-1);
-  transition: transform 0.15s;
+.docsets-modal__toolbar .sort-head:hover,
+.docsets-modal__toolbar .sort-head:focus-visible {
+  background: var(--toc-hover-background-color, rgba(0, 0, 0, 0.04));
+  outline: none;
 }
 
-.docsets-modal__toolbar .sort-toggle.is-desc .sort-icon {
-  transform: none;
+.docsets-modal__toolbar .sort-head svg {
+  width: 1.125rem;
+  height: 1.125rem;
 }
 
-/* A-Z and Group: two joined buttons, the active mode filled */
-.docsets-modal__toolbar .view-switch {
-  display: inline-flex;
+/* The same width as the version select box, and its inset, so the heading lines up with it */
+.docsets-modal__toolbar .docsets-columns-versions {
+  width: 20rem;
+  max-width: 60%;
+  padding-left: calc(0.5rem + 1px);
 }
 
-.docsets-modal__toolbar .view-switch .view-toggle:first-child {
-  border-radius: 0.375rem 0 0 0.375rem;
+/* The Group toggle in the title bar, beside the close button */
+.docsets-modal__actions {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
 }
 
-.docsets-modal__toolbar .view-switch .view-toggle:last-child {
-  margin-left: -1px;
-  border-radius: 0 0.375rem 0.375rem 0;
-}
-
-.docsets-modal__toolbar .view-toggle {
-  padding: 0.25rem 0.5rem;
+.docsets-modal__group {
+  padding: 0.25rem 0.625rem;
   background: none;
   border: 1px solid var(--palette-neutral-25);
-  border-radius: 0.375rem;
+  border-radius: var(--border-radius-sm);
   color: var(--toc-item-font-color);
   font: inherit;
   font-size: 0.8125rem;
@@ -156,11 +164,27 @@
   cursor: pointer;
 }
 
-.docsets-modal__toolbar .view-toggle:hover,
-.docsets-modal__toolbar .view-toggle:focus-visible,
-.docsets-modal__toolbar .view-toggle.is-active {
+.docsets-modal__group:hover,
+.docsets-modal__group:focus-visible {
   background: var(--toc-hover-background-color, rgba(0, 0, 0, 0.04));
   outline: none;
+}
+
+.docsets-modal__group.is-active {
+  background: var(--theme-light-color-primary-bg-weak);
+  border-color: var(--theme-light-color-primary-border-strong);
+  color: var(--theme-light-color-primary-text);
+}
+
+.docsets-modal__group:disabled {
+  opacity: 0.5;
+  cursor: default;
+}
+
+.ndl-theme-dark .docsets-modal__group.is-active {
+  background: var(--theme-dark-color-primary-bg-weak);
+  border-color: var(--theme-dark-color-primary-border-strong);
+  color: var(--theme-dark-color-primary-text);
 }
 
 /* Grouped view: a heading above each group's list of rows. Uses Needle's
@@ -210,11 +234,13 @@
   gap: 1rem;
   margin: 0;
   padding: 0.375rem 0.5rem;
-  border-radius: 0.5rem;
+  /* a line between rows (no stripes, no hover colour: both were distracting) */
+  border-bottom: 1px solid var(--palette-neutral-25);
+  border-radius: 0;
 }
 
-.docsets-modal__body .component:hover {
-  background: var(--toc-hover-background-color, rgba(0, 0, 0, 0.04));
+.ndl-theme-dark .docsets-modal__body .component {
+  border-bottom-color: var(--theme-dark-color-neutral-border-weak);
 }
 
 .docsets-modal__body .component .title {
@@ -229,23 +255,114 @@
   display: flex;
   align-items: center;
   flex: none;
+  /* sized to its content, so a row with little to show (one version, only HTML) leaves the
+     title the room; the entries inside are right-aligned and each has a place for PDF and
+     the chevron, so HTML and PDF still line up (see .version-entry) */
+  max-width: 60%;
   font-size: 0.8125rem;
 }
 
-/* The version dropdown reuses the page dropdown's markup and chrome (nav.css);
-   here it's right-aligned under the row, with a fixed width so the triggers
-   line up down the list. */
+/* The version dropdown's visible entry looks like a single-version row, so all rows
+   share one layout. The list (nav.css) opens under the entry, right-aligned. */
 .docsets-modal__body .version-dropdown {
-  width: 11rem;
+  /* the select box has one width for every row, wide enough for `2026.11 (Current) (LTS)`
+     beside HTML, PDF and the chevron: a narrower box makes the label spill over its padding */
+  width: 20rem;
+  max-width: 100%;
+}
+
+/* With several versions the whole entry is one select box: border and background as nav.css's
+   .dropdown-styles, the version, HTML and PDF inside it, and the chevron button at its end.
+   Single-version entries get a transparent border of the same size, so everything lines up. */
+.docsets-modal__body .version-entry.is-inline,
+.docsets-modal__body .version-dropdown-head {
+  padding: 0.25rem 0.5rem;
+  border: 1px solid transparent;
+}
+
+.docsets-modal__body .version-dropdown-head {
+  border-color: var(--dropdown-border-color, var(--palette-neutral-25));
+  border-radius: var(--border-radius-sm);
+  background: var(--dropdown-background-color, transparent);
+}
+
+.docsets-modal__body .version-dropdown-head .version-name {
+  cursor: pointer;
+}
+
+.docsets-modal__body .version-dropdown-head:hover,
+.docsets-modal__body .version-dropdown.is-active .version-dropdown-head {
+  border-color: var(--theme-light-color-primary-border-strong);
+}
+
+.docsets-modal__body .version-dropdown.is-active .version-dropdown-head {
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.ndl-theme-dark .docsets-modal__body .version-dropdown-head:hover,
+.ndl-theme-dark .docsets-modal__body .version-dropdown.is-active .version-dropdown-head {
+  border-color: var(--theme-dark-color-primary-border-strong);
+}
+
+/* The chevron button: a bare icon at the end of the box */
+.docsets-modal__body .version-dropdown-trigger {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: none;
+  width: 1.5rem;
+  height: 1.5rem;
+  margin: 0;
+  padding: 0;
+  background: none;
+  border: none;
+  border-radius: var(--border-radius-sm);
+  color: var(--toc-item-font-color);
+  cursor: pointer;
+}
+
+.docsets-modal__body .version-dropdown-trigger:focus-visible {
+  outline: 2px solid var(--theme-light-color-primary-border-strong);
+  outline-offset: 1px;
+}
+
+.docsets-modal__body .version-dropdown-chevron {
+  width: 0.75em;
+  height: 0.75em;
+  background-color: currentColor;
+  -webkit-mask: url(../img/chevron.svg) no-repeat center / contain;
+  mask: url(../img/chevron.svg) no-repeat center / contain;
+  transition: transform 0.15s;
+}
+
+.docsets-modal__body .version-dropdown.is-active .version-dropdown-chevron {
+  transform: scaleY(-1);
 }
 
 .docsets-modal__body .version-dropdown .version-dropdown-list {
   left: auto;
   right: 0;
-  max-width: 16rem;
+  /* wide enough for `<version> (latest) | HTML | PDF` with the padding round each link */
+  max-width: 20rem;
+  /* Hangs straight off the trigger (nav.css leaves a gap) so it reads as part of it,
+     not as the list for the row it happens to cover */
+  top: 100%;
+  margin-top: -1px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  border-color: var(--theme-light-color-primary-border-strong);
 }
 
-/* `<version> | HTML | PDF` */
+.ndl-theme-dark .docsets-modal__body .version-dropdown .version-dropdown-list {
+  border-color: var(--theme-dark-color-primary-border-strong);
+}
+
+/* `<version> | HTML | PDF [chevron]`, as a flex row. HTML and PDF take the width of their own
+   text, so they are the same size in every row; where a row has no PDF there is an invisible
+   copy of the link, and where it has no chevron an empty slot the size of the button, so the
+   links end up in the same place in every row and in the open list without any column widths
+   to tune. Every entry has the same side padding, so the box and the list entries match. */
 .docsets-modal__body .version-entry {
   display: flex;
   align-items: center;
@@ -254,36 +371,98 @@
   white-space: nowrap;
 }
 
-.docsets-modal__body .version-entry.is-inline {
-  padding: 0.375rem 0;
+.docsets-modal__body .version-slot {
+  flex: none;
+  width: 1.5rem;
+  height: 1.5rem;
 }
 
-/* A border rather than a "|" glyph, so link underlines don't run through the divider */
-.docsets-modal__body .version-entry > * + * {
-  border-left: 1px solid var(--palette-neutral-25, currentColor);
-  padding-left: 0.5rem;
+/* "(Current)", "(LTS)": the page selector's text after the version, smaller and muted */
+.docsets-modal__body .version-tag {
+  font-size: 0.75rem;
+  color: var(--nav-muted-color, var(--toc-item-font-color));
 }
 
 .docsets-modal__body .version-name {
   flex: 1;
+  min-width: 0;
+  /* Right-aligned, next to HTML, so the spare space falls on its left, with the title's,
+     instead of between it and the links */
+  text-align: right;
+  /* The same padding as the HTML and PDF links, so the text sits the same distance from the
+     divider on both sides. This element holds the tag too, so it applies with or without one. */
+  padding: 0.125rem 0.375rem;
+  /* If a label is ever longer than the room it has, clip it rather than let it run over the
+     divider and the HTML link */
+  overflow: hidden;
+  text-overflow: ellipsis;
   color: var(--toc-item-font-color);
 }
 
-.docsets-modal__body .version-entry a {
-  display: inline;
-  /* .version-selector (nav.css) rounds its corners, which would curve the divider border */
-  border-radius: 0;
-  padding: 0 0 0 0.5rem;
+.docsets-modal__body .version-name:empty {
+  display: none;
+}
+
+/* HTML and PDF links share one hover style: a rounded background, no underline. (In the
+   dropdown list nav.css already gives .version-selector this background; the PDF link
+   has no such class, so it is set here for both.) */
+.docsets-modal__body .version-entry a,
+.docsets-modal__body .version-entry .is-placeholder {
+  position: relative;
+  flex: none;
+  padding: 0.125rem 0.375rem;
   color: var(--color-docs, currentColor);
   text-decoration: none;
 }
 
+.docsets-modal__body .version-entry .is-placeholder {
+  visibility: hidden;
+}
+
 .docsets-modal__body .version-entry a:hover,
 .docsets-modal__body .version-entry a:focus-visible {
-  text-decoration: underline;
+  background: var(--theme-light-color-neutral-bg-strong);
+  text-decoration: none;
   outline: none;
+}
+
+/* The divider before HTML (when there is a version before it) and before PDF, drawn in the middle
+   of the gap so a link's hover background keeps its distance from it */
+.docsets-modal__body .version-entry > .version-name:not(:empty) + a::before,
+.docsets-modal__body .version-entry > a + .pdf-link::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: -0.25rem;
+  border-left: 1px solid var(--palette-neutral-25, currentColor);
+}
+
+/* In dark mode the links' hover background is the dark neutral */
+.ndl-theme-dark .docsets-modal__body .version-entry a:hover,
+.ndl-theme-dark .docsets-modal__body .version-entry a:focus-visible {
+  background: var(--theme-dark-color-neutral-bg-strong);
 }
 
 .docsets-modal__body .version-dropdown-list li.is-current .version-name {
   font-weight: var(--body-font-weight-bold);
+}
+
+/* Dark mode. --nav-heading-font-color is a fixed grey with no dark value, which the title and
+   the docset names use, so they get Needle's default dark text. The dropdown background
+   (--dropdown-background-color) is the same colour as the links' hover, so in the modal the
+   select box and its list use a weaker neutral and the links keep the stronger one. */
+.ndl-theme-dark .docsets-modal__header h2,
+.ndl-theme-dark .docsets-modal__body .component .title {
+  color: var(--theme-dark-color-neutral-text-default);
+}
+
+.ndl-theme-dark .docsets-modal__body .version-dropdown-head,
+.ndl-theme-dark .docsets-modal__body .version-dropdown .version-dropdown-list {
+  background: var(--theme-dark-color-neutral-bg-weak);
+}
+
+/* nav.css gives the list's links the primary hover colour, which is close to the dropdown's */
+.ndl-theme-dark .docsets-modal__body .version-dropdown .version-dropdown-list a.version-selector:hover {
+  background: var(--theme-dark-color-neutral-bg-strong);
 }
