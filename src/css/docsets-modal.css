@@ -138,37 +138,12 @@
   height: 1.125rem;
 }
 
-/* The same width and inset as the version select box, and laid out like an entry, so
-   "Versions" is right-aligned to the same place as the version labels under it. The copies of
-   HTML and PDF are invisible and not bold, so they take exactly the width of the real links. */
+/* The same width as the version select box, with its inset, so the heading starts where the
+   box does: the box's border is the one visible edge to line it up with */
 .docsets-modal__toolbar .docsets-columns-versions {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
   width: 20rem;
   max-width: 60%;
-  padding: 0 calc(0.5rem + 1px);
-  white-space: nowrap;
-}
-
-.docsets-modal__toolbar .docsets-columns-versions .version-name {
-  flex: 1;
-  min-width: 0;
-  padding: 0.125rem 0.375rem;
-  text-align: right;
-}
-
-.docsets-modal__toolbar .docsets-columns-versions .is-placeholder {
-  flex: none;
-  padding: 0.125rem 0.375rem;
-  font-weight: normal;
-  visibility: hidden;
-}
-
-.docsets-modal__toolbar .docsets-columns-versions .version-slot {
-  flex: none;
-  width: 1.5rem;
-  height: 1.5rem;
+  padding-left: calc(0.5rem + 1px);
 }
 
 /* The Group toggle in the title bar, beside the close button */

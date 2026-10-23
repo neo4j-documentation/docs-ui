@@ -217,25 +217,9 @@
     sortIcon.appendChild(sortPath)
     sortBtn.appendChild(sortLabel)
     sortBtn.appendChild(sortIcon)
-    // Built like an entry (the label, then invisible copies of HTML and PDF and the chevron's
-    // slot) so "Versions" ends exactly where the version labels below it do
-    var versionsHead = document.createElement('div')
+    var versionsHead = document.createElement('span')
     versionsHead.className = 'docsets-columns-versions'
-    var versionsLabel = document.createElement('span')
-    versionsLabel.className = 'version-name'
-    versionsLabel.textContent = 'Versions'
-    versionsHead.appendChild(versionsLabel)
-    ;[['version-selector', 'HTML'], ['pdf-link', 'PDF']].forEach(function (pair) {
-      var ghost = document.createElement('span')
-      ghost.className = pair[0] + ' docset-link is-placeholder'
-      ghost.setAttribute('aria-hidden', 'true')
-      ghost.textContent = pair[1]
-      versionsHead.appendChild(ghost)
-    })
-    var ghostSlot = document.createElement('span')
-    ghostSlot.className = 'version-slot'
-    ghostSlot.setAttribute('aria-hidden', 'true')
-    versionsHead.appendChild(ghostSlot)
+    versionsHead.textContent = 'Versions'
     columns.appendChild(sortBtn)
     columns.appendChild(versionsHead)
 
