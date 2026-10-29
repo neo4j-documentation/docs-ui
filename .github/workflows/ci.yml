@@ -41,3 +41,25 @@ jobs:
       if: ${{ env.AWS_S3_BUCKET != '' && github.ref == 'refs/heads/master' }}
       run: |
         aws s3 sync --follow-symlinks --include '*.zip' --no-progress build s3://${{ secrets.STATIC_CONTENT_BUCKET }}/build
+
+  # The build job above covers 24.22.1 (and publishes). This checks the other
+  # Node releases allowed by engines in package.json.
+  node-compat:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    strategy:
+      fail-fast: false
+      matrix:
+        node-version: ['22.23.4', '26.12.1']
+
+    steps:
+    - uses: actions/checkout@v4
+
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v4
+      with:
+        node-version: ${{ matrix.node-version }}
+    - run: npm install
+    - run: npm run lint
+    - run: npm run build
