@@ -201,6 +201,10 @@
   <span class="label label--labs-label">Labs</span>
 </div>
 
+<div class="box">
+  <span class="label label--not-on-mvcc">Incompatible with MVCC</span>
+</div>
+
 ++++
 
 == Tables with labels!

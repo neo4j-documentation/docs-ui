@@ -130,7 +130,8 @@ span.label--not-on-aura,
 span.label.not-available,
 span.label--removed,
 span.label--warning,
-span.label--breaking {
+span.label--breaking,
+span.label--not-on-mvcc {
   background: var(--label-warning-background-color);
   color: var(--label-warning-color);
 }
