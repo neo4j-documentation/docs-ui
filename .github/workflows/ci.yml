@@ -23,42 +23,6 @@ jobs:
         sudo apt-get install --only-upgrade -y ca-certificates
         sudo update-ca-certificates --fresh
 
-    - name: Distrust remaining eMudhra/emSign roots (system and Node)
-      # Mozilla removed emSign ECC Root CA - G3 (and C1, C3) from NSS after the
-      # eMudhra intermediate CA incident. Node 24.22.1, which we enforce, carries
-      # that change, but the Ubuntu system store still trusts those roots, so tools
-      # such as curl and git would too. Build a system CA bundle without any
-      # eMudhra/emSign root (emSign Root CA - G1 is the one Node still trusts, which
-      # Mozilla has not distrusted; dropping it is belt and braces) and point
-      # OpenSSL and Node (--use-openssl-ca) at it for every later step in this job.
-      # SSL_CERT_DIR is an empty directory so OpenSSL does not also load
-      # /etc/ssl/certs.
-      shell: bash
-      run: |
-        mkdir -p "$RUNNER_TEMP/ca-empty"
-        python3 - <<'PY'
-        import os, re, subprocess
-        certs = re.findall(r'-----BEGIN CERTIFICATE-----.*?-----END CERTIFICATE-----\n',
-                           open('/etc/ssl/certs/ca-certificates.crt').read(), re.S)
-        keep, drop = [], 0
-        for c in certs:
-            subj = subprocess.run(['openssl', 'x509', '-noout', '-subject'], input=c,
-                                  capture_output=True, text=True).stdout
-            if re.search(r'emsign|emudhra', subj, re.I):
-                drop += 1
-            else:
-                keep.append(c)
-        assert len(keep) > 100, 'CA bundle unexpectedly small'
-        out = os.path.join(os.environ['RUNNER_TEMP'], 'ca-bundle-no-emudhra.crt')
-        open(out, 'w').write(''.join(keep))
-        print(f'kept {len(keep)} roots, removed {drop} eMudhra/emSign roots')
-        PY
-        {
-          echo "SSL_CERT_FILE=$RUNNER_TEMP/ca-bundle-no-emudhra.crt"
-          echo "SSL_CERT_DIR=$RUNNER_TEMP/ca-empty"
-          echo "NODE_OPTIONS=--use-openssl-ca"
-        } >> "$GITHUB_ENV"
-
     - uses: actions/checkout@v4
 
     - name: Use Node.js 24.22.1
