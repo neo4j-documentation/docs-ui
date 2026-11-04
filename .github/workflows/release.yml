@@ -20,41 +20,6 @@ jobs:
           sudo apt-get install --only-upgrade -y ca-certificates
           sudo update-ca-certificates --fresh
 
-      - name: Distrust remaining eMudhra/emSign roots (system store)
-        # eMudhra CA compromise (DOCOPS-203). The apt step above is the fix for the
-        # system store: Ubuntu ca-certificates 20260816ubuntu0.24.04.1 (20 Oct 2026)
-        # blacklists emSign ECC Root CA - G3, the root the compromised intermediates
-        # sit under. This step additionally drops the remaining eMudhra/emSign roots
-        # (not named in the incident; belt and braces) and points OpenSSL at the
-        # filtered bundle (curl, git, python) for the rest of the job. SSL_CERT_DIR is
-        # an empty directory so OpenSSL does not also load /etc/ssl/certs. Node is
-        # covered by the 24.22.1 pin; GitHub does not allow NODE_OPTIONS to be set
-        # through GITHUB_ENV, so Node is not pointed at this bundle.
-        shell: bash
-        run: |
-          mkdir -p "$RUNNER_TEMP/ca-empty"
-          python3 - <<'PY'
-          import os, re, subprocess
-          certs = re.findall(r'-----BEGIN CERTIFICATE-----.*?-----END CERTIFICATE-----\n',
-                             open('/etc/ssl/certs/ca-certificates.crt').read(), re.S)
-          keep, drop = [], 0
-          for c in certs:
-              subj = subprocess.run(['openssl', 'x509', '-noout', '-subject'], input=c,
-                                    capture_output=True, text=True).stdout
-              if re.search(r'emsign|emudhra', subj, re.I):
-                  drop += 1
-              else:
-                  keep.append(c)
-          assert len(keep) > 100, 'CA bundle unexpectedly small'
-          out = os.path.join(os.environ['RUNNER_TEMP'], 'ca-bundle-no-emudhra.crt')
-          open(out, 'w').write(''.join(keep))
-          print(f'kept {len(keep)} roots, removed {drop} eMudhra/emSign roots')
-          PY
-          {
-            echo "SSL_CERT_FILE=$RUNNER_TEMP/ca-bundle-no-emudhra.crt"
-            echo "SSL_CERT_DIR=$RUNNER_TEMP/ca-empty"
-          } >> "$GITHUB_ENV"
-
       - uses: actions/checkout@v4
 
       - name: Use Node.js 24.22.1
