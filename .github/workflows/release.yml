@@ -21,16 +21,15 @@ jobs:
           sudo update-ca-certificates --fresh
 
       - name: Distrust remaining eMudhra/emSign roots (system store)
-        # eMudhra CA compromise (DOCOPS-203): defence in depth, following the security
-        # guidance. The apt step above updates the package, but Ubuntu has not yet
-        # dropped the eMudhra/emSign roots, so this step builds a system CA bundle
-        # without them and points OpenSSL at it (curl, git, python) for the rest of the
-        # job. SSL_CERT_DIR is an empty directory so OpenSSL does not also load
-        # /etc/ssl/certs. Node is covered by the 24.22.1 pin, which carries Mozilla
-        # removal of the affected root (emSign ECC Root CA - G3); GitHub does not allow
-        # NODE_OPTIONS to be set through GITHUB_ENV, so Node is not pointed at this
-        # bundle. A precaution: none of our build hosts chain to eMudhra. Remove this
-        # step once the Ubuntu ca-certificates package drops the roots.
+        # eMudhra CA compromise (DOCOPS-203). The apt step above is the fix for the
+        # system store: Ubuntu ca-certificates 20260816ubuntu0.24.04.1 (20 Oct 2026)
+        # blacklists emSign ECC Root CA - G3, the root the compromised intermediates
+        # sit under. This step additionally drops the remaining eMudhra/emSign roots
+        # (not named in the incident; belt and braces) and points OpenSSL at the
+        # filtered bundle (curl, git, python) for the rest of the job. SSL_CERT_DIR is
+        # an empty directory so OpenSSL does not also load /etc/ssl/certs. Node is
+        # covered by the 24.22.1 pin; GitHub does not allow NODE_OPTIONS to be set
+        # through GITHUB_ENV, so Node is not pointed at this bundle.
         shell: bash
         run: |
           mkdir -p "$RUNNER_TEMP/ca-empty"
