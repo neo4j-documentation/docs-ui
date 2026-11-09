@@ -13,7 +13,7 @@
     data-page-toc-levels="{{{or page.attributes.toclevels 2}}}"
     data-ui-root-path="{{{uiRootPath}}}"
     data-site-path="{{site-path site.url}}">
-<script type="application/json" id="page-nav-data">{{{json-stringify-script page.navigation}}}</script>
+<script type="application/json" id="page-nav-data">{{{nav-data-json page.navigation}}}</script>
 {{> header}}
 {{> body}}
 {{> footer}}
