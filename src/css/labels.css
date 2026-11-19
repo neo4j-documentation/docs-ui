@@ -177,3 +177,40 @@ span.label--labs-label {
 span.label--graph-academy {
   background: var(--success-color);
 }
+
+/*
+ * Release notes pages: hide version event labels (e.g. "Introduced in 2026.11.0").
+ * The page is already the release notes for that version, so the label is redundant.
+ * Rule: hide labels that are followed by a version ("<text> in <version>") where that version
+ * could be the version the release notes apply to.
+ * Labels that read differently (beta-until, dynamic since) or are not version events are left visible.
+ * Note: CSS cannot tell a versionless label (e.g. plain "Deprecated") from a versioned one, so both are hidden.
+ * display: none keeps the labels in the HTML, so data-* attributes and other metadata are retained.
+ * Opt in with :page-role: release-notes in the page header, which puts the class on <body>.
+ */
+body.release-notes span.label--new,
+body.release-notes span.label--added,
+body.release-notes span.label--changed,
+body.release-notes span.label--updated,
+body.release-notes span.label--deprecated,
+body.release-notes span.label--removed,
+body.release-notes span.label--renamed,
+body.release-notes span.label--discontinued {
+  display: none;
+}
+
+/* block-level labels: drop the now-empty wrapper and the label side border */
+body.release-notes div.labels:not(:has(span.label:not(.label--new, .label--added, .label--changed, .label--updated, .label--deprecated, .label--removed, .label--renamed, .label--discontinued))) {
+  display: none;
+}
+
+body.release-notes .paragraph.has-label:not(:has(> .labels > span.label:not(.label--new, .label--added, .label--changed, .label--updated, .label--deprecated, .label--removed, .label--renamed, .label--discontinued))) {
+  padding-left: 0;
+  border-left: 0;
+}
+
+/* the green "new" border colour should not apply when the new label is hidden */
+body.release-notes .paragraph.has-label:has(> .labels > .label--new),
+body.release-notes .paragraph.has-label:has(> .labels > .label--deprecated) {
+  border-left-color: var(--palette-baltic-60);
+}
