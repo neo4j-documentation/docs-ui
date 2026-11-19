@@ -181,9 +181,11 @@ span.label--graph-academy {
 /*
  * Release notes pages: hide version event labels (e.g. "Introduced in 2026.11.0").
  * The page is already the release notes for that version, so the label is redundant.
- * Rule: hide labels that are followed by a version ("<text> in <version>") where that version
- * could be the version the release notes apply to.
- * Labels that read differently (beta-until, dynamic since) or are not version events are left visible.
+ * Rule: hide labels that say something happened in a version ("<text> in <version>") where that
+ * version could be the version the release notes apply to. On the release notes page that is implied.
+ * Labels that tell the reader something beyond when it happened are left visible:
+ * alpha, beta, preview and breaking (status or warning), beta-until and dynamic (the version means
+ * something different), and product, edition and platform labels.
  * Note: CSS cannot tell a versionless label (e.g. plain "Deprecated") from a versioned one, so both are hidden.
  * display: none keeps the labels in the HTML, so data-* attributes and other metadata are retained.
  * Opt in with :page-role: release-notes in the page header, which puts the class on <body>.
